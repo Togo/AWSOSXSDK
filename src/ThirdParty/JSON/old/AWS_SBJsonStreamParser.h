@@ -47,7 +47,7 @@ typedef enum {
  @brief Delegate for interacting directly with the stream parser
  
  You will most likely find it much more convenient to implement the
- SBJsonStreamParserAdapterDelegate protocol instead.
+ AWS_SBJsonStreamParserAdapterDelegate protocol instead.
  */
 @protocol AWS_SBJsonStreamParserDelegate
 
@@ -92,26 +92,32 @@ typedef enum {
  Using this class is also useful to parse huge documents on disk
  bit by bit so you don't have to keep them all in memory. 
  
- @see SBJsonStreamParserAdapter for more information.
+ @see AWS_SBJsonStreamParserAdapter for more information.
  
  @see @ref objc2json
  
  */
 @interface AWS_SBJsonStreamParser : NSObject {
 @private
+	BOOL supportMultipleDocuments;
+	id<AWS_SBJsonStreamParserDelegate> delegate;
 	AWS_SBJsonTokeniser *tokeniser;
+    NSMutableArray *stateStack;
+	__unsafe_unretained AWS_SBJsonStreamParserState *state;
+	NSUInteger maxDepth;
+	NSString *error;
 }
 
 @property (nonatomic, unsafe_unretained) AWS_SBJsonStreamParserState *state; // Private
-@property (nonatomic, readonly, strong) NSMutableArray *stateStack; // Private
+@property (nonatomic, readonly, retain) NSMutableArray *stateStack; // Private
 
 /**
  @brief Expect multiple documents separated by whitespace
 
- Normally the @p -parse: method returns SBJsonStreamParserComplete when it's found a complete JSON document.
+ Normally the @p -parse: method returns AWS_SBJsonStreamParserComplete when it's found a complete JSON document.
  Attempting to parse any more data at that point is considered an error. ("Garbage after JSON".)
  
- If you set this property to true the parser will never return SBJsonStreamParserComplete. Rather,
+ If you set this property to true the parser will never return AWS_SBJsonStreamParserComplete. Rather,
  once an object is completed it will expect another object to immediately follow, separated
  only by (optional) whitespace.
 
@@ -126,10 +132,10 @@ typedef enum {
  into valid tokens.
 
  @note
- Usually this should be an instance of SBJsonStreamParserAdapter, but you can
- substitute your own implementation of the SBJsonStreamParserDelegate protocol if you need to. 
+ Usually this should be an instance of AWS_SBJsonStreamParserAdapter, but you can
+ substitute your own implementation of the AWS_SBJsonStreamParserDelegate protocol if you need to. 
  */
-@property (unsafe_unretained) id<AWS_SBJsonStreamParserDelegate> delegate;
+@property (assign) id<AWS_SBJsonStreamParserDelegate> delegate;
 
 /**
  @brief The max parse depth
@@ -140,7 +146,7 @@ typedef enum {
  */
 @property NSUInteger maxDepth;
 
-/// Holds the error after SBJsonStreamParserError was returned
+/// Holds the error after AWS_SBJsonStreamParserError was returned
 @property (copy) NSString *error;
 
 /**
@@ -151,9 +157,9 @@ typedef enum {
  @param data An NSData object containing the next chunk of JSON
 
  @return 
- @li SBJsonStreamParserComplete if a full document was found
- @li SBJsonStreamParserWaitingForData if a partial document was found and more data is required to complete it
- @li SBJsonStreamParserError if an error occured. (See the error property for details in this case.)
+ @li AWS_SBJsonStreamParserComplete if a full document was found
+ @li AWS_SBJsonStreamParserWaitingForData if a partial document was found and more data is required to complete it
+ @li AWS_SBJsonStreamParserError if an error occured. (See the error property for details in this case.)
  
  */
 - (AWS_SBJsonStreamParserStatus)parse:(NSData*)data;

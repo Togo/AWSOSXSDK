@@ -32,12 +32,17 @@
 /**
  @brief The JSON writer class.
  
- This uses SBJsonStreamWriter internally.
+ This uses AWS_SBJsonStreamWriter internally.
  
  @see @ref json2objc
  */
 
-@interface AWS_SBJsonWriter : NSObject
+@interface AWS_SBJsonWriter : NSObject {
+@private
+    NSString *error;
+    NSUInteger maxDepth;
+    BOOL sortKeys, humanReadable;
+}
 
 /**
  @brief The maximum recursing depth.

@@ -33,11 +33,8 @@
 #import "AWS_SBJsonStreamWriter.h"
 #import "AWS_SBJsonStreamWriterState.h"
 
-static NSNumber *kNotANumber;
-static NSNumber *kTrue;
-static NSNumber *kFalse;
-static NSNumber *kPositiveInfinity;
-static NSNumber *kNegativeInfinity;
+static NSDecimalNumber *kNotANumber;
+static id kStaticStringCache;
 
 
 @implementation AWS_SBJsonStreamWriter
@@ -51,10 +48,16 @@ static NSNumber *kNegativeInfinity;
 
 + (void)initialize {
 	kNotANumber = [NSDecimalNumber notANumber];
-    kPositiveInfinity = [NSNumber numberWithDouble:+INFINITY];
-    kNegativeInfinity = [NSNumber numberWithDouble:-INFINITY];
-    kTrue = [NSNumber numberWithBool:YES];
-    kFalse = [NSNumber numberWithBool:NO];
+    
+    Class cacheClass = NSClassFromString(@"NSCache");
+    if (cacheClass) {
+        NSLog(@"%s NSCache supported", __FUNCTION__);
+        kStaticStringCache = [[cacheClass alloc] init];
+    }else {
+        NSLog(@"%s NSCache not supported", __FUNCTION__);
+    }
+
+    
 }
 
 #pragma mark Housekeeping
@@ -66,14 +69,16 @@ static NSNumber *kNegativeInfinity;
 	if (self) {
 		maxDepth = 32u;
         stateStack = [[NSMutableArray alloc] initWithCapacity:maxDepth];
-        state = [SBJsonStreamWriterStateStart sharedInstance];
-        cache = [[NSMutableDictionary alloc] initWithCapacity:32];
+        state = [AWS_SBJsonStreamWriterStateStart sharedInstance];
     }
 	return self;
 }
 
 - (void)dealloc {
+	self.error = nil;
     self.state = nil;
+    [stateStack release];
+	[super dealloc];
 }
 
 #pragma mark Methods
@@ -122,7 +127,7 @@ static NSNumber *kNegativeInfinity;
 	if (humanReadable && stateStack.count) [state appendWhitespace:self];
 
     [stateStack addObject:state];
-    self.state = [SBJsonStreamWriterStateObjectStart sharedInstance];
+    self.state = [AWS_SBJsonStreamWriterStateObjectStart sharedInstance];
 
 	if (maxDepth && stateStack.count > maxDepth) {
 		self.error = @"Nested too deep";
@@ -155,7 +160,7 @@ static NSNumber *kNegativeInfinity;
 	if (humanReadable && stateStack.count) [state appendWhitespace:self];
 
     [stateStack addObject:state];
-	self.state = [SBJsonStreamWriterStateArrayStart sharedInstance];
+	self.state = [AWS_SBJsonStreamWriterStateArrayStart sharedInstance];
 
 	if (maxDepth && stateStack.count > maxDepth) {
 		self.error = @"Nested too deep";
@@ -280,7 +285,7 @@ static const char *strForChar(int c) {
 	[state appendSeparator:self];
 	if (humanReadable) [state appendWhitespace:self];
 
-	NSMutableData *buf = [cache objectForKey:string];
+	NSMutableData *buf = [kStaticStringCache objectForKey:string];
 	if (!buf) {
 
         NSUInteger len = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
@@ -307,7 +312,7 @@ static const char *strForChar(int c) {
             [buf appendBytes:utf8 + written length:i - written];
 
         [buf appendBytes:"\"" length:1];
-        [cache setObject:buf forKey:string];
+        [kStaticStringCache setObject:buf forKey:string];
     }
 
 	[delegate writer:self appendBytes:[buf bytes] length:[buf length]];
@@ -316,7 +321,7 @@ static const char *strForChar(int c) {
 }
 
 - (BOOL)writeNumber:(NSNumber*)number {
-	if (number == kTrue || number == kFalse)
+	if ((CFBooleanRef)number == kCFBooleanTrue || (CFBooleanRef)number == kCFBooleanFalse)
 		return [self writeBool:[number boolValue]];
 
 	if ([state isInvalidState:self]) return NO;
@@ -324,15 +329,19 @@ static const char *strForChar(int c) {
 	[state appendSeparator:self];
 	if (humanReadable) [state appendWhitespace:self];
 
-	if ([kPositiveInfinity isEqualToNumber:number]) {
+	if ((CFNumberRef)number == kCFNumberPositiveInfinity) {
 		self.error = @"+Infinity is not a valid number in JSON";
 		return NO;
 
-	} else if ([kNegativeInfinity isEqualToNumber:number]) {
+	} else if ((CFNumberRef)number == kCFNumberNegativeInfinity) {
 		self.error = @"-Infinity is not a valid number in JSON";
 		return NO;
 
-	} else if ([kNotANumber isEqualToNumber:number]) {
+	} else if ((CFNumberRef)number == kCFNumberNaN) {
+		self.error = @"NaN is not a valid number in JSON";
+		return NO;
+
+	} else if (number == kNotANumber) {
 		self.error = @"NaN is not a valid number in JSON";
 		return NO;
 	}

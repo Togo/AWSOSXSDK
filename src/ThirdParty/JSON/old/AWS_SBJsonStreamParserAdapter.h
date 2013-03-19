@@ -64,23 +64,22 @@ typedef enum {
 @end
 
 /**
- @brief SBJsonStreamParserDelegate protocol adapter
+ @brief AWS_SBJsonStreamParserDelegate protocol adapter
  
- Rather than implementing the SBJsonStreamParserDelegate protocol yourself you will
+ Rather than implementing the AWS_SBJsonStreamParserDelegate protocol yourself you will
  most likely find it much more convenient to use an instance of this class and
- implement the SBJsonStreamParserAdapterDelegate protocol instead.
+ implement the AWS_SBJsonStreamParserAdapterDelegate protocol instead.
  
- The default behaviour is that the delegate only receives one call from
- either the -parser:foundArray: or -parser:foundObject: method when the
- document is fully parsed. However, if your inputs contains multiple JSON
+ Normally you would only get one call from either the -parser:foundArray: or
+ -parser:foundObject: method. However, if your inputs contains multiple JSON
  documents and you set the parser's -supportMultipleDocuments property to YES
  you will get one call for each full method.
  
  @code
- SBJsonStreamParserAdapter *adapter = [[[SBJsonStreamParserAdapter alloc] init] autorelease];
+ AWS_SBJsonStreamParserAdapter *adapter = [[[AWS_SBJsonStreamParserAdapter alloc] init] autorelease];
  adapter.delegate = self;
  
- SBJsonStreamParser *parser = [[[SBJsonStreamParser alloc] init] autorelease];
+ AWS_SBJsonStreamParser *parser = [[[AWS_SBJsonStreamParser alloc] init] autorelease];
  parser.delegate = adapter;
  parser.supportMultipleDocuments = YES;
 
@@ -103,11 +102,11 @@ typedef enum {
  being called on your delegate.
  
  @code
- SBJsonStreamParserAdapter *adapter = [[[SBJsonStreamParserAdapter alloc] init] autorelease];
+ AWS_SBJsonStreamParserAdapter *adapter = [[[AWS_SBJsonStreamParserAdapter alloc] init] autorelease];
  adapter.delegate = self;
  adapter.levelsToSkip = 1;
  
- SBJsonStreamParser *parser = [[[SBJsonStreamParser alloc] init] autorelease];
+ AWS_SBJsonStreamParser *parser = [[[AWS_SBJsonStreamParser alloc] init] autorelease];
  parser.delegate = adapter;
  
  // Note that this input contains A SINGLE top-level document
@@ -118,9 +117,10 @@ typedef enum {
 */
 @interface AWS_SBJsonStreamParserAdapter : NSObject <AWS_SBJsonStreamParserDelegate> {
 @private
-	NSUInteger depth;
-    NSMutableArray *array;
-	NSMutableDictionary *dict;
+	id<AWS_SBJsonStreamParserAdapterDelegate> delegate;
+	NSUInteger levelsToSkip, depth;
+	__weak NSMutableArray *array;
+	__weak NSMutableDictionary *dict;
 	NSMutableArray *keyStack;
 	NSMutableArray *stack;
 	
@@ -141,8 +141,8 @@ typedef enum {
 
 /**
  @brief Your delegate object
- Set this to the object you want to receive the SBJsonStreamParserAdapterDelegate messages.
+ Set this to the object you want to receive the AWS_SBJsonStreamParserAdapterDelegate messages.
  */
-@property (unsafe_unretained) id<AWS_SBJsonStreamParserAdapterDelegate> delegate;
+@property (assign) id<AWS_SBJsonStreamParserAdapterDelegate> delegate;
 
 @end

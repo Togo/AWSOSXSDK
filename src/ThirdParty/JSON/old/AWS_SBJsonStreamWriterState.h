@@ -32,52 +32,38 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AWS_SBJsonTokeniser.h"
-#import "AWS_SBJsonStreamParser.h"
+@class AWS_SBJsonStreamWriter;
 
-@interface AWS_SBJsonStreamParserState : NSObject
+@interface AWS_SBJsonStreamWriterState : NSObject
 + (id)sharedInstance;
-
-- (BOOL)parser:(AWS_SBJsonStreamParser*)parser shouldAcceptToken:(sbjson_token_t)token;
-- (AWS_SBJsonStreamParserStatus)parserShouldReturn:(AWS_SBJsonStreamParser*)parser;
-- (void)parser:(AWS_SBJsonStreamParser*)parser shouldTransitionTo:(sbjson_token_t)tok;
-- (BOOL)needKey;
-- (BOOL)isError;
-
-- (NSString*)name;
-
+- (BOOL)isInvalidState:(AWS_SBJsonStreamWriter*)writer;
+- (void)appendSeparator:(AWS_SBJsonStreamWriter*)writer;
+- (BOOL)expectingKey:(AWS_SBJsonStreamWriter*)writer;
+- (void)transitionState:(AWS_SBJsonStreamWriter*)writer;
+- (void)appendWhitespace:(AWS_SBJsonStreamWriter*)writer;
 @end
 
-@interface SBJsonStreamParserStateStart : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateObjectStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateComplete : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateObjectKey : AWS_SBJsonStreamWriterStateObjectStart
 @end
 
-@interface SBJsonStreamParserStateError : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateObjectValue : AWS_SBJsonStreamWriterState
 @end
 
-
-@interface SBJsonStreamParserStateObjectStart : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateArrayStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateObjectGotKey : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateArrayValue : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateObjectSeparator : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateObjectGotValue : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateComplete : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateObjectNeedKey : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamWriterStateError : AWS_SBJsonStreamWriterState
 @end
 
-@interface SBJsonStreamParserStateArrayStart : AWS_SBJsonStreamParserState
-@end
-
-@interface SBJsonStreamParserStateArrayGotValue : AWS_SBJsonStreamParserState
-@end
-
-@interface SBJsonStreamParserStateArrayNeedValue : AWS_SBJsonStreamParserState
-@end

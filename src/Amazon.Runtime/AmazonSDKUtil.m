@@ -461,9 +461,15 @@ static NSTimeInterval _clockskew = 0.0;
 
 -(NSString *)stringWithURLEncoding
 {
-    NSString *encoded = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, (CFStringRef)@"!*'\"();:@&=$,/?%#[]% ", kCFStringEncodingUTF8);
-
-    [encoded autorelease];
+//    NSString *encoded = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, (CFStringRef)@"!*'\"();:@&=$,/?%#[]% ", kCFStringEncodingUTF8);
+//
+//    [encoded autorelease];
+//    return [encoded stringByNormalizingPathComponent];
+    NSString *encoded = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (__bridge CFStringRef)self,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                                                 kCFStringEncodingUTF8);
     return [encoded stringByNormalizingPathComponent];
 }
 

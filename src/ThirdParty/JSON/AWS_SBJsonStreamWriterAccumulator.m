@@ -42,12 +42,8 @@
     return self;
 }
 
-- (void)dealloc {
-    [data release];
-    [super dealloc];
-}
 
-#pragma mark AWS_SBJsonStreamWriterDelegate
+#pragma mark SBJsonStreamWriterDelegate
 
 - (void)writer:(AWS_SBJsonStreamWriter *)writer appendBytes:(const void *)bytes length:(NSUInteger)length {
     [data appendBytes:bytes length:length];

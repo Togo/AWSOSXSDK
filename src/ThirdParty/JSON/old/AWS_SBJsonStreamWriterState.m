@@ -54,12 +54,12 @@
 }
 @end
 
-@implementation SBJsonStreamWriterStateObjectStart
+@implementation AWS_SBJsonStreamWriterStateObjectStart
 
 SINGLETON
 
 - (void)transitionState:(AWS_SBJsonStreamWriter *)writer {
-	writer.state = [SBJsonStreamWriterStateObjectValue sharedInstance];
+	writer.state = [AWS_SBJsonStreamWriterStateObjectValue sharedInstance];
 }
 - (BOOL)expectingKey:(AWS_SBJsonStreamWriter *)writer {
 	writer.error = @"JSON object key must be string";
@@ -67,7 +67,7 @@ SINGLETON
 }
 @end
 
-@implementation SBJsonStreamWriterStateObjectKey
+@implementation AWS_SBJsonStreamWriterStateObjectKey
 
 SINGLETON
 
@@ -76,7 +76,7 @@ SINGLETON
 }
 @end
 
-@implementation SBJsonStreamWriterStateObjectValue
+@implementation AWS_SBJsonStreamWriterStateObjectValue
 
 SINGLETON
 
@@ -84,23 +84,23 @@ SINGLETON
 	[writer appendBytes:":" length:1];
 }
 - (void)transitionState:(AWS_SBJsonStreamWriter *)writer {
-    writer.state = [SBJsonStreamWriterStateObjectKey sharedInstance];
+    writer.state = [AWS_SBJsonStreamWriterStateObjectKey sharedInstance];
 }
 - (void)appendWhitespace:(AWS_SBJsonStreamWriter *)writer {
 	[writer appendBytes:" " length:1];
 }
 @end
 
-@implementation SBJsonStreamWriterStateArrayStart
+@implementation AWS_SBJsonStreamWriterStateArrayStart
 
 SINGLETON
 
 - (void)transitionState:(AWS_SBJsonStreamWriter *)writer {
-    writer.state = [SBJsonStreamWriterStateArrayValue sharedInstance];
+    writer.state = [AWS_SBJsonStreamWriterStateArrayValue sharedInstance];
 }
 @end
 
-@implementation SBJsonStreamWriterStateArrayValue
+@implementation AWS_SBJsonStreamWriterStateArrayValue
 
 SINGLETON
 
@@ -109,19 +109,19 @@ SINGLETON
 }
 @end
 
-@implementation SBJsonStreamWriterStateStart
+@implementation AWS_SBJsonStreamWriterStateStart
 
 SINGLETON
 
 
 - (void)transitionState:(AWS_SBJsonStreamWriter *)writer {
-    writer.state = [SBJsonStreamWriterStateComplete sharedInstance];
+    writer.state = [AWS_SBJsonStreamWriterStateComplete sharedInstance];
 }
 - (void)appendSeparator:(AWS_SBJsonStreamWriter *)writer {
 }
 @end
 
-@implementation SBJsonStreamWriterStateComplete
+@implementation AWS_SBJsonStreamWriterStateComplete
 
 SINGLETON
 
@@ -131,7 +131,7 @@ SINGLETON
 }
 @end
 
-@implementation SBJsonStreamWriterStateError
+@implementation AWS_SBJsonStreamWriterStateError
 
 SINGLETON
 

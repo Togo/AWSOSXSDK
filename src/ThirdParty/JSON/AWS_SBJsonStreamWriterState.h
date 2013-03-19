@@ -43,27 +43,27 @@
 - (void)appendWhitespace:(AWS_SBJsonStreamWriter*)writer;
 @end
 
-@interface AWS_SBJsonStreamWriterStateObjectStart : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateObjectStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateObjectKey : AWS_SBJsonStreamWriterStateObjectStart
+@interface SBJsonStreamWriterStateObjectKey : SBJsonStreamWriterStateObjectStart
 @end
 
-@interface AWS_SBJsonStreamWriterStateObjectValue : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateObjectValue : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateArrayStart : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateArrayStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateArrayValue : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateArrayValue : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateStart : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateStart : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateComplete : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateComplete : AWS_SBJsonStreamWriterState
 @end
 
-@interface AWS_SBJsonStreamWriterStateError : AWS_SBJsonStreamWriterState
+@interface SBJsonStreamWriterStateError : AWS_SBJsonStreamWriterState
 @end
 

@@ -41,7 +41,7 @@ typedef enum {
     
     AWS_SBJson_token_object_start,
     AWS_SBJson_token_object_end,
-
+    
     AWS_SBJson_token_separator,
     AWS_SBJson_token_keyval_separator,
     
@@ -55,12 +55,9 @@ typedef enum {
 
 @class AWS_SBJsonUTF8Stream;
 
-@interface AWS_SBJsonTokeniser : NSObject {
-@private
-    AWS_SBJsonUTF8Stream *_stream;
-    NSString *_error;
-}
+@interface AWS_SBJsonTokeniser : NSObject 
 
+@property (strong) AWS_SBJsonUTF8Stream *stream;
 @property (copy) NSString *error;
 
 - (void)appendData:(NSData*)data_;

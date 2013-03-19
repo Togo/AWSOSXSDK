@@ -44,6 +44,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [error release];
+    [super dealloc];
+}
 
 #pragma mark Methods
 
@@ -54,12 +58,12 @@
         return nil;
     }
 
-	AWS_SBJsonStreamParserAccumulator *accumulator = [[AWS_SBJsonStreamParserAccumulator alloc] init];
+	AWS_SBJsonStreamParserAccumulator *accumulator = [[[AWS_SBJsonStreamParserAccumulator alloc] init] autorelease];
     
-    AWS_SBJsonStreamParserAdapter *adapter = [[AWS_SBJsonStreamParserAdapter alloc] init];
+    AWS_SBJsonStreamParserAdapter *adapter = [[[AWS_SBJsonStreamParserAdapter alloc] init] autorelease];
     adapter.delegate = accumulator;
 	
-	AWS_SBJsonStreamParser *parser = [[AWS_SBJsonStreamParser alloc] init];
+	AWS_SBJsonStreamParser *parser = [[[AWS_SBJsonStreamParser alloc] init] autorelease];
 	parser.maxDepth = self.maxDepth;
 	parser.delegate = adapter;
 	
@@ -91,7 +95,7 @@
     
     if (error_) {
 		NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:error, NSLocalizedDescriptionKey, nil];
-        *error_ = [NSError errorWithDomain:@"org.brautaset.SBJsonParser.ErrorDomain" code:0 userInfo:ui];
+        *error_ = [NSError errorWithDomain:@"org.brautaset.AWS_SBJsonParser.ErrorDomain" code:0 userInfo:ui];
 	}
 	
     return nil;

@@ -32,13 +32,19 @@
 /**
  @brief Parse JSON Strings and NSData objects
 
- This uses SBJsonStreamParser internally.
+ This uses AWS_SBJsonStreamParser internally.
 
  @see @ref objc2json
 
  */
 
-@interface AWS_SBJsonParser : NSObject
+@interface AWS_SBJsonParser : NSObject {
+
+@private
+	NSString *error;
+    NSUInteger depth, maxDepth;
+
+}
 
 /**
  @brief The maximum recursing depth.

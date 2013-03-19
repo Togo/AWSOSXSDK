@@ -29,11 +29,8 @@
 
 #import "AWS_SBJsonStreamWriter.h"
 
-@interface AWS_SBJsonStreamWriterAccumulator : NSObject <AWS_SBJsonStreamWriterDelegate> {
-@private
-    NSMutableData *data;
-}
+@interface AWS_SBJsonStreamWriterAccumulator : NSObject <AWS_SBJsonStreamWriterDelegate>
 
-@property (readonly, copy) NSData* data;
+@property (readonly, copy) NSMutableData* data;
 
 @end

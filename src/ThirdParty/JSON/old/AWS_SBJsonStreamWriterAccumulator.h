@@ -27,21 +27,13 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "AWS_SBJsonStreamParserAccumulator.h"
+#import "AWS_SBJsonStreamWriter.h"
 
-@implementation AWS_SBJsonStreamParserAccumulator
-
-@synthesize value;
-
-
-#pragma mark SBJsonStreamParserAdapterDelegate
-
-- (void)parser:(AWS_SBJsonStreamParser*)parser foundArray:(NSArray *)array {
-	value = array;
+@interface AWS_SBJsonStreamWriterAccumulator : NSObject <AWS_SBJsonStreamWriterDelegate> {
+@private
+    NSMutableData *data;
 }
 
-- (void)parser:(AWS_SBJsonStreamParser*)parser foundObject:(NSDictionary *)dict {
-	value = dict;
-}
+@property (readonly, copy) NSData* data;
 
 @end

@@ -52,11 +52,15 @@
     return self;
 }
 
+- (void)dealloc {
+    [error release];
+    [super dealloc];
+}
 
 - (NSString*)stringWithObject:(id)value {
 	NSData *data = [self dataWithObject:value];
 	if (data)
-		return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 	return nil;
 }	
 
@@ -67,7 +71,7 @@
     
     if (error_) {
 		NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:error, NSLocalizedDescriptionKey, nil];
-        *error_ = [NSError errorWithDomain:@"org.brautaset.SBJsonWriter.ErrorDomain" code:0 userInfo:ui];
+        *error_ = [NSError errorWithDomain:@"org.brautaset.AWS_SBJsonWriter.ErrorDomain" code:0 userInfo:ui];
 	}
 	
     return nil;
@@ -76,9 +80,9 @@
 - (NSData*)dataWithObject:(id)object {	
     self.error = nil;
 
-    AWS_SBJsonStreamWriterAccumulator *accumulator = [[AWS_SBJsonStreamWriterAccumulator alloc] init];
+    AWS_SBJsonStreamWriterAccumulator *accumulator = [[[AWS_SBJsonStreamWriterAccumulator alloc] init] autorelease];
     
-	AWS_SBJsonStreamWriter *streamWriter = [[AWS_SBJsonStreamWriter alloc] init];
+	AWS_SBJsonStreamWriter *streamWriter = [[[AWS_SBJsonStreamWriter alloc] init] autorelease];
 	streamWriter.sortKeys = self.sortKeys;
 	streamWriter.maxDepth = self.maxDepth;
 	streamWriter.humanReadable = self.humanReadable;

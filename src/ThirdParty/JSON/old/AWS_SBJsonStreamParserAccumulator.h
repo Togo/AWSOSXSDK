@@ -27,21 +27,14 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "AWS_SBJsonStreamParserAccumulator.h"
+#import <Foundation/Foundation.h>
+#import "AWS_SBJsonStreamParserAdapter.h"
 
-@implementation AWS_SBJsonStreamParserAccumulator
-
-@synthesize value;
-
-
-#pragma mark SBJsonStreamParserAdapterDelegate
-
-- (void)parser:(AWS_SBJsonStreamParser*)parser foundArray:(NSArray *)array {
-	value = array;
+@interface AWS_SBJsonStreamParserAccumulator : NSObject <AWS_SBJsonStreamParserAdapterDelegate> {
+@private
+    id value;    
 }
 
-- (void)parser:(AWS_SBJsonStreamParser*)parser foundObject:(NSDictionary *)dict {
-	value = dict;
-}
+@property (readonly, copy) id value;
 
 @end

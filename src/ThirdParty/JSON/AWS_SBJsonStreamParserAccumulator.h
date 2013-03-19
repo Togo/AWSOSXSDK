@@ -30,11 +30,8 @@
 #import <Foundation/Foundation.h>
 #import "AWS_SBJsonStreamParserAdapter.h"
 
-@interface AWS_SBJsonStreamParserAccumulator : NSObject <AWS_SBJsonStreamParserAdapterDelegate> {
-@private
-    id value;    
-}
+@interface AWS_SBJsonStreamParserAccumulator : NSObject <AWS_SBJsonStreamParserAdapterDelegate>
 
-@property (readonly, copy) id value;
+@property (copy) id value;
 
 @end

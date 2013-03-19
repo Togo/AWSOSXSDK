@@ -1,5 +1,6 @@
 /*
- Copyright (c) 2011, Stig Brautaset. All rights reserved.
+ Copyright (c) 2010, Stig Brautaset.
+ All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are
@@ -31,28 +32,39 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    AWS_SBJson_token_error = -1,
+    AWS_SBJson_token_eof,
+    
+    AWS_SBJson_token_array_start,
+    AWS_SBJson_token_array_end,
+    
+    AWS_SBJson_token_object_start,
+    AWS_SBJson_token_object_end,
 
-@interface AWS_SBJsonUTF8Stream : NSObject {
+    AWS_SBJson_token_separator,
+    AWS_SBJson_token_keyval_separator,
+    
+    AWS_SBJson_token_number,
+    AWS_SBJson_token_string,
+    AWS_SBJson_token_true,
+    AWS_SBJson_token_false,
+    AWS_SBJson_token_null,
+    
+} AWS_SBJson_token_t;
+
+@class AWS_SBJsonUTF8Stream;
+
+@interface AWS_SBJsonTokeniser : NSObject {
 @private
-    const char *_bytes;
-    NSMutableData *_data;
-    NSUInteger _length;
+    AWS_SBJsonUTF8Stream *_stream;
+    NSString *_error;
 }
 
-@property (assign) NSUInteger index;
+@property (copy) NSString *error;
 
 - (void)appendData:(NSData*)data_;
 
-- (BOOL)haveRemainingCharacters:(NSUInteger)chars;
-
-- (void)skip;
-- (void)skipWhitespace;
-- (BOOL)skipCharacters:(const char *)chars length:(NSUInteger)len;
-
-- (BOOL)getUnichar:(unichar*)ch;
-- (BOOL)getNextUnichar:(unichar*)ch;
-- (BOOL)getRetainedStringFragment:(NSString**)string;
-
-- (NSString*)stringWithRange:(NSRange)range;
+- (AWS_SBJson_token_t)getToken:(NSObject**)token;
 
 @end

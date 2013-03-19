@@ -37,47 +37,45 @@
 
 @interface AWS_SBJsonStreamParserState : NSObject
 + (id)sharedInstance;
-
-- (BOOL)parser:(AWS_SBJsonStreamParser*)parser shouldAcceptToken:(sbjson_token_t)token;
+- (BOOL)parser:(AWS_SBJsonStreamParser*)parser shouldAcceptToken:(AWS_SBJson_token_t)token;
 - (AWS_SBJsonStreamParserStatus)parserShouldReturn:(AWS_SBJsonStreamParser*)parser;
-- (void)parser:(AWS_SBJsonStreamParser*)parser shouldTransitionTo:(sbjson_token_t)tok;
+- (void)parser:(AWS_SBJsonStreamParser*)parser shouldTransitionTo:(AWS_SBJson_token_t)tok;
 - (BOOL)needKey;
-- (BOOL)isError;
 
 - (NSString*)name;
 
 @end
 
-@interface SBJsonStreamParserStateStart : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateStart : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateComplete : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateComplete : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateError : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateError : AWS_SBJsonStreamParserState
 @end
 
 
-@interface SBJsonStreamParserStateObjectStart : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateObjectStart : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateObjectGotKey : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateObjectGotKey : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateObjectSeparator : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateObjectSeparator : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateObjectGotValue : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateObjectGotValue : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateObjectNeedKey : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateObjectNeedKey : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateArrayStart : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateArrayStart : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateArrayGotValue : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateArrayGotValue : AWS_SBJsonStreamParserState
 @end
 
-@interface SBJsonStreamParserStateArrayNeedValue : AWS_SBJsonStreamParserState
+@interface AWS_SBJsonStreamParserStateArrayNeedValue : AWS_SBJsonStreamParserState
 @end
