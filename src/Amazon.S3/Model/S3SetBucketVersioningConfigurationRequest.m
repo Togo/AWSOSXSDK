@@ -41,7 +41,7 @@
     NSData *data = [[[self versioningConfiguration] toXml] dataUsingEncoding:NSUTF8StringEncoding];
     [[self urlRequest] setHTTPBody:data];
     if (self.contentLength < 1) {
-        [self.urlRequest setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:kHttpHdrContentLength];
+        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
     }
 
     return self.urlRequest;

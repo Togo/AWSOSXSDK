@@ -44,7 +44,7 @@
         [subresource appendFormat:@"&key-marker=%@", self.keyMarker];
     }
     if (maxUploadsIsSet) {
-        [subresource appendFormat:@"&max-uploads=%d", self.maxUploads];
+        [subresource appendFormat:@"&max-uploads=%ld", (long)self.maxUploads];
     }
     if (nil != self.prefix) {
         [subresource appendFormat:@"&prefix=%@", self.prefix];
