@@ -20,14 +20,11 @@
  * Placement Group
  */
 
-@interface EC2PlacementGroup:NSObject
-
-{
+@interface EC2PlacementGroup : NSObject {
     NSString *groupName;
     NSString *strategy;
     NSString *state;
 }
-
 
 
 /**
@@ -57,7 +54,7 @@
  * Default constructor for a new PlacementGroup object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new PlacementGroup object.
@@ -65,7 +62,7 @@
  *
  * @param theGroupName The name of this <code>PlacementGroup</code>.
  */
--(id)initWithGroupName:(NSString *)theGroupName;
+- (id)initWithGroupName:(NSString *)theGroupName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -21,40 +21,35 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Spot Instance Request
  */
 
-@interface EC2SpotInstanceRequest:AmazonServiceRequestConfig
-
-{
-    NSString                  *spotInstanceRequestId;
-    NSString                  *spotPrice;
-    NSString                  *type;
-    NSString                  *state;
+@interface EC2SpotInstanceRequest : AmazonServiceRequestConfig {
+    NSString *spotInstanceRequestId;
+    NSString *spotPrice;
+    NSString *type;
+    NSString *state;
     EC2SpotInstanceStateFault *fault;
-    EC2SpotInstanceStatus     *status;
-    NSDate                    *validFrom;
-    NSDate                    *validUntil;
-    NSString                  *launchGroup;
-    NSString                  *availabilityZoneGroup;
-    EC2LaunchSpecification    *launchSpecification;
-    NSString                  *instanceId;
-    NSDate                    *createTime;
-    NSString                  *productDescription;
-    NSMutableArray            *tags;
-    NSString                  *launchedAvailabilityZone;
+    EC2SpotInstanceStatus *status;
+    NSDate *validFrom;
+    NSDate *validUntil;
+    NSString *launchGroup;
+    NSString *availabilityZoneGroup;
+    EC2LaunchSpecification *launchSpecification;
+    NSString *instanceId;
+    NSDate *createTime;
+    NSString *productDescription;
+    NSMutableArray *tags;
+    NSString *launchedAvailabilityZone;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the SpotInstanceRequestId property for this object.
@@ -143,7 +138,7 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -151,7 +146,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

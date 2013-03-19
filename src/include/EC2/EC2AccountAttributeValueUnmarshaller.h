@@ -23,7 +23,7 @@
 /**
  * Account Attribute Value Unmarshaller
  */
-@interface EC2AccountAttributeValueUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2AccountAttributeValueUnmarshaller : EC2ResponseUnmarshaller {
     EC2AccountAttributeValue *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2AccountAttributeValue *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

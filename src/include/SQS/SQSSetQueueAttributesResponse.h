@@ -21,8 +21,7 @@
 /**
  * Set Queue Attributes
  */
-@interface SQSSetQueueAttributesResponse:SQSResponse
-{
+@interface SQSSetQueueAttributesResponse : SQSResponse {
 }
 
 @end

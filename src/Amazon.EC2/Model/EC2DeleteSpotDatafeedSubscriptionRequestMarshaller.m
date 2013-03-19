@@ -17,18 +17,16 @@
 
 @implementation EC2DeleteSpotDatafeedSubscriptionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeleteSpotDatafeedSubscription"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteSpotDatafeedSubscription" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deleteSpotDatafeedSubscriptionRequest delegate]];
     [request setCredentials:[deleteSpotDatafeedSubscriptionRequest credentials]];
     [request setEndpoint:[deleteSpotDatafeedSubscriptionRequest requestEndpoint]];
     [request setRequestTag:[deleteSpotDatafeedSubscriptionRequest requestTag]];
-
 
 
     return request;

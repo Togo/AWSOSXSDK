@@ -17,12 +17,11 @@
 
 @implementation SNSAddPermissionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSAddPermissionRequest *)addPermissionRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSAddPermissionRequest *)addPermissionRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"AddPermission"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"AddPermission" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[addPermissionRequest delegate]];
     [request setCredentials:[addPermissionRequest credentials]];

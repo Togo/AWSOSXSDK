@@ -18,8 +18,7 @@
 
 typedef void (^AbortMultipartUploadBlock)();
 
-@interface S3MultipartUploadOperation_Internal ()
-{
+@interface S3MultipartUploadOperation_Internal () {
     BOOL _isExecuting;
     BOOL _isFinished;
 }
@@ -55,10 +54,8 @@ typedef void (^AbortMultipartUploadBlock)();
 
 #pragma mark - Class Lifecycle
 
-- (id)init
-{
-    if (self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         _isExecuting = NO;
         _isFinished = NO;
 
@@ -74,8 +71,7 @@ typedef void (^AbortMultipartUploadBlock)();
 
 #pragma mark - Overwriding NSOperation Methods
 
-- (void)start
-{
+- (void)start {
     [self willChangeValueForKey:@"isExecuting"];
     _isExecuting = YES;
     [self didChangeValueForKey:@"isExecuting"];
@@ -83,28 +79,24 @@ typedef void (^AbortMultipartUploadBlock)();
     [self initiateUpload];
 }
 
-- (BOOL)isConcurrent
-{
+- (BOOL)isConcurrent {
     return YES;
 }
 
-- (BOOL)isExecuting
-{
+- (BOOL)isExecuting {
     return _isExecuting;
 }
 
-- (BOOL)isFinished
-{
+- (BOOL)isFinished {
     return _isFinished;
 }
 
 #pragma mark - Multipart Upload Methods
 
-- (void)initiateUpload
-{
+- (void)initiateUpload {
     self.x_initRequest =
-    [[S3InitiateMultipartUploadRequest alloc] initWithKey:self.request.key
-                                                  inBucket:self.request.bucket];
+            [[S3InitiateMultipartUploadRequest alloc] initWithKey:self.request.key
+                                                         inBucket:self.request.bucket];
     self.x_initRequest.cannedACL = self.request.cannedACL;
     self.x_initRequest.storageClass = self.request.storageClass;
     self.x_initRequest.serverSideEncryption = self.request.serverSideEncryption;
@@ -129,15 +121,13 @@ typedef void (^AbortMultipartUploadBlock)();
     });
 }
 
-- (void)startUploadingParts
-{
+- (void)startUploadingParts {
     self.completeRequest = [[S3CompleteMultipartUploadRequest alloc] initWithMultipartUpload:self.multipartUpload];
     self.completeRequest.delegate = self;
 
     self.abortMultipartUpload = ^{
 
-        if(self.multipartUpload)
-        {
+        if (self.multipartUpload) {
             @try {
                 S3AbortMultipartUploadRequest *abortRequest = [[S3AbortMultipartUploadRequest alloc] initWithMultipartUpload:self.multipartUpload];
                 [self.s3 abortMultipartUpload:abortRequest];
@@ -157,31 +147,25 @@ typedef void (^AbortMultipartUploadBlock)();
     [self uploadPart:self.currentPartNo];
 }
 
-- (void)uploadPart:(NSInteger)partNo
-{
+- (void)uploadPart:(NSInteger)partNo {
     NSRange dataRange = [self getDataRange:partNo withContentLength:self.contentLength];
 
     self.error = nil;
     self.exception = nil;
 
-    if(self.retryCount > 0)
-    {
+    if (self.retryCount > 0) {
         [self.s3 pauseExponentially:self.retryCount];
     }
 
     S3UploadPartRequest *uploadRequest = [[S3UploadPartRequest alloc] initWithMultipartUpload:self.multipartUpload];
     uploadRequest.partNumber = partNo;
 
-    if(self.dataForPart == nil)
-    {
-        if(self.request.data != nil)
-        {
+    if (self.dataForPart == nil) {
+        if (self.request.data != nil) {
             self.dataForPart = [self.request.data subdataWithRange:dataRange];
         }
-        else
-        {
-            if(self.request.stream.streamStatus == NSStreamStatusNotOpen)
-            {
+        else {
+            if (self.request.stream.streamStatus == NSStreamStatusNotOpen) {
                 [self.request.stream open];
             }
 
@@ -190,8 +174,7 @@ typedef void (^AbortMultipartUploadBlock)();
             uint8_t buffer[1024];
             NSUInteger readLength = 0;
 
-            for(int i = 0; i < ceil((double) self.partSize / 1024); i++)
-            {
+            for (int i = 0; i < ceil((double) self.partSize / 1024); i++) {
                 readLength = [self.request.stream read:buffer maxLength:1024];
                 [dataForPart appendData:[NSData dataWithBytes:buffer length:readLength]];
             }
@@ -215,15 +198,12 @@ typedef void (^AbortMultipartUploadBlock)();
 
 #pragma mark - AmazonServiceRequestDelegate Implementations
 
-- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response
-{
-    if(!self.isFinished && self.isExecuting)
-    {
+- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response {
+    if (!self.isFinished && self.isExecuting) {
         self.response = response;
 
-        if([response isKindOfClass:[S3InitiateMultipartUploadResponse class]])
-        {
-            self.x_initResponse = (S3InitiateMultipartUploadResponse *)self.response;
+        if ([response isKindOfClass:[S3InitiateMultipartUploadResponse class]]) {
+            self.x_initResponse = (S3InitiateMultipartUploadResponse *) self.response;
             self.multipartUpload = self.x_initResponse.multipartUpload;
 
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -232,25 +212,21 @@ typedef void (^AbortMultipartUploadBlock)();
                 [self startUploadingParts];
             });
         }
-        else if([response isKindOfClass:[S3UploadPartResponse class]])
-        {
-            AMZLogDebug(@"UploadPart succeeded: %ld", (unsigned long)self.currentPartNo);
+        else if ([response isKindOfClass:[S3UploadPartResponse class]]) {
+            AMZLogDebug(@"UploadPart succeeded: %ld", (unsigned long) self.currentPartNo);
 
-            S3UploadPartResponse *uploadPartResponse = (S3UploadPartResponse *)self.response;
+            S3UploadPartResponse *uploadPartResponse = (S3UploadPartResponse *) self.response;
 
-            if(uploadPartResponse.etag == nil)
-            {
+            if (uploadPartResponse.etag == nil) {
                 [self.s3 completeMultipartUpload:self.completeRequest];
             }
-            else
-            {
+            else {
                 [self.completeRequest addPartWithPartNumber:self.currentPartNo withETag:uploadPartResponse.etag];
 
                 self.dataForPart = nil;
                 self.retryCount = 0;
 
-                if(self.currentPartNo < self.numberOfParts)
-                {
+                if (self.currentPartNo < self.numberOfParts) {
                     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
                     dispatch_async(queue, ^{
 
@@ -258,10 +234,8 @@ typedef void (^AbortMultipartUploadBlock)();
                         [self uploadPart:self.currentPartNo];
                     });
                 }
-                else
-                {
-                    if(self.request.stream)
-                    {
+                else {
+                    if (self.request.stream) {
                         [self.request.stream close];
                     }
 
@@ -269,10 +243,8 @@ typedef void (^AbortMultipartUploadBlock)();
                 }
             }
         }
-        else if([response isKindOfClass:[S3CompleteMultipartUploadResponse class]])
-        {
-            if([self.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)])
-            {
+        else if ([response isKindOfClass:[S3CompleteMultipartUploadResponse class]]) {
+            if ([self.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
                 [self.delegate request:request
                didCompleteWithResponse:response];
             }
@@ -282,14 +254,10 @@ typedef void (^AbortMultipartUploadBlock)();
     }
 }
 
-- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
-    if(!self.isFinished && self.isExecuting)
-    {
-        if([request isKindOfClass:[S3UploadPartRequest class]])
-        {
-            if([self.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)])
-            {
+- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    if (!self.isFinished && self.isExecuting) {
+        if ([request isKindOfClass:[S3UploadPartRequest class]]) {
+            if ([self.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
                 [self.delegate request:request
                            didSendData:bytesWritten
                      totalBytesWritten:(self.currentPartNo - 1) * self.partSize + totalBytesWritten
@@ -299,52 +267,44 @@ typedef void (^AbortMultipartUploadBlock)();
     }
 }
 
-- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error
-{
-    if(!self.isFinished && self.isExecuting)
-    {
+- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error {
+    if (!self.isFinished && self.isExecuting) {
         AMZLogDebug(@"Error: %@", error);
 
         self.error = error;
         self.exception = [AmazonServiceException exceptionWithMessage:[error description] andError:error];
 
-        if((self.s3.maxRetries > self.retryCount && (self.error || self.exception))
-           && [self.s3 shouldRetry:nil exception:self.exception]
-           && [self isExecuting])
-        {
+        if ((self.s3.maxRetries > self.retryCount && (self.error || self.exception))
+                && [self.s3 shouldRetry:nil exception:self.exception]
+                && [self isExecuting]) {
             AMZLogDebug(@"Retrying %@", [request class]);
 
             self.response = nil;
             self.retryCount++;
 
-            if([request isKindOfClass:[S3InitiateMultipartUploadRequest class]])
-            {
+            if ([request isKindOfClass:[S3InitiateMultipartUploadRequest class]]) {
                 [self.s3 initiateMultipartUpload:self.x_initRequest];
             }
-            else if([request isKindOfClass:[S3UploadPartRequest class]])
-            {
+            else if ([request isKindOfClass:[S3UploadPartRequest class]]) {
                 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
                 dispatch_async(queue, ^{
 
                     [self uploadPart:self.currentPartNo];
                 });
             }
-            else if([request isKindOfClass:[S3CompleteMultipartUploadRequest class]])
-            {
+            else if ([request isKindOfClass:[S3CompleteMultipartUploadRequest class]]) {
                 [self.s3 completeMultipartUpload:self.completeRequest];
             }
 
             return;
         }
 
-        if(self.abortMultipartUpload)
-        {
+        if (self.abortMultipartUpload) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             dispatch_async(queue, self.abortMultipartUpload);
         }
 
-        if([self.delegate respondsToSelector:@selector(request:didFailWithError:)])
-        {
+        if ([self.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
             [self.delegate request:request didFailWithError:error];
         }
 
@@ -352,51 +312,43 @@ typedef void (^AbortMultipartUploadBlock)();
     }
 }
 
-- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception
-{
-    if(!self.isFinished && self.isExecuting)
-    {
+- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception {
+    if (!self.isFinished && self.isExecuting) {
         AMZLogDebug(@"Exception: %@", exception);
 
         self.exception = exception;
 
-        if((self.s3.maxRetries > self.retryCount && (self.error || self.exception))
-           && [self.s3 shouldRetry:nil exception:self.exception]
-           && [self isExecuting])
-        {
+        if ((self.s3.maxRetries > self.retryCount && (self.error || self.exception))
+                && [self.s3 shouldRetry:nil exception:self.exception]
+                && [self isExecuting]) {
             AMZLogDebug(@"Retrying %@", [request class]);
 
             self.response = nil;
             self.retryCount++;
 
-            if([request isKindOfClass:[S3InitiateMultipartUploadRequest class]])
-            {
+            if ([request isKindOfClass:[S3InitiateMultipartUploadRequest class]]) {
                 [self.s3 initiateMultipartUpload:self.x_initRequest];
             }
-            else if([request isKindOfClass:[S3UploadPartRequest class]])
-            {
+            else if ([request isKindOfClass:[S3UploadPartRequest class]]) {
                 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
                 dispatch_async(queue, ^{
 
                     [self uploadPart:self.currentPartNo];
                 });
             }
-            else if([request isKindOfClass:[S3CompleteMultipartUploadRequest class]])
-            {
+            else if ([request isKindOfClass:[S3CompleteMultipartUploadRequest class]]) {
                 [self.s3 completeMultipartUpload:self.completeRequest];
             }
 
             return;
         }
 
-        if(self.abortMultipartUpload)
-        {
+        if (self.abortMultipartUpload) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             dispatch_async(queue, self.abortMultipartUpload);
         }
 
-        if([self.delegate respondsToSelector:@selector(request:didFailWithServiceException:)])
-        {
+        if ([self.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
             [self.delegate request:request didFailWithServiceException:exception];
         }
 
@@ -406,20 +358,18 @@ typedef void (^AbortMultipartUploadBlock)();
 
 #pragma mark - Helper Methods
 
-- (void)finish
-{
+- (void)finish {
     [self willChangeValueForKey:@"isExecuting"];
     [self willChangeValueForKey:@"isFinished"];
 
     _isExecuting = NO;
-    _isFinished  = YES;
+    _isFinished = YES;
 
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];
 }
 
-- (NSRange)getDataRange:(int)partNo withContentLength:(NSInteger)contentLength
-{
+- (NSRange)getDataRange:(int)partNo withContentLength:(NSInteger)contentLength {
     NSRange range;
     range.length = self.partSize;
     range.location = (partNo - 1) * self.partSize;
@@ -432,21 +382,17 @@ typedef void (^AbortMultipartUploadBlock)();
     return range;
 }
 
-- (NSUInteger)contentLengthForRequest:(S3PutObjectRequest *)request
-{
-    if(request.data != nil)
-    {
+- (NSUInteger)contentLengthForRequest:(S3PutObjectRequest *)request {
+    if (request.data != nil) {
         return self.request.data.length;
     }
-    else
-    {
+    else {
         return request.contentLength;
     }
 }
 
-- (NSUInteger)numberOfParts:(NSUInteger)contentLength
-{
-    return (NSUInteger)ceil((double)contentLength / self.partSize);
+- (NSUInteger)numberOfParts:(NSUInteger)contentLength {
+    return (NSUInteger) ceil((double) contentLength / self.partSize);
 }
 
 #pragma mark -

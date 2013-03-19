@@ -23,10 +23,8 @@
 @implementation DynamoDBPutRequestUnmarshaller
 
 
-+(DynamoDBPutRequest *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBPutRequest *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBPutRequest *putRequest = [[DynamoDBPutRequest alloc] init];
-
 
 
     NSDictionary *itemObject = [jsonObject valueForKey:@"Item"];

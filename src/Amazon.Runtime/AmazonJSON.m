@@ -17,10 +17,9 @@
 
 @implementation AmazonJSON
 
-+(NSString *)JSONRepresentation:(NSObject *)object
-{
++ (NSString *)JSONRepresentation:(NSObject *)object {
     AWS_SBJsonWriter *writer = [[AWS_SBJsonWriter alloc] init];
-    NSString     *json   = [writer stringWithObject:object];
+    NSString *json = [writer stringWithObject:object];
 
     if (!json) {
         AMZLog(@"-[AmazonJSON JSONRepresentation:json] failed. Error is: %@", writer.error);
@@ -28,10 +27,9 @@
     return json;
 }
 
-+(id)JSONValue:(NSString *)jsonString
-{
++ (id)JSONValue:(NSString *)jsonString {
     AWS_SBJsonParser *parser = [[AWS_SBJsonParser alloc] init];
-    id           repr    = [parser objectWithString:jsonString];
+    id repr = [parser objectWithString:jsonString];
 
     if (!repr) {
         AMZLog(@"-JSONValue failed. Error is: %@", parser.error);

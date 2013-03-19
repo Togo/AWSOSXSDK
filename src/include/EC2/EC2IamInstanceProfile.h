@@ -20,21 +20,17 @@
  * Iam Instance Profile
  */
 
-@interface EC2IamInstanceProfile:NSObject
-
-{
+@interface EC2IamInstanceProfile : NSObject {
     NSString *arn;
     NSString *idValue;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Arn property for this object.
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

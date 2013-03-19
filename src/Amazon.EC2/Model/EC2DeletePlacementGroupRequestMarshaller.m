@@ -17,12 +17,11 @@
 
 @implementation EC2DeletePlacementGroupRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeletePlacementGroup"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeletePlacementGroup" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deletePlacementGroupRequest delegate]];
     [request setCredentials:[deletePlacementGroupRequest credentials]];

@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeBundleTasksRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeBundleTasks"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeBundleTasks" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeBundleTasksRequest delegate]];
     [request setCredentials:[describeBundleTasksRequest credentials]];

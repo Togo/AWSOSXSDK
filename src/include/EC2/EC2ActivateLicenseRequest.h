@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Activate License Request
  */
 
-@interface EC2ActivateLicenseRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ActivateLicenseRequest : AmazonServiceRequestConfig {
     NSString *licenseId;
     NSNumber *capacity;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new ActivateLicenseRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ActivateLicenseRequest object.
@@ -57,7 +53,7 @@
  * @param theCapacity Specifies the additional number of licenses to
  * activate.
  */
--(id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity;
+- (id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

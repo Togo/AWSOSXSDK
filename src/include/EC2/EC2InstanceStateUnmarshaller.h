@@ -23,7 +23,7 @@
 /**
  * Instance State Unmarshaller
  */
-@interface EC2InstanceStateUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2InstanceStateUnmarshaller : EC2ResponseUnmarshaller {
     EC2InstanceState *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2InstanceState *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

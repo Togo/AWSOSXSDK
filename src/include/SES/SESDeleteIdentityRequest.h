@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Identity Request
  */
 
-@interface SESDeleteIdentityRequest:AmazonServiceRequestConfig
-
-{
+@interface SESDeleteIdentityRequest : AmazonServiceRequestConfig {
     NSString *identity;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identity to be removed from the list of identities for the AWS
@@ -49,7 +44,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

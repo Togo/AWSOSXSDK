@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Update Table Request
  */
 
-@interface DynamoDBUpdateTableRequest:AmazonServiceRequestConfig
-
-{
-    NSString                      *tableName;
+@interface DynamoDBUpdateTableRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
     DynamoDBProvisionedThroughput *provisionedThroughput;
 }
-
 
 
 /**
@@ -61,7 +57,7 @@
  * Default constructor for a new UpdateTableRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new UpdateTableRequest object.
@@ -81,7 +77,7 @@
  * the value, etc. Eventually-consistent reads consume half the resources
  * of strictly consistent reads.
  */
--(id)initWithTableName:(NSString *)theTableName andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput;
+- (id)initWithTableName:(NSString *)theTableName andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -89,7 +85,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

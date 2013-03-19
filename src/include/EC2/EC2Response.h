@@ -22,10 +22,11 @@
 /**
  *
  */
-@interface EC2Response:AmazonServiceResponse {
+@interface EC2Response : AmazonServiceResponse {
 }
 
--(void)populateReservationSecurityGroupNames:(EC2Reservation *)reservation;
--(void)populateLaunchSpecificationSecurityGroupNames:(EC2LaunchSpecification *)launchSpecification;
+- (void)populateReservationSecurityGroupNames:(EC2Reservation *)reservation;
+
+- (void)populateLaunchSpecificationSecurityGroupNames:(EC2LaunchSpecification *)launchSpecification;
 
 @end

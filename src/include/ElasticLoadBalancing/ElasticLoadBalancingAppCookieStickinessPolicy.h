@@ -20,13 +20,10 @@
  * App Cookie Stickiness Policy
  */
 
-@interface ElasticLoadBalancingAppCookieStickinessPolicy:NSObject
-
-{
+@interface ElasticLoadBalancingAppCookieStickinessPolicy : NSObject {
     NSString *policyName;
     NSString *cookieName;
 }
-
 
 
 /**
@@ -45,7 +42,7 @@
  * Default constructor for a new AppCookieStickinessPolicy object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AppCookieStickinessPolicy object.
@@ -57,7 +54,7 @@
  * @param theCookieName The name of the application cookie used for
  * stickiness.
  */
--(id)initWithPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName;
+- (id)initWithPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

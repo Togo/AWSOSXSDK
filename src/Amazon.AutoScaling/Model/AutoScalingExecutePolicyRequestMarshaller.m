@@ -17,12 +17,11 @@
 
 @implementation AutoScalingExecutePolicyRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingExecutePolicyRequest *)executePolicyRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingExecutePolicyRequest *)executePolicyRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"ExecutePolicy"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"ExecutePolicy" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[executePolicyRequest delegate]];
     [request setCredentials:[executePolicyRequest credentials]];
@@ -41,7 +40,7 @@
     }
     if (executePolicyRequest != nil) {
         if (executePolicyRequest.honorCooldownIsSet) {
-            [request setParameterValue:(executePolicyRequest.honorCooldown ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"HonorCooldown"]];
+            [request setParameterValue:(executePolicyRequest.honorCooldown ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"HonorCooldown"]];
         }
     }
 

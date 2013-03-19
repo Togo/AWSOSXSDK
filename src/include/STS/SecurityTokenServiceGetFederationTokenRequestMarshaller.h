@@ -22,11 +22,11 @@
 /**
  * Get Federation Token Request Marshaller
  */
-@interface SecurityTokenServiceGetFederationTokenRequestMarshaller:NSObject {
+@interface SecurityTokenServiceGetFederationTokenRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest;
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation SESDeleteVerifiedEmailAddressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"DeleteVerifiedEmailAddress"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteVerifiedEmailAddress" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[deleteVerifiedEmailAddressRequest delegate]];
     [request setCredentials:[deleteVerifiedEmailAddressRequest credentials]];

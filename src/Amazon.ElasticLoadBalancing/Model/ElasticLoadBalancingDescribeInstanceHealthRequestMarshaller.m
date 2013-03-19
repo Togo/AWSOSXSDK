@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingDescribeInstanceHealthRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeInstanceHealth"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeInstanceHealth" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[describeInstanceHealthRequest delegate]];
     [request setCredentials:[describeInstanceHealthRequest credentials]];

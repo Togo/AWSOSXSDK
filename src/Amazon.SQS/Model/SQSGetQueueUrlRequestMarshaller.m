@@ -17,12 +17,11 @@
 
 @implementation SQSGetQueueUrlRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSGetQueueUrlRequest *)getQueueUrlRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSGetQueueUrlRequest *)getQueueUrlRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"GetQueueUrl"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"GetQueueUrl" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[getQueueUrlRequest delegate]];
     [request setCredentials:[getQueueUrlRequest credentials]];

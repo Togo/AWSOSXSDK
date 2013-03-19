@@ -17,12 +17,11 @@
 
 @implementation CloudWatchPutMetricDataRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchPutMetricDataRequest *)putMetricDataRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchPutMetricDataRequest *)putMetricDataRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"PutMetricData"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"PutMetricData" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[putMetricDataRequest delegate]];
     [request setCredentials:[putMetricDataRequest credentials]];

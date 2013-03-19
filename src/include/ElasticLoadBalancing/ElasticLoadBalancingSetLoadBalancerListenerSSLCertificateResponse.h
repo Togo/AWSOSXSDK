@@ -24,8 +24,7 @@
 /**
  * Set Load Balancer Listener S S L Certificate
  */
-@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse:ElasticLoadBalancingResponse
-{
+@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse : ElasticLoadBalancingResponse {
 }
 
 @end

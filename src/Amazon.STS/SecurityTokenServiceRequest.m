@@ -18,7 +18,7 @@
 
 @implementation SecurityTokenServiceRequest
 
--(void)sign {
+- (void)sign {
     // headers to sign
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     [headers setObject:self.hostName forKey:@"Host"];

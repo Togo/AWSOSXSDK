@@ -24,8 +24,7 @@
 /**
  * Delete Topic
  */
-@interface SNSDeleteTopicResponse:SNSResponse
-{
+@interface SNSDeleteTopicResponse : SNSResponse {
 }
 
 @end

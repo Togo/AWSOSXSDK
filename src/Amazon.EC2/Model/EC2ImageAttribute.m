@@ -27,15 +27,14 @@
 @synthesize blockDeviceMappings;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId             = nil;
-        launchPermissions   = [[NSMutableArray alloc] initWithCapacity:1];
-        productCodes        = [[NSMutableArray alloc] initWithCapacity:1];
-        kernelId            = nil;
-        ramdiskId           = nil;
-        descriptionValue    = nil;
+        imageId = nil;
+        launchPermissions = [[NSMutableArray alloc] initWithCapacity:1];
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
+        kernelId = nil;
+        ramdiskId = nil;
+        descriptionValue = nil;
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -43,8 +42,7 @@
 }
 
 
--(void)addLaunchPermission:(EC2LaunchPermission *)launchPermissionObject
-{
+- (void)addLaunchPermission:(EC2LaunchPermission *)launchPermissionObject {
     if (launchPermissions == nil) {
         launchPermissions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +50,7 @@
     [launchPermissions addObject:launchPermissionObject];
 }
 
--(void)addProductCode:(EC2ProductCode *)productCodeObject
-{
+- (void)addProductCode:(EC2ProductCode *)productCodeObject {
     if (productCodes == nil) {
         productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +58,7 @@
     [productCodes addObject:productCodeObject];
 }
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -71,8 +67,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -88,9 +83,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

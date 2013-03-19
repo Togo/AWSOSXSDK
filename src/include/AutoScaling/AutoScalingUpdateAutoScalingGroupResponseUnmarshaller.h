@@ -16,17 +16,17 @@
 #import "AutoScalingUpdateAutoScalingGroupResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingUpdateAutoScalingGroupResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingUpdateAutoScalingGroupResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingUpdateAutoScalingGroupResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingUpdateAutoScalingGroupResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingUpdateAutoScalingGroupResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingUpdateAutoScalingGroupResponse *)response;
 
 @end

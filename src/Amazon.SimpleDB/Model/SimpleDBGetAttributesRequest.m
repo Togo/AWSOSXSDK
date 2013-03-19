@@ -25,32 +25,29 @@
 @synthesize consistentReadIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        domainName          = nil;
-        itemName            = nil;
-        attributeNames      = [[NSMutableArray alloc] initWithCapacity:1];
-        consistentRead      = NO;
+        domainName = nil;
+        itemName = nil;
+        attributeNames = [[NSMutableArray alloc] initWithCapacity:1];
+        consistentRead = NO;
         consistentReadIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName
-{
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName {
     if (self = [self init]) {
         self.domainName = theDomainName;
-        self.itemName   = theItemName;
+        self.itemName = theItemName;
     }
 
     return self;
 }
 
 
--(void)addAttributeName:(NSString *)attributeNameObject
-{
+- (void)addAttributeName:(NSString *)attributeNameObject {
     if (attributeNames == nil) {
         attributeNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -59,8 +56,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -75,13 +71,10 @@
 }
 
 
--(void)setConsistentRead:(bool)theValue
-{
-    consistentRead      = theValue;
+- (void)setConsistentRead:(bool)theValue {
+    consistentRead = theValue;
     consistentReadIsSet = YES;
 }
-
-
 
 
 @end

@@ -24,22 +24,19 @@
 @synthesize exportToS3Task;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        descriptionValue  = nil;
-        instanceId        = nil;
+        descriptionValue = nil;
+        instanceId = nil;
         targetEnvironment = nil;
-        exportToS3Task    = nil;
+        exportToS3Task = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

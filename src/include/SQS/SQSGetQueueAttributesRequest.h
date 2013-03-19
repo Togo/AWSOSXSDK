@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Queue Attributes Request
  */
 
-@interface SQSGetQueueAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *queueUrl;
+@interface SQSGetQueueAttributesRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
     NSMutableArray *attributeNames;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new GetQueueAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetQueueAttributesRequest object.
@@ -54,13 +50,13 @@
  *
  * @param theQueueUrl The URL of the SQS queue to take action on.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl;
 
 /**
  * Adds a single object to attributeNames.
  * This function will alloc and init attributeNames if not already done.
  */
--(void)addAttributeName:(NSString *)attributeNameObject;
+- (void)addAttributeName:(NSString *)attributeNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

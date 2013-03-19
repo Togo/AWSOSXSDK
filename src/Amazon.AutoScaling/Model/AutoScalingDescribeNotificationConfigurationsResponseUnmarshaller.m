@@ -19,20 +19,18 @@
 @implementation AutoScalingDescribeNotificationConfigurationsResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"NotificationConfigurations"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.notificationConfigurations withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"NotificationConfigurations";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AutoScalingNotificationConfigurationUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AutoScalingNotificationConfigurationUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -63,14 +60,12 @@
     }
 }
 
--(AutoScalingDescribeNotificationConfigurationsResponse *)response
-{
+- (AutoScalingDescribeNotificationConfigurationsResponse *)response {
     if (nil == response) {
         response = [[AutoScalingDescribeNotificationConfigurationsResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

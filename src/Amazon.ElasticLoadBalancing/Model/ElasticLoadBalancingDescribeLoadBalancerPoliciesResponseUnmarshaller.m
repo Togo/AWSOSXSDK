@@ -19,20 +19,18 @@
 @implementation ElasticLoadBalancingDescribeLoadBalancerPoliciesResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"PolicyDescriptions"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.policyDescriptions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"PolicyDescriptions";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [ElasticLoadBalancingPolicyDescriptionUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [ElasticLoadBalancingPolicyDescriptionUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -58,14 +55,12 @@
     }
 }
 
--(ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse *)response
-{
+- (ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse *)response {
     if (nil == response) {
         response = [[ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

@@ -23,7 +23,7 @@
 /**
  * Group Identifier Unmarshaller
  */
-@interface EC2GroupIdentifierUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2GroupIdentifierUnmarshaller : EC2ResponseUnmarshaller {
     EC2GroupIdentifier *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2GroupIdentifier *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

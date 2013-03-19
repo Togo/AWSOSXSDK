@@ -17,12 +17,11 @@
 
 @implementation EC2ModifyImageAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ModifyImageAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ModifyImageAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[modifyImageAttributeRequest delegate]];
     [request setCredentials:[modifyImageAttributeRequest credentials]];

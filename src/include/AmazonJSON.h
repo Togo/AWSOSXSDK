@@ -16,10 +16,11 @@
 #import <Foundation/Foundation.h>
 #import "AWS_SBJson.h"
 
-@interface AmazonJSON:NSObject {
+@interface AmazonJSON : NSObject {
 }
 
-+(NSString *)JSONRepresentation:(NSObject *)object;
-+(id)JSONValue:(NSString *)jsonString;
++ (NSString *)JSONRepresentation:(NSObject *)object;
+
++ (id)JSONValue:(NSString *)jsonString;
 
 @end

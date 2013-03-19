@@ -23,19 +23,17 @@
 @synthesize forceIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
-        force       = NO;
-        forceIsSet  = NO;
+        force = NO;
+        forceIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds
-{
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds {
     if (self = [self init]) {
         self.instanceIds = theInstanceIds;
     }
@@ -44,8 +42,7 @@
 }
 
 
--(void)addInstanceId:(NSString *)instanceIdObject
-{
+- (void)addInstanceId:(NSString *)instanceIdObject {
     if (instanceIds == nil) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -54,8 +51,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -68,13 +64,10 @@
 }
 
 
--(void)setForce:(bool)theValue
-{
-    force      = theValue;
+- (void)setForce:(bool)theValue {
+    force = theValue;
     forceIsSet = YES;
 }
-
-
 
 
 @end

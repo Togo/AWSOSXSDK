@@ -27,11 +27,11 @@
 /**
  * Create Launch Configuration Request Marshaller
  */
-@interface AutoScalingCreateLaunchConfigurationRequestMarshaller:NSObject {
+@interface AutoScalingCreateLaunchConfigurationRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest;
 
 
 @end

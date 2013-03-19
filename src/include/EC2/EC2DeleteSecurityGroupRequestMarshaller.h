@@ -22,11 +22,11 @@
 /**
  * Delete Security Group Request Marshaller
  */
-@interface EC2DeleteSecurityGroupRequestMarshaller:NSObject {
+@interface EC2DeleteSecurityGroupRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest;
 
 
 @end

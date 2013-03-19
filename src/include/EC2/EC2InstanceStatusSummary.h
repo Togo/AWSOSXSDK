@@ -16,26 +16,21 @@
 #import "EC2InstanceStatusDetails.h"
 
 
-
 /**
  * Instance Status Summary
  */
 
-@interface EC2InstanceStatusSummary:NSObject
-
-{
-    NSString       *status;
+@interface EC2InstanceStatusSummary : NSObject {
+    NSString *status;
     NSMutableArray *details;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Status property for this object.
@@ -51,7 +46,7 @@
  * Adds a single object to details.
  * This function will alloc and init details if not already done.
  */
--(void)addDetail:(EC2InstanceStatusDetails *)detailObject;
+- (void)addDetail:(EC2InstanceStatusDetails *)detailObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

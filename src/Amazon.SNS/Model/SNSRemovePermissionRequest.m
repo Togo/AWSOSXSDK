@@ -22,30 +22,26 @@
 @synthesize label;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         topicArn = nil;
-        label    = nil;
+        label = nil;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
-        self.label    = theLabel;
+        self.label = theLabel;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

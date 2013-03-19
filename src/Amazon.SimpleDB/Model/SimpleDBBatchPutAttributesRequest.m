@@ -22,29 +22,26 @@
 @synthesize items;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         domainName = nil;
-        items      = [[NSMutableArray alloc] initWithCapacity:1];
+        items = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithDomainName:(NSString *)theDomainName andItems:(NSMutableArray *)theItems
-{
+- (id)initWithDomainName:(NSString *)theDomainName andItems:(NSMutableArray *)theItems {
     if (self = [self init]) {
         self.domainName = theDomainName;
-        self.items      = theItems;
+        self.items = theItems;
     }
 
     return self;
 }
 
 
--(void)addItem:(SimpleDBReplaceableItem *)itemObject
-{
+- (void)addItem:(SimpleDBReplaceableItem *)itemObject {
     if (items == nil) {
         items = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

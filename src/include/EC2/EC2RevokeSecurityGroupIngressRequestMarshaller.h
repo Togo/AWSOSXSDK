@@ -24,11 +24,11 @@
 /**
  * Revoke Security Group Ingress Request Marshaller
  */
-@interface EC2RevokeSecurityGroupIngressRequestMarshaller:NSObject {
+@interface EC2RevokeSecurityGroupIngressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest;
 
 
 @end

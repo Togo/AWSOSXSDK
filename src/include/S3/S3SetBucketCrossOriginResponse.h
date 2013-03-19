@@ -18,6 +18,6 @@
 
 /** Contains all the information about the SetBucketCrossOriginResponse operation.
  */
-@interface S3SetBucketCrossOriginResponse:S3Response
+@interface S3SetBucketCrossOriginResponse : S3Response
 
 @end

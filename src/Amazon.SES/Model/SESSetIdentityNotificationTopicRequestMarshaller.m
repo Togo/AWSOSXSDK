@@ -17,12 +17,11 @@
 
 @implementation SESSetIdentityNotificationTopicRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"SetIdentityNotificationTopic"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetIdentityNotificationTopic" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[setIdentityNotificationTopicRequest delegate]];
     [request setCredentials:[setIdentityNotificationTopicRequest credentials]];

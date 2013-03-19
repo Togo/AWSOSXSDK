@@ -26,63 +26,58 @@
 #import "EC2IamInstanceProfile.h"
 
 
-
 /**
  * Instance
  */
 
-@interface EC2Instance:NSObject
-
-{
-    NSString              *instanceId;
-    NSString              *imageId;
-    EC2InstanceState      *state;
-    NSString              *privateDnsName;
-    NSString              *publicDnsName;
-    NSString              *stateTransitionReason;
-    NSString              *keyName;
-    NSNumber              *amiLaunchIndex;
-    NSMutableArray        *productCodes;
-    NSString              *instanceType;
-    NSDate                *launchTime;
-    EC2Placement          *placement;
-    NSString              *kernelId;
-    NSString              *ramdiskId;
-    NSString              *platform;
-    EC2Monitoring         *monitoring;
-    NSString              *subnetId;
-    NSString              *vpcId;
-    NSString              *privateIpAddress;
-    NSString              *publicIpAddress;
-    EC2StateReason        *stateReason;
-    NSString              *architecture;
-    NSString              *rootDeviceType;
-    NSString              *rootDeviceName;
-    NSMutableArray        *blockDeviceMappings;
-    NSString              *virtualizationType;
-    NSString              *instanceLifecycle;
-    NSString              *spotInstanceRequestId;
-    EC2InstanceLicense    *license;
-    NSString              *clientToken;
-    NSMutableArray        *tags;
-    NSMutableArray        *securityGroups;
-    bool                  sourceDestCheck;
-    bool                  sourceDestCheckIsSet;
-    NSString              *hypervisor;
-    NSMutableArray        *networkInterfaces;
+@interface EC2Instance : NSObject {
+    NSString *instanceId;
+    NSString *imageId;
+    EC2InstanceState *state;
+    NSString *privateDnsName;
+    NSString *publicDnsName;
+    NSString *stateTransitionReason;
+    NSString *keyName;
+    NSNumber *amiLaunchIndex;
+    NSMutableArray *productCodes;
+    NSString *instanceType;
+    NSDate *launchTime;
+    EC2Placement *placement;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSString *platform;
+    EC2Monitoring *monitoring;
+    NSString *subnetId;
+    NSString *vpcId;
+    NSString *privateIpAddress;
+    NSString *publicIpAddress;
+    EC2StateReason *stateReason;
+    NSString *architecture;
+    NSString *rootDeviceType;
+    NSString *rootDeviceName;
+    NSMutableArray *blockDeviceMappings;
+    NSString *virtualizationType;
+    NSString *instanceLifecycle;
+    NSString *spotInstanceRequestId;
+    EC2InstanceLicense *license;
+    NSString *clientToken;
+    NSMutableArray *tags;
+    NSMutableArray *securityGroups;
+    bool sourceDestCheck;
+    bool sourceDestCheckIsSet;
+    NSString *hypervisor;
+    NSMutableArray *networkInterfaces;
     EC2IamInstanceProfile *iamInstanceProfile;
-    bool                  ebsOptimized;
-    bool                  ebsOptimizedIsSet;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Unique ID of the instance launched.
@@ -266,7 +261,7 @@
 /**
  * The value of the SourceDestCheck property for this object.
  */
-@property (nonatomic) bool           sourceDestCheck;
+@property (nonatomic) bool sourceDestCheck;
 
 @property (nonatomic, readonly) bool sourceDestCheckIsSet;
 
@@ -291,7 +286,7 @@
 /**
  * The value of the EbsOptimized property for this object.
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -299,31 +294,31 @@
  * Adds a single object to productCodes.
  * This function will alloc and init productCodes if not already done.
  */
--(void)addProductCode:(EC2ProductCode *)productCodeObject;
+- (void)addProductCode:(EC2ProductCode *)productCodeObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(EC2GroupIdentifier *)securityGroupObject;
+- (void)addSecurityGroup:(EC2GroupIdentifier *)securityGroupObject;
 
 /**
  * Adds a single object to networkInterfaces.
  * This function will alloc and init networkInterfaces if not already done.
  */
--(void)addNetworkInterface:(EC2InstanceNetworkInterface *)networkInterfaceObject;
+- (void)addNetworkInterface:(EC2InstanceNetworkInterface *)networkInterfaceObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -331,7 +326,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

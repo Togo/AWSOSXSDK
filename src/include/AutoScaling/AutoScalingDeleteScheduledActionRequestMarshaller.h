@@ -22,11 +22,11 @@
 /**
  * Delete Scheduled Action Request Marshaller
  */
-@interface AutoScalingDeleteScheduledActionRequestMarshaller:NSObject {
+@interface AutoScalingDeleteScheduledActionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest;
 
 
 @end

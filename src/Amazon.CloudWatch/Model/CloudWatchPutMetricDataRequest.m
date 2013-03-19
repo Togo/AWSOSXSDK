@@ -22,10 +22,9 @@
 @synthesize metricDatas;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        namespace   = nil;
+        namespace = nil;
         metricDatas = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addMetricData:(CloudWatchMetricDatum *)metricDataObject
-{
+- (void)addMetricData:(CloudWatchMetricDatum *)metricDataObject {
     if (metricDatas == nil) {
         metricDatas = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

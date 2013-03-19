@@ -20,8 +20,7 @@
 /**
  * Create Placement Group
  */
-@interface EC2CreatePlacementGroupResponse:EC2Response
-{
+@interface EC2CreatePlacementGroupResponse : EC2Response {
 }
 
 @end

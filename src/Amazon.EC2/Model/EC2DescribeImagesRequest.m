@@ -24,21 +24,19 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageIds        = [[NSMutableArray alloc] initWithCapacity:1];
-        owners          = [[NSMutableArray alloc] initWithCapacity:1];
+        imageIds = [[NSMutableArray alloc] initWithCapacity:1];
+        owners = [[NSMutableArray alloc] initWithCapacity:1];
         executableUsers = [[NSMutableArray alloc] initWithCapacity:1];
-        filters         = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addImageId:(NSString *)imageIdObject
-{
+- (void)addImageId:(NSString *)imageIdObject {
     if (imageIds == nil) {
         imageIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -46,8 +44,7 @@
     [imageIds addObject:imageIdObject];
 }
 
--(void)addOwner:(NSString *)ownerObject
-{
+- (void)addOwner:(NSString *)ownerObject {
     if (owners == nil) {
         owners = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -55,8 +52,7 @@
     [owners addObject:ownerObject];
 }
 
--(void)addExecutableUser:(NSString *)executableUserObject
-{
+- (void)addExecutableUser:(NSString *)executableUserObject {
     if (executableUsers == nil) {
         executableUsers = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -64,8 +60,7 @@
     [executableUsers addObject:executableUserObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -74,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -88,9 +82,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

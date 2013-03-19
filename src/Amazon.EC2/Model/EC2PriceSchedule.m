@@ -25,23 +25,20 @@
 @synthesize activeIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        term         = nil;
-        price        = nil;
+        term = nil;
+        price = nil;
         currencyCode = nil;
-        active       = NO;
-        activeIsSet  = NO;
+        active = NO;
+        activeIsSet = NO;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,13 +53,10 @@
 }
 
 
--(void)setActive:(bool)theValue
-{
-    active      = theValue;
+- (void)setActive:(bool)theValue {
+    active = theValue;
     activeIsSet = YES;
 }
-
-
 
 
 @end

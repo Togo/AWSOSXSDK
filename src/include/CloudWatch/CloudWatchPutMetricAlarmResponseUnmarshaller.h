@@ -16,17 +16,17 @@
 #import "CloudWatchPutMetricAlarmResponse.h"
 #import "CloudWatchResponseUnmarshaller.h"
 
-@interface CloudWatchPutMetricAlarmResponseUnmarshaller:CloudWatchResponseUnmarshaller
-{
+@interface CloudWatchPutMetricAlarmResponseUnmarshaller : CloudWatchResponseUnmarshaller {
     CloudWatchPutMetricAlarmResponse *response;
 }
 
 @property (weak, nonatomic, readonly) CloudWatchPutMetricAlarmResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(CloudWatchPutMetricAlarmResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (CloudWatchPutMetricAlarmResponse *)response;
 
 @end

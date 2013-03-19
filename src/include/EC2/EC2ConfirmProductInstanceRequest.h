@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Confirm Product Instance Request
  */
 
-@interface EC2ConfirmProductInstanceRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ConfirmProductInstanceRequest : AmazonServiceRequestConfig {
     NSString *productCode;
     NSString *instanceId;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new ConfirmProductInstanceRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ConfirmProductInstanceRequest object.
@@ -55,7 +51,7 @@
  * @param theProductCode The product code to confirm.
  * @param theInstanceId The ID of the instance to confirm.
  */
--(id)initWithProductCode:(NSString *)theProductCode andInstanceId:(NSString *)theInstanceId;
+- (id)initWithProductCode:(NSString *)theProductCode andInstanceId:(NSString *)theInstanceId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

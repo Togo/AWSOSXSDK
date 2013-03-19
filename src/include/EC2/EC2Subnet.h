@@ -16,35 +16,30 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Subnet
  */
 
-@interface EC2Subnet:NSObject
-
-{
-    NSString       *subnetId;
-    NSString       *state;
-    NSString       *vpcId;
-    NSString       *cidrBlock;
-    NSNumber       *availableIpAddressCount;
-    NSString       *availabilityZone;
-    bool           defaultForAz;
-    bool           defaultForAzIsSet;
-    bool           mapPublicIpOnLaunch;
-    bool           mapPublicIpOnLaunchIsSet;
+@interface EC2Subnet : NSObject {
+    NSString *subnetId;
+    NSString *state;
+    NSString *vpcId;
+    NSString *cidrBlock;
+    NSNumber *availableIpAddressCount;
+    NSString *availabilityZone;
+    bool defaultForAz;
+    bool defaultForAzIsSet;
+    bool mapPublicIpOnLaunch;
+    bool mapPublicIpOnLaunchIsSet;
     NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the ID of the subnet.
@@ -82,14 +77,14 @@
 /**
  * The value of the DefaultForAz property for this object.
  */
-@property (nonatomic) bool           defaultForAz;
+@property (nonatomic) bool defaultForAz;
 
 @property (nonatomic, readonly) bool defaultForAzIsSet;
 
 /**
  * The value of the MapPublicIpOnLaunch property for this object.
  */
-@property (nonatomic) bool           mapPublicIpOnLaunch;
+@property (nonatomic) bool mapPublicIpOnLaunch;
 
 @property (nonatomic, readonly) bool mapPublicIpOnLaunchIsSet;
 
@@ -102,7 +97,7 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -110,7 +105,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

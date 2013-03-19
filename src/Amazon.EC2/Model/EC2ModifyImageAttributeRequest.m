@@ -29,16 +29,15 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId          = nil;
-        attribute        = nil;
-        operationType    = nil;
-        userIds          = [[NSMutableArray alloc] initWithCapacity:1];
-        userGroups       = [[NSMutableArray alloc] initWithCapacity:1];
-        productCodes     = [[NSMutableArray alloc] initWithCapacity:1];
-        value            = nil;
+        imageId = nil;
+        attribute = nil;
+        operationType = nil;
+        userIds = [[NSMutableArray alloc] initWithCapacity:1];
+        userGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
+        value = nil;
         launchPermission = nil;
         descriptionValue = nil;
     }
@@ -46,10 +45,9 @@
     return self;
 }
 
--(id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute
-{
+- (id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute {
     if (self = [self init]) {
-        self.imageId   = theImageId;
+        self.imageId = theImageId;
         self.attribute = theAttribute;
     }
 
@@ -57,8 +55,7 @@
 }
 
 
--(void)addUserId:(NSString *)userIdObject
-{
+- (void)addUserId:(NSString *)userIdObject {
     if (userIds == nil) {
         userIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +63,7 @@
     [userIds addObject:userIdObject];
 }
 
--(void)addUserGroup:(NSString *)userGroupObject
-{
+- (void)addUserGroup:(NSString *)userGroupObject {
     if (userGroups == nil) {
         userGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -75,8 +71,7 @@
     [userGroups addObject:userGroupObject];
 }
 
--(void)addProductCode:(NSString *)productCodeObject
-{
+- (void)addProductCode:(NSString *)productCodeObject {
     if (productCodes == nil) {
         productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -85,8 +80,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -104,9 +98,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

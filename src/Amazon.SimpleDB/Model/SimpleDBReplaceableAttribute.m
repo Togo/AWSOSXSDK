@@ -24,23 +24,21 @@
 @synthesize replaceIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        name         = nil;
-        value        = nil;
-        replace      = NO;
+        name = nil;
+        value = nil;
+        replace = NO;
         replaceIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue andReplace:(bool)theReplace
-{
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue andReplace:(bool)theReplace {
     if (self = [self init]) {
-        self.name    = theName;
-        self.value   = theValue;
+        self.name = theName;
+        self.value = theValue;
         self.replace = theReplace;
     }
 
@@ -48,9 +46,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,13 +60,10 @@
 }
 
 
--(void)setReplace:(bool)theValue
-{
-    replace      = theValue;
+- (void)setReplace:(bool)theValue {
+    replace = theValue;
     replaceIsSet = YES;
 }
-
-
 
 
 @end

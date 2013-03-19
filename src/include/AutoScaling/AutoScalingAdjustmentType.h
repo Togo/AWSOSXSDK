@@ -20,20 +20,16 @@
  * Adjustment Type
  */
 
-@interface AutoScalingAdjustmentType:NSObject
-
-{
+@interface AutoScalingAdjustmentType : NSObject {
     NSString *adjustmentType;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A policy adjustment type. Valid values are
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

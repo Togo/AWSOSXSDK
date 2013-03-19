@@ -51,17 +51,20 @@
  * For more information on how to host a website on Amazon S3, see:
  * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
  */
-@interface BucketWebsiteConfiguration:NSObject
-{
+@interface BucketWebsiteConfiguration : NSObject {
     NSString *indexDocumentSuffix;
     NSString *errorDocument;
 }
 
--(id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument;
--(id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix;
-+(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument;
-+(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix;
--(NSString *)toXml;
+- (id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument;
+
+- (id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix;
+
++ (id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument;
+
++ (id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix;
+
+- (NSString *)toXml;
 
 /**
  * The document to serve when a directory is specified (ex: index.html).

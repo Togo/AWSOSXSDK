@@ -19,8 +19,7 @@
 /** Contains the response from a putObject operation.
  *
  */
-@interface S3PutObjectResponse:S3Response
-{
+@interface S3PutObjectResponse : S3Response {
 }
 
 @end

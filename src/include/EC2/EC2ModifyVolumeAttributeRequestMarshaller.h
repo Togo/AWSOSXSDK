@@ -22,11 +22,11 @@
 /**
  * Modify Volume Attribute Request Marshaller
  */
-@interface EC2ModifyVolumeAttributeRequestMarshaller:NSObject {
+@interface EC2ModifyVolumeAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest;
 
 
 @end

@@ -22,42 +22,38 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Run Instances Request
  */
 
-@interface EC2RunInstancesRequest:AmazonServiceRequestConfig
-
-{
-    NSString                           *imageId;
-    NSNumber                           *minCount;
-    NSNumber                           *maxCount;
-    NSString                           *keyName;
-    NSMutableArray                     *securityGroups;
-    NSMutableArray                     *securityGroupIds;
-    NSString                           *userData;
-    NSString                           *instanceType;
-    EC2Placement                       *placement;
-    NSString                           *kernelId;
-    NSString                           *ramdiskId;
-    NSMutableArray                     *blockDeviceMappings;
-    bool                               monitoring;
-    bool                               monitoringIsSet;
-    NSString                           *subnetId;
-    bool                               disableApiTermination;
-    bool                               disableApiTerminationIsSet;
-    NSString                           *instanceInitiatedShutdownBehavior;
-    EC2InstanceLicenseSpecification    *license;
-    NSString                           *privateIpAddress;
-    NSString                           *clientToken;
-    NSString                           *additionalInfo;
-    NSMutableArray                     *networkInterfaces;
+@interface EC2RunInstancesRequest : AmazonServiceRequestConfig {
+    NSString *imageId;
+    NSNumber *minCount;
+    NSNumber *maxCount;
+    NSString *keyName;
+    NSMutableArray *securityGroups;
+    NSMutableArray *securityGroupIds;
+    NSString *userData;
+    NSString *instanceType;
+    EC2Placement *placement;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSMutableArray *blockDeviceMappings;
+    bool monitoring;
+    bool monitoringIsSet;
+    NSString *subnetId;
+    bool disableApiTermination;
+    bool disableApiTerminationIsSet;
+    NSString *instanceInitiatedShutdownBehavior;
+    EC2InstanceLicenseSpecification *license;
+    NSString *privateIpAddress;
+    NSString *clientToken;
+    NSString *additionalInfo;
+    NSMutableArray *networkInterfaces;
     EC2IamInstanceProfileSpecification *iamInstanceProfile;
-    bool                               ebsOptimized;
-    bool                               ebsOptimizedIsSet;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
 
 
 /**
@@ -137,7 +133,7 @@
 /**
  * Enables monitoring for the instance.
  */
-@property (nonatomic) bool           monitoring;
+@property (nonatomic) bool monitoring;
 
 @property (nonatomic, readonly) bool monitoringIsSet;
 
@@ -152,7 +148,7 @@
  * must modify this attribute before you can terminate any "locked"
  * instances from the APIs.
  */
-@property (nonatomic) bool           disableApiTermination;
+@property (nonatomic) bool disableApiTermination;
 
 @property (nonatomic, readonly) bool disableApiTerminationIsSet;
 
@@ -200,7 +196,7 @@
 /**
  * The value of the EbsOptimized property for this object.
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -209,7 +205,7 @@
  * Default constructor for a new RunInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RunInstancesRequest object.
@@ -224,31 +220,31 @@
  * minCount will be launched instead. <p> Between 1 and the maximum
  * number allowed for your account (default: 20).
  */
--(id)initWithImageId:(NSString *)theImageId andMinCount:(NSNumber *)theMinCount andMaxCount:(NSNumber *)theMaxCount;
+- (id)initWithImageId:(NSString *)theImageId andMinCount:(NSNumber *)theMinCount andMaxCount:(NSNumber *)theMaxCount;
 
 /**
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Adds a single object to securityGroupIds.
  * This function will alloc and init securityGroupIds if not already done.
  */
--(void)addSecurityGroupId:(NSString *)securityGroupIdObject;
+- (void)addSecurityGroupId:(NSString *)securityGroupIdObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to networkInterfaces.
  * This function will alloc and init networkInterfaces if not already done.
  */
--(void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject;
+- (void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -256,7 +252,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

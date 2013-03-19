@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Quota for number of policies for this LoadBalancer has already been
  * reached.
  * </p>
  */
-@interface ElasticLoadBalancingTooManyPoliciesException:AmazonServiceException
-{
+@interface ElasticLoadBalancingTooManyPoliciesException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

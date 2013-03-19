@@ -18,14 +18,13 @@
 
 @implementation S3BucketCrossOriginConfiguration
 
-@synthesize rules=_rules;
+@synthesize rules = _rules;
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<CORSConfiguration>"];
-    
+
     for (S3CORSRule *rule in self.rules) {
         [xml appendString:[rule toXml]];
     }

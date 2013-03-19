@@ -42,39 +42,37 @@
 @synthesize hypervisor;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId             = nil;
-        imageLocation       = nil;
-        state               = nil;
-        ownerId             = nil;
-        publicValue         = NO;
-        publicValueIsSet    = NO;
-        productCodes        = [[NSMutableArray alloc] initWithCapacity:1];
-        architecture        = nil;
-        imageType           = nil;
-        kernelId            = nil;
-        ramdiskId           = nil;
-        platform            = nil;
-        stateReason         = nil;
-        imageOwnerAlias     = nil;
-        name                = nil;
-        descriptionValue    = nil;
-        rootDeviceType      = nil;
-        rootDeviceName      = nil;
+        imageId = nil;
+        imageLocation = nil;
+        state = nil;
+        ownerId = nil;
+        publicValue = NO;
+        publicValueIsSet = NO;
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
+        architecture = nil;
+        imageType = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        platform = nil;
+        stateReason = nil;
+        imageOwnerAlias = nil;
+        name = nil;
+        descriptionValue = nil;
+        rootDeviceType = nil;
+        rootDeviceName = nil;
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
-        virtualizationType  = nil;
-        tags                = [[NSMutableArray alloc] initWithCapacity:1];
-        hypervisor          = nil;
+        virtualizationType = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
+        hypervisor = nil;
     }
 
     return self;
 }
 
 
--(void)addProductCode:(EC2ProductCode *)productCodeObject
-{
+- (void)addProductCode:(EC2ProductCode *)productCodeObject {
     if (productCodes == nil) {
         productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -82,8 +80,7 @@
     [productCodes addObject:productCodeObject];
 }
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -91,8 +88,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -101,8 +97,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -134,13 +129,10 @@
 }
 
 
--(void)setPublicValue:(bool)theValue
-{
-    publicValue      = theValue;
+- (void)setPublicValue:(bool)theValue {
+    publicValue = theValue;
     publicValueIsSet = YES;
 }
-
-
 
 
 @end

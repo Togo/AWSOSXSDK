@@ -21,8 +21,7 @@
 @synthesize attributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         attributes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
@@ -57,15 +55,12 @@
 }
 
 
-
--(SimpleDBAttribute *)attributesObjectAtIndex:(int)index
-{
-    return (SimpleDBAttribute *)[attributes objectAtIndex:index];
+- (SimpleDBAttribute *)attributesObjectAtIndex:(int)index {
+    return (SimpleDBAttribute *) [attributes objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -75,9 +70,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

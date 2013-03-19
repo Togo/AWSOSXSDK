@@ -28,25 +28,23 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        startTime           = nil;
-        endTime             = nil;
-        instanceTypes       = [[NSMutableArray alloc] initWithCapacity:1];
+        startTime = nil;
+        endTime = nil;
+        instanceTypes = [[NSMutableArray alloc] initWithCapacity:1];
         productDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
-        filters             = [[NSMutableArray alloc] initWithCapacity:1];
-        availabilityZone    = nil;
-        maxResults          = nil;
-        nextToken           = nil;
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
+        availabilityZone = nil;
+        maxResults = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)addInstanceType:(NSString *)instanceTypeObject
-{
+- (void)addInstanceType:(NSString *)instanceTypeObject {
     if (instanceTypes == nil) {
         instanceTypes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -54,8 +52,7 @@
     [instanceTypes addObject:instanceTypeObject];
 }
 
--(void)addProductDescription:(NSString *)productDescriptionObject
-{
+- (void)addProductDescription:(NSString *)productDescriptionObject {
     if (productDescriptions == nil) {
         productDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +60,7 @@
     [productDescriptions addObject:productDescriptionObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -73,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -91,9 +86,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

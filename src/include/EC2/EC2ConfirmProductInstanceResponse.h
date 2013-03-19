@@ -17,27 +17,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Confirm Product Instance Response
  */
 
-@interface EC2ConfirmProductInstanceResponse:EC2Response
-
-{
+@interface EC2ConfirmProductInstanceResponse : EC2Response {
     NSString *ownerId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The instance owner's account ID. Only present if the product code is
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

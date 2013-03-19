@@ -21,10 +21,8 @@
 @implementation DynamoDBAttributeValueUnmarshaller
 
 
-+(DynamoDBAttributeValue *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBAttributeValue *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBAttributeValue *attributeValue = [[DynamoDBAttributeValue alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"S"] != nil) {

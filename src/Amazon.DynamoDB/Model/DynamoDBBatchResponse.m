@@ -22,10 +22,9 @@
 @synthesize consumedCapacityUnits;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        items                 = [[NSMutableArray alloc] initWithCapacity:1];
+        items = [[NSMutableArray alloc] initWithCapacity:1];
         consumedCapacityUnits = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -47,15 +45,12 @@
 }
 
 
-
--(NSDictionary *)itemsObjectAtIndex:(int)index
-{
-    return (NSDictionary *)[items objectAtIndex:index];
+- (NSDictionary *)itemsObjectAtIndex:(int)index {
+    return (NSDictionary *) [items objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -66,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

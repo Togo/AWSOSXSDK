@@ -27,7 +27,7 @@
 /**
  * Delete Message Batch Result Unmarshaller
  */
-@interface SQSDeleteMessageBatchResponseUnmarshaller:SQSResponseUnmarshaller {
+@interface SQSDeleteMessageBatchResponseUnmarshaller : SQSResponseUnmarshaller {
     SQSDeleteMessageBatchResponse *response;
 }
 
@@ -35,8 +35,9 @@
 @property (weak, nonatomic, readonly) SQSDeleteMessageBatchResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

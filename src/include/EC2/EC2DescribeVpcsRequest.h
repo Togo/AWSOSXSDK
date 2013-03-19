@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Vpcs Request
  */
 
-@interface EC2DescribeVpcsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeVpcsRequest : AmazonServiceRequestConfig {
     NSMutableArray *vpcIds;
     NSMutableArray *filters;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of a VPC you want information about.
@@ -56,13 +51,13 @@
  * Adds a single object to vpcIds.
  * This function will alloc and init vpcIds if not already done.
  */
--(void)addVpcId:(NSString *)vpcIdObject;
+- (void)addVpcId:(NSString *)vpcIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

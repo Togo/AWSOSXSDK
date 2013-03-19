@@ -16,17 +16,17 @@
 #import "EC2CreateTagsResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2CreateTagsResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2CreateTagsResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2CreateTagsResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2CreateTagsResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2CreateTagsResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2CreateTagsResponse *)response;
 
 @end

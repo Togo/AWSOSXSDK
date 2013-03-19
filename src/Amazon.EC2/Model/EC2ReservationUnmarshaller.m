@@ -19,16 +19,15 @@
 @implementation EC2ReservationUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groupNames withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"groupName";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"groupName";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -36,8 +35,8 @@
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groupNames withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"groupName";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"groupName";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -45,8 +44,8 @@
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2GroupIdentifierUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2GroupIdentifierUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -54,12 +53,11 @@
     if ([elementName isEqualToString:@"instancesSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.instances withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"instancesSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2InstanceUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2InstanceUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -67,8 +65,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -110,14 +107,12 @@
     }
 }
 
--(EC2Reservation *)response
-{
+- (EC2Reservation *)response {
     if (nil == response) {
         response = [[EC2Reservation alloc] init];
     }
     return response;
 }
-
 
 
 @end

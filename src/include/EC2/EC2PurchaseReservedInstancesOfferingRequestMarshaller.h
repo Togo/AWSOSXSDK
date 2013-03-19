@@ -23,11 +23,11 @@
 /**
  * Purchase Reserved Instances Offering Request Marshaller
  */
-@interface EC2PurchaseReservedInstancesOfferingRequestMarshaller:NSObject {
+@interface EC2PurchaseReservedInstancesOfferingRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest;
++ (AmazonServiceRequest *)createRequest:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest;
 
 
 @end

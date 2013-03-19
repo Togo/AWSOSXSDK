@@ -16,17 +16,17 @@
 #import "EC2ModifyVolumeAttributeResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2ModifyVolumeAttributeResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2ModifyVolumeAttributeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2ModifyVolumeAttributeResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2ModifyVolumeAttributeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2ModifyVolumeAttributeResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2ModifyVolumeAttributeResponse *)response;
 
 @end

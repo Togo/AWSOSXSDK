@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SQSResponse:AmazonServiceResponse {
+@interface SQSResponse : AmazonServiceResponse {
 }
 
 @end

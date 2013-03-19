@@ -24,11 +24,11 @@
 /**
  * Update Table Request Marshaller
  */
-@interface DynamoDBUpdateTableRequestMarshaller:NSObject {
+@interface DynamoDBUpdateTableRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBUpdateTableRequest *)updateTableRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBUpdateTableRequest *)updateTableRequest;
 
 
 @end

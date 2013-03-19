@@ -18,27 +18,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Get Identity Notification Attributes Result
  */
 
-@interface SESGetIdentityNotificationAttributesResponse:SESResponse
-
-{
+@interface SESGetIdentityNotificationAttributesResponse : SESResponse {
     NSMutableDictionary *notificationAttributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of Identity to IdentityNotificationAttributes.
@@ -48,7 +44,7 @@
 /**
  * Returns a value from the notificationAttributes dictionary for the specified key.
  */
--(SESIdentityNotificationAttributes *)notificationAttributesValueForKey:(NSString *)theKey;
+- (SESIdentityNotificationAttributes *)notificationAttributesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

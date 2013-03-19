@@ -22,8 +22,7 @@
 @synthesize cannedACL;
 @synthesize fullACL;
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     [self.urlRequest setHTTPMethod:kHttpMethodPut];
@@ -44,8 +43,7 @@
     return self.urlRequest;
 }
 
--(id)initWithName:(NSString *)theBucketName
-{
+- (id)initWithName:(NSString *)theBucketName {
     self = [self init];
     if (self != nil) {
         self.bucket = theBucketName;
@@ -54,8 +52,7 @@
     return self;
 }
 
--(id)initWithName:(NSString *)theBucketName andRegion:(S3Region *)theRegion
-{
+- (id)initWithName:(NSString *)theBucketName andRegion:(S3Region *)theRegion {
     self = [self initWithName:theBucketName];
     if (self != nil) {
         self.region = theRegion;
@@ -64,8 +61,7 @@
     return self;
 }
 
--(NSData *)createBucketConfiguration
-{
+- (NSData *)createBucketConfiguration {
     if (self.region == nil) {
         return nil;
     }
@@ -74,18 +70,15 @@
     return [config dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     AmazonClientException *clientException = [super validate];
-    
-    if(clientException == nil)
-    {
+
+    if (clientException == nil) {
         clientException = [S3BucketNameUtilities validateBucketName:self.bucket];
     }
-    
+
     return clientException;
 }
-
 
 
 @end

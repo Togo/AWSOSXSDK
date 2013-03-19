@@ -20,20 +20,16 @@
  * Instance License Specification
  */
 
-@interface EC2InstanceLicenseSpecification:NSObject
-
-{
+@interface EC2InstanceLicenseSpecification : NSObject {
     NSString *pool;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The license pool from which to take a license when starting Amazon EC2
@@ -47,7 +43,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

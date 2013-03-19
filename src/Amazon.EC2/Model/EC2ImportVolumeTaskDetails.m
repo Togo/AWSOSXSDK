@@ -25,23 +25,20 @@
 @synthesize volume;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        bytesConverted   = nil;
+        bytesConverted = nil;
         availabilityZone = nil;
         descriptionValue = nil;
-        image            = nil;
-        volume           = nil;
+        image = nil;
+        volume = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

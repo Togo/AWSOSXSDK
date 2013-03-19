@@ -17,12 +17,11 @@
 
 @implementation EC2StartInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2StartInstancesRequest *)startInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2StartInstancesRequest *)startInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"StartInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"StartInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[startInstancesRequest delegate]];
     [request setCredentials:[startInstancesRequest credentials]];

@@ -34,31 +34,29 @@
 @synthesize privateIpAddresses;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        networkInterfaceId   = nil;
-        subnetId             = nil;
-        vpcId                = nil;
-        descriptionValue     = nil;
-        ownerId              = nil;
-        status               = nil;
-        privateIpAddress     = nil;
-        privateDnsName       = nil;
-        sourceDestCheck      = NO;
+        networkInterfaceId = nil;
+        subnetId = nil;
+        vpcId = nil;
+        descriptionValue = nil;
+        ownerId = nil;
+        status = nil;
+        privateIpAddress = nil;
+        privateDnsName = nil;
+        sourceDestCheck = NO;
         sourceDestCheckIsSet = NO;
-        groups               = [[NSMutableArray alloc] initWithCapacity:1];
-        attachment           = nil;
-        association          = nil;
-        privateIpAddresses   = [[NSMutableArray alloc] initWithCapacity:1];
+        groups = [[NSMutableArray alloc] initWithCapacity:1];
+        attachment = nil;
+        association = nil;
+        privateIpAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addGroup:(EC2GroupIdentifier *)groupObject
-{
+- (void)addGroup:(EC2GroupIdentifier *)groupObject {
     if (groups == nil) {
         groups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +64,7 @@
     [groups addObject:groupObject];
 }
 
--(void)addPrivateIpAddresse:(EC2InstancePrivateIpAddress *)privateIpAddresseObject
-{
+- (void)addPrivateIpAddresse:(EC2InstancePrivateIpAddress *)privateIpAddresseObject {
     if (privateIpAddresses == nil) {
         privateIpAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -76,8 +73,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -101,13 +97,10 @@
 }
 
 
--(void)setSourceDestCheck:(bool)theValue
-{
-    sourceDestCheck      = theValue;
+- (void)setSourceDestCheck:(bool)theValue {
+    sourceDestCheck = theValue;
     sourceDestCheckIsSet = YES;
 }
-
-
 
 
 @end

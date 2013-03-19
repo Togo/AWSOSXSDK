@@ -17,27 +17,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * List Verified Email Addresses Result
  */
 
-@interface SESListVerifiedEmailAddressesResponse:SESResponse
-
-{
+@interface SESListVerifiedEmailAddressesResponse : SESResponse {
     NSMutableArray *verifiedEmailAddresses;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of email addresses that have been verified.
@@ -45,11 +41,10 @@
 @property (nonatomic, strong) NSMutableArray *verifiedEmailAddresses;
 
 
-
 /**
  * Returns a value from the verifiedEmailAddresses array for the specified index
  */
--(NSString *)verifiedEmailAddressesObjectAtIndex:(int)index;
+- (NSString *)verifiedEmailAddressesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

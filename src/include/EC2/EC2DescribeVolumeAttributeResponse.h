@@ -18,30 +18,26 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Volume Attribute Response
  */
 
-@interface EC2DescribeVolumeAttributeResponse:EC2Response
-
-{
-    NSString       *volumeId;
-    bool           autoEnableIO;
-    bool           autoEnableIOIsSet;
+@interface EC2DescribeVolumeAttributeResponse : EC2Response {
+    NSString *volumeId;
+    bool autoEnableIO;
+    bool autoEnableIOIsSet;
     NSMutableArray *productCodes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeId property for this object.
@@ -51,7 +47,7 @@
 /**
  * Boolean value
  */
-@property (nonatomic) bool           autoEnableIO;
+@property (nonatomic) bool autoEnableIO;
 
 @property (nonatomic, readonly) bool autoEnableIOIsSet;
 
@@ -61,11 +57,10 @@
 @property (nonatomic, strong) NSMutableArray *productCodes;
 
 
-
 /**
  * Returns a value from the productCodes array for the specified index
  */
--(EC2ProductCode *)productCodesObjectAtIndex:(int)index;
+- (EC2ProductCode *)productCodesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

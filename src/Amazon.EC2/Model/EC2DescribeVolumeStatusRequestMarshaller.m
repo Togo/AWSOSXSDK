@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeVolumeStatusRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeVolumeStatus"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeVolumeStatus" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeVolumeStatusRequest delegate]];
     [request setCredentials:[describeVolumeStatusRequest credentials]];

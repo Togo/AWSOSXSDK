@@ -16,17 +16,17 @@
 #import "EC2ResetInstanceAttributeResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2ResetInstanceAttributeResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2ResetInstanceAttributeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2ResetInstanceAttributeResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2ResetInstanceAttributeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2ResetInstanceAttributeResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2ResetInstanceAttributeResponse *)response;
 
 @end

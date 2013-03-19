@@ -22,11 +22,11 @@
 /**
  * Disassociate Address Request Marshaller
  */
-@interface EC2DisassociateAddressRequestMarshaller:NSObject {
+@interface EC2DisassociateAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DisassociateAddressRequest *)disassociateAddressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DisassociateAddressRequest *)disassociateAddressRequest;
 
 
 @end

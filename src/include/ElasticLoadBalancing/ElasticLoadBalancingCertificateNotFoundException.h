@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The specified SSL ID does not refer to a valid SSL certificate in the
  * AWS Identity and Access Management Service.
  * </p>
  */
-@interface ElasticLoadBalancingCertificateNotFoundException:AmazonServiceException
-{
+@interface ElasticLoadBalancingCertificateNotFoundException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

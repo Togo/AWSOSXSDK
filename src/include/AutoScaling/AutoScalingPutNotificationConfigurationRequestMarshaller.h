@@ -22,11 +22,11 @@
 /**
  * Put Notification Configuration Request Marshaller
  */
-@interface AutoScalingPutNotificationConfigurationRequestMarshaller:NSObject {
+@interface AutoScalingPutNotificationConfigurationRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest;
 
 
 @end

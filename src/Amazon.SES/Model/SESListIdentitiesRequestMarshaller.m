@@ -17,12 +17,11 @@
 
 @implementation SESListIdentitiesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESListIdentitiesRequest *)listIdentitiesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESListIdentitiesRequest *)listIdentitiesRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"ListIdentities"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"ListIdentities" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[listIdentitiesRequest delegate]];
     [request setCredentials:[listIdentitiesRequest credentials]];

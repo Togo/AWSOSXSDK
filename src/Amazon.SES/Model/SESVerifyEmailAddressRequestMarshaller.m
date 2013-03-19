@@ -17,12 +17,11 @@
 
 @implementation SESVerifyEmailAddressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"VerifyEmailAddress"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"VerifyEmailAddress" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[verifyEmailAddressRequest delegate]];
     [request setCredentials:[verifyEmailAddressRequest credentials]];

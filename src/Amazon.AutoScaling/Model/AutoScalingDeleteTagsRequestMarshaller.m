@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeleteTagsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteTagsRequest *)deleteTagsRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteTagsRequest *)deleteTagsRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteTags"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteTags" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deleteTagsRequest delegate]];
     [request setCredentials:[deleteTagsRequest credentials]];
@@ -55,7 +54,7 @@
             }
             if (tagsListValue != nil) {
                 if (tagsListValue.propagateAtLaunchIsSet) {
-                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
+                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
                 }
             }
 

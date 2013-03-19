@@ -21,8 +21,7 @@
 @synthesize instanceMonitorings;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instanceMonitorings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -45,15 +43,12 @@
 }
 
 
-
--(EC2InstanceMonitoring *)instanceMonitoringsObjectAtIndex:(int)index
-{
-    return (EC2InstanceMonitoring *)[instanceMonitorings objectAtIndex:index];
+- (EC2InstanceMonitoring *)instanceMonitoringsObjectAtIndex:(int)index {
+    return (EC2InstanceMonitoring *) [instanceMonitorings objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

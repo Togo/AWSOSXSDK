@@ -27,25 +27,22 @@
 @synthesize unit;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        timestamp   = nil;
+        timestamp = nil;
         sampleCount = nil;
-        average     = nil;
-        sum         = nil;
-        minimum     = nil;
-        maximum     = nil;
-        unit        = nil;
+        average = nil;
+        sum = nil;
+        minimum = nil;
+        maximum = nil;
+        unit = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

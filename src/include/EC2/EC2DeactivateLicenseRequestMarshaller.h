@@ -22,11 +22,11 @@
 /**
  * Deactivate License Request Marshaller
  */
-@interface EC2DeactivateLicenseRequestMarshaller:NSObject {
+@interface EC2DeactivateLicenseRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest;
 
 
 @end

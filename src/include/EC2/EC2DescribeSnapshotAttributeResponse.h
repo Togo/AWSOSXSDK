@@ -19,29 +19,25 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Snapshot Attribute Response
  */
 
-@interface EC2DescribeSnapshotAttributeResponse:EC2Response
-
-{
-    NSString       *snapshotId;
+@interface EC2DescribeSnapshotAttributeResponse : EC2Response {
+    NSString *snapshotId;
     NSMutableArray *createVolumePermissions;
     NSMutableArray *productCodes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the snapshot whose attribute is being described.
@@ -61,18 +57,16 @@
 @property (nonatomic, strong) NSMutableArray *productCodes;
 
 
-
 /**
  * Returns a value from the createVolumePermissions array for the specified index
  */
--(EC2CreateVolumePermission *)createVolumePermissionsObjectAtIndex:(int)index;
-
+- (EC2CreateVolumePermission *)createVolumePermissionsObjectAtIndex:(int)index;
 
 
 /**
  * Returns a value from the productCodes array for the specified index
  */
--(EC2ProductCode *)productCodesObjectAtIndex:(int)index;
+- (EC2ProductCode *)productCodesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -80,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

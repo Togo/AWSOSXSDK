@@ -19,30 +19,25 @@
 #import "EC2InstanceStatusSummary.h"
 
 
-
 /**
  * Instance Status
  */
 
-@interface EC2InstanceStatus:NSObject
-
-{
-    NSString                 *instanceId;
-    NSString                 *availabilityZone;
-    NSMutableArray           *events;
-    EC2InstanceState         *instanceState;
+@interface EC2InstanceStatus : NSObject {
+    NSString *instanceId;
+    NSString *availabilityZone;
+    NSMutableArray *events;
+    EC2InstanceState *instanceState;
     EC2InstanceStatusSummary *systemStatus;
     EC2InstanceStatusSummary *instanceStatus;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the Amazon EC2 instance.
@@ -78,7 +73,7 @@
  * Adds a single object to events.
  * This function will alloc and init events if not already done.
  */
--(void)addEvent:(EC2InstanceStatusEvent *)eventObject;
+- (void)addEvent:(EC2InstanceStatusEvent *)eventObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -86,7 +81,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

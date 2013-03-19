@@ -22,64 +22,53 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
-    
-    if ([elementName isEqualToString:@"Transition"])
-    {
+
+    if ([elementName isEqualToString:@"Transition"]) {
         [parser setDelegate:[[S3BucketLifecycleConfigurationTransitionUnmarshaller alloc] initWithCaller:self withParentObject:[self rule].transitions withSetter:@selector(addObject:)]];
     }
 }
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
-    
-    if ([elementName isEqualToString:@"ID"])
-    {
+
+    if ([elementName isEqualToString:@"ID"]) {
         self.rule.ruleId = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Status"])
-    {
+    else if ([elementName isEqualToString:@"Status"]) {
         self.rule.status = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Prefix"])
-    {
+    else if ([elementName isEqualToString:@"Prefix"]) {
         self.rule.prefix = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Days"])
-    {
+    else if ([elementName isEqualToString:@"Days"]) {
         self.rule.expirationInDays = [self.currentText integerValue];
     }
-    else if ([elementName isEqualToString:@"Date"])
-    {
+    else if ([elementName isEqualToString:@"Date"]) {
         self.rule.expirationDate = [AmazonSDKUtil convertStringToDate:self.currentText];
     }
-    else if ([elementName isEqualToString:@"Rule"])
-    {
+    else if ([elementName isEqualToString:@"Rule"]) {
         if (caller != nil) {
             [parser setDelegate:caller];
         }
-        
+
         if (parentObject != nil && [parentObject respondsToSelector:parentSetter]) {
             [parentObject performSelector:parentSetter withObject:self.rule];
         }
-        
+
         return;
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(S3BucketLifecycleConfigurationRule *)rule
-{
-    if (rule == nil)
-    {
+- (S3BucketLifecycleConfigurationRule *)rule {
+    if (rule == nil) {
         rule = [[S3BucketLifecycleConfigurationRule alloc] init];
         rule.transitions = [NSMutableArray arrayWithCapacity:1];
     }
-    
+
     return rule;
 }
 

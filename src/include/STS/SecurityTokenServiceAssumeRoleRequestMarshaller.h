@@ -22,11 +22,11 @@
 /**
  * Assume Role Request Marshaller
  */
-@interface SecurityTokenServiceAssumeRoleRequestMarshaller:NSObject {
+@interface SecurityTokenServiceAssumeRoleRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest;
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest;
 
 
 @end

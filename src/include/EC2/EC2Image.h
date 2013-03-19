@@ -19,46 +19,41 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Image
  */
 
-@interface EC2Image:NSObject
-
-{
-    NSString       *imageId;
-    NSString       *imageLocation;
-    NSString       *state;
-    NSString       *ownerId;
-    bool           publicValue;
-    bool           publicValueIsSet;
+@interface EC2Image : NSObject {
+    NSString *imageId;
+    NSString *imageLocation;
+    NSString *state;
+    NSString *ownerId;
+    bool publicValue;
+    bool publicValueIsSet;
     NSMutableArray *productCodes;
-    NSString       *architecture;
-    NSString       *imageType;
-    NSString       *kernelId;
-    NSString       *ramdiskId;
-    NSString       *platform;
+    NSString *architecture;
+    NSString *imageType;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSString *platform;
     EC2StateReason *stateReason;
-    NSString       *imageOwnerAlias;
-    NSString       *name;
-    NSString       *descriptionValue;
-    NSString       *rootDeviceType;
-    NSString       *rootDeviceName;
+    NSString *imageOwnerAlias;
+    NSString *name;
+    NSString *descriptionValue;
+    NSString *rootDeviceType;
+    NSString *rootDeviceName;
     NSMutableArray *blockDeviceMappings;
-    NSString       *virtualizationType;
+    NSString *virtualizationType;
     NSMutableArray *tags;
-    NSString       *hypervisor;
+    NSString *hypervisor;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of the AMI.
@@ -90,7 +85,7 @@
  * True if this image has public launch permissions. False if it only has
  * implicit and explicit launch permissions.
  */
-@property (nonatomic) bool           publicValue;
+@property (nonatomic) bool publicValue;
 
 @property (nonatomic, readonly) bool publicValueIsSet;
 
@@ -188,19 +183,19 @@
  * Adds a single object to productCodes.
  * This function will alloc and init productCodes if not already done.
  */
--(void)addProductCode:(EC2ProductCode *)productCodeObject;
+- (void)addProductCode:(EC2ProductCode *)productCodeObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -208,7 +203,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

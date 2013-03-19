@@ -16,29 +16,24 @@
 #import "EC2UserIdGroupPair.h"
 
 
-
 /**
  * Ip Permission
  */
 
-@interface EC2IpPermission:NSObject
-
-{
-    NSString       *ipProtocol;
-    NSNumber       *fromPort;
-    NSNumber       *toPort;
+@interface EC2IpPermission : NSObject {
+    NSString *ipProtocol;
+    NSNumber *fromPort;
+    NSNumber *toPort;
     NSMutableArray *userIdGroupPairs;
     NSMutableArray *ipRanges;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The IP protocol of this permission. <p> Valid protocol values:
@@ -74,13 +69,13 @@
  * Adds a single object to userIdGroupPairs.
  * This function will alloc and init userIdGroupPairs if not already done.
  */
--(void)addUserIdGroupPair:(EC2UserIdGroupPair *)userIdGroupPairObject;
+- (void)addUserIdGroupPair:(EC2UserIdGroupPair *)userIdGroupPairObject;
 
 /**
  * Adds a single object to ipRanges.
  * This function will alloc and init ipRanges if not already done.
  */
--(void)addIpRange:(NSString *)ipRangeObject;
+- (void)addIpRange:(NSString *)ipRangeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -88,7 +83,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

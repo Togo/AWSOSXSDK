@@ -17,12 +17,11 @@
 
 @implementation SQSAddPermissionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSAddPermissionRequest *)addPermissionRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSAddPermissionRequest *)addPermissionRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"AddPermission"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"AddPermission" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[addPermissionRequest delegate]];
     [request setCredentials:[addPermissionRequest credentials]];

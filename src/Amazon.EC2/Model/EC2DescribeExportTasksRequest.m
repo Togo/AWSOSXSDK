@@ -21,8 +21,7 @@
 @synthesize exportTaskIds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         exportTaskIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)addExportTaskId:(NSString *)exportTaskIdObject
-{
+- (void)addExportTaskId:(NSString *)exportTaskIdObject {
     if (exportTaskIds == nil) {
         exportTaskIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -41,8 +39,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

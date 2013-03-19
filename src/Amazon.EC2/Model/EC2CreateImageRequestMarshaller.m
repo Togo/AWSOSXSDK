@@ -17,12 +17,11 @@
 
 @implementation EC2CreateImageRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateImageRequest *)createImageRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateImageRequest *)createImageRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateImage"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateImage" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createImageRequest delegate]];
     [request setCredentials:[createImageRequest credentials]];
@@ -46,7 +45,7 @@
     }
     if (createImageRequest != nil) {
         if (createImageRequest.noRebootIsSet) {
-            [request setParameterValue:(createImageRequest.noReboot ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"NoReboot"]];
+            [request setParameterValue:(createImageRequest.noReboot ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"NoReboot"]];
         }
     }
 
@@ -77,7 +76,7 @@
                 }
                 if (ebs != nil) {
                     if (ebs.deleteOnTerminationIsSet) {
-                        [request setParameterValue:(ebs.deleteOnTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
+                        [request setParameterValue:(ebs.deleteOnTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
                     }
                 }
                 if (ebs != nil) {

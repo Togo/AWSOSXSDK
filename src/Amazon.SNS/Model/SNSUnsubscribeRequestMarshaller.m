@@ -17,12 +17,11 @@
 
 @implementation SNSUnsubscribeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSUnsubscribeRequest *)unsubscribeRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSUnsubscribeRequest *)unsubscribeRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"Unsubscribe"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"Unsubscribe" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[unsubscribeRequest delegate]];
     [request setCredentials:[unsubscribeRequest credentials]];

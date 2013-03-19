@@ -23,21 +23,19 @@
 @synthesize delaySeconds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueUrl     = nil;
-        messageBody  = nil;
+        queueUrl = nil;
+        messageBody = nil;
         delaySeconds = nil;
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andMessageBody:(NSString *)theMessageBody
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andMessageBody:(NSString *)theMessageBody {
     if (self = [self init]) {
-        self.queueUrl    = theQueueUrl;
+        self.queueUrl = theQueueUrl;
         self.messageBody = theMessageBody;
     }
 
@@ -45,9 +43,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

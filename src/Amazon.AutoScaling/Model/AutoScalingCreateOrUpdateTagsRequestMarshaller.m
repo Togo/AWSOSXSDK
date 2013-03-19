@@ -17,12 +17,11 @@
 
 @implementation AutoScalingCreateOrUpdateTagsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingCreateOrUpdateTagsRequest *)createOrUpdateTagsRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingCreateOrUpdateTagsRequest *)createOrUpdateTagsRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"CreateOrUpdateTags"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateOrUpdateTags" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[createOrUpdateTagsRequest delegate]];
     [request setCredentials:[createOrUpdateTagsRequest credentials]];
@@ -55,7 +54,7 @@
             }
             if (tagsListValue != nil) {
                 if (tagsListValue.propagateAtLaunchIsSet) {
-                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
+                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
                 }
             }
 

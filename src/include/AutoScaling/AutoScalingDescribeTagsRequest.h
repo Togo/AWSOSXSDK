@@ -18,27 +18,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Tags Request
  */
 
-@interface AutoScalingDescribeTagsRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDescribeTagsRequest : AmazonServiceRequestConfig {
     NSMutableArray *filters;
-    NSString       *nextToken;
-    NSNumber       *maxRecords;
+    NSString *nextToken;
+    NSNumber *maxRecords;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the filter type used to identify the tags to be returned.
@@ -69,7 +64,7 @@
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(AutoScalingFilter *)filterObject;
+- (void)addFilter:(AutoScalingFilter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -77,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

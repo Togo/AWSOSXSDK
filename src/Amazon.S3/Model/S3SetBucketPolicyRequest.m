@@ -20,8 +20,7 @@
 
 @synthesize policy;
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     // This needs to be done before the superclass's implementation so that
     // it gets put into the URL.
     [self setSubResource:kS3SubResourcePolicy];

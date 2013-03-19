@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Import Volume Response
  */
 
-@interface EC2ImportVolumeResponse:EC2Response
-
-{
+@interface EC2ImportVolumeResponse : EC2Response {
     EC2ConversionTask *conversionTask;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ConversionTask property for this object.
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

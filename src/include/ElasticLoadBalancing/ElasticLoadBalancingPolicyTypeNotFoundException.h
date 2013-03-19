@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * One or more of the specified policy types do not exist.
  * </p>
  */
-@interface ElasticLoadBalancingPolicyTypeNotFoundException:AmazonServiceException
-{
+@interface ElasticLoadBalancingPolicyTypeNotFoundException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -23,20 +23,18 @@
 @synthesize rawMessage;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        source       = nil;
+        source = nil;
         destinations = [[NSMutableArray alloc] initWithCapacity:1];
-        rawMessage   = nil;
+        rawMessage = nil;
     }
 
     return self;
 }
 
 
--(void)addDestination:(NSString *)destinationObject
-{
+- (void)addDestination:(NSString *)destinationObject {
     if (destinations == nil) {
         destinations = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

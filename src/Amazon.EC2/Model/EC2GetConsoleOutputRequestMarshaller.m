@@ -17,12 +17,11 @@
 
 @implementation EC2GetConsoleOutputRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"GetConsoleOutput"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetConsoleOutput" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[getConsoleOutputRequest delegate]];
     [request setCredentials:[getConsoleOutputRequest credentials]];

@@ -23,19 +23,17 @@
 @synthesize provisionedThroughput;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName             = nil;
-        keySchema             = nil;
+        tableName = nil;
+        keySchema = nil;
         provisionedThroughput = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema
-{
+- (id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema {
     if (self = [self init]) {
         self.tableName = theTableName;
         self.keySchema = theKeySchema;
@@ -44,11 +42,10 @@
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput
-{
+- (id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput {
     if (self = [self init]) {
-        self.tableName             = theTableName;
-        self.keySchema             = theKeySchema;
+        self.tableName = theTableName;
+        self.keySchema = theKeySchema;
         self.provisionedThroughput = theProvisionedThroughput;
     }
 
@@ -56,9 +53,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +65,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

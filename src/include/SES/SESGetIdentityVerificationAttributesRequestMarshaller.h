@@ -22,11 +22,11 @@
 /**
  * Get Identity Verification Attributes Request Marshaller
  */
-@interface SESGetIdentityVerificationAttributesRequestMarshaller:NSObject {
+@interface SESGetIdentityVerificationAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest;
 
 
 @end

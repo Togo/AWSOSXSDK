@@ -23,8 +23,7 @@
 @synthesize endpoint;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         topicArn = nil;
         protocol = nil;
@@ -34,8 +33,7 @@
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andProtocol:(NSString *)theProtocol andEndpoint:(NSString *)theEndpoint
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andProtocol:(NSString *)theProtocol andEndpoint:(NSString *)theEndpoint {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
         self.protocol = theProtocol;
@@ -46,9 +44,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -60,9 +56,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

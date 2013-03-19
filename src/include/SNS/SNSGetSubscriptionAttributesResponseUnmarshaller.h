@@ -24,7 +24,7 @@
 /**
  * Get Subscription Attributes Result Unmarshaller
  */
-@interface SNSGetSubscriptionAttributesResponseUnmarshaller:SNSResponseUnmarshaller {
+@interface SNSGetSubscriptionAttributesResponseUnmarshaller : SNSResponseUnmarshaller {
     SNSGetSubscriptionAttributesResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) SNSGetSubscriptionAttributesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

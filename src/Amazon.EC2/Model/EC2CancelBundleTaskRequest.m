@@ -21,8 +21,7 @@
 @synthesize bundleId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         bundleId = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithBundleId:(NSString *)theBundleId
-{
+- (id)initWithBundleId:(NSString *)theBundleId {
     if (self = [self init]) {
         self.bundleId = theBundleId;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

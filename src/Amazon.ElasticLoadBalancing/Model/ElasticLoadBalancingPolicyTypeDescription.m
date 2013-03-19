@@ -23,11 +23,10 @@
 @synthesize policyAttributeTypeDescriptions;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        policyTypeName                  = nil;
-        descriptionValue                = nil;
+        policyTypeName = nil;
+        descriptionValue = nil;
         policyAttributeTypeDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)addPolicyAttributeTypeDescription:(ElasticLoadBalancingPolicyAttributeTypeDescription *)policyAttributeTypeDescriptionObject
-{
+- (void)addPolicyAttributeTypeDescription:(ElasticLoadBalancingPolicyAttributeTypeDescription *)policyAttributeTypeDescriptionObject {
     if (policyAttributeTypeDescriptions == nil) {
         policyAttributeTypeDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

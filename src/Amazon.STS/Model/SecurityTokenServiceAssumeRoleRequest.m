@@ -25,23 +25,20 @@
 @synthesize externalId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        roleArn         = nil;
+        roleArn = nil;
         roleSessionName = nil;
-        policy          = nil;
+        policy = nil;
         durationSeconds = nil;
-        externalId      = nil;
+        externalId = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

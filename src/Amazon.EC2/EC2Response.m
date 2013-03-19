@@ -21,43 +21,40 @@
 
 @implementation EC2Response
 
--(void)postProcess
-{
-    if ( [NSStringFromClass([self class]) isEqualToString:@"EC2DescribeSpotInstanceRequestsResponse"]) {
-        EC2DescribeSpotInstanceRequestsResponse *response = (EC2DescribeSpotInstanceRequestsResponse *)self;
+- (void)postProcess {
+    if ([NSStringFromClass([self class]) isEqualToString:@"EC2DescribeSpotInstanceRequestsResponse"]) {
+        EC2DescribeSpotInstanceRequestsResponse *response = (EC2DescribeSpotInstanceRequestsResponse *) self;
         for (EC2SpotInstanceRequest *spotInstanceRequest in response.spotInstanceRequests) {
             EC2LaunchSpecification *launchSpecification = spotInstanceRequest.launchSpecification;
             [self populateLaunchSpecificationSecurityGroupNames:launchSpecification];
         }
     }
-    else if ( [NSStringFromClass([self class]) isEqualToString:@"EC2RequestSpotInstancesResponse"]) {
-        EC2RequestSpotInstancesResponse *response = (EC2RequestSpotInstancesResponse *)self;
+    else if ([NSStringFromClass([self class]) isEqualToString:@"EC2RequestSpotInstancesResponse"]) {
+        EC2RequestSpotInstancesResponse *response = (EC2RequestSpotInstancesResponse *) self;
         for (EC2SpotInstanceRequest *spotInstanceRequest in response.spotInstanceRequests) {
             EC2LaunchSpecification *launchSpecification = spotInstanceRequest.launchSpecification;
             [self populateLaunchSpecificationSecurityGroupNames:launchSpecification];
         }
     }
-    else if ( [NSStringFromClass([self class]) isEqualToString:@"EC2DescribeInstancesResponse"]) {
-        EC2DescribeInstancesResponse *response = (EC2DescribeInstancesResponse *)self;
+    else if ([NSStringFromClass([self class]) isEqualToString:@"EC2DescribeInstancesResponse"]) {
+        EC2DescribeInstancesResponse *response = (EC2DescribeInstancesResponse *) self;
         for (EC2Reservation *reservation in response.reservations) {
             [self populateReservationSecurityGroupNames:reservation];
         }
     }
-    else if ( [NSStringFromClass([self class]) isEqualToString:@"EC2RunInstancesResponse"]) {
-        EC2RunInstancesResponse *response = (EC2RunInstancesResponse *)self;
+    else if ([NSStringFromClass([self class]) isEqualToString:@"EC2RunInstancesResponse"]) {
+        EC2RunInstancesResponse *response = (EC2RunInstancesResponse *) self;
         [self populateReservationSecurityGroupNames:response.reservation];
     }
 }
 
--(void)populateReservationSecurityGroupNames:(EC2Reservation *)reservation
-{
+- (void)populateReservationSecurityGroupNames:(EC2Reservation *)reservation {
     for (EC2GroupIdentifier *group in reservation.groups) {
         [reservation.groupNames addObject:group.groupName];
     }
 }
 
--(void)populateLaunchSpecificationSecurityGroupNames:(EC2LaunchSpecification *)launchSpecification
-{
+- (void)populateLaunchSpecificationSecurityGroupNames:(EC2LaunchSpecification *)launchSpecification {
     for (EC2GroupIdentifier *group in launchSpecification.allSecurityGroups) {
         [launchSpecification.securityGroups addObject:group.groupName];
     }

@@ -27,23 +27,20 @@
  * Batch Get Item Result
  */
 
-@interface DynamoDBBatchGetItemResponse:DynamoDBResponse
-
-{
+@interface DynamoDBBatchGetItemResponse : DynamoDBResponse {
     NSMutableDictionary *responses;
     NSMutableDictionary *unprocessedKeys;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Table names and the respective item attributes from the tables.
@@ -67,12 +64,12 @@
 /**
  * Returns a value from the responses dictionary for the specified key.
  */
--(DynamoDBBatchResponse *)responsesValueForKey:(NSString *)theKey;
+- (DynamoDBBatchResponse *)responsesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a value from the unprocessedKeys dictionary for the specified key.
  */
--(DynamoDBKeysAndAttributes *)unprocessedKeysValueForKey:(NSString *)theKey;
+- (DynamoDBKeysAndAttributes *)unprocessedKeysValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -80,7 +77,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

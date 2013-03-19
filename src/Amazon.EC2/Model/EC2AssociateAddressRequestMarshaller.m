@@ -17,12 +17,11 @@
 
 @implementation EC2AssociateAddressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2AssociateAddressRequest *)associateAddressRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2AssociateAddressRequest *)associateAddressRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"AssociateAddress"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"AssociateAddress" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[associateAddressRequest delegate]];
     [request setCredentials:[associateAddressRequest credentials]];
@@ -56,7 +55,7 @@
     }
     if (associateAddressRequest != nil) {
         if (associateAddressRequest.allowReassociationIsSet) {
-            [request setParameterValue:(associateAddressRequest.allowReassociation ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"AllowReassociation"]];
+            [request setParameterValue:(associateAddressRequest.allowReassociation ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"AllowReassociation"]];
         }
     }
 

@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Load Balancer Listeners Request
  */
 
-@interface ElasticLoadBalancingCreateLoadBalancerListenersRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingCreateLoadBalancerListenersRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *listeners;
 }
-
 
 
 /**
@@ -49,7 +45,7 @@
  * Default constructor for a new CreateLoadBalancerListenersRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateLoadBalancerListenersRequest object.
@@ -61,13 +57,13 @@
  * <code>InstancePort</code>, <code>Protocol</code>, and
  * <code>SSLCertificateId</code> items.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners;
 
 /**
  * Adds a single object to listeners.
  * This function will alloc and init listeners if not already done.
  */
--(void)addListener:(ElasticLoadBalancingListener *)listenerObject;
+- (void)addListener:(ElasticLoadBalancingListener *)listenerObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

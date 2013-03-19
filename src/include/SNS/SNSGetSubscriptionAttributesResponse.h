@@ -26,22 +26,19 @@
  * Get Subscription Attributes Result
  */
 
-@interface SNSGetSubscriptionAttributesResponse:SNSResponse
-
-{
+@interface SNSGetSubscriptionAttributesResponse : SNSResponse {
     NSMutableDictionary *attributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of the subscription's attributes. Attributes in this map include
@@ -62,7 +59,7 @@
 /**
  * Returns a value from the attributes dictionary for the specified key.
  */
--(NSString *)attributesValueForKey:(NSString *)theKey;
+- (NSString *)attributesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -19,11 +19,10 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"ID"]) {
@@ -66,10 +65,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3Grant *)grant
-{
-    if (nil == grant)
-    {
+- (S3Grant *)grant {
+    if (nil == grant) {
         grant = [[S3Grant alloc] init];
 
         [grant setGrantee:[S3Grantee granteeWithID:nil withDisplayName:nil]];

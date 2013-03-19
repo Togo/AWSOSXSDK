@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeImagesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeImagesRequest *)describeImagesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeImagesRequest *)describeImagesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeImages"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeImages" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeImagesRequest delegate]];
     [request setCredentials:[describeImagesRequest credentials]];

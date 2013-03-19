@@ -22,11 +22,11 @@
 /**
  * Detach Volume Request Marshaller
  */
-@interface EC2DetachVolumeRequestMarshaller:NSObject {
+@interface EC2DetachVolumeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DetachVolumeRequest *)detachVolumeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DetachVolumeRequest *)detachVolumeRequest;
 
 
 @end

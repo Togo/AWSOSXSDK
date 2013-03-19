@@ -16,17 +16,17 @@
 #import "SQSDeleteMessageResponse.h"
 #import "SQSResponseUnmarshaller.h"
 
-@interface SQSDeleteMessageResponseUnmarshaller:SQSResponseUnmarshaller
-{
+@interface SQSDeleteMessageResponseUnmarshaller : SQSResponseUnmarshaller {
     SQSDeleteMessageResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SQSDeleteMessageResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SQSDeleteMessageResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SQSDeleteMessageResponse *)response;
 
 @end

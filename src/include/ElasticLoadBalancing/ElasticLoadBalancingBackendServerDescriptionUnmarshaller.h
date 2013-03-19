@@ -24,7 +24,7 @@
 /**
  * Backend Server Description Unmarshaller
  */
-@interface ElasticLoadBalancingBackendServerDescriptionUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingBackendServerDescriptionUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingBackendServerDescription *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingBackendServerDescription *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

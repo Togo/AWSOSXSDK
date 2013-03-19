@@ -18,43 +18,42 @@
 
 @implementation S3CORSRule
 
-@synthesize ruleId=_ruleId;
-@synthesize allowedMethods=_allowedMethods;
-@synthesize allowedOrigins=_allowedOrigins;
-@synthesize maxAgeSeconds=_maxAgeSeconds;
-@synthesize exposeHeaders=_exposeHeaders;
-@synthesize allowedHeaders=_allowedHeaders;
+@synthesize ruleId = _ruleId;
+@synthesize allowedMethods = _allowedMethods;
+@synthesize allowedOrigins = _allowedOrigins;
+@synthesize maxAgeSeconds = _maxAgeSeconds;
+@synthesize exposeHeaders = _exposeHeaders;
+@synthesize allowedHeaders = _allowedHeaders;
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<CORSRule>"];
-    
+
     if (self.ruleId != nil) {
         [xml appendFormat:@"<ID>%@</ID>", self.ruleId];
     }
-    
+
     for (NSString *method in self.allowedMethods) {
         [xml appendFormat:@"<AllowedMethod>%@</AllowedMethod>", method];
     }
-    
+
     for (NSString *origin in self.allowedOrigins) {
         [xml appendFormat:@"<AllowedOrigin>%@</AllowedOrigin>", origin];
     }
-    
+
     if (self.maxAgeSeconds > 0) {
-        [xml appendFormat:@"<MaxAgeSeconds>%ld<MaxAgeSeconds>", (long)self.maxAgeSeconds];
+        [xml appendFormat:@"<MaxAgeSeconds>%ld<MaxAgeSeconds>", (long) self.maxAgeSeconds];
     }
-    
+
     for (NSString *header in self.exposeHeaders) {
         [xml appendFormat:@"<ExposeHeader>%@</ExposeHeader>", header];
     }
-    
+
     for (NSString *header in self.allowedHeaders) {
         [xml appendFormat:@"<AllowedHeader>%@</AllowedHeader>", header];
     }
-    
+
     [xml appendString:@"</CORSRule>"];
 
 

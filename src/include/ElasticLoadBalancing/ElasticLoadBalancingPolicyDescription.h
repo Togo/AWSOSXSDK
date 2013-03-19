@@ -16,27 +16,22 @@
 #import "ElasticLoadBalancingPolicyAttributeDescription.h"
 
 
-
 /**
  * Policy Description
  */
 
-@interface ElasticLoadBalancingPolicyDescription:NSObject
-
-{
-    NSString       *policyName;
-    NSString       *policyTypeName;
+@interface ElasticLoadBalancingPolicyDescription : NSObject {
+    NSString *policyName;
+    NSString *policyTypeName;
     NSMutableArray *policyAttributeDescriptions;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name mof the policy associated with the LoadBalancer.
@@ -57,7 +52,7 @@
  * Adds a single object to policyAttributeDescriptions.
  * This function will alloc and init policyAttributeDescriptions if not already done.
  */
--(void)addPolicyAttributeDescription:(ElasticLoadBalancingPolicyAttributeDescription *)policyAttributeDescriptionObject;
+- (void)addPolicyAttributeDescription:(ElasticLoadBalancingPolicyAttributeDescription *)policyAttributeDescriptionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

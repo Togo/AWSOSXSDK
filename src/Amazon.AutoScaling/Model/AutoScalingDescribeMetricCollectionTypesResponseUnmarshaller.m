@@ -19,16 +19,15 @@
 @implementation AutoScalingDescribeMetricCollectionTypesResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"Metrics"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.metrics withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Metrics";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AutoScalingMetricCollectionTypeUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AutoScalingMetricCollectionTypeUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -36,12 +35,11 @@
     if ([elementName isEqualToString:@"Granularities"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.granularities withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Granularities";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AutoScalingMetricGranularityTypeUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AutoScalingMetricGranularityTypeUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -49,8 +47,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -67,14 +64,12 @@
     }
 }
 
--(AutoScalingDescribeMetricCollectionTypesResponse *)response
-{
+- (AutoScalingDescribeMetricCollectionTypesResponse *)response {
     if (nil == response) {
         response = [[AutoScalingDescribeMetricCollectionTypesResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

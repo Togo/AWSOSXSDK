@@ -27,23 +27,20 @@
  * Batch Write Item Result
  */
 
-@interface DynamoDBBatchWriteItemResponse:DynamoDBResponse
-
-{
+@interface DynamoDBBatchWriteItemResponse : DynamoDBResponse {
     NSMutableDictionary *responses;
     NSMutableDictionary *unprocessedItems;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The response object as a result of <code>BatchWriteItem</code> call.
@@ -65,12 +62,12 @@
 /**
  * Returns a value from the responses dictionary for the specified key.
  */
--(DynamoDBBatchWriteResponse *)responsesValueForKey:(NSString *)theKey;
+- (DynamoDBBatchWriteResponse *)responsesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a value from the unprocessedItems dictionary for the specified key.
  */
--(NSArray *)unprocessedItemsValueForKey:(NSString *)theKey;
+- (NSArray *)unprocessedItemsValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -78,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

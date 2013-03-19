@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Cancelled Spot Instance Request
  */
 
-@interface EC2CancelledSpotInstanceRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CancelledSpotInstanceRequest : AmazonServiceRequestConfig {
     NSString *spotInstanceRequestId;
     NSString *state;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the SpotInstanceRequestId property for this object.
@@ -54,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

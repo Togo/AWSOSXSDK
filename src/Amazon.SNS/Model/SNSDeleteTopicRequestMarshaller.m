@@ -17,12 +17,11 @@
 
 @implementation SNSDeleteTopicRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSDeleteTopicRequest *)deleteTopicRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSDeleteTopicRequest *)deleteTopicRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"DeleteTopic"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteTopic" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[deleteTopicRequest delegate]];
     [request setCredentials:[deleteTopicRequest credentials]];

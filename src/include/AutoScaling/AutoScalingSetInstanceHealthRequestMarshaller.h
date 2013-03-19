@@ -22,11 +22,11 @@
 /**
  * Set Instance Health Request Marshaller
  */
-@interface AutoScalingSetInstanceHealthRequestMarshaller:NSObject {
+@interface AutoScalingSetInstanceHealthRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest;
 
 
 @end

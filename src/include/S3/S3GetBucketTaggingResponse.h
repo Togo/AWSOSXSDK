@@ -20,8 +20,7 @@
 /** Contains all the information about the getBucketTaggingResponse operation.
  *
  */
-@interface S3GetBucketTaggingResponse:S3Response
-{
+@interface S3GetBucketTaggingResponse : S3Response {
     S3BucketTaggingConfiguration *configuration;
 }
 

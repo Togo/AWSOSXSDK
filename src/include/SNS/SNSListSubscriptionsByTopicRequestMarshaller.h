@@ -22,11 +22,11 @@
 /**
  * List Subscriptions By Topic Request Marshaller
  */
-@interface SNSListSubscriptionsByTopicRequestMarshaller:NSObject {
+@interface SNSListSubscriptionsByTopicRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest;
++ (AmazonServiceRequest *)createRequest:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest;
 
 
 @end

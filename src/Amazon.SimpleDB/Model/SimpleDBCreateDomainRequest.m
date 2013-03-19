@@ -21,8 +21,7 @@
 @synthesize domainName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         domainName = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithDomainName:(NSString *)theDomainName
-{
+- (id)initWithDomainName:(NSString *)theDomainName {
     if (self = [self init]) {
         self.domainName = theDomainName;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

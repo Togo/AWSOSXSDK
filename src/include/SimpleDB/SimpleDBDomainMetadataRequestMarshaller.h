@@ -22,11 +22,11 @@
 /**
  * Domain Metadata Request Marshaller
  */
-@interface SimpleDBDomainMetadataRequestMarshaller:NSObject {
+@interface SimpleDBDomainMetadataRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDomainMetadataRequest *)domainMetadataRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBDomainMetadataRequest *)domainMetadataRequest;
 
 
 @end

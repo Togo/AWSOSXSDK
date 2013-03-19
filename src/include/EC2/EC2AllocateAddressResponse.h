@@ -17,29 +17,25 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Allocate Address Response
  */
 
-@interface EC2AllocateAddressResponse:EC2Response
-
-{
+@interface EC2AllocateAddressResponse : EC2Response {
     NSString *publicIp;
     NSString *domain;
     NSString *allocationId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * IP address for use with your account.
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

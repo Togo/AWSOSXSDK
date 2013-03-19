@@ -21,12 +21,11 @@
 @synthesize deviceSerialNumber;
 @synthesize token;
 
--(id)initWithSerialNumber:(NSString *)theDeviceSerialNumber andToken:(NSString *)theToken
-{
+- (id)initWithSerialNumber:(NSString *)theDeviceSerialNumber andToken:(NSString *)theToken {
     self = [super init];
     if (self) {
         self.deviceSerialNumber = theDeviceSerialNumber;
-        self.token              = theToken;
+        self.token = theToken;
     }
     return self;
 }

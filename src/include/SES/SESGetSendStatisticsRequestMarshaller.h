@@ -22,11 +22,11 @@
 /**
  * Get Send Statistics Request Marshaller
  */
-@interface SESGetSendStatisticsRequestMarshaller:NSObject {
+@interface SESGetSendStatisticsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESGetSendStatisticsRequest *)getSendStatisticsRequest;
++ (AmazonServiceRequest *)createRequest:(SESGetSendStatisticsRequest *)getSendStatisticsRequest;
 
 
 @end

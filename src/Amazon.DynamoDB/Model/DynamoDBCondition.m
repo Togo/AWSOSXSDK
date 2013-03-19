@@ -22,8 +22,7 @@
 @synthesize comparisonOperator;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         attributeValueList = [[NSMutableArray alloc] initWithCapacity:1];
         comparisonOperator = nil;
@@ -33,8 +32,7 @@
 }
 
 
--(void)addAttributeValueList:(DynamoDBAttributeValue *)attributeValueListObject
-{
+- (void)addAttributeValueList:(DynamoDBAttributeValue *)attributeValueListObject {
     if (attributeValueList == nil) {
         attributeValueList = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

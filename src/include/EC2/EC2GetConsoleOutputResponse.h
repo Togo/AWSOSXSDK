@@ -17,29 +17,25 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Get Console Output Response
  */
 
-@interface EC2GetConsoleOutputResponse:EC2Response
-
-{
+@interface EC2GetConsoleOutputResponse : EC2Response {
     NSString *instanceId;
-    NSDate   *timestamp;
+    NSDate *timestamp;
     NSString *output;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the instance whose console output was requested.
@@ -62,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

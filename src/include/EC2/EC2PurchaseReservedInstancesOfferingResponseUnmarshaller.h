@@ -23,7 +23,7 @@
 /**
  * Purchase Reserved Instances Offering Response Unmarshaller
  */
-@interface EC2PurchaseReservedInstancesOfferingResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2PurchaseReservedInstancesOfferingResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2PurchaseReservedInstancesOfferingResponse *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2PurchaseReservedInstancesOfferingResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

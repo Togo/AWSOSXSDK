@@ -19,7 +19,7 @@
 /** Contains the response from a delete version operation.
  *
  */
-@interface S3DeleteVersionResponse:S3Response {
+@interface S3DeleteVersionResponse : S3Response {
 }
 
 

@@ -16,17 +16,17 @@
 #import "AutoScalingDeleteScheduledActionResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingDeleteScheduledActionResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingDeleteScheduledActionResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingDeleteScheduledActionResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingDeleteScheduledActionResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingDeleteScheduledActionResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingDeleteScheduledActionResponse *)response;
 
 @end

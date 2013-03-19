@@ -17,12 +17,11 @@
 
 @implementation EC2DeleteSecurityGroupRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeleteSecurityGroup"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteSecurityGroup" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deleteSecurityGroupRequest delegate]];
     [request setCredentials:[deleteSecurityGroupRequest credentials]];

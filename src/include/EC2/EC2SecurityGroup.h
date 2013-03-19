@@ -18,32 +18,27 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Security Group
  */
 
-@interface EC2SecurityGroup:NSObject
-
-{
-    NSString       *ownerId;
-    NSString       *groupName;
-    NSString       *groupId;
-    NSString       *descriptionValue;
+@interface EC2SecurityGroup : NSObject {
+    NSString *ownerId;
+    NSString *groupName;
+    NSString *groupId;
+    NSString *descriptionValue;
     NSMutableArray *ipPermissions;
     NSMutableArray *ipPermissionsEgress;
-    NSString       *vpcId;
+    NSString *vpcId;
     NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The AWS Access Key ID of the owner of the security group.
@@ -89,19 +84,19 @@
  * Adds a single object to ipPermissions.
  * This function will alloc and init ipPermissions if not already done.
  */
--(void)addIpPermission:(EC2IpPermission *)ipPermissionObject;
+- (void)addIpPermission:(EC2IpPermission *)ipPermissionObject;
 
 /**
  * Adds a single object to ipPermissionsEgress.
  * This function will alloc and init ipPermissionsEgress if not already done.
  */
--(void)addIpPermissionsEgres:(EC2IpPermission *)ipPermissionsEgresObject;
+- (void)addIpPermissionsEgres:(EC2IpPermission *)ipPermissionsEgresObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -109,7 +104,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

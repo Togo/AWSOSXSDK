@@ -18,22 +18,24 @@
 /**
  * A key to delete, with an optional version attribute.
  */
-@interface S3KeyVersion:NSObject
-{
+@interface S3KeyVersion : NSObject {
     NSString *key;
     NSString *version;
 }
 
--(id)initWithKey:(NSString *)theKey withVersion:(NSString *)theVersion;
--(id)initWithKey:(NSString *)theKey;
-+(id)keyVersionWithKey:(NSString *)theKey withVersion:(NSString *)theVersion;
-+(id)keyVersionWithKey:(NSString *)theKey;
+- (id)initWithKey:(NSString *)theKey withVersion:(NSString *)theVersion;
+
+- (id)initWithKey:(NSString *)theKey;
+
++ (id)keyVersionWithKey:(NSString *)theKey withVersion:(NSString *)theVersion;
+
++ (id)keyVersionWithKey:(NSString *)theKey;
 
 /** Returns the XML represenation of the object.
  *
  * @return A XML representation of the Object.
  */
--(NSString *)toXml;
+- (NSString *)toXml;
 
 /** Gets and sets the key property. */
 @property (nonatomic, strong) NSString *key;

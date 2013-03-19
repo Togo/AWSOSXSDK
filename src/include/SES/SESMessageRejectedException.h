@@ -16,8 +16,6 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Indicates that the action failed, and the message could not be sent.
@@ -25,17 +23,11 @@
  * error.
  * </p>
  */
-@interface SESMessageRejectedException:AmazonServiceException
-{
+@interface SESMessageRejectedException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -44,7 +36,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

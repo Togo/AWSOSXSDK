@@ -22,18 +22,16 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         volumeIds = [[NSMutableArray alloc] initWithCapacity:1];
-        filters   = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithVolumeIds:(NSMutableArray *)theVolumeIds
-{
+- (id)initWithVolumeIds:(NSMutableArray *)theVolumeIds {
     if (self = [self init]) {
         self.volumeIds = theVolumeIds;
     }
@@ -42,8 +40,7 @@
 }
 
 
--(void)addVolumeId:(NSString *)volumeIdObject
-{
+- (void)addVolumeId:(NSString *)volumeIdObject {
     if (volumeIds == nil) {
         volumeIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -51,8 +48,7 @@
     [volumeIds addObject:volumeIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +57,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +68,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

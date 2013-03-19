@@ -24,23 +24,20 @@
  * Describe Load Balancers Result
  */
 
-@interface ElasticLoadBalancingDescribeLoadBalancersResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingDescribeLoadBalancersResponse : ElasticLoadBalancingResponse {
     NSMutableArray *loadBalancerDescriptions;
-    NSString       *nextMarker;
+    NSString *nextMarker;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of LoadBalancer description structures.
@@ -53,11 +50,10 @@
 @property (nonatomic, strong) NSString *nextMarker;
 
 
-
 /**
  * Returns a value from the loadBalancerDescriptions array for the specified index
  */
--(ElasticLoadBalancingLoadBalancerDescription *)loadBalancerDescriptionsObjectAtIndex:(int)index;
+- (ElasticLoadBalancingLoadBalancerDescription *)loadBalancerDescriptionsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

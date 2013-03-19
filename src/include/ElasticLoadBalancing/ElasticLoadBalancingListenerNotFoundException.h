@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * LoadBalancer does not have a listener configured at the given port.
  * </p>
  */
-@interface ElasticLoadBalancingListenerNotFoundException:AmazonServiceException
-{
+@interface ElasticLoadBalancingListenerNotFoundException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

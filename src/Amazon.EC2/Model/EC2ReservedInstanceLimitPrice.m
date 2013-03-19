@@ -22,10 +22,9 @@
 @synthesize currencyCode;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        amount       = nil;
+        amount = nil;
         currencyCode = nil;
     }
 
@@ -33,9 +32,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Allocate Address Request Marshaller
  */
-@interface EC2AllocateAddressRequestMarshaller:NSObject {
+@interface EC2AllocateAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2AllocateAddressRequest *)allocateAddressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2AllocateAddressRequest *)allocateAddressRequest;
 
 
 @end

@@ -44,11 +44,11 @@
 /**
  * Query Request Marshaller
  */
-@interface DynamoDBQueryRequestMarshaller:NSObject {
+@interface DynamoDBQueryRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBQueryRequest *)queryRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBQueryRequest *)queryRequest;
 
 
 @end

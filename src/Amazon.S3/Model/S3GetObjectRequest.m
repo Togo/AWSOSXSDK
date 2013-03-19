@@ -27,21 +27,19 @@
 @synthesize versionId;
 @synthesize responseHeaderOverrides;
 
--(id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket
-{
+- (id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket {
     if (self = [self init]) {
         self.bucket = aBucket;
-        self.key    = aKey;
+        self.key = aKey;
     }
 
     return self;
 }
 
--(id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket withVersionId:(NSString *)aVersionId
-{
+- (id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket withVersionId:(NSString *)aVersionId {
     if (self = [self init]) {
-        self.bucket    = aBucket;
-        self.key       = aKey;
+        self.bucket = aBucket;
+        self.key = aKey;
         self.versionId = aVersionId;
     }
 
@@ -49,8 +47,7 @@
 }
 
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *queryString = [NSMutableString stringWithCapacity:512];
 
     if (self.responseHeaderOverrides != nil) {
@@ -58,7 +55,7 @@
     }
 
     if (nil != self.versionId) {
-        [queryString appendString:[NSString stringWithFormat:@"%@%@=%@", [queryString length] > 0 ? @"&":@"", kS3SubResourceVersionId, self.versionId]];
+        [queryString appendString:[NSString stringWithFormat:@"%@%@=%@", [queryString length] > 0 ? @"&" : @"", kS3SubResourceVersionId, self.versionId]];
     }
 
     self.subResource = queryString;
@@ -88,8 +85,7 @@
     return urlRequest;
 }
 
--(NSString *)getRange
-{
+- (NSString *)getRange {
     if (rangeSet) {
         return [NSString stringWithFormat:@"bytes=%lld-%lld", rangeStart, rangeEnd];
     }
@@ -97,30 +93,26 @@
     return nil;
 }
 
--(void)setRangeStart:(int64_t)start rangeEnd:(int64_t)end
-{
+- (void)setRangeStart:(int64_t)start rangeEnd:(int64_t)end {
     rangeStart = start;
-    rangeEnd   = end;
-    rangeSet   = YES;
+    rangeEnd = end;
+    rangeSet = YES;
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     AmazonClientException *clientException = [super validate];
-    
-    if(clientException == nil)
-    {
-        if(rangeSet == YES)
-        {
+
+    if (clientException == nil) {
+        if (rangeSet == YES) {
             if (rangeEnd <= rangeStart) {
-                clientException = (AmazonClientException *)[AmazonClientException exceptionWithName:@"Invalid range" 
-                                                                    reason:@"rangeEnd must be larger than rangeStart" 
-                                                                  userInfo:nil];
+                clientException = (AmazonClientException *) [AmazonClientException exceptionWithName:@"Invalid range"
+                                                                                              reason:@"rangeEnd must be larger than rangeStart"
+                                                                                            userInfo:nil];
                 rangeSet = NO;
             }
         }
     }
-    
+
     return clientException;
 }
 

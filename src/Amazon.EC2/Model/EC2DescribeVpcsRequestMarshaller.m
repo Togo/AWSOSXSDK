@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeVpcsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeVpcsRequest *)describeVpcsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeVpcsRequest *)describeVpcsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeVpcs"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeVpcs" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeVpcsRequest delegate]];
     [request setCredentials:[describeVpcsRequest credentials]];

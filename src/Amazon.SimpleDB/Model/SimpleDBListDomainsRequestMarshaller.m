@@ -17,12 +17,11 @@
 
 @implementation SimpleDBListDomainsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBListDomainsRequest *)listDomainsRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBListDomainsRequest *)listDomainsRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"ListDomains"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"ListDomains" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[listDomainsRequest delegate]];
     [request setCredentials:[listDomainsRequest credentials]];

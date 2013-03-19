@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeSecurityGroupsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeSecurityGroups"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeSecurityGroups" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeSecurityGroupsRequest delegate]];
     [request setCredentials:[describeSecurityGroupsRequest credentials]];

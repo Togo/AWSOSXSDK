@@ -16,27 +16,22 @@
 #import "CloudWatchDimension.h"
 
 
-
 /**
  * Metric
  */
 
-@interface CloudWatchMetric:NSObject
-
-{
-    NSString       *namespace;
-    NSString       *metricName;
+@interface CloudWatchMetric : NSObject {
+    NSString *namespace;
+    NSString *metricName;
     NSMutableArray *dimensions;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The namespace of the metric.
@@ -67,7 +62,7 @@
  * Adds a single object to dimensions.
  * This function will alloc and init dimensions if not already done.
  */
--(void)addDimension:(CloudWatchDimension *)dimensionObject;
+- (void)addDimension:(CloudWatchDimension *)dimensionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

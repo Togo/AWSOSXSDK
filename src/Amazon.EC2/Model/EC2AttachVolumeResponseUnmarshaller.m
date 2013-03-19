@@ -19,8 +19,7 @@
 @implementation EC2AttachVolumeResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
     EC2VolumeAttachmentUnmarshaller *unmarshaller = [[EC2VolumeAttachmentUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAttachment:)];
@@ -28,14 +27,12 @@
     [parser setDelegate:unmarshaller];
 
 
-
     if ([elementName isEqualToString:@"Error"]) {
         [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -58,14 +55,12 @@
     }
 }
 
--(EC2AttachVolumeResponse *)response
-{
+- (EC2AttachVolumeResponse *)response {
     if (nil == response) {
         response = [[EC2AttachVolumeResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

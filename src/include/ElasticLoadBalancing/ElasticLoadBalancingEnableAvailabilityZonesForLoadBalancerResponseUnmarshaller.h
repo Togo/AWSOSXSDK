@@ -24,7 +24,7 @@
 /**
  * Enable Availability Zones For Load Balancer Result Unmarshaller
  */
-@interface ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponseUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponseUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

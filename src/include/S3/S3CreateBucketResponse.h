@@ -17,7 +17,7 @@
 #import "S3Response.h"
 
 /** Contains the response from a createBucket operation. */
-@interface S3CreateBucketResponse:S3Response {
+@interface S3CreateBucketResponse : S3Response {
 }
 
 @end

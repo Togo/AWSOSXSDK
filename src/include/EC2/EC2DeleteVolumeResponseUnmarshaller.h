@@ -16,17 +16,17 @@
 #import "EC2DeleteVolumeResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DeleteVolumeResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DeleteVolumeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DeleteVolumeResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DeleteVolumeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DeleteVolumeResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DeleteVolumeResponse *)response;
 
 @end

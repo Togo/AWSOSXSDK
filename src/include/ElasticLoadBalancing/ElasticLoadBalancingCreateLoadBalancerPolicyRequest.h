@@ -18,28 +18,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Load Balancer Policy Request
  */
 
-@interface ElasticLoadBalancingCreateLoadBalancerPolicyRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
-    NSString       *policyName;
-    NSString       *policyTypeName;
+@interface ElasticLoadBalancingCreateLoadBalancerPolicyRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
+    NSString *policyName;
+    NSString *policyTypeName;
     NSMutableArray *policyAttributes;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name associated with the LoadBalancer for which the policy is
@@ -69,7 +64,7 @@
  * Adds a single object to policyAttributes.
  * This function will alloc and init policyAttributes if not already done.
  */
--(void)addPolicyAttribute:(ElasticLoadBalancingPolicyAttribute *)policyAttributeObject;
+- (void)addPolicyAttribute:(ElasticLoadBalancingPolicyAttribute *)policyAttributeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -77,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

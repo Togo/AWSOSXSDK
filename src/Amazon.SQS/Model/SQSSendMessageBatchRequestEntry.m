@@ -23,21 +23,19 @@
 @synthesize delaySeconds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        idValue      = nil;
-        messageBody  = nil;
+        idValue = nil;
+        messageBody = nil;
         delaySeconds = nil;
     }
 
     return self;
 }
 
--(id)initWithIdValue:(NSString *)theIdValue andMessageBody:(NSString *)theMessageBody
-{
+- (id)initWithIdValue:(NSString *)theIdValue andMessageBody:(NSString *)theMessageBody {
     if (self = [self init]) {
-        self.idValue     = theIdValue;
+        self.idValue = theIdValue;
         self.messageBody = theMessageBody;
     }
 
@@ -45,9 +43,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

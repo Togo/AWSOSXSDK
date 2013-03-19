@@ -17,12 +17,11 @@
 
 @implementation EC2CopyImageRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CopyImageRequest *)copyImageRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CopyImageRequest *)copyImageRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CopyImage"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CopyImage" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[copyImageRequest delegate]];
     [request setCredentials:[copyImageRequest credentials]];

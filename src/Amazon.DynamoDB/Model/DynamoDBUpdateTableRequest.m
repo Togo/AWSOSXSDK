@@ -22,20 +22,18 @@
 @synthesize provisionedThroughput;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName             = nil;
+        tableName = nil;
         provisionedThroughput = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput
-{
+- (id)initWithTableName:(NSString *)theTableName andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput {
     if (self = [self init]) {
-        self.tableName             = theTableName;
+        self.tableName = theTableName;
         self.provisionedThroughput = theProvisionedThroughput;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

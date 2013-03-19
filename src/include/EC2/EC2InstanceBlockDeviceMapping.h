@@ -16,26 +16,21 @@
 #import "EC2EbsInstanceBlockDevice.h"
 
 
-
 /**
  * Instance Block Device Mapping
  */
 
-@interface EC2InstanceBlockDeviceMapping:NSObject
-
-{
-    NSString                  *deviceName;
+@interface EC2InstanceBlockDeviceMapping : NSObject {
+    NSString *deviceName;
     EC2EbsInstanceBlockDevice *ebs;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The device name (e.g., <code>/dev/sdh</code>) at which the block
@@ -54,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

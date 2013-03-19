@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Volumes Response
  */
 
-@interface EC2DescribeVolumesResponse:EC2Response
-
-{
+@interface EC2DescribeVolumesResponse : EC2Response {
     NSMutableArray *volumes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of described EBS volumes.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *volumes;
 
 
-
 /**
  * Returns a value from the volumes array for the specified index
  */
--(EC2Volume *)volumesObjectAtIndex:(int)index;
+- (EC2Volume *)volumesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

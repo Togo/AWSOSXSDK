@@ -17,27 +17,23 @@
 #import "DynamoDBResponse.h"
 
 
-
 /**
  * Batch Write Response
  */
 
-@interface DynamoDBBatchWriteResponse:DynamoDBResponse
-
-{
+@interface DynamoDBBatchWriteResponse : DynamoDBResponse {
     NSNumber *consumedCapacityUnits;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The number of Capacity Units of the provisioned throughput of the
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

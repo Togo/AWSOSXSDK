@@ -20,16 +20,13 @@
  * Message
  */
 
-@interface SQSMessage:NSObject
-
-{
-    NSString            *messageId;
-    NSString            *receiptHandle;
-    NSString            *mD5OfBody;
-    NSString            *body;
+@interface SQSMessage : NSObject {
+    NSString *messageId;
+    NSString *receiptHandle;
+    NSString *mD5OfBody;
+    NSString *body;
     NSMutableDictionary *attributes;
 }
-
 
 
 /**
@@ -62,14 +59,14 @@
  * Default constructor for a new Message object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 
 /**
  * Set a value in the dictionary attributes for the specified key.
  * This function will alloc and init attributes if not already done.
  */
--(void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
+- (void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -77,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

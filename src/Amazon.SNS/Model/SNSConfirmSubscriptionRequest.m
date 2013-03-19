@@ -23,32 +23,29 @@
 @synthesize authenticateOnUnsubscribe;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topicArn                  = nil;
-        token                     = nil;
+        topicArn = nil;
+        token = nil;
         authenticateOnUnsubscribe = nil;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
-        self.token    = theToken;
+        self.token = theToken;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken andAuthenticateOnUnsubscribe:(NSString *)theAuthenticateOnUnsubscribe
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken andAuthenticateOnUnsubscribe:(NSString *)theAuthenticateOnUnsubscribe {
     if (self = [self init]) {
-        self.topicArn                  = theTopicArn;
-        self.token                     = theToken;
+        self.topicArn = theTopicArn;
+        self.token = theToken;
         self.authenticateOnUnsubscribe = theAuthenticateOnUnsubscribe;
     }
 
@@ -56,9 +53,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +65,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

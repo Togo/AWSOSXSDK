@@ -19,20 +19,18 @@
 @implementation EC2DescribeSecurityGroupsResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"securityGroupInfo"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"securityGroupInfo";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2SecurityGroupUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2SecurityGroupUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -64,14 +61,12 @@
     }
 }
 
--(EC2DescribeSecurityGroupsResponse *)response
-{
+- (EC2DescribeSecurityGroupsResponse *)response {
     if (nil == response) {
         response = [[EC2DescribeSecurityGroupsResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

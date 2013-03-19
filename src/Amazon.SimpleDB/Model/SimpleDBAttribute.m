@@ -24,22 +24,20 @@
 @synthesize alternateValueEncoding;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        name                   = nil;
-        alternateNameEncoding  = nil;
-        value                  = nil;
+        name = nil;
+        alternateNameEncoding = nil;
+        value = nil;
         alternateValueEncoding = nil;
     }
 
     return self;
 }
 
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue
-{
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue {
     if (self = [self init]) {
-        self.name  = theName;
+        self.name = theName;
         self.value = theValue;
     }
 
@@ -47,9 +45,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -62,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

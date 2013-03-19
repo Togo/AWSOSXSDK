@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeInstanceStatusRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeInstanceStatusRequest *)describeInstanceStatusRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeInstanceStatusRequest *)describeInstanceStatusRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeInstanceStatus"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeInstanceStatus" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeInstanceStatusRequest delegate]];
     [request setCredentials:[describeInstanceStatusRequest credentials]];
@@ -76,7 +75,7 @@
     }
     if (describeInstanceStatusRequest != nil) {
         if (describeInstanceStatusRequest.includeAllInstancesIsSet) {
-            [request setParameterValue:(describeInstanceStatusRequest.includeAllInstances ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"IncludeAllInstances"]];
+            [request setParameterValue:(describeInstanceStatusRequest.includeAllInstances ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"IncludeAllInstances"]];
         }
     }
 

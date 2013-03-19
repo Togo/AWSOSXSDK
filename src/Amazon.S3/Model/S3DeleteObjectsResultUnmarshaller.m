@@ -25,36 +25,29 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
-    if ([elementName isEqualToString:@"Deleted"])
-    {
+    if ([elementName isEqualToString:@"Deleted"]) {
         [parser setDelegate:[[S3DeletedObjectUnmarshaller alloc] initWithCaller:self withParentObject:self.deletedObjects withSetter:@selector(addObject:)]];
     }
-    else if ([elementName isEqualToString:@"Error"])
-    {
+    else if ([elementName isEqualToString:@"Error"]) {
         [parser setDelegate:[[S3DeleteErrorUnmarshaller alloc] initWithCaller:self withParentObject:self.deleteErrors withSetter:@selector(addObject:)]];
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(NSMutableArray *)deletedObjects
-{
-    if (deletedObjects == nil)
-    {
+- (NSMutableArray *)deletedObjects {
+    if (deletedObjects == nil) {
         deletedObjects = [[NSMutableArray alloc] init];
     }
 
     return deletedObjects;
 }
 
--(NSMutableArray *)deleteErrors
-{
-    if (deleteErrors == nil)
-    {
+- (NSMutableArray *)deleteErrors {
+    if (deleteErrors == nil) {
         deleteErrors = [[NSMutableArray alloc] init];
     }
 

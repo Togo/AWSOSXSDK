@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Remove Permission Request
  */
 
-@interface SQSRemovePermissionRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSRemovePermissionRequest : AmazonServiceRequestConfig {
     NSString *queueUrl;
     NSString *label;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new RemovePermissionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RemovePermissionRequest object.
@@ -57,7 +53,7 @@
  * @param theLabel The identification of the permission to remove. This
  * is the label added with the <a>AddPermission</a> operation.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -26,10 +26,8 @@
 @synthesize ifUnmodifiedSince;
 @synthesize redirectLocation;
 
-- (id)init
-{
-    if(self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         sourceKey = nil;
         sourceBucket = nil;
         metadataDirective = nil;
@@ -43,21 +41,18 @@
     return self;
 }
 
--(id)initWithSourceKey:(NSString *)srcKey sourceBucket:(NSString *)srcBucket destinationKey:(NSString *)dstKey destinationBucket:(NSString *)dstBucket
-{
-    if (self = [self init])
-    {
-        self.sourceKey    = srcKey;
+- (id)initWithSourceKey:(NSString *)srcKey sourceBucket:(NSString *)srcBucket destinationKey:(NSString *)dstKey destinationBucket:(NSString *)dstBucket {
+    if (self = [self init]) {
+        self.sourceKey = srcKey;
         self.sourceBucket = srcBucket;
-        self.key          = dstKey;
-        self.bucket       = dstBucket;
+        self.key = dstKey;
+        self.bucket = dstBucket;
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     // Assume that the destination bucket is the same as the source if not explicitly set

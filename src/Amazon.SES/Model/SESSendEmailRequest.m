@@ -25,22 +25,20 @@
 @synthesize returnPath;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        source           = nil;
-        destination      = nil;
-        message          = nil;
+        source = nil;
+        destination = nil;
+        message = nil;
         replyToAddresses = [[NSMutableArray alloc] initWithCapacity:1];
-        returnPath       = nil;
+        returnPath = nil;
     }
 
     return self;
 }
 
 
--(void)addReplyToAddresse:(NSString *)replyToAddresseObject
-{
+- (void)addReplyToAddresse:(NSString *)replyToAddresseObject {
     if (replyToAddresses == nil) {
         replyToAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -49,8 +47,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

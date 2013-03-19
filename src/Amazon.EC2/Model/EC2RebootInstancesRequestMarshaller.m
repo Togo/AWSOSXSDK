@@ -17,12 +17,11 @@
 
 @implementation EC2RebootInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2RebootInstancesRequest *)rebootInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2RebootInstancesRequest *)rebootInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"RebootInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"RebootInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[rebootInstancesRequest delegate]];
     [request setCredentials:[rebootInstancesRequest credentials]];

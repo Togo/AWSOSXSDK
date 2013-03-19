@@ -34,31 +34,29 @@
 @synthesize pricingDetails;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesOfferingId = nil;
-        instanceType                = nil;
-        availabilityZone            = nil;
-        duration                    = nil;
-        usagePrice                  = nil;
-        fixedPrice                  = nil;
-        productDescription          = nil;
-        instanceTenancy             = nil;
-        currencyCode                = nil;
-        offeringType                = nil;
-        recurringCharges            = [[NSMutableArray alloc] initWithCapacity:1];
-        marketplace                 = NO;
-        marketplaceIsSet            = NO;
-        pricingDetails              = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceType = nil;
+        availabilityZone = nil;
+        duration = nil;
+        usagePrice = nil;
+        fixedPrice = nil;
+        productDescription = nil;
+        instanceTenancy = nil;
+        currencyCode = nil;
+        offeringType = nil;
+        recurringCharges = [[NSMutableArray alloc] initWithCapacity:1];
+        marketplace = NO;
+        marketplaceIsSet = NO;
+        pricingDetails = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject
-{
+- (void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject {
     if (recurringCharges == nil) {
         recurringCharges = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +64,7 @@
     [recurringCharges addObject:recurringChargeObject];
 }
 
--(void)addPricingDetail:(EC2PricingDetail *)pricingDetailObject
-{
+- (void)addPricingDetail:(EC2PricingDetail *)pricingDetailObject {
     if (pricingDetails == nil) {
         pricingDetails = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -76,8 +73,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -101,13 +97,10 @@
 }
 
 
--(void)setMarketplace:(bool)theValue
-{
-    marketplace      = theValue;
+- (void)setMarketplace:(bool)theValue {
+    marketplace = theValue;
     marketplaceIsSet = YES;
 }
-
-
 
 
 @end

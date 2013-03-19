@@ -17,30 +17,25 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Report Instance Status Request
  */
 
-@interface EC2ReportInstanceStatusRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ReportInstanceStatusRequest : AmazonServiceRequestConfig {
     NSMutableArray *instances;
-    NSString       *status;
-    NSDate         *startTime;
-    NSDate         *endTime;
+    NSString *status;
+    NSDate *startTime;
+    NSDate *endTime;
     NSMutableArray *reasonCodes;
-    NSString       *descriptionValue;
+    NSString *descriptionValue;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Instances property for this object.
@@ -76,13 +71,13 @@
  * Adds a single object to instances.
  * This function will alloc and init instances if not already done.
  */
--(void)addInstance:(NSString *)instanceObject;
+- (void)addInstance:(NSString *)instanceObject;
 
 /**
  * Adds a single object to reasonCodes.
  * This function will alloc and init reasonCodes if not already done.
  */
--(void)addReasonCode:(NSString *)reasonCodeObject;
+- (void)addReasonCode:(NSString *)reasonCodeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -90,7 +85,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

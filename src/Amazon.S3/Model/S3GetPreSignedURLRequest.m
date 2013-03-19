@@ -25,8 +25,7 @@
 @synthesize versionId;
 @synthesize responseHeaderOverrides;
 
--(AmazonURLRequest *)configureURLRequest
-{
+- (AmazonURLRequest *)configureURLRequest {
     NSMutableString *queryString = [NSMutableString stringWithCapacity:512];
 
     if (self.responseHeaderOverrides != nil) {
@@ -34,7 +33,7 @@
     }
 
     if (nil != self.versionId) {
-        [queryString appendString:[NSString stringWithFormat:@"%@%@=%@", [queryString length] > 0 ? @"&":@"", kS3SubResourceVersionId, self.versionId]];
+        [queryString appendString:[NSString stringWithFormat:@"%@%@=%@", [queryString length] > 0 ? @"&" : @"", kS3SubResourceVersionId, self.versionId]];
     }
 
     self.subResource = queryString;
@@ -52,20 +51,19 @@
     [self setHttpMethod:self.httpVerb];
     [self.urlRequest setHTTPMethod:self.httpVerb];
 
-    NSInteger epoch = (int)[self.expires timeIntervalSince1970];
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long)epoch] forHTTPHeaderField:@"Date"];
+    NSInteger epoch = (int) [self.expires timeIntervalSince1970];
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long) epoch] forHTTPHeaderField:@"Date"];
 
     return self.urlRequest;
 }
 
--(NSString *)queryString
-{
+- (NSString *)queryString {
     // Access Key
     NSMutableString *queryString = [NSMutableString stringWithCapacity:512];
 
     // Security Token
-    if ( self.securityToken != nil ) {
-        [queryString appendFormat:@"%@=%@&", kHttpHdrAmzSecurityToken, [AmazonSDKUtil urlEncode:self.securityToken]];        
+    if (self.securityToken != nil) {
+        [queryString appendFormat:@"%@=%@&", kHttpHdrAmzSecurityToken, [AmazonSDKUtil urlEncode:self.securityToken]];
     }
 
     [queryString appendFormat:@"%@=%@", kS3QueryParamAccessKey, [AmazonSDKUtil urlEncode:self.accessKey]];
@@ -75,8 +73,8 @@
         [queryString appendFormat:@"&%@=0", kS3QueryParamMaxKeys];
     }
 
-    NSInteger epoch = (int)[self.expires timeIntervalSince1970];
-    [queryString appendFormat:@"&%@=%ld", kS3QueryParamExpires, (long)epoch];
+    NSInteger epoch = (int) [self.expires timeIntervalSince1970];
+    [queryString appendFormat:@"&%@=%ld", kS3QueryParamExpires, (long) epoch];
 
 
     if (self.responseHeaderOverrides != nil) {
@@ -91,24 +89,22 @@
     return queryString;
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     AmazonClientException *clientException = [super validate];
-    
-    if(clientException == nil)
-    {
+
+    if (clientException == nil) {
         // HTTP Verb
         if (!([self.httpVerb isEqualToString:kHttpMethodGet] ||
-              [self.httpVerb isEqualToString:kHttpMethodHead] ||
-              [self.httpVerb isEqualToString:kHttpMethodPut])) {
+                [self.httpVerb isEqualToString:kHttpMethodHead] ||
+                [self.httpVerb isEqualToString:kHttpMethodPut])) {
             clientException = [AmazonClientException exceptionWithMessage:@"httpVerb must be GET, HEAD, or PUT."];
         }
-        // Expires
+                // Expires
         else if (self.expires == nil) {
             clientException = [AmazonClientException exceptionWithMessage:@"expires must not be nil."];
         }
     }
-    
+
     return clientException;
 }
 

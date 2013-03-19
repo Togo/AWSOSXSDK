@@ -20,28 +20,24 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Query Request
  */
 
-@interface DynamoDBQueryRequest:AmazonServiceRequestConfig
-
-{
-    NSString               *tableName;
-    NSMutableArray         *attributesToGet;
-    NSNumber               *limit;
-    bool                   consistentRead;
-    bool                   consistentReadIsSet;
-    bool                   count;
-    bool                   countIsSet;
+@interface DynamoDBQueryRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    NSMutableArray *attributesToGet;
+    NSNumber *limit;
+    bool consistentRead;
+    bool consistentReadIsSet;
+    bool count;
+    bool countIsSet;
     DynamoDBAttributeValue *hashKeyValue;
-    DynamoDBCondition      *rangeKeyCondition;
-    bool                   scanIndexForward;
-    bool                   scanIndexForwardIsSet;
-    DynamoDBKey            *exclusiveStartKey;
+    DynamoDBCondition *rangeKeyCondition;
+    bool scanIndexForward;
+    bool scanIndexForwardIsSet;
+    DynamoDBKey *exclusiveStartKey;
 }
-
 
 
 /**
@@ -85,7 +81,7 @@
  * If set to <code>true</code>, then a consistent read is issued.
  * Otherwise eventually-consistent is used.
  */
-@property (nonatomic) bool           consistentRead;
+@property (nonatomic) bool consistentRead;
 
 @property (nonatomic, readonly) bool consistentReadIsSet;
 
@@ -97,7 +93,7 @@
  * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
  * validation error.
  */
-@property (nonatomic) bool           count;
+@property (nonatomic) bool count;
 
 @property (nonatomic, readonly) bool countIsSet;
 
@@ -117,7 +113,7 @@
  * returns results reflecting the requested order, determined by the
  * range key. The default value is <code>true</code> (forward).
  */
-@property (nonatomic) bool           scanIndexForward;
+@property (nonatomic) bool scanIndexForward;
 
 @property (nonatomic, readonly) bool scanIndexForwardIsSet;
 
@@ -137,7 +133,7 @@
  * Default constructor for a new QueryRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new QueryRequest object.
@@ -150,13 +146,13 @@
  * @param theHashKeyValue Attribute value of the hash component of the
  * composite primary key.
  */
--(id)initWithTableName:(NSString *)theTableName andHashKeyValue:(DynamoDBAttributeValue *)theHashKeyValue;
+- (id)initWithTableName:(NSString *)theTableName andHashKeyValue:(DynamoDBAttributeValue *)theHashKeyValue;
 
 /**
  * Adds a single object to attributesToGet.
  * This function will alloc and init attributesToGet if not already done.
  */
--(void)addAttributesToGet:(NSString *)attributesToGetObject;
+- (void)addAttributesToGet:(NSString *)attributesToGetObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -164,7 +160,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

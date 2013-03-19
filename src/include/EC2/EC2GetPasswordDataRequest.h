@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Password Data Request
  */
 
-@interface EC2GetPasswordDataRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2GetPasswordDataRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
 }
-
 
 
 /**
@@ -41,7 +37,7 @@
  * Default constructor for a new GetPasswordDataRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetPasswordDataRequest object.
@@ -50,7 +46,7 @@
  * @param theInstanceId The ID of the instance for which you want the
  * Windows administrator password.
  */
--(id)initWithInstanceId:(NSString *)theInstanceId;
+- (id)initWithInstanceId:(NSString *)theInstanceId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

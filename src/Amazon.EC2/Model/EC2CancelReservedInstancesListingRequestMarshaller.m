@@ -17,12 +17,11 @@
 
 @implementation EC2CancelReservedInstancesListingRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CancelReservedInstancesListing"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CancelReservedInstancesListing" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[cancelReservedInstancesListingRequest delegate]];
     [request setCredentials:[cancelReservedInstancesListingRequest credentials]];

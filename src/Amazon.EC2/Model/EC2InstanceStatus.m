@@ -26,23 +26,21 @@
 @synthesize instanceStatus;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId       = nil;
+        instanceId = nil;
         availabilityZone = nil;
-        events           = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceState    = nil;
-        systemStatus     = nil;
-        instanceStatus   = nil;
+        events = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceState = nil;
+        systemStatus = nil;
+        instanceStatus = nil;
     }
 
     return self;
 }
 
 
--(void)addEvent:(EC2InstanceStatusEvent *)eventObject
-{
+- (void)addEvent:(EC2InstanceStatusEvent *)eventObject {
     if (events == nil) {
         events = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -51,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -67,9 +64,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

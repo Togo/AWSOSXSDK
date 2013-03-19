@@ -25,36 +25,32 @@
 @synthesize healthyThreshold;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        target             = nil;
-        interval           = nil;
-        timeout            = nil;
+        target = nil;
+        interval = nil;
+        timeout = nil;
         unhealthyThreshold = nil;
-        healthyThreshold   = nil;
+        healthyThreshold = nil;
     }
 
     return self;
 }
 
--(id)initWithTarget:(NSString *)theTarget andInterval:(NSNumber *)theInterval andTimeout:(NSNumber *)theTimeout andUnhealthyThreshold:(NSNumber *)theUnhealthyThreshold andHealthyThreshold:(NSNumber *)theHealthyThreshold
-{
+- (id)initWithTarget:(NSString *)theTarget andInterval:(NSNumber *)theInterval andTimeout:(NSNumber *)theTimeout andUnhealthyThreshold:(NSNumber *)theUnhealthyThreshold andHealthyThreshold:(NSNumber *)theHealthyThreshold {
     if (self = [self init]) {
-        self.target             = theTarget;
-        self.interval           = theInterval;
-        self.timeout            = theTimeout;
+        self.target = theTarget;
+        self.interval = theInterval;
+        self.timeout = theTimeout;
         self.unhealthyThreshold = theUnhealthyThreshold;
-        self.healthyThreshold   = theHealthyThreshold;
+        self.healthyThreshold = theHealthyThreshold;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -68,9 +64,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -19,20 +19,18 @@
 @implementation EC2DescribeAccountAttributesResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"accountAttributeSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.accountAttributes withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"accountAttributeSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2AccountAttributeUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2AccountAttributeUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -64,14 +61,12 @@
     }
 }
 
--(EC2DescribeAccountAttributesResponse *)response
-{
+- (EC2DescribeAccountAttributesResponse *)response {
     if (nil == response) {
         response = [[EC2DescribeAccountAttributesResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

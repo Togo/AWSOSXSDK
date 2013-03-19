@@ -17,8 +17,7 @@
 
 @implementation S3DeleteBucketRequest
 
--(id)initWithName:(NSString *)theBucketName
-{
+- (id)initWithName:(NSString *)theBucketName {
     self = [self init];
     if (self != nil) {
         self.bucket = theBucketName;
@@ -27,8 +26,7 @@
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     [self.urlRequest setHTTPMethod:kHttpMethodDelete];
@@ -36,17 +34,15 @@
     return self.urlRequest;
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     AmazonClientException *clientException = [super validate];
-    
-    if(clientException == nil)
-    {
+
+    if (clientException == nil) {
         if (nil == self.bucket) {
-            clientException = [AmazonClientException exceptionWithMessage : @"Bucket Name should not be nil."];
+            clientException = [AmazonClientException exceptionWithMessage :@"Bucket Name should not be nil."];
         }
     }
-    
+
     return clientException;
 }
 

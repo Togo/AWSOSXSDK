@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Load Balancer Request
  */
 
-@interface ElasticLoadBalancingDeleteLoadBalancerRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingDeleteLoadBalancerRequest : AmazonServiceRequestConfig {
     NSString *loadBalancerName;
 }
-
 
 
 /**
@@ -41,7 +37,7 @@
  * Default constructor for a new DeleteLoadBalancerRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteLoadBalancerRequest object.
@@ -50,7 +46,7 @@
  * @param theLoadBalancerName The name associated with the LoadBalancer.
  * The name must be unique within the client AWS account.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

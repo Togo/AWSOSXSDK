@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Export Tasks Request
  */
 
-@interface EC2DescribeExportTasksRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeExportTasksRequest : AmazonServiceRequestConfig {
     NSMutableArray *exportTaskIds;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ExportTaskIds property for this object.
@@ -46,7 +41,7 @@
  * Adds a single object to exportTaskIds.
  * This function will alloc and init exportTaskIds if not already done.
  */
--(void)addExportTaskId:(NSString *)exportTaskIdObject;
+- (void)addExportTaskId:(NSString *)exportTaskIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -54,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

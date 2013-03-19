@@ -21,8 +21,7 @@
 @synthesize groupName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         groupName = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithGroupName:(NSString *)theGroupName
-{
+- (id)initWithGroupName:(NSString *)theGroupName {
     if (self = [self init]) {
         self.groupName = theGroupName;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

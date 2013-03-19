@@ -17,18 +17,16 @@
 
 @implementation SESListVerifiedEmailAddressesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"ListVerifiedEmailAddresses"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"ListVerifiedEmailAddresses" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[listVerifiedEmailAddressesRequest delegate]];
     [request setCredentials:[listVerifiedEmailAddressesRequest credentials]];
     [request setEndpoint:[listVerifiedEmailAddressesRequest requestEndpoint]];
     [request setRequestTag:[listVerifiedEmailAddressesRequest requestTag]];
-
 
 
     return request;

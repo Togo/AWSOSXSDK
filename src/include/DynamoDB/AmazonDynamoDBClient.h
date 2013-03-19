@@ -55,8 +55,7 @@
  * </summary>
  *
  */
-@interface AmazonDynamoDBClient:DynamoDBWebServiceClient
-{
+@interface AmazonDynamoDBClient : DynamoDBWebServiceClient {
 }
 
 
@@ -81,7 +80,7 @@
  * @see DynamoDBListTablesRequest
  * @see DynamoDBListTablesResponse
  */
--(DynamoDBListTablesResponse *)listTables:(DynamoDBListTablesRequest *)listTablesRequest;
+- (DynamoDBListTablesResponse *)listTables:(DynamoDBListTablesRequest *)listTablesRequest;
 
 
 /**
@@ -110,7 +109,7 @@
  * @see DynamoDBQueryRequest
  * @see DynamoDBQueryResponse
  */
--(DynamoDBQueryResponse *)query:(DynamoDBQueryRequest *)queryRequest;
+- (DynamoDBQueryResponse *)query:(DynamoDBQueryRequest *)queryRequest;
 
 
 /**
@@ -141,7 +140,7 @@
  * @see DynamoDBBatchWriteItemRequest
  * @see DynamoDBBatchWriteItemResponse
  */
--(DynamoDBBatchWriteItemResponse *)batchWriteItem:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest;
+- (DynamoDBBatchWriteItemResponse *)batchWriteItem:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest;
 
 
 /**
@@ -172,7 +171,7 @@
  * @see DynamoDBUpdateItemRequest
  * @see DynamoDBUpdateItemResponse
  */
--(DynamoDBUpdateItemResponse *)updateItem:(DynamoDBUpdateItemRequest *)updateItemRequest;
+- (DynamoDBUpdateItemResponse *)updateItem:(DynamoDBUpdateItemRequest *)updateItemRequest;
 
 
 /**
@@ -203,7 +202,7 @@
  * @see DynamoDBPutItemRequest
  * @see DynamoDBPutItemResponse
  */
--(DynamoDBPutItemResponse *)putItem:(DynamoDBPutItemRequest *)putItemRequest;
+- (DynamoDBPutItemResponse *)putItem:(DynamoDBPutItemRequest *)putItemRequest;
 
 
 /**
@@ -232,7 +231,7 @@
  * @see DynamoDBDescribeTableRequest
  * @see DynamoDBDescribeTableResponse
  */
--(DynamoDBDescribeTableResponse *)describeTable:(DynamoDBDescribeTableRequest *)describeTableRequest;
+- (DynamoDBDescribeTableResponse *)describeTable:(DynamoDBDescribeTableRequest *)describeTableRequest;
 
 
 /**
@@ -260,7 +259,7 @@
  * @see DynamoDBScanRequest
  * @see DynamoDBScanResponse
  */
--(DynamoDBScanResponse *)scan:(DynamoDBScanRequest *)scanRequest;
+- (DynamoDBScanResponse *)scan:(DynamoDBScanRequest *)scanRequest;
 
 
 /**
@@ -295,7 +294,7 @@
  * @see DynamoDBCreateTableRequest
  * @see DynamoDBCreateTableResponse
  */
--(DynamoDBCreateTableResponse *)createTable:(DynamoDBCreateTableRequest *)createTableRequest;
+- (DynamoDBCreateTableResponse *)createTable:(DynamoDBCreateTableRequest *)createTableRequest;
 
 
 /**
@@ -326,7 +325,7 @@
  * @see DynamoDBUpdateTableRequest
  * @see DynamoDBUpdateTableResponse
  */
--(DynamoDBUpdateTableResponse *)updateTable:(DynamoDBUpdateTableRequest *)updateTableRequest;
+- (DynamoDBUpdateTableResponse *)updateTable:(DynamoDBUpdateTableRequest *)updateTableRequest;
 
 
 /**
@@ -358,7 +357,7 @@
  * @see DynamoDBDeleteTableRequest
  * @see DynamoDBDeleteTableResponse
  */
--(DynamoDBDeleteTableResponse *)deleteTable:(DynamoDBDeleteTableRequest *)deleteTableRequest;
+- (DynamoDBDeleteTableResponse *)deleteTable:(DynamoDBDeleteTableRequest *)deleteTableRequest;
 
 
 /**
@@ -389,7 +388,7 @@
  * @see DynamoDBDeleteItemRequest
  * @see DynamoDBDeleteItemResponse
  */
--(DynamoDBDeleteItemResponse *)deleteItem:(DynamoDBDeleteItemRequest *)deleteItemRequest;
+- (DynamoDBDeleteItemResponse *)deleteItem:(DynamoDBDeleteItemRequest *)deleteItemRequest;
 
 
 /**
@@ -419,7 +418,7 @@
  * @see DynamoDBGetItemRequest
  * @see DynamoDBGetItemResponse
  */
--(DynamoDBGetItemResponse *)getItem:(DynamoDBGetItemRequest *)getItemRequest;
+- (DynamoDBGetItemResponse *)getItem:(DynamoDBGetItemRequest *)getItemRequest;
 
 
 /**
@@ -457,8 +456,7 @@
  * @see DynamoDBBatchGetItemRequest
  * @see DynamoDBBatchGetItemResponse
  */
--(DynamoDBBatchGetItemResponse *)batchGetItem:(DynamoDBBatchGetItemRequest *)batchGetItemRequest;
-
+- (DynamoDBBatchGetItemResponse *)batchGetItem:(DynamoDBBatchGetItemRequest *)batchGetItemRequest;
 
 
 @end

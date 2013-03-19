@@ -26,11 +26,11 @@
 /**
  * Describe Spot Price History Request Marshaller
  */
-@interface EC2DescribeSpotPriceHistoryRequestMarshaller:NSObject {
+@interface EC2DescribeSpotPriceHistoryRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest;
 
 
 @end

@@ -23,11 +23,11 @@
 /**
  * Configure Health Check Request Marshaller
  */
-@interface ElasticLoadBalancingConfigureHealthCheckRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingConfigureHealthCheckRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingConfigureHealthCheckRequest *)configureHealthCheckRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingConfigureHealthCheckRequest *)configureHealthCheckRequest;
 
 
 @end

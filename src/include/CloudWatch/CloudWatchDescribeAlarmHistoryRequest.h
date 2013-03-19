@@ -17,30 +17,25 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Alarm History Request
  */
 
-@interface CloudWatchDescribeAlarmHistoryRequest:AmazonServiceRequestConfig
-
-{
+@interface CloudWatchDescribeAlarmHistoryRequest : AmazonServiceRequestConfig {
     NSString *alarmName;
     NSString *historyItemType;
-    NSDate   *startDate;
-    NSDate   *endDate;
+    NSDate *startDate;
+    NSDate *endDate;
     NSNumber *maxRecords;
     NSString *nextToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the alarm.
@@ -88,7 +83,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

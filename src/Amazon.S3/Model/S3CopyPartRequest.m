@@ -37,10 +37,9 @@
 @synthesize lastByte;
 
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     self.bucket = destinationBucketName;
-    self.key    = destinationKey;
+    self.key = destinationKey;
 
     NSString *sourceHeader = [NSString stringWithFormat:@"/%@/%@", [AmazonSDKUtil urlEncode:self.sourceBucketName], [AmazonSDKUtil urlEncode:self.sourceKey]];
     if (sourceVersionId != nil) {

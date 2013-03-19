@@ -18,43 +18,42 @@
 @interface AmazonSTSCredentialsProvider ()
 
 @property (nonatomic, strong) AmazonSecurityTokenServiceClient *sts;
-@property (nonatomic, strong) AmazonCredentials                *stsCredentials;
-@property (nonatomic, strong) NSDate                           *expiration;
+@property (nonatomic, strong) AmazonCredentials *stsCredentials;
+@property (nonatomic, strong) NSDate *expiration;
 
 @end
 
 @implementation AmazonSTSCredentialsProvider
 
-@synthesize sts=_sts;
-@synthesize stsCredentials=_stsCredentials;
-@synthesize expiration=_expiration;
-@synthesize sessionLength=_sessionLength;
+@synthesize sts = _sts;
+@synthesize stsCredentials = _stsCredentials;
+@synthesize expiration = _expiration;
+@synthesize sessionLength = _sessionLength;
 
 
--(AmazonCredentials *)credentials
-{
+- (AmazonCredentials *)credentials {
     if ((self.stsCredentials == nil) || ([self isExpired])) {
         [self refresh];
     }
     return self.stsCredentials;
 }
 
--(void)refresh {
-    @synchronized(self) {
+- (void)refresh {
+    @synchronized (self) {
         AMZLogDebug(@"Refreshing credentials from STS.");
         self.stsCredentials = nil;
         self.expiration = nil;
-        
+
         @try {
             SecurityTokenServiceGetSessionTokenRequest *request = [[SecurityTokenServiceGetSessionTokenRequest alloc] init];
             request.durationSeconds = [NSNumber numberWithInteger:self.sessionLength];
             SecurityTokenServiceGetSessionTokenResponse *response = [self.sts getSessionToken:request];
-            
-            
+
+
             self.stsCredentials = [[AmazonCredentials alloc] initWithAccessKey:response.credentials.accessKeyId
-                                                            withSecretKey:response.credentials.secretAccessKey
-                                                        withSecurityToken:response.credentials.sessionToken];
-            
+                                                                 withSecretKey:response.credentials.secretAccessKey
+                                                             withSecurityToken:response.credentials.sessionToken];
+
             self.expiration = response.credentials.expiration;
         }
         @catch (AmazonServiceException *exception) {
@@ -63,11 +62,10 @@
     }
 }
 
--(BOOL)isExpired
-{
-    @synchronized(self) {
+- (BOOL)isExpired {
+    @synchronized (self) {
         NSDate *soon = [NSDate dateWithTimeIntervalSinceNow:(15 * 60)];
-        if ( [soon compare:self.expiration] == NSOrderedDescending) {
+        if ([soon compare:self.expiration] == NSOrderedDescending) {
             return YES;
         }
         else {
@@ -76,37 +74,31 @@
     }
 }
 
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey
-{
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         AmazonCredentials *credentials = [[AmazonCredentials alloc] initWithAccessKey:accessKey withSecretKey:secretKey];
         if (!(self = [self initWithCredentials:credentials])) return nil;
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         AmazonSecurityTokenServiceClient *client = [[AmazonSecurityTokenServiceClient alloc] initWithCredentials:theCredentials];
         if (!(self = [self initWithClient:client])) return nil;
     }
     return self;
 }
 
--(id)initWithClient:(AmazonSecurityTokenServiceClient *)theClient
-{
+- (id)initWithClient:(AmazonSecurityTokenServiceClient *)theClient {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.sts = theClient;
         self.sessionLength = 3600;
     }
-    
+
     return self;
 }
 

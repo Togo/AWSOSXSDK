@@ -20,8 +20,7 @@
 /**
  * Disable Metrics Collection
  */
-@interface AutoScalingDisableMetricsCollectionResponse:AutoScalingResponse
-{
+@interface AutoScalingDisableMetricsCollectionResponse : AutoScalingResponse {
 }
 
 @end

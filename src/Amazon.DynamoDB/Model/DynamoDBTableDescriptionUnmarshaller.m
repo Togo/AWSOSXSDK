@@ -23,10 +23,8 @@
 @implementation DynamoDBTableDescriptionUnmarshaller
 
 
-+(DynamoDBTableDescription *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBTableDescription *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBTableDescription *tableDescription = [[DynamoDBTableDescription alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"TableName"] != nil) {

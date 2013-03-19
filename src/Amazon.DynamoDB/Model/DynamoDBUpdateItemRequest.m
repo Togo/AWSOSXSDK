@@ -25,24 +25,22 @@
 @synthesize returnValues;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName        = nil;
-        key              = nil;
+        tableName = nil;
+        key = nil;
         attributeUpdates = [[NSMutableDictionary alloc] initWithCapacity:1];
-        expected         = [[NSMutableDictionary alloc] initWithCapacity:1];
-        returnValues     = nil;
+        expected = [[NSMutableDictionary alloc] initWithCapacity:1];
+        returnValues = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey andAttributeUpdates:(NSMutableDictionary *)theAttributeUpdates
-{
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey andAttributeUpdates:(NSMutableDictionary *)theAttributeUpdates {
     if (self = [self init]) {
-        self.tableName        = theTableName;
-        self.key              = theKey;
+        self.tableName = theTableName;
+        self.key = theKey;
         self.attributeUpdates = theAttributeUpdates;
     }
 
@@ -50,8 +48,7 @@
 }
 
 
--(void)setAttributeUpdatesValue:(DynamoDBAttributeValueUpdate *)theValue forKey:(NSString *)theKey
-{
+- (void)setAttributeUpdatesValue:(DynamoDBAttributeValueUpdate *)theValue forKey:(NSString *)theKey {
     if (attributeUpdates == nil) {
         attributeUpdates = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -59,8 +56,7 @@
     [attributeUpdates setValue:theValue forKey:theKey];
 }
 
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey
-{
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey {
     if (expected == nil) {
         expected = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -69,8 +65,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -84,9 +79,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

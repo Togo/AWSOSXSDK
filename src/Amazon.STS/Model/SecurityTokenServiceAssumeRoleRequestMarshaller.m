@@ -17,12 +17,11 @@
 
 @implementation SecurityTokenServiceAssumeRoleRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest
-{
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest {
     AmazonServiceRequest *request = [[SecurityTokenServiceRequest alloc] init];
 
-    [request setParameterValue:@"AssumeRole"           forKey:@"Action"];
-    [request setParameterValue:@"2011-06-15"   forKey:@"Version"];
+    [request setParameterValue:@"AssumeRole" forKey:@"Action"];
+    [request setParameterValue:@"2011-06-15" forKey:@"Version"];
 
     [request setDelegate:[assumeRoleRequest delegate]];
     [request setCredentials:[assumeRoleRequest credentials]];

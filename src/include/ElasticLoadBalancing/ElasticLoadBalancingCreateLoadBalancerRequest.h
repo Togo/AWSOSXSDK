@@ -18,21 +18,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Load Balancer Request
  */
 
-@interface ElasticLoadBalancingCreateLoadBalancerRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingCreateLoadBalancerRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *listeners;
     NSMutableArray *availabilityZones;
     NSMutableArray *subnets;
     NSMutableArray *securityGroups;
 }
-
 
 
 /**
@@ -71,7 +67,7 @@
  * Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateLoadBalancerRequest object.
@@ -80,7 +76,7 @@
  * @param theLoadBalancerName The name associated with the LoadBalancer.
  * The name must be unique within your set of LoadBalancers.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
 
 /**
  * Constructs a new CreateLoadBalancerRequest object.
@@ -96,31 +92,31 @@
  * equally distributed across all zones. <p> This list can be modified
  * after the creation of the LoadBalancer.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners andAvailabilityZones:(NSMutableArray *)theAvailabilityZones;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners andAvailabilityZones:(NSMutableArray *)theAvailabilityZones;
 
 /**
  * Adds a single object to listeners.
  * This function will alloc and init listeners if not already done.
  */
--(void)addListener:(ElasticLoadBalancingListener *)listenerObject;
+- (void)addListener:(ElasticLoadBalancingListener *)listenerObject;
 
 /**
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Adds a single object to subnets.
  * This function will alloc and init subnets if not already done.
  */
--(void)addSubnet:(NSString *)subnetObject;
+- (void)addSubnet:(NSString *)subnetObject;
 
 /**
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -128,7 +124,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

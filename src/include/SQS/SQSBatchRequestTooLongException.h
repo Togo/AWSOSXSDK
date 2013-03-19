@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The length of all the messages put together is more than the limit.
  * </p>
  */
-@interface SQSBatchRequestTooLongException:AmazonServiceException
-{
+@interface SQSBatchRequestTooLongException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

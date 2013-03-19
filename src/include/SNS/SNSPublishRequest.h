@@ -17,20 +17,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Publish Request
  */
 
-@interface SNSPublishRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSPublishRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *message;
     NSString *subject;
     NSString *messageStructure;
 }
-
 
 
 /**
@@ -101,7 +97,7 @@
  * Default constructor for a new PublishRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new PublishRequest object.
@@ -132,7 +128,7 @@
  * <code>Publish</code> call to return an error (no partial
  * delivery).</li> </ul>
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage;
+- (id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage;
 
 /**
  * Constructs a new PublishRequest object.
@@ -170,7 +166,7 @@
  * line breaks or control characters; and must be less than 100
  * characters long.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage andSubject:(NSString *)theSubject;
+- (id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage andSubject:(NSString *)theSubject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -178,7 +174,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

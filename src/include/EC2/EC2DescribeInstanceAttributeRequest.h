@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Instance Attribute Request
  */
 
-@interface EC2DescribeInstanceAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeInstanceAttributeRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
     NSString *attribute;
 }
-
 
 
 /**
@@ -53,7 +49,7 @@
  * Default constructor for a new DescribeInstanceAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeInstanceAttributeRequest object.
@@ -68,7 +64,7 @@
  * <code>instanceInitiatedShutdownBehavior</code>,
  * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
  */
--(id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute;
+- (id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

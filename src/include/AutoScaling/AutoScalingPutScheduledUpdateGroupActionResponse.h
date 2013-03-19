@@ -22,8 +22,7 @@
 /**
  * Put Scheduled Update Group Action
  */
-@interface AutoScalingPutScheduledUpdateGroupActionResponse:AutoScalingResponse
-{
+@interface AutoScalingPutScheduledUpdateGroupActionResponse : AutoScalingResponse {
 }
 
 @end

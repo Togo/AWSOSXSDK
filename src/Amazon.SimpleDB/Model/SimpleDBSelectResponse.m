@@ -22,10 +22,9 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        items     = [[NSMutableArray alloc] initWithCapacity:1];
+        items = [[NSMutableArray alloc] initWithCapacity:1];
         nextToken = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
@@ -83,15 +81,12 @@
 }
 
 
-
--(SimpleDBItem *)itemsObjectAtIndex:(int)index
-{
-    return (SimpleDBItem *)[items objectAtIndex:index];
+- (SimpleDBItem *)itemsObjectAtIndex:(int)index {
+    return (SimpleDBItem *) [items objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -102,9 +97,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

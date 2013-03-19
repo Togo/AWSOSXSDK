@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Snapshot Request
  */
 
-@interface EC2DeleteSnapshotRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeleteSnapshotRequest : AmazonServiceRequestConfig {
     NSString *snapshotId;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeleteSnapshotRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteSnapshotRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theSnapshotId The ID of the snapshot to delete.
  */
--(id)initWithSnapshotId:(NSString *)theSnapshotId;
+- (id)initWithSnapshotId:(NSString *)theSnapshotId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

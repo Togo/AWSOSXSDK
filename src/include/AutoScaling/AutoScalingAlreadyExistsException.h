@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The named Auto Scaling group or launch configuration already exists.
  * </p>
  */
-@interface AutoScalingAlreadyExistsException:AmazonServiceException
-{
+@interface AutoScalingAlreadyExistsException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

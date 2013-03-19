@@ -19,20 +19,18 @@
 @implementation EC2DescribeConversionTasksResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"conversionTasks"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.conversionTasks withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"conversionTasks";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2ConversionTaskUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2ConversionTaskUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -64,14 +61,12 @@
     }
 }
 
--(EC2DescribeConversionTasksResponse *)response
-{
+- (EC2DescribeConversionTasksResponse *)response {
     if (nil == response) {
         response = [[EC2DescribeConversionTasksResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

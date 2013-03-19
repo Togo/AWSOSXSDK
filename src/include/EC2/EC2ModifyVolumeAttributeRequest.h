@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Modify Volume Attribute Request
  */
 
-@interface EC2ModifyVolumeAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ModifyVolumeAttributeRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
-    bool     autoEnableIO;
-    bool     autoEnableIOIsSet;
+    bool autoEnableIO;
+    bool autoEnableIOIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeId property for this object.
@@ -47,7 +42,7 @@
 /**
  * The value of the AutoEnableIO property for this object.
  */
-@property (nonatomic) bool           autoEnableIO;
+@property (nonatomic) bool autoEnableIO;
 
 @property (nonatomic, readonly) bool autoEnableIOIsSet;
 
@@ -57,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

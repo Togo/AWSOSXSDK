@@ -26,12 +26,11 @@
 @synthesize bS;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        s  = nil;
-        n  = nil;
-        b  = nil;
+        s = nil;
+        n = nil;
+        b = nil;
         sS = [[NSMutableArray alloc] initWithCapacity:1];
         nS = [[NSMutableArray alloc] initWithCapacity:1];
         bS = [[NSMutableArray alloc] initWithCapacity:1];
@@ -40,8 +39,7 @@
     return self;
 }
 
--(id)initWithS:(NSString *)theS
-{
+- (id)initWithS:(NSString *)theS {
     if (self = [self init]) {
         self.s = theS;
     }
@@ -49,8 +47,7 @@
     return self;
 }
 
--(id)initWithSS:(NSMutableArray *)theSS
-{
+- (id)initWithSS:(NSMutableArray *)theSS {
     if (self = [self init]) {
         self.sS = theSS;
     }
@@ -58,8 +55,7 @@
     return self;
 }
 
--(id)initWithN:(NSString *)theN
-{
+- (id)initWithN:(NSString *)theN {
     if (self = [self init]) {
         self.n = theN;
     }
@@ -67,8 +63,7 @@
     return self;
 }
 
--(id)initWithNS:(NSMutableArray *)theNS
-{
+- (id)initWithNS:(NSMutableArray *)theNS {
     if (self = [self init]) {
         self.nS = theNS;
     }
@@ -76,8 +71,7 @@
     return self;
 }
 
--(id)initWithB:(NSData *)theB
-{
+- (id)initWithB:(NSData *)theB {
     if (self = [self init]) {
         self.b = theB;
     }
@@ -85,8 +79,7 @@
     return self;
 }
 
--(id)initWithBS:(NSMutableArray *)theBS
-{
+- (id)initWithBS:(NSMutableArray *)theBS {
     if (self = [self init]) {
         self.bS = theBS;
     }
@@ -95,8 +88,7 @@
 }
 
 
--(void)addSS:(NSString *)sSObject
-{
+- (void)addSS:(NSString *)sSObject {
     if (sS == nil) {
         sS = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -104,8 +96,7 @@
     [sS addObject:sSObject];
 }
 
--(void)addNS:(NSString *)nSObject
-{
+- (void)addNS:(NSString *)nSObject {
     if (nS == nil) {
         nS = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -113,8 +104,7 @@
     [nS addObject:nSObject];
 }
 
--(void)addBS:(NSData *)bSObject
-{
+- (void)addBS:(NSData *)bSObject {
     if (bS == nil) {
         bS = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -123,8 +113,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -139,9 +128,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

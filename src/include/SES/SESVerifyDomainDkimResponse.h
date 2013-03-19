@@ -17,27 +17,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Verify Domain Dkim Result
  */
 
-@interface SESVerifyDomainDkimResponse:SESResponse
-
-{
+@interface SESVerifyDomainDkimResponse : SESResponse {
     NSMutableArray *dkimTokens;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A set of DNS records (tokens) that must be published in the domain
@@ -48,11 +44,10 @@
 @property (nonatomic, strong) NSMutableArray *dkimTokens;
 
 
-
 /**
  * Returns a value from the dkimTokens array for the specified index
  */
--(NSString *)dkimTokensObjectAtIndex:(int)index;
+- (NSString *)dkimTokensObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +55,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

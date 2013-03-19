@@ -17,12 +17,11 @@
 
 @implementation SecurityTokenServiceGetFederationTokenRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest
-{
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest {
     AmazonServiceRequest *request = [[SecurityTokenServiceRequest alloc] init];
 
-    [request setParameterValue:@"GetFederationToken"           forKey:@"Action"];
-    [request setParameterValue:@"2011-06-15"   forKey:@"Version"];
+    [request setParameterValue:@"GetFederationToken" forKey:@"Action"];
+    [request setParameterValue:@"2011-06-15" forKey:@"Version"];
 
     [request setDelegate:[getFederationTokenRequest delegate]];
     [request setCredentials:[getFederationTokenRequest credentials]];

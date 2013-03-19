@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Subscriptions By Topic Request
  */
 
-@interface SNSListSubscriptionsByTopicRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSListSubscriptionsByTopicRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *nextToken;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new ListSubscriptionsByTopicRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ListSubscriptionsByTopicRequest object.
@@ -56,7 +52,7 @@
  * @param theTopicArn The ARN of the topic for which you wish to find
  * subscriptions.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn;
+- (id)initWithTopicArn:(NSString *)theTopicArn;
 
 /**
  * Constructs a new ListSubscriptionsByTopicRequest object.
@@ -67,7 +63,7 @@
  * @param theNextToken Token returned by the previous
  * <code>ListSubscriptionsByTopic</code> request.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andNextToken:(NSString *)theNextToken;
+- (id)initWithTopicArn:(NSString *)theTopicArn andNextToken:(NSString *)theNextToken;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

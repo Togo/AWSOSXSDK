@@ -20,21 +20,17 @@
  * Backend Server Description
  */
 
-@interface ElasticLoadBalancingBackendServerDescription:NSObject
-
-{
-    NSNumber       *instancePort;
+@interface ElasticLoadBalancingBackendServerDescription : NSObject {
+    NSNumber *instancePort;
     NSMutableArray *policyNames;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Provides the port on which the back-end server is listening.
@@ -53,7 +49,7 @@
  * Adds a single object to policyNames.
  * This function will alloc and init policyNames if not already done.
  */
--(void)addPolicyName:(NSString *)policyNameObject;
+- (void)addPolicyName:(NSString *)policyNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

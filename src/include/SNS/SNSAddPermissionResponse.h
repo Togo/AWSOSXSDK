@@ -24,8 +24,7 @@
 /**
  * Add Permission
  */
-@interface SNSAddPermissionResponse:SNSResponse
-{
+@interface SNSAddPermissionResponse : SNSResponse {
 }
 
 @end

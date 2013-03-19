@@ -19,11 +19,11 @@
  * A Lifecycle transition is a comprised of a target storage class and 
  * a time, either expressed in an age, or an explicit date.
  */
-@interface S3BucketLifecycleConfigurationTransition:NSObject {
+@interface S3BucketLifecycleConfigurationTransition : NSObject {
     NSString *storageClass;
     NSString *transitionDays;
-    NSDate   *transitionDate;
-    
+    NSDate *transitionDate;
+
 }
 
 /** The storage class for this transition. Currently only 'GLACIER' is supported. **/
@@ -39,12 +39,12 @@
  **/
 @property (nonatomic, strong) NSDate *transitionDate;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 /** initializer that creates a new transition with a time in days **/
--(id)initWithTimeInDays:(NSInteger)theDays;
+- (id)initWithTimeInDays:(NSInteger)theDays;
 
 /** initializer that creates a new transition with an explicit date **/
--(id)initWithDate:(NSDate *)theDate;
+- (id)initWithDate:(NSDate *)theDate;
 
 @end

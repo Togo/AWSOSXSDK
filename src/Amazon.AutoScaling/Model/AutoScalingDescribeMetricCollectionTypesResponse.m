@@ -22,10 +22,9 @@
 @synthesize granularities;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        metrics       = [[NSMutableArray alloc] initWithCapacity:1];
+        metrics = [[NSMutableArray alloc] initWithCapacity:1];
         granularities = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -47,21 +45,17 @@
 }
 
 
-
--(AutoScalingMetricCollectionType *)metricsObjectAtIndex:(int)index
-{
-    return (AutoScalingMetricCollectionType *)[metrics objectAtIndex:index];
+- (AutoScalingMetricCollectionType *)metricsObjectAtIndex:(int)index {
+    return (AutoScalingMetricCollectionType *) [metrics objectAtIndex:index];
 }
 
 
--(AutoScalingMetricGranularityType *)granularitiesObjectAtIndex:(int)index
-{
-    return (AutoScalingMetricGranularityType *)[granularities objectAtIndex:index];
+- (AutoScalingMetricGranularityType *)granularitiesObjectAtIndex:(int)index {
+    return (AutoScalingMetricGranularityType *) [granularities objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -72,9 +66,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Load Balancer Listeners Request
  */
 
-@interface ElasticLoadBalancingDeleteLoadBalancerListenersRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingDeleteLoadBalancerListenersRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *loadBalancerPorts;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new DeleteLoadBalancerListenersRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteLoadBalancerListenersRequest object.
@@ -58,13 +54,13 @@
  * @param theLoadBalancerPorts The client port number(s) of the
  * LoadBalancerListener(s) to be removed.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPorts:(NSMutableArray *)theLoadBalancerPorts;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPorts:(NSMutableArray *)theLoadBalancerPorts;
 
 /**
  * Adds a single object to loadBalancerPorts.
  * This function will alloc and init loadBalancerPorts if not already done.
  */
--(void)addLoadBalancerPort:(NSNumber *)loadBalancerPortObject;
+- (void)addLoadBalancerPort:(NSNumber *)loadBalancerPortObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

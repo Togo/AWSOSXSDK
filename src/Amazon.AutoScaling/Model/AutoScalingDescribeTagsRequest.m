@@ -23,11 +23,10 @@
 @synthesize maxRecords;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        filters    = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken  = nil;
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
+        nextToken = nil;
         maxRecords = nil;
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)addFilter:(AutoScalingFilter *)filterObject
-{
+- (void)addFilter:(AutoScalingFilter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

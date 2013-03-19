@@ -20,23 +20,19 @@
  * Instance Status Event
  */
 
-@interface EC2InstanceStatusEvent:NSObject
-
-{
+@interface EC2InstanceStatusEvent : NSObject {
     NSString *code;
     NSString *descriptionValue;
-    NSDate   *notBefore;
-    NSDate   *notAfter;
+    NSDate *notBefore;
+    NSDate *notAfter;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The associated code of the event. Valid values: instance-reboot,
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

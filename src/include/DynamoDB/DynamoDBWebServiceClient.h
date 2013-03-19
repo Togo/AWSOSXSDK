@@ -15,10 +15,9 @@
 
 #import "../AmazonAbstractJsonWebServiceClient.h"
 
-@interface DynamoDBWebServiceClient:AmazonAbstractJsonWebServiceClient
-{
+@interface DynamoDBWebServiceClient : AmazonAbstractJsonWebServiceClient {
 }
- 
+
 @end
 
 

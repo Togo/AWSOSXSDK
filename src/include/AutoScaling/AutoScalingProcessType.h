@@ -20,20 +20,16 @@
  * Process Type
  */
 
-@interface AutoScalingProcessType:NSObject
-
-{
+@interface AutoScalingProcessType : NSObject {
     NSString *processName;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of a process.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

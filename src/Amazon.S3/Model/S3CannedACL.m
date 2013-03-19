@@ -18,8 +18,7 @@
 
 @implementation S3CannedACL
 
--(id)initWithStringValue:(NSString *)value
-{
+- (id)initWithStringValue:(NSString *)value {
     self = [super init];
     if (self) {
         stringValue = value;
@@ -27,8 +26,7 @@
     return self;
 }
 
-+(S3CannedACL *)private
-{
++ (S3CannedACL *)private {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -37,8 +35,7 @@
     return thisCannedAcl;
 }
 
-+(S3CannedACL *)publicRead
-{
++ (S3CannedACL *)publicRead {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -47,8 +44,7 @@
     return thisCannedAcl;
 }
 
-+(S3CannedACL *)publicReadWrite
-{
++ (S3CannedACL *)publicReadWrite {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -57,8 +53,7 @@
     return thisCannedAcl;
 }
 
-+(S3CannedACL *)authenticatedRead
-{
++ (S3CannedACL *)authenticatedRead {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -67,8 +62,7 @@
     return thisCannedAcl;
 }
 
-+(S3CannedACL *)bucketOwnerRead
-{
++ (S3CannedACL *)bucketOwnerRead {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -77,8 +71,7 @@
     return thisCannedAcl;
 }
 
-+(S3CannedACL *)bucketOwnerFullControl
-{
++ (S3CannedACL *)bucketOwnerFullControl {
     static S3CannedACL *thisCannedAcl = nil;
 
     if (thisCannedAcl == nil) {
@@ -87,8 +80,7 @@
     return thisCannedAcl;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     return stringValue;
 }
 

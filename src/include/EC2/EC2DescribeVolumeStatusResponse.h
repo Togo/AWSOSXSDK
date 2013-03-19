@@ -18,28 +18,24 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Volume Status Response
  */
 
-@interface EC2DescribeVolumeStatusResponse:EC2Response
-
-{
+@interface EC2DescribeVolumeStatusResponse : EC2Response {
     NSMutableArray *volumeStatuses;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeStatuses property for this object.
@@ -52,11 +48,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the volumeStatuses array for the specified index
  */
--(EC2VolumeStatusItem *)volumeStatusesObjectAtIndex:(int)index;
+- (EC2VolumeStatusItem *)volumeStatusesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

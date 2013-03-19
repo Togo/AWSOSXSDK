@@ -20,9 +20,8 @@
 
 @synthesize configuration;
 
--(void)processBody
-{
-    NSXMLParser                                       *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3BucketCrossOriginConfigurationUnmarshaller *unmarshaller = [[S3BucketCrossOriginConfigurationUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];

@@ -24,7 +24,7 @@
 /**
  * Terminate Instance In Auto Scaling Group Result Unmarshaller
  */
-@interface AutoScalingTerminateInstanceInAutoScalingGroupResponseUnmarshaller:AutoScalingResponseUnmarshaller {
+@interface AutoScalingTerminateInstanceInAutoScalingGroupResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingTerminateInstanceInAutoScalingGroupResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) AutoScalingTerminateInstanceInAutoScalingGroupResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

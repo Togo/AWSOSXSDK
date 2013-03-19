@@ -23,11 +23,10 @@
 @synthesize dkimEnabledIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        identity         = nil;
-        dkimEnabled      = NO;
+        identity = nil;
+        dkimEnabled = NO;
         dkimEnabledIsSet = NO;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setDkimEnabled:(bool)theValue
-{
-    dkimEnabled      = theValue;
+- (void)setDkimEnabled:(bool)theValue {
+    dkimEnabled = theValue;
     dkimEnabledIsSet = YES;
 }
-
-
 
 
 @end

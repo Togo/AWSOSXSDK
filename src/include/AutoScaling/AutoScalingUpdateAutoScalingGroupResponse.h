@@ -21,8 +21,7 @@
 /**
  * Update Auto Scaling Group
  */
-@interface AutoScalingUpdateAutoScalingGroupResponse:AutoScalingResponse
-{
+@interface AutoScalingUpdateAutoScalingGroupResponse : AutoScalingResponse {
 }
 
 @end

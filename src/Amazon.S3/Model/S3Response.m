@@ -31,32 +31,30 @@
 @synthesize versionId;
 @synthesize serverSideEncryption;
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self != nil) {
         isFinishedLoading = NO;
-        exception         = nil;
-        headers           = [[NSMutableDictionary alloc] init];
+        exception = nil;
+        headers = [[NSMutableDictionary alloc] init];
     }
 
     return self;
 }
 
--(void)setValue:(id)value forHTTPHeaderField:(NSString *)header
-{
+- (void)setValue:(id)value forHTTPHeaderField:(NSString *)header {
     [headers setValue:value forKey:header];
 
     // remove dashes from headers, and camelCase concatenate to get the corresponding
     // property name.
     // i.e., x-amz-version-id => versionId, Content-Length => contentLength.
 
-    NSString *tmp   = [[header lowercaseString] stringByReplacingOccurrencesOfString:@"x-amz-" withString:@""];
-    NSArray  *parts = [tmp componentsSeparatedByString:@"-"];
+    NSString *tmp = [[header lowercaseString] stringByReplacingOccurrencesOfString:@"x-amz-" withString:@""];
+    NSArray *parts = [tmp componentsSeparatedByString:@"-"];
 
-    NSString *keyName = [(NSString *)[parts objectAtIndex:0] lowercaseString];
+    NSString *keyName = [(NSString *) [parts objectAtIndex:0] lowercaseString];
     for (NSInteger i = 1; i < [parts count]; i++) {
-        keyName = [keyName stringByAppendingString:[[(NSString *)[parts objectAtIndex:i] lowercaseString] capitalizedString]];
+        keyName = [keyName stringByAppendingString:[[(NSString *) [parts objectAtIndex:i] lowercaseString] capitalizedString]];
     }
 
     //AMZLog( @"Setting response value [%@] from header [%@] with value [%@]", keyName, header, value );
@@ -79,14 +77,12 @@
     }
 }
 
--(id)valueForHTTPHeaderField:(NSString *)header
-{
+- (id)valueForHTTPHeaderField:(NSString *)header {
     return [headers valueForKey:header];
 }
 
 
--(NSString *)getTypeOfPropertyNamed:(NSString *)propertyName
-{
+- (NSString *)getTypeOfPropertyNamed:(NSString *)propertyName {
     objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);
 
     if (NULL == property) {
@@ -103,25 +99,21 @@
     return [[attrString componentsSeparatedByString:@","] objectAtIndex:0];
 }
 
--(NSData *)body
-{
+- (NSData *)body {
     return [NSData dataWithData:body];
 }
 
 // Override this to perform processing on the body.
--(void)processBody
-{
+- (void)processBody {
     // Subclasses can use this to build object data from the response, for example
     // parsing XML content.
 }
 
--(NSException *)exception
-{
+- (NSException *)exception {
     return exception;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -143,53 +135,49 @@
 
 #pragma mark NSURLConnection delegate methods
 
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
     self.httpStatusCode = [httpResponse statusCode];
 
     NSDictionary *allHeaders = [httpResponse allHeaderFields];
-    for (id key in allHeaders)
-    {
+    for (id key in allHeaders) {
         [self setValue:[allHeaders valueForKey:key] forHTTPHeaderField:key];
     }
 
     [body setLength:0];
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didReceiveResponse:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didReceiveResponse:)]) {
         [self.request.delegate request:self.request didReceiveResponse:response];
     }
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     if (nil == body) {
         body = [NSMutableData data];
     }
 
     [body appendData:data];
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
         [self.request.delegate request:self.request didReceiveData:data];
     }
 }
 
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self.request.responseTimer invalidate];
 
-    NSDate   *startDate = [NSDate date];
-    
+    NSDate *startDate = [NSDate date];
+
     if (![self isMemberOfClass:[S3GetObjectResponse class]]) {
-        NSString *tmp       = [[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding];
-        
+        NSString *tmp = [[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding];
+
         AMZLogDebug(@"Response:\n%@", tmp);
     }
 
     // S3 treats 301's as an error and passes back an Error Response, so parse it
     if ((self.httpStatusCode == 301) || (self.httpStatusCode >= 400)) {
-        NSXMLParser            *parser       = [[NSXMLParser alloc] initWithData:self.body];
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
         S3ErrorResponseHandler *errorHandler = [[S3ErrorResponseHandler alloc] initWithStatusCode:self.httpStatusCode];
         [parser setDelegate:errorHandler];
         [parser parse];
@@ -197,64 +185,58 @@
         exception = [[errorHandler exception] copy];
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
 
-        if (throwsExceptions == YES
-            && [(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+        if (throwsExceptions == YES && [(NSObject *) self.request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            [self.request.delegate request:self.request didFailWithServiceException:(AmazonServiceException *)exception];
+            [self.request.delegate request:self.request didFailWithServiceException:(AmazonServiceException *) exception];
 #pragma clang diagnostic pop
         }
-        else if (throwsExceptions == NO
-                 && [(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+        else if (throwsExceptions == NO && [(NSObject *) self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
             [self.request.delegate request:self.request didFailWithError:[AmazonErrorHandler errorFromException:exception]];
         }
 
     }
     else {
         [self processBody];
-        processingTime    = fabs([startDate timeIntervalSinceNow]);
+        processingTime = fabs([startDate timeIntervalSinceNow]);
         isFinishedLoading = YES;
     }
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
         [self.request.delegate request:self.request didCompleteWithResponse:self];
     }
 
 
 }
 
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)theError
-{
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)theError {
     [self.request.responseTimer invalidate];
-    
+
     NSDictionary *info = [theError userInfo];
-    for (id key in info)
-    {
+    for (id key in info) {
         AMZLog(@"UserInfo.%@ = %@", [key description], [[info valueForKey:key] description]);
     }
     exception = [AmazonServiceException exceptionWithMessage:[theError description] andError:theError];
     AMZLog(@"An error occured in the request: %@", [theError description]);
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
         [self.request.delegate request:self.request didFailWithError:theError];
     }
 }
 
--(void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
         [self.request.delegate request:self.request
-         didSendData:bytesWritten
-         totalBytesWritten:totalBytesWritten
-         totalBytesExpectedToWrite:totalBytesExpectedToWrite];
+                           didSendData:bytesWritten
+                     totalBytesWritten:totalBytesWritten
+             totalBytesExpectedToWrite:totalBytesExpectedToWrite];
     }
 }
 
 // When a request gets a redirect due to the bucket being in a different region,
 // The request gets re-written with a GET http method. This is to set the method back to
 // the appropriate method if necessary
--(NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)proposedRequest redirectResponse:(NSURLResponse *)redirectResponse
-{
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)proposedRequest redirectResponse:(NSURLResponse *)redirectResponse {
     if (![[proposedRequest URL] isEqual:self.request.urlRequest.URL]) {
         AMZLog(@"Redirect:");
         AMZLog(@"  New  URL: %@", [[proposedRequest URL] description]);
@@ -268,8 +250,7 @@
     return proposedRequest;
 }
 
--(NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
-{
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
     return nil;
 }
 

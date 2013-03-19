@@ -21,8 +21,7 @@
 @synthesize loadBalancerName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

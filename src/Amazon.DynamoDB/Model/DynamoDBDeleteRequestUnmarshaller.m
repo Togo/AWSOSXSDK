@@ -22,10 +22,8 @@
 @implementation DynamoDBDeleteRequestUnmarshaller
 
 
-+(DynamoDBDeleteRequest *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBDeleteRequest *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBDeleteRequest *deleteRequest = [[DynamoDBDeleteRequest alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"Key"] != nil) {

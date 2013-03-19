@@ -22,11 +22,11 @@
 /**
  * Attach Load Balancer To Subnets Request Marshaller
  */
-@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest *)attachLoadBalancerToSubnetsRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest *)attachLoadBalancerToSubnetsRequest;
 
 
 @end

@@ -23,11 +23,11 @@
 /**
  * Send Raw Email Request Marshaller
  */
-@interface SESSendRawEmailRequestMarshaller:NSObject {
+@interface SESSendRawEmailRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESSendRawEmailRequest *)sendRawEmailRequest;
++ (AmazonServiceRequest *)createRequest:(SESSendRawEmailRequest *)sendRawEmailRequest;
 
 
 @end

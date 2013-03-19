@@ -28,16 +28,22 @@
 #define SIGV4_TERMINATOR    @"aws4_request"
 
 /** Utilities for signing requests */
-@interface AmazonAuthUtils:NSObject {
+@interface AmazonAuthUtils : NSObject {
 }
 
-+(void)signRequest:(AmazonServiceRequest *)serviceRequest endpoint:(NSString *)theEndpoint credentials:(AmazonCredentials *)credentials;
-+(NSString *)signRequestV3:(AmazonServiceRequest *)serviceRequest sts:(NSString *)theSts credentials:(AmazonCredentials *)credentials;
-+(void)signRequestV4:(AmazonServiceRequest *)serviceRequest headers:(NSMutableDictionary *)headers payload:(NSString *)payload credentials:(AmazonCredentials *)credentials;
-+(NSString *)getV2StringToSign:(NSURL *)theEndpoint request:(AmazonServiceRequest *)serviceRequest;
-+(NSString *)getV3StringToSign:(NSString *)rfc822Date nonce:(NSString *)theNonce;
-+(NSString *)nonce;
-+(NSString *)amznAuthorization:(NSString *)accessKey algorithm:(NSString *)theAlgorithm signature:(NSString *)theSignature;
++ (void)signRequest:(AmazonServiceRequest *)serviceRequest endpoint:(NSString *)theEndpoint credentials:(AmazonCredentials *)credentials;
+
++ (NSString *)signRequestV3:(AmazonServiceRequest *)serviceRequest sts:(NSString *)theSts credentials:(AmazonCredentials *)credentials;
+
++ (void)signRequestV4:(AmazonServiceRequest *)serviceRequest headers:(NSMutableDictionary *)headers payload:(NSString *)payload credentials:(AmazonCredentials *)credentials;
+
++ (NSString *)getV2StringToSign:(NSURL *)theEndpoint request:(AmazonServiceRequest *)serviceRequest;
+
++ (NSString *)getV3StringToSign:(NSString *)rfc822Date nonce:(NSString *)theNonce;
+
++ (NSString *)nonce;
+
++ (NSString *)amznAuthorization:(NSString *)accessKey algorithm:(NSString *)theAlgorithm signature:(NSString *)theSignature;
 
 /**
  * Compute a keyed hash of some data with a specified key and algorithm.
@@ -46,16 +52,22 @@
  * @param algorithm	Which HMAC algortithm to use. Currently support <code>kCCHmacAlgSHA1</code> and <code>kCCHmacAlgSHA256</code>.
  * @return Base64 encoded string that is the signature of the data with the specified key.
  */
-+(NSString *)HMACSign:(NSData *)data withKey:(NSString *)key usingAlgorithm:(CCHmacAlgorithm)algorithm;
++ (NSString *)HMACSign:(NSData *)data withKey:(NSString *)key usingAlgorithm:(CCHmacAlgorithm)algorithm;
 
-+(NSData *)sha256HMac:(NSData *)data withKey:(NSString *)key;
-+(NSString *)hashString:(NSString *)stringToHash;
-+(NSData *)hash:(NSData *)data;
-+(NSData *)sha256HMacWithData:(NSData *)data withKey:(NSData *)key;
++ (NSData *)sha256HMac:(NSData *)data withKey:(NSString *)key;
 
-+(NSData *)getV4DerivedKey:(NSString *)secret date:(NSString *)dateStamp region:(NSString *)regionName service:(NSString *)serviceName;
-+(NSString *)getCanonicalizedRequest:(NSString *)method path:(NSString *)path query:(NSString *)query headers:(NSMutableDictionary *)headers payload:(NSString *)payload;
-+(NSString *)getCanonicalizedHeaderString:(NSMutableDictionary *)theHeaders;
-+(NSString *)getSignedHeadersString:(NSMutableDictionary *)theHeaders;
++ (NSString *)hashString:(NSString *)stringToHash;
+
++ (NSData *)hash:(NSData *)data;
+
++ (NSData *)sha256HMacWithData:(NSData *)data withKey:(NSData *)key;
+
++ (NSData *)getV4DerivedKey:(NSString *)secret date:(NSString *)dateStamp region:(NSString *)regionName service:(NSString *)serviceName;
+
++ (NSString *)getCanonicalizedRequest:(NSString *)method path:(NSString *)path query:(NSString *)query headers:(NSMutableDictionary *)headers payload:(NSString *)payload;
+
++ (NSString *)getCanonicalizedHeaderString:(NSMutableDictionary *)theHeaders;
+
++ (NSString *)getSignedHeadersString:(NSMutableDictionary *)theHeaders;
 
 @end

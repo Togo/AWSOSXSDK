@@ -24,11 +24,11 @@
 /**
  * Authorize Security Group Ingress Request Marshaller
  */
-@interface EC2AuthorizeSecurityGroupIngressRequestMarshaller:NSObject {
+@interface EC2AuthorizeSecurityGroupIngressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest;
 
 
 @end

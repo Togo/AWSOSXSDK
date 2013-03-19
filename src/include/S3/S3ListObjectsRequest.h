@@ -21,10 +21,10 @@
 /** Request Object for Listing the Objects in the specified bucket.
  *
  */
-@interface S3ListObjectsRequest:S3Request {
-    NSString  *prefix;
-    NSString  *marker;
-    NSString  *delimiter;
+@interface S3ListObjectsRequest : S3Request {
+    NSString *prefix;
+    NSString *marker;
+    NSString *delimiter;
     NSInteger maxKeys;
 }
 
@@ -50,6 +50,6 @@
 @property (nonatomic) NSInteger maxKeys;
 
 
--(id)initWithName:(NSString *)theBucketName;
+- (id)initWithName:(NSString *)theBucketName;
 
 @end

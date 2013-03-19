@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Parameters that must not be used together were used together.
  * </p>
  */
-@interface CloudWatchInvalidParameterCombinationException:AmazonServiceException
-{
+@interface CloudWatchInvalidParameterCombinationException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -23,16 +23,16 @@
 /** response headers that are common to Amazon S3 responses.
  *
  */
-@interface S3Response:AmazonServiceResponse {
-    int64_t             contentLength;
-    NSString            *connectionState;
-    NSDate              *date;
-    NSString            *etag;
-    NSString            *server;
-    bool                deleteMarker;
-    NSString            *id2;
-    NSString            *versionId;
-    NSString            *serverSideEncryption;
+@interface S3Response : AmazonServiceResponse {
+    int64_t contentLength;
+    NSString *connectionState;
+    NSDate *date;
+    NSString *etag;
+    NSString *server;
+    bool deleteMarker;
+    NSString *id2;
+    NSString *versionId;
+    NSString *serverSideEncryption;
 
     NSMutableDictionary *headers;
 }
@@ -72,12 +72,12 @@
 @property (nonatomic) int64_t contentLength;
 
 /** Sets the value in the response corresponding to the HTTP header */
--(void)setValue:(id)value forHTTPHeaderField:(NSString *)header;
+- (void)setValue:(id)value forHTTPHeaderField:(NSString *)header;
 
 /** Gets the value in the response corresponding to the HTTP header */
--(id)valueForHTTPHeaderField:(NSString *)header;
+- (id)valueForHTTPHeaderField:(NSString *)header;
 
 /** Determines the type of a property in a response. */
--(NSString *)getTypeOfPropertyNamed:(NSString *)propertyName;
+- (NSString *)getTypeOfPropertyNamed:(NSString *)propertyName;
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Delete Topic Request Marshaller
  */
-@interface SNSDeleteTopicRequestMarshaller:NSObject {
+@interface SNSDeleteTopicRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSDeleteTopicRequest *)deleteTopicRequest;
++ (AmazonServiceRequest *)createRequest:(SNSDeleteTopicRequest *)deleteTopicRequest;
 
 
 @end

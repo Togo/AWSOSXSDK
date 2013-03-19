@@ -20,21 +20,17 @@
  * Source Security Group
  */
 
-@interface ElasticLoadBalancingSourceSecurityGroup:NSObject
-
-{
+@interface ElasticLoadBalancingSourceSecurityGroup : NSObject {
     NSString *ownerAlias;
     NSString *groupName;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Owner of the source security group. Use this value for the
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

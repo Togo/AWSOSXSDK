@@ -22,11 +22,11 @@
 /**
  * Add Permission Request Marshaller
  */
-@interface SNSAddPermissionRequestMarshaller:NSObject {
+@interface SNSAddPermissionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSAddPermissionRequest *)addPermissionRequest;
++ (AmazonServiceRequest *)createRequest:(SNSAddPermissionRequest *)addPermissionRequest;
 
 
 @end

@@ -19,20 +19,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Attributes Request
  */
 
-@interface SimpleDBDeleteAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString                *domainName;
-    NSString                *itemName;
-    NSMutableArray          *attributes;
+@interface SimpleDBDeleteAttributesRequest : AmazonServiceRequestConfig {
+    NSString *domainName;
+    NSString *itemName;
+    NSMutableArray *attributes;
     SimpleDBUpdateCondition *expected;
 }
-
 
 
 /**
@@ -66,7 +62,7 @@
  * Default constructor for a new DeleteAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteAttributesRequest object.
@@ -78,7 +74,7 @@
  * spreadsheet, items represent individual objects that contain one or
  * more value-attribute pairs.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName;
 
 /**
  * Constructs a new DeleteAttributesRequest object.
@@ -93,7 +89,7 @@
  * spreadsheet, attributes represent categories of data that can be
  * assigned to items.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes;
 
 /**
  * Constructs a new DeleteAttributesRequest object.
@@ -112,13 +108,13 @@
  * The update condition must be satisfied in order for this request to be
  * processed and the attributes to be deleted.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected;
 
 /**
  * Adds a single object to attributes.
  * This function will alloc and init attributes if not already done.
  */
--(void)addAttribute:(SimpleDBAttribute *)attributeObject;
+- (void)addAttribute:(SimpleDBAttribute *)attributeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -126,7 +122,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

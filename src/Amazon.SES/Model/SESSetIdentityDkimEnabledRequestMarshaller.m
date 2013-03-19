@@ -17,12 +17,11 @@
 
 @implementation SESSetIdentityDkimEnabledRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"SetIdentityDkimEnabled"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetIdentityDkimEnabled" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[setIdentityDkimEnabledRequest delegate]];
     [request setCredentials:[setIdentityDkimEnabledRequest credentials]];
@@ -36,7 +35,7 @@
     }
     if (setIdentityDkimEnabledRequest != nil) {
         if (setIdentityDkimEnabledRequest.dkimEnabledIsSet) {
-            [request setParameterValue:(setIdentityDkimEnabledRequest.dkimEnabled ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"DkimEnabled"]];
+            [request setParameterValue:(setIdentityDkimEnabledRequest.dkimEnabled ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"DkimEnabled"]];
         }
     }
 

@@ -17,12 +17,11 @@
 
 @implementation SNSConfirmSubscriptionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"ConfirmSubscription"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"ConfirmSubscription" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[confirmSubscriptionRequest delegate]];
     [request setCredentials:[confirmSubscriptionRequest credentials]];

@@ -21,7 +21,7 @@
 /** Contains the response from a listParts operation.
  *
  */
-@interface S3ListPartsResponse:S3Response {
+@interface S3ListPartsResponse : S3Response {
     S3ListPartsResult *listPartsResult;
 }
 

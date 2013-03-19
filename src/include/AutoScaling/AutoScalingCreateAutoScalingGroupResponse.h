@@ -22,8 +22,7 @@
 /**
  * Create Auto Scaling Group
  */
-@interface AutoScalingCreateAutoScalingGroupResponse:AutoScalingResponse
-{
+@interface AutoScalingCreateAutoScalingGroupResponse : AutoScalingResponse {
 }
 
 @end

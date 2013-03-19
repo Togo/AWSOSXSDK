@@ -25,22 +25,19 @@
  * Apply Security Groups To Load Balancer Result
  */
 
-@interface ElasticLoadBalancingApplySecurityGroupsToLoadBalancerResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingApplySecurityGroupsToLoadBalancerResponse : ElasticLoadBalancingResponse {
     NSMutableArray *securityGroups;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of security group IDs associated with your LoadBalancer.
@@ -48,11 +45,10 @@
 @property (nonatomic, strong) NSMutableArray *securityGroups;
 
 
-
 /**
  * Returns a value from the securityGroups array for the specified index
  */
--(NSString *)securityGroupsObjectAtIndex:(int)index;
+- (NSString *)securityGroupsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

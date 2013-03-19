@@ -21,10 +21,10 @@
 /**
  * Write Request Unmarshaller
  */
-@interface DynamoDBWriteRequestUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBWriteRequestUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBWriteRequest *response;
 }
 
-+(DynamoDBWriteRequest *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBWriteRequest *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Indicates that the customer already owns the maximum allowed number of
  * subscriptions.
  * </p>
  */
-@interface SNSSubscriptionLimitExceededException:AmazonServiceException
-{
+@interface SNSSubscriptionLimitExceededException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

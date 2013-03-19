@@ -20,16 +20,13 @@
  * Health Check
  */
 
-@interface ElasticLoadBalancingHealthCheck:NSObject
-
-{
+@interface ElasticLoadBalancingHealthCheck : NSObject {
     NSString *target;
     NSNumber *interval;
     NSNumber *timeout;
     NSNumber *unhealthyThreshold;
     NSNumber *healthyThreshold;
 }
-
 
 
 /**
@@ -93,7 +90,7 @@
  * Default constructor for a new HealthCheck object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new HealthCheck object.
@@ -126,7 +123,7 @@
  * probe successes required before moving the instance to the
  * <i>Healthy</i> state.
  */
--(id)initWithTarget:(NSString *)theTarget andInterval:(NSNumber *)theInterval andTimeout:(NSNumber *)theTimeout andUnhealthyThreshold:(NSNumber *)theUnhealthyThreshold andHealthyThreshold:(NSNumber *)theHealthyThreshold;
+- (id)initWithTarget:(NSString *)theTarget andInterval:(NSNumber *)theInterval andTimeout:(NSNumber *)theTimeout andUnhealthyThreshold:(NSNumber *)theUnhealthyThreshold andHealthyThreshold:(NSNumber *)theHealthyThreshold;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -134,7 +131,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

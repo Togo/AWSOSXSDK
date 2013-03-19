@@ -20,11 +20,11 @@
  * Contains the parameters used for the getBucketTagging operation.
  *
  */
-@interface S3GetBucketTaggingRequest:S3Request
-{
+@interface S3GetBucketTaggingRequest : S3Request {
 }
 
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 @end

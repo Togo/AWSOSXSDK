@@ -23,20 +23,18 @@
 @synthesize output;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instanceId = nil;
-        timestamp  = nil;
-        output     = nil;
+        timestamp = nil;
+        output = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -49,9 +47,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +59,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

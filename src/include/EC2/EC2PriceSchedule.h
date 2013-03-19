@@ -20,24 +20,20 @@
  * Price Schedule
  */
 
-@interface EC2PriceSchedule:NSObject
-
-{
+@interface EC2PriceSchedule : NSObject {
     NSNumber *term;
     NSNumber *price;
     NSString *currencyCode;
-    bool     active;
-    bool     activeIsSet;
+    bool active;
+    bool activeIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Term property for this object.
@@ -57,7 +53,7 @@
 /**
  * The value of the Active property for this object.
  */
-@property (nonatomic) bool           active;
+@property (nonatomic) bool active;
 
 @property (nonatomic, readonly) bool activeIsSet;
 
@@ -67,7 +63,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

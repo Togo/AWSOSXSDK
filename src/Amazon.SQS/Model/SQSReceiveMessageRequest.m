@@ -25,21 +25,19 @@
 @synthesize waitTimeSeconds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueUrl            = nil;
-        attributeNames      = [[NSMutableArray alloc] initWithCapacity:1];
+        queueUrl = nil;
+        attributeNames = [[NSMutableArray alloc] initWithCapacity:1];
         maxNumberOfMessages = nil;
-        visibilityTimeout   = nil;
-        waitTimeSeconds     = nil;
+        visibilityTimeout = nil;
+        waitTimeSeconds = nil;
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl {
     if (self = [self init]) {
         self.queueUrl = theQueueUrl;
     }
@@ -48,8 +46,7 @@
 }
 
 
--(void)addAttributeName:(NSString *)attributeNameObject
-{
+- (void)addAttributeName:(NSString *)attributeNameObject {
     if (attributeNames == nil) {
         attributeNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

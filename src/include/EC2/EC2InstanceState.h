@@ -20,21 +20,17 @@
  * Instance State
  */
 
-@interface EC2InstanceState:NSObject
-
-{
+@interface EC2InstanceState : NSObject {
     NSNumber *code;
     NSString *name;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A 16-bit unsigned integer. The high byte is an opaque internal value
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

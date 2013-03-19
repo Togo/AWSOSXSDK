@@ -27,23 +27,20 @@
  * List Subscriptions By Topic Result
  */
 
-@interface SNSListSubscriptionsByTopicResponse:SNSResponse
-
-{
+@interface SNSListSubscriptionsByTopicResponse : SNSResponse {
     NSMutableArray *subscriptions;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of subscriptions.
@@ -58,11 +55,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the subscriptions array for the specified index
  */
--(SNSSubscription *)subscriptionsObjectAtIndex:(int)index;
+- (SNSSubscription *)subscriptionsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

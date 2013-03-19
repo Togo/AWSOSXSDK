@@ -23,11 +23,10 @@
 @synthesize sentLast24Hours;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        max24HourSend   = nil;
-        maxSendRate     = nil;
+        max24HourSend = nil;
+        maxSendRate = nil;
         sentLast24Hours = nil;
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -49,9 +47,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +59,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

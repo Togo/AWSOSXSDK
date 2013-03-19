@@ -26,14 +26,13 @@
 @synthesize includeAllInstancesIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceIds              = [[NSMutableArray alloc] initWithCapacity:1];
-        filters                  = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken                = nil;
-        maxResults               = nil;
-        includeAllInstances      = NO;
+        instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
+        nextToken = nil;
+        maxResults = nil;
+        includeAllInstances = NO;
         includeAllInstancesIsSet = NO;
     }
 
@@ -41,8 +40,7 @@
 }
 
 
--(void)addInstanceId:(NSString *)instanceIdObject
-{
+- (void)addInstanceId:(NSString *)instanceIdObject {
     if (instanceIds == nil) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -50,8 +48,7 @@
     [instanceIds addObject:instanceIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -60,8 +57,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -77,13 +73,10 @@
 }
 
 
--(void)setIncludeAllInstances:(bool)theValue
-{
-    includeAllInstances      = theValue;
+- (void)setIncludeAllInstances:(bool)theValue {
+    includeAllInstances = theValue;
     includeAllInstancesIsSet = YES;
 }
-
-
 
 
 @end

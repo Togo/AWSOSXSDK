@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * This is returned when you cannot delete a launch configuration or
  * Auto Scaling group because it is being used.
  * </p>
  */
-@interface AutoScalingResourceInUseException:AmazonServiceException
-{
+@interface AutoScalingResourceInUseException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

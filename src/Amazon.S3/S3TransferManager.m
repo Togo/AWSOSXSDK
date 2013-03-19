@@ -24,8 +24,7 @@
 NSUInteger const S3MultipartMinimumUploadSize = 5242880;
 NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
-@interface S3TransferManager ()
-{
+@interface S3TransferManager () {
 }
 
 @end
@@ -40,10 +39,8 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 #pragma mark - Class lifecycle Methods
 
-- (id)init
-{
-    if(self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         _minimumUploadPartSize = S3MultipartMinimumUploadSize;
         _multipartUploadThreshold = S3MultipartMinimumUploadSize;
         _noSyncMethodsOnMainThread = YES;
@@ -55,11 +52,9 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 #pragma mark - Synchronous Upload Methods
 
-- (AmazonServiceResponse *)synchronouslyUpload:(S3PutObjectRequest *)putObjectRequest
-{
-    if(self.noSyncMethodsOnMainThread
-       && [NSThread isMainThread])
-    {
+- (AmazonServiceResponse *)synchronouslyUpload:(S3PutObjectRequest *)putObjectRequest {
+    if (self.noSyncMethodsOnMainThread
+            && [NSThread isMainThread]) {
         AmazonClientException *exception = [AmazonClientException exceptionWithMessage:@"A synchronous method was called on the main thread. You need to call it from a background thread."];
         NSError *error = [AmazonErrorHandler errorFromExceptionWithThrowsExceptionOption:exception];
 
@@ -71,8 +66,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
     [putObjectRequest validate];
 
-    if([self shouldUseMutipartUpload:putObjectRequest])
-    {
+    if ([self shouldUseMutipartUpload:putObjectRequest]) {
         // Multipart Upload
         S3MultipartUploadOperation_Internal *multipartUploadOperation = [S3MultipartUploadOperation_Internal new];
         multipartUploadOperation.s3 = self.s3;
@@ -83,24 +77,21 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         [self.operationQueue addOperations:[NSArray arrayWithObject:multipartUploadOperation] waitUntilFinished:YES];
         //[multipartUploadOperation autorelease];
 
-        if(multipartUploadOperation.response)
-        {
+        if (multipartUploadOperation.response) {
             return multipartUploadOperation.response;
         }
-        else if(multipartUploadOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
+        else if (multipartUploadOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
         {
             AmazonServiceResponse *response = [AmazonServiceResponse new];
             response.error = multipartUploadOperation.error;
 
             return response;
         }
-        else if(multipartUploadOperation.exception)
-        {
+        else if (multipartUploadOperation.exception) {
             @throw multipartUploadOperation.exception;
         }
     }
-    else
-    {
+    else {
         // Put
         S3PutObjectOperation_Internal *putObjectOperation = [S3PutObjectOperation_Internal new];
         putObjectOperation.s3 = self.s3;
@@ -110,19 +101,17 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         [self.operationQueue addOperations:[NSArray arrayWithObject:putObjectOperation] waitUntilFinished:YES];
         //[putObjectOperation autorelease];
 
-        if(putObjectOperation.response)
-        {
+        if (putObjectOperation.response) {
             return putObjectOperation.response;
         }
-        else if(putObjectOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
+        else if (putObjectOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
         {
             S3PutObjectResponse *response = [S3PutObjectResponse new];
             response.error = putObjectOperation.error;
 
             return response;
         }
-        else if(putObjectOperation.exception)
-        {
+        else if (putObjectOperation.exception) {
             @throw putObjectOperation.exception;
         }
     }
@@ -130,8 +119,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     return nil;
 }
 
-- (AmazonServiceResponse *)synchronouslyUploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key
-{
+- (AmazonServiceResponse *)synchronouslyUploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.data = data;
     putObjectRequest.bucket = bucket;
@@ -140,8 +128,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     return [self synchronouslyUpload:putObjectRequest];
 }
 
-- (AmazonServiceResponse *)synchronouslyUploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key
-{
+- (AmazonServiceResponse *)synchronouslyUploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.filename = filename;
     putObjectRequest.bucket = bucket;
@@ -150,8 +137,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     return [self synchronouslyUpload:putObjectRequest];
 }
 
-- (AmazonServiceResponse *)synchronouslyUploadStream:(NSInputStream *)stream contentLength:(int64_t)contentLength bucket:(NSString *)bucket key:(NSString *)key
-{
+- (AmazonServiceResponse *)synchronouslyUploadStream:(NSInputStream *)stream contentLength:(int64_t)contentLength bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.stream = stream;
     putObjectRequest.contentLength = contentLength;
@@ -163,38 +149,32 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 #pragma mark - Asynchronous Upload Methods
 
-- (void)upload:(S3PutObjectRequest *)putObjectRequest
-{
+- (void)upload:(S3PutObjectRequest *)putObjectRequest {
     [putObjectRequest validate];
 
-    if([self shouldUseMutipartUpload:putObjectRequest])
-    {
+    if ([self shouldUseMutipartUpload:putObjectRequest]) {
         // Multipart Upload
         S3MultipartUploadOperation_Internal *multipartUploadOperation = [S3MultipartUploadOperation_Internal new];
         multipartUploadOperation.s3 = self.s3;
         multipartUploadOperation.request = putObjectRequest;
         multipartUploadOperation.partSize = self.minimumUploadPartSize;
 
-        if(putObjectRequest.delegate == nil)
-        {
+        if (putObjectRequest.delegate == nil) {
             multipartUploadOperation.delegate = self.delegate;
         }
-        else
-        {
+        else {
             multipartUploadOperation.delegate = putObjectRequest.delegate;
         }
 
         [self.operationQueue addOperation:multipartUploadOperation];
     }
-    else
-    {
+    else {
         // Put
         S3PutObjectOperation_Internal *putObjectOperation = [S3PutObjectOperation_Internal new];
         putObjectOperation.s3 = self.s3;
         putObjectOperation.request = putObjectRequest;
-        
-        if(putObjectRequest.delegate == nil)
-        {
+
+        if (putObjectRequest.delegate == nil) {
             putObjectOperation.delegate = self.delegate;
         }
 
@@ -202,8 +182,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     }
 }
 
-- (void)uploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key
-{
+- (void)uploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.data = data;
     putObjectRequest.bucket = bucket;
@@ -212,8 +191,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     [self upload:putObjectRequest];
 }
 
-- (void)uploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key
-{
+- (void)uploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.filename = filename;
     putObjectRequest.bucket = bucket;
@@ -222,8 +200,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     [self upload:putObjectRequest];
 }
 
-- (void)uploadStream:(NSInputStream *)stream contentLength:(long)contentLength bucket:(NSString *)bucket key:(NSString *)key
-{
+- (void)uploadStream:(NSInputStream *)stream contentLength:(long)contentLength bucket:(NSString *)bucket key:(NSString *)key {
     S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.stream = stream;
     putObjectRequest.contentLength = contentLength;
@@ -235,8 +212,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 #pragma mark - Abort Multipart Uploads
 
-- (void)abortMultipartUploads:(NSString *)bucket initiatedBefore:(NSDate *)date
-{
+- (void)abortMultipartUploads:(NSString *)bucket initiatedBefore:(NSDate *)date {
     S3AbortMultiplartUploadsOperation_Internal *abortMultiplartUploadsOperation = [S3AbortMultiplartUploadsOperation_Internal new];
     abortMultiplartUploadsOperation.s3 = self.s3;
     abortMultiplartUploadsOperation.delegate = self.delegate;
@@ -246,8 +222,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     [self.operationQueue addOperation:abortMultiplartUploadsOperation];
 }
 
-- (void)abortMultipartUploads:(NSString *)bucket forKey:(NSString *)key
-{
+- (void)abortMultipartUploads:(NSString *)bucket forKey:(NSString *)key {
     S3AbortMultiplartUploadsOperation_Internal *abortMultiplartUploadsOperation = [S3AbortMultiplartUploadsOperation_Internal new];
     abortMultiplartUploadsOperation.s3 = self.s3;
     abortMultiplartUploadsOperation.delegate = self.delegate;
@@ -259,16 +234,12 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 #pragma mark - Helper Methods
 
-- (NSOperationQueue *)operationQueue
-{
+- (NSOperationQueue *)operationQueue {
     static NSOperationQueue *_operationQueue = nil;
 
-    if(_operationQueue == nil)
-    {
-        @synchronized(self)
-        {
-            if(_operationQueue == nil)
-            {
+    if (_operationQueue == nil) {
+        @synchronized (self) {
+            if (_operationQueue == nil) {
                 _operationQueue = [NSOperationQueue new];
                 _operationQueue.maxConcurrentOperationCount = S3DefaultMaxConcurrentOperationCount;
             }
@@ -278,63 +249,48 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     return _operationQueue;
 }
 
-- (BOOL)shouldUseMutipartUpload:(S3PutObjectRequest *)putObjectRequest
-{
-    if(putObjectRequest.data)
-    {
+- (BOOL)shouldUseMutipartUpload:(S3PutObjectRequest *)putObjectRequest {
+    if (putObjectRequest.data) {
         return putObjectRequest.data.length > self.multipartUploadThreshold;
     }
-    else
-    {
+    else {
         return putObjectRequest.contentLength > self.multipartUploadThreshold;
     }
 }
 
-- (void)setuploadPartSize:(NSUInteger)minimumUploadPartSize
-{
-    if(minimumUploadPartSize > S3MultipartMinimumUploadSize)
-    {
+- (void)setuploadPartSize:(NSUInteger)minimumUploadPartSize {
+    if (minimumUploadPartSize > S3MultipartMinimumUploadSize) {
         _minimumUploadPartSize = minimumUploadPartSize;
     }
 }
 
-- (NSUInteger)multipartUploadThreshold
-{
-    if(_multipartUploadThreshold < self.minimumUploadPartSize)
-    {
+- (NSUInteger)multipartUploadThreshold {
+    if (_multipartUploadThreshold < self.minimumUploadPartSize) {
         return self.minimumUploadPartSize;
     }
-    else
-    {
+    else {
         return _multipartUploadThreshold;
     }
 }
 
-- (void)setMultipartUploadThreshold:(NSUInteger)multipartUploadThreshold
-{
-    if(multipartUploadThreshold > S3MultipartMinimumUploadSize)
-    {
+- (void)setMultipartUploadThreshold:(NSUInteger)multipartUploadThreshold {
+    if (multipartUploadThreshold > S3MultipartMinimumUploadSize) {
         _multipartUploadThreshold = multipartUploadThreshold;
     }
 }
 
-- (AmazonS3Client *)s3
-{
-    @synchronized(self)
-    {
+- (AmazonS3Client *)s3 {
+    @synchronized (self) {
         return _s3;
     }
 }
 
-- (void)setS3:(AmazonS3Client *)s3
-{
-    @synchronized(self)
-    {
+- (void)setS3:(AmazonS3Client *)s3 {
+    @synchronized (self) {
 
         _s3 = [s3 copy];
 
-        if(![_s3.userAgent hasPrefix:AWSS3TransferManagerUserAgentPrefix])
-        {
+        if (![_s3.userAgent hasPrefix:AWSS3TransferManagerUserAgentPrefix]) {
             _s3.userAgent = AWSS3TransferManagerUserAgentPrefix;
         }
     }

@@ -28,25 +28,23 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        ownerId             = nil;
-        groupName           = nil;
-        groupId             = nil;
-        descriptionValue    = nil;
-        ipPermissions       = [[NSMutableArray alloc] initWithCapacity:1];
+        ownerId = nil;
+        groupName = nil;
+        groupId = nil;
+        descriptionValue = nil;
+        ipPermissions = [[NSMutableArray alloc] initWithCapacity:1];
         ipPermissionsEgress = [[NSMutableArray alloc] initWithCapacity:1];
-        vpcId               = nil;
-        tags                = [[NSMutableArray alloc] initWithCapacity:1];
+        vpcId = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addIpPermission:(EC2IpPermission *)ipPermissionObject
-{
+- (void)addIpPermission:(EC2IpPermission *)ipPermissionObject {
     if (ipPermissions == nil) {
         ipPermissions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -54,8 +52,7 @@
     [ipPermissions addObject:ipPermissionObject];
 }
 
--(void)addIpPermissionsEgres:(EC2IpPermission *)ipPermissionsEgresObject
-{
+- (void)addIpPermissionsEgres:(EC2IpPermission *)ipPermissionsEgresObject {
     if (ipPermissionsEgress == nil) {
         ipPermissionsEgress = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +60,7 @@
     [ipPermissionsEgress addObject:ipPermissionsEgresObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -73,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -91,9 +86,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

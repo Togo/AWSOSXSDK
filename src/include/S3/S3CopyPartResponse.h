@@ -19,7 +19,7 @@
 /** Contains the response from a uploadPart operation.
  *
  */
-@interface S3CopyPartResponse:S3Response {
+@interface S3CopyPartResponse : S3Response {
     NSDate *lastModified;
 }
 

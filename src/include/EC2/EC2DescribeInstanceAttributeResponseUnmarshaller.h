@@ -24,7 +24,7 @@
 /**
  * Describe Instance Attribute Response Unmarshaller
  */
-@interface EC2DescribeInstanceAttributeResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2DescribeInstanceAttributeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DescribeInstanceAttributeResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) EC2DescribeInstanceAttributeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

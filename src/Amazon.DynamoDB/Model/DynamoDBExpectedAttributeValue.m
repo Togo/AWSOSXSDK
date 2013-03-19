@@ -23,19 +23,17 @@
 @synthesize existsIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        value       = nil;
-        exists      = NO;
+        value = nil;
+        exists = NO;
         existsIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithValue:(DynamoDBAttributeValue *)theValue
-{
+- (id)initWithValue:(DynamoDBAttributeValue *)theValue {
     if (self = [self init]) {
         self.value = theValue;
     }
@@ -43,8 +41,7 @@
     return self;
 }
 
--(id)initWithExists:(bool)theExists
-{
+- (id)initWithExists:(bool)theExists {
     if (self = [self init]) {
         self.exists = theExists;
     }
@@ -53,9 +50,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -68,13 +63,10 @@
 }
 
 
--(void)setExists:(bool)theValue
-{
-    exists      = theValue;
+- (void)setExists:(bool)theValue {
+    exists = theValue;
     existsIsSet = YES;
 }
-
-
 
 
 @end

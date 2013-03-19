@@ -20,8 +20,7 @@
 
 @synthesize policyText;
 
--(id)initWithPolicy:(NSString *)thePolicyText
-{
+- (id)initWithPolicy:(NSString *)thePolicyText {
     self = [super init];
     if (self) {
         self.policyText = thePolicyText;

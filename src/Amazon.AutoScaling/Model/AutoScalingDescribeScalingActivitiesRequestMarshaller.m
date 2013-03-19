@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDescribeScalingActivitiesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingActivitiesRequest *)describeScalingActivitiesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingActivitiesRequest *)describeScalingActivitiesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeScalingActivities"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeScalingActivities" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeScalingActivitiesRequest delegate]];
     [request setCredentials:[describeScalingActivitiesRequest credentials]];

@@ -17,12 +17,11 @@
 
 @implementation CloudWatchSetAlarmStateRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"SetAlarmState"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetAlarmState" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[setAlarmStateRequest delegate]];
     [request setCredentials:[setAlarmStateRequest credentials]];

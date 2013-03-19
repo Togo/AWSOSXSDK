@@ -20,8 +20,7 @@
 
 @implementation DynamoDBUpdateItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBUpdateItemRequest *)updateItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBUpdateItemRequest *)updateItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[updateItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.UpdateItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -163,7 +162,7 @@
         NSMutableDictionary *attributeUpdatesJson = [[NSMutableDictionary alloc] init];
         [json setValue:attributeUpdatesJson forKey:@"AttributeUpdates"];
         for (NSString *attributeUpdatesListValue in updateItemRequest.attributeUpdates) {
-            NSMutableDictionary          *attributeUpdatesListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *attributeUpdatesListValueJson = [[NSMutableDictionary alloc] init];
             [attributeUpdatesJson setValue:attributeUpdatesListValueJson forKey:attributeUpdatesListValue];
             DynamoDBAttributeValueUpdate *attributeUpdatesListValueValue = [updateItemRequest.attributeUpdates valueForKey:attributeUpdatesListValue];
             if (attributeUpdatesListValueValue != nil) {
@@ -232,7 +231,7 @@
         NSMutableDictionary *expectedJson = [[NSMutableDictionary alloc] init];
         [json setValue:expectedJson forKey:@"Expected"];
         for (NSString *expectedListValue in updateItemRequest.expected) {
-            NSMutableDictionary            *expectedListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *expectedListValueJson = [[NSMutableDictionary alloc] init];
             [expectedJson setValue:expectedListValueJson forKey:expectedListValue];
             DynamoDBExpectedAttributeValue *expectedListValueValue = [updateItemRequest.expected valueForKey:expectedListValue];
             if (expectedListValueValue != nil) {
@@ -293,7 +292,7 @@
             }
 
             if (expectedListValueValue.existsIsSet) {
-                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true":@"false") forKey:@"Exists"];
+                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true" : @"false") forKey:@"Exists"];
             }
         }
     }
@@ -303,9 +302,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

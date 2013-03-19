@@ -25,7 +25,7 @@
 /**
  * Import Instance Task Details Unmarshaller
  */
-@interface EC2ImportInstanceTaskDetailsUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2ImportInstanceTaskDetailsUnmarshaller : EC2ResponseUnmarshaller {
     EC2ImportInstanceTaskDetails *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) EC2ImportInstanceTaskDetails *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

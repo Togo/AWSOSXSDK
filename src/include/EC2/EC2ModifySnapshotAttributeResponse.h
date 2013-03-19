@@ -20,8 +20,7 @@
 /**
  * Modify Snapshot Attribute
  */
-@interface EC2ModifySnapshotAttributeResponse:EC2Response
-{
+@interface EC2ModifySnapshotAttributeResponse : EC2Response {
 }
 
 @end

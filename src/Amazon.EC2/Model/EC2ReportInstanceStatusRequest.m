@@ -26,14 +26,13 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instances        = [[NSMutableArray alloc] initWithCapacity:1];
-        status           = nil;
-        startTime        = nil;
-        endTime          = nil;
-        reasonCodes      = [[NSMutableArray alloc] initWithCapacity:1];
+        instances = [[NSMutableArray alloc] initWithCapacity:1];
+        status = nil;
+        startTime = nil;
+        endTime = nil;
+        reasonCodes = [[NSMutableArray alloc] initWithCapacity:1];
         descriptionValue = nil;
     }
 
@@ -41,8 +40,7 @@
 }
 
 
--(void)addInstance:(NSString *)instanceObject
-{
+- (void)addInstance:(NSString *)instanceObject {
     if (instances == nil) {
         instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -50,8 +48,7 @@
     [instances addObject:instanceObject];
 }
 
--(void)addReasonCode:(NSString *)reasonCodeObject
-{
+- (void)addReasonCode:(NSString *)reasonCodeObject {
     if (reasonCodes == nil) {
         reasonCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -60,8 +57,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -76,9 +72,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

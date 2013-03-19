@@ -19,21 +19,19 @@
 @implementation SNSGetSubscriptionAttributesResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"Attributes"]) {
         AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.attributes withSetter:@selector(addEntriesFromDictionary:)];
-        dictionaryUnmarshaller.keyXpathElement      = @"key";
-        dictionaryUnmarshaller.valueXpathElement    = @"value";
+        dictionaryUnmarshaller.keyXpathElement = @"key";
+        dictionaryUnmarshaller.valueXpathElement = @"value";
         dictionaryUnmarshaller.dictionaryEndElement = @"Attributes";
-        dictionaryUnmarshaller.entryEndElement      = @"entry";
+        dictionaryUnmarshaller.entryEndElement = @"entry";
 
         [parser setDelegate:dictionaryUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -41,8 +39,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -59,14 +56,12 @@
     }
 }
 
--(SNSGetSubscriptionAttributesResponse *)response
-{
+- (SNSGetSubscriptionAttributesResponse *)response {
     if (nil == response) {
         response = [[SNSGetSubscriptionAttributesResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

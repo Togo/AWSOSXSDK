@@ -16,17 +16,17 @@
 #import "EC2DeleteKeyPairResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DeleteKeyPairResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DeleteKeyPairResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DeleteKeyPairResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DeleteKeyPairResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DeleteKeyPairResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DeleteKeyPairResponse *)response;
 
 @end

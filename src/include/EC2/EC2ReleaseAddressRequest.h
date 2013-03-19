@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Release Address Request
  */
 
-@interface EC2ReleaseAddressRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ReleaseAddressRequest : AmazonServiceRequestConfig {
     NSString *publicIp;
     NSString *allocationId;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new ReleaseAddressRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ReleaseAddressRequest object.
@@ -56,7 +52,7 @@
  * @param thePublicIp The elastic IP address that you are releasing from
  * your account.
  */
--(id)initWithPublicIp:(NSString *)thePublicIp;
+- (id)initWithPublicIp:(NSString *)thePublicIp;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

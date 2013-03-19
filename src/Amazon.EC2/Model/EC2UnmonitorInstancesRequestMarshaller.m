@@ -17,12 +17,11 @@
 
 @implementation EC2UnmonitorInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"UnmonitorInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"UnmonitorInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[unmonitorInstancesRequest delegate]];
     [request setCredentials:[unmonitorInstancesRequest credentials]];

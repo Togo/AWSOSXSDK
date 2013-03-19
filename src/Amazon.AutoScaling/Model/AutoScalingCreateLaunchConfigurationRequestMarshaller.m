@@ -17,12 +17,11 @@
 
 @implementation AutoScalingCreateLaunchConfigurationRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"CreateLaunchConfiguration"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateLaunchConfiguration" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[createLaunchConfigurationRequest delegate]];
     [request setCredentials:[createLaunchConfigurationRequest credentials]];
@@ -110,7 +109,7 @@
         AutoScalingInstanceMonitoring *instanceMonitoring = createLaunchConfigurationRequest.instanceMonitoring;
         if (instanceMonitoring != nil) {
             if (instanceMonitoring.enabledIsSet) {
-                [request setParameterValue:(instanceMonitoring.enabled ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@", @"InstanceMonitoring", @"Enabled"]];
+                [request setParameterValue:(instanceMonitoring.enabled ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@", @"InstanceMonitoring", @"Enabled"]];
             }
         }
     }
@@ -126,7 +125,7 @@
     }
     if (createLaunchConfigurationRequest != nil) {
         if (createLaunchConfigurationRequest.ebsOptimizedIsSet) {
-            [request setParameterValue:(createLaunchConfigurationRequest.ebsOptimized ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"EbsOptimized"]];
+            [request setParameterValue:(createLaunchConfigurationRequest.ebsOptimized ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"EbsOptimized"]];
         }
     }
 

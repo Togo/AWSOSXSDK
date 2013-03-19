@@ -25,33 +25,30 @@
 @synthesize iops;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        size             = nil;
-        snapshotId       = nil;
+        size = nil;
+        snapshotId = nil;
         availabilityZone = nil;
-        volumeType       = nil;
-        iops             = nil;
+        volumeType = nil;
+        iops = nil;
     }
 
     return self;
 }
 
--(id)initWithSize:(NSNumber *)theSize andAvailabilityZone:(NSString *)theAvailabilityZone
-{
+- (id)initWithSize:(NSNumber *)theSize andAvailabilityZone:(NSString *)theAvailabilityZone {
     if (self = [self init]) {
-        self.size             = theSize;
+        self.size = theSize;
         self.availabilityZone = theAvailabilityZone;
     }
 
     return self;
 }
 
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAvailabilityZone:(NSString *)theAvailabilityZone
-{
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAvailabilityZone:(NSString *)theAvailabilityZone {
     if (self = [self init]) {
-        self.snapshotId       = theSnapshotId;
+        self.snapshotId = theSnapshotId;
         self.availabilityZone = theAvailabilityZone;
     }
 
@@ -59,9 +56,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -75,9 +70,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

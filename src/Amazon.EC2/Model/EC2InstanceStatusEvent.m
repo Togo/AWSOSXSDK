@@ -24,22 +24,19 @@
 @synthesize notAfter;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        code             = nil;
+        code = nil;
         descriptionValue = nil;
-        notBefore        = nil;
-        notAfter         = nil;
+        notBefore = nil;
+        notAfter = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

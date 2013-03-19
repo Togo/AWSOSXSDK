@@ -22,10 +22,9 @@
 @synthesize unprocessedItems;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        responses        = [[NSMutableDictionary alloc] initWithCapacity:1];
+        responses = [[NSMutableDictionary alloc] initWithCapacity:1];
         unprocessedItems = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ProvisionedThroughputExceededException"]) {
@@ -59,19 +57,16 @@
 }
 
 
--(DynamoDBBatchWriteResponse *)responsesValueForKey:(NSString *)theKey
-{
-    return (DynamoDBBatchWriteResponse *)[responses valueForKey:theKey];
+- (DynamoDBBatchWriteResponse *)responsesValueForKey:(NSString *)theKey {
+    return (DynamoDBBatchWriteResponse *) [responses valueForKey:theKey];
 }
 
--(NSArray *)unprocessedItemsValueForKey:(NSString *)theKey
-{
-    return (NSArray *)[unprocessedItems valueForKey:theKey];
+- (NSArray *)unprocessedItemsValueForKey:(NSString *)theKey {
+    return (NSArray *) [unprocessedItems valueForKey:theKey];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +77,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

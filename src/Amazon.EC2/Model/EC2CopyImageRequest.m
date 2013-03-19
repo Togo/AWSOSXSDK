@@ -25,23 +25,20 @@
 @synthesize clientToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        sourceRegion     = nil;
-        sourceImageId    = nil;
-        name             = nil;
+        sourceRegion = nil;
+        sourceImageId = nil;
+        name = nil;
         descriptionValue = nil;
-        clientToken      = nil;
+        clientToken = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Reset Snapshot Attribute Request Marshaller
  */
-@interface EC2ResetSnapshotAttributeRequestMarshaller:NSObject {
+@interface EC2ResetSnapshotAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ResetSnapshotAttributeRequest *)resetSnapshotAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ResetSnapshotAttributeRequest *)resetSnapshotAttributeRequest;
 
 
 @end

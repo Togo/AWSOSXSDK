@@ -29,8 +29,7 @@
 /**
  * Batch Put Attributes
  */
-@interface SimpleDBBatchPutAttributesResponse:SimpleDBResponse
-{
+@interface SimpleDBBatchPutAttributesResponse : SimpleDBResponse {
 }
 
 @end

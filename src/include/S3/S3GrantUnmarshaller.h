@@ -22,8 +22,7 @@
 #import "S3Permission.h"
 
 
-
-@interface S3GrantUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3GrantUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3Grant *grant;
 }
 

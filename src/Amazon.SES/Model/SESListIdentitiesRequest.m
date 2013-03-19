@@ -23,21 +23,18 @@
 @synthesize maxItems;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         identityType = nil;
-        nextToken    = nil;
-        maxItems     = nil;
+        nextToken = nil;
+        maxItems = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation CloudWatchPutMetricAlarmRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"PutMetricAlarm"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"PutMetricAlarm" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[putMetricAlarmRequest delegate]];
     [request setCredentials:[putMetricAlarmRequest credentials]];
@@ -41,7 +40,7 @@
     }
     if (putMetricAlarmRequest != nil) {
         if (putMetricAlarmRequest.actionsEnabledIsSet) {
-            [request setParameterValue:(putMetricAlarmRequest.actionsEnabled ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ActionsEnabled"]];
+            [request setParameterValue:(putMetricAlarmRequest.actionsEnabled ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ActionsEnabled"]];
         }
     }
 

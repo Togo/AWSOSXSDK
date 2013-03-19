@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDescribeLaunchConfigurationsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeLaunchConfigurations"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeLaunchConfigurations" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeLaunchConfigurationsRequest delegate]];
     [request setCredentials:[describeLaunchConfigurationsRequest credentials]];

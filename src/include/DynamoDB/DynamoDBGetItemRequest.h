@@ -18,21 +18,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Item Request
  */
 
-@interface DynamoDBGetItemRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *tableName;
-    DynamoDBKey    *key;
+@interface DynamoDBGetItemRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    DynamoDBKey *key;
     NSMutableArray *attributesToGet;
-    bool           consistentRead;
-    bool           consistentReadIsSet;
+    bool consistentRead;
+    bool consistentReadIsSet;
 }
-
 
 
 /**
@@ -68,7 +64,7 @@
  * If set to <code>true</code>, then a consistent read is issued.
  * Otherwise eventually-consistent is used.
  */
-@property (nonatomic) bool           consistentRead;
+@property (nonatomic) bool consistentRead;
 
 @property (nonatomic, readonly) bool consistentReadIsSet;
 
@@ -77,7 +73,7 @@
  * Default constructor for a new GetItemRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetItemRequest object.
@@ -91,13 +87,13 @@
  * table. A primary key can be a one attribute (hash) primary key or a
  * two attribute (hash-and-range) primary key.
  */
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey;
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey;
 
 /**
  * Adds a single object to attributesToGet.
  * This function will alloc and init attributesToGet if not already done.
  */
--(void)addAttributesToGet:(NSString *)attributesToGetObject;
+- (void)addAttributesToGet:(NSString *)attributesToGetObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -105,7 +101,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -20,21 +20,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Update Item Request
  */
 
-@interface DynamoDBUpdateItemRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *tableName;
-    DynamoDBKey         *key;
+@interface DynamoDBUpdateItemRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    DynamoDBKey *key;
     NSMutableDictionary *attributeUpdates;
     NSMutableDictionary *expected;
-    NSString            *returnValues;
+    NSString *returnValues;
 }
-
 
 
 /**
@@ -98,7 +94,7 @@
  * Default constructor for a new UpdateItemRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new UpdateItemRequest object.
@@ -115,21 +111,21 @@
  * action for the update. The attribute names specify the attributes to
  * modify, and cannot contain any primary key attributes.
  */
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey andAttributeUpdates:(NSMutableDictionary *)theAttributeUpdates;
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey andAttributeUpdates:(NSMutableDictionary *)theAttributeUpdates;
 
 
 /**
  * Set a value in the dictionary attributeUpdates for the specified key.
  * This function will alloc and init attributeUpdates if not already done.
  */
--(void)setAttributeUpdatesValue:(DynamoDBAttributeValueUpdate *)theValue forKey:(NSString *)theKey;
+- (void)setAttributeUpdatesValue:(DynamoDBAttributeValueUpdate *)theValue forKey:(NSString *)theKey;
 
 
 /**
  * Set a value in the dictionary expected for the specified key.
  * This function will alloc and init expected if not already done.
  */
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -137,7 +133,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

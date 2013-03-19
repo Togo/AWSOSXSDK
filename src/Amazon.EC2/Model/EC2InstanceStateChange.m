@@ -23,11 +23,10 @@
 @synthesize previousState;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId    = nil;
-        currentState  = nil;
+        instanceId = nil;
+        currentState = nil;
         previousState = nil;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

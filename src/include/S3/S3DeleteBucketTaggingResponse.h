@@ -19,8 +19,7 @@
 /** Contains all the information about the deleteBucketTaggingResponse operation.
  *
  */
-@interface S3DeleteBucketTaggingResponse:S3Response
-{
+@interface S3DeleteBucketTaggingResponse : S3Response {
 }
 
 @end

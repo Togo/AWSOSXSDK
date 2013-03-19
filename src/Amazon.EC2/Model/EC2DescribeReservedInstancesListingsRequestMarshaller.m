@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeReservedInstancesListingsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeReservedInstancesListings"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeReservedInstancesListings" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeReservedInstancesListingsRequest delegate]];
     [request setCredentials:[describeReservedInstancesListingsRequest credentials]];

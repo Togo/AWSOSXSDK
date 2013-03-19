@@ -19,28 +19,27 @@
 @implementation EC2ImageAttributeUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"kernel"]) {
         AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setKernelId:)];
-        unmarshaller.endElementTagName   = @"kernel";
+        unmarshaller.endElementTagName = @"kernel";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"ramdisk"]) {
         AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setRamdiskId:)];
-        unmarshaller.endElementTagName   = @"ramdisk";
+        unmarshaller.endElementTagName = @"ramdisk";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"description"]) {
         AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setDescriptionValue:)];
-        unmarshaller.endElementTagName   = @"description";
+        unmarshaller.endElementTagName = @"description";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
@@ -48,8 +47,8 @@
     if ([elementName isEqualToString:@"launchPermission"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.launchPermissions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"launchPermission";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2LaunchPermissionUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2LaunchPermissionUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -57,8 +56,8 @@
     if ([elementName isEqualToString:@"productCodes"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.productCodes withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"productCodes";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2ProductCodeUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2ProductCodeUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -66,12 +65,11 @@
     if ([elementName isEqualToString:@"blockDeviceMapping"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"blockDeviceMapping";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2BlockDeviceMappingUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2BlockDeviceMappingUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -79,8 +77,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -108,14 +105,12 @@
     }
 }
 
--(EC2ImageAttribute *)response
-{
+- (EC2ImageAttribute *)response {
     if (nil == response) {
         response = [[EC2ImageAttribute alloc] init];
     }
     return response;
 }
-
 
 
 @end

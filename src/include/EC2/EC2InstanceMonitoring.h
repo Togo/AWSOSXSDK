@@ -16,26 +16,21 @@
 #import "EC2Monitoring.h"
 
 
-
 /**
  * Instance Monitoring
  */
 
-@interface EC2InstanceMonitoring:NSObject
-
-{
-    NSString      *instanceId;
+@interface EC2InstanceMonitoring : NSObject {
+    NSString *instanceId;
     EC2Monitoring *monitoring;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Instance ID.
@@ -53,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -56,156 +56,134 @@
 
 @implementation AmazonSESClient
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [super initWithAccessKey:theAccessKey withSecretKey:theSecretKey]) {
         self.endpoint = AMAZON_SES_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     if (self = [super initWithCredentials:theCredentials]) {
         self.endpoint = AMAZON_SES_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider> )theProvider
-{
+- (id)initWithCredentialsProvider:(id <AmazonCredentialsProvider>)theProvider {
     if (self = [super initWithCredentialsProvider:theProvider]) {
         self.endpoint = AMAZON_SES_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(SESDeleteIdentityResponse *)deleteIdentity:(SESDeleteIdentityRequest *)deleteIdentityRequest
-{
+- (SESDeleteIdentityResponse *)deleteIdentity:(SESDeleteIdentityRequest *)deleteIdentityRequest {
     AmazonServiceRequest *request = [SESDeleteIdentityRequestMarshaller createRequest:deleteIdentityRequest];
 
-    return (SESDeleteIdentityResponse *)[self invoke:request rawRequest:deleteIdentityRequest unmarshallerDelegate:[SESDeleteIdentityResponseUnmarshaller class]];
+    return (SESDeleteIdentityResponse *) [self invoke:request rawRequest:deleteIdentityRequest unmarshallerDelegate:[SESDeleteIdentityResponseUnmarshaller class]];
 }
 
--(SESListVerifiedEmailAddressesResponse *)listVerifiedEmailAddresses:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest
-{
+- (SESListVerifiedEmailAddressesResponse *)listVerifiedEmailAddresses:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest {
     AmazonServiceRequest *request = [SESListVerifiedEmailAddressesRequestMarshaller createRequest:listVerifiedEmailAddressesRequest];
 
-    return (SESListVerifiedEmailAddressesResponse *)[self invoke:request rawRequest:listVerifiedEmailAddressesRequest unmarshallerDelegate:[SESListVerifiedEmailAddressesResponseUnmarshaller class]];
+    return (SESListVerifiedEmailAddressesResponse *) [self invoke:request rawRequest:listVerifiedEmailAddressesRequest unmarshallerDelegate:[SESListVerifiedEmailAddressesResponseUnmarshaller class]];
 }
 
--(SESGetSendStatisticsResponse *)getSendStatistics:(SESGetSendStatisticsRequest *)getSendStatisticsRequest
-{
+- (SESGetSendStatisticsResponse *)getSendStatistics:(SESGetSendStatisticsRequest *)getSendStatisticsRequest {
     AmazonServiceRequest *request = [SESGetSendStatisticsRequestMarshaller createRequest:getSendStatisticsRequest];
 
-    return (SESGetSendStatisticsResponse *)[self invoke:request rawRequest:getSendStatisticsRequest unmarshallerDelegate:[SESGetSendStatisticsResponseUnmarshaller class]];
+    return (SESGetSendStatisticsResponse *) [self invoke:request rawRequest:getSendStatisticsRequest unmarshallerDelegate:[SESGetSendStatisticsResponseUnmarshaller class]];
 }
 
--(SESVerifyEmailIdentityResponse *)verifyEmailIdentity:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest
-{
+- (SESVerifyEmailIdentityResponse *)verifyEmailIdentity:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest {
     AmazonServiceRequest *request = [SESVerifyEmailIdentityRequestMarshaller createRequest:verifyEmailIdentityRequest];
 
-    return (SESVerifyEmailIdentityResponse *)[self invoke:request rawRequest:verifyEmailIdentityRequest unmarshallerDelegate:[SESVerifyEmailIdentityResponseUnmarshaller class]];
+    return (SESVerifyEmailIdentityResponse *) [self invoke:request rawRequest:verifyEmailIdentityRequest unmarshallerDelegate:[SESVerifyEmailIdentityResponseUnmarshaller class]];
 }
 
--(SESGetIdentityNotificationAttributesResponse *)getIdentityNotificationAttributes:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest
-{
+- (SESGetIdentityNotificationAttributesResponse *)getIdentityNotificationAttributes:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest {
     AmazonServiceRequest *request = [SESGetIdentityNotificationAttributesRequestMarshaller createRequest:getIdentityNotificationAttributesRequest];
 
-    return (SESGetIdentityNotificationAttributesResponse *)[self invoke:request rawRequest:getIdentityNotificationAttributesRequest unmarshallerDelegate:[SESGetIdentityNotificationAttributesResponseUnmarshaller class]];
+    return (SESGetIdentityNotificationAttributesResponse *) [self invoke:request rawRequest:getIdentityNotificationAttributesRequest unmarshallerDelegate:[SESGetIdentityNotificationAttributesResponseUnmarshaller class]];
 }
 
--(SESVerifyDomainDkimResponse *)verifyDomainDkim:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest
-{
+- (SESVerifyDomainDkimResponse *)verifyDomainDkim:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest {
     AmazonServiceRequest *request = [SESVerifyDomainDkimRequestMarshaller createRequest:verifyDomainDkimRequest];
 
-    return (SESVerifyDomainDkimResponse *)[self invoke:request rawRequest:verifyDomainDkimRequest unmarshallerDelegate:[SESVerifyDomainDkimResponseUnmarshaller class]];
+    return (SESVerifyDomainDkimResponse *) [self invoke:request rawRequest:verifyDomainDkimRequest unmarshallerDelegate:[SESVerifyDomainDkimResponseUnmarshaller class]];
 }
 
--(SESGetIdentityDkimAttributesResponse *)getIdentityDkimAttributes:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest
-{
+- (SESGetIdentityDkimAttributesResponse *)getIdentityDkimAttributes:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest {
     AmazonServiceRequest *request = [SESGetIdentityDkimAttributesRequestMarshaller createRequest:getIdentityDkimAttributesRequest];
 
-    return (SESGetIdentityDkimAttributesResponse *)[self invoke:request rawRequest:getIdentityDkimAttributesRequest unmarshallerDelegate:[SESGetIdentityDkimAttributesResponseUnmarshaller class]];
+    return (SESGetIdentityDkimAttributesResponse *) [self invoke:request rawRequest:getIdentityDkimAttributesRequest unmarshallerDelegate:[SESGetIdentityDkimAttributesResponseUnmarshaller class]];
 }
 
--(SESVerifyEmailAddressResponse *)verifyEmailAddress:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest
-{
+- (SESVerifyEmailAddressResponse *)verifyEmailAddress:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest {
     AmazonServiceRequest *request = [SESVerifyEmailAddressRequestMarshaller createRequest:verifyEmailAddressRequest];
 
-    return (SESVerifyEmailAddressResponse *)[self invoke:request rawRequest:verifyEmailAddressRequest unmarshallerDelegate:[SESVerifyEmailAddressResponseUnmarshaller class]];
+    return (SESVerifyEmailAddressResponse *) [self invoke:request rawRequest:verifyEmailAddressRequest unmarshallerDelegate:[SESVerifyEmailAddressResponseUnmarshaller class]];
 }
 
--(SESSendRawEmailResponse *)sendRawEmail:(SESSendRawEmailRequest *)sendRawEmailRequest
-{
+- (SESSendRawEmailResponse *)sendRawEmail:(SESSendRawEmailRequest *)sendRawEmailRequest {
     AmazonServiceRequest *request = [SESSendRawEmailRequestMarshaller createRequest:sendRawEmailRequest];
 
-    return (SESSendRawEmailResponse *)[self invoke:request rawRequest:sendRawEmailRequest unmarshallerDelegate:[SESSendRawEmailResponseUnmarshaller class]];
+    return (SESSendRawEmailResponse *) [self invoke:request rawRequest:sendRawEmailRequest unmarshallerDelegate:[SESSendRawEmailResponseUnmarshaller class]];
 }
 
--(SESListIdentitiesResponse *)listIdentities:(SESListIdentitiesRequest *)listIdentitiesRequest
-{
+- (SESListIdentitiesResponse *)listIdentities:(SESListIdentitiesRequest *)listIdentitiesRequest {
     AmazonServiceRequest *request = [SESListIdentitiesRequestMarshaller createRequest:listIdentitiesRequest];
 
-    return (SESListIdentitiesResponse *)[self invoke:request rawRequest:listIdentitiesRequest unmarshallerDelegate:[SESListIdentitiesResponseUnmarshaller class]];
+    return (SESListIdentitiesResponse *) [self invoke:request rawRequest:listIdentitiesRequest unmarshallerDelegate:[SESListIdentitiesResponseUnmarshaller class]];
 }
 
--(SESGetIdentityVerificationAttributesResponse *)getIdentityVerificationAttributes:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest
-{
+- (SESGetIdentityVerificationAttributesResponse *)getIdentityVerificationAttributes:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest {
     AmazonServiceRequest *request = [SESGetIdentityVerificationAttributesRequestMarshaller createRequest:getIdentityVerificationAttributesRequest];
 
-    return (SESGetIdentityVerificationAttributesResponse *)[self invoke:request rawRequest:getIdentityVerificationAttributesRequest unmarshallerDelegate:[SESGetIdentityVerificationAttributesResponseUnmarshaller class]];
+    return (SESGetIdentityVerificationAttributesResponse *) [self invoke:request rawRequest:getIdentityVerificationAttributesRequest unmarshallerDelegate:[SESGetIdentityVerificationAttributesResponseUnmarshaller class]];
 }
 
--(SESSetIdentityDkimEnabledResponse *)setIdentityDkimEnabled:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest
-{
+- (SESSetIdentityDkimEnabledResponse *)setIdentityDkimEnabled:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest {
     AmazonServiceRequest *request = [SESSetIdentityDkimEnabledRequestMarshaller createRequest:setIdentityDkimEnabledRequest];
 
-    return (SESSetIdentityDkimEnabledResponse *)[self invoke:request rawRequest:setIdentityDkimEnabledRequest unmarshallerDelegate:[SESSetIdentityDkimEnabledResponseUnmarshaller class]];
+    return (SESSetIdentityDkimEnabledResponse *) [self invoke:request rawRequest:setIdentityDkimEnabledRequest unmarshallerDelegate:[SESSetIdentityDkimEnabledResponseUnmarshaller class]];
 }
 
--(SESGetSendQuotaResponse *)getSendQuota:(SESGetSendQuotaRequest *)getSendQuotaRequest
-{
+- (SESGetSendQuotaResponse *)getSendQuota:(SESGetSendQuotaRequest *)getSendQuotaRequest {
     AmazonServiceRequest *request = [SESGetSendQuotaRequestMarshaller createRequest:getSendQuotaRequest];
 
-    return (SESGetSendQuotaResponse *)[self invoke:request rawRequest:getSendQuotaRequest unmarshallerDelegate:[SESGetSendQuotaResponseUnmarshaller class]];
+    return (SESGetSendQuotaResponse *) [self invoke:request rawRequest:getSendQuotaRequest unmarshallerDelegate:[SESGetSendQuotaResponseUnmarshaller class]];
 }
 
--(SESSetIdentityFeedbackForwardingEnabledResponse *)setIdentityFeedbackForwardingEnabled:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest
-{
+- (SESSetIdentityFeedbackForwardingEnabledResponse *)setIdentityFeedbackForwardingEnabled:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest {
     AmazonServiceRequest *request = [SESSetIdentityFeedbackForwardingEnabledRequestMarshaller createRequest:setIdentityFeedbackForwardingEnabledRequest];
 
-    return (SESSetIdentityFeedbackForwardingEnabledResponse *)[self invoke:request rawRequest:setIdentityFeedbackForwardingEnabledRequest unmarshallerDelegate:[SESSetIdentityFeedbackForwardingEnabledResponseUnmarshaller class]];
+    return (SESSetIdentityFeedbackForwardingEnabledResponse *) [self invoke:request rawRequest:setIdentityFeedbackForwardingEnabledRequest unmarshallerDelegate:[SESSetIdentityFeedbackForwardingEnabledResponseUnmarshaller class]];
 }
 
--(SESVerifyDomainIdentityResponse *)verifyDomainIdentity:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest
-{
+- (SESVerifyDomainIdentityResponse *)verifyDomainIdentity:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest {
     AmazonServiceRequest *request = [SESVerifyDomainIdentityRequestMarshaller createRequest:verifyDomainIdentityRequest];
 
-    return (SESVerifyDomainIdentityResponse *)[self invoke:request rawRequest:verifyDomainIdentityRequest unmarshallerDelegate:[SESVerifyDomainIdentityResponseUnmarshaller class]];
+    return (SESVerifyDomainIdentityResponse *) [self invoke:request rawRequest:verifyDomainIdentityRequest unmarshallerDelegate:[SESVerifyDomainIdentityResponseUnmarshaller class]];
 }
 
--(SESSendEmailResponse *)sendEmail:(SESSendEmailRequest *)sendEmailRequest
-{
+- (SESSendEmailResponse *)sendEmail:(SESSendEmailRequest *)sendEmailRequest {
     AmazonServiceRequest *request = [SESSendEmailRequestMarshaller createRequest:sendEmailRequest];
 
-    return (SESSendEmailResponse *)[self invoke:request rawRequest:sendEmailRequest unmarshallerDelegate:[SESSendEmailResponseUnmarshaller class]];
+    return (SESSendEmailResponse *) [self invoke:request rawRequest:sendEmailRequest unmarshallerDelegate:[SESSendEmailResponseUnmarshaller class]];
 }
 
--(SESDeleteVerifiedEmailAddressResponse *)deleteVerifiedEmailAddress:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest
-{
+- (SESDeleteVerifiedEmailAddressResponse *)deleteVerifiedEmailAddress:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest {
     AmazonServiceRequest *request = [SESDeleteVerifiedEmailAddressRequestMarshaller createRequest:deleteVerifiedEmailAddressRequest];
 
-    return (SESDeleteVerifiedEmailAddressResponse *)[self invoke:request rawRequest:deleteVerifiedEmailAddressRequest unmarshallerDelegate:[SESDeleteVerifiedEmailAddressResponseUnmarshaller class]];
+    return (SESDeleteVerifiedEmailAddressResponse *) [self invoke:request rawRequest:deleteVerifiedEmailAddressRequest unmarshallerDelegate:[SESDeleteVerifiedEmailAddressResponseUnmarshaller class]];
 }
 
--(SESSetIdentityNotificationTopicResponse *)setIdentityNotificationTopic:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest
-{
+- (SESSetIdentityNotificationTopicResponse *)setIdentityNotificationTopic:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest {
     AmazonServiceRequest *request = [SESSetIdentityNotificationTopicRequestMarshaller createRequest:setIdentityNotificationTopicRequest];
 
-    return (SESSetIdentityNotificationTopicResponse *)[self invoke:request rawRequest:setIdentityNotificationTopicRequest unmarshallerDelegate:[SESSetIdentityNotificationTopicResponseUnmarshaller class]];
+    return (SESSetIdentityNotificationTopicResponse *) [self invoke:request rawRequest:setIdentityNotificationTopicRequest unmarshallerDelegate:[SESSetIdentityNotificationTopicResponseUnmarshaller class]];
 }
-
 
 
 @end

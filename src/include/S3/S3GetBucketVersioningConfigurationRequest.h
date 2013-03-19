@@ -22,7 +22,7 @@
  * <br />Required Parameters: bucket
  *
  */
-@interface S3GetBucketVersioningConfigurationRequest:S3Request {
+@interface S3GetBucketVersioningConfigurationRequest : S3Request {
 }
 
 @end

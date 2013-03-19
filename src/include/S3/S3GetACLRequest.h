@@ -23,7 +23,7 @@
  * <br />Optional Parameters: key
  *
  */
-@interface S3GetACLRequest:S3Request {
+@interface S3GetACLRequest : S3Request {
 }
 
 @end

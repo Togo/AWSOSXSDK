@@ -22,8 +22,7 @@
 /**
  * Set Alarm State
  */
-@interface CloudWatchSetAlarmStateResponse:CloudWatchResponse
-{
+@interface CloudWatchSetAlarmStateResponse : CloudWatchResponse {
 }
 
 @end

@@ -17,19 +17,15 @@
 #import "ElasticLoadBalancingLBCookieStickinessPolicy.h"
 
 
-
 /**
  * Policies
  */
 
-@interface ElasticLoadBalancingPolicies:NSObject
-
-{
+@interface ElasticLoadBalancingPolicies : NSObject {
     NSMutableArray *appCookieStickinessPolicies;
     NSMutableArray *lBCookieStickinessPolicies;
     NSMutableArray *otherPolicies;
 }
-
 
 
 /**
@@ -54,25 +50,25 @@
  * Default constructor for a new Policies object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Adds a single object to appCookieStickinessPolicies.
  * This function will alloc and init appCookieStickinessPolicies if not already done.
  */
--(void)addAppCookieStickinessPolicy:(ElasticLoadBalancingAppCookieStickinessPolicy *)appCookieStickinessPolicyObject;
+- (void)addAppCookieStickinessPolicy:(ElasticLoadBalancingAppCookieStickinessPolicy *)appCookieStickinessPolicyObject;
 
 /**
  * Adds a single object to lBCookieStickinessPolicies.
  * This function will alloc and init lBCookieStickinessPolicies if not already done.
  */
--(void)addLBCookieStickinessPolicy:(ElasticLoadBalancingLBCookieStickinessPolicy *)lBCookieStickinessPolicyObject;
+- (void)addLBCookieStickinessPolicy:(ElasticLoadBalancingLBCookieStickinessPolicy *)lBCookieStickinessPolicyObject;
 
 /**
  * Adds a single object to otherPolicies.
  * This function will alloc and init otherPolicies if not already done.
  */
--(void)addOtherPolicy:(NSString *)otherPolicyObject;
+- (void)addOtherPolicy:(NSString *)otherPolicyObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -80,7 +76,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

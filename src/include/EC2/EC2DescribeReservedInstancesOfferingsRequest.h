@@ -18,33 +18,28 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Reserved Instances Offerings Request
  */
 
-@interface EC2DescribeReservedInstancesOfferingsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeReservedInstancesOfferingsRequest : AmazonServiceRequestConfig {
     NSMutableArray *reservedInstancesOfferingIds;
-    NSString       *instanceType;
-    NSString       *availabilityZone;
-    NSString       *productDescription;
+    NSString *instanceType;
+    NSString *availabilityZone;
+    NSString *productDescription;
     NSMutableArray *filters;
-    NSString       *instanceTenancy;
-    NSString       *offeringType;
-    NSString       *nextToken;
-    NSNumber       *maxResults;
+    NSString *instanceTenancy;
+    NSString *offeringType;
+    NSString *nextToken;
+    NSNumber *maxResults;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * An optional list of the unique IDs of the Reserved Instance offerings
@@ -105,13 +100,13 @@
  * Adds a single object to reservedInstancesOfferingIds.
  * This function will alloc and init reservedInstancesOfferingIds if not already done.
  */
--(void)addReservedInstancesOfferingId:(NSString *)reservedInstancesOfferingIdObject;
+- (void)addReservedInstancesOfferingId:(NSString *)reservedInstancesOfferingIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -119,7 +114,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

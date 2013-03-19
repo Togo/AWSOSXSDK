@@ -19,11 +19,11 @@
 /** Contains the parameters used for the initiateMultipartUpload operation.
  *
  */
-@interface S3InitiateMultipartUploadRequest:S3AbstractPutRequest {
-    BOOL      expiresSet;
+@interface S3InitiateMultipartUploadRequest : S3AbstractPutRequest {
+    BOOL expiresSet;
 }
 
--(id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket;
+- (id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket;
 
 /** Can be used to specify caching behavior along the request/reply chain.
  * For more information, go to http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.

@@ -38,35 +38,33 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId                = nil;
-        keyName                = nil;
-        allSecurityGroups      = [[NSMutableArray alloc] initWithCapacity:1];
-        securityGroups         = [[NSMutableArray alloc] initWithCapacity:1];
-        userData               = nil;
-        addressingType         = nil;
-        instanceType           = nil;
-        placement              = nil;
-        kernelId               = nil;
-        ramdiskId              = nil;
-        blockDeviceMappings    = [[NSMutableArray alloc] initWithCapacity:1];
-        monitoringEnabled      = NO;
+        imageId = nil;
+        keyName = nil;
+        allSecurityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        userData = nil;
+        addressingType = nil;
+        instanceType = nil;
+        placement = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        monitoringEnabled = NO;
         monitoringEnabledIsSet = NO;
-        subnetId               = nil;
-        networkInterfaces      = [[NSMutableArray alloc] initWithCapacity:1];
-        iamInstanceProfile     = nil;
-        ebsOptimized           = NO;
-        ebsOptimizedIsSet      = NO;
+        subnetId = nil;
+        networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
+        iamInstanceProfile = nil;
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
 
--(void)addAllSecurityGroup:(EC2GroupIdentifier *)allSecurityGroupObject
-{
+- (void)addAllSecurityGroup:(EC2GroupIdentifier *)allSecurityGroupObject {
     if (allSecurityGroups == nil) {
         allSecurityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -74,8 +72,7 @@
     [allSecurityGroups addObject:allSecurityGroupObject];
 }
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -83,8 +80,7 @@
     [securityGroups addObject:securityGroupObject];
 }
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -92,8 +88,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject
-{
+- (void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject {
     if (networkInterfaces == nil) {
         networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -102,8 +97,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -130,19 +124,15 @@
 }
 
 
--(void)setMonitoringEnabled:(bool)theValue
-{
-    monitoringEnabled      = theValue;
+- (void)setMonitoringEnabled:(bool)theValue {
+    monitoringEnabled = theValue;
     monitoringEnabledIsSet = YES;
 }
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

@@ -20,22 +20,18 @@
  * Ebs Instance Block Device Specification
  */
 
-@interface EC2EbsInstanceBlockDeviceSpecification:NSObject
-
-{
+@interface EC2EbsInstanceBlockDeviceSpecification : NSObject {
     NSString *volumeId;
-    bool     deleteOnTermination;
-    bool     deleteOnTerminationIsSet;
+    bool deleteOnTermination;
+    bool deleteOnTerminationIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the EBS volume that should be mounted as a block device on
@@ -47,7 +43,7 @@
  * Specifies whether the Amazon EBS volume is deleted on instance
  * termination.
  */
-@property (nonatomic) bool           deleteOnTermination;
+@property (nonatomic) bool deleteOnTermination;
 
 @property (nonatomic, readonly) bool deleteOnTerminationIsSet;
 
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

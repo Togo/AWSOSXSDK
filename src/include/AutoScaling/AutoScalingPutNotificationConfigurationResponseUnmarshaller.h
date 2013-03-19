@@ -16,17 +16,17 @@
 #import "AutoScalingPutNotificationConfigurationResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingPutNotificationConfigurationResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingPutNotificationConfigurationResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingPutNotificationConfigurationResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingPutNotificationConfigurationResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingPutNotificationConfigurationResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingPutNotificationConfigurationResponse *)response;
 
 @end

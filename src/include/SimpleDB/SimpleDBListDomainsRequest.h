@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Domains Request
  */
 
-@interface SimpleDBListDomainsRequest:AmazonServiceRequestConfig
-
-{
+@interface SimpleDBListDomainsRequest : AmazonServiceRequestConfig {
     NSNumber *maxNumberOfDomains;
     NSString *nextToken;
 }
-
 
 
 /**
@@ -48,7 +44,7 @@
  * Default constructor for a new ListDomainsRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

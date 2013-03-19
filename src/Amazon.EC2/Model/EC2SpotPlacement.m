@@ -22,18 +22,16 @@
 @synthesize groupName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         availabilityZone = nil;
-        groupName        = nil;
+        groupName = nil;
     }
 
     return self;
 }
 
--(id)initWithAvailabilityZone:(NSString *)theAvailabilityZone
-{
+- (id)initWithAvailabilityZone:(NSString *)theAvailabilityZone {
     if (self = [self init]) {
         self.availabilityZone = theAvailabilityZone;
     }
@@ -42,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +51,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -20,8 +20,7 @@
 /**
  * Batch Delete Attributes
  */
-@interface SimpleDBBatchDeleteAttributesResponse:SimpleDBResponse
-{
+@interface SimpleDBBatchDeleteAttributesResponse : SimpleDBResponse {
 }
 
 @end

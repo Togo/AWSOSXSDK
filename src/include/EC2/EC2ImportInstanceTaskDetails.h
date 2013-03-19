@@ -16,28 +16,23 @@
 #import "EC2ImportInstanceVolumeDetailItem.h"
 
 
-
 /**
  * Import Instance Task Details
  */
 
-@interface EC2ImportInstanceTaskDetails:NSObject
-
-{
+@interface EC2ImportInstanceTaskDetails : NSObject {
     NSMutableArray *volumes;
-    NSString       *instanceId;
-    NSString       *platform;
-    NSString       *descriptionValue;
+    NSString *instanceId;
+    NSString *platform;
+    NSString *descriptionValue;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Volumes property for this object.
@@ -63,7 +58,7 @@
  * Adds a single object to volumes.
  * This function will alloc and init volumes if not already done.
  */
--(void)addVolume:(EC2ImportInstanceVolumeDetailItem *)volumeObject;
+- (void)addVolume:(EC2ImportInstanceVolumeDetailItem *)volumeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

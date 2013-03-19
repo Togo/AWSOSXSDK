@@ -18,22 +18,18 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Modify Snapshot Attribute Request
  */
 
-@interface EC2ModifySnapshotAttributeRequest:AmazonServiceRequestConfig
-
-{
-    NSString                               *snapshotId;
-    NSString                               *attribute;
-    NSString                               *operationType;
-    NSMutableArray                         *userIds;
-    NSMutableArray                         *groupNames;
+@interface EC2ModifySnapshotAttributeRequest : AmazonServiceRequestConfig {
+    NSString *snapshotId;
+    NSString *attribute;
+    NSString *operationType;
+    NSMutableArray *userIds;
+    NSMutableArray *groupNames;
     EC2CreateVolumePermissionModifications *createVolumePermission;
 }
-
 
 
 /**
@@ -84,7 +80,7 @@
  * Default constructor for a new ModifySnapshotAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ModifySnapshotAttributeRequest object.
@@ -97,19 +93,19 @@
  * @param theOperationType The operation to perform on the attribute. <p>
  * Available operation names: <code>add</code>, <code>remove</code>
  */
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute andOperationType:(NSString *)theOperationType;
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute andOperationType:(NSString *)theOperationType;
 
 /**
  * Adds a single object to userIds.
  * This function will alloc and init userIds if not already done.
  */
--(void)addUserId:(NSString *)userIdObject;
+- (void)addUserId:(NSString *)userIdObject;
 
 /**
  * Adds a single object to groupNames.
  * This function will alloc and init groupNames if not already done.
  */
--(void)addGroupName:(NSString *)groupNameObject;
+- (void)addGroupName:(NSString *)groupNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -117,7 +113,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

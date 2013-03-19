@@ -23,22 +23,19 @@
  * Send Raw Email Result
  */
 
-@interface SESSendRawEmailResponse:SESResponse
-
-{
+@interface SESSendRawEmailResponse : SESResponse {
     NSString *messageId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique message identifier returned from the
@@ -52,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

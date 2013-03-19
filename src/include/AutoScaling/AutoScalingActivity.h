@@ -20,15 +20,13 @@
  * Activity
  */
 
-@interface AutoScalingActivity:NSObject
-
-{
+@interface AutoScalingActivity : NSObject {
     NSString *activityId;
     NSString *autoScalingGroupName;
     NSString *descriptionValue;
     NSString *cause;
-    NSDate   *startTime;
-    NSDate   *endTime;
+    NSDate *startTime;
+    NSDate *endTime;
     NSString *statusCode;
     NSString *statusMessage;
     NSNumber *progress;
@@ -36,13 +34,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the ID of the activity.
@@ -125,7 +121,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -32,30 +32,28 @@
 @synthesize exclusiveStartKey;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName             = nil;
-        attributesToGet       = [[NSMutableArray alloc] initWithCapacity:1];
-        limit                 = nil;
-        consistentRead        = NO;
-        consistentReadIsSet   = NO;
-        count                 = NO;
-        countIsSet            = NO;
-        hashKeyValue          = nil;
-        rangeKeyCondition     = nil;
-        scanIndexForward      = NO;
+        tableName = nil;
+        attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
+        limit = nil;
+        consistentRead = NO;
+        consistentReadIsSet = NO;
+        count = NO;
+        countIsSet = NO;
+        hashKeyValue = nil;
+        rangeKeyCondition = nil;
+        scanIndexForward = NO;
         scanIndexForwardIsSet = NO;
-        exclusiveStartKey     = nil;
+        exclusiveStartKey = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andHashKeyValue:(DynamoDBAttributeValue *)theHashKeyValue
-{
+- (id)initWithTableName:(NSString *)theTableName andHashKeyValue:(DynamoDBAttributeValue *)theHashKeyValue {
     if (self = [self init]) {
-        self.tableName    = theTableName;
+        self.tableName = theTableName;
         self.hashKeyValue = theHashKeyValue;
     }
 
@@ -63,8 +61,7 @@
 }
 
 
--(void)addAttributesToGet:(NSString *)attributesToGetObject
-{
+- (void)addAttributesToGet:(NSString *)attributesToGetObject {
     if (attributesToGet == nil) {
         attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -73,8 +70,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -94,25 +90,20 @@
 }
 
 
--(void)setConsistentRead:(bool)theValue
-{
-    consistentRead      = theValue;
+- (void)setConsistentRead:(bool)theValue {
+    consistentRead = theValue;
     consistentReadIsSet = YES;
 }
 
--(void)setCount:(bool)theValue
-{
-    count      = theValue;
+- (void)setCount:(bool)theValue {
+    count = theValue;
     countIsSet = YES;
 }
 
--(void)setScanIndexForward:(bool)theValue
-{
-    scanIndexForward      = theValue;
+- (void)setScanIndexForward:(bool)theValue {
+    scanIndexForward = theValue;
     scanIndexForwardIsSet = YES;
 }
-
-
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation AutoScalingSetInstanceHealthRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"SetInstanceHealth"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetInstanceHealth" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[setInstanceHealthRequest delegate]];
     [request setCredentials:[setInstanceHealthRequest credentials]];
@@ -41,7 +40,7 @@
     }
     if (setInstanceHealthRequest != nil) {
         if (setInstanceHealthRequest.shouldRespectGracePeriodIsSet) {
-            [request setParameterValue:(setInstanceHealthRequest.shouldRespectGracePeriod ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ShouldRespectGracePeriod"]];
+            [request setParameterValue:(setInstanceHealthRequest.shouldRespectGracePeriod ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ShouldRespectGracePeriod"]];
         }
     }
 

@@ -21,7 +21,7 @@
 #import "S3CommonPrefixesUnmarshaller.h"
 
 /** Creates an S3ListVersionResult from an XML service repsonse. */
-@interface S3ListVersionsResultUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3ListVersionsResultUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3ListVersionsResult *listVersionsResult;
 }
 

@@ -18,15 +18,14 @@
 
 @implementation DynamoDBWebServiceClient
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     if (self = [self init]) {
         if (!(self = [super initWithCredentials:theCredentials])) return nil;
         // override values for DynamoDB
-        self.maxRetries  = 11;
-        self.timeout     = 30;
-        self.delay       = 0.05;
-        self.userAgent   = [AmazonSDKUtil userAgentString];
+        self.maxRetries = 11;
+        self.timeout = 30;
+        self.delay = 0.05;
+        self.userAgent = [AmazonSDKUtil userAgentString];
     }
     return self;
 }

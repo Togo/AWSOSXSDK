@@ -17,24 +17,20 @@
 
 @implementation S3GetBucketCrossOriginRequest
 
--(id)initWithBucketName:(NSString *)theBucketName
-{
+- (id)initWithBucketName:(NSString *)theBucketName {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.bucket = theBucketName;
     }
 
     return self;
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName
-{
++ (id)requestWithBucketName:(NSString *)theBucketName {
     return [[S3GetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceCrossOrigin];
 
     [super configureURLRequest];

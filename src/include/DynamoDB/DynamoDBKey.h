@@ -17,18 +17,14 @@
 #import "DynamoDBAttributeValue.h"
 
 
-
 /**
  * Key
  */
 
-@interface DynamoDBKey:NSObject
-
-{
+@interface DynamoDBKey : NSObject {
     DynamoDBAttributeValue *hashKeyElement;
     DynamoDBAttributeValue *rangeKeyElement;
 }
-
 
 
 /**
@@ -53,7 +49,7 @@
  * Default constructor for a new Key object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Key object.
@@ -64,7 +60,7 @@
  * have one index value. The value can be <code>String</code>,
  * <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>.
  */
--(id)initWithHashKeyElement:(DynamoDBAttributeValue *)theHashKeyElement;
+- (id)initWithHashKeyElement:(DynamoDBAttributeValue *)theHashKeyElement;
 
 /**
  * Constructs a new Key object.
@@ -80,7 +76,7 @@
  * The value can be <code>String</code>, <code>Number</code>,
  * <code>StringSet</code>, <code>NumberSet</code>.
  */
--(id)initWithHashKeyElement:(DynamoDBAttributeValue *)theHashKeyElement andRangeKeyElement:(DynamoDBAttributeValue *)theRangeKeyElement;
+- (id)initWithHashKeyElement:(DynamoDBAttributeValue *)theHashKeyElement andRangeKeyElement:(DynamoDBAttributeValue *)theRangeKeyElement;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -88,7 +84,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

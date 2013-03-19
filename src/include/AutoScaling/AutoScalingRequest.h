@@ -20,7 +20,7 @@
 /**
  *
  */
-@interface AutoScalingRequest:AmazonServiceRequest {
+@interface AutoScalingRequest : AmazonServiceRequest {
 }
 
 @end

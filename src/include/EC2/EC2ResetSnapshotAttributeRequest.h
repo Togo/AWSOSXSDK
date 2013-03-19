@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Reset Snapshot Attribute Request
  */
 
-@interface EC2ResetSnapshotAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ResetSnapshotAttributeRequest : AmazonServiceRequestConfig {
     NSString *snapshotId;
     NSString *attribute;
 }
-
 
 
 /**
@@ -50,7 +46,7 @@
  * Default constructor for a new ResetSnapshotAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ResetSnapshotAttributeRequest object.
@@ -61,7 +57,7 @@
  * @param theAttribute The name of the attribute being reset. <p>
  * Available attribute names: <code>createVolumePermission</code>
  */
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute;
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

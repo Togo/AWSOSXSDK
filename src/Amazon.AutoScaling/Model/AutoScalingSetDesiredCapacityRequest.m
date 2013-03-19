@@ -24,22 +24,19 @@
 @synthesize honorCooldownIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        desiredCapacity      = nil;
-        honorCooldown        = NO;
-        honorCooldownIsSet   = NO;
+        desiredCapacity = nil;
+        honorCooldown = NO;
+        honorCooldownIsSet = NO;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -53,13 +50,10 @@
 }
 
 
--(void)setHonorCooldown:(bool)theValue
-{
-    honorCooldown      = theValue;
+- (void)setHonorCooldown:(bool)theValue {
+    honorCooldown = theValue;
     honorCooldownIsSet = YES;
 }
-
-
 
 
 @end

@@ -16,17 +16,17 @@
 #import "ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse.h"
 #import "ElasticLoadBalancingResponseUnmarshaller.h"
 
-@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponseUnmarshaller:ElasticLoadBalancingResponseUnmarshaller
-{
+@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponseUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *response;
 }
 
 @property (weak, nonatomic, readonly) ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *)response;
 
 @end

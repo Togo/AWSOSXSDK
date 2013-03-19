@@ -24,7 +24,7 @@
 /**
  * List Verified Email Addresses Result Unmarshaller
  */
-@interface SESListVerifiedEmailAddressesResponseUnmarshaller:SESResponseUnmarshaller {
+@interface SESListVerifiedEmailAddressesResponseUnmarshaller : SESResponseUnmarshaller {
     SESListVerifiedEmailAddressesResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) SESListVerifiedEmailAddressesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

@@ -22,8 +22,8 @@
 /** Contains the owner and list of buckets returned by a listBuckets request
  *
  */
-@interface S3ListBucketsResult:NSObject {
-    S3Owner        *owner;
+@interface S3ListBucketsResult : NSObject {
+    S3Owner *owner;
     NSMutableArray *buckets;
 }
 

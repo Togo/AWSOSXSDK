@@ -17,12 +17,11 @@
 
 @implementation AutoScalingPutScheduledUpdateGroupActionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"PutScheduledUpdateGroupAction"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"PutScheduledUpdateGroupAction" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[putScheduledUpdateGroupActionRequest delegate]];
     [request setCredentials:[putScheduledUpdateGroupActionRequest credentials]];

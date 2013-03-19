@@ -24,8 +24,7 @@
 @implementation DynamoDBQueryResponseUnmarshaller
 
 
-+(DynamoDBQueryResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBQueryResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBQueryResponse *queryResult = [[DynamoDBQueryResponse alloc] init];
 
 

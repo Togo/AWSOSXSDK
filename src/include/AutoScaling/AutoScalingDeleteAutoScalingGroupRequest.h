@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Auto Scaling Group Request
  */
 
-@interface AutoScalingDeleteAutoScalingGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDeleteAutoScalingGroupRequest : AmazonServiceRequestConfig {
     NSString *autoScalingGroupName;
-    bool     forceDelete;
-    bool     forceDeleteIsSet;
+    bool forceDelete;
+    bool forceDeleteIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -53,7 +48,7 @@
  * group will be deleted along with all instances associated with the
  * group, without waiting for all instances to be terminated.
  */
-@property (nonatomic) bool           forceDelete;
+@property (nonatomic) bool forceDelete;
 
 @property (nonatomic, readonly) bool forceDeleteIsSet;
 
@@ -63,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

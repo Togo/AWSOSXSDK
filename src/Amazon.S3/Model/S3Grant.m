@@ -21,25 +21,22 @@
 @synthesize grantee;
 @synthesize permission;
 
--(id)initWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission
-{
+- (id)initWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission {
     self = [self init];
     if (self) {
-        grantee    = theGrantee;
+        grantee = theGrantee;
         permission = thePermission;
     }
     return self;
 }
 
-+(id)grantWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission
-{
++ (id)grantWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission {
     return [[S3Grant alloc] initWithGrantee:theGrantee withPermission:thePermission];
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     return [NSString stringWithFormat:@"<Grant>%@<Permission>%@</Permission></Grant>",
-            [self.grantee toXml], [self.permission description]];
+                                      [self.grantee toXml], [self.permission description]];
 }
 
 

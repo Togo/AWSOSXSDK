@@ -18,28 +18,24 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Instance Status Response
  */
 
-@interface EC2DescribeInstanceStatusResponse:EC2Response
-
-{
+@interface EC2DescribeInstanceStatusResponse : EC2Response {
     NSMutableArray *instanceStatuses;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Collection of instance statuses describing the state of the requested
@@ -53,11 +49,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the instanceStatuses array for the specified index
  */
--(EC2InstanceStatus *)instanceStatusesObjectAtIndex:(int)index;
+- (EC2InstanceStatus *)instanceStatusesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

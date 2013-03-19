@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Tags Request
  */
 
-@interface EC2DeleteTagsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeleteTagsRequest : AmazonServiceRequestConfig {
     NSMutableArray *resources;
     NSMutableArray *tags;
 }
-
 
 
 /**
@@ -50,7 +46,7 @@
  * Default constructor for a new DeleteTagsRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteTagsRequest object.
@@ -59,19 +55,19 @@
  * @param theResources A list of one or more resource IDs. This could be
  * the ID of an AMI, an instance, an EBS volume, or snapshot, etc.
  */
--(id)initWithResources:(NSMutableArray *)theResources;
+- (id)initWithResources:(NSMutableArray *)theResources;
 
 /**
  * Adds a single object to resources.
  * This function will alloc and init resources if not already done.
  */
--(void)addResource:(NSString *)resourceObject;
+- (void)addResource:(NSString *)resourceObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

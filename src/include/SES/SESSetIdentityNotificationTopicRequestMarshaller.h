@@ -22,11 +22,11 @@
 /**
  * Set Identity Notification Topic Request Marshaller
  */
-@interface SESSetIdentityNotificationTopicRequestMarshaller:NSObject {
+@interface SESSetIdentityNotificationTopicRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest;
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest;
 
 
 @end

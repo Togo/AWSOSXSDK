@@ -24,12 +24,11 @@
 @synthesize stateReasonData;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        alarmName       = nil;
-        stateValue      = nil;
-        stateReason     = nil;
+        alarmName = nil;
+        stateValue = nil;
+        stateReason = nil;
         stateReasonData = nil;
     }
 
@@ -37,9 +36,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

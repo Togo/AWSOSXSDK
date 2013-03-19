@@ -23,11 +23,10 @@
 @synthesize allocationIds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        publicIps     = [[NSMutableArray alloc] initWithCapacity:1];
-        filters       = [[NSMutableArray alloc] initWithCapacity:1];
+        publicIps = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
         allocationIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)addPublicIp:(NSString *)publicIpObject
-{
+- (void)addPublicIp:(NSString *)publicIpObject {
     if (publicIps == nil) {
         publicIps = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -44,8 +42,7 @@
     [publicIps addObject:publicIpObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
     [filters addObject:filterObject];
 }
 
--(void)addAllocationId:(NSString *)allocationIdObject
-{
+- (void)addAllocationId:(NSString *)allocationIdObject {
     if (allocationIds == nil) {
         allocationIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +59,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -76,9 +71,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,8 +17,7 @@
 #import "../AmazonUnmarshallerXMLParserDelegate.h"
 #import "DeletedObject.h"
 
-@interface S3DeletedObjectUnmarshaller:AmazonUnmarshallerXMLParserDelegate
-{
+@interface S3DeletedObjectUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     DeletedObject *deletedObject;
 }
 

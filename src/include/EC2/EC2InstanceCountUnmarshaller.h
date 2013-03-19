@@ -23,7 +23,7 @@
 /**
  * Instance Count Unmarshaller
  */
-@interface EC2InstanceCountUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2InstanceCountUnmarshaller : EC2ResponseUnmarshaller {
     EC2InstanceCount *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2InstanceCount *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

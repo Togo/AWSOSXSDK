@@ -22,11 +22,11 @@
 /**
  * Deregister Image Request Marshaller
  */
-@interface EC2DeregisterImageRequestMarshaller:NSObject {
+@interface EC2DeregisterImageRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeregisterImageRequest *)deregisterImageRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeregisterImageRequest *)deregisterImageRequest;
 
 
 @end

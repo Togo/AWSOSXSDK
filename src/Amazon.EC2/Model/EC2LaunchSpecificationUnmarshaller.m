@@ -19,23 +19,22 @@
 @implementation EC2LaunchSpecificationUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"groupName";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"groupName";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
 
     if ([elementName isEqualToString:@"monitoring"]) {
         AmazonBoolValueUnmarshaller *unmarshaller = [[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setMonitoringEnabled:)];
-        unmarshaller.endElementTagName   = @"monitoring";
+        unmarshaller.endElementTagName = @"monitoring";
         unmarshaller.internalElementName = @"enabled";
         [parser setDelegate:unmarshaller];
     }
@@ -43,8 +42,8 @@
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"groupName";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"groupName";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -52,8 +51,8 @@
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.allSecurityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2GroupIdentifierUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2GroupIdentifierUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -67,8 +66,8 @@
     if ([elementName isEqualToString:@"blockDeviceMapping"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"blockDeviceMapping";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2BlockDeviceMappingUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2BlockDeviceMappingUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -76,8 +75,8 @@
     if ([elementName isEqualToString:@"networkInterfaceSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.networkInterfaces withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"networkInterfaceSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2InstanceNetworkInterfaceSpecificationUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2InstanceNetworkInterfaceSpecificationUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -89,14 +88,12 @@
     }
 
 
-
     if ([elementName isEqualToString:@"Error"]) {
         [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -168,14 +165,12 @@
     }
 }
 
--(EC2LaunchSpecification *)response
-{
+- (EC2LaunchSpecification *)response {
     if (nil == response) {
         response = [[EC2LaunchSpecification alloc] init];
     }
     return response;
 }
-
 
 
 @end

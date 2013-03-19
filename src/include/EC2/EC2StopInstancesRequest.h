@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Stop Instances Request
  */
 
-@interface EC2StopInstancesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2StopInstancesRequest : AmazonServiceRequestConfig {
     NSMutableArray *instanceIds;
-    bool           force;
-    bool           forceIsSet;
+    bool force;
+    bool forceIsSet;
 }
-
 
 
 /**
@@ -43,7 +39,7 @@
  * option, you must perform file system check and repair procedures. This
  * option is not recommended for Windows instances.
  */
-@property (nonatomic) bool           force;
+@property (nonatomic) bool force;
 
 @property (nonatomic, readonly) bool forceIsSet;
 
@@ -52,7 +48,7 @@
  * Default constructor for a new StopInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new StopInstancesRequest object.
@@ -60,13 +56,13 @@
  *
  * @param theInstanceIds The list of Amazon EC2 instances to stop.
  */
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
 
 /**
  * Adds a single object to instanceIds.
  * This function will alloc and init instanceIds if not already done.
  */
--(void)addInstanceId:(NSString *)instanceIdObject;
+- (void)addInstanceId:(NSString *)instanceIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -74,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

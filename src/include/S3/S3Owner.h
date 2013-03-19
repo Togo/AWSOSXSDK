@@ -18,7 +18,7 @@
 /** Represents an Owner of an Amazon S3 Bucket.
  *
  */
-@interface S3Owner:NSObject {
+@interface S3Owner : NSObject {
     NSString *ID;
     NSString *displayName;
 }
@@ -29,7 +29,8 @@
 /** Gets and sets the owner display name */
 @property (nonatomic, strong) NSString *displayName;
 
--(id)initWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
-+(id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
+- (id)initWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
+
++ (id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
 
 @end

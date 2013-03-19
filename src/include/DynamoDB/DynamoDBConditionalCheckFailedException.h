@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * This exception is thrown when an expected value does not match what
  * was found in the system.
  * </p>
  */
-@interface DynamoDBConditionalCheckFailedException:AmazonServiceException
-{
+@interface DynamoDBConditionalCheckFailedException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

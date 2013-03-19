@@ -17,12 +17,11 @@
 
 @implementation EC2CancelBundleTaskRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CancelBundleTask"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CancelBundleTask" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[cancelBundleTaskRequest delegate]];
     [request setCredentials:[cancelBundleTaskRequest credentials]];

@@ -24,21 +24,19 @@
 @synthesize messages;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        zoneName   = nil;
-        state      = nil;
+        zoneName = nil;
+        state = nil;
         regionName = nil;
-        messages   = [[NSMutableArray alloc] initWithCapacity:1];
+        messages = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addMessage:(EC2AvailabilityZoneMessage *)messageObject
-{
+- (void)addMessage:(EC2AvailabilityZoneMessage *)messageObject {
     if (messages == nil) {
         messages = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

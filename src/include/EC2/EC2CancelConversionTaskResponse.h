@@ -20,8 +20,7 @@
 /**
  * Cancel Conversion Task
  */
-@interface EC2CancelConversionTaskResponse:EC2Response
-{
+@interface EC2CancelConversionTaskResponse : EC2Response {
 }
 
 @end

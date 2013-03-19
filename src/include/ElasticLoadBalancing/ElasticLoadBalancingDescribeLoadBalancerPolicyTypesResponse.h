@@ -24,22 +24,19 @@
  * Describe Load Balancer Policy Types Result
  */
 
-@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesResponse : ElasticLoadBalancingResponse {
     NSMutableArray *policyTypeDescriptions;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * List of policy type description structures of the specified policy
@@ -49,11 +46,10 @@
 @property (nonatomic, strong) NSMutableArray *policyTypeDescriptions;
 
 
-
 /**
  * Returns a value from the policyTypeDescriptions array for the specified index
  */
--(ElasticLoadBalancingPolicyTypeDescription *)policyTypeDescriptionsObjectAtIndex:(int)index;
+- (ElasticLoadBalancingPolicyTypeDescription *)policyTypeDescriptionsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

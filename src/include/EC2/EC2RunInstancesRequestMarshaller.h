@@ -57,11 +57,11 @@
 /**
  * Run Instances Request Marshaller
  */
-@interface EC2RunInstancesRequestMarshaller:NSObject {
+@interface EC2RunInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2RunInstancesRequest *)runInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2RunInstancesRequest *)runInstancesRequest;
 
 
 @end

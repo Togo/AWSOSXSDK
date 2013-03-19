@@ -20,15 +20,19 @@
 extern NSString *const AWSiOSSDKServiceErrorDomain;
 extern NSString *const AWSiOSSDKClientErrorDomain;
 
-@interface AmazonErrorHandler : NSObject
-{
+@interface AmazonErrorHandler : NSObject {
 }
 
 + (void)shouldThrowExceptions __attribute__((deprecated));
+
 + (void)shouldNotThrowExceptions;
+
 + (BOOL)throwsExceptions;
+
 + (NSError *)errorFromExceptionWithThrowsExceptionOption:(NSException *)exception;
+
 + (NSError *)errorFromException:(NSException *)exception;
+
 + (NSError *)errorFromException:(NSException *)exception serviceErrorDomain:(NSString *)serviceErrorDomain clientErrorDomain:(NSString *)clientErrorDomain;
 
 @end

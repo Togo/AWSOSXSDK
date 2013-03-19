@@ -19,7 +19,7 @@
 /** Contains the response from a getObjectMetadata operation
  *
  */
-@interface S3GetObjectMetadataResponse:S3GetObjectResponse {
+@interface S3GetObjectMetadataResponse : S3GetObjectResponse {
     int missingMeta;
 }
 
@@ -33,6 +33,6 @@
 @property (weak, readonly) NSDate *restoreExpiry;
 
 /** Sets a value in the response for the given HTTP header. */
--(void)setValue:(id)value forHTTPHeaderField:(NSString *)header;
+- (void)setValue:(id)value forHTTPHeaderField:(NSString *)header;
 
 @end

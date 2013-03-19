@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Identities Request
  */
 
-@interface SESListIdentitiesRequest:AmazonServiceRequestConfig
-
-{
+@interface SESListIdentitiesRequest : AmazonServiceRequestConfig {
     NSString *identityType;
     NSString *nextToken;
     NSNumber *maxItems;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The type of the identities to list. Possible values are "EmailAddress"
@@ -66,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

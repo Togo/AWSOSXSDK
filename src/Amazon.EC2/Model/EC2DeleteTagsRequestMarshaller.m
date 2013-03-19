@@ -17,12 +17,11 @@
 
 @implementation EC2DeleteTagsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteTagsRequest *)deleteTagsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeleteTagsRequest *)deleteTagsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeleteTags"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteTags" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deleteTagsRequest delegate]];
     [request setCredentials:[deleteTagsRequest credentials]];

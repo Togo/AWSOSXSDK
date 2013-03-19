@@ -29,27 +29,25 @@
 @synthesize ipPermissions;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        groupName                  = nil;
-        groupId                    = nil;
-        sourceSecurityGroupName    = nil;
+        groupName = nil;
+        groupId = nil;
+        sourceSecurityGroupName = nil;
         sourceSecurityGroupOwnerId = nil;
-        ipProtocol                 = nil;
-        fromPort                   = nil;
-        toPort                     = nil;
-        cidrIp                     = nil;
-        ipPermissions              = [[NSMutableArray alloc] initWithCapacity:1];
+        ipProtocol = nil;
+        fromPort = nil;
+        toPort = nil;
+        cidrIp = nil;
+        ipPermissions = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithGroupName:(NSString *)theGroupName andIpPermissions:(NSMutableArray *)theIpPermissions
-{
+- (id)initWithGroupName:(NSString *)theGroupName andIpPermissions:(NSMutableArray *)theIpPermissions {
     if (self = [self init]) {
-        self.groupName     = theGroupName;
+        self.groupName = theGroupName;
         self.ipPermissions = theIpPermissions;
     }
 
@@ -57,8 +55,7 @@
 }
 
 
--(void)addIpPermission:(EC2IpPermission *)ipPermissionObject
-{
+- (void)addIpPermission:(EC2IpPermission *)ipPermissionObject {
     if (ipPermissions == nil) {
         ipPermissions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -67,8 +64,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -86,9 +82,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

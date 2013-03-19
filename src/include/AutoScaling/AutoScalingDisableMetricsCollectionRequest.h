@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Disable Metrics Collection Request
  */
 
-@interface AutoScalingDisableMetricsCollectionRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
+@interface AutoScalingDisableMetricsCollectionRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
     NSMutableArray *metrics;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name or ARN of the Auto Scaling Group.
@@ -62,7 +57,7 @@
  * Adds a single object to metrics.
  * This function will alloc and init metrics if not already done.
  */
--(void)addMetric:(NSString *)metricObject;
+- (void)addMetric:(NSString *)metricObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

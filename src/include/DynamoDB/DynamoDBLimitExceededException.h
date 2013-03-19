@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * This exception is thrown when the subscriber exceeded the limits on
  * the number of objects or operations.
  * </p>
  */
-@interface DynamoDBLimitExceededException:AmazonServiceException
-{
+@interface DynamoDBLimitExceededException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

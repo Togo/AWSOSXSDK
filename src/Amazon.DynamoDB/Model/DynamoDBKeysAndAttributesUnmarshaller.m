@@ -24,10 +24,8 @@
 @implementation DynamoDBKeysAndAttributesUnmarshaller
 
 
-+(DynamoDBKeysAndAttributes *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBKeysAndAttributes *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBKeysAndAttributes *keysAndAttributes = [[DynamoDBKeysAndAttributes alloc] init];
-
 
 
     NSArray *keysArray = [jsonObject valueForKey:@"Keys"];

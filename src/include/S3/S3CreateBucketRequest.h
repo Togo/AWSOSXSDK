@@ -27,9 +27,9 @@
 /** Contains the parameters used for the createBucket operation.
  *
  */
-@interface S3CreateBucketRequest:S3Request {
-    S3Region            *region;
-    S3CannedACL         *cannedACL;
+@interface S3CreateBucketRequest : S3Request {
+    S3Region *region;
+    S3CannedACL *cannedACL;
     S3AccessControlList *fullACL;
 }
 
@@ -49,13 +49,13 @@
  *
  * @param theBucketName The name of the bucket
  */
--(id)initWithName:(NSString *)theBucketName;
+- (id)initWithName:(NSString *)theBucketName;
 
 /** Initializes the request with a bucket name and region.
  *
  * @param theBucketName The name of the bucket
  * @param theRegion	The region where the bucket should be created.
  */
--(id)initWithName:(NSString *)theBucketName andRegion:(S3Region *)theRegion;
+- (id)initWithName:(NSString *)theBucketName andRegion:(S3Region *)theRegion;
 
 @end

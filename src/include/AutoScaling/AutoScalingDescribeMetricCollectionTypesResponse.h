@@ -19,28 +19,24 @@
 #import "AutoScalingResponse.h"
 
 
-
 /**
  * Describe Metric Collection Types Result
  */
 
-@interface AutoScalingDescribeMetricCollectionTypesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeMetricCollectionTypesResponse : AutoScalingResponse {
     NSMutableArray *metrics;
     NSMutableArray *granularities;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of Metrics collected.The following metrics are supported:
@@ -58,18 +54,16 @@
 @property (nonatomic, strong) NSMutableArray *granularities;
 
 
-
 /**
  * Returns a value from the metrics array for the specified index
  */
--(AutoScalingMetricCollectionType *)metricsObjectAtIndex:(int)index;
-
+- (AutoScalingMetricCollectionType *)metricsObjectAtIndex:(int)index;
 
 
 /**
  * Returns a value from the granularities array for the specified index
  */
--(AutoScalingMetricGranularityType *)granularitiesObjectAtIndex:(int)index;
+- (AutoScalingMetricGranularityType *)granularitiesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -77,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

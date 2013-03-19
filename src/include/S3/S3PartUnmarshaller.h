@@ -14,7 +14,7 @@
 /**
  *
  */
-@interface S3PartUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3PartUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3Part *part;
 }
 

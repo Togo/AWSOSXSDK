@@ -136,13 +136,14 @@
  * The service aims to maximize benefits of scale and to pass those benefits on to developers.
  *
  */
-@interface AmazonS3Client:AmazonWebServiceClient {}
+@interface AmazonS3Client : AmazonWebServiceClient {
+}
 
 /** Returns a list of all Amazon S3 buckets that the authenticated sender of the request owns.
  *
  * @return An NSArray of S3Bucket objects.
  */
--(NSArray *)listBuckets;
+- (NSArray *)listBuckets;
 
 /** Returns a list of all Amazon S3 buckets that the authenticated sender of the request owns.
  *
@@ -152,7 +153,7 @@
  * @see S3ListBucketsResponse
  * @see S3ListBucketsRequest
  */
--(S3ListBucketsResponse *)listBuckets:(S3ListBucketsRequest *)listBucketsRequest;
+- (S3ListBucketsResponse *)listBuckets:(S3ListBucketsRequest *)listBucketsRequest;
 
 /** Creates a bucket using the the specified request object.
  *
@@ -161,7 +162,7 @@
  * @see S3CreateBucketResponse
  * @see S3CreateBucketRequest
  */
--(S3CreateBucketResponse *)createBucket:(S3CreateBucketRequest *)createBucketRequest;
+- (S3CreateBucketResponse *)createBucket:(S3CreateBucketRequest *)createBucketRequest;
 
 /** Creates a bucket using the the specified bucket name.
  *
@@ -169,7 +170,7 @@
  * @return An S3CreateBucketResponse from S3
  * @see S3CreateBucketResponse
  */
--(S3CreateBucketResponse *)createBucketWithName:(NSString *)bucketName;
+- (S3CreateBucketResponse *)createBucketWithName:(NSString *)bucketName;
 
 /** Deletes a bucket with the specified name. All objects in the bucket must be deleted before the
  * bucket itself can be deleted.
@@ -179,7 +180,7 @@
  * @see S3DeleteBucketResponse
  * @see S3DeleteBucketRequest
  */
--(S3DeleteBucketResponse *)deleteBucket:(S3DeleteBucketRequest *)deleteBucketRequest;
+- (S3DeleteBucketResponse *)deleteBucket:(S3DeleteBucketRequest *)deleteBucketRequest;
 
 /** Deletes a bucket with the specified name. All objects in the bucket must be deleted before the
  * bucket itself can be deleted.
@@ -188,7 +189,7 @@
  * @return An S3DeleteBucketResponse from S3
  * @see S3DeleteBucketResponse
  */
--(S3DeleteBucketResponse *)deleteBucketWithName:(NSString *)bucketName;
+- (S3DeleteBucketResponse *)deleteBucketWithName:(NSString *)bucketName;
 
 /** Takes in a bucket's name and lists the location of the bucket.
  * This information can be used to determine the bucket's geographical location.
@@ -197,7 +198,7 @@
  * @return The S3Region object that represents the region.
  * @see S3Region
  */
--(S3Region *)getBucketLocation:(NSString *)bucketName;
+- (S3Region *)getBucketLocation:(NSString *)bucketName;
 
 /** Retrieve metadata from an object without returning the object itself.
  *
@@ -206,7 +207,7 @@
  * @see S3GetObjectMetadataResponse
  * @see S3GetObjectMetadataRequest
  */
--(S3GetObjectMetadataResponse *)getObjectMetadata:(S3GetObjectMetadataRequest *)getObjectMetadataRequest;
+- (S3GetObjectMetadataResponse *)getObjectMetadata:(S3GetObjectMetadataRequest *)getObjectMetadataRequest;
 
 /** Upload an object to S3.
  *
@@ -215,7 +216,7 @@
  * @see S3PutObjectResponse
  * @see S3PutObjectRequest
  */
--(S3PutObjectResponse *)putObject:(S3PutObjectRequest *)putObjectRequest;
+- (S3PutObjectResponse *)putObject:(S3PutObjectRequest *)putObjectRequest;
 
 /** Fetch the most recent version of an S3 object
  * from the specified S3 bucket. You must have READ access to the object.
@@ -228,7 +229,7 @@
  * @see S3GetObjectResponse
  * @see S3GetObjectRequest
  */
--(S3GetObjectResponse *)getObject:(S3GetObjectRequest *)getObjectRequest;
+- (S3GetObjectResponse *)getObject:(S3GetObjectRequest *)getObjectRequest;
 
 /** Removes the specified object from Amazon S3.
  * Once deleted, there is no method to restore or undelete an object.
@@ -238,7 +239,7 @@
  * @see S3DeleteObjectResponse
  * @see S3DeleteObjectRequest
  */
--(S3DeleteObjectResponse *)deleteObject:(S3DeleteObjectRequest *)deleteObjectRequest;
+- (S3DeleteObjectResponse *)deleteObject:(S3DeleteObjectRequest *)deleteObjectRequest;
 
 /** Removes the specified objects from Amazon S3.
  * Once deleted, there is no method to restore or undelete an object.
@@ -251,7 +252,7 @@
  * @see S3DeleteObjectsResponse
  * @see S3DeleteObjectsRequest
  */
--(S3DeleteObjectsResponse *)deleteObjects:(S3DeleteObjectsRequest *)deleteObjectsRequest;
+- (S3DeleteObjectsResponse *)deleteObjects:(S3DeleteObjectsRequest *)deleteObjectsRequest;
 
 /** Removes the specified object from Amazon S3.
  * Once deleted, there is no method to restore or undelete an object.
@@ -261,7 +262,7 @@
  * @return An S3DeleteObjectResponse from S3.
  * @see S3DeleteObjectResponse
  */
--(S3DeleteObjectResponse *)deleteObjectWithKey:(NSString *)theKey withBucket:(NSString *)theBucket;
+- (S3DeleteObjectResponse *)deleteObjectWithKey:(NSString *)theKey withBucket:(NSString *)theBucket;
 
 /** List the objects in a bucket.
  *
@@ -270,14 +271,14 @@
  * @see S3ListObjectsResponse
  * @see S3ListObjectsRequest
  */
--(S3ListObjectsResponse *)listObjects:(S3ListObjectsRequest *)listObjectsRequest;
+- (S3ListObjectsResponse *)listObjects:(S3ListObjectsRequest *)listObjectsRequest;
 
 /** List the objects in a bucket.
  *
  * @param bucketName The name of the bucket.
  * @return An NSArray of S3ObjectSummary objects.
  */
--(NSArray *)listObjectsInBucket:(NSString *)bucketName;
+- (NSArray *)listObjectsInBucket:(NSString *)bucketName;
 
 /**
  * Create a copy of an object that is already stored in Amazon S3.
@@ -287,9 +288,9 @@
  * @see S3CopyObjectResponse
  * @see S3CopyObjectRequest
  */
--(S3CopyObjectResponse *)copyObject:(S3CopyObjectRequest *)copyObjectRequest __attribute__((deprecated)); // Use objectCopy: instead.
+- (S3CopyObjectResponse *)copyObject:(S3CopyObjectRequest *)copyObjectRequest __attribute__((deprecated)); // Use objectCopy: instead.
 
--(S3CopyObjectResponse *)objectCopy:(S3CopyObjectRequest *)copyObjectRequest;
+- (S3CopyObjectResponse *)objectCopy:(S3CopyObjectRequest *)copyObjectRequest;
 
 /**
  * Gets the access control list for a given bucket or object.
@@ -299,7 +300,7 @@
  * @see S3GetACLResponse
  * @see S3GetACLRequest 
  */
--(S3GetACLResponse *)getACL:(S3GetACLRequest *)getACLRequest;
+- (S3GetACLResponse *)getACL:(S3GetACLRequest *)getACLRequest;
 
 /**
  * Sets the S3AccessControlList for a given bucket or object.
@@ -309,7 +310,7 @@
  * @see S3SetACLResponse
  * @see S3SetACLRequest 
  */
--(S3SetACLResponse *)setACL:(S3SetACLRequest *)setACLRequest;
+- (S3SetACLResponse *)setACL:(S3SetACLRequest *)setACLRequest;
 
 /** Gets the policy for the specified bucket. Only the owner of the
  * bucket can retrieve the policy. If no policy has been set for the bucket,
@@ -322,7 +323,7 @@
  * @see S3GetBucketPolicyResponse
  * @see S3GetBucketPolicyRequest
  */
--(S3GetBucketPolicyResponse *)getBucketPolicy:(S3GetBucketPolicyRequest *)getPolicyRequest;
+- (S3GetBucketPolicyResponse *)getBucketPolicy:(S3GetBucketPolicyRequest *)getPolicyRequest;
 
 /** Sets the policy associated with the specified bucket. Only the owner of
  * the bucket can set a bucket policy. If a policy already exists for the
@@ -334,7 +335,7 @@
  * @see S3SetBucketPolicyResponse
  * @see S3SetBucketPolicyRequest
  */
--(S3SetBucketPolicyResponse *)setBucketPolicy:(S3SetBucketPolicyRequest *)setPolicyRequest;
+- (S3SetBucketPolicyResponse *)setBucketPolicy:(S3SetBucketPolicyRequest *)setPolicyRequest;
 
 /** Deletes the policy associated with the specified bucket. Only the owner
  * of the bucket can delete the bucket policy.
@@ -345,7 +346,7 @@
  * @see S3DeleteBucketPolicyResponse
  * @see S3DeleteBucketPolicyRequest
  */
--(S3DeleteBucketPolicyResponse *)deleteBucketPolicy:(S3DeleteBucketPolicyRequest *)deletePolicyRequest;
+- (S3DeleteBucketPolicyResponse *)deleteBucketPolicy:(S3DeleteBucketPolicyRequest *)deletePolicyRequest;
 
 /** Returns the versioning configuration for the specified bucket.
  * A bucket's versioning configuration can be in one of three possible
@@ -369,7 +370,7 @@
  * @see S3GetBucketVersioningConfigurationResponse
  * @see S3GetBucketVersioningConfigurationRequest
  */
--(S3GetBucketVersioningConfigurationResponse *)getBucketVersioningConfiguration:(S3GetBucketVersioningConfigurationRequest *)getBucketVersioningConfigurationRequest;
+- (S3GetBucketVersioningConfigurationResponse *)getBucketVersioningConfiguration:(S3GetBucketVersioningConfigurationRequest *)getBucketVersioningConfigurationRequest;
 
 /** Sets the versioning configuration for the specified bucket.
  * A bucket's versioning configuration can be in one of three possible
@@ -398,7 +399,7 @@
  * @see S3SetBucketVersioningConfigurationResponse
  * @see S3SetBucketVersioningConfigurationRequest
  */
--(S3SetBucketVersioningConfigurationResponse *)setBucketVersioningConfiguration:(S3SetBucketVersioningConfigurationRequest *)setBucketVersioningConfigurationRequest;
+- (S3SetBucketVersioningConfigurationResponse *)setBucketVersioningConfiguration:(S3SetBucketVersioningConfigurationRequest *)setBucketVersioningConfigurationRequest;
 
 /**
  * Sets the website configuration for the specified bucket. Bucket
@@ -433,7 +434,7 @@
  * @see S3SetBucketWebsiteConfigurationResponse
  * @see S3SetBucketWebsiteConfigurationRequest
  */
--(S3SetBucketWebsiteConfigurationResponse *)setBucketWebsiteConfiguration:(S3SetBucketWebsiteConfigurationRequest *)setBucketWebsiteConfigurationRequest;
+- (S3SetBucketWebsiteConfigurationResponse *)setBucketWebsiteConfiguration:(S3SetBucketWebsiteConfigurationRequest *)setBucketWebsiteConfigurationRequest;
 
 /**
  * Returns the website configuration for the specified bucket. Bucket
@@ -470,7 +471,7 @@
  * @see S3GetBucketWebsiteConfigurationResponse
  * @see S3GetBucketWebsiteConfigurationRequest
  */
--(S3GetBucketWebsiteConfigurationResponse *)getBucketWebsiteConfiguration:(S3GetBucketWebsiteConfigurationRequest *)getBucketWebsiteConfigurationRequest;
+- (S3GetBucketWebsiteConfigurationResponse *)getBucketWebsiteConfiguration:(S3GetBucketWebsiteConfigurationRequest *)getBucketWebsiteConfigurationRequest;
 
 /**
  * This operation removes the website configuration for a bucket. Calling
@@ -498,7 +499,7 @@
  * @see S3DeleteBucketWebsiteConfigurationResponse
  * @see S3DeleteBucketWebsiteConfigurationRequest
  */
--(S3DeleteBucketWebsiteConfigurationResponse *)deleteBucketWebsiteConfiguration:(S3DeleteBucketWebsiteConfigurationRequest *)deleteBucketWebsiteConfigurationRequest;
+- (S3DeleteBucketWebsiteConfigurationResponse *)deleteBucketWebsiteConfiguration:(S3DeleteBucketWebsiteConfigurationRequest *)deleteBucketWebsiteConfigurationRequest;
 
 /**
  * Sets the lifecycle configuration for the specified bucket. Bucket
@@ -518,7 +519,7 @@
  * @see S3SetBucketLifecycleConfigurationResponse
  * @see S3SetBucketLifecycleConfigurationRequest
  */
--(S3SetBucketLifecycleConfigurationResponse *)setBucketLifecycleConfiguration:(S3SetBucketLifecycleConfigurationRequest *)setBucketLifecycleConfigurationRequest;
+- (S3SetBucketLifecycleConfigurationResponse *)setBucketLifecycleConfiguration:(S3SetBucketLifecycleConfigurationRequest *)setBucketLifecycleConfigurationRequest;
 
 /**
  * Returns the the lifecycle configuration for the specified bucket. Bucket
@@ -542,7 +543,7 @@
  * @see S3GetBucketLifecycleConfigurationResponse
  * @see S3GetBucketLifecycleConfigurationRequest
  */
--(S3GetBucketLifecycleConfigurationResponse *)getBucketLifecycleConfiguration:(S3GetBucketLifecycleConfigurationRequest *)getBucketLifecycleConfigurationRequest;
+- (S3GetBucketLifecycleConfigurationResponse *)getBucketLifecycleConfiguration:(S3GetBucketLifecycleConfigurationRequest *)getBucketLifecycleConfigurationRequest;
 
 /**
  * This operation removes the lifecycle configuration for a bucket. Calling
@@ -562,7 +563,7 @@
  * @see S3DeleteBucketLifecycleConfigurationResponse
  * @see S3DeleteBucketLifecycleConfigurationRequest
  */
--(S3DeleteBucketLifecycleConfigurationResponse *)deleteBucketLifecycleConfiguration:(S3DeleteBucketLifecycleConfigurationRequest *)deleteBucketLifecycleConfigurationRequest;
+- (S3DeleteBucketLifecycleConfigurationResponse *)deleteBucketLifecycleConfiguration:(S3DeleteBucketLifecycleConfigurationRequest *)deleteBucketLifecycleConfigurationRequest;
 
 /**
  * Sets the tagging configuration for the specified bucket.  A tagging configuration contains a TagSet.
@@ -579,7 +580,7 @@
  * @see S3SetBucketTaggingResponse
  * @see S3SetBucketTaggingRequest
  */
--(S3SetBucketTaggingResponse *)setBucketTagging:(S3SetBucketTaggingRequest *)setBucketTaggingRequest;
+- (S3SetBucketTaggingResponse *)setBucketTagging:(S3SetBucketTaggingRequest *)setBucketTaggingRequest;
 
 /**
  * Gets the tagging configuration for the specified bucket, or null if no
@@ -601,7 +602,7 @@
  * @see S3GetBucketTaggingResponse
  * @see S3GetBucketTaggingRequest
  */
--(S3GetBucketTaggingResponse *)getBucketTagging:(S3GetBucketTaggingRequest *)getBucketTaggingRequest;
+- (S3GetBucketTaggingResponse *)getBucketTagging:(S3GetBucketTaggingRequest *)getBucketTaggingRequest;
 
 /**
  * Deletes the tagging configuration for the specified bucket
@@ -617,7 +618,7 @@
  * @see S3DeleteBucketTaggingResponse
  * @see S3DeleteBucketTaggingRequest
  */
--(S3DeleteBucketTaggingResponse *)deleteBucketTagging:(S3DeleteBucketTaggingRequest *)deleteBucketTaggingRequest;
+- (S3DeleteBucketTaggingResponse *)deleteBucketTagging:(S3DeleteBucketTaggingRequest *)deleteBucketTaggingRequest;
 
 
 /**
@@ -636,7 +637,7 @@
  * @see S3SetBucketCrossOriginResponse
  * @see S3SetBucketCrossOriginRequest
  */
--(S3SetBucketCrossOriginResponse *)setBucketCrossOrigin:(S3SetBucketCrossOriginRequest *)setBucketCrossOriginRequest;
+- (S3SetBucketCrossOriginResponse *)setBucketCrossOrigin:(S3SetBucketCrossOriginRequest *)setBucketCrossOriginRequest;
 
 /**
  * Gets the CrossOrigin configuration for the specified bucket, or null if no
@@ -656,7 +657,7 @@
  * @see S3GetBucketCrossOriginResponse
  * @see S3GetBucketCrossOriginRequest
  */
--(S3GetBucketCrossOriginResponse *)getBucketCrossOrigin:(S3GetBucketCrossOriginRequest *)getBucketCrossOriginRequest;
+- (S3GetBucketCrossOriginResponse *)getBucketCrossOrigin:(S3GetBucketCrossOriginRequest *)getBucketCrossOriginRequest;
 
 /**
  * Deletes the CrossOrigin configuration for the specified bucket
@@ -673,7 +674,7 @@
  * @see S3DeleteBucketCrossOriginResponse
  * @see S3DeleteBucketCrossOriginRequest
  */
--(S3DeleteBucketCrossOriginResponse *)deleteBucketCrossOrigin:(S3DeleteBucketCrossOriginRequest *)deleteBucketCrossOriginRequest;
+- (S3DeleteBucketCrossOriginResponse *)deleteBucketCrossOrigin:(S3DeleteBucketCrossOriginRequest *)deleteBucketCrossOriginRequest;
 
 /** Deletes a specific version of an object in the specified bucket. Once
  * deleted, there is no method to restore or undelete an object version.
@@ -686,7 +687,7 @@
  * @see S3DeleteVersionResponse
  * @see S3DeleteVersionRequest
  */
--(S3DeleteVersionResponse *)deleteVersion:(S3DeleteVersionRequest *)deleteVersionRequest;
+- (S3DeleteVersionResponse *)deleteVersion:(S3DeleteVersionRequest *)deleteVersionRequest;
 
 /** Returns a list of summary information about the versions in the specified bucket.
  *
@@ -697,7 +698,7 @@
  * @see S3ListVersionsResponse
  * @see S3ListVersionsRequest
  */
--(S3ListVersionsResponse *)listVersions:(S3ListVersionsRequest *)lisVersionsRequest;
+- (S3ListVersionsResponse *)listVersions:(S3ListVersionsRequest *)lisVersionsRequest;
 
 /** Initiates a multipart upload and returns an InitiateMultipartUploadResponse.
  *
@@ -705,7 +706,7 @@
  * @see S3InitiateMultipartUploadResponse
  * @see S3InitiateMultipartUploadRequest
  */
--(S3InitiateMultipartUploadResponse *)initiateMultipartUpload:(S3InitiateMultipartUploadRequest *)initiateMultipartUploadRequest;
+- (S3InitiateMultipartUploadResponse *)initiateMultipartUpload:(S3InitiateMultipartUploadRequest *)initiateMultipartUploadRequest;
 
 /** Initiates a multipart upload and returns an MultipartUpload instance
  * which contains an upload ID. This upload ID associates all the
@@ -719,7 +720,7 @@
  * @return An S3MultipartUpload object which contains the uploadId for the upload.
  * @see S3MultipartUpload
  */
--(S3MultipartUpload *)initiateMultipartUploadWithKey:(NSString *)theKey withBucket:(NSString *)theBucket;
+- (S3MultipartUpload *)initiateMultipartUploadWithKey:(NSString *)theKey withBucket:(NSString *)theBucket;
 
 /** Aborts a multipart upload.
  * After a multipart upload is aborted, no additional parts can be uploaded using that upload ID.
@@ -733,7 +734,7 @@
  * @see S3AbortMultipartUploadResponse
  * @see S3AbortMultipartUploadRequest
  */
--(S3AbortMultipartUploadResponse *)abortMultipartUpload:(S3AbortMultipartUploadRequest *)abortMultipartUploadRequest;
+- (S3AbortMultipartUploadResponse *)abortMultipartUpload:(S3AbortMultipartUploadRequest *)abortMultipartUploadRequest;
 
 /** This operation lists in-progress multipart uploads.
  * An in-progress
@@ -754,7 +755,7 @@
  * @see S3ListMultipartUploadsResponse
  * @see S3ListMultipartUploadsRequest
  */
--(S3ListMultipartUploadsResponse *)listMultipartUploads:(S3ListMultipartUploadsRequest *)listMultipartUploadsRequest;
+- (S3ListMultipartUploadsResponse *)listMultipartUploads:(S3ListMultipartUploadsRequest *)listMultipartUploadsRequest;
 
 /** Uploads a part in a multipart upload.
  * You must initiate a multipart upload before you can upload any part.
@@ -781,7 +782,7 @@
  * @see S3UploadPartRequest
  */
 
--(S3UploadPartResponse *)uploadPart:(S3UploadPartRequest *)uploadPartRequest;
+- (S3UploadPartResponse *)uploadPart:(S3UploadPartRequest *)uploadPartRequest;
 
 /** Lists the parts that have been uploaded for a particular multipart upload.
  *
@@ -803,15 +804,15 @@
  * @see S3ListPartsResponse
  * @see S3ListPartsRequest
  */
--(S3ListPartsResponse *)listParts:(S3ListPartsRequest *)listPartsRequest;
+- (S3ListPartsResponse *)listParts:(S3ListPartsRequest *)listPartsRequest;
 
 /**
  * @see S3CopyPartResponse
  * @see S3CopyPartRequest
  */
--(S3CopyPartResponse *)copyPart:(S3CopyPartRequest *)copyPartRequest __attribute__((deprecated)); // Use partCopy: instead.
+- (S3CopyPartResponse *)copyPart:(S3CopyPartRequest *)copyPartRequest __attribute__((deprecated)); // Use partCopy: instead.
 
--(S3CopyPartResponse *)partCopy:(S3CopyPartRequest *)copyPartRequest;
+- (S3CopyPartResponse *)partCopy:(S3CopyPartRequest *)copyPartRequest;
 
 
 /** Completes a multipart upload by assembling previously uploaded parts.
@@ -831,7 +832,7 @@
  * @see S3CompleteMultipartUploadResponse
  * @see S3CompleteMultipartUploadRequest 
  */
--(S3CompleteMultipartUploadResponse *)completeMultipartUpload:(S3CompleteMultipartUploadRequest *)completeMultipartUploadRequest;
+- (S3CompleteMultipartUploadResponse *)completeMultipartUpload:(S3CompleteMultipartUploadRequest *)completeMultipartUploadRequest;
 
 /** Request temporary restoration of an object which was transitioned 
  * to Amazon Glacier from Amazon S3 via life cycle configuration.
@@ -839,7 +840,7 @@
  * @return An RestoreObjectResponse from S3.
  * @see S3RestoreObjectRequest
  */
--(S3RestoreObjectResponse *)restoreObject:(S3RestoreObjectRequest *)restoreObjectRequest;
+- (S3RestoreObjectResponse *)restoreObject:(S3RestoreObjectRequest *)restoreObjectRequest;
 
 /** Creates a signed http request.
  * Query string authentication is useful for giving HTTP or browser
@@ -855,7 +856,7 @@
  * @return An signed NSURL for the resource.
  * @see S3GetPreSignedURLRequest
  */
--(NSURL *)getPreSignedURL:(S3GetPreSignedURLRequest *)preSignedURLRequest;
+- (NSURL *)getPreSignedURL:(S3GetPreSignedURLRequest *)preSignedURLRequest;
 
 /** Creates a signed http request.
  * Query string authentication is useful for giving HTTP or browser
@@ -872,7 +873,7 @@
  * @return An signed NSURL for the resource.
  * @see S3GetPreSignedURLRequest
  */
--(NSURL *)getPreSignedURL:(S3GetPreSignedURLRequest *)preSignedURLRequest error:(NSError **)error;
+- (NSURL *)getPreSignedURL:(S3GetPreSignedURLRequest *)preSignedURLRequest error:(NSError **)error;
 
 /** Constructs an empty response object of the appropriate type to match the given request
  * object.
@@ -881,21 +882,21 @@
  *         an instance of S3Response if there is no response class to
  *         match the instance passed in.
  */
-+(S3Response *)constructResponseFromRequest:(S3Request *)request;
++ (S3Response *)constructResponseFromRequest:(S3Request *)request;
 
 /** Utility method that sends the raw S3 Request to be processed.
  *
  * @param request A request describing the parameters of an S3 request.
  * @return The response from S3.
  */
--(S3Response *)invoke:(S3Request *)request;
+- (S3Response *)invoke:(S3Request *)request;
 
 /** Return the version of the S3 API */
-+(NSString *)apiVersion;
++ (NSString *)apiVersion;
 
--(NSMutableURLRequest *)signS3Request:(S3Request *)request;
+- (NSMutableURLRequest *)signS3Request:(S3Request *)request;
 
 /** Ensure that all response classes have been loaded by the runtime. */
-+(void)initializeResponseObjects;
++ (void)initializeResponseObjects;
 
 @end

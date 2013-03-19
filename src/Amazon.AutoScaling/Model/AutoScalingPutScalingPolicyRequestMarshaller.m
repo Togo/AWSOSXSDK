@@ -17,12 +17,11 @@
 
 @implementation AutoScalingPutScalingPolicyRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"PutScalingPolicy"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"PutScalingPolicy" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[putScalingPolicyRequest delegate]];
     [request setCredentials:[putScalingPolicyRequest credentials]];

@@ -22,11 +22,11 @@
 /**
  * Get Attributes Request Marshaller
  */
-@interface SimpleDBGetAttributesRequestMarshaller:NSObject {
+@interface SimpleDBGetAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBGetAttributesRequest *)getAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBGetAttributesRequest *)getAttributesRequest;
 
 
 @end

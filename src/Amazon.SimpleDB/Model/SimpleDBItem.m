@@ -23,21 +23,19 @@
 @synthesize attributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        name                  = nil;
+        name = nil;
         alternateNameEncoding = nil;
-        attributes            = [[NSMutableArray alloc] initWithCapacity:1];
+        attributes = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes
-{
+- (id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes {
     if (self = [self init]) {
-        self.name       = theName;
+        self.name = theName;
         self.attributes = theAttributes;
     }
 
@@ -45,8 +43,7 @@
 }
 
 
--(void)addAttribute:(SimpleDBAttribute *)attributeObject
-{
+- (void)addAttribute:(SimpleDBAttribute *)attributeObject {
     if (attributes == nil) {
         attributes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -55,8 +52,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -68,9 +64,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

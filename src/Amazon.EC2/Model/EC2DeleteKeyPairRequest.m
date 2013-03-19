@@ -21,8 +21,7 @@
 @synthesize keyName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         keyName = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithKeyName:(NSString *)theKeyName
-{
+- (id)initWithKeyName:(NSString *)theKeyName {
     if (self = [self init]) {
         self.keyName = theKeyName;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

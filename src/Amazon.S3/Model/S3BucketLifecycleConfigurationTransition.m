@@ -18,34 +18,32 @@
 @implementation S3BucketLifecycleConfigurationTransition
 
 
-@synthesize storageClass=_storageClass;
-@synthesize transitionDays=_transitionDays;
-@synthesize transitionDate=_transitionDate;
+@synthesize storageClass = _storageClass;
+@synthesize transitionDays = _transitionDays;
+@synthesize transitionDate = _transitionDate;
 
--(NSString *)toXml 
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
-    
+
     [xml appendString:@"<Transition>"];
     [xml appendFormat:@"<StorageClass>%@</StorageClass>", self.storageClass];
     if (self.transitionDays > 0) {
-        [xml appendFormat:@"<Days>%ld</Days>", (long)self.transitionDays];
+        [xml appendFormat:@"<Days>%ld</Days>", (long) self.transitionDays];
     }
     else if (self.transitionDate != nil) {
         [xml appendFormat:@"<Date>%@</Date>", [self.transitionDate stringWithISO8061Format]];
     }
     [xml appendString:@"</Transition>"];
-    
-    
+
+
     NSString *retval = [NSString stringWithString:xml];
-    
+
     return retval;
 
 }
 
 
--(id)initWithStorageClass:(NSString *)theStorageClass andTimeInDays:(NSInteger)theDays
-{
+- (id)initWithStorageClass:(NSString *)theStorageClass andTimeInDays:(NSInteger)theDays {
     self = [super init];
     if (self) {
         self.storageClass = theStorageClass;
@@ -54,8 +52,7 @@
     return self;
 }
 
--(id)initWithStorageClass:(NSString *)theStorageClass andDate:(NSDate *)theDate
-{
+- (id)initWithStorageClass:(NSString *)theStorageClass andDate:(NSDate *)theDate {
     self = [super init];
     if (self) {
         self.storageClass = theStorageClass;
@@ -64,17 +61,13 @@
     return self;
 }
 
--(id)initWithTimeInDays:(NSInteger)theDays
-{
+- (id)initWithTimeInDays:(NSInteger)theDays {
     return [self initWithStorageClass:@"GLACIER" andTimeInDays:theDays];
 }
 
--(id)initWithDate:(NSDate *)theDate
-{
+- (id)initWithDate:(NSDate *)theDate {
     return [self initWithStorageClass:@"GLACIER" andDate:theDate];
 }
-    
-
 
 
 @end

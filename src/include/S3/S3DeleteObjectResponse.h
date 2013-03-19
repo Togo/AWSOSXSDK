@@ -19,7 +19,7 @@
 /** Contains the response from a deleteObject operation.
  *
  */
-@interface S3DeleteObjectResponse:S3Response {
+@interface S3DeleteObjectResponse : S3Response {
 }
 
 @end

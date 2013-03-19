@@ -26,11 +26,11 @@
 /**
  * Modify Instance Attribute Request Marshaller
  */
-@interface EC2ModifyInstanceAttributeRequestMarshaller:NSObject {
+@interface EC2ModifyInstanceAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifyInstanceAttributeRequest *)modifyInstanceAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ModifyInstanceAttributeRequest *)modifyInstanceAttributeRequest;
 
 
 @end

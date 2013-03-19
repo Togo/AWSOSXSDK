@@ -22,11 +22,11 @@
 /**
  * List Domains Request Marshaller
  */
-@interface SimpleDBListDomainsRequestMarshaller:NSObject {
+@interface SimpleDBListDomainsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBListDomainsRequest *)listDomainsRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBListDomainsRequest *)listDomainsRequest;
 
 
 @end

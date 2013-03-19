@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Remove Permission Request
  */
 
-@interface SNSRemovePermissionRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSRemovePermissionRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *label;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new RemovePermissionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RemovePermissionRequest object.
@@ -56,7 +52,7 @@
  * you wish to modify.
  * @param theLabel The unique label of the statement you want to remove.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel;
+- (id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

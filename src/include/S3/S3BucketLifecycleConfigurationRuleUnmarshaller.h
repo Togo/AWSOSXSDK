@@ -19,7 +19,7 @@
 #import "../AmazonUnmarshallerXMLParserDelegate.h"
 
 /** Creates an S3BucketLifecycleConfigurationRule from an XML service repsonse. */
-@interface S3BucketLifecycleConfigurationRuleUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3BucketLifecycleConfigurationRuleUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3BucketLifecycleConfigurationRule *rule;
 }
 

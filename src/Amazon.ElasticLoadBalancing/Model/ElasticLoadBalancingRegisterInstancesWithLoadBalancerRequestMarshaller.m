@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"RegisterInstancesWithLoadBalancer"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"RegisterInstancesWithLoadBalancer" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[registerInstancesWithLoadBalancerRequest delegate]];
     [request setCredentials:[registerInstancesWithLoadBalancerRequest credentials]];

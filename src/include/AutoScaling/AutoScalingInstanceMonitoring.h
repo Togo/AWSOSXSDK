@@ -20,26 +20,22 @@
  * Instance Monitoring
  */
 
-@interface AutoScalingInstanceMonitoring:NSObject
-
-{
+@interface AutoScalingInstanceMonitoring : NSObject {
     bool enabled;
     bool enabledIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * If <code>True</code>, instance monitoring is enabled.
  */
-@property (nonatomic) bool           enabled;
+@property (nonatomic) bool enabled;
 
 @property (nonatomic, readonly) bool enabledIsSet;
 
@@ -49,7 +45,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

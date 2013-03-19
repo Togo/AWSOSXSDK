@@ -26,51 +26,44 @@
 
 @implementation AmazonSecurityTokenServiceClient
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [super initWithAccessKey:theAccessKey withSecretKey:theSecretKey]) {
         self.endpoint = AMAZON_STS_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     if (self = [super initWithCredentials:theCredentials]) {
         self.endpoint = AMAZON_STS_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider> )theProvider
-{
+- (id)initWithCredentialsProvider:(id <AmazonCredentialsProvider>)theProvider {
     if (self = [super initWithCredentialsProvider:theProvider]) {
         self.endpoint = AMAZON_STS_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(SecurityTokenServiceGetSessionTokenResponse *)getSessionToken:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest
-{
+- (SecurityTokenServiceGetSessionTokenResponse *)getSessionToken:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest {
     AmazonServiceRequest *request = [SecurityTokenServiceGetSessionTokenRequestMarshaller createRequest:getSessionTokenRequest];
 
-    return (SecurityTokenServiceGetSessionTokenResponse *)[self invoke:request rawRequest:getSessionTokenRequest unmarshallerDelegate:[SecurityTokenServiceGetSessionTokenResponseUnmarshaller class]];
+    return (SecurityTokenServiceGetSessionTokenResponse *) [self invoke:request rawRequest:getSessionTokenRequest unmarshallerDelegate:[SecurityTokenServiceGetSessionTokenResponseUnmarshaller class]];
 }
 
--(SecurityTokenServiceGetFederationTokenResponse *)getFederationToken:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest
-{
+- (SecurityTokenServiceGetFederationTokenResponse *)getFederationToken:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest {
     AmazonServiceRequest *request = [SecurityTokenServiceGetFederationTokenRequestMarshaller createRequest:getFederationTokenRequest];
 
-    return (SecurityTokenServiceGetFederationTokenResponse *)[self invoke:request rawRequest:getFederationTokenRequest unmarshallerDelegate:[SecurityTokenServiceGetFederationTokenResponseUnmarshaller class]];
+    return (SecurityTokenServiceGetFederationTokenResponse *) [self invoke:request rawRequest:getFederationTokenRequest unmarshallerDelegate:[SecurityTokenServiceGetFederationTokenResponseUnmarshaller class]];
 }
 
--(SecurityTokenServiceAssumeRoleResponse *)assumeRole:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest
-{
+- (SecurityTokenServiceAssumeRoleResponse *)assumeRole:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest {
     AmazonServiceRequest *request = [SecurityTokenServiceAssumeRoleRequestMarshaller createRequest:assumeRoleRequest];
 
-    return (SecurityTokenServiceAssumeRoleResponse *)[self invoke:request rawRequest:assumeRoleRequest unmarshallerDelegate:[SecurityTokenServiceAssumeRoleResponseUnmarshaller class]];
+    return (SecurityTokenServiceAssumeRoleResponse *) [self invoke:request rawRequest:assumeRoleRequest unmarshallerDelegate:[SecurityTokenServiceAssumeRoleResponseUnmarshaller class]];
 }
-
 
 
 @end

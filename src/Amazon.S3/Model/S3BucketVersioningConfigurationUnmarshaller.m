@@ -19,11 +19,10 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Status"]) {
@@ -51,10 +50,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3BucketVersioningConfiguration *)versioningConfiguration
-{
-    if (nil == versioningConfiguration)
-    {
+- (S3BucketVersioningConfiguration *)versioningConfiguration {
+    if (nil == versioningConfiguration) {
         versioningConfiguration = [[S3BucketVersioningConfiguration alloc] init];
     }
     return versioningConfiguration;

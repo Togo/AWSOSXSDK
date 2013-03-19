@@ -17,12 +17,11 @@
 
 @implementation AutoScalingTerminateInstanceInAutoScalingGroupRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"TerminateInstanceInAutoScalingGroup"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"TerminateInstanceInAutoScalingGroup" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[terminateInstanceInAutoScalingGroupRequest delegate]];
     [request setCredentials:[terminateInstanceInAutoScalingGroupRequest credentials]];
@@ -36,7 +35,7 @@
     }
     if (terminateInstanceInAutoScalingGroupRequest != nil) {
         if (terminateInstanceInAutoScalingGroupRequest.shouldDecrementDesiredCapacityIsSet) {
-            [request setParameterValue:(terminateInstanceInAutoScalingGroupRequest.shouldDecrementDesiredCapacity ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ShouldDecrementDesiredCapacity"]];
+            [request setParameterValue:(terminateInstanceInAutoScalingGroupRequest.shouldDecrementDesiredCapacity ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ShouldDecrementDesiredCapacity"]];
         }
     }
 

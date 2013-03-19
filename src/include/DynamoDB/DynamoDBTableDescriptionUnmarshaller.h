@@ -22,10 +22,10 @@
 /**
  * Table Description Unmarshaller
  */
-@interface DynamoDBTableDescriptionUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBTableDescriptionUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBTableDescription *response;
 }
 
-+(DynamoDBTableDescription *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBTableDescription *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

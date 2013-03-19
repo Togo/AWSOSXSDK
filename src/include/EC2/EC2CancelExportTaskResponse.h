@@ -20,8 +20,7 @@
 /**
  * Cancel Export Task
  */
-@interface EC2CancelExportTaskResponse:EC2Response
-{
+@interface EC2CancelExportTaskResponse : EC2Response {
 }
 
 @end

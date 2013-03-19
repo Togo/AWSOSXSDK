@@ -22,8 +22,7 @@
 /**
  * Create Or Update Tags
  */
-@interface AutoScalingCreateOrUpdateTagsResponse:AutoScalingResponse
-{
+@interface AutoScalingCreateOrUpdateTagsResponse : AutoScalingResponse {
 }
 
 @end

@@ -20,35 +20,31 @@
 
 @synthesize mfaAuth, objects, quiet;
 
--(id)init
-{
+- (id)init {
     self = [super init];
-    if (self)
-    {
-        quiet        = NO;
+    if (self) {
+        quiet = NO;
         self.objects = [NSMutableArray array];
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceDelete];
 
     [super configureURLRequest];
 
     [self.urlRequest setHTTPMethod:kHttpMethodPost];
 
-    if (nil != self.mfaAuth)
-    {
+    if (nil != self.mfaAuth) {
         [urlRequest setValue:self.mfaAuth forHTTPHeaderField:kHttpHdrAmzMfa];
     }
 
     NSData *data = [[self toXml] dataUsingEncoding:NSUTF8StringEncoding];
 
     [self.urlRequest setValue:[AmazonMD5Util base64md5FromData:data] forHTTPHeaderField:kHttpHdrContentMD5];
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [data length]] forHTTPHeaderField:kHttpHdrContentLength];
     [self.urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
 
     [self.urlRequest setHTTPBody:data];
@@ -56,16 +52,13 @@
     return urlRequest;
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSString *innerXml = @"";
 
-    if (self.quiet == YES)
-    {
+    if (self.quiet == YES) {
         innerXml = [innerXml stringByAppendingString:@"<Quiet>true</Quiet>"];
     }
-    for (S3KeyVersion *kv in self.objects)
-    {
+    for (S3KeyVersion *kv in self.objects) {
         innerXml = [innerXml stringByAppendingString:[kv toXml]];
     }
 

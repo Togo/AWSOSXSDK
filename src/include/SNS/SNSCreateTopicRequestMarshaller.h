@@ -22,11 +22,11 @@
 /**
  * Create Topic Request Marshaller
  */
-@interface SNSCreateTopicRequestMarshaller:NSObject {
+@interface SNSCreateTopicRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSCreateTopicRequest *)createTopicRequest;
++ (AmazonServiceRequest *)createRequest:(SNSCreateTopicRequest *)createTopicRequest;
 
 
 @end

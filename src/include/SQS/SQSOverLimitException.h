@@ -16,8 +16,6 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The operation that you requested would violate a limit. For example,
@@ -27,17 +25,11 @@
  * reached.
  * </p>
  */
-@interface SQSOverLimitException:AmazonServiceException
-{
+@interface SQSOverLimitException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -46,7 +38,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

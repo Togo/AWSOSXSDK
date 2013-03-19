@@ -22,10 +22,9 @@
 @synthesize details;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        status  = nil;
+        status = nil;
         details = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addDetail:(EC2InstanceStatusDetails *)detailObject
-{
+- (void)addDetail:(EC2InstanceStatusDetails *)detailObject {
     if (details == nil) {
         details = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

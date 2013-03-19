@@ -20,20 +20,16 @@
  * Account Attribute Value
  */
 
-@interface EC2AccountAttributeValue:NSObject
-
-{
+@interface EC2AccountAttributeValue : NSObject {
     NSString *attributeValue;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AttributeValue property for this object.
@@ -46,7 +42,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

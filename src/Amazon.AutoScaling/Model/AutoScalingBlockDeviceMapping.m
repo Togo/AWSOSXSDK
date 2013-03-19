@@ -23,21 +23,18 @@
 @synthesize ebs;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         virtualName = nil;
-        deviceName  = nil;
-        ebs         = nil;
+        deviceName = nil;
+        ebs = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

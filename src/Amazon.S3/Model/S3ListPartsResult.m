@@ -18,15 +18,12 @@
 
 @implementation S3ListPartsResult
 
--(NSMutableArray *)parts
-{
-    if (_parts == nil)
-    {
+- (NSMutableArray *)parts {
+    if (_parts == nil) {
         _parts = [[NSMutableArray alloc] init];
     }
     return _parts;
 }
-
 
 
 @end

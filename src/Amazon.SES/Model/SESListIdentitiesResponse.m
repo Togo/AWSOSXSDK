@@ -22,19 +22,17 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         identities = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken  = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -47,15 +45,12 @@
 }
 
 
-
--(NSString *)identitiesObjectAtIndex:(int)index
-{
-    return (NSString *)[identities objectAtIndex:index];
+- (NSString *)identitiesObjectAtIndex:(int)index {
+    return (NSString *) [identities objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -66,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

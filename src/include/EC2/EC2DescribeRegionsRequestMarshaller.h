@@ -24,11 +24,11 @@
 /**
  * Describe Regions Request Marshaller
  */
-@interface EC2DescribeRegionsRequestMarshaller:NSObject {
+@interface EC2DescribeRegionsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeRegionsRequest *)describeRegionsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeRegionsRequest *)describeRegionsRequest;
 
 
 @end

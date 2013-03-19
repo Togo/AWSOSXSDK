@@ -20,8 +20,7 @@
 /**
  * Suspend Processes
  */
-@interface AutoScalingSuspendProcessesResponse:AutoScalingResponse
-{
+@interface AutoScalingSuspendProcessesResponse : AutoScalingResponse {
 }
 
 @end

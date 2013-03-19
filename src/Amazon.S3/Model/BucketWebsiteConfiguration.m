@@ -19,39 +19,32 @@
 
 @synthesize indexDocumentSuffix, errorDocument;
 
--(id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument
-{
+- (id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.indexDocumentSuffix = theIndexDocumentSuffix;
-        self.errorDocument       = theErrorDocument;
+        self.errorDocument = theErrorDocument;
     }
 
     return self;
 }
 
--(id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix
-{
+- (id)initWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix {
     return [self initWithIndexDocumentSuffix:theIndexDocumentSuffix withErrorDocument:nil];
 }
 
-+(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument
-{
++ (id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument {
     return [[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix withErrorDocument:theErrorDocument];
 }
 
-+(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix
-{
++ (id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix {
     return [[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix];
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSString *innerXml = [NSString stringWithFormat:@"<IndexDocument><Suffix>%@</Suffix></IndexDocument>", self.indexDocumentSuffix];
 
-    if (self.errorDocument != nil)
-    {
+    if (self.errorDocument != nil) {
         innerXml = [innerXml stringByAppendingFormat:@"<ErrorDocument><Key>%@</Key></ErrorDocument>", self.errorDocument];
     }
 

@@ -23,7 +23,7 @@
 /**
  * Delete Load Balancer Policy Result Unmarshaller
  */
-@interface ElasticLoadBalancingDeleteLoadBalancerPolicyResponseUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingDeleteLoadBalancerPolicyResponseUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingDeleteLoadBalancerPolicyResponse *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingDeleteLoadBalancerPolicyResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

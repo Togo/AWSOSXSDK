@@ -24,11 +24,11 @@
 /**
  * Describe Volume Status Request Marshaller
  */
-@interface EC2DescribeVolumeStatusRequestMarshaller:NSObject {
+@interface EC2DescribeVolumeStatusRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest;
 
 
 @end

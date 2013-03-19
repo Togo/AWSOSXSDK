@@ -18,28 +18,24 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Spot Price History Response
  */
 
-@interface EC2DescribeSpotPriceHistoryResponse:EC2Response
-
-{
+@interface EC2DescribeSpotPriceHistoryResponse : EC2Response {
     NSMutableArray *spotPriceHistory;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the SpotPriceHistory property for this object.
@@ -53,11 +49,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the spotPriceHistory array for the specified index
  */
--(EC2SpotPrice *)spotPriceHistoryObjectAtIndex:(int)index;
+- (EC2SpotPrice *)spotPriceHistoryObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

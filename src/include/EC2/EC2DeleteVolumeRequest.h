@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Volume Request
  */
 
-@interface EC2DeleteVolumeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeleteVolumeRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeleteVolumeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteVolumeRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theVolumeId The ID of the EBS volume to delete.
  */
--(id)initWithVolumeId:(NSString *)theVolumeId;
+- (id)initWithVolumeId:(NSString *)theVolumeId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

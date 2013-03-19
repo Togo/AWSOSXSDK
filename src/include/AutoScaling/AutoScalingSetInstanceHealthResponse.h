@@ -20,8 +20,7 @@
 /**
  * Set Instance Health
  */
-@interface AutoScalingSetInstanceHealthResponse:AutoScalingResponse
-{
+@interface AutoScalingSetInstanceHealthResponse : AutoScalingResponse {
 }
 
 @end

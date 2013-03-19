@@ -15,14 +15,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface S3ListObjectsResult:NSObject {
+@interface S3ListObjectsResult : NSObject {
     NSMutableArray *objectSummaries;
-    NSString       *bucketName;
-    NSString       *prefix;
-    NSString       *marker;
-    NSInteger      maxKeys;
-    NSString       *delimiter;
-    bool           isTruncated;
+    NSString *bucketName;
+    NSString *prefix;
+    NSString *marker;
+    NSInteger maxKeys;
+    NSString *delimiter;
+    bool isTruncated;
     NSMutableArray *commonPrefixes;
 }
 

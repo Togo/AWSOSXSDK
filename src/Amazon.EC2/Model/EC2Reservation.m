@@ -26,23 +26,21 @@
 @synthesize instances;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservationId = nil;
-        ownerId       = nil;
-        requesterId   = nil;
-        groups        = [[NSMutableArray alloc] initWithCapacity:1];
-        groupNames    = [[NSMutableArray alloc] initWithCapacity:1];
-        instances     = [[NSMutableArray alloc] initWithCapacity:1];
+        ownerId = nil;
+        requesterId = nil;
+        groups = [[NSMutableArray alloc] initWithCapacity:1];
+        groupNames = [[NSMutableArray alloc] initWithCapacity:1];
+        instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addGroup:(EC2GroupIdentifier *)groupObject
-{
+- (void)addGroup:(EC2GroupIdentifier *)groupObject {
     if (groups == nil) {
         groups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -50,8 +48,7 @@
     [groups addObject:groupObject];
 }
 
--(void)addGroupName:(NSString *)groupNameObject
-{
+- (void)addGroupName:(NSString *)groupNameObject {
     if (groupNames == nil) {
         groupNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -59,8 +56,7 @@
     [groupNames addObject:groupNameObject];
 }
 
--(void)addInstance:(EC2Instance *)instanceObject
-{
+- (void)addInstance:(EC2Instance *)instanceObject {
     if (instances == nil) {
         instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -69,8 +65,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -85,9 +80,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

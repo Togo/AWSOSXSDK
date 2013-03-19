@@ -17,31 +17,26 @@
 
 @implementation AmazonStaticCredentialsProvider
 
--(AmazonCredentials *)credentials
-{
+- (AmazonCredentials *)credentials {
     return staticCredentials;
 }
 
 // refresh is a no-op for static credentials
--(void)refresh {
+- (void)refresh {
     return;
 }
 
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey
-{
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         staticCredentials = [[AmazonCredentials alloc] initWithAccessKey:accessKey withSecretKey:secretKey];
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         staticCredentials = theCredentials;
     }
     return self;

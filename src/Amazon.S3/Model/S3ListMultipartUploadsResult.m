@@ -28,17 +28,14 @@
 @synthesize delimiter;
 @synthesize prefix;
 
--(NSMutableArray *)uploads
-{
-    if (uploads == nil)
-    {
+- (NSMutableArray *)uploads {
+    if (uploads == nil) {
         uploads = [[NSMutableArray alloc] init];
     }
     return uploads;
 }
 
--(NSMutableArray *)commonPrefixes
-{
+- (NSMutableArray *)commonPrefixes {
     if (commonPrefixes == nil) {
         commonPrefixes = [[NSMutableArray alloc] init];
     }

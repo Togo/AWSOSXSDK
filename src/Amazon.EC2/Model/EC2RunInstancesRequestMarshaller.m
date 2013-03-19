@@ -17,12 +17,11 @@
 
 @implementation EC2RunInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2RunInstancesRequest *)runInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2RunInstancesRequest *)runInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"RunInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"RunInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[runInstancesRequest delegate]];
     [request setCredentials:[runInstancesRequest credentials]];
@@ -137,7 +136,7 @@
                 }
                 if (ebs != nil) {
                     if (ebs.deleteOnTerminationIsSet) {
-                        [request setParameterValue:(ebs.deleteOnTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
+                        [request setParameterValue:(ebs.deleteOnTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
                     }
                 }
                 if (ebs != nil) {
@@ -162,7 +161,7 @@
     }
     if (runInstancesRequest != nil) {
         if (runInstancesRequest.monitoringIsSet) {
-            [request setParameterValue:(runInstancesRequest.monitoring ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"Monitoring.Enabled"]];
+            [request setParameterValue:(runInstancesRequest.monitoring ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"Monitoring.Enabled"]];
         }
     }
     if (runInstancesRequest != nil) {
@@ -172,7 +171,7 @@
     }
     if (runInstancesRequest != nil) {
         if (runInstancesRequest.disableApiTerminationIsSet) {
-            [request setParameterValue:(runInstancesRequest.disableApiTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"DisableApiTermination"]];
+            [request setParameterValue:(runInstancesRequest.disableApiTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"DisableApiTermination"]];
         }
     }
     if (runInstancesRequest != nil) {
@@ -245,7 +244,7 @@
             }
             if (networkInterfacesListValue != nil) {
                 if (networkInterfacesListValue.deleteOnTerminationIsSet) {
-                    [request setParameterValue:(networkInterfacesListValue.deleteOnTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@", @"NetworkInterface", networkInterfacesListIndex, @"DeleteOnTermination"]];
+                    [request setParameterValue:(networkInterfacesListValue.deleteOnTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@", @"NetworkInterface", networkInterfacesListIndex, @"DeleteOnTermination"]];
                 }
             }
 
@@ -259,7 +258,7 @@
                     }
                     if (privateIpAddressesListValue != nil) {
                         if (privateIpAddressesListValue.primaryIsSet) {
-                            [request setParameterValue:(privateIpAddressesListValue.primary ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%d.%@", @"NetworkInterface", networkInterfacesListIndex, @"PrivateIpAddresses", privateIpAddressesListIndex, @"Primary"]];
+                            [request setParameterValue:(privateIpAddressesListValue.primary ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%d.%@", @"NetworkInterface", networkInterfacesListIndex, @"PrivateIpAddresses", privateIpAddressesListIndex, @"Primary"]];
                         }
                     }
 
@@ -290,7 +289,7 @@
     }
     if (runInstancesRequest != nil) {
         if (runInstancesRequest.ebsOptimizedIsSet) {
-            [request setParameterValue:(runInstancesRequest.ebsOptimized ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"EbsOptimized"]];
+            [request setParameterValue:(runInstancesRequest.ebsOptimized ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"EbsOptimized"]];
         }
     }
 

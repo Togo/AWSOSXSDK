@@ -24,23 +24,20 @@
  * Describe Scaling Activities Result
  */
 
-@interface AutoScalingDescribeScalingActivitiesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeScalingActivitiesResponse : AutoScalingResponse {
     NSMutableArray *activities;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of the requested scaling activities.
@@ -58,11 +55,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the activities array for the specified index
  */
--(AutoScalingActivity *)activitiesObjectAtIndex:(int)index;
+- (AutoScalingActivity *)activitiesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

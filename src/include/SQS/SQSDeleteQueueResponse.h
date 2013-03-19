@@ -20,8 +20,7 @@
 /**
  * Delete Queue
  */
-@interface SQSDeleteQueueResponse:SQSResponse
-{
+@interface SQSDeleteQueueResponse : SQSResponse {
 }
 
 @end

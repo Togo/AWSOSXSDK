@@ -24,11 +24,11 @@
 /**
  * Describe Vpcs Request Marshaller
  */
-@interface EC2DescribeVpcsRequestMarshaller:NSObject {
+@interface EC2DescribeVpcsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeVpcsRequest *)describeVpcsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeVpcsRequest *)describeVpcsRequest;
 
 
 @end

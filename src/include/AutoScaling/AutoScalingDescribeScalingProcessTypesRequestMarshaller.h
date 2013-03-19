@@ -22,11 +22,11 @@
 /**
  * Describe Scaling Process Types Request Marshaller
  */
-@interface AutoScalingDescribeScalingProcessTypesRequestMarshaller:NSObject {
+@interface AutoScalingDescribeScalingProcessTypesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest;
 
 
 @end

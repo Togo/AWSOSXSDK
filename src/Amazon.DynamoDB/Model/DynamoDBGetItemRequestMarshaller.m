@@ -20,8 +20,7 @@
 
 @implementation DynamoDBGetItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBGetItemRequest *)getItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBGetItemRequest *)getItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[getItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.GetItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -173,13 +172,12 @@
     }
 
     if (getItemRequest.consistentReadIsSet) {
-        [json setValue:(getItemRequest.consistentRead ? @"true":@"false") forKey:@"ConsistentRead"];
+        [json setValue:(getItemRequest.consistentRead ? @"true" : @"false") forKey:@"ConsistentRead"];
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

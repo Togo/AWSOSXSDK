@@ -20,15 +20,12 @@
  * Replaceable Attribute
  */
 
-@interface SimpleDBReplaceableAttribute:NSObject
-
-{
+@interface SimpleDBReplaceableAttribute : NSObject {
     NSString *name;
     NSString *value;
-    bool     replace;
-    bool     replaceIsSet;
+    bool replace;
+    bool replaceIsSet;
 }
-
 
 
 /**
@@ -46,7 +43,7 @@
  * or to add a new attribute/value pair. The default setting is
  * <code>false</code>.
  */
-@property (nonatomic) bool           replace;
+@property (nonatomic) bool replace;
 
 @property (nonatomic, readonly) bool replaceIsSet;
 
@@ -55,7 +52,7 @@
  * Default constructor for a new ReplaceableAttribute object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ReplaceableAttribute object.
@@ -67,7 +64,7 @@
  * attribute/value pair or to add a new attribute/value pair. The default
  * setting is <code>false</code>.
  */
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue andReplace:(bool)theReplace;
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue andReplace:(bool)theReplace;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

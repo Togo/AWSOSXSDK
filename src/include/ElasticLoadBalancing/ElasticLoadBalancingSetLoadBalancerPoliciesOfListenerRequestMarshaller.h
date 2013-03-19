@@ -22,11 +22,11 @@
 /**
  * Set Load Balancer Policies Of Listener Request Marshaller
  */
-@interface ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequest *)setLoadBalancerPoliciesOfListenerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequest *)setLoadBalancerPoliciesOfListenerRequest;
 
 
 @end

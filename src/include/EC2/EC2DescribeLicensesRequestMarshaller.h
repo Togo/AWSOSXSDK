@@ -24,11 +24,11 @@
 /**
  * Describe Licenses Request Marshaller
  */
-@interface EC2DescribeLicensesRequestMarshaller:NSObject {
+@interface EC2DescribeLicensesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeLicensesRequest *)describeLicensesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeLicensesRequest *)describeLicensesRequest;
 
 
 @end

@@ -16,17 +16,17 @@
 #import "SNSDeleteTopicResponse.h"
 #import "SNSResponseUnmarshaller.h"
 
-@interface SNSDeleteTopicResponseUnmarshaller:SNSResponseUnmarshaller
-{
+@interface SNSDeleteTopicResponseUnmarshaller : SNSResponseUnmarshaller {
     SNSDeleteTopicResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SNSDeleteTopicResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SNSDeleteTopicResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SNSDeleteTopicResponse *)response;
 
 @end

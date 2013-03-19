@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Security Group Request
  */
 
-@interface EC2CreateSecurityGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateSecurityGroupRequest : AmazonServiceRequestConfig {
     NSString *groupName;
     NSString *descriptionValue;
     NSString *vpcId;
 }
-
 
 
 /**
@@ -52,7 +48,7 @@
  * Default constructor for a new CreateSecurityGroupRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateSecurityGroupRequest object.
@@ -62,7 +58,7 @@
  * @param theDescriptionValue Description of the group. This is
  * informational only.
  */
--(id)initWithGroupName:(NSString *)theGroupName andDescriptionValue:(NSString *)theDescriptionValue;
+- (id)initWithGroupName:(NSString *)theGroupName andDescriptionValue:(NSString *)theDescriptionValue;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

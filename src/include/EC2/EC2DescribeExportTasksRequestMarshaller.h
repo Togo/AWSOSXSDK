@@ -22,11 +22,11 @@
 /**
  * Describe Export Tasks Request Marshaller
  */
-@interface EC2DescribeExportTasksRequestMarshaller:NSObject {
+@interface EC2DescribeExportTasksRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeExportTasksRequest *)describeExportTasksRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeExportTasksRequest *)describeExportTasksRequest;
 
 
 @end

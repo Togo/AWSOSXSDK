@@ -20,8 +20,7 @@
 /**
  * Deregister Image
  */
-@interface EC2DeregisterImageResponse:EC2Response
-{
+@interface EC2DeregisterImageResponse : EC2Response {
 }
 
 @end

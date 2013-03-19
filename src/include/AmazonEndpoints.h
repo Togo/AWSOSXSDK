@@ -16,15 +16,14 @@
 #import <Foundation/Foundation.h>
 
 
-typedef enum
-{
-    US_EAST_1      = 0,
-    US_WEST_1      = 1,
-    EU_WEST_1      = 2,
+typedef enum {
+    US_EAST_1 = 0,
+    US_WEST_1 = 1,
+    EU_WEST_1 = 2,
     AP_SOUTHEAST_1 = 3,
     AP_NORTHEAST_1 = 4,
-    US_WEST_2      = 5,
-    SA_EAST_1      = 6,
+    US_WEST_2 = 5,
+    SA_EAST_1 = 6,
     AP_SOUTHEAST_2 = 7
 } AmazonRegion;
 
@@ -183,12 +182,12 @@ typedef enum
 //#define AMAZON_SES_SA_EAST_1_ENDPOINT_SECURE       @"https://"
 
 #define AMAZON_DDB_US_EAST_1_ENDPOINT_SECURE         @"https://dynamodb.us-east-1.amazonaws.com"
-#define AMAZON_DDB_US_WEST_1_ENDPOINT_SECURE		 @"https://dynamodb.us-west-1.amazonaws.com"
-#define AMAZON_DDB_US_WEST_2_ENDPOINT_SECURE		 @"https://dynamodb.us-west-2.amazonaws.com"
-#define AMAZON_DDB_EU_WEST_1_ENDPOINT_SECURE		 @"https://dynamodb.eu-west-1.amazonaws.com"
-#define AMAZON_DDB_AP_SOUTHEAST_1_ENDPOINT_SECURE	 @"https://dynamodb.ap-southeast-1.amazonaws.com"
-#define AMAZON_DDB_AP_SOUTHEAST_2_ENDPOINT_SECURE	 @"https://dynamodb.ap-southeast-2.amazonaws.com"
-#define AMAZON_DDB_AP_NORTHEAST_1_ENDPOINT_SECURE	 @"https://dynamodb.ap-northeast-1.amazonaws.com"
+#define AMAZON_DDB_US_WEST_1_ENDPOINT_SECURE         @"https://dynamodb.us-west-1.amazonaws.com"
+#define AMAZON_DDB_US_WEST_2_ENDPOINT_SECURE         @"https://dynamodb.us-west-2.amazonaws.com"
+#define AMAZON_DDB_EU_WEST_1_ENDPOINT_SECURE         @"https://dynamodb.eu-west-1.amazonaws.com"
+#define AMAZON_DDB_AP_SOUTHEAST_1_ENDPOINT_SECURE     @"https://dynamodb.ap-southeast-1.amazonaws.com"
+#define AMAZON_DDB_AP_SOUTHEAST_2_ENDPOINT_SECURE     @"https://dynamodb.ap-southeast-2.amazonaws.com"
+#define AMAZON_DDB_AP_NORTHEAST_1_ENDPOINT_SECURE     @"https://dynamodb.ap-northeast-1.amazonaws.com"
 #define AMAZON_DDB_SA_EAST_1_ENDPOINT_SECURE         @"https://dynamodb.sa-east-1.amazonaws.com"
 
 #define AMAZON_AS_US_EAST_1_ENDPOINT_SECURE          @"https://autoscaling.us-east-1.amazonaws.com"
@@ -212,29 +211,49 @@ typedef enum
 #define AMAZON_STS_ENDPOINT_SECURE    @"https://sts.amazonaws.com"
 
 
-@interface AmazonEndpoints:NSObject {
+@interface AmazonEndpoints : NSObject {
 }
 
-+(NSString *)s3Endpoint:(AmazonRegion)region;
-+(NSString *)s3Endpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)sdbEndpoint:(AmazonRegion)region;
-+(NSString *)sdbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)snsEndpoint:(AmazonRegion)region;
-+(NSString *)snsEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)sqsEndpoint:(AmazonRegion)region;
-+(NSString *)sqsEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)cwEndpoint:(AmazonRegion)region;
-+(NSString *)cwEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)ec2Endpoint:(AmazonRegion)region;
-+(NSString *)ec2Endpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)sesEndpoint:(AmazonRegion)region;
-+(NSString *)sesEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)elbEndpoint:(AmazonRegion)region;
-+(NSString *)elbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)autoscalingEndpoint:(AmazonRegion)region;
-+(NSString *)autoscalingEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)ddbEndpoint:(AmazonRegion)region;
-+(NSString *)ddbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
-+(NSString *)stsEndpoint;
++ (NSString *)s3Endpoint:(AmazonRegion)region;
+
++ (NSString *)s3Endpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)sdbEndpoint:(AmazonRegion)region;
+
++ (NSString *)sdbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)snsEndpoint:(AmazonRegion)region;
+
++ (NSString *)snsEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)sqsEndpoint:(AmazonRegion)region;
+
++ (NSString *)sqsEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)cwEndpoint:(AmazonRegion)region;
+
++ (NSString *)cwEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)ec2Endpoint:(AmazonRegion)region;
+
++ (NSString *)ec2Endpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)sesEndpoint:(AmazonRegion)region;
+
++ (NSString *)sesEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)elbEndpoint:(AmazonRegion)region;
+
++ (NSString *)elbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)autoscalingEndpoint:(AmazonRegion)region;
+
++ (NSString *)autoscalingEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)ddbEndpoint:(AmazonRegion)region;
+
++ (NSString *)ddbEndpoint:(AmazonRegion)region secure:(bool)useSSL;
+
++ (NSString *)stsEndpoint;
 
 @end

@@ -23,18 +23,16 @@
 @synthesize prefix;
 @synthesize uploadIdMarker;
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        maxUploads      = 1000;
+        maxUploads = 1000;
         maxUploadsIsSet = NO;
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *subresource = [NSMutableString stringWithString:kS3SubResourceUploads];
 
     if (nil != self.delimiter) {
@@ -44,7 +42,7 @@
         [subresource appendFormat:@"&key-marker=%@", self.keyMarker];
     }
     if (maxUploadsIsSet) {
-        [subresource appendFormat:@"&max-uploads=%ld", (long)self.maxUploads];
+        [subresource appendFormat:@"&max-uploads=%ld", (long) self.maxUploads];
     }
     if (nil != self.prefix) {
         [subresource appendFormat:@"&prefix=%@", self.prefix];
@@ -62,14 +60,12 @@
     return urlRequest;
 }
 
--(void)setMaxUploads:(NSInteger)max
-{
-    maxUploads      = max;
+- (void)setMaxUploads:(NSInteger)max {
+    maxUploads = max;
     maxUploadsIsSet = YES;
 }
 
--(NSInteger)maxUploads
-{
+- (NSInteger)maxUploads {
     return maxUploads;
 }
 

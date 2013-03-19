@@ -35,32 +35,30 @@
 @synthesize createdTime;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        loadBalancerName          = nil;
-        dNSName                   = nil;
-        canonicalHostedZoneName   = nil;
+        loadBalancerName = nil;
+        dNSName = nil;
+        canonicalHostedZoneName = nil;
         canonicalHostedZoneNameID = nil;
-        listenerDescriptions      = [[NSMutableArray alloc] initWithCapacity:1];
-        policies                  = nil;
+        listenerDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
+        policies = nil;
         backendServerDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
-        availabilityZones         = [[NSMutableArray alloc] initWithCapacity:1];
-        subnets                   = [[NSMutableArray alloc] initWithCapacity:1];
-        vPCId                     = nil;
-        instances                 = [[NSMutableArray alloc] initWithCapacity:1];
-        healthCheck               = nil;
-        sourceSecurityGroup       = nil;
-        securityGroups            = [[NSMutableArray alloc] initWithCapacity:1];
-        createdTime               = nil;
+        availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
+        subnets = [[NSMutableArray alloc] initWithCapacity:1];
+        vPCId = nil;
+        instances = [[NSMutableArray alloc] initWithCapacity:1];
+        healthCheck = nil;
+        sourceSecurityGroup = nil;
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        createdTime = nil;
     }
 
     return self;
 }
 
 
--(void)addListenerDescription:(ElasticLoadBalancingListenerDescription *)listenerDescriptionObject
-{
+- (void)addListenerDescription:(ElasticLoadBalancingListenerDescription *)listenerDescriptionObject {
     if (listenerDescriptions == nil) {
         listenerDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +66,7 @@
     [listenerDescriptions addObject:listenerDescriptionObject];
 }
 
--(void)addBackendServerDescription:(ElasticLoadBalancingBackendServerDescription *)backendServerDescriptionObject
-{
+- (void)addBackendServerDescription:(ElasticLoadBalancingBackendServerDescription *)backendServerDescriptionObject {
     if (backendServerDescriptions == nil) {
         backendServerDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -77,8 +74,7 @@
     [backendServerDescriptions addObject:backendServerDescriptionObject];
 }
 
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject
-{
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject {
     if (availabilityZones == nil) {
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -86,8 +82,7 @@
     [availabilityZones addObject:availabilityZoneObject];
 }
 
--(void)addSubnet:(NSString *)subnetObject
-{
+- (void)addSubnet:(NSString *)subnetObject {
     if (subnets == nil) {
         subnets = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -95,8 +90,7 @@
     [subnets addObject:subnetObject];
 }
 
--(void)addInstance:(ElasticLoadBalancingInstance *)instanceObject
-{
+- (void)addInstance:(ElasticLoadBalancingInstance *)instanceObject {
     if (instances == nil) {
         instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -104,8 +98,7 @@
     [instances addObject:instanceObject];
 }
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -114,8 +107,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -139,9 +131,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

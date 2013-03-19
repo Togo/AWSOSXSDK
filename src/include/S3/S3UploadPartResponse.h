@@ -19,7 +19,7 @@
 /** Contains the response from a uploadPart operation.
  *
  */
-@interface S3UploadPartResponse:S3Response {
+@interface S3UploadPartResponse : S3Response {
 }
 
 @end

@@ -19,16 +19,15 @@
 @implementation EC2IpPermissionUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"ipRanges"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ipRanges";
-        listUnmarshaller.entryElementName   = @"cidrIp";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"cidrIp";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -36,8 +35,8 @@
     if ([elementName isEqualToString:@"ipRanges"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ipRanges";
-        listUnmarshaller.entryElementName   = @"cidrIp";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"cidrIp";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -45,12 +44,11 @@
     if ([elementName isEqualToString:@"groups"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.userIdGroupPairs withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groups";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2UserIdGroupPairUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2UserIdGroupPairUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -58,8 +56,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -101,14 +98,12 @@
     }
 }
 
--(EC2IpPermission *)response
-{
+- (EC2IpPermission *)response {
     if (nil == response) {
         response = [[EC2IpPermission alloc] init];
     }
     return response;
 }
-
 
 
 @end

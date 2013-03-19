@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Register Instances With Load Balancer Request
  */
 
-@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *instances;
 }
-
 
 
 /**
@@ -55,7 +51,7 @@
  * Default constructor for a new RegisterInstancesWithLoadBalancerRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RegisterInstancesWithLoadBalancerRequest object.
@@ -72,13 +68,13 @@
  * de-register your instances from load balancer, use
  * <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andInstances:(NSMutableArray *)theInstances;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andInstances:(NSMutableArray *)theInstances;
 
 /**
  * Adds a single object to instances.
  * This function will alloc and init instances if not already done.
  */
--(void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
+- (void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -86,7 +82,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

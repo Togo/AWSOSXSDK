@@ -25,88 +25,73 @@ static BOOL throwsExceptions = YES;
 
 #pragma mark - Public Methods
 
-+ (void)shouldThrowExceptions
-{
++ (void)shouldThrowExceptions {
     throwsExceptions = YES;
 }
 
-+ (void)shouldNotThrowExceptions
-{
++ (void)shouldNotThrowExceptions {
     throwsExceptions = NO;
 }
 
-+ (BOOL)throwsExceptions
-{
++ (BOOL)throwsExceptions {
     return throwsExceptions;
 }
 
-+ (NSError *)errorFromExceptionWithThrowsExceptionOption:(NSException *)exception
-{
-    if(exception == nil)
-    {
++ (NSError *)errorFromExceptionWithThrowsExceptionOption:(NSException *)exception {
+    if (exception == nil) {
         return nil;
     }
-    else if(throwsExceptions == YES)
-    {
+    else if (throwsExceptions == YES) {
         AMZLogDebug(@"WARNING: An exception was thrown. Please call [AmazonErrorHandler shouldNotThrowExceptions] to change this behavior.");
         @throw exception;
     }
-    else if(![exception isKindOfClass:[AmazonClientException class]])
-    {
+    else if (![exception isKindOfClass:[AmazonClientException class]]) {
         // Fatal error. This should not happen.
         @throw exception;
     }
-    
+
     return [AmazonErrorHandler errorFromException:exception];
 }
 
-+ (NSError *)errorFromException:(NSException *)exception serviceErrorDomain:(NSString *)serviceErrorDomain clientErrorDomain:(NSString *)clientErrorDomain
-{
++ (NSError *)errorFromException:(NSException *)exception serviceErrorDomain:(NSString *)serviceErrorDomain clientErrorDomain:(NSString *)clientErrorDomain {
     NSError *error = nil;
-    
-    if([exception isKindOfClass:[AmazonServiceException class]])
-    {
-        AmazonServiceException *serviceException = (AmazonServiceException *)exception;
-        
-        if(serviceException.error != nil)
-        {
+
+    if ([exception isKindOfClass:[AmazonServiceException class]]) {
+        AmazonServiceException *serviceException = (AmazonServiceException *) exception;
+
+        if (serviceException.error != nil) {
             error = serviceException.error;
         }
-        else
-        {
+        else {
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:serviceException.additionalFields];
             [userInfo setValue:serviceException.requestId forKey:@"requestId"];
             [userInfo setValue:serviceException.errorCode forKey:@"errorCode"];
             [userInfo setValue:serviceException.serviceName forKey:@"serviceName"];
             [userInfo setValue:serviceException forKey:@"exception"];
-            
+
             error = [NSError errorWithDomain:serviceErrorDomain code:serviceException.statusCode userInfo:userInfo];
         }
     }
-    else if([exception isKindOfClass:[AmazonClientException class]])
-    {
-        AmazonClientException *clientException = (AmazonClientException *)exception;
-        
-        if(clientException.error != nil)
-        {
+    else if ([exception isKindOfClass:[AmazonClientException class]]) {
+        AmazonClientException *clientException = (AmazonClientException *) exception;
+
+        if (clientException.error != nil) {
             error = clientException.error;
         }
-        else
-        {
+        else {
             NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      clientException.message, @"message", 
-                                      clientException, @"exception", nil];
-            
+                    clientException.message, @"message",
+                    clientException, @"exception", nil];
+
             error = [NSError errorWithDomain:clientErrorDomain code:-1 userInfo:userInfo];
         }
     }
-    
+
     // Return nil for non Amazon exceptions.
     return error;
 }
 
-+ (NSError *)errorFromException:(NSException *)exception
-{
++ (NSError *)errorFromException:(NSException *)exception {
     return [AmazonErrorHandler errorFromException:exception
                                serviceErrorDomain:AWSiOSSDKServiceErrorDomain
                                 clientErrorDomain:AWSiOSSDKClientErrorDomain];

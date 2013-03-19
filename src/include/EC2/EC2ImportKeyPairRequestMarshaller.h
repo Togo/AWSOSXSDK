@@ -22,11 +22,11 @@
 /**
  * Import Key Pair Request Marshaller
  */
-@interface EC2ImportKeyPairRequestMarshaller:NSObject {
+@interface EC2ImportKeyPairRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportKeyPairRequest *)importKeyPairRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ImportKeyPairRequest *)importKeyPairRequest;
 
 
 @end

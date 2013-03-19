@@ -22,11 +22,11 @@
 /**
  * Verify Email Address Request Marshaller
  */
-@interface SESVerifyEmailAddressRequestMarshaller:NSObject {
+@interface SESVerifyEmailAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest;
++ (AmazonServiceRequest *)createRequest:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest;
 
 
 @end

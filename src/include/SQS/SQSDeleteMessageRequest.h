@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Message Request
  */
 
-@interface SQSDeleteMessageRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSDeleteMessageRequest : AmazonServiceRequestConfig {
     NSString *queueUrl;
     NSString *receiptHandle;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new DeleteMessageRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteMessageRequest object.
@@ -56,7 +52,7 @@
  * @param theReceiptHandle The receipt handle associated with the message
  * to delete.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

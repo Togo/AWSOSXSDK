@@ -24,31 +24,28 @@
 @synthesize returnValues;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName    = nil;
-        key          = nil;
-        expected     = [[NSMutableDictionary alloc] initWithCapacity:1];
+        tableName = nil;
+        key = nil;
+        expected = [[NSMutableDictionary alloc] initWithCapacity:1];
         returnValues = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey
-{
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey {
     if (self = [self init]) {
         self.tableName = theTableName;
-        self.key       = theKey;
+        self.key = theKey;
     }
 
     return self;
 }
 
 
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey
-{
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey {
     if (expected == nil) {
         expected = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -57,8 +54,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -71,9 +67,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

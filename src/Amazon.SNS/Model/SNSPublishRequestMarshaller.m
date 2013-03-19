@@ -17,12 +17,11 @@
 
 @implementation SNSPublishRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSPublishRequest *)publishRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSPublishRequest *)publishRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"Publish"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"Publish" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[publishRequest delegate]];
     [request setCredentials:[publishRequest credentials]];

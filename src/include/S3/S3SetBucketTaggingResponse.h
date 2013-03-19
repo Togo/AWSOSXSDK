@@ -18,6 +18,6 @@
 
 /** Contains all the information about the setBucketTaggingResponse operation.
  */
-@interface S3SetBucketTaggingResponse:S3Response
+@interface S3SetBucketTaggingResponse : S3Response
 
 @end

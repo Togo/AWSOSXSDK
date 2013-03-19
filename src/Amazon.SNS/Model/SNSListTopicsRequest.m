@@ -21,8 +21,7 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         nextToken = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithNextToken:(NSString *)theNextToken
-{
+- (id)initWithNextToken:(NSString *)theNextToken {
     if (self = [self init]) {
         self.nextToken = theNextToken;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -26,25 +26,23 @@
 @synthesize createVolumePermission;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        snapshotId             = nil;
-        attribute              = nil;
-        operationType          = nil;
-        userIds                = [[NSMutableArray alloc] initWithCapacity:1];
-        groupNames             = [[NSMutableArray alloc] initWithCapacity:1];
+        snapshotId = nil;
+        attribute = nil;
+        operationType = nil;
+        userIds = [[NSMutableArray alloc] initWithCapacity:1];
+        groupNames = [[NSMutableArray alloc] initWithCapacity:1];
         createVolumePermission = nil;
     }
 
     return self;
 }
 
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute andOperationType:(NSString *)theOperationType
-{
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute andOperationType:(NSString *)theOperationType {
     if (self = [self init]) {
-        self.snapshotId    = theSnapshotId;
-        self.attribute     = theAttribute;
+        self.snapshotId = theSnapshotId;
+        self.attribute = theAttribute;
         self.operationType = theOperationType;
     }
 
@@ -52,8 +50,7 @@
 }
 
 
--(void)addUserId:(NSString *)userIdObject
-{
+- (void)addUserId:(NSString *)userIdObject {
     if (userIds == nil) {
         userIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +58,7 @@
     [userIds addObject:userIdObject];
 }
 
--(void)addGroupName:(NSString *)groupNameObject
-{
+- (void)addGroupName:(NSString *)groupNameObject {
     if (groupNames == nil) {
         groupNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -71,8 +67,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -87,9 +82,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

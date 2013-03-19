@@ -19,7 +19,7 @@
 /** Contains the response from an abortMultipartUpload operation.
  *
  */
-@interface S3AbortMultipartUploadResponse:S3Response {
+@interface S3AbortMultipartUploadResponse : S3Response {
 }
 
 @end

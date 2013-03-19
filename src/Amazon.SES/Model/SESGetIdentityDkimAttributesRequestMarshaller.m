@@ -17,12 +17,11 @@
 
 @implementation SESGetIdentityDkimAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"GetIdentityDkimAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetIdentityDkimAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[getIdentityDkimAttributesRequest delegate]];
     [request setCredentials:[getIdentityDkimAttributesRequest credentials]];

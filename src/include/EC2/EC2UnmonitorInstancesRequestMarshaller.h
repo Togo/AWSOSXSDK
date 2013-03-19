@@ -22,11 +22,11 @@
 /**
  * Unmonitor Instances Request Marshaller
  */
-@interface EC2UnmonitorInstancesRequestMarshaller:NSObject {
+@interface EC2UnmonitorInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest;
 
 
 @end

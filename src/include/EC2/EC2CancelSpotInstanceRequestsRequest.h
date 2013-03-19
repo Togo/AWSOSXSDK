@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Cancel Spot Instance Requests Request
  */
 
-@interface EC2CancelSpotInstanceRequestsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CancelSpotInstanceRequestsRequest : AmazonServiceRequestConfig {
     NSMutableArray *spotInstanceRequestIds;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new CancelSpotInstanceRequestsRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CancelSpotInstanceRequestsRequest object.
@@ -49,13 +45,13 @@
  * @param theSpotInstanceRequestIds Specifies the ID of the Spot Instance
  * request.
  */
--(id)initWithSpotInstanceRequestIds:(NSMutableArray *)theSpotInstanceRequestIds;
+- (id)initWithSpotInstanceRequestIds:(NSMutableArray *)theSpotInstanceRequestIds;
 
 /**
  * Adds a single object to spotInstanceRequestIds.
  * This function will alloc and init spotInstanceRequestIds if not already done.
  */
--(void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject;
+- (void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

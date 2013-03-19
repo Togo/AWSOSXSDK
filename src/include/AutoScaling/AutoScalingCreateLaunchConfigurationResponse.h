@@ -22,8 +22,7 @@
 /**
  * Create Launch Configuration
  */
-@interface AutoScalingCreateLaunchConfigurationResponse:AutoScalingResponse
-{
+@interface AutoScalingCreateLaunchConfigurationResponse : AutoScalingResponse {
 }
 
 @end

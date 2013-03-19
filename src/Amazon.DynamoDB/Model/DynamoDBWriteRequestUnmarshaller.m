@@ -23,10 +23,8 @@
 @implementation DynamoDBWriteRequestUnmarshaller
 
 
-+(DynamoDBWriteRequest *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBWriteRequest *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBWriteRequest *writeRequest = [[DynamoDBWriteRequest alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"PutRequest"] != nil) {

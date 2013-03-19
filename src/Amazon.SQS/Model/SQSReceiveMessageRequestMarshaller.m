@@ -17,12 +17,11 @@
 
 @implementation SQSReceiveMessageRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSReceiveMessageRequest *)receiveMessageRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSReceiveMessageRequest *)receiveMessageRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"ReceiveMessage"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"ReceiveMessage" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[receiveMessageRequest delegate]];
     [request setCredentials:[receiveMessageRequest credentials]];

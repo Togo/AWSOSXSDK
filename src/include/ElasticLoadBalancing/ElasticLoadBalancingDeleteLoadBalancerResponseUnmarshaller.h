@@ -16,17 +16,17 @@
 #import "ElasticLoadBalancingDeleteLoadBalancerResponse.h"
 #import "ElasticLoadBalancingResponseUnmarshaller.h"
 
-@interface ElasticLoadBalancingDeleteLoadBalancerResponseUnmarshaller:ElasticLoadBalancingResponseUnmarshaller
-{
+@interface ElasticLoadBalancingDeleteLoadBalancerResponseUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingDeleteLoadBalancerResponse *response;
 }
 
 @property (weak, nonatomic, readonly) ElasticLoadBalancingDeleteLoadBalancerResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(ElasticLoadBalancingDeleteLoadBalancerResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (ElasticLoadBalancingDeleteLoadBalancerResponse *)response;
 
 @end

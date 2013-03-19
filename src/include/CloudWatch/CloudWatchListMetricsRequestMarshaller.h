@@ -23,11 +23,11 @@
 /**
  * List Metrics Request Marshaller
  */
-@interface CloudWatchListMetricsRequestMarshaller:NSObject {
+@interface CloudWatchListMetricsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchListMetricsRequest *)listMetricsRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchListMetricsRequest *)listMetricsRequest;
 
 
 @end

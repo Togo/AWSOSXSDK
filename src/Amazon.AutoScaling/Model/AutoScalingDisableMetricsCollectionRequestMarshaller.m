@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDisableMetricsCollectionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDisableMetricsCollectionRequest *)disableMetricsCollectionRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDisableMetricsCollectionRequest *)disableMetricsCollectionRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DisableMetricsCollection"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DisableMetricsCollection" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[disableMetricsCollectionRequest delegate]];
     [request setCredentials:[disableMetricsCollectionRequest credentials]];

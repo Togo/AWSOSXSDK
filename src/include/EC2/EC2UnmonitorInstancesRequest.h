@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Unmonitor Instances Request
  */
 
-@interface EC2UnmonitorInstancesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2UnmonitorInstancesRequest : AmazonServiceRequestConfig {
     NSMutableArray *instanceIds;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new UnmonitorInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new UnmonitorInstancesRequest object.
@@ -49,13 +45,13 @@
  * @param theInstanceIds The list of Amazon EC2 instances on which to
  * disable monitoring.
  */
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
 
 /**
  * Adds a single object to instanceIds.
  * This function will alloc and init instanceIds if not already done.
  */
--(void)addInstanceId:(NSString *)instanceIdObject;
+- (void)addInstanceId:(NSString *)instanceIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

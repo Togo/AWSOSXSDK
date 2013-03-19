@@ -21,8 +21,7 @@
 @synthesize policyTypeNames;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         policyTypeNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)addPolicyTypeName:(NSString *)policyTypeNameObject
-{
+- (void)addPolicyTypeName:(NSString *)policyTypeNameObject {
     if (policyTypeNames == nil) {
         policyTypeNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -41,8 +39,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

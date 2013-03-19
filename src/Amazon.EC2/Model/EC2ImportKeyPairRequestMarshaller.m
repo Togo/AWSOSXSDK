@@ -17,12 +17,11 @@
 
 @implementation EC2ImportKeyPairRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportKeyPairRequest *)importKeyPairRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ImportKeyPairRequest *)importKeyPairRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ImportKeyPair"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ImportKeyPair" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[importKeyPairRequest delegate]];
     [request setCredentials:[importKeyPairRequest credentials]];

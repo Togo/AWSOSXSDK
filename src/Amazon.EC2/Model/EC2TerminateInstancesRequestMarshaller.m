@@ -17,12 +17,11 @@
 
 @implementation EC2TerminateInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2TerminateInstancesRequest *)terminateInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2TerminateInstancesRequest *)terminateInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"TerminateInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"TerminateInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[terminateInstancesRequest delegate]];
     [request setCredentials:[terminateInstancesRequest credentials]];

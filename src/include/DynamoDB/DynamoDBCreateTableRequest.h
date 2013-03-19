@@ -19,19 +19,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Table Request
  */
 
-@interface DynamoDBCreateTableRequest:AmazonServiceRequestConfig
-
-{
-    NSString                      *tableName;
-    DynamoDBKeySchema             *keySchema;
+@interface DynamoDBCreateTableRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    DynamoDBKeySchema *keySchema;
     DynamoDBProvisionedThroughput *provisionedThroughput;
 }
-
 
 
 /**
@@ -73,7 +69,7 @@
  * Default constructor for a new CreateTableRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateTableRequest object.
@@ -90,7 +86,7 @@
  * primary key contains two attribute values: a
  * <code>HashKeyElement</code> and a <code>RangeKeyElement</code>.
  */
--(id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema;
+- (id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema;
 
 /**
  * Constructs a new CreateTableRequest object.
@@ -116,7 +112,7 @@
  * the value, etc. Eventually-consistent reads consume half the resources
  * of strictly consistent reads.
  */
--(id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput;
+- (id)initWithTableName:(NSString *)theTableName andKeySchema:(DynamoDBKeySchema *)theKeySchema andProvisionedThroughput:(DynamoDBProvisionedThroughput *)theProvisionedThroughput;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -124,7 +120,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

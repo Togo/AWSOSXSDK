@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Cancel Conversion Task Request
  */
 
-@interface EC2CancelConversionTaskRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CancelConversionTaskRequest : AmazonServiceRequestConfig {
     NSString *conversionTaskId;
     NSString *reasonMessage;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ConversionTaskId property for this object.
@@ -54,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

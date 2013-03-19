@@ -27,7 +27,7 @@
 /**
  * Ip Permission Unmarshaller
  */
-@interface EC2IpPermissionUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2IpPermissionUnmarshaller : EC2ResponseUnmarshaller {
     EC2IpPermission *response;
 }
 
@@ -35,8 +35,9 @@
 @property (weak, nonatomic, readonly) EC2IpPermission *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

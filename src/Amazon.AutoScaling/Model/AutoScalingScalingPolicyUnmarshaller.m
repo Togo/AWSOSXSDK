@@ -19,20 +19,18 @@
 @implementation AutoScalingScalingPolicyUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"Alarms"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.alarms withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Alarms";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AutoScalingAlarmUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AutoScalingAlarmUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -93,14 +90,12 @@
     }
 }
 
--(AutoScalingScalingPolicy *)response
-{
+- (AutoScalingScalingPolicy *)response {
     if (nil == response) {
         response = [[AutoScalingScalingPolicy alloc] init];
     }
     return response;
 }
-
 
 
 @end

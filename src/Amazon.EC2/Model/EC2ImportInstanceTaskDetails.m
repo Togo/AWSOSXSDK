@@ -24,12 +24,11 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumes          = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceId       = nil;
-        platform         = nil;
+        volumes = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceId = nil;
+        platform = nil;
         descriptionValue = nil;
     }
 
@@ -37,8 +36,7 @@
 }
 
 
--(void)addVolume:(EC2ImportInstanceVolumeDetailItem *)volumeObject
-{
+- (void)addVolume:(EC2ImportInstanceVolumeDetailItem *)volumeObject {
     if (volumes == nil) {
         volumes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -31,57 +31,50 @@
 @synthesize error;
 @synthesize exception;
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self != nil) {
         isFinishedLoading = NO;
-        didTimeout        = NO;
-        exception         = nil;
+        didTimeout = NO;
+        exception = nil;
         error = nil;
     }
 
     return self;
 }
 
--(NSData *)body
-{
+- (NSData *)body {
     return [NSData dataWithData:body];
 }
 
 // Override this to perform processing on the body.
--(void)processBody
-{
+- (void)processBody {
     // Subclasses can use this to build object data from the response, for example
     // parsing XML content.
 }
 
--(void)postProcess
-{
+- (void)postProcess {
 }
 
--(void)timeout
-{
+- (void)timeout {
     if (!isFinishedLoading && !exception) {
-        
+
         didTimeout = YES;
         [self.request.urlConnection cancel];
         self.request.responseTimer = nil;
 
-        exception  = [AmazonClientException exceptionWithMessage:@"Request timed out."];
-        
+        exception = [AmazonClientException exceptionWithMessage:@"Request timed out."];
+
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
-        
-        if (throwsExceptions == YES
-            && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+
+        if (throwsExceptions == YES && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
             [request.delegate request:request didFailWithServiceException:exception];
 #pragma clang diagnostic pop
         }
-        else if (throwsExceptions == NO
-                 && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
-            
+        else if (throwsExceptions == NO && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+
             self.error = [AmazonErrorHandler errorFromException:exception];
             [request.delegate request:request didFailWithError:self.error];
         }
@@ -90,9 +83,8 @@
 
 #pragma mark - NSURLProtocolClient delegate methods
 
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
     AMZLogDebug(@"Response Headers:");
     for (NSString *header in [[httpResponse allHeaderFields] allKeys]) {
@@ -103,28 +95,26 @@
 
     [body setLength:0];
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didReceiveResponse:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didReceiveResponse:)]) {
         [self.request.delegate request:self.request didReceiveResponse:response];
     }
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     if (nil == body) {
         body = [NSMutableData data];
     }
 
     [body appendData:data];
 
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
         [self.request.delegate request:self.request didReceiveData:data];
     }
 }
 
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self.request.responseTimer invalidate];
-    
+
     NSDate *startDate = [NSDate date];
 
     isFinishedLoading = YES;
@@ -132,7 +122,7 @@
     NSString *tmpStr = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
 
     AMZLogDebug(@"Response Body:\n%@", tmpStr);
-    NSXMLParser                       *parser         = [[NSXMLParser alloc] initWithData:body];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:body];
     AmazonServiceResponseUnmarshaller *parserDelegate = [[unmarshallerDelegate alloc] init];
     [parser setDelegate:parserDelegate];
     [parser parse];
@@ -140,83 +130,74 @@
     AmazonServiceResponse *response = [parserDelegate response];
 
 
-    if(response.error)
-    {
+    if (response.error) {
         NSError *errorFound = [response.error copy];
-        
-        if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+
+        if ([(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
             [request.delegate request:request didFailWithError:errorFound];
         }
     }
     else if (response.exception) {
         NSException *exceptionFound = [response.exception copy];
-        
+
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
-        
-        if(throwsExceptions == YES
-           && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+
+        if (throwsExceptions == YES && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            [request.delegate request:request didFailWithServiceException:(AmazonServiceException *)exceptionFound];
+            [request.delegate request:request didFailWithServiceException:(AmazonServiceException *) exceptionFound];
 #pragma clang diagnostic pop
         }
-        else if(throwsExceptions == NO
-                && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
-            [request.delegate request:request 
+        else if (throwsExceptions == NO && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+            [request.delegate request:request
                      didFailWithError:[AmazonErrorHandler errorFromException:exceptionFound]];
         }
     }
     else {
         [response postProcess];
-        processingTime          = fabs([startDate timeIntervalSinceNow]);
+        processingTime = fabs([startDate timeIntervalSinceNow]);
         response.processingTime = processingTime;
-        
 
-        
-        if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
+
+        if ([(NSObject *) request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
             [request.delegate request:request didCompleteWithResponse:response];
         }
-        
+
     }
 }
 
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)theError
-{
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)theError {
     [self.request.responseTimer invalidate];
 
     NSDictionary *info = [theError userInfo];
-    for (id key in info)
-    {
+    for (id key in info) {
         AMZLogDebug(@"UserInfo.%@ = %@", [key description], [[info valueForKey:key] description]);
     }
     exception = [AmazonServiceException exceptionWithMessage:[theError description] andError:theError];
     AMZLogDebug(@"An error occured in the request: %@", [theError description]);
-    
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
         [self.request.delegate request:self.request didFailWithError:theError];
     }
 }
 
--(void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
-    if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
         [self.request.delegate request:self.request
-         didSendData:bytesWritten
-         totalBytesWritten:totalBytesWritten
-         totalBytesExpectedToWrite:totalBytesExpectedToWrite];
+                           didSendData:bytesWritten
+                     totalBytesWritten:totalBytesWritten
+             totalBytesExpectedToWrite:totalBytesExpectedToWrite];
     }
 }
 
 // When a request gets a redirect due to the bucket being in a different region,
 // The request gets re-written with a GET http method. This is to set the method back to
 // the appropriate method if necessary
--(NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)proposedRequest redirectResponse:(NSURLResponse *)redirectResponse
-{
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)proposedRequest redirectResponse:(NSURLResponse *)redirectResponse {
     return proposedRequest;
 }
 
--(NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
-{
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
     return nil;
 }
 
@@ -234,8 +215,7 @@
 #pragma mark memory management
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];

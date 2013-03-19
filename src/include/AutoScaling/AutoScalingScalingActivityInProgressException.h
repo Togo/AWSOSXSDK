@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * You cannot delete an Auto Scaling group while there are scaling
  * activities in progress for that group.
  * </p>
  */
-@interface AutoScalingScalingActivityInProgressException:AmazonServiceException
-{
+@interface AutoScalingScalingActivityInProgressException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

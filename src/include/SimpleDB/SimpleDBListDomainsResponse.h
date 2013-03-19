@@ -24,23 +24,20 @@
  * List Domains Result
  */
 
-@interface SimpleDBListDomainsResponse:SimpleDBResponse
-
-{
+@interface SimpleDBListDomainsResponse : SimpleDBResponse {
     NSMutableArray *domainNames;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of domain names that match the expression.
@@ -54,11 +51,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the domainNames array for the specified index
  */
--(NSString *)domainNamesObjectAtIndex:(int)index;
+- (NSString *)domainNamesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -66,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

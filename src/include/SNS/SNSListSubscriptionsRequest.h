@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Subscriptions Request
  */
 
-@interface SNSListSubscriptionsRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSListSubscriptionsRequest : AmazonServiceRequestConfig {
     NSString *nextToken;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new ListSubscriptionsRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ListSubscriptionsRequest object.
@@ -49,7 +45,7 @@
  * @param theNextToken Token returned by the previous
  * <code>ListSubscriptions</code> request.
  */
--(id)initWithNextToken:(NSString *)theNextToken;
+- (id)initWithNextToken:(NSString *)theNextToken;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

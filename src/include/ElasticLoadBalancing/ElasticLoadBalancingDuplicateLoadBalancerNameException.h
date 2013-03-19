@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * LoadBalancer name already exists for this account. Please choose
  * another name.
  * </p>
  */
-@interface ElasticLoadBalancingDuplicateLoadBalancerNameException:AmazonServiceException
-{
+@interface ElasticLoadBalancingDuplicateLoadBalancerNameException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

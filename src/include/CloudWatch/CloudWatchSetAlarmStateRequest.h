@@ -17,14 +17,11 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Alarm State Request
  */
 
-@interface CloudWatchSetAlarmStateRequest:AmazonServiceRequestConfig
-
-{
+@interface CloudWatchSetAlarmStateRequest : AmazonServiceRequestConfig {
     NSString *alarmName;
     NSString *stateValue;
     NSString *stateReason;
@@ -32,13 +29,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The descriptive name for the alarm. This name must be unique within
@@ -81,7 +76,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

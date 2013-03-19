@@ -26,128 +26,116 @@
 
 @synthesize crc32;
 
-- (id)init
-{
-    if(self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         crc32 = 0;
     }
 
     return self;
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     [super connection:connection didReceiveResponse:response];
 
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
-    if([[httpResponse allHeaderFields] objectForKey:kHttpHdrAmzCrc32])
-    {
+    if ([[httpResponse allHeaderFields] objectForKey:kHttpHdrAmzCrc32]) {
         self.crc32 = [[NSNumber numberWithLongLong:[[[httpResponse allHeaderFields] objectForKey:kHttpHdrAmzCrc32] longLongValue]] unsignedIntValue];
     }
-    
+
     self.requestId = [[httpResponse allHeaderFields] valueForKey:REQUEST_ID_HEADER];
 }
 
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self.request.responseTimer invalidate];
-    
+
     NSDate *startDate = [NSDate date];
-    
+
     isFinishedLoading = YES;
 
     NSString *jsonString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
     AMZLogDebug(@"Response Body:\n%@", jsonString);
 
     if (self.httpStatusCode == 413) {
-        
+
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
         NSException *requestEntityTooLargeException = [AmazonServiceException exceptionWithMessage:@"Request Entity Too Large"
-                                                                withErrorCode:@"RequestEntityTooLarge"
-                                                               withStatusCode:413
-                                                                withRequestId:self.requestId];
-        
-        if (throwsExceptions == YES
-            && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+                                                                                     withErrorCode:@"RequestEntityTooLarge"
+                                                                                    withStatusCode:413
+                                                                                     withRequestId:self.requestId];
+
+        if (throwsExceptions == YES && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
             [request.delegate request:request didFailWithServiceException:requestEntityTooLargeException];
 #pragma clang diagnostic pop
         }
-        else if (throwsExceptions == NO
-                 && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
-            [request.delegate request:request 
+        else if (throwsExceptions == NO && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+            [request.delegate request:request
                      didFailWithError:[AmazonErrorHandler errorFromException:requestEntityTooLargeException]];
         }
     }
     else {
-        
-        NSMutableDictionary   *jsonObject = [AmazonJSON JSONValue:jsonString];
-        DynamoDBResponse *response   = [unmarshallerDelegate performSelector:@selector(unmarshall:) withObject:jsonObject];
 
-        if(self.crc32 > 0) {
+        NSMutableDictionary *jsonObject = [AmazonJSON JSONValue:jsonString];
+        DynamoDBResponse *response = [unmarshallerDelegate performSelector:@selector(unmarshall:) withObject:jsonObject];
+
+        if (self.crc32 > 0) {
 
             AMZLogDebug(@"Returned CRC32: %u, Calculated CRC32: %u", self.crc32, [self.body crc32]);
         }
 
-        if(self.crc32 > 0 && self.crc32 != [self.body crc32]) {
+        if (self.crc32 > 0 && self.crc32 != [self.body crc32]) {
 
             AmazonClientException *crc32NotMatchException = [AmazonClientException exceptionWithMessage:@"CRC32 doesn't match."];
             BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
 
-            if (throwsExceptions == YES
-                && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+            if (throwsExceptions == YES && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-                [request.delegate request:request didFailWithServiceException:(AmazonServiceException *)crc32NotMatchException];
+                [request.delegate request:request didFailWithServiceException:(AmazonServiceException *) crc32NotMatchException];
 #pragma clang diagnostic pop
             }
-            else if (throwsExceptions == NO
-                     && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+            else if (throwsExceptions == NO && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
                 [request.delegate request:request didFailWithError:[AmazonErrorHandler errorFromException:crc32NotMatchException]];
             }
         }
-        else if(response.error) {
-            
+        else if (response.error) {
+
             NSError *errorFound = [response.error copy];
-            
-            if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+
+            if ([(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
                 [request.delegate request:request didFailWithError:errorFound];
             }
         }
         else if (response.exception) {
-            
-            ((AmazonServiceException *)response.exception).requestId = self.requestId;
-            
+
+            ((AmazonServiceException *) response.exception).requestId = self.requestId;
+
             BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
             NSException *exceptionFound = [response.exception copy];
-            
-            if (throwsExceptions == YES
-                && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
+
+            if (throwsExceptions == YES && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-                [request.delegate request:request didFailWithServiceException:(AmazonServiceException *)exceptionFound];
+                [request.delegate request:request didFailWithServiceException:(AmazonServiceException *) exceptionFound];
 #pragma clang diagnostic pop
             }
-            else if (throwsExceptions == NO
-                     && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
+            else if (throwsExceptions == NO && [(NSObject *) request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
                 [request.delegate request:request didFailWithError:[AmazonErrorHandler errorFromException:exceptionFound]];
             }
         }
         else {
-            
+
             response.requestId = self.requestId;
             response.crc32 = self.crc32;
-            
-            [response postProcess];
-            processingTime          = fabs([startDate timeIntervalSinceNow]);
-            response.processingTime = processingTime;
-            
 
-            
-            if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
+            [response postProcess];
+            processingTime = fabs([startDate timeIntervalSinceNow]);
+            response.processingTime = processingTime;
+
+
+            if ([(NSObject *) request.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
                 [request.delegate request:request didCompleteWithResponse:response];
             }
         }

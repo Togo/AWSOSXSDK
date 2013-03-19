@@ -18,27 +18,23 @@
 #import "AutoScalingResponse.h"
 
 
-
 /**
  * Describe Scaling Process Types Result
  */
 
-@interface AutoScalingDescribeScalingProcessTypesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeScalingProcessTypesResponse : AutoScalingResponse {
     NSMutableArray *processes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of <a>ProcessType</a> names.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *processes;
 
 
-
 /**
  * Returns a value from the processes array for the specified index
  */
--(AutoScalingProcessType *)processesObjectAtIndex:(int)index;
+- (AutoScalingProcessType *)processesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

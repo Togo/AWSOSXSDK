@@ -18,27 +18,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Get Identity Dkim Attributes Result
  */
 
-@interface SESGetIdentityDkimAttributesResponse:SESResponse
-
-{
+@interface SESGetIdentityDkimAttributesResponse : SESResponse {
     NSMutableDictionary *dkimAttributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The DKIM attributes for an email address or a domain.
@@ -48,7 +44,7 @@
 /**
  * Returns a value from the dkimAttributes dictionary for the specified key.
  */
--(SESIdentityDkimAttributes *)dkimAttributesValueForKey:(NSString *)theKey;
+- (SESIdentityDkimAttributes *)dkimAttributesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

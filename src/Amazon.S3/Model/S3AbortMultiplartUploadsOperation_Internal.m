@@ -15,8 +15,7 @@
 
 #import "S3AbortMultiplartUploadsOperation_Internal.h"
 
-@interface S3AbortMultiplartUploadsOperation_Internal ()
-{
+@interface S3AbortMultiplartUploadsOperation_Internal () {
     BOOL _isExecuting;
     BOOL _isFinished;
 }
@@ -30,10 +29,8 @@
 
 #pragma mark - Class Lifecycle
 
-- (id)init
-{
-    if (self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         _isExecuting = NO;
         _isFinished = NO;
     }
@@ -44,8 +41,7 @@
 
 #pragma mark - Overwriding NSOperation Methods
 
-- (void)start
-{
+- (void)start {
     [self willChangeValueForKey:@"isExecuting"];
     _isExecuting = YES;
     [self didChangeValueForKey:@"isExecuting"];
@@ -67,53 +63,47 @@
         nextKeyMarker = listMultipartUploadsResult.nextKeyMarker;
         nextUploadIdMarker = listMultipartUploadsResult.nextUploadIdMarker;
 
-        for(S3MultipartUpload *multipartUpload in listMultipartUploadsResult.uploads)
-        {
-            if((self.date != nil && [multipartUpload.initiated compare:self.date] == NSOrderedAscending)
-               ||
-               (self.key != nil && [multipartUpload.key isEqualToString:self.key]))
-            {
+        for (S3MultipartUpload *multipartUpload in listMultipartUploadsResult.uploads) {
+            if ((self.date != nil && [multipartUpload.initiated compare:self.date] == NSOrderedAscending)
+                    ||
+                    (self.key != nil && [multipartUpload.key isEqualToString:self.key])) {
                 AMZLogDebug(@"multipartUpload: %@", multipartUpload);
-                
+
                 S3AbortMultipartUploadRequest *abortMultipartUploadRequest = [[S3AbortMultipartUploadRequest alloc] initWithMultipartUpload:multipartUpload];
                 abortMultipartUploadRequest.bucket = listMultipartUploadsResult.bucket;
                 abortMultipartUploadRequest.delegate = self.delegate;
-                
+
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.s3 abortMultipartUpload:abortMultipartUploadRequest];
                 });
             }
         }
 
-    } while(isTruncated);
+    } while (isTruncated);
 
     [self finish];
 }
 
-- (BOOL)isConcurrent
-{
+- (BOOL)isConcurrent {
     return YES;
 }
 
-- (BOOL)isExecuting
-{
+- (BOOL)isExecuting {
     return _isExecuting;
 }
 
-- (BOOL)isFinished
-{
+- (BOOL)isFinished {
     return _isFinished;
 }
 
 #pragma mark - Helper Methods
 
-- (void)finish
-{
+- (void)finish {
     [self willChangeValueForKey:@"isExecuting"];
     [self willChangeValueForKey:@"isFinished"];
 
     _isExecuting = NO;
-    _isFinished  = YES;
+    _isFinished = YES;
 
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];

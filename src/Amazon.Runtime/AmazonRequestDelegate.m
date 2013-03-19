@@ -22,53 +22,44 @@
 @synthesize error;
 @synthesize exception;
 
--(id)init
-{
+- (id)init {
     self = [super init];
-    if (self)
-    {
-        response  = nil;
+    if (self) {
+        response = nil;
         exception = nil;
-        error     = nil;
+        error = nil;
     }
     return self;
 }
 
--(bool)isFinishedOrFailed
-{
+- (bool)isFinishedOrFailed {
     return (response != nil || error != nil || exception != nil);
 }
 
--(void)request:(AmazonServiceRequest *)request didReceiveResponse:(NSURLResponse *)aResponse
-{
+- (void)request:(AmazonServiceRequest *)request didReceiveResponse:(NSURLResponse *)aResponse {
     AMZLogDebug(@"didReceiveResponse");
 }
 
--(void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)aResponse
-{
+- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)aResponse {
     AMZLogDebug(@"didCompleteWithResponse");
-    response         = aResponse;
+    response = aResponse;
     response.request = request;
 }
 
--(void)request:(AmazonServiceRequest *)request didReceiveData:(NSData *)data
-{
+- (void)request:(AmazonServiceRequest *)request didReceiveData:(NSData *)data {
     AMZLogDebug(@"didReceiveData");
 }
 
--(void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
+- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
     AMZLogDebug(@"didSendData");
 }
 
--(void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)theError
-{
+- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)theError {
     AMZLogDebug(@"didFailWithError: %@", theError);
     error = theError;
 }
 
--(void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)theException
-{
+- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)theException {
     AMZLogDebug(@"didFailWithServiceException");
     exception = theException;
 }

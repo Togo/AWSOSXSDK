@@ -22,20 +22,18 @@
 @synthesize loadBalancerPorts;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        loadBalancerName  = nil;
+        loadBalancerName = nil;
         loadBalancerPorts = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPorts:(NSMutableArray *)theLoadBalancerPorts
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPorts:(NSMutableArray *)theLoadBalancerPorts {
     if (self = [self init]) {
-        self.loadBalancerName  = theLoadBalancerName;
+        self.loadBalancerName = theLoadBalancerName;
         self.loadBalancerPorts = theLoadBalancerPorts;
     }
 
@@ -43,8 +41,7 @@
 }
 
 
--(void)addLoadBalancerPort:(NSNumber *)loadBalancerPortObject
-{
+- (void)addLoadBalancerPort:(NSNumber *)loadBalancerPortObject {
     if (loadBalancerPorts == nil) {
         loadBalancerPorts = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

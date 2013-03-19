@@ -18,8 +18,7 @@
 
 @implementation AmazonWebServiceClient
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [self init]) {
         AmazonCredentials *credentials = [[AmazonCredentials alloc] initWithAccessKey:theAccessKey withSecretKey:theSecretKey];
         if (!(self = [self initWithCredentials:credentials])) return nil;

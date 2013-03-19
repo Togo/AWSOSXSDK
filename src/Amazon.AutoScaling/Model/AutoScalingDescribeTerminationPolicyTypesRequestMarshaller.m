@@ -17,18 +17,16 @@
 
 @implementation AutoScalingDescribeTerminationPolicyTypesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeTerminationPolicyTypes"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeTerminationPolicyTypes" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeTerminationPolicyTypesRequest delegate]];
     [request setCredentials:[describeTerminationPolicyTypesRequest credentials]];
     [request setEndpoint:[describeTerminationPolicyTypesRequest requestEndpoint]];
     [request setRequestTag:[describeTerminationPolicyTypesRequest requestTag]];
-
 
 
     return request;

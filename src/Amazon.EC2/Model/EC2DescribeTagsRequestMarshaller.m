@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeTagsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeTagsRequest *)describeTagsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeTagsRequest *)describeTagsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeTags"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeTags" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeTagsRequest delegate]];
     [request setCredentials:[describeTagsRequest credentials]];

@@ -17,12 +17,11 @@
 
 @implementation EC2DisassociateAddressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DisassociateAddressRequest *)disassociateAddressRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DisassociateAddressRequest *)disassociateAddressRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DisassociateAddress"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DisassociateAddress" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[disassociateAddressRequest delegate]];
     [request setCredentials:[disassociateAddressRequest credentials]];

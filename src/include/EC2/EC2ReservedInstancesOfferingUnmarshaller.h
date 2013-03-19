@@ -28,7 +28,7 @@
 /**
  * Reserved Instances Offering Unmarshaller
  */
-@interface EC2ReservedInstancesOfferingUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2ReservedInstancesOfferingUnmarshaller : EC2ResponseUnmarshaller {
     EC2ReservedInstancesOffering *response;
 }
 
@@ -36,8 +36,9 @@
 @property (weak, nonatomic, readonly) EC2ReservedInstancesOffering *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

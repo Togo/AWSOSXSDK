@@ -20,27 +20,26 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
-    
+
     if ([elementName isEqualToString:@"CORSRule"]) {
         if (caller != nil) {
             [parser setDelegate:caller];
         }
-        
+
         self.rule.allowedHeaders = allowedHeaders;
         self.rule.allowedMethods = allowedMethods;
         self.rule.allowedOrigins = allowedOrigins;
         self.rule.exposeHeaders = exposeHeaders;
-        
+
         if (parentObject != nil && [parentObject respondsToSelector:parentSetter]) {
             [parentObject performSelector:parentSetter withObject:self.rule];
         }
-        
+
         return;
     }
-    
+
     if ([elementName isEqualToString:@"ID"]) {
         self.rule.ruleId = self.currentText;
     } else if ([elementName isEqualToString:@"AllowedMethod"]) {
@@ -70,13 +69,11 @@
 
 #pragma mark - Unmarshalled object property
 
--(S3CORSRule *)rule
-{
-    if (_rule == nil)
-    {
+- (S3CORSRule *)rule {
+    if (_rule == nil) {
         _rule = [[S3CORSRule alloc] init];
     }
-    
+
     return _rule;
 }
 

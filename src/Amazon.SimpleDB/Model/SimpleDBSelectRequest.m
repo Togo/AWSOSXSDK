@@ -24,20 +24,18 @@
 @synthesize consistentReadIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        selectExpression    = nil;
-        nextToken           = nil;
-        consistentRead      = NO;
+        selectExpression = nil;
+        nextToken = nil;
+        consistentRead = NO;
         consistentReadIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithSelectExpression:(NSString *)theSelectExpression
-{
+- (id)initWithSelectExpression:(NSString *)theSelectExpression {
     if (self = [self init]) {
         self.selectExpression = theSelectExpression;
     }
@@ -45,20 +43,17 @@
     return self;
 }
 
--(id)initWithSelectExpression:(NSString *)theSelectExpression andConsistentRead:(bool)theConsistentRead
-{
+- (id)initWithSelectExpression:(NSString *)theSelectExpression andConsistentRead:(bool)theConsistentRead {
     if (self = [self init]) {
         self.selectExpression = theSelectExpression;
-        self.consistentRead   = theConsistentRead;
+        self.consistentRead = theConsistentRead;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -72,13 +67,10 @@
 }
 
 
--(void)setConsistentRead:(bool)theValue
-{
-    consistentRead      = theValue;
+- (void)setConsistentRead:(bool)theValue {
+    consistentRead = theValue;
     consistentReadIsSet = YES;
 }
-
-
 
 
 @end

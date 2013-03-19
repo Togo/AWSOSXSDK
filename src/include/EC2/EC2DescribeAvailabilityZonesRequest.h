@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Availability Zones Request
  */
 
-@interface EC2DescribeAvailabilityZonesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeAvailabilityZonesRequest : AmazonServiceRequestConfig {
     NSMutableArray *zoneNames;
     NSMutableArray *filters;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of the availability zone names to describe.
@@ -57,13 +52,13 @@
  * Adds a single object to zoneNames.
  * This function will alloc and init zoneNames if not already done.
  */
--(void)addZoneName:(NSString *)zoneNameObject;
+- (void)addZoneName:(NSString *)zoneNameObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

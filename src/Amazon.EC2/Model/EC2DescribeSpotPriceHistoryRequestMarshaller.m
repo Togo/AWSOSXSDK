@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeSpotPriceHistoryRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeSpotPriceHistory"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeSpotPriceHistory" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeSpotPriceHistoryRequest delegate]];
     [request setCredentials:[describeSpotPriceHistoryRequest credentials]];

@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The request was rejected because the policy document was malformed.
  * The error message describes the specific error.
  * </p>
  */
-@interface SecurityTokenServiceMalformedPolicyDocumentException:AmazonServiceException
-{
+@interface SecurityTokenServiceMalformedPolicyDocumentException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

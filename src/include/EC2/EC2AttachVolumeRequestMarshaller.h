@@ -22,11 +22,11 @@
 /**
  * Attach Volume Request Marshaller
  */
-@interface EC2AttachVolumeRequestMarshaller:NSObject {
+@interface EC2AttachVolumeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2AttachVolumeRequest *)attachVolumeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2AttachVolumeRequest *)attachVolumeRequest;
 
 
 @end

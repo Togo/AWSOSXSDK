@@ -23,7 +23,7 @@
 /**
  * Set Load Balancer Policies Of Listener Result Unmarshaller
  */
-@interface ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponseUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponseUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponse *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

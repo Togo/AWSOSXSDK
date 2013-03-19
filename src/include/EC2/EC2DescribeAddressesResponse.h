@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Addresses Response
  */
 
-@interface EC2DescribeAddressesResponse:EC2Response
-
-{
+@interface EC2DescribeAddressesResponse : EC2Response {
     NSMutableArray *addresses;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of Elastic IPs.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *addresses;
 
 
-
 /**
  * Returns a value from the addresses array for the specified index
  */
--(EC2Address *)addressesObjectAtIndex:(int)index;
+- (EC2Address *)addressesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

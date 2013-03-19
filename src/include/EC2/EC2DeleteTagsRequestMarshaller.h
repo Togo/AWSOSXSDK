@@ -24,11 +24,11 @@
 /**
  * Delete Tags Request Marshaller
  */
-@interface EC2DeleteTagsRequestMarshaller:NSObject {
+@interface EC2DeleteTagsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteTagsRequest *)deleteTagsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteTagsRequest *)deleteTagsRequest;
 
 
 @end

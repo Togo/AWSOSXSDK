@@ -20,21 +20,17 @@
  * Group Identifier
  */
 
-@interface EC2GroupIdentifier:NSObject
-
-{
+@interface EC2GroupIdentifier : NSObject {
     NSString *groupName;
     NSString *groupId;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  *
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -18,27 +18,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Addresses Request
  */
 
-@interface EC2DescribeAddressesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeAddressesRequest : AmazonServiceRequestConfig {
     NSMutableArray *publicIps;
     NSMutableArray *filters;
     NSMutableArray *allocationIds;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The optional list of Elastic IP addresses to describe.
@@ -63,19 +58,19 @@
  * Adds a single object to publicIps.
  * This function will alloc and init publicIps if not already done.
  */
--(void)addPublicIp:(NSString *)publicIpObject;
+- (void)addPublicIp:(NSString *)publicIpObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Adds a single object to allocationIds.
  * This function will alloc and init allocationIds if not already done.
  */
--(void)addAllocationId:(NSString *)allocationIdObject;
+- (void)addAllocationId:(NSString *)allocationIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -83,7 +78,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

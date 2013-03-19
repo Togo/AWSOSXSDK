@@ -23,7 +23,7 @@
 /**
  * L B Cookie Stickiness Policy Unmarshaller
  */
-@interface ElasticLoadBalancingLBCookieStickinessPolicyUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingLBCookieStickinessPolicyUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingLBCookieStickinessPolicy *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingLBCookieStickinessPolicy *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

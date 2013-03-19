@@ -17,38 +17,33 @@
 #import "EC2BlockDeviceMapping.h"
 
 
-
 /**
  * Import Instance Launch Specification
  */
 
-@interface EC2ImportInstanceLaunchSpecification:NSObject
-
-{
-    NSString       *architecture;
+@interface EC2ImportInstanceLaunchSpecification : NSObject {
+    NSString *architecture;
     NSMutableArray *securityGroups;
-    NSString       *additionalInfo;
-    NSString       *userData;
-    NSString       *instanceType;
-    EC2Placement   *placement;
+    NSString *additionalInfo;
+    NSString *userData;
+    NSString *instanceType;
+    EC2Placement *placement;
     NSMutableArray *blockDeviceMappings;
-    bool           monitoring;
-    bool           monitoringIsSet;
-    NSString       *subnetId;
-    bool           disableApiTermination;
-    bool           disableApiTerminationIsSet;
-    NSString       *instanceInitiatedShutdownBehavior;
-    NSString       *privateIpAddress;
+    bool monitoring;
+    bool monitoringIsSet;
+    NSString *subnetId;
+    bool disableApiTermination;
+    bool disableApiTerminationIsSet;
+    NSString *instanceInitiatedShutdownBehavior;
+    NSString *privateIpAddress;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Architecture property for this object.
@@ -92,7 +87,7 @@
 /**
  * The value of the Monitoring property for this object.
  */
-@property (nonatomic) bool           monitoring;
+@property (nonatomic) bool monitoring;
 
 @property (nonatomic, readonly) bool monitoringIsSet;
 
@@ -104,7 +99,7 @@
 /**
  * The value of the DisableApiTermination property for this object.
  */
-@property (nonatomic) bool           disableApiTermination;
+@property (nonatomic) bool disableApiTermination;
 
 @property (nonatomic, readonly) bool disableApiTerminationIsSet;
 
@@ -122,13 +117,13 @@
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -136,7 +131,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

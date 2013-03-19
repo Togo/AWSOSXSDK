@@ -16,15 +16,12 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The specified domain does not exist.
  * </p>
  */
-@interface SimpleDBNoSuchDomainException:AmazonServiceException
-{
+@interface SimpleDBNoSuchDomainException : AmazonServiceException {
     NSNumber *boxUsage;
 }
 
@@ -35,11 +32,7 @@
 @property (nonatomic, strong) NSNumber *boxUsage;
 
 
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -48,7 +41,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

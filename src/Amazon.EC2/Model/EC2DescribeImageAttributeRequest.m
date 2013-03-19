@@ -22,20 +22,18 @@
 @synthesize attribute;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId   = nil;
+        imageId = nil;
         attribute = nil;
     }
 
     return self;
 }
 
--(id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute
-{
+- (id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute {
     if (self = [self init]) {
-        self.imageId   = theImageId;
+        self.imageId = theImageId;
         self.attribute = theAttribute;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

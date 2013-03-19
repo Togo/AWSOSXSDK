@@ -20,21 +20,17 @@
  * Product Code
  */
 
-@interface EC2ProductCode:NSObject
-
-{
+@interface EC2ProductCode : NSObject {
     NSString *productCodeId;
     NSString *productCodeType;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of an AWS DevPay product code.
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

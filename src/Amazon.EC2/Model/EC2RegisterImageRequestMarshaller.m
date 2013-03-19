@@ -17,12 +17,11 @@
 
 @implementation EC2RegisterImageRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2RegisterImageRequest *)registerImageRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2RegisterImageRequest *)registerImageRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"RegisterImage"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"RegisterImage" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[registerImageRequest delegate]];
     [request setCredentials:[registerImageRequest credentials]];
@@ -92,7 +91,7 @@
                 }
                 if (ebs != nil) {
                     if (ebs.deleteOnTerminationIsSet) {
-                        [request setParameterValue:(ebs.deleteOnTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
+                        [request setParameterValue:(ebs.deleteOnTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%@", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
                     }
                 }
                 if (ebs != nil) {

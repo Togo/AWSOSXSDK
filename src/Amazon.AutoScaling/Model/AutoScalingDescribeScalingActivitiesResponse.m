@@ -22,19 +22,17 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         activities = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken  = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidNextToken"]) {
@@ -51,15 +49,12 @@
 }
 
 
-
--(AutoScalingActivity *)activitiesObjectAtIndex:(int)index
-{
-    return (AutoScalingActivity *)[activities objectAtIndex:index];
+- (AutoScalingActivity *)activitiesObjectAtIndex:(int)index {
+    return (AutoScalingActivity *) [activities objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +65,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

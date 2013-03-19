@@ -18,32 +18,27 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Metric Statistics Request
  */
 
-@interface CloudWatchGetMetricStatisticsRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *namespace;
-    NSString       *metricName;
+@interface CloudWatchGetMetricStatisticsRequest : AmazonServiceRequestConfig {
+    NSString *namespace;
+    NSString *metricName;
     NSMutableArray *dimensions;
-    NSDate         *startTime;
-    NSDate         *endTime;
-    NSNumber       *period;
+    NSDate *startTime;
+    NSDate *endTime;
+    NSNumber *period;
     NSMutableArray *statistics;
-    NSString       *unit;
+    NSString *unit;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The namespace of the metric, with or without spaces.
@@ -124,13 +119,13 @@
  * Adds a single object to dimensions.
  * This function will alloc and init dimensions if not already done.
  */
--(void)addDimension:(CloudWatchDimension *)dimensionObject;
+- (void)addDimension:(CloudWatchDimension *)dimensionObject;
 
 /**
  * Adds a single object to statistics.
  * This function will alloc and init statistics if not already done.
  */
--(void)addStatistic:(NSString *)statisticObject;
+- (void)addStatistic:(NSString *)statisticObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -138,7 +133,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

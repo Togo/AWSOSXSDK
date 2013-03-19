@@ -22,20 +22,18 @@
 @synthesize receiptHandle;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueUrl      = nil;
+        queueUrl = nil;
         receiptHandle = nil;
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle {
     if (self = [self init]) {
-        self.queueUrl      = theQueueUrl;
+        self.queueUrl = theQueueUrl;
         self.receiptHandle = theReceiptHandle;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

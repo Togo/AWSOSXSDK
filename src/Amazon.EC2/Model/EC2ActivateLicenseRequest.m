@@ -22,30 +22,26 @@
 @synthesize capacity;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         licenseId = nil;
-        capacity  = nil;
+        capacity = nil;
     }
 
     return self;
 }
 
--(id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity
-{
+- (id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity {
     if (self = [self init]) {
         self.licenseId = theLicenseId;
-        self.capacity  = theCapacity;
+        self.capacity = theCapacity;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

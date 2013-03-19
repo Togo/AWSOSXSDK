@@ -16,8 +16,6 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * A queue already exists with this name. SQS returns this error only if
@@ -25,17 +23,11 @@
  * existing queue.
  * </p>
  */
-@interface SQSQueueNameExistsException:AmazonServiceException
-{
+@interface SQSQueueNameExistsException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -44,7 +36,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

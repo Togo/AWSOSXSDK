@@ -20,6 +20,7 @@
 /** Request parameters for GetObjectMetadata request.
  *
  */
-@interface S3GetObjectMetadataRequest:S3GetObjectRequest {}
+@interface S3GetObjectMetadataRequest : S3GetObjectRequest {
+}
 
 @end

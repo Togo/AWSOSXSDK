@@ -28,26 +28,23 @@
 @synthesize privateIpAddress;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId              = nil;
-        publicIp                = nil;
-        allocationId            = nil;
-        associationId           = nil;
-        domain                  = nil;
-        networkInterfaceId      = nil;
+        instanceId = nil;
+        publicIp = nil;
+        allocationId = nil;
+        associationId = nil;
+        domain = nil;
+        networkInterfaceId = nil;
         networkInterfaceOwnerId = nil;
-        privateIpAddress        = nil;
+        privateIpAddress = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

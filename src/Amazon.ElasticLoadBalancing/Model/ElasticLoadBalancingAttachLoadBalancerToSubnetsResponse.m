@@ -21,8 +21,7 @@
 @synthesize subnets;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         subnets = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidSubnet"]) {
@@ -61,15 +59,12 @@
 }
 
 
-
--(NSString *)subnetsObjectAtIndex:(int)index
-{
-    return (NSString *)[subnets objectAtIndex:index];
+- (NSString *)subnetsObjectAtIndex:(int)index {
+    return (NSString *) [subnets objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -79,9 +74,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

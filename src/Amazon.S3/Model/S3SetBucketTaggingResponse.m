@@ -15,8 +15,7 @@
 
 #import "S3SetBucketTaggingResponse.h"
 
-@implementation S3SetBucketTaggingResponse
-{
+@implementation S3SetBucketTaggingResponse {
 }
 
 @end

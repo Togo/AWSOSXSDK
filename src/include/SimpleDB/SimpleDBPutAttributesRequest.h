@@ -19,20 +19,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Attributes Request
  */
 
-@interface SimpleDBPutAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString                *domainName;
-    NSString                *itemName;
-    NSMutableArray          *attributes;
+@interface SimpleDBPutAttributesRequest : AmazonServiceRequestConfig {
+    NSString *domainName;
+    NSString *itemName;
+    NSMutableArray *attributes;
     SimpleDBUpdateCondition *expected;
 }
-
 
 
 /**
@@ -63,7 +59,7 @@
  * Default constructor for a new PutAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new PutAttributesRequest object.
@@ -74,7 +70,7 @@
  * @param theItemName The name of the item.
  * @param theAttributes The list of attributes.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes;
 
 /**
  * Constructs a new PutAttributesRequest object.
@@ -89,13 +85,13 @@
  * The update condition must be satisfied in order for this request to be
  * processed and the attributes to be updated.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected;
 
 /**
  * Adds a single object to attributes.
  * This function will alloc and init attributes if not already done.
  */
--(void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject;
+- (void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -103,7 +99,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

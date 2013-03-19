@@ -22,11 +22,11 @@
 /**
  * Unsubscribe Request Marshaller
  */
-@interface SNSUnsubscribeRequestMarshaller:NSObject {
+@interface SNSUnsubscribeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSUnsubscribeRequest *)unsubscribeRequest;
++ (AmazonServiceRequest *)createRequest:(SNSUnsubscribeRequest *)unsubscribeRequest;
 
 
 @end

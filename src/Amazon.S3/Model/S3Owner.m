@@ -20,18 +20,16 @@
 @synthesize ID;
 @synthesize displayName;
 
--(id)initWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName
-{
+- (id)initWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName {
     self = [super init];
     if (self) {
-        self.ID          = theID;
+        self.ID = theID;
         self.displayName = theDisplayName;
     }
     return self;
 }
 
-+(id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName
-{
++ (id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName {
     return [[S3Owner alloc] initWithID:theID withDisplayName:theDisplayName];
 }
 

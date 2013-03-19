@@ -18,40 +18,35 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Metric Alarm Request
  */
 
-@interface CloudWatchPutMetricAlarmRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *alarmName;
-    NSString       *alarmDescription;
-    bool           actionsEnabled;
-    bool           actionsEnabledIsSet;
+@interface CloudWatchPutMetricAlarmRequest : AmazonServiceRequestConfig {
+    NSString *alarmName;
+    NSString *alarmDescription;
+    bool actionsEnabled;
+    bool actionsEnabledIsSet;
     NSMutableArray *oKActions;
     NSMutableArray *alarmActions;
     NSMutableArray *insufficientDataActions;
-    NSString       *metricName;
-    NSString       *namespace;
-    NSString       *statistic;
+    NSString *metricName;
+    NSString *namespace;
+    NSString *statistic;
     NSMutableArray *dimensions;
-    NSNumber       *period;
-    NSString       *unit;
-    NSNumber       *evaluationPeriods;
-    NSNumber       *threshold;
-    NSString       *comparisonOperator;
+    NSNumber *period;
+    NSString *unit;
+    NSNumber *evaluationPeriods;
+    NSNumber *threshold;
+    NSString *comparisonOperator;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The descriptive name for the alarm. This name must be unique within
@@ -74,7 +69,7 @@
  * Indicates whether or not actions should be executed during any changes
  * to the alarm's state.
  */
-@property (nonatomic) bool           actionsEnabled;
+@property (nonatomic) bool actionsEnabled;
 
 @property (nonatomic, readonly) bool actionsEnabledIsSet;
 
@@ -191,25 +186,25 @@
  * Adds a single object to oKActions.
  * This function will alloc and init oKActions if not already done.
  */
--(void)addOKAction:(NSString *)oKActionObject;
+- (void)addOKAction:(NSString *)oKActionObject;
 
 /**
  * Adds a single object to alarmActions.
  * This function will alloc and init alarmActions if not already done.
  */
--(void)addAlarmAction:(NSString *)alarmActionObject;
+- (void)addAlarmAction:(NSString *)alarmActionObject;
 
 /**
  * Adds a single object to insufficientDataActions.
  * This function will alloc and init insufficientDataActions if not already done.
  */
--(void)addInsufficientDataAction:(NSString *)insufficientDataActionObject;
+- (void)addInsufficientDataAction:(NSString *)insufficientDataActionObject;
 
 /**
  * Adds a single object to dimensions.
  * This function will alloc and init dimensions if not already done.
  */
--(void)addDimension:(CloudWatchDimension *)dimensionObject;
+- (void)addDimension:(CloudWatchDimension *)dimensionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -217,7 +212,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

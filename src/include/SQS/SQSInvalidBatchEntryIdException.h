@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The <code>Id</code> of a batch entry in a batch request does not abide
  * by the specification.
  * </p>
  */
-@interface SQSInvalidBatchEntryIdException:AmazonServiceException
-{
+@interface SQSInvalidBatchEntryIdException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

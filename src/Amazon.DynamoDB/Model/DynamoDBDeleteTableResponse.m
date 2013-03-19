@@ -21,8 +21,7 @@
 @synthesize tableDescription;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         tableDescription = nil;
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ResourceInUseException"]) {
@@ -61,9 +59,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

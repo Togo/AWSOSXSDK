@@ -31,34 +31,29 @@
 @synthesize commonPrefixes;
 
 
--(void)setVersionSummaries:(NSMutableArray *)theSummaries
-{
+- (void)setVersionSummaries:(NSMutableArray *)theSummaries {
     versionSummaries = theSummaries;
 }
 
--(NSMutableArray *)versionSummaries
-{
+- (NSMutableArray *)versionSummaries {
     if (nil == versionSummaries) {
         versionSummaries = [[NSMutableArray alloc] init];
     }
     return versionSummaries;
 }
 
--(void)setCommonPrefixes:(NSMutableArray *)prefixes
-{
+- (void)setCommonPrefixes:(NSMutableArray *)prefixes {
     commonPrefixes = prefixes;
 }
 
--(NSMutableArray *)commonPrefixes
-{
+- (NSMutableArray *)commonPrefixes {
     if (nil == commonPrefixes) {
         commonPrefixes = [[NSMutableArray alloc] init];
     }
     return commonPrefixes;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -71,7 +66,7 @@
     [buffer appendString:[[NSString alloc] initWithFormat:@"Version Id Marker: %@,", versionIdMarker]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Next Version Id Marker: %@,", nextVersionIdMarker]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter]];
-    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long) maxKeys]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
@@ -79,12 +74,10 @@
     return buffer;
 }
 
--(void)addDeleteMarker:(S3VersionSummary *)deleteMarker
-{
+- (void)addDeleteMarker:(S3VersionSummary *)deleteMarker {
     deleteMarker.isDeleteMarker = YES;
     [self.versionSummaries addObject:deleteMarker];
 }
-
 
 
 @end

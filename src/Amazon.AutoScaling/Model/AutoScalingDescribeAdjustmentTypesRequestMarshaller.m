@@ -17,18 +17,16 @@
 
 @implementation AutoScalingDescribeAdjustmentTypesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeAdjustmentTypes"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAdjustmentTypes" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeAdjustmentTypesRequest delegate]];
     [request setCredentials:[describeAdjustmentTypesRequest credentials]];
     [request setEndpoint:[describeAdjustmentTypesRequest requestEndpoint]];
     [request setRequestTag:[describeAdjustmentTypesRequest requestTag]];
-
 
 
     return request;

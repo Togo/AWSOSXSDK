@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * One or more specified security groups do not exist.
  * </p>
  */
-@interface ElasticLoadBalancingInvalidSecurityGroupException:AmazonServiceException
-{
+@interface ElasticLoadBalancingInvalidSecurityGroupException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

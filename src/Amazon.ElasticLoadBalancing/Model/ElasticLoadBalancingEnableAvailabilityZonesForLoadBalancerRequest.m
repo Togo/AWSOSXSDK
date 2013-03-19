@@ -22,20 +22,18 @@
 @synthesize availabilityZones;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        loadBalancerName  = nil;
+        loadBalancerName = nil;
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andAvailabilityZones:(NSMutableArray *)theAvailabilityZones
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andAvailabilityZones:(NSMutableArray *)theAvailabilityZones {
     if (self = [self init]) {
-        self.loadBalancerName  = theLoadBalancerName;
+        self.loadBalancerName = theLoadBalancerName;
         self.availabilityZones = theAvailabilityZones;
     }
 
@@ -43,8 +41,7 @@
 }
 
 
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject
-{
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject {
     if (availabilityZones == nil) {
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

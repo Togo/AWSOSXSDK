@@ -20,8 +20,7 @@
 /**
  * Delete Security Group
  */
-@interface EC2DeleteSecurityGroupResponse:EC2Response
-{
+@interface EC2DeleteSecurityGroupResponse : EC2Response {
 }
 
 @end

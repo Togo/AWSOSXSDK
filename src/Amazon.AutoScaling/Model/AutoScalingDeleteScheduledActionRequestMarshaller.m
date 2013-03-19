@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeleteScheduledActionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteScheduledAction"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteScheduledAction" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deleteScheduledActionRequest delegate]];
     [request setCredentials:[deleteScheduledActionRequest credentials]];

@@ -17,7 +17,7 @@
 #import "AmazonClientException.h"
 
 /** Exception for request signing errors */
-@interface AmazonSignatureException:AmazonClientException {
+@interface AmazonSignatureException : AmazonClientException {
 }
 
 @end

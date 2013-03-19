@@ -22,11 +22,11 @@
 /**
  * Create Key Pair Request Marshaller
  */
-@interface EC2CreateKeyPairRequestMarshaller:NSObject {
+@interface EC2CreateKeyPairRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateKeyPairRequest *)createKeyPairRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CreateKeyPairRequest *)createKeyPairRequest;
 
 
 @end

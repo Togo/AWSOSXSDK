@@ -20,13 +20,10 @@
  * Federated User
  */
 
-@interface SecurityTokenServiceFederatedUser:NSObject
-
-{
+@interface SecurityTokenServiceFederatedUser : NSObject {
     NSString *federatedUserId;
     NSString *arn;
 }
-
 
 
 /**
@@ -56,7 +53,7 @@
  * Default constructor for a new FederatedUser object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new FederatedUser object.
@@ -70,7 +67,7 @@
  * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
  * target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>.
  */
--(id)initWithFederatedUserId:(NSString *)theFederatedUserId andArn:(NSString *)theArn;
+- (id)initWithFederatedUserId:(NSString *)theFederatedUserId andArn:(NSString *)theArn;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -78,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

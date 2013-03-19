@@ -24,15 +24,15 @@
 /** contains the parameters used for the getObject operation.
  *
  */
-@interface S3GetObjectRequest:S3Request {
-    int64_t                   rangeStart, rangeEnd;
-    bool                      rangeSet;
-    NSDate                    *ifModifiedSince;
-    NSDate                    *ifUnmodifiedSince;
-    NSString                  *ifMatch;
-    NSString                  *ifNoneMatch;
-    NSString                  *versionId;
-    NSOutputStream            *__weak outputStream;
+@interface S3GetObjectRequest : S3Request {
+    int64_t rangeStart, rangeEnd;
+    bool rangeSet;
+    NSDate *ifModifiedSince;
+    NSDate *ifUnmodifiedSince;
+    NSString *ifMatch;
+    NSString *ifNoneMatch;
+    NSString *versionId;
+    NSOutputStream *__weak outputStream;
     S3ResponseHeaderOverrides *responseHeaderOverrides;
 }
 
@@ -72,15 +72,15 @@
 @property (nonatomic, strong) S3ResponseHeaderOverrides *responseHeaderOverrides;
 
 /** Initialize the request setting the key and bucketName properties. */
--(S3GetObjectRequest *)initWithKey:(NSString *)key withBucket:(NSString *)bucket;
+- (S3GetObjectRequest *)initWithKey:(NSString *)key withBucket:(NSString *)bucket;
 
 /** Initialize the request setting the key, bucketName and versionId properties. */
--(S3GetObjectRequest *)initWithKey:(NSString *)key withBucket:(NSString *)bucket withVersionId:(NSString *)versionId;
+- (S3GetObjectRequest *)initWithKey:(NSString *)key withBucket:(NSString *)bucket withVersionId:(NSString *)versionId;
 
 /** sets the start and end of the range. */
--(void)setRangeStart:(int64_t)start rangeEnd:(int64_t)end;
+- (void)setRangeStart:(int64_t)start rangeEnd:(int64_t)end;
 
 /** returns the range in the form 'bytes=start:end' */
--(NSString *)getRange;
+- (NSString *)getRange;
 
 @end

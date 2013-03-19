@@ -17,12 +17,11 @@
 
 @implementation EC2ModifyVolumeAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ModifyVolumeAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ModifyVolumeAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[modifyVolumeAttributeRequest delegate]];
     [request setCredentials:[modifyVolumeAttributeRequest credentials]];
@@ -36,7 +35,7 @@
     }
     if (modifyVolumeAttributeRequest != nil) {
         if (modifyVolumeAttributeRequest.autoEnableIOIsSet) {
-            [request setParameterValue:(modifyVolumeAttributeRequest.autoEnableIO ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"AutoEnableIO.Value"]];
+            [request setParameterValue:(modifyVolumeAttributeRequest.autoEnableIO ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"AutoEnableIO.Value"]];
         }
     }
 

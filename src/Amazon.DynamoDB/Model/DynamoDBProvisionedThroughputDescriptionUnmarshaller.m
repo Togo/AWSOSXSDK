@@ -21,10 +21,8 @@
 @implementation DynamoDBProvisionedThroughputDescriptionUnmarshaller
 
 
-+(DynamoDBProvisionedThroughputDescription *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBProvisionedThroughputDescription *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBProvisionedThroughputDescription *provisionedThroughputDescription = [[DynamoDBProvisionedThroughputDescription alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"LastIncreaseDateTime"] != nil) {

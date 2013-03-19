@@ -17,15 +17,17 @@
 #import "AmazonUnmarshallerXMLParserDelegate.h"
 #import "AmazonServiceException.h"
 
-@interface AmazonServiceExceptionUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface AmazonServiceExceptionUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     AmazonServiceException *exception;
 }
 
 @property (weak, nonatomic, readonly) AmazonServiceException *exception;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
--(NSString *)serviceName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (NSString *)serviceName;
 
 @end

@@ -23,18 +23,15 @@
 @synthesize urlConnection;
 @synthesize requestTag;
 
--(void)setDelegate:(id<AmazonServiceRequestDelegate> )aDelegate;
-{
+- (void)setDelegate:(id <AmazonServiceRequestDelegate>)aDelegate; {
     delegate = aDelegate;
 }
 
--(id<AmazonServiceRequestDelegate> )delegate
-{
+- (id <AmazonServiceRequestDelegate>)delegate {
     return delegate;
 }
 
--(void)dealloc
-{
+- (void)dealloc {
     delegate = nil;
 }
 

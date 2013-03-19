@@ -23,15 +23,14 @@
 @synthesize lastModified;
 
 
--(void)processBody
-{
-    NSXMLParser                  *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3CopyPartResultUnmarshaller *unmarshaller = [[S3CopyPartResultUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];
     [parser parse];
 
-    self.etag         = unmarshaller.partCopyResult.etag;
+    self.etag = unmarshaller.partCopyResult.etag;
     self.lastModified = [NSDate dateWithISO8061Format:unmarshaller.partCopyResult.lastModified];
 
 }

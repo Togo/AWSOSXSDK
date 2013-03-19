@@ -22,11 +22,11 @@
 /**
  * List Identities Request Marshaller
  */
-@interface SESListIdentitiesRequestMarshaller:NSObject {
+@interface SESListIdentitiesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESListIdentitiesRequest *)listIdentitiesRequest;
++ (AmazonServiceRequest *)createRequest:(SESListIdentitiesRequest *)listIdentitiesRequest;
 
 
 @end

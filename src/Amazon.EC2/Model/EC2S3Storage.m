@@ -25,13 +25,12 @@
 @synthesize uploadPolicySignature;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        bucket                = nil;
-        prefix                = nil;
-        aWSAccessKeyId        = nil;
-        uploadPolicy          = nil;
+        bucket = nil;
+        prefix = nil;
+        aWSAccessKeyId = nil;
+        uploadPolicy = nil;
         uploadPolicySignature = nil;
     }
 
@@ -39,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

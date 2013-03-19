@@ -22,11 +22,11 @@
 /**
  * Copy Image Request Marshaller
  */
-@interface EC2CopyImageRequestMarshaller:NSObject {
+@interface EC2CopyImageRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CopyImageRequest *)copyImageRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CopyImageRequest *)copyImageRequest;
 
 
 @end

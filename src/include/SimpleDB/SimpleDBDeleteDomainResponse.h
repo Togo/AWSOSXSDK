@@ -21,8 +21,7 @@
 /**
  * Delete Domain
  */
-@interface SimpleDBDeleteDomainResponse:SimpleDBResponse
-{
+@interface SimpleDBDeleteDomainResponse : SimpleDBResponse {
 }
 
 @end

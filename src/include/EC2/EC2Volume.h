@@ -17,34 +17,29 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Volume
  */
 
-@interface EC2Volume:NSObject
-
-{
-    NSString       *volumeId;
-    NSNumber       *size;
-    NSString       *snapshotId;
-    NSString       *availabilityZone;
-    NSString       *state;
-    NSDate         *createTime;
+@interface EC2Volume : NSObject {
+    NSString *volumeId;
+    NSNumber *size;
+    NSString *snapshotId;
+    NSString *availabilityZone;
+    NSString *state;
+    NSDate *createTime;
     NSMutableArray *attachments;
     NSMutableArray *tags;
-    NSString       *volumeType;
-    NSNumber       *iops;
+    NSString *volumeType;
+    NSNumber *iops;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of this volume.
@@ -106,13 +101,13 @@
  * Adds a single object to attachments.
  * This function will alloc and init attachments if not already done.
  */
--(void)addAttachment:(EC2VolumeAttachment *)attachmentObject;
+- (void)addAttachment:(EC2VolumeAttachment *)attachmentObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -120,7 +115,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -20,8 +20,7 @@
 /**
  * Enable Alarm Actions
  */
-@interface CloudWatchEnableAlarmActionsResponse:CloudWatchResponse
-{
+@interface CloudWatchEnableAlarmActionsResponse : CloudWatchResponse {
 }
 
 @end

@@ -17,51 +17,49 @@
 
 @implementation AmazonAbstractJsonWebServiceClient
 
--(AmazonServiceResponse *)invoke:(AmazonServiceRequest *)generatedRequest rawRequest:(AmazonServiceRequestConfig *)originalRequest unmarshallerDelegate:(Class)unmarshallerDelegate
-{
+- (AmazonServiceResponse *)invoke:(AmazonServiceRequest *)generatedRequest rawRequest:(AmazonServiceRequestConfig *)originalRequest unmarshallerDelegate:(Class)unmarshallerDelegate {
     if (nil == generatedRequest) {
         return [self nilRequestResponse];
     }
-    
+
     [generatedRequest setUserAgent:self.userAgent];
-    
+
     if (nil == generatedRequest.endpoint) {
         generatedRequest.endpoint = [self endpoint];
     }
     if (nil == generatedRequest.credentials) {
-        [generatedRequest setCredentials: [self.provider credentials]];
+        [generatedRequest setCredentials:[self.provider credentials]];
     }
-    
+
     NSMutableURLRequest *urlRequest = [generatedRequest configureURLRequest];
     [urlRequest setValue:@"" forHTTPHeaderField:@"Accept-Encoding"];
-    
+
     [self logTheRequest:urlRequest];
-    
+
     AmazonServiceResponse *response = nil;
     int retries = 0;
     while (retries < self.maxRetries) {
         AMZLogDebug(@"Begin Request: %@:%d", NSStringFromClass([generatedRequest class]), retries);
-        
+
         response = [self createResponse:generatedRequest withUnmarshallerDelegate:unmarshallerDelegate];
         [self setupRequestTimeout:urlRequest];
         [self logTheRequestHeaders:urlRequest];
- 
+
         if ([generatedRequest delegate] != nil) {
             [self startAsyncRequest:urlRequest response:response originalRequest:originalRequest];
             return nil;
         }
-                    
+
         [self startSyncRequest:generatedRequest forRequest:urlRequest response:response originalRequest:originalRequest];
-        
-        AMZLogDebug(@"Response Status Code : %ld", (long)response.httpStatusCode);
-        if ( [self shouldRetry:response exception:((AmazonRequestDelegate *)generatedRequest.delegate).exception]) {
+
+        AMZLogDebug(@"Response Status Code : %ld", (long) response.httpStatusCode);
+        if ([self shouldRetry:response exception:((AmazonRequestDelegate *) generatedRequest.delegate).exception]) {
             AMZLog(@"Retring Request: %d", retries);
-            
+
             [self pauseExponentially:retries];
             retries++;
-            
-            if (retries < self.maxRetries)
-            {
+
+            if (retries < self.maxRetries) {
                 generatedRequest.delegate = nil;
             }
         }
@@ -69,7 +67,7 @@
             break;
         }
     }
-    
+
     return [self returnErrorOrResponse:response forRequest:generatedRequest];
 }
 

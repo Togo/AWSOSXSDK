@@ -21,8 +21,7 @@
 @synthesize versioningConfiguration;
 @synthesize mfa;
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     // This needs to be done before the superclass's implementation so that
     // it gets put into the URL.
     [self setSubResource:kS3SubResourceVersioning];
@@ -41,7 +40,7 @@
     NSData *data = [[[self versioningConfiguration] toXml] dataUsingEncoding:NSUTF8StringEncoding];
     [[self urlRequest] setHTTPBody:data];
     if (self.contentLength < 1) {
-        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
+        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [data length]] forHTTPHeaderField:kHttpHdrContentLength];
     }
 
     return self.urlRequest;

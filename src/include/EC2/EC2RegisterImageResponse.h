@@ -17,27 +17,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Register Image Response
  */
 
-@interface EC2RegisterImageResponse:EC2Response
-
-{
+@interface EC2RegisterImageResponse : EC2Response {
     NSString *imageId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the new Amazon Machine Image (AMI).
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

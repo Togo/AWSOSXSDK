@@ -17,29 +17,25 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Get Password Data Response
  */
 
-@interface EC2GetPasswordDataResponse:EC2Response
-
-{
+@interface EC2GetPasswordDataResponse : EC2Response {
     NSString *instanceId;
-    NSDate   *timestamp;
+    NSDate *timestamp;
     NSString *passwordData;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the instance whose Windows administrator password was
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

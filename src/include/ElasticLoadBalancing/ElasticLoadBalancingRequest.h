@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface ElasticLoadBalancingRequest:AmazonServiceRequest {
+@interface ElasticLoadBalancingRequest : AmazonServiceRequest {
 }
 
 @end

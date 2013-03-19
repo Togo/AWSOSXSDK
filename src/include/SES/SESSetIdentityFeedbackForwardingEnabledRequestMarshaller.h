@@ -22,11 +22,11 @@
 /**
  * Set Identity Feedback Forwarding Enabled Request Marshaller
  */
-@interface SESSetIdentityFeedbackForwardingEnabledRequestMarshaller:NSObject {
+@interface SESSetIdentityFeedbackForwardingEnabledRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest;
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest;
 
 
 @end

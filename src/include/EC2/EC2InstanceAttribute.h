@@ -17,37 +17,32 @@
 #import "EC2ProductCode.h"
 
 
-
 /**
  * Instance Attribute
  */
 
-@interface EC2InstanceAttribute:NSObject
-
-{
-    NSString       *instanceId;
-    NSString       *instanceType;
-    NSString       *kernelId;
-    NSString       *ramdiskId;
-    NSString       *userData;
-    bool           disableApiTermination;
-    bool           disableApiTerminationIsSet;
-    NSString       *instanceInitiatedShutdownBehavior;
-    NSString       *rootDeviceName;
+@interface EC2InstanceAttribute : NSObject {
+    NSString *instanceId;
+    NSString *instanceType;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSString *userData;
+    bool disableApiTermination;
+    bool disableApiTerminationIsSet;
+    NSString *instanceInitiatedShutdownBehavior;
+    NSString *rootDeviceName;
     NSMutableArray *blockDeviceMappings;
     NSMutableArray *productCodes;
-    bool           ebsOptimized;
-    bool           ebsOptimizedIsSet;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the associated instance.
@@ -79,7 +74,7 @@
  * Whether this instance can be terminated. You must modify this
  * attribute before you can terminate any "locked" instances.
  */
-@property (nonatomic) bool           disableApiTermination;
+@property (nonatomic) bool disableApiTermination;
 
 @property (nonatomic, readonly) bool disableApiTerminationIsSet;
 
@@ -108,7 +103,7 @@
 /**
  * Boolean value
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -116,13 +111,13 @@
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to productCodes.
  * This function will alloc and init productCodes if not already done.
  */
--(void)addProductCode:(EC2ProductCode *)productCodeObject;
+- (void)addProductCode:(EC2ProductCode *)productCodeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -130,7 +125,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

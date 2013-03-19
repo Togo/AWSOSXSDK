@@ -21,10 +21,8 @@
 @implementation DynamoDBKeySchemaElementUnmarshaller
 
 
-+(DynamoDBKeySchemaElement *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBKeySchemaElement *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBKeySchemaElement *keySchemaElement = [[DynamoDBKeySchemaElement alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"AttributeName"] != nil) {

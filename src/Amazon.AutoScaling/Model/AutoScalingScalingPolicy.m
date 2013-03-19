@@ -28,25 +28,23 @@
 @synthesize minAdjustmentStep;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        policyName           = nil;
-        scalingAdjustment    = nil;
-        adjustmentType       = nil;
-        cooldown             = nil;
-        policyARN            = nil;
-        alarms               = [[NSMutableArray alloc] initWithCapacity:1];
-        minAdjustmentStep    = nil;
+        policyName = nil;
+        scalingAdjustment = nil;
+        adjustmentType = nil;
+        cooldown = nil;
+        policyARN = nil;
+        alarms = [[NSMutableArray alloc] initWithCapacity:1];
+        minAdjustmentStep = nil;
     }
 
     return self;
 }
 
 
--(void)addAlarm:(AutoScalingAlarm *)alarmObject
-{
+- (void)addAlarm:(AutoScalingAlarm *)alarmObject {
     if (alarms == nil) {
         alarms = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -55,8 +53,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +70,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

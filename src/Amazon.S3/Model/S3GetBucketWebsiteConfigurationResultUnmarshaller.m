@@ -21,26 +21,21 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
-    if ([elementName isEqualToString:@"Suffix"])
-    {
+    if ([elementName isEqualToString:@"Suffix"]) {
         self.configuration.indexDocumentSuffix = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Key"])
-    {
+    else if ([elementName isEqualToString:@"Key"]) {
         self.configuration.errorDocument = self.currentText;
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(BucketWebsiteConfiguration *)configuration
-{
-    if (nil == configuration)
-    {
+- (BucketWebsiteConfiguration *)configuration {
+    if (nil == configuration) {
         configuration = [[BucketWebsiteConfiguration alloc] init];
     }
     return configuration;

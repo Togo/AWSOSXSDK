@@ -22,11 +22,11 @@
 /**
  * Remove Permission Request Marshaller
  */
-@interface SQSRemovePermissionRequestMarshaller:NSObject {
+@interface SQSRemovePermissionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSRemovePermissionRequest *)removePermissionRequest;
++ (AmazonServiceRequest *)createRequest:(SQSRemovePermissionRequest *)removePermissionRequest;
 
 
 @end

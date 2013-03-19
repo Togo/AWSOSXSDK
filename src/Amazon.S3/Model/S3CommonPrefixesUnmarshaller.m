@@ -21,11 +21,10 @@
 #pragma mark NSXMLParserDelegate implementation
 
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Prefix"]) {
@@ -48,10 +47,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(NSMutableArray *)commonPrefixes
-{
-    if (nil == commonPrefixes)
-    {
+- (NSMutableArray *)commonPrefixes {
+    if (nil == commonPrefixes) {
         commonPrefixes = [[NSMutableArray alloc] initWithCapacity:1];
     }
     return commonPrefixes;

@@ -25,8 +25,8 @@
  * </p>
  *
  */
-@interface S3Grant:NSObject {
-    S3Grantee    *grantee;
+@interface S3Grant : NSObject {
+    S3Grantee *grantee;
     S3Permission *permission;
 }
 
@@ -42,7 +42,7 @@
  *
  * @return An initialized object representing the grant.
  */
--(id)initWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission;
+- (id)initWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission;
 
 /** Returns an initialized instance with the specified grantee and permission
  * @param theGrantee The grantee for the grant.
@@ -50,9 +50,9 @@
  *
  * @return An initialized object representing the grant.
  */
-+(id)grantWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission;
++ (id)grantWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission;
 
 /** Returns the XML represenation of the grant. */
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

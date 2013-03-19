@@ -16,17 +16,17 @@
 #import "EC2CancelConversionTaskResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2CancelConversionTaskResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2CancelConversionTaskResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2CancelConversionTaskResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2CancelConversionTaskResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2CancelConversionTaskResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2CancelConversionTaskResponse *)response;
 
 @end

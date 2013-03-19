@@ -17,12 +17,11 @@
 
 @implementation SNSCreateTopicRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSCreateTopicRequest *)createTopicRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSCreateTopicRequest *)createTopicRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"CreateTopic"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"CreateTopic" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[createTopicRequest delegate]];
     [request setCredentials:[createTopicRequest credentials]];

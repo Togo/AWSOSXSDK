@@ -26,11 +26,11 @@
 /**
  * Describe Images Request Marshaller
  */
-@interface EC2DescribeImagesRequestMarshaller:NSObject {
+@interface EC2DescribeImagesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeImagesRequest *)describeImagesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeImagesRequest *)describeImagesRequest;
 
 
 @end

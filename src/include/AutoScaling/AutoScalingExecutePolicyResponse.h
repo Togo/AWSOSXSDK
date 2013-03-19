@@ -21,8 +21,7 @@
 /**
  * Execute Policy
  */
-@interface AutoScalingExecutePolicyResponse:AutoScalingResponse
-{
+@interface AutoScalingExecutePolicyResponse : AutoScalingResponse {
 }
 
 @end

@@ -18,11 +18,11 @@
 #import "AmazonSDKUtil.h"
 
 /** Represents an AWS Service Exception. */
-@interface AmazonServiceException:AmazonClientException {
-    NSString            *requestId;
-    NSString            *errorCode;
-    NSString            *serviceName;
-    NSInteger           statusCode;
+@interface AmazonServiceException : AmazonClientException {
+    NSString *requestId;
+    NSString *errorCode;
+    NSString *serviceName;
+    NSInteger statusCode;
     NSMutableDictionary *additionalFields;
 }
 
@@ -47,13 +47,13 @@
  *
  * @param theMessage The user-friendly message
  */
-+(id)exceptionWithMessage:(NSString *)theMessage;
++ (id)exceptionWithMessage:(NSString *)theMessage;
 
 /** Return an exception with the given HTTP status code
  *
  * @param theStatusCode The HTTP status code.
  */
-+(id)exceptionWithStatusCode:(NSInteger)theStatusCode;
++ (id)exceptionWithStatusCode:(NSInteger)theStatusCode;
 
 /** Return an exception with the given message, error code, status, and request ID.
  *
@@ -63,7 +63,7 @@
  * @param theRequestId The request ID assigned by the service.
  * @return The exception.
  */
-+(id)exceptionWithMessage:(NSString *)theMessage withErrorCode:(NSString *)theErrorCode withStatusCode:(NSInteger)theStatusCode withRequestId:(NSString *)theRequestId;
++ (id)exceptionWithMessage:(NSString *)theMessage withErrorCode:(NSString *)theErrorCode withStatusCode:(NSInteger)theStatusCode withRequestId:(NSString *)theRequestId;
 
 /** Initialize the exception with a name, reason and userInfo.
  *
@@ -73,10 +73,9 @@
  */
 - (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo;
 
--(void)setPropertiesWithException:(AmazonServiceException *)theException;
+- (void)setPropertiesWithException:(AmazonServiceException *)theException;
 
--(NSString *)description;
-
+- (NSString *)description;
 
 
 @end

@@ -22,8 +22,7 @@
 @synthesize serverSideEncryption;
 @synthesize fullACL;
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     if (nil != self.cannedACL) {
@@ -48,19 +47,16 @@
     return urlRequest;
 }
 
--(NSMutableDictionary *)metadata
-{
+- (NSMutableDictionary *)metadata {
     if (nil == metadata) {
         metadata = [[NSMutableDictionary alloc] init];
     }
     return metadata;
 }
 
--(void) addMetadataWithValue:(NSString *)value forKey:(NSString *)aKey
-{
+- (void)addMetadataWithValue:(NSString *)value forKey:(NSString *)aKey {
     [[self metadata] setValue:value forKey:aKey];
 }
-
 
 
 @end

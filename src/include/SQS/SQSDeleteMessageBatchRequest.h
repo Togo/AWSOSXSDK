@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Message Batch Request
  */
 
-@interface SQSDeleteMessageBatchRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *queueUrl;
+@interface SQSDeleteMessageBatchRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
     NSMutableArray *entries;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new DeleteMessageBatchRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteMessageBatchRequest object.
@@ -55,7 +51,7 @@
  *
  * @param theQueueUrl The URL of the SQS queue to take action on.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl;
 
 /**
  * Constructs a new DeleteMessageBatchRequest object.
@@ -65,13 +61,13 @@
  * @param theEntries A list of receipt handles for the messages to be
  * deleted.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
 
 /**
  * Adds a single object to entries.
  * This function will alloc and init entries if not already done.
  */
--(void)addEntry:(SQSDeleteMessageBatchRequestEntry *)entryObject;
+- (void)addEntry:(SQSDeleteMessageBatchRequestEntry *)entryObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

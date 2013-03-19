@@ -22,11 +22,11 @@
 /**
  * Delete Snapshot Request Marshaller
  */
-@interface EC2DeleteSnapshotRequestMarshaller:NSObject {
+@interface EC2DeleteSnapshotRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteSnapshotRequest *)deleteSnapshotRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteSnapshotRequest *)deleteSnapshotRequest;
 
 
 @end

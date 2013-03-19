@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Conversion Tasks Request
  */
 
-@interface EC2DescribeConversionTasksRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeConversionTasksRequest : AmazonServiceRequestConfig {
     NSMutableArray *filters;
     NSMutableArray *conversionTaskIds;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Filters property for this object.
@@ -53,13 +48,13 @@
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Adds a single object to conversionTaskIds.
  * This function will alloc and init conversionTaskIds if not already done.
  */
--(void)addConversionTaskId:(NSString *)conversionTaskIdObject;
+- (void)addConversionTaskId:(NSString *)conversionTaskIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -67,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

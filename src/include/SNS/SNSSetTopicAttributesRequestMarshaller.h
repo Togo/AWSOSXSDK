@@ -22,11 +22,11 @@
 /**
  * Set Topic Attributes Request Marshaller
  */
-@interface SNSSetTopicAttributesRequestMarshaller:NSObject {
+@interface SNSSetTopicAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest;
 
 
 @end

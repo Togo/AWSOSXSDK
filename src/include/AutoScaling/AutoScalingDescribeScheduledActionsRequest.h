@@ -17,30 +17,25 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Scheduled Actions Request
  */
 
-@interface AutoScalingDescribeScheduledActionsRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
+@interface AutoScalingDescribeScheduledActionsRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
     NSMutableArray *scheduledActionNames;
-    NSDate         *startTime;
-    NSDate         *endTime;
-    NSString       *nextToken;
-    NSNumber       *maxRecords;
+    NSDate *startTime;
+    NSDate *endTime;
+    NSString *nextToken;
+    NSNumber *maxRecords;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -92,7 +87,7 @@
  * Adds a single object to scheduledActionNames.
  * This function will alloc and init scheduledActionNames if not already done.
  */
--(void)addScheduledActionName:(NSString *)scheduledActionNameObject;
+- (void)addScheduledActionName:(NSString *)scheduledActionNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -100,7 +95,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

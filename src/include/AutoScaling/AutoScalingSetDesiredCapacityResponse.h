@@ -21,8 +21,7 @@
 /**
  * Set Desired Capacity
  */
-@interface AutoScalingSetDesiredCapacityResponse:AutoScalingResponse
-{
+@interface AutoScalingSetDesiredCapacityResponse : AutoScalingResponse {
 }
 
 @end

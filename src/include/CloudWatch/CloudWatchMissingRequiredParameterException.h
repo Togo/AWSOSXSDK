@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * An input parameter that is mandatory for processing the request is
  * not supplied.
  * </p>
  */
-@interface CloudWatchMissingRequiredParameterException:AmazonServiceException
-{
+@interface CloudWatchMissingRequiredParameterException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

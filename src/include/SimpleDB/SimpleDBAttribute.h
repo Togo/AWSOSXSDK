@@ -20,15 +20,12 @@
  * Attribute
  */
 
-@interface SimpleDBAttribute:NSObject
-
-{
+@interface SimpleDBAttribute : NSObject {
     NSString *name;
     NSString *alternateNameEncoding;
     NSString *value;
     NSString *alternateValueEncoding;
 }
-
 
 
 /**
@@ -56,7 +53,7 @@
  * Default constructor for a new Attribute object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Attribute object.
@@ -65,7 +62,7 @@
  * @param theName The name of the attribute.
  * @param theValue The value of the attribute.
  */
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue;
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

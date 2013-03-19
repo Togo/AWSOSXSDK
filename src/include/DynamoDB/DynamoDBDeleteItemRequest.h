@@ -19,20 +19,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Item Request
  */
 
-@interface DynamoDBDeleteItemRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *tableName;
-    DynamoDBKey         *key;
+@interface DynamoDBDeleteItemRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    DynamoDBKey *key;
     NSMutableDictionary *expected;
-    NSString            *returnValues;
+    NSString *returnValues;
 }
-
 
 
 /**
@@ -89,7 +85,7 @@
  * Default constructor for a new DeleteItemRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteItemRequest object.
@@ -103,14 +99,14 @@
  * table. A primary key can be a one attribute (hash) primary key or a
  * two attribute (hash-and-range) primary key.
  */
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey;
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey;
 
 
 /**
  * Set a value in the dictionary expected for the specified key.
  * This function will alloc and init expected if not already done.
  */
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -118,7 +114,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

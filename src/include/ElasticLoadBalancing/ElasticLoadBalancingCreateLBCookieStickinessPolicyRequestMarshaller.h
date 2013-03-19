@@ -22,11 +22,11 @@
 /**
  * Create L B Cookie Stickiness Policy Request Marshaller
  */
-@interface ElasticLoadBalancingCreateLBCookieStickinessPolicyRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingCreateLBCookieStickinessPolicyRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest *)createLBCookieStickinessPolicyRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest *)createLBCookieStickinessPolicyRequest;
 
 
 @end

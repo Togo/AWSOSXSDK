@@ -21,15 +21,13 @@
 @synthesize listBucketsResult;
 
 
--(id)init
-{
+- (id)init {
     self = [super init];
     return self;
 }
 
--(void)processBody
-{
-    NSXMLParser                     *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3ListBucketsResultUnmarshaller *unmarshaller = [[S3ListBucketsResultUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];

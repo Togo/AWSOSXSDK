@@ -18,25 +18,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Tags Request
  */
 
-@interface AutoScalingDeleteTagsRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDeleteTagsRequest : AmazonServiceRequestConfig {
     NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Each tag should be defined by its resource type, resource ID, key,
@@ -51,7 +46,7 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(AutoScalingTag *)tagObject;
+- (void)addTag:(AutoScalingTag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

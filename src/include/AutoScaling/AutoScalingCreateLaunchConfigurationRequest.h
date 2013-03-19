@@ -19,38 +19,33 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Launch Configuration Request
  */
 
-@interface AutoScalingCreateLaunchConfigurationRequest:AmazonServiceRequestConfig
-
-{
-    NSString                      *launchConfigurationName;
-    NSString                      *imageId;
-    NSString                      *keyName;
-    NSMutableArray                *securityGroups;
-    NSString                      *userData;
-    NSString                      *instanceType;
-    NSString                      *kernelId;
-    NSString                      *ramdiskId;
-    NSMutableArray                *blockDeviceMappings;
+@interface AutoScalingCreateLaunchConfigurationRequest : AmazonServiceRequestConfig {
+    NSString *launchConfigurationName;
+    NSString *imageId;
+    NSString *keyName;
+    NSMutableArray *securityGroups;
+    NSString *userData;
+    NSString *instanceType;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSMutableArray *blockDeviceMappings;
     AutoScalingInstanceMonitoring *instanceMonitoring;
-    NSString                      *spotPrice;
-    NSString                      *iamInstanceProfile;
-    bool                          ebsOptimized;
-    bool                          ebsOptimizedIsSet;
+    NSString *spotPrice;
+    NSString *iamInstanceProfile;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the launch configuration to create.
@@ -192,7 +187,7 @@
 /**
  * The value of the EbsOptimized property for this object.
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -200,13 +195,13 @@
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(AutoScalingBlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(AutoScalingBlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -214,7 +209,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

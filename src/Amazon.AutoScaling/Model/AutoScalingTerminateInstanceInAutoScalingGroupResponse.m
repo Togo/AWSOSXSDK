@@ -21,8 +21,7 @@
 @synthesize activity;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         activity = nil;
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ScalingActivityInProgress"]) {
@@ -49,9 +47,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +57,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

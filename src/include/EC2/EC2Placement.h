@@ -20,14 +20,11 @@
  * Placement
  */
 
-@interface EC2Placement:NSObject
-
-{
+@interface EC2Placement : NSObject {
     NSString *availabilityZone;
     NSString *groupName;
     NSString *tenancy;
 }
-
 
 
 /**
@@ -57,7 +54,7 @@
  * Default constructor for a new Placement object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Placement object.
@@ -66,7 +63,7 @@
  * @param theAvailabilityZone The availability zone in which an Amazon
  * EC2 instance runs.
  */
--(id)initWithAvailabilityZone:(NSString *)theAvailabilityZone;
+- (id)initWithAvailabilityZone:(NSString *)theAvailabilityZone;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -74,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

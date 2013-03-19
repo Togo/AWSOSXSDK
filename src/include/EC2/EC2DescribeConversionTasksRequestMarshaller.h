@@ -24,11 +24,11 @@
 /**
  * Describe Conversion Tasks Request Marshaller
  */
-@interface EC2DescribeConversionTasksRequestMarshaller:NSObject {
+@interface EC2DescribeConversionTasksRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeConversionTasksRequest *)describeConversionTasksRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeConversionTasksRequest *)describeConversionTasksRequest;
 
 
 @end

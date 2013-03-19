@@ -23,12 +23,12 @@
 /** contains the parameters used for the to restore object from Amazon Glacier.
  *
  */
-@interface S3RestoreObjectRequest:S3Request {
+@interface S3RestoreObjectRequest : S3Request {
 }
 
--(id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket withDays:(NSInteger)theDays;
+- (id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket withDays:(NSInteger)theDays;
 
--(NSString *) toXml;
+- (NSString *)toXml;
 
 /** The number of days the restored object should remain active for **/
 @property (nonatomic, assign) NSInteger days;

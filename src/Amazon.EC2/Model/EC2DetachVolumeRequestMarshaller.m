@@ -17,12 +17,11 @@
 
 @implementation EC2DetachVolumeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DetachVolumeRequest *)detachVolumeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DetachVolumeRequest *)detachVolumeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DetachVolume"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DetachVolume" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[detachVolumeRequest delegate]];
     [request setCredentials:[detachVolumeRequest credentials]];
@@ -46,7 +45,7 @@
     }
     if (detachVolumeRequest != nil) {
         if (detachVolumeRequest.forceIsSet) {
-            [request setParameterValue:(detachVolumeRequest.force ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"Force"]];
+            [request setParameterValue:(detachVolumeRequest.force ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"Force"]];
         }
     }
 

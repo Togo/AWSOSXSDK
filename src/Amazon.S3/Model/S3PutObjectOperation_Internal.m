@@ -15,8 +15,7 @@
 
 #import "S3PutObjectOperation_Internal.h"
 
-@interface S3PutObjectOperation_Internal ()
-{
+@interface S3PutObjectOperation_Internal () {
     BOOL _isExecuting;
     BOOL _isFinished;
 }
@@ -36,10 +35,8 @@
 
 #pragma mark - Class Lifecycle
 
-- (id)init
-{
-    if (self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         _isExecuting = NO;
         _isFinished = NO;
 
@@ -52,15 +49,13 @@
 
 #pragma mark - Overwriding NSOperation Methods
 
-- (void)start
-{
+- (void)start {
     // Makes sure that start method always runs on the main thread.
-    if (![NSThread isMainThread])
-    {
+    if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self start];
         });
-        
+
         return;
     }
 
@@ -72,29 +67,24 @@
     [self.s3 putObject:self.request];
 }
 
-- (BOOL)isConcurrent
-{
+- (BOOL)isConcurrent {
     return YES;
 }
 
-- (BOOL)isExecuting
-{
+- (BOOL)isExecuting {
     return _isExecuting;
 }
 
-- (BOOL)isFinished
-{
+- (BOOL)isFinished {
     return _isFinished;
 }
 
 #pragma mark - AmazonServiceRequestDelegate Implementations
 
-- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response
-{
+- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response {
     self.response = response;
 
-    if([self.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)])
-    {
+    if ([self.delegate respondsToSelector:@selector(request:didCompleteWithResponse:)]) {
         [self.delegate request:request
        didCompleteWithResponse:response];
     }
@@ -102,10 +92,8 @@
     [self finish];
 }
 
-- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
-    if([self.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)])
-    {
+- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    if ([self.delegate respondsToSelector:@selector(request:didSendData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
         [self.delegate request:request
                    didSendData:bytesWritten
              totalBytesWritten:totalBytesWritten
@@ -113,48 +101,42 @@
     }
 }
 
-- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error
-{
+- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error {
     AMZLogDebug(@"%@", error);
 
     self.error = error;
 
     self.exception = [AmazonServiceException exceptionWithMessage:[error description] andError:error];
 
-    if(self.s3.maxRetries > self.retryCount
-       && [self.s3 shouldRetry:nil exception:self.exception])
-    {
+    if (self.s3.maxRetries > self.retryCount
+            && [self.s3 shouldRetry:nil exception:self.exception]) {
         [self.s3 putObject:self.request];
         self.retryCount++;
 
         return;
     }
 
-    if([self.delegate respondsToSelector:@selector(request:didFailWithError:)])
-    {
+    if ([self.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
         [self.delegate request:request didFailWithError:error];
     }
 
     [self finish];
 }
 
-- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception
-{
+- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception {
     AMZLogDebug(@"%@", exception);
 
     self.exception = exception;
 
-    if(self.s3.maxRetries > self.retryCount
-       && [self.s3 shouldRetry:nil exception:self.exception])
-    {        
+    if (self.s3.maxRetries > self.retryCount
+            && [self.s3 shouldRetry:nil exception:self.exception]) {
         [self.s3 putObject:self.request];
         self.retryCount++;
-        
+
         return;
     }
 
-    if([self.delegate respondsToSelector:@selector(request:didFailWithServiceException:)])
-    {
+    if ([self.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
         [self.delegate request:request didFailWithServiceException:exception];
     }
 
@@ -163,13 +145,12 @@
 
 #pragma mark - Helper Methods
 
-- (void)finish
-{
+- (void)finish {
     [self willChangeValueForKey:@"isExecuting"];
     [self willChangeValueForKey:@"isFinished"];
 
     _isExecuting = NO;
-    _isFinished  = YES;
+    _isFinished = YES;
 
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];

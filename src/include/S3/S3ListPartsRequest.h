@@ -20,7 +20,7 @@
 /** Contains the parameters used for the listParts operation.
  *
  */
-@interface S3ListPartsRequest:S3Request {
+@interface S3ListPartsRequest : S3Request {
 
 }
 
@@ -37,6 +37,6 @@
 @property (nonatomic) int partNumberMarker;
 
 /** Initializes the instance with the bucket, key, and uploadId from an S3MultipartUpload instance returned in an S3MultipartUploadResponse. */
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
 
 @end

@@ -26,23 +26,21 @@
 @synthesize maxRecords;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
         scheduledActionNames = [[NSMutableArray alloc] initWithCapacity:1];
-        startTime            = nil;
-        endTime              = nil;
-        nextToken            = nil;
-        maxRecords           = nil;
+        startTime = nil;
+        endTime = nil;
+        nextToken = nil;
+        maxRecords = nil;
     }
 
     return self;
 }
 
 
--(void)addScheduledActionName:(NSString *)scheduledActionNameObject
-{
+- (void)addScheduledActionName:(NSString *)scheduledActionNameObject {
     if (scheduledActionNames == nil) {
         scheduledActionNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -51,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -67,9 +64,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

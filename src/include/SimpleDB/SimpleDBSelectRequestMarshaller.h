@@ -22,11 +22,11 @@
 /**
  * Select Request Marshaller
  */
-@interface SimpleDBSelectRequestMarshaller:NSObject {
+@interface SimpleDBSelectRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBSelectRequest *)selectRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBSelectRequest *)selectRequest;
 
 
 @end

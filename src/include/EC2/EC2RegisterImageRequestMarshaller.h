@@ -24,11 +24,11 @@
 /**
  * Register Image Request Marshaller
  */
-@interface EC2RegisterImageRequestMarshaller:NSObject {
+@interface EC2RegisterImageRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2RegisterImageRequest *)registerImageRequest;
++ (AmazonServiceRequest *)createRequest:(EC2RegisterImageRequest *)registerImageRequest;
 
 
 @end

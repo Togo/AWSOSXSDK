@@ -17,12 +17,11 @@
 
 @implementation EC2ConfirmProductInstanceRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ConfirmProductInstance"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ConfirmProductInstance" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[confirmProductInstanceRequest delegate]];
     [request setCredentials:[confirmProductInstanceRequest credentials]];

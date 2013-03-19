@@ -16,17 +16,17 @@
 #import "SimpleDBCreateDomainResponse.h"
 #import "SimpleDBResponseUnmarshaller.h"
 
-@interface SimpleDBCreateDomainResponseUnmarshaller:SimpleDBResponseUnmarshaller
-{
+@interface SimpleDBCreateDomainResponseUnmarshaller : SimpleDBResponseUnmarshaller {
     SimpleDBCreateDomainResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SimpleDBCreateDomainResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SimpleDBCreateDomainResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SimpleDBCreateDomainResponse *)response;
 
 @end

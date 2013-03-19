@@ -16,17 +16,17 @@
 #import "SNSSetSubscriptionAttributesResponse.h"
 #import "SNSResponseUnmarshaller.h"
 
-@interface SNSSetSubscriptionAttributesResponseUnmarshaller:SNSResponseUnmarshaller
-{
+@interface SNSSetSubscriptionAttributesResponseUnmarshaller : SNSResponseUnmarshaller {
     SNSSetSubscriptionAttributesResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SNSSetSubscriptionAttributesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SNSSetSubscriptionAttributesResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SNSSetSubscriptionAttributesResponse *)response;
 
 @end

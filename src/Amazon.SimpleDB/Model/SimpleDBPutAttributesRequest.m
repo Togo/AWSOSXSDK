@@ -24,44 +24,40 @@
 @synthesize expected;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         domainName = nil;
-        itemName   = nil;
+        itemName = nil;
         attributes = [[NSMutableArray alloc] initWithCapacity:1];
-        expected   = nil;
+        expected = nil;
     }
 
     return self;
 }
 
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes
-{
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes {
     if (self = [self init]) {
         self.domainName = theDomainName;
-        self.itemName   = theItemName;
+        self.itemName = theItemName;
         self.attributes = theAttributes;
     }
 
     return self;
 }
 
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected
-{
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName andAttributes:(NSMutableArray *)theAttributes andExpected:(SimpleDBUpdateCondition *)theExpected {
     if (self = [self init]) {
         self.domainName = theDomainName;
-        self.itemName   = theItemName;
+        self.itemName = theItemName;
         self.attributes = theAttributes;
-        self.expected   = theExpected;
+        self.expected = theExpected;
     }
 
     return self;
 }
 
 
--(void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject
-{
+- (void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject {
     if (attributes == nil) {
         attributes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -70,8 +66,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -84,9 +79,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

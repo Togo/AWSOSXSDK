@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Change Message Visibility Batch Request
  */
 
-@interface SQSChangeMessageVisibilityBatchRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *queueUrl;
+@interface SQSChangeMessageVisibilityBatchRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
     NSMutableArray *entries;
 }
-
 
 
 /**
@@ -48,7 +44,7 @@
  * Default constructor for a new ChangeMessageVisibilityBatchRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ChangeMessageVisibilityBatchRequest object.
@@ -58,13 +54,13 @@
  * @param theEntries A list of receipt handles of the messages for which
  * the visibility timeout must be changed.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
 
 /**
  * Adds a single object to entries.
  * This function will alloc and init entries if not already done.
  */
--(void)addEntry:(SQSChangeMessageVisibilityBatchRequestEntry *)entryObject;
+- (void)addEntry:(SQSChangeMessageVisibilityBatchRequestEntry *)entryObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

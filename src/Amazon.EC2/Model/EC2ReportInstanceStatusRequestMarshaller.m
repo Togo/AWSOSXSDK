@@ -17,12 +17,11 @@
 
 @implementation EC2ReportInstanceStatusRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ReportInstanceStatusRequest *)reportInstanceStatusRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ReportInstanceStatusRequest *)reportInstanceStatusRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ReportInstanceStatus"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ReportInstanceStatus" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[reportInstanceStatusRequest delegate]];
     [request setCredentials:[reportInstanceStatusRequest credentials]];

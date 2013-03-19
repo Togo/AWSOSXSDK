@@ -17,26 +17,21 @@
 #import "SESBody.h"
 
 
-
 /**
  * Message
  */
 
-@interface SESMessage:NSObject
-
-{
+@interface SESMessage : NSObject {
     SESContent *subject;
-    SESBody    *body;
+    SESBody *body;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The subject of the message: A short summary of the content, which will
@@ -55,7 +50,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -25,22 +25,20 @@
 @synthesize attributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        messageId     = nil;
+        messageId = nil;
         receiptHandle = nil;
-        mD5OfBody     = nil;
-        body          = nil;
-        attributes    = [[NSMutableDictionary alloc] initWithCapacity:1];
+        mD5OfBody = nil;
+        body = nil;
+        attributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey
-{
+- (void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey {
     if (attributes == nil) {
         attributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -49,8 +47,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

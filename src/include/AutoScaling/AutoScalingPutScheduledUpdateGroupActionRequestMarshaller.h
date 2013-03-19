@@ -23,11 +23,11 @@
 /**
  * Put Scheduled Update Group Action Request Marshaller
  */
-@interface AutoScalingPutScheduledUpdateGroupActionRequestMarshaller:NSObject {
+@interface AutoScalingPutScheduledUpdateGroupActionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest;
 
 
 @end

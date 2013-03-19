@@ -23,8 +23,7 @@
 /**
  * Create Domain
  */
-@interface SimpleDBCreateDomainResponse:SimpleDBResponse
-{
+@interface SimpleDBCreateDomainResponse : SimpleDBResponse {
 }
 
 @end

@@ -19,8 +19,7 @@
 @implementation S3ListBucketsRequest
 
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self != nil) {
         self.httpMethod = kHttpMethodGet;
@@ -29,8 +28,7 @@
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     [self.urlRequest setURL:self.url];

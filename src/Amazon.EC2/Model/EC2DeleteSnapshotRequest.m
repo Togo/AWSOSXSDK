@@ -21,8 +21,7 @@
 @synthesize snapshotId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         snapshotId = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithSnapshotId:(NSString *)theSnapshotId
-{
+- (id)initWithSnapshotId:(NSString *)theSnapshotId {
     if (self = [self init]) {
         self.snapshotId = theSnapshotId;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

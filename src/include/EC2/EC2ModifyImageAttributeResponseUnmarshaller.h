@@ -16,17 +16,17 @@
 #import "EC2ModifyImageAttributeResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2ModifyImageAttributeResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2ModifyImageAttributeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2ModifyImageAttributeResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2ModifyImageAttributeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2ModifyImageAttributeResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2ModifyImageAttributeResponse *)response;
 
 @end

@@ -19,8 +19,7 @@
 
 @synthesize mfaAuth;
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
     [self.urlRequest setHTTPMethod:kHttpMethodDelete];
 

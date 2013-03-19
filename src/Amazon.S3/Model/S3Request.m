@@ -31,8 +31,7 @@
 
 #pragma mark methods
 
--(AmazonURLRequest *)configureURLRequest
-{
+- (AmazonURLRequest *)configureURLRequest {
     [super configureURLRequest];
     [self setHttpMethod:kHttpMethodGet];
 
@@ -56,33 +55,30 @@
     return urlRequest;
 }
 
--(NSString *)timestamp
-{
+- (NSString *)timestamp {
     return [[self date] stringWithRFC822Format];
 }
 
 #pragma mark accessors
 
--(NSURL *)url
-{
+- (NSURL *)url {
     NSString *keyPath;
     NSString *resQuery;
 
     if (self.bucket == nil || [S3BucketNameUtilities isDNSBucketName:self.bucket]) {
-        keyPath  = (self.key == nil ? @"" : [NSString stringWithFormat:@"%@", [self.key stringWithURLEncoding]]);
+        keyPath = (self.key == nil ? @"" : [NSString stringWithFormat:@"%@", [self.key stringWithURLEncoding]]);
     }
     else {
-        keyPath  = (self.key == nil ? [NSString stringWithFormat:@"%@/", self.bucket] : [NSString stringWithFormat:@"/%@/%@", self.bucket, [self.key stringWithURLEncoding]]);
+        keyPath = (self.key == nil ? [NSString stringWithFormat:@"%@/", self.bucket] : [NSString stringWithFormat:@"/%@/%@", self.bucket, [self.key stringWithURLEncoding]]);
     }
     resQuery = (self.subResource == nil ? @"" : [NSString stringWithFormat:@"?%@", self.subResource]);
 
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@/%@%@", [self protocol], self.host, keyPath, resQuery]];
 }
 
--(NSString *)host
-{
+- (NSString *)host {
     if (nil != self.bucket) {
-        if ( [S3BucketNameUtilities isDNSBucketName:self.bucket]) {
+        if ([S3BucketNameUtilities isDNSBucketName:self.bucket]) {
             return [NSString stringWithFormat:@"%@.%@", self.bucket, [super hostName]];
         }
     }
@@ -90,17 +86,15 @@
     return [self hostName];
 }
 
--(NSDate *)date
-{
+- (NSDate *)date {
     if (date == nil) {
         date = [NSDate date];
     }
     return date;
 }
 
--(NSString *)protocol
-{
-    if ( [self.endpoint hasPrefix:@"http://"]) {
+- (NSString *)protocol {
+    if ([self.endpoint hasPrefix:@"http://"]) {
         return @"http";
     }
     else {
@@ -108,16 +102,14 @@
     }
 }
 
--(NSString *)endpointHost
-{
+- (NSString *)endpointHost {
     return [super hostName];
 }
 
 
 #pragma mark memory management
 
--(void)dealloc
-{
+- (void)dealloc {
     delegate = nil;
 
 

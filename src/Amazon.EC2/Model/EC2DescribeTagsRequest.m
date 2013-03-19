@@ -21,8 +21,7 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithFilters:(NSMutableArray *)theFilters
-{
+- (id)initWithFilters:(NSMutableArray *)theFilters {
     if (self = [self init]) {
         self.filters = theFilters;
     }
@@ -40,8 +38,7 @@
 }
 
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -50,8 +47,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +57,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

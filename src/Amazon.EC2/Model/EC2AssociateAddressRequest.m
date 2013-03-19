@@ -27,35 +27,31 @@
 @synthesize allowReassociationIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId              = nil;
-        publicIp                = nil;
-        allocationId            = nil;
-        networkInterfaceId      = nil;
-        privateIpAddress        = nil;
-        allowReassociation      = NO;
+        instanceId = nil;
+        publicIp = nil;
+        allocationId = nil;
+        networkInterfaceId = nil;
+        privateIpAddress = nil;
+        allowReassociation = NO;
         allowReassociationIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithInstanceId:(NSString *)theInstanceId andPublicIp:(NSString *)thePublicIp
-{
+- (id)initWithInstanceId:(NSString *)theInstanceId andPublicIp:(NSString *)thePublicIp {
     if (self = [self init]) {
         self.instanceId = theInstanceId;
-        self.publicIp   = thePublicIp;
+        self.publicIp = thePublicIp;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -72,13 +68,10 @@
 }
 
 
--(void)setAllowReassociation:(bool)theValue
-{
-    allowReassociation      = theValue;
+- (void)setAllowReassociation:(bool)theValue {
+    allowReassociation = theValue;
     allowReassociationIsSet = YES;
 }
-
-
 
 
 @end

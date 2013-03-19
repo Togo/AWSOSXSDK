@@ -23,13 +23,13 @@
 /**
  *
  */
-@interface S3BucketLifecycleConfigurationRule:NSObject {
-    NSString  *ruleId;
-    NSString  *status;
-    NSString  *prefix;
+@interface S3BucketLifecycleConfigurationRule : NSObject {
+    NSString *ruleId;
+    NSString *status;
+    NSString *prefix;
     NSInteger expirationInDays;
-    NSDate    *expirationDate;
-    NSArray   *transitions;
+    NSDate *expirationDate;
+    NSArray *transitions;
 }
 
 /** The id for this rule **/
@@ -57,18 +57,18 @@
  **/
 @property (nonatomic, strong) NSArray *transitions;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 /** initializer that creates a new rule with no expiration **/
--(id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andStatus:(NSString *)theStatus;
+- (id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andStatus:(NSString *)theStatus;
 
 /** initializer that creates a new rule with an expiration in days **/
--(id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andExpirationInDays:(NSInteger)theExpiration andStatus:(NSString *)theStatus;
+- (id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andExpirationInDays:(NSInteger)theExpiration andStatus:(NSString *)theStatus;
 
 /** initializer that creates a new rule with an expiration date **/
--(id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andExpirationDate:(NSDate *) theExpirationDate andStatus:(NSString *)theStatus;
+- (id)initWithId:(NSString *)theRuleId andPrefix:(NSString *)thePrefix andExpirationDate:(NSDate *)theExpirationDate andStatus:(NSString *)theStatus;
 
 /** Helper function to for boolean status **/
--(BOOL)isEnabled;
+- (BOOL)isEnabled;
 
 @end

@@ -26,7 +26,7 @@
  * <br />Optional Parameters: key
  *
  */
-@interface S3SetACLRequest:S3Request {
+@interface S3SetACLRequest : S3Request {
     S3AccessControlList *acl;
 }
 

@@ -59,56 +59,54 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId            = nil;
-        imageId               = nil;
-        state                 = nil;
-        privateDnsName        = nil;
-        publicDnsName         = nil;
+        instanceId = nil;
+        imageId = nil;
+        state = nil;
+        privateDnsName = nil;
+        publicDnsName = nil;
         stateTransitionReason = nil;
-        keyName               = nil;
-        amiLaunchIndex        = nil;
-        productCodes          = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceType          = nil;
-        launchTime            = nil;
-        placement             = nil;
-        kernelId              = nil;
-        ramdiskId             = nil;
-        platform              = nil;
-        monitoring            = nil;
-        subnetId              = nil;
-        vpcId                 = nil;
-        privateIpAddress      = nil;
-        publicIpAddress       = nil;
-        stateReason           = nil;
-        architecture          = nil;
-        rootDeviceType        = nil;
-        rootDeviceName        = nil;
-        blockDeviceMappings   = [[NSMutableArray alloc] initWithCapacity:1];
-        virtualizationType    = nil;
-        instanceLifecycle     = nil;
+        keyName = nil;
+        amiLaunchIndex = nil;
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceType = nil;
+        launchTime = nil;
+        placement = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        platform = nil;
+        monitoring = nil;
+        subnetId = nil;
+        vpcId = nil;
+        privateIpAddress = nil;
+        publicIpAddress = nil;
+        stateReason = nil;
+        architecture = nil;
+        rootDeviceType = nil;
+        rootDeviceName = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        virtualizationType = nil;
+        instanceLifecycle = nil;
         spotInstanceRequestId = nil;
-        license               = nil;
-        clientToken           = nil;
-        tags                  = [[NSMutableArray alloc] initWithCapacity:1];
-        securityGroups        = [[NSMutableArray alloc] initWithCapacity:1];
-        sourceDestCheck       = NO;
-        sourceDestCheckIsSet  = NO;
-        hypervisor            = nil;
-        networkInterfaces     = [[NSMutableArray alloc] initWithCapacity:1];
-        iamInstanceProfile    = nil;
-        ebsOptimized          = NO;
-        ebsOptimizedIsSet     = NO;
+        license = nil;
+        clientToken = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        sourceDestCheck = NO;
+        sourceDestCheckIsSet = NO;
+        hypervisor = nil;
+        networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
+        iamInstanceProfile = nil;
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
 
--(void)addProductCode:(EC2ProductCode *)productCodeObject
-{
+- (void)addProductCode:(EC2ProductCode *)productCodeObject {
     if (productCodes == nil) {
         productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -116,8 +114,7 @@
     [productCodes addObject:productCodeObject];
 }
 
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -125,8 +122,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -134,8 +130,7 @@
     [tags addObject:tagObject];
 }
 
--(void)addSecurityGroup:(EC2GroupIdentifier *)securityGroupObject
-{
+- (void)addSecurityGroup:(EC2GroupIdentifier *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -143,8 +138,7 @@
     [securityGroups addObject:securityGroupObject];
 }
 
--(void)addNetworkInterface:(EC2InstanceNetworkInterface *)networkInterfaceObject
-{
+- (void)addNetworkInterface:(EC2InstanceNetworkInterface *)networkInterfaceObject {
     if (networkInterfaces == nil) {
         networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -153,8 +147,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -202,19 +195,15 @@
 }
 
 
--(void)setSourceDestCheck:(bool)theValue
-{
-    sourceDestCheck      = theValue;
+- (void)setSourceDestCheck:(bool)theValue {
+    sourceDestCheck = theValue;
     sourceDestCheckIsSet = YES;
 }
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

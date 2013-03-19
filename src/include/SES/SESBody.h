@@ -17,26 +17,21 @@
 #import "SESContent.h"
 
 
-
 /**
  * Body
  */
 
-@interface SESBody:NSObject
-
-{
+@interface SESBody : NSObject {
     SESContent *text;
     SESContent *html;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The content of the message, in text format. Use this for text-based
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

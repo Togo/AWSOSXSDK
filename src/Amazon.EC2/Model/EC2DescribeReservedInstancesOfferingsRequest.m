@@ -29,26 +29,24 @@
 @synthesize maxResults;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesOfferingIds = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceType                 = nil;
-        availabilityZone             = nil;
-        productDescription           = nil;
-        filters                      = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceTenancy              = nil;
-        offeringType                 = nil;
-        nextToken                    = nil;
-        maxResults                   = nil;
+        instanceType = nil;
+        availabilityZone = nil;
+        productDescription = nil;
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceTenancy = nil;
+        offeringType = nil;
+        nextToken = nil;
+        maxResults = nil;
     }
 
     return self;
 }
 
 
--(void)addReservedInstancesOfferingId:(NSString *)reservedInstancesOfferingIdObject
-{
+- (void)addReservedInstancesOfferingId:(NSString *)reservedInstancesOfferingIdObject {
     if (reservedInstancesOfferingIds == nil) {
         reservedInstancesOfferingIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -56,8 +54,7 @@
     [reservedInstancesOfferingIds addObject:reservedInstancesOfferingIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +63,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -85,9 +81,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

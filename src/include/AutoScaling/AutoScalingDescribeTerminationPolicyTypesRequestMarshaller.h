@@ -22,11 +22,11 @@
 /**
  * Describe Termination Policy Types Request Marshaller
  */
-@interface AutoScalingDescribeTerminationPolicyTypesRequestMarshaller:NSObject {
+@interface AutoScalingDescribeTerminationPolicyTypesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest;
 
 
 @end

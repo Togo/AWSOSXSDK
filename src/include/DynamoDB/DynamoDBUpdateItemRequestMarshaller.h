@@ -26,11 +26,11 @@
 /**
  * Update Item Request Marshaller
  */
-@interface DynamoDBUpdateItemRequestMarshaller:NSObject {
+@interface DynamoDBUpdateItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBUpdateItemRequest *)updateItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBUpdateItemRequest *)updateItemRequest;
 
 
 @end

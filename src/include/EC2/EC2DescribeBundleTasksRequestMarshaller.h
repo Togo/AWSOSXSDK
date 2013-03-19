@@ -24,11 +24,11 @@
 /**
  * Describe Bundle Tasks Request Marshaller
  */
-@interface EC2DescribeBundleTasksRequestMarshaller:NSObject {
+@interface EC2DescribeBundleTasksRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest;
 
 
 @end

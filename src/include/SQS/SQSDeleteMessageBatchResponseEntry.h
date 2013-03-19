@@ -17,27 +17,23 @@
 #import "SQSResponse.h"
 
 
-
 /**
  * Delete Message Batch Result Entry
  */
 
-@interface SQSDeleteMessageBatchResponseEntry:SQSResponse
-
-{
+@interface SQSDeleteMessageBatchResponseEntry : SQSResponse {
     NSString *idValue;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Represents a successfully deleted message.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -21,8 +21,7 @@
 @synthesize instances;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidInstance"]) {
@@ -53,15 +51,12 @@
 }
 
 
-
--(ElasticLoadBalancingInstance *)instancesObjectAtIndex:(int)index
-{
-    return (ElasticLoadBalancingInstance *)[instances objectAtIndex:index];
+- (ElasticLoadBalancingInstance *)instancesObjectAtIndex:(int)index {
+    return (ElasticLoadBalancingInstance *) [instances objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -71,9 +66,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -21,8 +21,7 @@
 @synthesize topicArn;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         topicArn = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

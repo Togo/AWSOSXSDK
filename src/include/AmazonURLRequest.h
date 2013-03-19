@@ -16,14 +16,14 @@
 #import <Foundation/Foundation.h>
 #import "AmazonCredentials.h"
 
-@interface AmazonURLRequest:NSMutableURLRequest {
-    NSString          *endpointHost;
-    Class             requestClass;
+@interface AmazonURLRequest : NSMutableURLRequest {
+    NSString *endpointHost;
+    Class requestClass;
     AmazonCredentials *__weak credentials;
 }
 
-@property (nonatomic, strong) NSString          *endpointHost;
-@property (nonatomic, assign) Class             requestClass;
+@property (nonatomic, strong) NSString *endpointHost;
+@property (nonatomic, assign) Class requestClass;
 @property (nonatomic, weak) AmazonCredentials *credentials;
 
 @end

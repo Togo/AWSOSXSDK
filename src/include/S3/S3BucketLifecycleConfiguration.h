@@ -20,13 +20,13 @@
 /**
  *
  */
-@interface S3BucketLifecycleConfiguration:NSObject {
+@interface S3BucketLifecycleConfiguration : NSObject {
     NSArray *rules;
 }
 
 /** The list of rules */
 @property (nonatomic, strong) NSArray *rules;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

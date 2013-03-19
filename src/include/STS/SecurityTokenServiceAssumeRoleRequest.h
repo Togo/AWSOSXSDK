@@ -17,14 +17,11 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Assume Role Request
  */
 
-@interface SecurityTokenServiceAssumeRoleRequest:AmazonServiceRequestConfig
-
-{
+@interface SecurityTokenServiceAssumeRoleRequest : AmazonServiceRequestConfig {
     NSString *roleArn;
     NSString *roleSessionName;
     NSString *policy;
@@ -33,13 +30,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The Amazon Resource Name (ARN) of the role that the caller is
@@ -112,7 +107,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

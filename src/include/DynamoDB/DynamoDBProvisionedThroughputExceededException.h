@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * This exception is thrown when the level of provisioned throughput
  * defined for the table is exceeded.
  * </p>
  */
-@interface DynamoDBProvisionedThroughputExceededException:AmazonServiceException
-{
+@interface DynamoDBProvisionedThroughputExceededException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

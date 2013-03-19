@@ -22,8 +22,7 @@
 /**
  * Delete Message
  */
-@interface SQSDeleteMessageResponse:SQSResponse
-{
+@interface SQSDeleteMessageResponse : SQSResponse {
 }
 
 @end

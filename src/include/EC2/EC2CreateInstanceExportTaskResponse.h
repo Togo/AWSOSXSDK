@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Create Instance Export Task Response
  */
 
-@interface EC2CreateInstanceExportTaskResponse:EC2Response
-
-{
+@interface EC2CreateInstanceExportTaskResponse : EC2Response {
     EC2ExportTask *exportTask;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ExportTask property for this object.
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

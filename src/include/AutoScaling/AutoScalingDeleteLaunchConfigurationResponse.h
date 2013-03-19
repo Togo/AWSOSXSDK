@@ -21,8 +21,7 @@
 /**
  * Delete Launch Configuration
  */
-@interface AutoScalingDeleteLaunchConfigurationResponse:AutoScalingResponse
-{
+@interface AutoScalingDeleteLaunchConfigurationResponse : AutoScalingResponse {
 }
 
 @end

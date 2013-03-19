@@ -21,15 +21,17 @@
  * Contains the parameters used for the setBucketWebsiteConfiguration operation.
  *
  */
-@interface S3SetBucketWebsiteConfigurationRequest:S3Request
-{
+@interface S3SetBucketWebsiteConfigurationRequest : S3Request {
     BucketWebsiteConfiguration *configuration;
 }
 
--(id)initWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration;
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration;
+
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new website configuration for the specified bucket. */
 @property (nonatomic, strong) BucketWebsiteConfiguration *configuration;

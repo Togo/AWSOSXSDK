@@ -18,19 +18,19 @@
 #import "AmazonClientException.h"
 #import "AmazonServiceException.h"
 
-@interface AmazonServiceResponse:NSObject {
-    NSInteger            httpStatusCode;
-    NSString             *requestId;
-    NSMutableData        *body;
-    NSException          *exception;
-    bool                 isFinishedLoading;
-    bool                 didTimeout;
-    Class                unmarshallerDelegate;
+@interface AmazonServiceResponse : NSObject {
+    NSInteger httpStatusCode;
+    NSString *requestId;
+    NSMutableData *body;
+    NSException *exception;
+    bool isFinishedLoading;
+    bool didTimeout;
+    Class unmarshallerDelegate;
     NSError *error;
 
     AmazonServiceRequest *request;
 
-    NSTimeInterval       processingTime;
+    NSTimeInterval processingTime;
 }
 
 /** The body of the html response. */
@@ -56,25 +56,28 @@
 @property (nonatomic, strong) AmazonServiceRequest *request;
 
 /** The requestId assigned by the service */
-@property (nonatomic, strong) NSString       *requestId;
+@property (nonatomic, strong) NSString *requestId;
 
-@property (nonatomic, assign) Class          unmarshallerDelegate;
+@property (nonatomic, assign) Class unmarshallerDelegate;
 @property (nonatomic, assign) NSTimeInterval processingTime;
 
 
 /** Once the body has been received, perform additional processing, such as parse as XML. */
--(void)processBody;
--(void)postProcess;
+- (void)processBody;
+
+- (void)postProcess;
 
 
 #pragma mark NSURLConnection delegate methods
 
 /** delegate method for NSURLConnection */
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+
 /** delegate method for NSURLConnection */
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+
 /** delegate method for NSURLConnection */
--(void)connectionDidFinishLoading:(NSURLConnection *)connection;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 
 @end
 

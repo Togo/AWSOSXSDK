@@ -21,8 +21,7 @@
 @synthesize item;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         item = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey
-{
+- (void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey {
     if (item == nil) {
         item = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -41,8 +39,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

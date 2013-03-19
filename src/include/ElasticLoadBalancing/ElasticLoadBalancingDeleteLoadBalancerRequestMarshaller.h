@@ -22,11 +22,11 @@
 /**
  * Delete Load Balancer Request Marshaller
  */
-@interface ElasticLoadBalancingDeleteLoadBalancerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDeleteLoadBalancerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeleteLoadBalancerRequest *)deleteLoadBalancerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeleteLoadBalancerRequest *)deleteLoadBalancerRequest;
 
 
 @end

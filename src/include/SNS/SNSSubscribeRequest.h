@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Subscribe Request
  */
 
-@interface SNSSubscribeRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSSubscribeRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *protocol;
     NSString *endpoint;
 }
-
 
 
 /**
@@ -68,7 +64,7 @@
  * Default constructor for a new SubscribeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SubscribeRequest object.
@@ -95,7 +91,7 @@
  * <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
  * queue</li> </ul>
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andProtocol:(NSString *)theProtocol andEndpoint:(NSString *)theEndpoint;
+- (id)initWithTopicArn:(NSString *)theTopicArn andProtocol:(NSString *)theProtocol andEndpoint:(NSString *)theEndpoint;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -103,7 +99,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

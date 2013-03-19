@@ -21,10 +21,10 @@
 /**
  * Put Item Result Unmarshaller
  */
-@interface DynamoDBPutItemResponseUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBPutItemResponseUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBPutItemResponse *response;
 }
 
-+(DynamoDBPutItemResponse *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBPutItemResponse *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

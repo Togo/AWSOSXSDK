@@ -20,21 +20,17 @@
  * State Reason
  */
 
-@interface EC2StateReason:NSObject
-
-{
+@interface EC2StateReason : NSObject {
     NSString *code;
     NSString *message;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Reason code for the state change.
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

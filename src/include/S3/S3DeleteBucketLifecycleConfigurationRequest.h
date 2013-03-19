@@ -20,11 +20,11 @@
  * Contains the parameters used for the deleteBucketLifecycleConfigurationRequest operation.
  *
  */
-@interface S3DeleteBucketLifecycleConfigurationRequest:S3Request
-{
+@interface S3DeleteBucketLifecycleConfigurationRequest : S3Request {
 }
 
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2RevokeSecurityGroupIngressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"RevokeSecurityGroupIngress"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"RevokeSecurityGroupIngress" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[revokeSecurityGroupIngressRequest delegate]];
     [request setCredentials:[revokeSecurityGroupIngressRequest credentials]];

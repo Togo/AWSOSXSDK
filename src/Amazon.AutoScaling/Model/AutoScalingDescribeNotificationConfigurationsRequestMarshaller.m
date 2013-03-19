@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDescribeNotificationConfigurationsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeNotificationConfigurations"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeNotificationConfigurations" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeNotificationConfigurationsRequest delegate]];
     [request setCredentials:[describeNotificationConfigurationsRequest credentials]];

@@ -22,30 +22,26 @@
 @synthesize healthCheck;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
-        healthCheck      = nil;
+        healthCheck = nil;
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andHealthCheck:(ElasticLoadBalancingHealthCheck *)theHealthCheck
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andHealthCheck:(ElasticLoadBalancingHealthCheck *)theHealthCheck {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
-        self.healthCheck      = theHealthCheck;
+        self.healthCheck = theHealthCheck;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

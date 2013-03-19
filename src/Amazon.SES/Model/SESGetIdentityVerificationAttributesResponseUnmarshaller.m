@@ -19,22 +19,20 @@
 @implementation SESGetIdentityVerificationAttributesResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"VerificationAttributes"]) {
         AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.verificationAttributes withSetter:@selector(addEntriesFromDictionary:)];
-        dictionaryUnmarshaller.keyXpathElement      = @"key";
-        dictionaryUnmarshaller.valueXpathElement    = @"value";
-        dictionaryUnmarshaller.entryEndElement      = @"entry";
+        dictionaryUnmarshaller.keyXpathElement = @"key";
+        dictionaryUnmarshaller.valueXpathElement = @"value";
+        dictionaryUnmarshaller.entryEndElement = @"entry";
         dictionaryUnmarshaller.dictionaryEndElement = @"VerificationAttributes";
-        dictionaryUnmarshaller.delegateClass        = [SESIdentityVerificationAttributesUnmarshaller class];
+        dictionaryUnmarshaller.delegateClass = [SESIdentityVerificationAttributesUnmarshaller class];
 
         [parser setDelegate:dictionaryUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -42,8 +40,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -60,14 +57,12 @@
     }
 }
 
--(SESGetIdentityVerificationAttributesResponse *)response
-{
+- (SESGetIdentityVerificationAttributesResponse *)response {
     if (nil == response) {
         response = [[SESGetIdentityVerificationAttributesResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

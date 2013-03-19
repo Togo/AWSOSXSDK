@@ -17,12 +17,11 @@
 
 @implementation EC2ResetImageAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ResetImageAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ResetImageAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[resetImageAttributeRequest delegate]];
     [request setCredentials:[resetImageAttributeRequest credentials]];

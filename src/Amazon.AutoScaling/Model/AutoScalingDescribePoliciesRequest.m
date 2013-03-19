@@ -24,21 +24,19 @@
 @synthesize maxRecords;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        policyNames          = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken            = nil;
-        maxRecords           = nil;
+        policyNames = [[NSMutableArray alloc] initWithCapacity:1];
+        nextToken = nil;
+        maxRecords = nil;
     }
 
     return self;
 }
 
 
--(void)addPolicyName:(NSString *)policyNameObject
-{
+- (void)addPolicyName:(NSString *)policyNameObject {
     if (policyNames == nil) {
         policyNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

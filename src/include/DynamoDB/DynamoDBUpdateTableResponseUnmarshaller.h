@@ -21,10 +21,10 @@
 /**
  * Update Table Result Unmarshaller
  */
-@interface DynamoDBUpdateTableResponseUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBUpdateTableResponseUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBUpdateTableResponse *response;
 }
 
-+(DynamoDBUpdateTableResponse *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBUpdateTableResponse *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

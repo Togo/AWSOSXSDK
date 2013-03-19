@@ -22,11 +22,11 @@
 /**
  * Describe Load Balancer Policy Types Request Marshaller
  */
-@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest *)describeLoadBalancerPolicyTypesRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest *)describeLoadBalancerPolicyTypesRequest;
 
 
 @end

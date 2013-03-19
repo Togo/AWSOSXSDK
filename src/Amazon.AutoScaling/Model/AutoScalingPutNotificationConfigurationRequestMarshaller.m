@@ -17,12 +17,11 @@
 
 @implementation AutoScalingPutNotificationConfigurationRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"PutNotificationConfiguration"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"PutNotificationConfiguration" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[putNotificationConfigurationRequest delegate]];
     [request setCredentials:[putNotificationConfigurationRequest credentials]];

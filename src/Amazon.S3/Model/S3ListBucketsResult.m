@@ -20,14 +20,12 @@
 
 @synthesize owner;
 
--(NSMutableArray *)buckets
-{
+- (NSMutableArray *)buckets {
     if (nil == buckets) {
         buckets = [[NSMutableArray alloc] init];
     }
     return buckets;
 }
-
 
 
 @end

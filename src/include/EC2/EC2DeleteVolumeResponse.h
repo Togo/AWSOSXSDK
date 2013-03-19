@@ -20,8 +20,7 @@
 /**
  * Delete Volume
  */
-@interface EC2DeleteVolumeResponse:EC2Response
-{
+@interface EC2DeleteVolumeResponse : EC2Response {
 }
 
 @end

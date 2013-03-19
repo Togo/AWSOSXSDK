@@ -23,11 +23,11 @@
 /**
  * Delete Tags Request Marshaller
  */
-@interface AutoScalingDeleteTagsRequestMarshaller:NSObject {
+@interface AutoScalingDeleteTagsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteTagsRequest *)deleteTagsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteTagsRequest *)deleteTagsRequest;
 
 
 @end

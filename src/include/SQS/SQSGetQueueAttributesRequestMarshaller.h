@@ -22,11 +22,11 @@
 /**
  * Get Queue Attributes Request Marshaller
  */
-@interface SQSGetQueueAttributesRequestMarshaller:NSObject {
+@interface SQSGetQueueAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSGetQueueAttributesRequest *)getQueueAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SQSGetQueueAttributesRequest *)getQueueAttributesRequest;
 
 
 @end

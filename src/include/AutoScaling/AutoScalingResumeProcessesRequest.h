@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Resume Processes Request
  */
 
-@interface AutoScalingResumeProcessesRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
+@interface AutoScalingResumeProcessesRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
     NSMutableArray *scalingProcesses;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name or Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -61,7 +56,7 @@
  * Adds a single object to scalingProcesses.
  * This function will alloc and init scalingProcesses if not already done.
  */
--(void)addScalingProcesse:(NSString *)scalingProcesseObject;
+- (void)addScalingProcesse:(NSString *)scalingProcesseObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

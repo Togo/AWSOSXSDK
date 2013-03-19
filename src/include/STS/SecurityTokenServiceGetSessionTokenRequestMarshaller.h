@@ -22,11 +22,11 @@
 /**
  * Get Session Token Request Marshaller
  */
-@interface SecurityTokenServiceGetSessionTokenRequestMarshaller:NSObject {
+@interface SecurityTokenServiceGetSessionTokenRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest;
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest;
 
 
 @end

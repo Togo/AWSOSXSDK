@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Enable Volume I O Request
  */
 
-@interface EC2EnableVolumeIORequest:AmazonServiceRequestConfig
-
-{
+@interface EC2EnableVolumeIORequest : AmazonServiceRequestConfig {
     NSString *volumeId;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeId property for this object.
@@ -48,7 +43,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

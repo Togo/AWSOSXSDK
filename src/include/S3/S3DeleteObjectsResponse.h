@@ -19,8 +19,7 @@
 /** Contains the response from a deleteObject operation.
  *
  */
-@interface S3DeleteObjectsResponse:S3Response
-{
+@interface S3DeleteObjectsResponse : S3Response {
     NSArray *deletedObjects;
     NSArray *deleteErrors;
 }

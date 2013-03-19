@@ -23,11 +23,11 @@
 /**
  * Batch Get Item Request Marshaller
  */
-@interface DynamoDBBatchGetItemRequestMarshaller:NSObject {
+@interface DynamoDBBatchGetItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBBatchGetItemRequest *)batchGetItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBBatchGetItemRequest *)batchGetItemRequest;
 
 
 @end

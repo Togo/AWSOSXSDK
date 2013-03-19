@@ -23,22 +23,19 @@
  * Get Queue Url Result
  */
 
-@interface SQSGetQueueUrlResponse:SQSResponse
-
-{
+@interface SQSGetQueueUrlResponse : SQSResponse {
     NSString *queueUrl;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The URL for the queue.
@@ -51,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -19,7 +19,7 @@
 /** The S3ListPartsResult contains all the information about the listParts method.
  *
  */
-@interface S3ListPartsResult:NSObject {
+@interface S3ListPartsResult : NSObject {
     NSMutableArray *_parts;
 }
 

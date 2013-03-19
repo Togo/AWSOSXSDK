@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Load Balancers Request
  */
 
-@interface ElasticLoadBalancingDescribeLoadBalancersRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingDescribeLoadBalancersRequest : AmazonServiceRequestConfig {
     NSMutableArray *loadBalancerNames;
-    NSString       *marker;
+    NSString *marker;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new DescribeLoadBalancersRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeLoadBalancersRequest object.
@@ -55,13 +51,13 @@
  * @param theLoadBalancerNames A list of names associated with the
  * LoadBalancers at creation time.
  */
--(id)initWithLoadBalancerNames:(NSMutableArray *)theLoadBalancerNames;
+- (id)initWithLoadBalancerNames:(NSMutableArray *)theLoadBalancerNames;
 
 /**
  * Adds a single object to loadBalancerNames.
  * This function will alloc and init loadBalancerNames if not already done.
  */
--(void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
+- (void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

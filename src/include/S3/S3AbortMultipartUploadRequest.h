@@ -22,7 +22,7 @@
 /** Contains the parameters used for the abortMultipartUpload operation.
  *
  */
-@interface S3AbortMultipartUploadRequest:S3Request {
+@interface S3AbortMultipartUploadRequest : S3Request {
     NSString *uploadId;
 }
 
@@ -30,6 +30,6 @@
 @property (nonatomic, strong) NSString *uploadId;
 
 /** Initializes the instance with the bucket, key, and uploadId from an S3MultipartUpload instance returned in an S3MultipartUploadResponse. */
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
 
 @end

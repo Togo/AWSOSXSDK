@@ -20,40 +20,32 @@
 static BOOL isLoggingEnabled = YES;
 static BOOL isVerboseLoggingEnabled = NO;
 
-+ (void)turnLoggingOff
-{ 
++ (void)turnLoggingOff {
     isLoggingEnabled = NO;
 }
 
-+ (void)turnLoggingOn
-{
++ (void)turnLoggingOn {
     isLoggingEnabled = YES;
 }
 
-+ (void)verboseLogging
-{
++ (void)verboseLogging {
     isVerboseLoggingEnabled = YES;
 }
 
-+ (void)basicLogging
-{
++ (void)basicLogging {
     isVerboseLoggingEnabled = NO;
 }
 
-+ (BOOL)isLoggingEnabled
-{
++ (BOOL)isLoggingEnabled {
     return isLoggingEnabled;
 }
 
-+ (BOOL)isVerboseLoggingEnabled
-{
++ (BOOL)isVerboseLoggingEnabled {
     return isVerboseLoggingEnabled;
 }
 
-+ (void)logInfo:(NSString *)fmt, ...
-{
-    if(isLoggingEnabled)
-    {
++ (void)logInfo:(NSString *)fmt, ... {
+    if (isLoggingEnabled) {
         va_list args;
         va_start(args, fmt);
         NSLog(@"%@", [[NSString alloc] initWithFormat:fmt arguments:args]);
@@ -61,10 +53,8 @@ static BOOL isVerboseLoggingEnabled = NO;
     }
 }
 
-+ (void)logDebug:(NSString *)fmt, ...
-{
-    if(isLoggingEnabled && isVerboseLoggingEnabled)
-    {
++ (void)logDebug:(NSString *)fmt, ... {
+    if (isLoggingEnabled && isVerboseLoggingEnabled) {
         va_list args;
         va_start(args, fmt);
         NSLog(@"%@", [[NSString alloc] initWithFormat:fmt arguments:args]);

@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Reset Image Attribute Request
  */
 
-@interface EC2ResetImageAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ResetImageAttributeRequest : AmazonServiceRequestConfig {
     NSString *imageId;
     NSString *attribute;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new ResetImageAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ResetImageAttributeRequest object.
@@ -57,7 +53,7 @@
  * @param theAttribute The name of the attribute being reset. <p>
  * Available attribute names: <code>launchPermission</code>
  */
--(id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
+- (id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

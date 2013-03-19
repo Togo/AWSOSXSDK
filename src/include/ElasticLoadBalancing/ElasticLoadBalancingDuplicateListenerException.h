@@ -16,8 +16,6 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * A
@@ -29,17 +27,11 @@
  *
  * </p>
  */
-@interface ElasticLoadBalancingDuplicateListenerException:AmazonServiceException
-{
+@interface ElasticLoadBalancingDuplicateListenerException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -48,7 +40,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

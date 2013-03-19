@@ -19,12 +19,11 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didStartElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qualifiedName
-attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser
+        didStartElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qualifiedName
+        attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Upload"]) {
@@ -35,11 +34,10 @@ attributes:(NSDictionary *)attributeDict
     }
 }
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Bucket"]) {
@@ -84,14 +82,12 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3ListMultipartUploadsResult *)listMultipartUploadsResult
-{
+- (S3ListMultipartUploadsResult *)listMultipartUploadsResult {
     if (nil == listMultipartUploadsResult) {
         listMultipartUploadsResult = [[S3ListMultipartUploadsResult alloc] init];
     }
     return listMultipartUploadsResult;
 }
-
 
 
 @end

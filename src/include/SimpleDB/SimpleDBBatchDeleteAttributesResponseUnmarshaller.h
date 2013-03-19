@@ -16,17 +16,17 @@
 #import "SimpleDBBatchDeleteAttributesResponse.h"
 #import "SimpleDBResponseUnmarshaller.h"
 
-@interface SimpleDBBatchDeleteAttributesResponseUnmarshaller:SimpleDBResponseUnmarshaller
-{
+@interface SimpleDBBatchDeleteAttributesResponseUnmarshaller : SimpleDBResponseUnmarshaller {
     SimpleDBBatchDeleteAttributesResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SimpleDBBatchDeleteAttributesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SimpleDBBatchDeleteAttributesResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SimpleDBBatchDeleteAttributesResponse *)response;
 
 @end

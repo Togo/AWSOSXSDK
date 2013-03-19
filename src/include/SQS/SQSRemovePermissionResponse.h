@@ -20,8 +20,7 @@
 /**
  * Remove Permission
  */
-@interface SQSRemovePermissionResponse:SQSResponse
-{
+@interface SQSRemovePermissionResponse : SQSResponse {
 }
 
 @end

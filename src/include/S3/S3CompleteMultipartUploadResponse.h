@@ -20,7 +20,7 @@
 /** Contains the response from a completeMultipartUpload operation.
  *
  */
-@interface S3CompleteMultipartUploadResponse:S3Response {
+@interface S3CompleteMultipartUploadResponse : S3Response {
     S3CompleteMultipartUploadResult *completeMultipartUploadResult;
 }
 

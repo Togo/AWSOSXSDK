@@ -17,21 +17,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Detach Volume Request
  */
 
-@interface EC2DetachVolumeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DetachVolumeRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
     NSString *instanceId;
     NSString *device;
-    bool     force;
-    bool     forceIsSet;
+    bool force;
+    bool forceIsSet;
 }
-
 
 
 /**
@@ -60,7 +56,7 @@
  * you use this option, you must perform file system check and repair
  * procedures.
  */
-@property (nonatomic) bool           force;
+@property (nonatomic) bool force;
 
 @property (nonatomic, readonly) bool forceIsSet;
 
@@ -69,7 +65,7 @@
  * Default constructor for a new DetachVolumeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DetachVolumeRequest object.
@@ -77,7 +73,7 @@
  *
  * @param theVolumeId The ID of the volume to detach.
  */
--(id)initWithVolumeId:(NSString *)theVolumeId;
+- (id)initWithVolumeId:(NSString *)theVolumeId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -85,7 +81,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

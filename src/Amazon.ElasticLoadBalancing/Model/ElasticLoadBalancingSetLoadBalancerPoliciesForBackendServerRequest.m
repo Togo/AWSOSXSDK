@@ -23,20 +23,18 @@
 @synthesize policyNames;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
-        instancePort     = nil;
-        policyNames      = [[NSMutableArray alloc] initWithCapacity:1];
+        instancePort = nil;
+        policyNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addPolicyName:(NSString *)policyNameObject
-{
+- (void)addPolicyName:(NSString *)policyNameObject {
     if (policyNames == nil) {
         policyNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

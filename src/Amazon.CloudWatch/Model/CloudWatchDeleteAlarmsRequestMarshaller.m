@@ -17,12 +17,11 @@
 
 @implementation CloudWatchDeleteAlarmsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"DeleteAlarms"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteAlarms" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[deleteAlarmsRequest delegate]];
     [request setCredentials:[deleteAlarmsRequest credentials]];

@@ -23,7 +23,7 @@
 /**
  * Set Identity Feedback Forwarding Enabled Result Unmarshaller
  */
-@interface SESSetIdentityFeedbackForwardingEnabledResponseUnmarshaller:SESResponseUnmarshaller {
+@interface SESSetIdentityFeedbackForwardingEnabledResponseUnmarshaller : SESResponseUnmarshaller {
     SESSetIdentityFeedbackForwardingEnabledResponse *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) SESSetIdentityFeedbackForwardingEnabledResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

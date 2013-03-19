@@ -24,7 +24,7 @@
 /**
  * Describe Spot Datafeed Subscription Response Unmarshaller
  */
-@interface EC2DescribeSpotDatafeedSubscriptionResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2DescribeSpotDatafeedSubscriptionResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DescribeSpotDatafeedSubscriptionResponse *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) EC2DescribeSpotDatafeedSubscriptionResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

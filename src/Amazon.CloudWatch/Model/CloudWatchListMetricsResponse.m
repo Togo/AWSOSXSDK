@@ -22,10 +22,9 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        metrics   = [[NSMutableArray alloc] initWithCapacity:1];
+        metrics = [[NSMutableArray alloc] initWithCapacity:1];
         nextToken = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InternalServiceError"]) {
@@ -55,15 +53,12 @@
 }
 
 
-
--(CloudWatchMetric *)metricsObjectAtIndex:(int)index
-{
-    return (CloudWatchMetric *)[metrics objectAtIndex:index];
+- (CloudWatchMetric *)metricsObjectAtIndex:(int)index {
+    return (CloudWatchMetric *) [metrics objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -74,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

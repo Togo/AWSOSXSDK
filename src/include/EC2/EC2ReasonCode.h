@@ -22,20 +22,16 @@
  * \ingroup EC2
  */
 
-@interface EC2ReasonCode:NSObject
-
-{
+@interface EC2ReasonCode : NSObject {
     NSString *reasonCode;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ReasonCode property for this object.
@@ -48,7 +44,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

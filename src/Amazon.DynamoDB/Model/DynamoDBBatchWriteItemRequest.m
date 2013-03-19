@@ -21,8 +21,7 @@
 @synthesize requestItems;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         requestItems = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setRequestItemsValue:(NSArray *)theValue forKey:(NSString *)theKey
-{
+- (void)setRequestItemsValue:(NSArray *)theValue forKey:(NSString *)theKey {
     if (requestItems == nil) {
         requestItems = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -41,8 +39,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

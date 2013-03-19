@@ -20,7 +20,7 @@
 /** Contains the response from an initiateMultipartUpload request.
  *
  */
-@interface S3InitiateMultipartUploadResponse:S3Response {
+@interface S3InitiateMultipartUploadResponse : S3Response {
     S3MultipartUpload *multipartUpload;
 }
 

@@ -20,13 +20,13 @@
 /**
  *
  */
-@interface S3BucketTaggingConfiguration:NSObject {
+@interface S3BucketTaggingConfiguration : NSObject {
     NSArray *tagsets;
 }
 
 /** The list of tagsets (currently only one tag set is allowed) */
 @property (nonatomic, strong) NSArray *tagsets;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

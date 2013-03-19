@@ -27,23 +27,21 @@
 @synthesize exclusiveStartKey;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName         = nil;
-        attributesToGet   = [[NSMutableArray alloc] initWithCapacity:1];
-        limit             = nil;
-        count             = NO;
-        countIsSet        = NO;
-        scanFilter        = [[NSMutableDictionary alloc] initWithCapacity:1];
+        tableName = nil;
+        attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
+        limit = nil;
+        count = NO;
+        countIsSet = NO;
+        scanFilter = [[NSMutableDictionary alloc] initWithCapacity:1];
         exclusiveStartKey = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName
-{
+- (id)initWithTableName:(NSString *)theTableName {
     if (self = [self init]) {
         self.tableName = theTableName;
     }
@@ -52,8 +50,7 @@
 }
 
 
--(void)addAttributesToGet:(NSString *)attributesToGetObject
-{
+- (void)addAttributesToGet:(NSString *)attributesToGetObject {
     if (attributesToGet == nil) {
         attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +58,7 @@
     [attributesToGet addObject:attributesToGetObject];
 }
 
--(void)setScanFilterValue:(DynamoDBCondition *)theValue forKey:(NSString *)theKey
-{
+- (void)setScanFilterValue:(DynamoDBCondition *)theValue forKey:(NSString *)theKey {
     if (scanFilter == nil) {
         scanFilter = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -71,8 +67,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -89,13 +84,10 @@
 }
 
 
--(void)setCount:(bool)theValue
-{
-    count      = theValue;
+- (void)setCount:(bool)theValue {
+    count = theValue;
     countIsSet = YES;
 }
-
-
 
 
 @end

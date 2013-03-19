@@ -20,20 +20,16 @@
  * Availability Zone Message
  */
 
-@interface EC2AvailabilityZoneMessage:NSObject
-
-{
+@interface EC2AvailabilityZoneMessage : NSObject {
     NSString *message;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Message property for this object.
@@ -46,7 +42,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

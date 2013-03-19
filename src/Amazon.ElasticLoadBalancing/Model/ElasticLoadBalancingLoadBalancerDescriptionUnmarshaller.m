@@ -19,16 +19,15 @@
 @implementation ElasticLoadBalancingLoadBalancerDescriptionUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"AvailabilityZones"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.availabilityZones withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"AvailabilityZones";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -36,8 +35,8 @@
     if ([elementName isEqualToString:@"Subnets"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.subnets withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Subnets";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -45,8 +44,8 @@
     if ([elementName isEqualToString:@"SecurityGroups"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"SecurityGroups";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -54,8 +53,8 @@
     if ([elementName isEqualToString:@"ListenerDescriptions"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.listenerDescriptions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ListenerDescriptions";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [ElasticLoadBalancingListenerDescriptionUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [ElasticLoadBalancingListenerDescriptionUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -69,8 +68,8 @@
     if ([elementName isEqualToString:@"BackendServerDescriptions"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.backendServerDescriptions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"BackendServerDescriptions";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [ElasticLoadBalancingBackendServerDescriptionUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [ElasticLoadBalancingBackendServerDescriptionUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -78,8 +77,8 @@
     if ([elementName isEqualToString:@"Instances"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.instances withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Instances";
-        listUnmarshaller.entryElementName   = @"member";
-        listUnmarshaller.delegateClass      = [ElasticLoadBalancingInstanceUnmarshaller class];
+        listUnmarshaller.entryElementName = @"member";
+        listUnmarshaller.delegateClass = [ElasticLoadBalancingInstanceUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -97,14 +96,12 @@
     }
 
 
-
     if ([elementName isEqualToString:@"Error"]) {
         [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -151,14 +148,12 @@
     }
 }
 
--(ElasticLoadBalancingLoadBalancerDescription *)response
-{
+- (ElasticLoadBalancingLoadBalancerDescription *)response {
     if (nil == response) {
         response = [[ElasticLoadBalancingLoadBalancerDescription alloc] init];
     }
     return response;
 }
-
 
 
 @end

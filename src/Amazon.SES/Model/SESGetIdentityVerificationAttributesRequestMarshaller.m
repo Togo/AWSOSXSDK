@@ -17,12 +17,11 @@
 
 @implementation SESGetIdentityVerificationAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"GetIdentityVerificationAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetIdentityVerificationAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[getIdentityVerificationAttributesRequest delegate]];
     [request setCredentials:[getIdentityVerificationAttributesRequest credentials]];

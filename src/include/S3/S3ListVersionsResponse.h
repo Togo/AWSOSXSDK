@@ -20,7 +20,7 @@
 /** Contains the response from a list versions operation.
  *
  */
-@interface S3ListVersionsResponse:S3Response {
+@interface S3ListVersionsResponse : S3Response {
     S3ListVersionsResult *listVersionsResult;
 }
 

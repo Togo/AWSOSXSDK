@@ -20,8 +20,7 @@
 /**
  * Delete Verified Email Address
  */
-@interface SESDeleteVerifiedEmailAddressResponse:SESResponse
-{
+@interface SESDeleteVerifiedEmailAddressResponse : SESResponse {
 }
 
 @end

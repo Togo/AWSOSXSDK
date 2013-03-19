@@ -21,8 +21,7 @@
 
 @synthesize content;
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self.urlRequest setHTTPMethod:@"POST"];
 
     [self addValue:self.hostName forHeader:@"Host"];
@@ -43,16 +42,14 @@
     return self.urlRequest;
 }
 
--(void)addValue:(NSString *)theValue forHeader:(NSString *)theHeader
-{
+- (void)addValue:(NSString *)theValue forHeader:(NSString *)theHeader {
     if (nil == headers) {
         headers = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
     [headers setValue:theValue forKey:theHeader];
 }
 
--(DynamoDBResponse*)constructResponse
-{
+- (DynamoDBResponse *)constructResponse {
     return [DynamoDBResponse new];
 }
 

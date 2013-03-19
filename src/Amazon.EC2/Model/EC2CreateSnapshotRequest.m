@@ -22,20 +22,18 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId         = nil;
+        volumeId = nil;
         descriptionValue = nil;
     }
 
     return self;
 }
 
--(id)initWithVolumeId:(NSString *)theVolumeId andDescriptionValue:(NSString *)theDescriptionValue
-{
+- (id)initWithVolumeId:(NSString *)theVolumeId andDescriptionValue:(NSString *)theDescriptionValue {
     if (self = [self init]) {
-        self.volumeId         = theVolumeId;
+        self.volumeId = theVolumeId;
         self.descriptionValue = theDescriptionValue;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Describe Instance Attribute Request Marshaller
  */
-@interface EC2DescribeInstanceAttributeRequestMarshaller:NSObject {
+@interface EC2DescribeInstanceAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest;
 
 
 @end

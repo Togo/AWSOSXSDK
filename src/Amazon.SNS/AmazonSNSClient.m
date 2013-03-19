@@ -50,135 +50,116 @@
 
 @implementation AmazonSNSClient
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [super initWithAccessKey:theAccessKey withSecretKey:theSecretKey]) {
         self.endpoint = AMAZON_SNS_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     if (self = [super initWithCredentials:theCredentials]) {
         self.endpoint = AMAZON_SNS_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider> )theProvider
-{
+- (id)initWithCredentialsProvider:(id <AmazonCredentialsProvider>)theProvider {
     if (self = [super initWithCredentialsProvider:theProvider]) {
         self.endpoint = AMAZON_SNS_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(SNSConfirmSubscriptionResponse *)confirmSubscription:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest
-{
+- (SNSConfirmSubscriptionResponse *)confirmSubscription:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest {
     AmazonServiceRequest *request = [SNSConfirmSubscriptionRequestMarshaller createRequest:confirmSubscriptionRequest];
 
-    return (SNSConfirmSubscriptionResponse *)[self invoke:request rawRequest:confirmSubscriptionRequest unmarshallerDelegate:[SNSConfirmSubscriptionResponseUnmarshaller class]];
+    return (SNSConfirmSubscriptionResponse *) [self invoke:request rawRequest:confirmSubscriptionRequest unmarshallerDelegate:[SNSConfirmSubscriptionResponseUnmarshaller class]];
 }
 
--(SNSGetTopicAttributesResponse *)getTopicAttributes:(SNSGetTopicAttributesRequest *)getTopicAttributesRequest
-{
+- (SNSGetTopicAttributesResponse *)getTopicAttributes:(SNSGetTopicAttributesRequest *)getTopicAttributesRequest {
     AmazonServiceRequest *request = [SNSGetTopicAttributesRequestMarshaller createRequest:getTopicAttributesRequest];
 
-    return (SNSGetTopicAttributesResponse *)[self invoke:request rawRequest:getTopicAttributesRequest unmarshallerDelegate:[SNSGetTopicAttributesResponseUnmarshaller class]];
+    return (SNSGetTopicAttributesResponse *) [self invoke:request rawRequest:getTopicAttributesRequest unmarshallerDelegate:[SNSGetTopicAttributesResponseUnmarshaller class]];
 }
 
--(SNSSubscribeResponse *)subscribe:(SNSSubscribeRequest *)subscribeRequest
-{
+- (SNSSubscribeResponse *)subscribe:(SNSSubscribeRequest *)subscribeRequest {
     AmazonServiceRequest *request = [SNSSubscribeRequestMarshaller createRequest:subscribeRequest];
 
-    return (SNSSubscribeResponse *)[self invoke:request rawRequest:subscribeRequest unmarshallerDelegate:[SNSSubscribeResponseUnmarshaller class]];
+    return (SNSSubscribeResponse *) [self invoke:request rawRequest:subscribeRequest unmarshallerDelegate:[SNSSubscribeResponseUnmarshaller class]];
 }
 
--(SNSSetTopicAttributesResponse *)setTopicAttributes:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest
-{
+- (SNSSetTopicAttributesResponse *)setTopicAttributes:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest {
     AmazonServiceRequest *request = [SNSSetTopicAttributesRequestMarshaller createRequest:setTopicAttributesRequest];
 
-    return (SNSSetTopicAttributesResponse *)[self invoke:request rawRequest:setTopicAttributesRequest unmarshallerDelegate:[SNSSetTopicAttributesResponseUnmarshaller class]];
+    return (SNSSetTopicAttributesResponse *) [self invoke:request rawRequest:setTopicAttributesRequest unmarshallerDelegate:[SNSSetTopicAttributesResponseUnmarshaller class]];
 }
 
--(SNSDeleteTopicResponse *)deleteTopic:(SNSDeleteTopicRequest *)deleteTopicRequest
-{
+- (SNSDeleteTopicResponse *)deleteTopic:(SNSDeleteTopicRequest *)deleteTopicRequest {
     AmazonServiceRequest *request = [SNSDeleteTopicRequestMarshaller createRequest:deleteTopicRequest];
 
-    return (SNSDeleteTopicResponse *)[self invoke:request rawRequest:deleteTopicRequest unmarshallerDelegate:[SNSDeleteTopicResponseUnmarshaller class]];
+    return (SNSDeleteTopicResponse *) [self invoke:request rawRequest:deleteTopicRequest unmarshallerDelegate:[SNSDeleteTopicResponseUnmarshaller class]];
 }
 
--(SNSRemovePermissionResponse *)removePermission:(SNSRemovePermissionRequest *)removePermissionRequest
-{
+- (SNSRemovePermissionResponse *)removePermission:(SNSRemovePermissionRequest *)removePermissionRequest {
     AmazonServiceRequest *request = [SNSRemovePermissionRequestMarshaller createRequest:removePermissionRequest];
 
-    return (SNSRemovePermissionResponse *)[self invoke:request rawRequest:removePermissionRequest unmarshallerDelegate:[SNSRemovePermissionResponseUnmarshaller class]];
+    return (SNSRemovePermissionResponse *) [self invoke:request rawRequest:removePermissionRequest unmarshallerDelegate:[SNSRemovePermissionResponseUnmarshaller class]];
 }
 
--(SNSListSubscriptionsResponse *)listSubscriptions:(SNSListSubscriptionsRequest *)listSubscriptionsRequest
-{
+- (SNSListSubscriptionsResponse *)listSubscriptions:(SNSListSubscriptionsRequest *)listSubscriptionsRequest {
     AmazonServiceRequest *request = [SNSListSubscriptionsRequestMarshaller createRequest:listSubscriptionsRequest];
 
-    return (SNSListSubscriptionsResponse *)[self invoke:request rawRequest:listSubscriptionsRequest unmarshallerDelegate:[SNSListSubscriptionsResponseUnmarshaller class]];
+    return (SNSListSubscriptionsResponse *) [self invoke:request rawRequest:listSubscriptionsRequest unmarshallerDelegate:[SNSListSubscriptionsResponseUnmarshaller class]];
 }
 
--(SNSSetSubscriptionAttributesResponse *)setSubscriptionAttributes:(SNSSetSubscriptionAttributesRequest *)setSubscriptionAttributesRequest
-{
+- (SNSSetSubscriptionAttributesResponse *)setSubscriptionAttributes:(SNSSetSubscriptionAttributesRequest *)setSubscriptionAttributesRequest {
     AmazonServiceRequest *request = [SNSSetSubscriptionAttributesRequestMarshaller createRequest:setSubscriptionAttributesRequest];
 
-    return (SNSSetSubscriptionAttributesResponse *)[self invoke:request rawRequest:setSubscriptionAttributesRequest unmarshallerDelegate:[SNSSetSubscriptionAttributesResponseUnmarshaller class]];
+    return (SNSSetSubscriptionAttributesResponse *) [self invoke:request rawRequest:setSubscriptionAttributesRequest unmarshallerDelegate:[SNSSetSubscriptionAttributesResponseUnmarshaller class]];
 }
 
--(SNSAddPermissionResponse *)addPermission:(SNSAddPermissionRequest *)addPermissionRequest
-{
+- (SNSAddPermissionResponse *)addPermission:(SNSAddPermissionRequest *)addPermissionRequest {
     AmazonServiceRequest *request = [SNSAddPermissionRequestMarshaller createRequest:addPermissionRequest];
 
-    return (SNSAddPermissionResponse *)[self invoke:request rawRequest:addPermissionRequest unmarshallerDelegate:[SNSAddPermissionResponseUnmarshaller class]];
+    return (SNSAddPermissionResponse *) [self invoke:request rawRequest:addPermissionRequest unmarshallerDelegate:[SNSAddPermissionResponseUnmarshaller class]];
 }
 
--(SNSCreateTopicResponse *)createTopic:(SNSCreateTopicRequest *)createTopicRequest
-{
+- (SNSCreateTopicResponse *)createTopic:(SNSCreateTopicRequest *)createTopicRequest {
     AmazonServiceRequest *request = [SNSCreateTopicRequestMarshaller createRequest:createTopicRequest];
 
-    return (SNSCreateTopicResponse *)[self invoke:request rawRequest:createTopicRequest unmarshallerDelegate:[SNSCreateTopicResponseUnmarshaller class]];
+    return (SNSCreateTopicResponse *) [self invoke:request rawRequest:createTopicRequest unmarshallerDelegate:[SNSCreateTopicResponseUnmarshaller class]];
 }
 
--(SNSGetSubscriptionAttributesResponse *)getSubscriptionAttributes:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest
-{
+- (SNSGetSubscriptionAttributesResponse *)getSubscriptionAttributes:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest {
     AmazonServiceRequest *request = [SNSGetSubscriptionAttributesRequestMarshaller createRequest:getSubscriptionAttributesRequest];
 
-    return (SNSGetSubscriptionAttributesResponse *)[self invoke:request rawRequest:getSubscriptionAttributesRequest unmarshallerDelegate:[SNSGetSubscriptionAttributesResponseUnmarshaller class]];
+    return (SNSGetSubscriptionAttributesResponse *) [self invoke:request rawRequest:getSubscriptionAttributesRequest unmarshallerDelegate:[SNSGetSubscriptionAttributesResponseUnmarshaller class]];
 }
 
--(SNSListTopicsResponse *)listTopics:(SNSListTopicsRequest *)listTopicsRequest
-{
+- (SNSListTopicsResponse *)listTopics:(SNSListTopicsRequest *)listTopicsRequest {
     AmazonServiceRequest *request = [SNSListTopicsRequestMarshaller createRequest:listTopicsRequest];
 
-    return (SNSListTopicsResponse *)[self invoke:request rawRequest:listTopicsRequest unmarshallerDelegate:[SNSListTopicsResponseUnmarshaller class]];
+    return (SNSListTopicsResponse *) [self invoke:request rawRequest:listTopicsRequest unmarshallerDelegate:[SNSListTopicsResponseUnmarshaller class]];
 }
 
--(SNSUnsubscribeResponse *)unsubscribe:(SNSUnsubscribeRequest *)unsubscribeRequest
-{
+- (SNSUnsubscribeResponse *)unsubscribe:(SNSUnsubscribeRequest *)unsubscribeRequest {
     AmazonServiceRequest *request = [SNSUnsubscribeRequestMarshaller createRequest:unsubscribeRequest];
 
-    return (SNSUnsubscribeResponse *)[self invoke:request rawRequest:unsubscribeRequest unmarshallerDelegate:[SNSUnsubscribeResponseUnmarshaller class]];
+    return (SNSUnsubscribeResponse *) [self invoke:request rawRequest:unsubscribeRequest unmarshallerDelegate:[SNSUnsubscribeResponseUnmarshaller class]];
 }
 
--(SNSListSubscriptionsByTopicResponse *)listSubscriptionsByTopic:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest
-{
+- (SNSListSubscriptionsByTopicResponse *)listSubscriptionsByTopic:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest {
     AmazonServiceRequest *request = [SNSListSubscriptionsByTopicRequestMarshaller createRequest:listSubscriptionsByTopicRequest];
 
-    return (SNSListSubscriptionsByTopicResponse *)[self invoke:request rawRequest:listSubscriptionsByTopicRequest unmarshallerDelegate:[SNSListSubscriptionsByTopicResponseUnmarshaller class]];
+    return (SNSListSubscriptionsByTopicResponse *) [self invoke:request rawRequest:listSubscriptionsByTopicRequest unmarshallerDelegate:[SNSListSubscriptionsByTopicResponseUnmarshaller class]];
 }
 
--(SNSPublishResponse *)publish:(SNSPublishRequest *)publishRequest
-{
+- (SNSPublishResponse *)publish:(SNSPublishRequest *)publishRequest {
     AmazonServiceRequest *request = [SNSPublishRequestMarshaller createRequest:publishRequest];
 
-    return (SNSPublishResponse *)[self invoke:request rawRequest:publishRequest unmarshallerDelegate:[SNSPublishResponseUnmarshaller class]];
+    return (SNSPublishResponse *) [self invoke:request rawRequest:publishRequest unmarshallerDelegate:[SNSPublishResponseUnmarshaller class]];
 }
-
 
 
 @end

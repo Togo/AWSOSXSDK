@@ -29,11 +29,11 @@
 /**
  * Create Table Request Marshaller
  */
-@interface DynamoDBCreateTableRequestMarshaller:NSObject {
+@interface DynamoDBCreateTableRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBCreateTableRequest *)createTableRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBCreateTableRequest *)createTableRequest;
 
 
 @end

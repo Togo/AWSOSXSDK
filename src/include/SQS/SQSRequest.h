@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SQSRequest:AmazonServiceRequest {
+@interface SQSRequest : AmazonServiceRequest {
 }
 
 @end

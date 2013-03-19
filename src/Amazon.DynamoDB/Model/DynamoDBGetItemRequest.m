@@ -25,32 +25,29 @@
 @synthesize consistentReadIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName           = nil;
-        key                 = nil;
-        attributesToGet     = [[NSMutableArray alloc] initWithCapacity:1];
-        consistentRead      = NO;
+        tableName = nil;
+        key = nil;
+        attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
+        consistentRead = NO;
         consistentReadIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey
-{
+- (id)initWithTableName:(NSString *)theTableName andKey:(DynamoDBKey *)theKey {
     if (self = [self init]) {
         self.tableName = theTableName;
-        self.key       = theKey;
+        self.key = theKey;
     }
 
     return self;
 }
 
 
--(void)addAttributesToGet:(NSString *)attributesToGetObject
-{
+- (void)addAttributesToGet:(NSString *)attributesToGetObject {
     if (attributesToGet == nil) {
         attributesToGet = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -59,8 +56,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -75,13 +71,10 @@
 }
 
 
--(void)setConsistentRead:(bool)theValue
-{
-    consistentRead      = theValue;
+- (void)setConsistentRead:(bool)theValue {
+    consistentRead = theValue;
     consistentReadIsSet = YES;
 }
-
-
 
 
 @end

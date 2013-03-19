@@ -20,8 +20,7 @@
 /**
  * Delete Key Pair
  */
-@interface EC2DeleteKeyPairResponse:EC2Response
-{
+@interface EC2DeleteKeyPairResponse : EC2Response {
 }
 
 @end

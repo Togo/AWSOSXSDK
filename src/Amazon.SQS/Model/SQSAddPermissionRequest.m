@@ -24,33 +24,30 @@
 @synthesize actions;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueUrl      = nil;
-        label         = nil;
+        queueUrl = nil;
+        label = nil;
         aWSAccountIds = [[NSMutableArray alloc] initWithCapacity:1];
-        actions       = [[NSMutableArray alloc] initWithCapacity:1];
+        actions = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActions:(NSMutableArray *)theActions
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActions:(NSMutableArray *)theActions {
     if (self = [self init]) {
-        self.queueUrl      = theQueueUrl;
-        self.label         = theLabel;
+        self.queueUrl = theQueueUrl;
+        self.label = theLabel;
         self.aWSAccountIds = theAWSAccountIds;
-        self.actions       = theActions;
+        self.actions = theActions;
     }
 
     return self;
 }
 
 
--(void)addAWSAccountId:(NSString *)aWSAccountIdObject
-{
+- (void)addAWSAccountId:(NSString *)aWSAccountIdObject {
     if (aWSAccountIds == nil) {
         aWSAccountIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
     [aWSAccountIds addObject:aWSAccountIdObject];
 }
 
--(void)addAction:(NSString *)actionObject
-{
+- (void)addAction:(NSString *)actionObject {
     if (actions == nil) {
         actions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +64,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +77,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

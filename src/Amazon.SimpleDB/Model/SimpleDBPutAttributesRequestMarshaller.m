@@ -17,12 +17,11 @@
 
 @implementation SimpleDBPutAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBPutAttributesRequest *)putAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBPutAttributesRequest *)putAttributesRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"PutAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"PutAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[putAttributesRequest delegate]];
     [request setCredentials:[putAttributesRequest credentials]];
@@ -55,7 +54,7 @@
             }
             if (attributesListValue != nil) {
                 if (attributesListValue.replaceIsSet) {
-                    [request setParameterValue:(attributesListValue.replace ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@", @"Attribute", attributesListIndex, @"Replace"]];
+                    [request setParameterValue:(attributesListValue.replace ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@", @"Attribute", attributesListIndex, @"Replace"]];
                 }
             }
 
@@ -76,7 +75,7 @@
         }
         if (expected != nil) {
             if (expected.existsIsSet) {
-                [request setParameterValue:(expected.exists ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@", @"Expected", @"Exists"]];
+                [request setParameterValue:(expected.exists ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@", @"Expected", @"Exists"]];
             }
         }
     }

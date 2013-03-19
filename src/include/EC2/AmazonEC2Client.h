@@ -217,8 +217,7 @@
  * </summary>
  *
  */
-@interface AmazonEC2Client:AmazonWebServiceClient
-{
+@interface AmazonEC2Client : AmazonWebServiceClient {
 }
 
 
@@ -242,7 +241,7 @@
  * @see EC2RebootInstancesRequest
  * @see EC2RebootInstancesResponse
  */
--(EC2RebootInstancesResponse *)rebootInstances:(EC2RebootInstancesRequest *)rebootInstancesRequest;
+- (EC2RebootInstancesResponse *)rebootInstances:(EC2RebootInstancesRequest *)rebootInstancesRequest;
 
 
 /**
@@ -265,7 +264,7 @@
  * @see EC2DescribeReservedInstancesRequest
  * @see EC2DescribeReservedInstancesResponse
  */
--(EC2DescribeReservedInstancesResponse *)describeReservedInstances:(EC2DescribeReservedInstancesRequest *)describeReservedInstancesRequest;
+- (EC2DescribeReservedInstancesResponse *)describeReservedInstances:(EC2DescribeReservedInstancesRequest *)describeReservedInstancesRequest;
 
 
 /**
@@ -293,7 +292,7 @@
  * @see EC2DescribeAvailabilityZonesRequest
  * @see EC2DescribeAvailabilityZonesResponse
  */
--(EC2DescribeAvailabilityZonesResponse *)describeAvailabilityZones:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest;
+- (EC2DescribeAvailabilityZonesResponse *)describeAvailabilityZones:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest;
 
 
 /**
@@ -316,7 +315,7 @@
  * @see EC2DetachVolumeRequest
  * @see EC2DetachVolumeResponse
  */
--(EC2DetachVolumeResponse *)detachVolume:(EC2DetachVolumeRequest *)detachVolumeRequest;
+- (EC2DetachVolumeResponse *)detachVolume:(EC2DetachVolumeRequest *)detachVolumeRequest;
 
 
 /**
@@ -337,7 +336,7 @@
  * @see EC2DeleteKeyPairRequest
  * @see EC2DeleteKeyPairResponse
  */
--(EC2DeleteKeyPairResponse *)deleteKeyPair:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest;
+- (EC2DeleteKeyPairResponse *)deleteKeyPair:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest;
 
 
 /**
@@ -360,7 +359,7 @@
  * @see EC2UnmonitorInstancesRequest
  * @see EC2UnmonitorInstancesResponse
  */
--(EC2UnmonitorInstancesResponse *)unmonitorInstances:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest;
+- (EC2UnmonitorInstancesResponse *)unmonitorInstances:(EC2UnmonitorInstancesRequest *)unmonitorInstancesRequest;
 
 
 /**
@@ -384,7 +383,7 @@
  * @see EC2CreateImageRequest
  * @see EC2CreateImageResponse
  */
--(EC2CreateImageResponse *)createImage:(EC2CreateImageRequest *)createImageRequest;
+- (EC2CreateImageResponse *)createImage:(EC2CreateImageRequest *)createImageRequest;
 
 
 /**
@@ -411,7 +410,7 @@
  * @see EC2DeleteSecurityGroupRequest
  * @see EC2DeleteSecurityGroupResponse
  */
--(EC2DeleteSecurityGroupResponse *)deleteSecurityGroup:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest;
+- (EC2DeleteSecurityGroupResponse *)deleteSecurityGroup:(EC2DeleteSecurityGroupRequest *)deleteSecurityGroupRequest;
 
 
 /**
@@ -431,7 +430,7 @@
  * @see EC2CreateInstanceExportTaskRequest
  * @see EC2CreateInstanceExportTaskResponse
  */
--(EC2CreateInstanceExportTaskResponse *)createInstanceExportTask:(EC2CreateInstanceExportTaskRequest *)createInstanceExportTaskRequest;
+- (EC2CreateInstanceExportTaskResponse *)createInstanceExportTask:(EC2CreateInstanceExportTaskRequest *)createInstanceExportTaskRequest;
 
 
 /**
@@ -458,7 +457,7 @@
  * @see EC2GetPasswordDataRequest
  * @see EC2GetPasswordDataResponse
  */
--(EC2GetPasswordDataResponse *)getPasswordData:(EC2GetPasswordDataRequest *)getPasswordDataRequest;
+- (EC2GetPasswordDataResponse *)getPasswordData:(EC2GetPasswordDataRequest *)getPasswordDataRequest;
 
 
 /**
@@ -489,7 +488,7 @@
  * @see EC2StopInstancesRequest
  * @see EC2StopInstancesResponse
  */
--(EC2StopInstancesResponse *)stopInstances:(EC2StopInstancesRequest *)stopInstancesRequest;
+- (EC2StopInstancesResponse *)stopInstances:(EC2StopInstancesRequest *)stopInstancesRequest;
 
 
 /**
@@ -528,7 +527,7 @@
  * @see EC2ImportKeyPairRequest
  * @see EC2ImportKeyPairResponse
  */
--(EC2ImportKeyPairResponse *)importKeyPair:(EC2ImportKeyPairRequest *)importKeyPairRequest;
+- (EC2ImportKeyPairResponse *)importKeyPair:(EC2ImportKeyPairRequest *)importKeyPairRequest;
 
 
 /**
@@ -558,7 +557,7 @@
  * @see EC2CreateSecurityGroupRequest
  * @see EC2CreateSecurityGroupResponse
  */
--(EC2CreateSecurityGroupResponse *)createSecurityGroup:(EC2CreateSecurityGroupRequest *)createSecurityGroupRequest;
+- (EC2CreateSecurityGroupResponse *)createSecurityGroup:(EC2CreateSecurityGroupRequest *)createSecurityGroupRequest;
 
 
 /**
@@ -591,7 +590,7 @@
  * @see EC2DescribeSpotPriceHistoryRequest
  * @see EC2DescribeSpotPriceHistoryResponse
  */
--(EC2DescribeSpotPriceHistoryResponse *)describeSpotPriceHistory:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest;
+- (EC2DescribeSpotPriceHistoryResponse *)describeSpotPriceHistory:(EC2DescribeSpotPriceHistoryRequest *)describeSpotPriceHistoryRequest;
 
 
 /**
@@ -614,7 +613,7 @@
  * @see EC2DescribeRegionsRequest
  * @see EC2DescribeRegionsResponse
  */
--(EC2DescribeRegionsResponse *)describeRegions:(EC2DescribeRegionsRequest *)describeRegionsRequest;
+- (EC2DescribeRegionsResponse *)describeRegions:(EC2DescribeRegionsRequest *)describeRegionsRequest;
 
 
 /**
@@ -634,7 +633,7 @@
  * @see EC2CreateReservedInstancesListingRequest
  * @see EC2CreateReservedInstancesListingResponse
  */
--(EC2CreateReservedInstancesListingResponse *)createReservedInstancesListing:(EC2CreateReservedInstancesListingRequest *)createReservedInstancesListingRequest;
+- (EC2CreateReservedInstancesListingResponse *)createReservedInstancesListing:(EC2CreateReservedInstancesListingRequest *)createReservedInstancesListingRequest;
 
 
 /**
@@ -655,7 +654,7 @@
  * @see EC2ResetSnapshotAttributeRequest
  * @see EC2ResetSnapshotAttributeResponse
  */
--(EC2ResetSnapshotAttributeResponse *)resetSnapshotAttribute:(EC2ResetSnapshotAttributeRequest *)resetSnapshotAttributeRequest;
+- (EC2ResetSnapshotAttributeResponse *)resetSnapshotAttribute:(EC2ResetSnapshotAttributeRequest *)resetSnapshotAttributeRequest;
 
 
 /**
@@ -675,7 +674,7 @@
  * @see EC2ImportVolumeRequest
  * @see EC2ImportVolumeResponse
  */
--(EC2ImportVolumeResponse *)importVolume:(EC2ImportVolumeRequest *)importVolumeRequest;
+- (EC2ImportVolumeResponse *)importVolume:(EC2ImportVolumeRequest *)importVolumeRequest;
 
 
 /**
@@ -702,7 +701,7 @@
  * @see EC2DescribeSecurityGroupsRequest
  * @see EC2DescribeSecurityGroupsResponse
  */
--(EC2DescribeSecurityGroupsResponse *)describeSecurityGroups:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest;
+- (EC2DescribeSecurityGroupsResponse *)describeSecurityGroups:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest;
 
 
 /**
@@ -723,7 +722,7 @@
  * @see EC2DeregisterImageRequest
  * @see EC2DeregisterImageResponse
  */
--(EC2DeregisterImageResponse *)deregisterImage:(EC2DeregisterImageRequest *)deregisterImageRequest;
+- (EC2DeregisterImageResponse *)deregisterImage:(EC2DeregisterImageRequest *)deregisterImageRequest;
 
 
 /**
@@ -751,7 +750,7 @@
  * @see EC2DescribeSpotDatafeedSubscriptionRequest
  * @see EC2DescribeSpotDatafeedSubscriptionResponse
  */
--(EC2DescribeSpotDatafeedSubscriptionResponse *)describeSpotDatafeedSubscription:(EC2DescribeSpotDatafeedSubscriptionRequest *)describeSpotDatafeedSubscriptionRequest;
+- (EC2DescribeSpotDatafeedSubscriptionResponse *)describeSpotDatafeedSubscription:(EC2DescribeSpotDatafeedSubscriptionRequest *)describeSpotDatafeedSubscriptionRequest;
 
 
 /**
@@ -771,7 +770,7 @@
  * @see EC2DeleteTagsRequest
  * @see EC2DeleteTagsResponse
  */
--(EC2DeleteTagsResponse *)deleteTags:(EC2DeleteTagsRequest *)deleteTagsRequest;
+- (EC2DeleteTagsResponse *)deleteTags:(EC2DeleteTagsRequest *)deleteTagsRequest;
 
 
 /**
@@ -791,7 +790,7 @@
  * @see EC2DescribeAccountAttributesRequest
  * @see EC2DescribeAccountAttributesResponse
  */
--(EC2DescribeAccountAttributesResponse *)describeAccountAttributes:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest;
+- (EC2DescribeAccountAttributesResponse *)describeAccountAttributes:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest;
 
 
 /**
@@ -812,7 +811,7 @@
  * @see EC2EnableVolumeIORequest
  * @see EC2EnableVolumeIOResponse
  */
--(EC2EnableVolumeIOResponse *)enableVolumeIO:(EC2EnableVolumeIORequest *)enableVolumeIORequest;
+- (EC2EnableVolumeIOResponse *)enableVolumeIO:(EC2EnableVolumeIORequest *)enableVolumeIORequest;
 
 
 /**
@@ -835,7 +834,7 @@
  * @see EC2AttachVolumeRequest
  * @see EC2AttachVolumeResponse
  */
--(EC2AttachVolumeResponse *)attachVolume:(EC2AttachVolumeRequest *)attachVolumeRequest;
+- (EC2AttachVolumeResponse *)attachVolume:(EC2AttachVolumeRequest *)attachVolumeRequest;
 
 
 /**
@@ -859,7 +858,7 @@
  * @see EC2DescribeLicensesRequest
  * @see EC2DescribeLicensesResponse
  */
--(EC2DescribeLicensesResponse *)describeLicenses:(EC2DescribeLicensesRequest *)describeLicensesRequest;
+- (EC2DescribeLicensesResponse *)describeLicenses:(EC2DescribeLicensesRequest *)describeLicensesRequest;
 
 
 /**
@@ -882,7 +881,7 @@
  * @see EC2DescribeVolumeStatusRequest
  * @see EC2DescribeVolumeStatusResponse
  */
--(EC2DescribeVolumeStatusResponse *)describeVolumeStatus:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest;
+- (EC2DescribeVolumeStatusResponse *)describeVolumeStatus:(EC2DescribeVolumeStatusRequest *)describeVolumeStatusRequest;
 
 
 /**
@@ -903,7 +902,7 @@
  * @see EC2ActivateLicenseRequest
  * @see EC2ActivateLicenseResponse
  */
--(EC2ActivateLicenseResponse *)activateLicense:(EC2ActivateLicenseRequest *)activateLicenseRequest;
+- (EC2ActivateLicenseResponse *)activateLicense:(EC2ActivateLicenseRequest *)activateLicenseRequest;
 
 
 /**
@@ -927,7 +926,7 @@
  * @see EC2ResetImageAttributeRequest
  * @see EC2ResetImageAttributeResponse
  */
--(EC2ResetImageAttributeResponse *)resetImageAttribute:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest;
+- (EC2ResetImageAttributeResponse *)resetImageAttribute:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest;
 
 
 /**
@@ -957,7 +956,7 @@
  * @see EC2CreateSnapshotRequest
  * @see EC2CreateSnapshotResponse
  */
--(EC2CreateSnapshotResponse *)createSnapshot:(EC2CreateSnapshotRequest *)createSnapshotRequest;
+- (EC2CreateSnapshotResponse *)createSnapshot:(EC2CreateSnapshotRequest *)createSnapshotRequest;
 
 
 /**
@@ -978,7 +977,7 @@
  * @see EC2DeleteVolumeRequest
  * @see EC2DeleteVolumeResponse
  */
--(EC2DeleteVolumeResponse *)deleteVolume:(EC2DeleteVolumeRequest *)deleteVolumeRequest;
+- (EC2DeleteVolumeResponse *)deleteVolume:(EC2DeleteVolumeRequest *)deleteVolumeRequest;
 
 
 /**
@@ -1011,7 +1010,7 @@
  * @see EC2DescribeVpcsRequest
  * @see EC2DescribeVpcsResponse
  */
--(EC2DescribeVpcsResponse *)describeVpcs:(EC2DescribeVpcsRequest *)describeVpcsRequest;
+- (EC2DescribeVpcsResponse *)describeVpcs:(EC2DescribeVpcsRequest *)describeVpcsRequest;
 
 
 /**
@@ -1029,7 +1028,7 @@
  * @see EC2CancelConversionTaskRequest
  * @see EC2CancelConversionTaskResponse
  */
--(EC2CancelConversionTaskResponse *)cancelConversionTask:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest;
+- (EC2CancelConversionTaskResponse *)cancelConversionTask:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest;
 
 
 /**
@@ -1056,7 +1055,7 @@
  * @see EC2AssociateAddressRequest
  * @see EC2AssociateAddressResponse
  */
--(EC2AssociateAddressResponse *)associateAddress:(EC2AssociateAddressRequest *)associateAddressRequest;
+- (EC2AssociateAddressResponse *)associateAddress:(EC2AssociateAddressRequest *)associateAddressRequest;
 
 
 /**
@@ -1078,7 +1077,7 @@
  * @see EC2DeactivateLicenseRequest
  * @see EC2DeactivateLicenseResponse
  */
--(EC2DeactivateLicenseResponse *)deactivateLicense:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest;
+- (EC2DeactivateLicenseResponse *)deactivateLicense:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest;
 
 
 /**
@@ -1098,7 +1097,7 @@
  * @see EC2DescribeExportTasksRequest
  * @see EC2DescribeExportTasksResponse
  */
--(EC2DescribeExportTasksResponse *)describeExportTasks:(EC2DescribeExportTasksRequest *)describeExportTasksRequest;
+- (EC2DescribeExportTasksResponse *)describeExportTasks:(EC2DescribeExportTasksRequest *)describeExportTasksRequest;
 
 
 /**
@@ -1122,7 +1121,7 @@
  * @see EC2DescribeVolumesRequest
  * @see EC2DescribeVolumesResponse
  */
--(EC2DescribeVolumesResponse *)describeVolumes:(EC2DescribeVolumesRequest *)describeVolumesRequest;
+- (EC2DescribeVolumesResponse *)describeVolumes:(EC2DescribeVolumesRequest *)describeVolumesRequest;
 
 
 /**
@@ -1142,7 +1141,7 @@
  * @see EC2DescribeReservedInstancesListingsRequest
  * @see EC2DescribeReservedInstancesListingsResponse
  */
--(EC2DescribeReservedInstancesListingsResponse *)describeReservedInstancesListings:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest;
+- (EC2DescribeReservedInstancesListingsResponse *)describeReservedInstancesListings:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest;
 
 
 /**
@@ -1160,7 +1159,7 @@
  * @see EC2ReportInstanceStatusRequest
  * @see EC2ReportInstanceStatusResponse
  */
--(EC2ReportInstanceStatusResponse *)reportInstanceStatus:(EC2ReportInstanceStatusRequest *)reportInstanceStatusRequest;
+- (EC2ReportInstanceStatusResponse *)reportInstanceStatus:(EC2ReportInstanceStatusRequest *)reportInstanceStatusRequest;
 
 
 /**
@@ -1183,7 +1182,7 @@
  * @see EC2MonitorInstancesRequest
  * @see EC2MonitorInstancesResponse
  */
--(EC2MonitorInstancesResponse *)monitorInstances:(EC2MonitorInstancesRequest *)monitorInstancesRequest;
+- (EC2MonitorInstancesResponse *)monitorInstances:(EC2MonitorInstancesRequest *)monitorInstancesRequest;
 
 
 /**
@@ -1207,7 +1206,7 @@
  * @see EC2DescribeBundleTasksRequest
  * @see EC2DescribeBundleTasksResponse
  */
--(EC2DescribeBundleTasksResponse *)describeBundleTasks:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest;
+- (EC2DescribeBundleTasksResponse *)describeBundleTasks:(EC2DescribeBundleTasksRequest *)describeBundleTasksRequest;
 
 
 /**
@@ -1227,7 +1226,7 @@
  * @see EC2ImportInstanceRequest
  * @see EC2ImportInstanceResponse
  */
--(EC2ImportInstanceResponse *)importInstance:(EC2ImportInstanceRequest *)importInstanceRequest;
+- (EC2ImportInstanceResponse *)importInstance:(EC2ImportInstanceRequest *)importInstanceRequest;
 
 
 /**
@@ -1257,7 +1256,7 @@
  * @see EC2RevokeSecurityGroupIngressRequest
  * @see EC2RevokeSecurityGroupIngressResponse
  */
--(EC2RevokeSecurityGroupIngressResponse *)revokeSecurityGroupIngress:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest;
+- (EC2RevokeSecurityGroupIngressResponse *)revokeSecurityGroupIngress:(EC2RevokeSecurityGroupIngressRequest *)revokeSecurityGroupIngressRequest;
 
 
 /**
@@ -1284,7 +1283,7 @@
  * @see EC2GetConsoleOutputRequest
  * @see EC2GetConsoleOutputResponse
  */
--(EC2GetConsoleOutputResponse *)getConsoleOutput:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest;
+- (EC2GetConsoleOutputResponse *)getConsoleOutput:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest;
 
 
 /**
@@ -1305,7 +1304,7 @@
  * @see EC2ModifyImageAttributeRequest
  * @see EC2ModifyImageAttributeResponse
  */
--(EC2ModifyImageAttributeResponse *)modifyImageAttribute:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest;
+- (EC2ModifyImageAttributeResponse *)modifyImageAttribute:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest;
 
 
 /**
@@ -1334,7 +1333,7 @@
  * @see EC2CreateSpotDatafeedSubscriptionRequest
  * @see EC2CreateSpotDatafeedSubscriptionResponse
  */
--(EC2CreateSpotDatafeedSubscriptionResponse *)createSpotDatafeedSubscription:(EC2CreateSpotDatafeedSubscriptionRequest *)createSpotDatafeedSubscriptionRequest;
+- (EC2CreateSpotDatafeedSubscriptionResponse *)createSpotDatafeedSubscription:(EC2CreateSpotDatafeedSubscriptionRequest *)createSpotDatafeedSubscriptionRequest;
 
 
 /**
@@ -1354,7 +1353,7 @@
  * @see EC2DescribeConversionTasksRequest
  * @see EC2DescribeConversionTasksResponse
  */
--(EC2DescribeConversionTasksResponse *)describeConversionTasks:(EC2DescribeConversionTasksRequest *)describeConversionTasksRequest;
+- (EC2DescribeConversionTasksResponse *)describeConversionTasks:(EC2DescribeConversionTasksRequest *)describeConversionTasksRequest;
 
 
 /**
@@ -1377,7 +1376,7 @@
  * @see EC2DescribeInstanceAttributeRequest
  * @see EC2DescribeInstanceAttributeResponse
  */
--(EC2DescribeInstanceAttributeResponse *)describeInstanceAttribute:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest;
+- (EC2DescribeInstanceAttributeResponse *)describeInstanceAttribute:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest;
 
 
 /**
@@ -1410,7 +1409,7 @@
  * @see EC2DescribeSubnetsRequest
  * @see EC2DescribeSubnetsResponse
  */
--(EC2DescribeSubnetsResponse *)describeSubnets:(EC2DescribeSubnetsRequest *)describeSubnetsRequest;
+- (EC2DescribeSubnetsResponse *)describeSubnets:(EC2DescribeSubnetsRequest *)describeSubnetsRequest;
 
 
 /**
@@ -1468,7 +1467,7 @@
  * @see EC2RunInstancesRequest
  * @see EC2RunInstancesResponse
  */
--(EC2RunInstancesResponse *)runInstances:(EC2RunInstancesRequest *)runInstancesRequest;
+- (EC2RunInstancesResponse *)runInstances:(EC2RunInstancesRequest *)runInstancesRequest;
 
 
 /**
@@ -1491,7 +1490,7 @@
  * @see EC2DescribePlacementGroupsRequest
  * @see EC2DescribePlacementGroupsResponse
  */
--(EC2DescribePlacementGroupsResponse *)describePlacementGroups:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest;
+- (EC2DescribePlacementGroupsResponse *)describePlacementGroups:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest;
 
 
 /**
@@ -1522,7 +1521,7 @@
  * @see EC2DescribeInstancesRequest
  * @see EC2DescribeInstancesResponse
  */
--(EC2DescribeInstancesResponse *)describeInstances:(EC2DescribeInstancesRequest *)describeInstancesRequest;
+- (EC2DescribeInstancesResponse *)describeInstances:(EC2DescribeInstancesRequest *)describeInstancesRequest;
 
 
 /**
@@ -1540,7 +1539,7 @@
  * @see EC2ModifyVolumeAttributeRequest
  * @see EC2ModifyVolumeAttributeResponse
  */
--(EC2ModifyVolumeAttributeResponse *)modifyVolumeAttribute:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest;
+- (EC2ModifyVolumeAttributeResponse *)modifyVolumeAttribute:(EC2ModifyVolumeAttributeRequest *)modifyVolumeAttributeRequest;
 
 
 /**
@@ -1599,7 +1598,7 @@
  * @see EC2DescribeImagesRequest
  * @see EC2DescribeImagesResponse
  */
--(EC2DescribeImagesResponse *)describeImages:(EC2DescribeImagesRequest *)describeImagesRequest;
+- (EC2DescribeImagesResponse *)describeImages:(EC2DescribeImagesRequest *)describeImagesRequest;
 
 
 /**
@@ -1628,7 +1627,7 @@
  * @see EC2StartInstancesRequest
  * @see EC2StartInstancesResponse
  */
--(EC2StartInstancesResponse *)startInstances:(EC2StartInstancesRequest *)startInstancesRequest;
+- (EC2StartInstancesResponse *)startInstances:(EC2StartInstancesRequest *)startInstancesRequest;
 
 
 /**
@@ -1648,7 +1647,7 @@
  * @see EC2CancelReservedInstancesListingRequest
  * @see EC2CancelReservedInstancesListingResponse
  */
--(EC2CancelReservedInstancesListingResponse *)cancelReservedInstancesListing:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest;
+- (EC2CancelReservedInstancesListingResponse *)cancelReservedInstancesListing:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest;
 
 
 /**
@@ -1669,7 +1668,7 @@
  * @see EC2ModifyInstanceAttributeRequest
  * @see EC2ModifyInstanceAttributeResponse
  */
--(EC2ModifyInstanceAttributeResponse *)modifyInstanceAttribute:(EC2ModifyInstanceAttributeRequest *)modifyInstanceAttributeRequest;
+- (EC2ModifyInstanceAttributeResponse *)modifyInstanceAttribute:(EC2ModifyInstanceAttributeRequest *)modifyInstanceAttributeRequest;
 
 
 /**
@@ -1699,7 +1698,7 @@
  * @see EC2AuthorizeSecurityGroupIngressRequest
  * @see EC2AuthorizeSecurityGroupIngressResponse
  */
--(EC2AuthorizeSecurityGroupIngressResponse *)authorizeSecurityGroupIngress:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest;
+- (EC2AuthorizeSecurityGroupIngressResponse *)authorizeSecurityGroupIngress:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest;
 
 
 /**
@@ -1744,7 +1743,7 @@
  * @see EC2DescribeSpotInstanceRequestsRequest
  * @see EC2DescribeSpotInstanceRequestsResponse
  */
--(EC2DescribeSpotInstanceRequestsResponse *)describeSpotInstanceRequests:(EC2DescribeSpotInstanceRequestsRequest *)describeSpotInstanceRequestsRequest;
+- (EC2DescribeSpotInstanceRequestsResponse *)describeSpotInstanceRequests:(EC2DescribeSpotInstanceRequestsRequest *)describeSpotInstanceRequestsRequest;
 
 
 /**
@@ -1762,7 +1761,7 @@
  * @see EC2CancelExportTaskRequest
  * @see EC2CancelExportTaskResponse
  */
--(EC2CancelExportTaskResponse *)cancelExportTask:(EC2CancelExportTaskRequest *)cancelExportTaskRequest;
+- (EC2CancelExportTaskResponse *)cancelExportTask:(EC2CancelExportTaskRequest *)cancelExportTaskRequest;
 
 
 /**
@@ -1781,7 +1780,7 @@
  * @see EC2CopyImageRequest
  * @see EC2CopyImageResponse
  */
--(EC2CopyImageResponse *)doCopyImage:(EC2CopyImageRequest *)copyImageRequest;
+- (EC2CopyImageResponse *)doCopyImage:(EC2CopyImageRequest *)copyImageRequest;
 
 
 /**
@@ -1813,7 +1812,7 @@
  * @see EC2RequestSpotInstancesRequest
  * @see EC2RequestSpotInstancesResponse
  */
--(EC2RequestSpotInstancesResponse *)requestSpotInstances:(EC2RequestSpotInstancesRequest *)requestSpotInstancesRequest;
+- (EC2RequestSpotInstancesResponse *)requestSpotInstances:(EC2RequestSpotInstancesRequest *)requestSpotInstancesRequest;
 
 
 /**
@@ -1834,7 +1833,7 @@
  * @see EC2CreateTagsRequest
  * @see EC2CreateTagsResponse
  */
--(EC2CreateTagsResponse *)createTags:(EC2CreateTagsRequest *)createTagsRequest;
+- (EC2CreateTagsResponse *)createTags:(EC2CreateTagsRequest *)createTagsRequest;
 
 
 /**
@@ -1854,7 +1853,7 @@
  * @see EC2DescribeVolumeAttributeRequest
  * @see EC2DescribeVolumeAttributeResponse
  */
--(EC2DescribeVolumeAttributeResponse *)describeVolumeAttribute:(EC2DescribeVolumeAttributeRequest *)describeVolumeAttributeRequest;
+- (EC2DescribeVolumeAttributeResponse *)describeVolumeAttribute:(EC2DescribeVolumeAttributeRequest *)describeVolumeAttributeRequest;
 
 
 /**
@@ -1877,7 +1876,7 @@
  * @see EC2DescribeTagsRequest
  * @see EC2DescribeTagsResponse
  */
--(EC2DescribeTagsResponse *)describeTags:(EC2DescribeTagsRequest *)describeTagsRequest;
+- (EC2DescribeTagsResponse *)describeTags:(EC2DescribeTagsRequest *)describeTagsRequest;
 
 
 /**
@@ -1902,7 +1901,7 @@
  * @see EC2CancelBundleTaskRequest
  * @see EC2CancelBundleTaskResponse
  */
--(EC2CancelBundleTaskResponse *)cancelBundleTask:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest;
+- (EC2CancelBundleTaskResponse *)cancelBundleTask:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest;
 
 
 /**
@@ -1935,7 +1934,7 @@
  * @see EC2CancelSpotInstanceRequestsRequest
  * @see EC2CancelSpotInstanceRequestsResponse
  */
--(EC2CancelSpotInstanceRequestsResponse *)cancelSpotInstanceRequests:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest;
+- (EC2CancelSpotInstanceRequestsResponse *)cancelSpotInstanceRequests:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest;
 
 
 /**
@@ -1960,7 +1959,7 @@
  * @see EC2PurchaseReservedInstancesOfferingRequest
  * @see EC2PurchaseReservedInstancesOfferingResponse
  */
--(EC2PurchaseReservedInstancesOfferingResponse *)purchaseReservedInstancesOffering:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest;
+- (EC2PurchaseReservedInstancesOfferingResponse *)purchaseReservedInstancesOffering:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest;
 
 
 /**
@@ -1981,7 +1980,7 @@
  * @see EC2ModifySnapshotAttributeRequest
  * @see EC2ModifySnapshotAttributeResponse
  */
--(EC2ModifySnapshotAttributeResponse *)modifySnapshotAttribute:(EC2ModifySnapshotAttributeRequest *)modifySnapshotAttributeRequest;
+- (EC2ModifySnapshotAttributeResponse *)modifySnapshotAttribute:(EC2ModifySnapshotAttributeRequest *)modifySnapshotAttributeRequest;
 
 
 /**
@@ -2008,7 +2007,7 @@
  * @see EC2TerminateInstancesRequest
  * @see EC2TerminateInstancesResponse
  */
--(EC2TerminateInstancesResponse *)terminateInstances:(EC2TerminateInstancesRequest *)terminateInstancesRequest;
+- (EC2TerminateInstancesResponse *)terminateInstances:(EC2TerminateInstancesRequest *)terminateInstancesRequest;
 
 
 /**
@@ -2034,7 +2033,7 @@
  * @see EC2DeleteSpotDatafeedSubscriptionRequest
  * @see EC2DeleteSpotDatafeedSubscriptionResponse
  */
--(EC2DeleteSpotDatafeedSubscriptionResponse *)deleteSpotDatafeedSubscription:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest;
+- (EC2DeleteSpotDatafeedSubscriptionResponse *)deleteSpotDatafeedSubscription:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest;
 
 
 /**
@@ -2057,7 +2056,7 @@
  * @see EC2DescribeSnapshotAttributeRequest
  * @see EC2DescribeSnapshotAttributeResponse
  */
--(EC2DescribeSnapshotAttributeResponse *)describeSnapshotAttribute:(EC2DescribeSnapshotAttributeRequest *)describeSnapshotAttributeRequest;
+- (EC2DescribeSnapshotAttributeResponse *)describeSnapshotAttribute:(EC2DescribeSnapshotAttributeRequest *)describeSnapshotAttributeRequest;
 
 
 /**
@@ -2080,7 +2079,7 @@
  * @see EC2DescribeAddressesRequest
  * @see EC2DescribeAddressesResponse
  */
--(EC2DescribeAddressesResponse *)describeAddresses:(EC2DescribeAddressesRequest *)describeAddressesRequest;
+- (EC2DescribeAddressesResponse *)describeAddresses:(EC2DescribeAddressesRequest *)describeAddressesRequest;
 
 
 /**
@@ -2104,7 +2103,7 @@
  * @see EC2DescribeImageAttributeRequest
  * @see EC2DescribeImageAttributeResponse
  */
--(EC2DescribeImageAttributeResponse *)describeImageAttribute:(EC2DescribeImageAttributeRequest *)describeImageAttributeRequest;
+- (EC2DescribeImageAttributeResponse *)describeImageAttribute:(EC2DescribeImageAttributeRequest *)describeImageAttributeRequest;
 
 
 /**
@@ -2128,7 +2127,7 @@
  * @see EC2DescribeKeyPairsRequest
  * @see EC2DescribeKeyPairsResponse
  */
--(EC2DescribeKeyPairsResponse *)describeKeyPairs:(EC2DescribeKeyPairsRequest *)describeKeyPairsRequest;
+- (EC2DescribeKeyPairsResponse *)describeKeyPairs:(EC2DescribeKeyPairsRequest *)describeKeyPairsRequest;
 
 
 /**
@@ -2156,7 +2155,7 @@
  * @see EC2ConfirmProductInstanceRequest
  * @see EC2ConfirmProductInstanceResponse
  */
--(EC2ConfirmProductInstanceResponse *)confirmProductInstance:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest;
+- (EC2ConfirmProductInstanceResponse *)confirmProductInstance:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest;
 
 
 /**
@@ -2179,7 +2178,7 @@
  * @see EC2CreateVolumeRequest
  * @see EC2CreateVolumeResponse
  */
--(EC2CreateVolumeResponse *)createVolume:(EC2CreateVolumeRequest *)createVolumeRequest;
+- (EC2CreateVolumeResponse *)createVolume:(EC2CreateVolumeRequest *)createVolumeRequest;
 
 
 /**
@@ -2249,7 +2248,7 @@
  * @see EC2DescribeInstanceStatusRequest
  * @see EC2DescribeInstanceStatusResponse
  */
--(EC2DescribeInstanceStatusResponse *)describeInstanceStatus:(EC2DescribeInstanceStatusRequest *)describeInstanceStatusRequest;
+- (EC2DescribeInstanceStatusResponse *)describeInstanceStatus:(EC2DescribeInstanceStatusRequest *)describeInstanceStatusRequest;
 
 
 /**
@@ -2274,7 +2273,7 @@
  * @see EC2DescribeReservedInstancesOfferingsRequest
  * @see EC2DescribeReservedInstancesOfferingsResponse
  */
--(EC2DescribeReservedInstancesOfferingsResponse *)describeReservedInstancesOfferings:(EC2DescribeReservedInstancesOfferingsRequest *)describeReservedInstancesOfferingsRequest;
+- (EC2DescribeReservedInstancesOfferingsResponse *)describeReservedInstancesOfferings:(EC2DescribeReservedInstancesOfferingsRequest *)describeReservedInstancesOfferingsRequest;
 
 
 /**
@@ -2296,7 +2295,7 @@
  * @see EC2DeleteSnapshotRequest
  * @see EC2DeleteSnapshotResponse
  */
--(EC2DeleteSnapshotResponse *)deleteSnapshot:(EC2DeleteSnapshotRequest *)deleteSnapshotRequest;
+- (EC2DeleteSnapshotResponse *)deleteSnapshot:(EC2DeleteSnapshotRequest *)deleteSnapshotRequest;
 
 
 /**
@@ -2318,7 +2317,7 @@
  * @see EC2DisassociateAddressRequest
  * @see EC2DisassociateAddressResponse
  */
--(EC2DisassociateAddressResponse *)disassociateAddress:(EC2DisassociateAddressRequest *)disassociateAddressRequest;
+- (EC2DisassociateAddressResponse *)disassociateAddress:(EC2DisassociateAddressRequest *)disassociateAddressRequest;
 
 
 /**
@@ -2340,7 +2339,7 @@
  * @see EC2CreatePlacementGroupRequest
  * @see EC2CreatePlacementGroupResponse
  */
--(EC2CreatePlacementGroupResponse *)createPlacementGroup:(EC2CreatePlacementGroupRequest *)createPlacementGroupRequest;
+- (EC2CreatePlacementGroupResponse *)createPlacementGroup:(EC2CreatePlacementGroupRequest *)createPlacementGroupRequest;
 
 
 /**
@@ -2365,7 +2364,7 @@
  * @see EC2BundleInstanceRequest
  * @see EC2BundleInstanceResponse
  */
--(EC2BundleInstanceResponse *)bundleInstance:(EC2BundleInstanceRequest *)bundleInstanceRequest;
+- (EC2BundleInstanceResponse *)bundleInstance:(EC2BundleInstanceRequest *)bundleInstanceRequest;
 
 
 /**
@@ -2387,7 +2386,7 @@
  * @see EC2DeletePlacementGroupRequest
  * @see EC2DeletePlacementGroupResponse
  */
--(EC2DeletePlacementGroupResponse *)deletePlacementGroup:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest;
+- (EC2DeletePlacementGroupResponse *)deletePlacementGroup:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest;
 
 
 /**
@@ -2407,7 +2406,7 @@
  * @see EC2CopySnapshotRequest
  * @see EC2CopySnapshotResponse
  */
--(EC2CopySnapshotResponse *)doCopySnapshot:(EC2CopySnapshotRequest *)copySnapshotRequest;
+- (EC2CopySnapshotResponse *)doCopySnapshot:(EC2CopySnapshotRequest *)copySnapshotRequest;
 
 
 /**
@@ -2430,7 +2429,7 @@
  * @see EC2AllocateAddressRequest
  * @see EC2AllocateAddressResponse
  */
--(EC2AllocateAddressResponse *)allocateAddress:(EC2AllocateAddressRequest *)allocateAddressRequest;
+- (EC2AllocateAddressResponse *)allocateAddress:(EC2AllocateAddressRequest *)allocateAddressRequest;
 
 
 /**
@@ -2461,7 +2460,7 @@
  * @see EC2ReleaseAddressRequest
  * @see EC2ReleaseAddressResponse
  */
--(EC2ReleaseAddressResponse *)releaseAddress:(EC2ReleaseAddressRequest *)releaseAddressRequest;
+- (EC2ReleaseAddressResponse *)releaseAddress:(EC2ReleaseAddressRequest *)releaseAddressRequest;
 
 
 /**
@@ -2482,7 +2481,7 @@
  * @see EC2ResetInstanceAttributeRequest
  * @see EC2ResetInstanceAttributeResponse
  */
--(EC2ResetInstanceAttributeResponse *)resetInstanceAttribute:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest;
+- (EC2ResetInstanceAttributeResponse *)resetInstanceAttribute:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest;
 
 
 /**
@@ -2506,7 +2505,7 @@
  * @see EC2CreateKeyPairRequest
  * @see EC2CreateKeyPairResponse
  */
--(EC2CreateKeyPairResponse *)createKeyPair:(EC2CreateKeyPairRequest *)createKeyPairRequest;
+- (EC2CreateKeyPairResponse *)createKeyPair:(EC2CreateKeyPairRequest *)createKeyPairRequest;
 
 
 /**
@@ -2531,7 +2530,7 @@
  * @see EC2DescribeSnapshotsRequest
  * @see EC2DescribeSnapshotsResponse
  */
--(EC2DescribeSnapshotsResponse *)describeSnapshots:(EC2DescribeSnapshotsRequest *)describeSnapshotsRequest;
+- (EC2DescribeSnapshotsResponse *)describeSnapshots:(EC2DescribeSnapshotsRequest *)describeSnapshotsRequest;
 
 
 /**
@@ -2565,8 +2564,7 @@
  * @see EC2RegisterImageRequest
  * @see EC2RegisterImageResponse
  */
--(EC2RegisterImageResponse *)registerImage:(EC2RegisterImageRequest *)registerImageRequest;
-
+- (EC2RegisterImageResponse *)registerImage:(EC2RegisterImageRequest *)registerImageRequest;
 
 
 @end

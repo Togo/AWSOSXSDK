@@ -22,11 +22,11 @@
 /**
  * Confirm Product Instance Request Marshaller
  */
-@interface EC2ConfirmProductInstanceRequestMarshaller:NSObject {
+@interface EC2ConfirmProductInstanceRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ConfirmProductInstanceRequest *)confirmProductInstanceRequest;
 
 
 @end

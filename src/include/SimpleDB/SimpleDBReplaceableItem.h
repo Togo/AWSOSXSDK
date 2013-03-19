@@ -16,18 +16,14 @@
 #import "SimpleDBReplaceableAttribute.h"
 
 
-
 /**
  * Replaceable Item
  */
 
-@interface SimpleDBReplaceableItem:NSObject
-
-{
-    NSString       *name;
+@interface SimpleDBReplaceableItem : NSObject {
+    NSString *name;
     NSMutableArray *attributes;
 }
-
 
 
 /**
@@ -45,7 +41,7 @@
  * Default constructor for a new ReplaceableItem object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ReplaceableItem object.
@@ -53,7 +49,7 @@
  *
  * @param theName The name of the replaceable item.
  */
--(id)initWithName:(NSString *)theName;
+- (id)initWithName:(NSString *)theName;
 
 /**
  * Constructs a new ReplaceableItem object.
@@ -62,13 +58,13 @@
  * @param theName The name of the replaceable item.
  * @param theAttributes The list of attributes for a replaceable item.
  */
--(id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes;
+- (id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes;
 
 /**
  * Adds a single object to attributes.
  * This function will alloc and init attributes if not already done.
  */
--(void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject;
+- (void)addAttribute:(SimpleDBReplaceableAttribute *)attributeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

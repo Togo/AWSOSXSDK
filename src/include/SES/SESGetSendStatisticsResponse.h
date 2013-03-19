@@ -18,27 +18,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Get Send Statistics Result
  */
 
-@interface SESGetSendStatisticsResponse:SESResponse
-
-{
+@interface SESGetSendStatisticsResponse : SESResponse {
     NSMutableArray *sendDataPoints;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of data points, each of which represents 15 minutes of
@@ -47,11 +43,10 @@
 @property (nonatomic, strong) NSMutableArray *sendDataPoints;
 
 
-
 /**
  * Returns a value from the sendDataPoints array for the specified index
  */
--(SESSendDataPoint *)sendDataPointsObjectAtIndex:(int)index;
+- (SESSendDataPoint *)sendDataPointsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

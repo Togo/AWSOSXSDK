@@ -25,7 +25,7 @@
 /**
  * Import Instance Volume Detail Item Unmarshaller
  */
-@interface EC2ImportInstanceVolumeDetailItemUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2ImportInstanceVolumeDetailItemUnmarshaller : EC2ResponseUnmarshaller {
     EC2ImportInstanceVolumeDetailItem *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) EC2ImportInstanceVolumeDetailItem *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

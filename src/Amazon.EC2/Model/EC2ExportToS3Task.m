@@ -24,22 +24,19 @@
 @synthesize s3Key;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         diskImageFormat = nil;
         containerFormat = nil;
-        s3Bucket        = nil;
-        s3Key           = nil;
+        s3Bucket = nil;
+        s3Key = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -20,12 +20,11 @@
 
 @synthesize rules;
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<LifecycleConfiguration>"];
-    
+
     for (S3BucketLifecycleConfigurationRule *rule in rules) {
         [xml appendString:[rule toXml]];
     }

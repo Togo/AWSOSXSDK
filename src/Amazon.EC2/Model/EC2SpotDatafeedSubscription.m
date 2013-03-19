@@ -25,23 +25,20 @@
 @synthesize fault;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         ownerId = nil;
-        bucket  = nil;
-        prefix  = nil;
-        state   = nil;
-        fault   = nil;
+        bucket = nil;
+        prefix = nil;
+        state = nil;
+        fault = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

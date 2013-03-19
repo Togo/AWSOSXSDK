@@ -20,8 +20,7 @@
 /**
  * Reboot Instances
  */
-@interface EC2RebootInstancesResponse:EC2Response
-{
+@interface EC2RebootInstancesResponse : EC2Response {
 }
 
 @end

@@ -20,21 +20,17 @@
  * Identity Verification Attributes
  */
 
-@interface SESIdentityVerificationAttributes:NSObject
-
-{
+@interface SESIdentityVerificationAttributes : NSObject {
     NSString *verificationStatus;
     NSString *verificationToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The verification status of the identity: "Pending", "Success",
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

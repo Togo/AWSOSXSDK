@@ -17,39 +17,34 @@
 #import "EC2RecurringCharge.h"
 
 
-
 /**
  * Reserved Instances
  */
 
-@interface EC2ReservedInstances:NSObject
-
-{
-    NSString       *reservedInstancesId;
-    NSString       *instanceType;
-    NSString       *availabilityZone;
-    NSDate         *start;
-    NSNumber       *duration;
-    NSNumber       *usagePrice;
-    NSNumber       *fixedPrice;
-    NSNumber       *instanceCount;
-    NSString       *productDescription;
-    NSString       *state;
+@interface EC2ReservedInstances : NSObject {
+    NSString *reservedInstancesId;
+    NSString *instanceType;
+    NSString *availabilityZone;
+    NSDate *start;
+    NSNumber *duration;
+    NSNumber *usagePrice;
+    NSNumber *fixedPrice;
+    NSNumber *instanceCount;
+    NSString *productDescription;
+    NSString *state;
     NSMutableArray *tags;
-    NSString       *instanceTenancy;
-    NSString       *currencyCode;
-    NSString       *offeringType;
+    NSString *instanceTenancy;
+    NSString *currencyCode;
+    NSString *offeringType;
     NSMutableArray *recurringCharges;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of the Reserved Instances purchase.
@@ -135,13 +130,13 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Adds a single object to recurringCharges.
  * This function will alloc and init recurringCharges if not already done.
  */
--(void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject;
+- (void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -149,7 +144,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

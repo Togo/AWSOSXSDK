@@ -36,11 +36,11 @@
 /**
  * Send Email Request Marshaller
  */
-@interface SESSendEmailRequestMarshaller:NSObject {
+@interface SESSendEmailRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESSendEmailRequest *)sendEmailRequest;
++ (AmazonServiceRequest *)createRequest:(SESSendEmailRequest *)sendEmailRequest;
 
 
 @end

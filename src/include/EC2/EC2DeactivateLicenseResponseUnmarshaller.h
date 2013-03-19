@@ -16,17 +16,17 @@
 #import "EC2DeactivateLicenseResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DeactivateLicenseResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DeactivateLicenseResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DeactivateLicenseResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DeactivateLicenseResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DeactivateLicenseResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DeactivateLicenseResponse *)response;
 
 @end

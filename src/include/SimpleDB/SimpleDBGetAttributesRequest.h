@@ -17,21 +17,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Attributes Request
  */
 
-@interface SimpleDBGetAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *domainName;
-    NSString       *itemName;
+@interface SimpleDBGetAttributesRequest : AmazonServiceRequestConfig {
+    NSString *domainName;
+    NSString *itemName;
     NSMutableArray *attributeNames;
-    bool           consistentRead;
-    bool           consistentReadIsSet;
+    bool consistentRead;
+    bool consistentReadIsSet;
 }
-
 
 
 /**
@@ -56,7 +52,7 @@
  * consistent eventually, and the client may not see data that was
  * written immediately before your read.
  */
-@property (nonatomic) bool           consistentRead;
+@property (nonatomic) bool consistentRead;
 
 @property (nonatomic, readonly) bool consistentReadIsSet;
 
@@ -65,7 +61,7 @@
  * Default constructor for a new GetAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetAttributesRequest object.
@@ -75,13 +71,13 @@
  * operation.
  * @param theItemName The name of the item.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName;
+- (id)initWithDomainName:(NSString *)theDomainName andItemName:(NSString *)theItemName;
 
 /**
  * Adds a single object to attributeNames.
  * This function will alloc and init attributeNames if not already done.
  */
--(void)addAttributeName:(NSString *)attributeNameObject;
+- (void)addAttributeName:(NSString *)attributeNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -89,7 +85,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

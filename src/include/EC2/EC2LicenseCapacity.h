@@ -20,23 +20,19 @@
  * License Capacity
  */
 
-@interface EC2LicenseCapacity:NSObject
-
-{
+@interface EC2LicenseCapacity : NSObject {
     NSNumber *capacity;
     NSNumber *instanceCapacity;
     NSString *state;
-    NSDate   *earliestAllowedDeactivationTime;
+    NSDate *earliestAllowedDeactivationTime;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The number of licenses available.
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

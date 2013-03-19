@@ -21,9 +21,8 @@
 @synthesize versioningConfiguration;
 
 
--(void)processBody
-{
-    NSXMLParser                                 *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3BucketVersioningConfigurationUnmarshaller *unmarshaller = [[S3BucketVersioningConfigurationUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];

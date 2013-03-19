@@ -22,18 +22,16 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topicArn  = nil;
+        topicArn = nil;
         nextToken = nil;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
     }
@@ -41,10 +39,9 @@
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andNextToken:(NSString *)theNextToken
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andNextToken:(NSString *)theNextToken {
     if (self = [self init]) {
-        self.topicArn  = theTopicArn;
+        self.topicArn = theTopicArn;
         self.nextToken = theNextToken;
     }
 
@@ -52,9 +49,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

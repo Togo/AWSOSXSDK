@@ -24,11 +24,11 @@
 /**
  * Import Volume Request Marshaller
  */
-@interface EC2ImportVolumeRequestMarshaller:NSObject {
+@interface EC2ImportVolumeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportVolumeRequest *)importVolumeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ImportVolumeRequest *)importVolumeRequest;
 
 
 @end

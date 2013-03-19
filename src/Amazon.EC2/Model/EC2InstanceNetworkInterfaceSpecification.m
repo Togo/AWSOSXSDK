@@ -30,18 +30,17 @@
 @synthesize secondaryPrivateIpAddressCount;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        networkInterfaceId             = nil;
-        deviceIndex                    = nil;
-        subnetId                       = nil;
-        descriptionValue               = nil;
-        privateIpAddress               = nil;
-        groups                         = [[NSMutableArray alloc] initWithCapacity:1];
-        deleteOnTermination            = NO;
-        deleteOnTerminationIsSet       = NO;
-        privateIpAddresses             = [[NSMutableArray alloc] initWithCapacity:1];
+        networkInterfaceId = nil;
+        deviceIndex = nil;
+        subnetId = nil;
+        descriptionValue = nil;
+        privateIpAddress = nil;
+        groups = [[NSMutableArray alloc] initWithCapacity:1];
+        deleteOnTermination = NO;
+        deleteOnTerminationIsSet = NO;
+        privateIpAddresses = [[NSMutableArray alloc] initWithCapacity:1];
         secondaryPrivateIpAddressCount = nil;
     }
 
@@ -49,8 +48,7 @@
 }
 
 
--(void)addGroup:(NSString *)groupObject
-{
+- (void)addGroup:(NSString *)groupObject {
     if (groups == nil) {
         groups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +56,7 @@
     [groups addObject:groupObject];
 }
 
--(void)addPrivateIpAddresse:(EC2PrivateIpAddressSpecification *)privateIpAddresseObject
-{
+- (void)addPrivateIpAddresse:(EC2PrivateIpAddressSpecification *)privateIpAddresseObject {
     if (privateIpAddresses == nil) {
         privateIpAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +65,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -89,13 +85,10 @@
 }
 
 
--(void)setDeleteOnTermination:(bool)theValue
-{
-    deleteOnTermination      = theValue;
+- (void)setDeleteOnTermination:(bool)theValue {
+    deleteOnTermination = theValue;
     deleteOnTerminationIsSet = YES;
 }
-
-
 
 
 @end

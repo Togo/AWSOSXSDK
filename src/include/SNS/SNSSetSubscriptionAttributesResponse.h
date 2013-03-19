@@ -24,8 +24,7 @@
 /**
  * Set Subscription Attributes
  */
-@interface SNSSetSubscriptionAttributesResponse:SNSResponse
-{
+@interface SNSSetSubscriptionAttributesResponse : SNSResponse {
 }
 
 @end

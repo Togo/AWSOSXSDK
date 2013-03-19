@@ -18,25 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Authorize Security Group Ingress Request
  */
 
-@interface EC2AuthorizeSecurityGroupIngressRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *groupName;
-    NSString       *groupId;
-    NSString       *sourceSecurityGroupName;
-    NSString       *sourceSecurityGroupOwnerId;
-    NSString       *ipProtocol;
-    NSNumber       *fromPort;
-    NSNumber       *toPort;
-    NSString       *cidrIp;
+@interface EC2AuthorizeSecurityGroupIngressRequest : AmazonServiceRequestConfig {
+    NSString *groupName;
+    NSString *groupId;
+    NSString *sourceSecurityGroupName;
+    NSString *sourceSecurityGroupOwnerId;
+    NSString *ipProtocol;
+    NSNumber *fromPort;
+    NSNumber *toPort;
+    NSString *cidrIp;
     NSMutableArray *ipPermissions;
 }
-
 
 
 /**
@@ -95,7 +91,7 @@
  * Default constructor for a new AuthorizeSecurityGroupIngressRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AuthorizeSecurityGroupIngressRequest object.
@@ -109,13 +105,13 @@
  * permissions is the preferred way of authorizing permissions since it
  * offers more flexibility and control.
  */
--(id)initWithGroupName:(NSString *)theGroupName andIpPermissions:(NSMutableArray *)theIpPermissions;
+- (id)initWithGroupName:(NSString *)theGroupName andIpPermissions:(NSMutableArray *)theIpPermissions;
 
 /**
  * Adds a single object to ipPermissions.
  * This function will alloc and init ipPermissions if not already done.
  */
--(void)addIpPermission:(EC2IpPermission *)ipPermissionObject;
+- (void)addIpPermission:(EC2IpPermission *)ipPermissionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -123,7 +119,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

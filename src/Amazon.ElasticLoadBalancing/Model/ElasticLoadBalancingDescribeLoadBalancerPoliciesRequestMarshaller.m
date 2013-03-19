@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingDescribeLoadBalancerPoliciesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancerPoliciesRequest *)describeLoadBalancerPoliciesRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancerPoliciesRequest *)describeLoadBalancerPoliciesRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeLoadBalancerPolicies"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeLoadBalancerPolicies" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[describeLoadBalancerPoliciesRequest delegate]];
     [request setCredentials:[describeLoadBalancerPoliciesRequest credentials]];

@@ -55,8 +55,7 @@
  * </summary>
  *
  */
-@interface AmazonSimpleDBClient:AmazonWebServiceClient
-{
+@interface AmazonSimpleDBClient : AmazonWebServiceClient {
 }
 
 
@@ -99,7 +98,7 @@
  * @see SimpleDBSelectRequest
  * @see SimpleDBSelectResponse
  */
--(SimpleDBSelectResponse *)select:(SimpleDBSelectRequest *)selectRequest;
+- (SimpleDBSelectResponse *)select:(SimpleDBSelectRequest *)selectRequest;
 
 
 /**
@@ -165,7 +164,7 @@
  * @see SimpleDBPutAttributesRequest
  * @see SimpleDBPutAttributesResponse
  */
--(SimpleDBPutAttributesResponse *)putAttributes:(SimpleDBPutAttributesRequest *)putAttributesRequest;
+- (SimpleDBPutAttributesResponse *)putAttributes:(SimpleDBPutAttributesRequest *)putAttributesRequest;
 
 
 /**
@@ -205,7 +204,7 @@
  * @see SimpleDBBatchDeleteAttributesRequest
  * @see SimpleDBBatchDeleteAttributesResponse
  */
--(SimpleDBBatchDeleteAttributesResponse *)batchDeleteAttributes:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest;
+- (SimpleDBBatchDeleteAttributesResponse *)batchDeleteAttributes:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest;
 
 
 /**
@@ -232,7 +231,7 @@
  * @see SimpleDBDeleteDomainRequest
  * @see SimpleDBDeleteDomainResponse
  */
--(SimpleDBDeleteDomainResponse *)deleteDomain:(SimpleDBDeleteDomainRequest *)deleteDomainRequest;
+- (SimpleDBDeleteDomainResponse *)deleteDomain:(SimpleDBDeleteDomainRequest *)deleteDomainRequest;
 
 
 /**
@@ -268,7 +267,7 @@
  * @see SimpleDBCreateDomainRequest
  * @see SimpleDBCreateDomainResponse
  */
--(SimpleDBCreateDomainResponse *)createDomain:(SimpleDBCreateDomainRequest *)createDomainRequest;
+- (SimpleDBCreateDomainResponse *)createDomain:(SimpleDBCreateDomainRequest *)createDomainRequest;
 
 
 /**
@@ -306,7 +305,7 @@
  * @see SimpleDBDeleteAttributesRequest
  * @see SimpleDBDeleteAttributesResponse
  */
--(SimpleDBDeleteAttributesResponse *)deleteAttributes:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest;
+- (SimpleDBDeleteAttributesResponse *)deleteAttributes:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest;
 
 
 /**
@@ -334,7 +333,7 @@
  * @see SimpleDBListDomainsRequest
  * @see SimpleDBListDomainsResponse
  */
--(SimpleDBListDomainsResponse *)listDomains:(SimpleDBListDomainsRequest *)listDomainsRequest;
+- (SimpleDBListDomainsResponse *)listDomains:(SimpleDBListDomainsRequest *)listDomainsRequest;
 
 
 /**
@@ -369,7 +368,7 @@
  * @see SimpleDBGetAttributesRequest
  * @see SimpleDBGetAttributesResponse
  */
--(SimpleDBGetAttributesResponse *)getAttributes:(SimpleDBGetAttributesRequest *)getAttributesRequest;
+- (SimpleDBGetAttributesResponse *)getAttributes:(SimpleDBGetAttributesRequest *)getAttributesRequest;
 
 
 /**
@@ -447,7 +446,7 @@
  * @see SimpleDBBatchPutAttributesRequest
  * @see SimpleDBBatchPutAttributesResponse
  */
--(SimpleDBBatchPutAttributesResponse *)batchPutAttributes:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest;
+- (SimpleDBBatchPutAttributesResponse *)batchPutAttributes:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest;
 
 
 /**
@@ -473,8 +472,7 @@
  * @see SimpleDBDomainMetadataRequest
  * @see SimpleDBDomainMetadataResponse
  */
--(SimpleDBDomainMetadataResponse *)domainMetadata:(SimpleDBDomainMetadataRequest *)domainMetadataRequest;
-
+- (SimpleDBDomainMetadataResponse *)domainMetadata:(SimpleDBDomainMetadataRequest *)domainMetadataRequest;
 
 
 @end

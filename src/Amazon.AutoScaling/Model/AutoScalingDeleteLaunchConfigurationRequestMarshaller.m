@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeleteLaunchConfigurationRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteLaunchConfiguration"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteLaunchConfiguration" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deleteLaunchConfigurationRequest delegate]];
     [request setCredentials:[deleteLaunchConfigurationRequest credentials]];

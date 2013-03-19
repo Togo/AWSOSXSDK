@@ -20,8 +20,7 @@
 /**
  * Delete Tags
  */
-@interface EC2DeleteTagsResponse:EC2Response
-{
+@interface EC2DeleteTagsResponse : EC2Response {
 }
 
 @end

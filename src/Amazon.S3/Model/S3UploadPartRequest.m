@@ -25,21 +25,18 @@
 @synthesize stream;
 
 
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload
-{
-    if(self = [super init])
-    {
-        self.bucket   = multipartUpload.bucket;
-        self.key      = multipartUpload.key;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload {
+    if (self = [super init]) {
+        self.bucket = multipartUpload.bucket;
+        self.key = multipartUpload.key;
         self.uploadId = multipartUpload.uploadId;
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
-    self.subResource = [NSString stringWithFormat:@"%@=%ld&%@=%@", kS3QueryParamPartNumber, (long)self.partNumber, kS3QueryParamUploadId, self.uploadId];
+- (NSMutableURLRequest *)configureURLRequest {
+    self.subResource = [NSString stringWithFormat:@"%@=%ld&%@=%@", kS3QueryParamPartNumber, (long) self.partNumber, kS3QueryParamUploadId, self.uploadId];
 
     if (self.contentLength < 1) {
         self.contentLength = [data length];

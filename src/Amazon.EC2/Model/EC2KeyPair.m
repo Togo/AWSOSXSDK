@@ -23,21 +23,18 @@
 @synthesize keyMaterial;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        keyName        = nil;
+        keyName = nil;
         keyFingerprint = nil;
-        keyMaterial    = nil;
+        keyMaterial = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

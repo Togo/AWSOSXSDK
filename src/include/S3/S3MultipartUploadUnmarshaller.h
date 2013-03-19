@@ -20,7 +20,7 @@
 #import "S3MultipartUpload.h"
 #import "S3OwnerUnmarshaller.h"
 
-@interface S3MultipartUploadUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3MultipartUploadUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3MultipartUpload *multipartUpload;
 }
 

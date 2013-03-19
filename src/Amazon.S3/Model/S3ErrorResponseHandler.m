@@ -22,17 +22,14 @@
 
 @synthesize exception;
 
--(id)initWithStatusCode:(NSInteger)statusCode
-{
-    if (self = [super init])
-    {
+- (id)initWithStatusCode:(NSInteger)statusCode {
+    if (self = [super init]) {
         httpStatusCode = statusCode;
     }
     return self;
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Message"]) {
@@ -51,14 +48,12 @@
     }
 }
 
--(AmazonServiceException *)exception
-{
+- (AmazonServiceException *)exception {
     if (exception == nil) {
         exception = [AmazonServiceException exceptionWithStatusCode:httpStatusCode];
     }
     return exception;
 }
-
 
 
 @end

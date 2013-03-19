@@ -28,24 +28,22 @@
 @synthesize launchSpecification;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        spotPrice             = nil;
-        instanceCount         = nil;
-        type                  = nil;
-        validFrom             = nil;
-        validUntil            = nil;
-        launchGroup           = nil;
+        spotPrice = nil;
+        instanceCount = nil;
+        type = nil;
+        validFrom = nil;
+        validUntil = nil;
+        launchGroup = nil;
         availabilityZoneGroup = nil;
-        launchSpecification   = nil;
+        launchSpecification = nil;
     }
 
     return self;
 }
 
--(id)initWithSpotPrice:(NSString *)theSpotPrice
-{
+- (id)initWithSpotPrice:(NSString *)theSpotPrice {
     if (self = [self init]) {
         self.spotPrice = theSpotPrice;
     }
@@ -54,9 +52,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

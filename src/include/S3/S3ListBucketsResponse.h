@@ -21,7 +21,7 @@
 /** Contains the response from a listBuckets operation.
  *
  */
-@interface S3ListBucketsResponse:S3Response {
+@interface S3ListBucketsResponse : S3Response {
     S3ListBucketsResult *listBucketsResult;
 }
 

@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Metric Data Request
  */
 
-@interface CloudWatchPutMetricDataRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *namespace;
+@interface CloudWatchPutMetricDataRequest : AmazonServiceRequestConfig {
+    NSString *namespace;
     NSMutableArray *metricDatas;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The namespace for the metric data. <note> You cannot specify a
@@ -60,7 +55,7 @@
  * Adds a single object to metricDatas.
  * This function will alloc and init metricDatas if not already done.
  */
--(void)addMetricData:(CloudWatchMetricDatum *)metricDataObject;
+- (void)addMetricData:(CloudWatchMetricDatum *)metricDataObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +63,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Licenses Request
  */
 
-@interface EC2DescribeLicensesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeLicensesRequest : AmazonServiceRequestConfig {
     NSMutableArray *licenseIds;
     NSMutableArray *filters;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the license registration for which details are to be
@@ -58,13 +53,13 @@
  * Adds a single object to licenseIds.
  * This function will alloc and init licenseIds if not already done.
  */
--(void)addLicenseId:(NSString *)licenseIdObject;
+- (void)addLicenseId:(NSString *)licenseIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Key Pair Request
  */
 
-@interface EC2CreateKeyPairRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateKeyPairRequest : AmazonServiceRequestConfig {
     NSString *keyName;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new CreateKeyPairRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateKeyPairRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theKeyName The unique name for the new key pair.
  */
--(id)initWithKeyName:(NSString *)theKeyName;
+- (id)initWithKeyName:(NSString *)theKeyName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

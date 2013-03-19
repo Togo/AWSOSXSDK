@@ -17,12 +17,11 @@
 
 @implementation SQSDeleteQueueRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSDeleteQueueRequest *)deleteQueueRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSDeleteQueueRequest *)deleteQueueRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"DeleteQueue"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteQueue" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[deleteQueueRequest delegate]];
     [request setCredentials:[deleteQueueRequest credentials]];

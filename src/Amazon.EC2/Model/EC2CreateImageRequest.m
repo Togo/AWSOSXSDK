@@ -26,33 +26,30 @@
 @synthesize blockDeviceMappings;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId          = nil;
-        name                = nil;
-        descriptionValue    = nil;
-        noReboot            = NO;
-        noRebootIsSet       = NO;
+        instanceId = nil;
+        name = nil;
+        descriptionValue = nil;
+        noReboot = NO;
+        noRebootIsSet = NO;
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithInstanceId:(NSString *)theInstanceId andName:(NSString *)theName
-{
+- (id)initWithInstanceId:(NSString *)theInstanceId andName:(NSString *)theName {
     if (self = [self init]) {
         self.instanceId = theInstanceId;
-        self.name       = theName;
+        self.name = theName;
     }
 
     return self;
 }
 
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +58,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -78,13 +74,10 @@
 }
 
 
--(void)setNoReboot:(bool)theValue
-{
-    noReboot      = theValue;
+- (void)setNoReboot:(bool)theValue {
+    noReboot = theValue;
     noRebootIsSet = YES;
 }
-
-
 
 
 @end

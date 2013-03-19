@@ -17,12 +17,11 @@
 
 @implementation AutoScalingSuspendProcessesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"SuspendProcesses"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"SuspendProcesses" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[suspendProcessesRequest delegate]];
     [request setCredentials:[suspendProcessesRequest credentials]];

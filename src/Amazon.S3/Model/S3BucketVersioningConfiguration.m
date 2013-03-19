@@ -22,18 +22,16 @@
 @synthesize isMfaDeleteEnabled;
 
 
--(id)initWithStatus:(NSString *)theStatus
-{
+- (id)initWithStatus:(NSString *)theStatus {
     self = [super init];
     if (self) {
-        self.status             = theStatus;
+        self.status = theStatus;
         self.isMfaDeleteEnabled = NO;
     }
     return self;
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<VersioningConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">"];

@@ -32,29 +32,27 @@
 @synthesize terminationPolicies;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        autoScalingGroupName    = nil;
+        autoScalingGroupName = nil;
         launchConfigurationName = nil;
-        minSize                 = nil;
-        maxSize                 = nil;
-        desiredCapacity         = nil;
-        defaultCooldown         = nil;
-        availabilityZones       = [[NSMutableArray alloc] initWithCapacity:1];
-        healthCheckType         = nil;
-        healthCheckGracePeriod  = nil;
-        placementGroup          = nil;
-        vPCZoneIdentifier       = nil;
-        terminationPolicies     = [[NSMutableArray alloc] initWithCapacity:1];
+        minSize = nil;
+        maxSize = nil;
+        desiredCapacity = nil;
+        defaultCooldown = nil;
+        availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
+        healthCheckType = nil;
+        healthCheckGracePeriod = nil;
+        placementGroup = nil;
+        vPCZoneIdentifier = nil;
+        terminationPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject
-{
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject {
     if (availabilityZones == nil) {
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -62,8 +60,7 @@
     [availabilityZones addObject:availabilityZoneObject];
 }
 
--(void)addTerminationPolicy:(NSString *)terminationPolicyObject
-{
+- (void)addTerminationPolicy:(NSString *)terminationPolicyObject {
     if (terminationPolicies == nil) {
         terminationPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -72,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -94,9 +90,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

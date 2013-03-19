@@ -54,8 +54,7 @@
  * </summary>
  *
  */
-@interface AmazonSNSClient:AmazonWebServiceClient
-{
+@interface AmazonSNSClient : AmazonWebServiceClient {
 }
 
 
@@ -87,7 +86,7 @@
  * @see SNSConfirmSubscriptionRequest
  * @see SNSConfirmSubscriptionResponse
  */
--(SNSConfirmSubscriptionResponse *)confirmSubscription:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest;
+- (SNSConfirmSubscriptionResponse *)confirmSubscription:(SNSConfirmSubscriptionRequest *)confirmSubscriptionRequest;
 
 
 /**
@@ -115,7 +114,7 @@
  * @see SNSGetTopicAttributesRequest
  * @see SNSGetTopicAttributesResponse
  */
--(SNSGetTopicAttributesResponse *)getTopicAttributes:(SNSGetTopicAttributesRequest *)getTopicAttributesRequest;
+- (SNSGetTopicAttributesResponse *)getTopicAttributes:(SNSGetTopicAttributesRequest *)getTopicAttributesRequest;
 
 
 /**
@@ -144,7 +143,7 @@
  * @see SNSSubscribeRequest
  * @see SNSSubscribeResponse
  */
--(SNSSubscribeResponse *)subscribe:(SNSSubscribeRequest *)subscribeRequest;
+- (SNSSubscribeResponse *)subscribe:(SNSSubscribeRequest *)subscribeRequest;
 
 
 /**
@@ -169,7 +168,7 @@
  * @see SNSSetTopicAttributesRequest
  * @see SNSSetTopicAttributesResponse
  */
--(SNSSetTopicAttributesResponse *)setTopicAttributes:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest;
+- (SNSSetTopicAttributesResponse *)setTopicAttributes:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest;
 
 
 /**
@@ -195,7 +194,7 @@
  * @see SNSDeleteTopicRequest
  * @see SNSDeleteTopicResponse
  */
--(SNSDeleteTopicResponse *)deleteTopic:(SNSDeleteTopicRequest *)deleteTopicRequest;
+- (SNSDeleteTopicResponse *)deleteTopic:(SNSDeleteTopicRequest *)deleteTopicRequest;
 
 
 /**
@@ -220,7 +219,7 @@
  * @see SNSRemovePermissionRequest
  * @see SNSRemovePermissionResponse
  */
--(SNSRemovePermissionResponse *)removePermission:(SNSRemovePermissionRequest *)removePermissionRequest;
+- (SNSRemovePermissionResponse *)removePermission:(SNSRemovePermissionRequest *)removePermissionRequest;
 
 
 /**
@@ -248,7 +247,7 @@
  * @see SNSListSubscriptionsRequest
  * @see SNSListSubscriptionsResponse
  */
--(SNSListSubscriptionsResponse *)listSubscriptions:(SNSListSubscriptionsRequest *)listSubscriptionsRequest;
+- (SNSListSubscriptionsResponse *)listSubscriptions:(SNSListSubscriptionsRequest *)listSubscriptionsRequest;
 
 
 /**
@@ -273,7 +272,7 @@
  * @see SNSSetSubscriptionAttributesRequest
  * @see SNSSetSubscriptionAttributesResponse
  */
--(SNSSetSubscriptionAttributesResponse *)setSubscriptionAttributes:(SNSSetSubscriptionAttributesRequest *)setSubscriptionAttributesRequest;
+- (SNSSetSubscriptionAttributesResponse *)setSubscriptionAttributes:(SNSSetSubscriptionAttributesRequest *)setSubscriptionAttributesRequest;
 
 
 /**
@@ -299,7 +298,7 @@
  * @see SNSAddPermissionRequest
  * @see SNSAddPermissionResponse
  */
--(SNSAddPermissionResponse *)addPermission:(SNSAddPermissionRequest *)addPermissionRequest;
+- (SNSAddPermissionResponse *)addPermission:(SNSAddPermissionRequest *)addPermissionRequest;
 
 
 /**
@@ -328,7 +327,7 @@
  * @see SNSCreateTopicRequest
  * @see SNSCreateTopicResponse
  */
--(SNSCreateTopicResponse *)createTopic:(SNSCreateTopicRequest *)createTopicRequest;
+- (SNSCreateTopicResponse *)createTopic:(SNSCreateTopicRequest *)createTopicRequest;
 
 
 /**
@@ -355,7 +354,7 @@
  * @see SNSGetSubscriptionAttributesRequest
  * @see SNSGetSubscriptionAttributesResponse
  */
--(SNSGetSubscriptionAttributesResponse *)getSubscriptionAttributes:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest;
+- (SNSGetSubscriptionAttributesResponse *)getSubscriptionAttributes:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest;
 
 
 /**
@@ -382,7 +381,7 @@
  * @see SNSListTopicsRequest
  * @see SNSListTopicsResponse
  */
--(SNSListTopicsResponse *)listTopics:(SNSListTopicsRequest *)listTopicsRequest;
+- (SNSListTopicsResponse *)listTopics:(SNSListTopicsRequest *)listTopicsRequest;
 
 
 /**
@@ -410,7 +409,7 @@
  * @see SNSUnsubscribeRequest
  * @see SNSUnsubscribeResponse
  */
--(SNSUnsubscribeResponse *)unsubscribe:(SNSUnsubscribeRequest *)unsubscribeRequest;
+- (SNSUnsubscribeResponse *)unsubscribe:(SNSUnsubscribeRequest *)unsubscribeRequest;
 
 
 /**
@@ -439,7 +438,7 @@
  * @see SNSListSubscriptionsByTopicRequest
  * @see SNSListSubscriptionsByTopicResponse
  */
--(SNSListSubscriptionsByTopicResponse *)listSubscriptionsByTopic:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest;
+- (SNSListSubscriptionsByTopicResponse *)listSubscriptionsByTopic:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest;
 
 
 /**
@@ -467,8 +466,7 @@
  * @see SNSPublishRequest
  * @see SNSPublishResponse
  */
--(SNSPublishResponse *)publish:(SNSPublishRequest *)publishRequest;
-
+- (SNSPublishResponse *)publish:(SNSPublishRequest *)publishRequest;
 
 
 @end

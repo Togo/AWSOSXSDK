@@ -23,8 +23,7 @@
 @synthesize maxKeys;
 
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *queryString = [NSMutableString stringWithCapacity:512];
 
     if (nil != self.prefix) {
@@ -32,24 +31,24 @@
     }
 
     if (nil != self.marker) {
-        if ( [queryString length] > 0) {
+        if ([queryString length] > 0) {
             [queryString appendFormat:@"&"];
         }
         [queryString appendFormat:@"%@=%@", kS3QueryParamMarker, [AmazonSDKUtil urlEncode:self.marker]];
     }
 
     if (nil != self.delimiter) {
-        if ( [queryString length] > 0) {
+        if ([queryString length] > 0) {
             [queryString appendFormat:@"&"];
         }
         [queryString appendFormat:@"%@=%@", kS3QueryParamDelimiter, [AmazonSDKUtil urlEncode:self.delimiter]];
     }
 
     if (self.maxKeys > 0) {
-        if ( [queryString length] > 0) {
+        if ([queryString length] > 0) {
             [queryString appendFormat:@"&"];
         }
-        [queryString appendFormat:@"%@=%ld", kS3QueryParamMaxKeys, (long)self.maxKeys];
+        [queryString appendFormat:@"%@=%ld", kS3QueryParamMaxKeys, (long) self.maxKeys];
     }
 
     if ([queryString length] > 0) {
@@ -62,8 +61,7 @@
     return self.urlRequest;
 }
 
--(id)initWithName:(NSString *)theBucketName
-{
+- (id)initWithName:(NSString *)theBucketName {
     self = [self init];
     if (self != nil) {
         self.bucket = theBucketName;

@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Volume Attribute Request
  */
 
-@interface EC2DescribeVolumeAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeVolumeAttributeRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
     NSString *attribute;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeId property for this object.
@@ -57,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

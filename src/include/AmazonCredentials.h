@@ -15,8 +15,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AmazonCredentials : NSObject <NSCopying>
-{
+@interface AmazonCredentials : NSObject <NSCopying> {
 }
 
 /** Inits the credential with the access key and the secret key.
@@ -24,7 +23,7 @@
  * @param accessKey The AWS Access Key
  * @param secretKey The AWS Secret Key
  */
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
 
 /** Inits the credential with the access key and the secret key.
  *
@@ -32,7 +31,7 @@
  * @param theSecretKey The AWS Secret Key
  * @param theSecurityToken The AWS Security Token
  */
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken;
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken;
 
 /** The AWS Access Key */
 @property (nonatomic, strong) NSString *accessKey;

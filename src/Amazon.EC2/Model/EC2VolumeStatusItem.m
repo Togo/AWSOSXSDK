@@ -25,22 +25,20 @@
 @synthesize actions;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId         = nil;
+        volumeId = nil;
         availabilityZone = nil;
-        volumeStatus     = nil;
-        events           = [[NSMutableArray alloc] initWithCapacity:1];
-        actions          = [[NSMutableArray alloc] initWithCapacity:1];
+        volumeStatus = nil;
+        events = [[NSMutableArray alloc] initWithCapacity:1];
+        actions = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addEvent:(EC2VolumeStatusEvent *)eventObject
-{
+- (void)addEvent:(EC2VolumeStatusEvent *)eventObject {
     if (events == nil) {
         events = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -48,8 +46,7 @@
     [events addObject:eventObject];
 }
 
--(void)addAction:(EC2VolumeStatusAction *)actionObject
-{
+- (void)addAction:(EC2VolumeStatusAction *)actionObject {
     if (actions == nil) {
         actions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

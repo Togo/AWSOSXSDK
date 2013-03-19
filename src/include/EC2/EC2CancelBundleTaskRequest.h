@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Cancel Bundle Task Request
  */
 
-@interface EC2CancelBundleTaskRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CancelBundleTaskRequest : AmazonServiceRequestConfig {
     NSString *bundleId;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new CancelBundleTaskRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CancelBundleTaskRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theBundleId The ID of the bundle task to cancel.
  */
--(id)initWithBundleId:(NSString *)theBundleId;
+- (id)initWithBundleId:(NSString *)theBundleId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

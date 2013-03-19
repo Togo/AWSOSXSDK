@@ -20,24 +20,20 @@
  * Alarm History Item
  */
 
-@interface CloudWatchAlarmHistoryItem:NSObject
-
-{
+@interface CloudWatchAlarmHistoryItem : NSObject {
     NSString *alarmName;
-    NSDate   *timestamp;
+    NSDate *timestamp;
     NSString *historyItemType;
     NSString *historySummary;
     NSString *historyData;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The descriptive name for the alarm.
@@ -82,7 +78,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,30 +22,26 @@
 @synthesize attribute;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         snapshotId = nil;
-        attribute  = nil;
+        attribute = nil;
     }
 
     return self;
 }
 
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute
-{
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAttribute:(NSString *)theAttribute {
     if (self = [self init]) {
         self.snapshotId = theSnapshotId;
-        self.attribute  = theAttribute;
+        self.attribute = theAttribute;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

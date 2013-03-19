@@ -18,25 +18,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Batch Write Item Request
  */
 
-@interface DynamoDBBatchWriteItemRequest:AmazonServiceRequestConfig
-
-{
+@interface DynamoDBBatchWriteItemRequest : AmazonServiceRequestConfig {
     NSMutableDictionary *requestItems;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of table name to list-of-write-requests. Used as input to the
@@ -52,7 +47,7 @@
  * Set a value in the dictionary requestItems for the specified key.
  * This function will alloc and init requestItems if not already done.
  */
--(void)setRequestItemsValue:(NSArray *)theValue forKey:(NSString *)theKey;
+- (void)setRequestItemsValue:(NSArray *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +55,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

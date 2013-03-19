@@ -30,28 +30,25 @@
 @synthesize details;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        activityId           = nil;
+        activityId = nil;
         autoScalingGroupName = nil;
-        descriptionValue     = nil;
-        cause                = nil;
-        startTime            = nil;
-        endTime              = nil;
-        statusCode           = nil;
-        statusMessage        = nil;
-        progress             = nil;
-        details              = nil;
+        descriptionValue = nil;
+        cause = nil;
+        startTime = nil;
+        endTime = nil;
+        statusCode = nil;
+        statusMessage = nil;
+        progress = nil;
+        details = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +67,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

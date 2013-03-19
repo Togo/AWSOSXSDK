@@ -17,11 +17,10 @@
 #import "AmazonServiceRequest.h"
 #import "AmazonS3Client.h"
 
-@interface S3AbortMultiplartUploadsOperation_Internal : NSOperation <AmazonServiceRequestDelegate>
-{
+@interface S3AbortMultiplartUploadsOperation_Internal : NSOperation <AmazonServiceRequestDelegate> {
 }
 
-@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <AmazonServiceRequestDelegate> delegate;
 @property (nonatomic, strong) AmazonS3Client *s3;
 @property (nonatomic, strong) NSString *bucket;
 @property (nonatomic, strong) NSDate *date;

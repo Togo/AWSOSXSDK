@@ -21,7 +21,7 @@
  *
  * @see AmazonCredentialsProvider
  */
-@interface AmazonSTSCredentialsProvider : NSObject<AmazonCredentialsProvider>
+@interface AmazonSTSCredentialsProvider : NSObject <AmazonCredentialsProvider>
 
 /** 
  * The duration of the credentials generated for STS in seconds
@@ -34,18 +34,18 @@
  * @param accessKey The AWS Access Key
  * @param secretKey The AWS Secret Key
  */
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
 
 /** Inits the provider with a pre-allocated AmazonCredentials object
  *
  * @param stsCredentials Credentials to use to communicate with STS
  */
--(id)initWithCredentials:(AmazonCredentials *)theCredentials;
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials;
 
 /** Inits the provider with a pre-allocated/configured AmazonSecurityTokenServiceClient object
  *
  * @param stsCredentials A pre-allocated/configured STS client
  */
--(id)initWithClient:(AmazonSecurityTokenServiceClient *)theClient;
+- (id)initWithClient:(AmazonSecurityTokenServiceClient *)theClient;
 
 @end

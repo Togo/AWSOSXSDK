@@ -22,11 +22,11 @@
 /**
  * Verify Domain Dkim Request Marshaller
  */
-@interface SESVerifyDomainDkimRequestMarshaller:NSObject {
+@interface SESVerifyDomainDkimRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest;
++ (AmazonServiceRequest *)createRequest:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest;
 
 
 @end

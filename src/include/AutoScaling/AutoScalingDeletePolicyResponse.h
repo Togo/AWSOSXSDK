@@ -20,8 +20,7 @@
 /**
  * Delete Policy
  */
-@interface AutoScalingDeletePolicyResponse:AutoScalingResponse
-{
+@interface AutoScalingDeletePolicyResponse : AutoScalingResponse {
 }
 
 @end

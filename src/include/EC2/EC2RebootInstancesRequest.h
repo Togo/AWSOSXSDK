@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Reboot Instances Request
  */
 
-@interface EC2RebootInstancesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2RebootInstancesRequest : AmazonServiceRequestConfig {
     NSMutableArray *instanceIds;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new RebootInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RebootInstancesRequest object.
@@ -48,13 +44,13 @@
  *
  * @param theInstanceIds The list of instances to terminate.
  */
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
 
 /**
  * Adds a single object to instanceIds.
  * This function will alloc and init instanceIds if not already done.
  */
--(void)addInstanceId:(NSString *)instanceIdObject;
+- (void)addInstanceId:(NSString *)instanceIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -62,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

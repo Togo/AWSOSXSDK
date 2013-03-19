@@ -20,7 +20,7 @@
 @class S3Bucket;
 
 /** Creates an S3Bucket from an XML service repsonse */
-@interface S3BucketUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3BucketUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3Bucket *bucket;
 }
 

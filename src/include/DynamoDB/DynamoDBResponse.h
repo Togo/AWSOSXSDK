@@ -18,7 +18,7 @@
 /**
  *
  */
-@interface DynamoDBResponse:AmazonServiceResponse {
+@interface DynamoDBResponse : AmazonServiceResponse {
 }
 
 @property (nonatomic, assign) uint32_t crc32;

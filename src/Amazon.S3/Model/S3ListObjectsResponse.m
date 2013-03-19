@@ -20,16 +20,15 @@
 
 @synthesize listObjectsResult;
 
--(void)processBody
-{
+- (void)processBody {
     NSString *errDescription = nil;
 
     NSString *xmlString = [[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding];
-    NSData   *xmlData   = [[xmlString stringByReplacingOccurrencesOfString:@"&#x13;" withString:@""]
-                           dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSData *xmlData = [[xmlString stringByReplacingOccurrencesOfString:@"&#x13;" withString:@""]
+            dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
 
 
-    NSXMLParser                    *parser       = [[NSXMLParser alloc] initWithData:xmlData];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
     S3ListBucketResultUnmarshaller *unmarshaller = [[S3ListBucketResultUnmarshaller alloc] init];
     [parser setDelegate:unmarshaller];
     [parser parse];
@@ -42,7 +41,7 @@
 
 
     if (errDescription != nil) {
-        if(exception == nil) {
+        if (exception == nil) {
             exception = [AmazonClientException exceptionWithMessage :[NSString stringWithFormat:@"Error parsing XML response: %@", errDescription]];
         }
     }

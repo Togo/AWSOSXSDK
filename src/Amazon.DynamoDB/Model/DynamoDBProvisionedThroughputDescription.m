@@ -25,23 +25,20 @@
 @synthesize writeCapacityUnits;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        lastIncreaseDateTime   = nil;
-        lastDecreaseDateTime   = nil;
+        lastIncreaseDateTime = nil;
+        lastDecreaseDateTime = nil;
         numberOfDecreasesToday = nil;
-        readCapacityUnits      = nil;
-        writeCapacityUnits     = nil;
+        readCapacityUnits = nil;
+        writeCapacityUnits = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

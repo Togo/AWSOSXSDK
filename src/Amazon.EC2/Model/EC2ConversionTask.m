@@ -27,24 +27,22 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         conversionTaskId = nil;
-        expirationTime   = nil;
-        importInstance   = nil;
-        importVolume     = nil;
-        state            = nil;
-        statusMessage    = nil;
-        tags             = [[NSMutableArray alloc] initWithCapacity:1];
+        expirationTime = nil;
+        importInstance = nil;
+        importVolume = nil;
+        state = nil;
+        statusMessage = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +51,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +67,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

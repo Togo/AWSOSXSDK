@@ -17,12 +17,11 @@
 
 @implementation EC2MonitorInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2MonitorInstancesRequest *)monitorInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2MonitorInstancesRequest *)monitorInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"MonitorInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"MonitorInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[monitorInstancesRequest delegate]];
     [request setCredentials:[monitorInstancesRequest credentials]];

@@ -22,11 +22,11 @@
 /**
  * Delete Notification Configuration Request Marshaller
  */
-@interface AutoScalingDeleteNotificationConfigurationRequestMarshaller:NSObject {
+@interface AutoScalingDeleteNotificationConfigurationRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest;
 
 
 @end

@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Change Message Visibility Request
  */
 
-@interface SQSChangeMessageVisibilityRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSChangeMessageVisibilityRequest : AmazonServiceRequestConfig {
     NSString *queueUrl;
     NSString *receiptHandle;
     NSNumber *visibilityTimeout;
 }
-
 
 
 /**
@@ -53,7 +49,7 @@
  * Default constructor for a new ChangeMessageVisibilityRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ChangeMessageVisibilityRequest object.
@@ -65,7 +61,7 @@
  * @param theVisibilityTimeout The new value (in seconds) for the
  * message's visibility timeout.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle andVisibilityTimeout:(NSNumber *)theVisibilityTimeout;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andReceiptHandle:(NSString *)theReceiptHandle andVisibilityTimeout:(NSNumber *)theVisibilityTimeout;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

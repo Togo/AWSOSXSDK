@@ -35,32 +35,30 @@
 @synthesize recurringCharges;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesId = nil;
-        instanceType        = nil;
-        availabilityZone    = nil;
-        start               = nil;
-        duration            = nil;
-        usagePrice          = nil;
-        fixedPrice          = nil;
-        instanceCount       = nil;
-        productDescription  = nil;
-        state               = nil;
-        tags                = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceTenancy     = nil;
-        currencyCode        = nil;
-        offeringType        = nil;
-        recurringCharges    = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceType = nil;
+        availabilityZone = nil;
+        start = nil;
+        duration = nil;
+        usagePrice = nil;
+        fixedPrice = nil;
+        instanceCount = nil;
+        productDescription = nil;
+        state = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceTenancy = nil;
+        currencyCode = nil;
+        offeringType = nil;
+        recurringCharges = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +66,7 @@
     [tags addObject:tagObject];
 }
 
--(void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject
-{
+- (void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject {
     if (recurringCharges == nil) {
         recurringCharges = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -78,8 +75,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -103,9 +99,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

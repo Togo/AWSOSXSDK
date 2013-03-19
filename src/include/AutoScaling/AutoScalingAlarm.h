@@ -20,21 +20,17 @@
  * Alarm
  */
 
-@interface AutoScalingAlarm:NSObject
-
-{
+@interface AutoScalingAlarm : NSObject {
     NSString *alarmName;
     NSString *alarmARN;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the alarm.
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

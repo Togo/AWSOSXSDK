@@ -26,23 +26,20 @@
  * Get Item Result
  */
 
-@interface DynamoDBGetItemResponse:DynamoDBResponse
-
-{
+@interface DynamoDBGetItemResponse : DynamoDBResponse {
     NSMutableDictionary *item;
-    NSNumber            *consumedCapacityUnits;
+    NSNumber *consumedCapacityUnits;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Contains the requested attributes.
@@ -63,7 +60,7 @@
 /**
  * Returns a value from the item dictionary for the specified key.
  */
--(DynamoDBAttributeValue *)itemValueForKey:(NSString *)theKey;
+- (DynamoDBAttributeValue *)itemValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -23,7 +23,7 @@
 /**
  * Put Scaling Policy Result Unmarshaller
  */
-@interface AutoScalingPutScalingPolicyResponseUnmarshaller:AutoScalingResponseUnmarshaller {
+@interface AutoScalingPutScalingPolicyResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingPutScalingPolicyResponse *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) AutoScalingPutScalingPolicyResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

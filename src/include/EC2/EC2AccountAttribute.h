@@ -16,26 +16,21 @@
 #import "EC2AccountAttributeValue.h"
 
 
-
 /**
  * Account Attribute
  */
 
-@interface EC2AccountAttribute:NSObject
-
-{
-    NSString       *attributeName;
+@interface EC2AccountAttribute : NSObject {
+    NSString *attributeName;
     NSMutableArray *attributeValues;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AttributeName property for this object.
@@ -51,7 +46,7 @@
  * Adds a single object to attributeValues.
  * This function will alloc and init attributeValues if not already done.
  */
--(void)addAttributeValue:(EC2AccountAttributeValue *)attributeValueObject;
+- (void)addAttributeValue:(EC2AccountAttributeValue *)attributeValueObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,28 +22,25 @@
 @synthesize value;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        key   = nil;
+        key = nil;
         value = nil;
     }
 
     return self;
 }
 
--(id)initWithKey:(NSString *)theKey andValue:(NSString *)theValue
-{
+- (id)initWithKey:(NSString *)theKey andValue:(NSString *)theValue {
     if (self = [self init]) {
-        self.key   = theKey;
+        self.key = theKey;
         self.value = theValue;
     }
 
     return self;
 }
 
--(id)initWithKey:(NSString *)theKey
-{
+- (id)initWithKey:(NSString *)theKey {
     if (self = [self init]) {
         self.key = theKey;
     }
@@ -52,9 +49,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -46,44 +46,42 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageId                           = nil;
-        minCount                          = nil;
-        maxCount                          = nil;
-        keyName                           = nil;
-        securityGroups                    = [[NSMutableArray alloc] initWithCapacity:1];
-        securityGroupIds                  = [[NSMutableArray alloc] initWithCapacity:1];
-        userData                          = nil;
-        instanceType                      = nil;
-        placement                         = nil;
-        kernelId                          = nil;
-        ramdiskId                         = nil;
-        blockDeviceMappings               = [[NSMutableArray alloc] initWithCapacity:1];
-        monitoring                        = NO;
-        monitoringIsSet                   = NO;
-        subnetId                          = nil;
-        disableApiTermination             = NO;
-        disableApiTerminationIsSet        = NO;
+        imageId = nil;
+        minCount = nil;
+        maxCount = nil;
+        keyName = nil;
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        securityGroupIds = [[NSMutableArray alloc] initWithCapacity:1];
+        userData = nil;
+        instanceType = nil;
+        placement = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        monitoring = NO;
+        monitoringIsSet = NO;
+        subnetId = nil;
+        disableApiTermination = NO;
+        disableApiTerminationIsSet = NO;
         instanceInitiatedShutdownBehavior = nil;
-        license                           = nil;
-        privateIpAddress                  = nil;
-        clientToken                       = nil;
-        additionalInfo                    = nil;
-        networkInterfaces                 = [[NSMutableArray alloc] initWithCapacity:1];
-        iamInstanceProfile                = nil;
-        ebsOptimized                      = NO;
-        ebsOptimizedIsSet                 = NO;
+        license = nil;
+        privateIpAddress = nil;
+        clientToken = nil;
+        additionalInfo = nil;
+        networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
+        iamInstanceProfile = nil;
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithImageId:(NSString *)theImageId andMinCount:(NSNumber *)theMinCount andMaxCount:(NSNumber *)theMaxCount
-{
+- (id)initWithImageId:(NSString *)theImageId andMinCount:(NSNumber *)theMinCount andMaxCount:(NSNumber *)theMaxCount {
     if (self = [self init]) {
-        self.imageId  = theImageId;
+        self.imageId = theImageId;
         self.minCount = theMinCount;
         self.maxCount = theMaxCount;
     }
@@ -92,8 +90,7 @@
 }
 
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -101,8 +98,7 @@
     [securityGroups addObject:securityGroupObject];
 }
 
--(void)addSecurityGroupId:(NSString *)securityGroupIdObject
-{
+- (void)addSecurityGroupId:(NSString *)securityGroupIdObject {
     if (securityGroupIds == nil) {
         securityGroupIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -110,8 +106,7 @@
     [securityGroupIds addObject:securityGroupIdObject];
 }
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -119,8 +114,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject
-{
+- (void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject {
     if (networkInterfaces == nil) {
         networkInterfaces = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -129,8 +123,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -164,25 +157,20 @@
 }
 
 
--(void)setMonitoring:(bool)theValue
-{
-    monitoring      = theValue;
+- (void)setMonitoring:(bool)theValue {
+    monitoring = theValue;
     monitoringIsSet = YES;
 }
 
--(void)setDisableApiTermination:(bool)theValue
-{
-    disableApiTermination      = theValue;
+- (void)setDisableApiTermination:(bool)theValue {
+    disableApiTermination = theValue;
     disableApiTerminationIsSet = YES;
 }
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

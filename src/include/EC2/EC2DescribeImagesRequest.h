@@ -18,14 +18,11 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Images Request
  */
 
-@interface EC2DescribeImagesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeImagesRequest : AmazonServiceRequestConfig {
     NSMutableArray *imageIds;
     NSMutableArray *owners;
     NSMutableArray *executableUsers;
@@ -33,13 +30,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * An optional list of the AMI IDs to describe. If not specified, all
@@ -75,25 +70,25 @@
  * Adds a single object to imageIds.
  * This function will alloc and init imageIds if not already done.
  */
--(void)addImageId:(NSString *)imageIdObject;
+- (void)addImageId:(NSString *)imageIdObject;
 
 /**
  * Adds a single object to owners.
  * This function will alloc and init owners if not already done.
  */
--(void)addOwner:(NSString *)ownerObject;
+- (void)addOwner:(NSString *)ownerObject;
 
 /**
  * Adds a single object to executableUsers.
  * This function will alloc and init executableUsers if not already done.
  */
--(void)addExecutableUser:(NSString *)executableUserObject;
+- (void)addExecutableUser:(NSString *)executableUserObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -101,7 +96,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

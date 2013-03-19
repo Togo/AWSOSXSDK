@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Confirm Subscription Request
  */
 
-@interface SNSConfirmSubscriptionRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSConfirmSubscriptionRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *token;
     NSString *authenticateOnUnsubscribe;
 }
-
 
 
 /**
@@ -57,7 +53,7 @@
  * Default constructor for a new ConfirmSubscriptionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ConfirmSubscriptionRequest object.
@@ -68,7 +64,7 @@
  * @param theToken Short-lived token sent to an endpoint during the
  * <code>Subscribe</code> action.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken;
+- (id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken;
 
 /**
  * Constructs a new ConfirmSubscriptionRequest object.
@@ -84,7 +80,7 @@
  * topic owner and the subscription owner can unsubscribe the endpoint.
  * The unsubscribe action will require AWS authentication.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken andAuthenticateOnUnsubscribe:(NSString *)theAuthenticateOnUnsubscribe;
+- (id)initWithTopicArn:(NSString *)theTopicArn andToken:(NSString *)theToken andAuthenticateOnUnsubscribe:(NSString *)theAuthenticateOnUnsubscribe;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -92,7 +88,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Unmonitor Instances Response
  */
 
-@interface EC2UnmonitorInstancesResponse:EC2Response
-
-{
+@interface EC2UnmonitorInstancesResponse : EC2Response {
     NSMutableArray *instanceMonitorings;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of updated monitoring information for the instances specified
@@ -47,11 +43,10 @@
 @property (nonatomic, strong) NSMutableArray *instanceMonitorings;
 
 
-
 /**
  * Returns a value from the instanceMonitorings array for the specified index
  */
--(EC2InstanceMonitoring *)instanceMonitoringsObjectAtIndex:(int)index;
+- (EC2InstanceMonitoring *)instanceMonitoringsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

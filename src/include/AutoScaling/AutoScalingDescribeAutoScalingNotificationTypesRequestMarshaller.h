@@ -22,11 +22,11 @@
 /**
  * Describe Auto Scaling Notification Types Request Marshaller
  */
-@interface AutoScalingDescribeAutoScalingNotificationTypesRequestMarshaller:NSObject {
+@interface AutoScalingDescribeAutoScalingNotificationTypesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest;
 
 
 @end

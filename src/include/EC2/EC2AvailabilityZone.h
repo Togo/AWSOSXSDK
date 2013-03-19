@@ -16,28 +16,23 @@
 #import "EC2AvailabilityZoneMessage.h"
 
 
-
 /**
  * Availability Zone
  */
 
-@interface EC2AvailabilityZone:NSObject
-
-{
-    NSString       *zoneName;
-    NSString       *state;
-    NSString       *regionName;
+@interface EC2AvailabilityZone : NSObject {
+    NSString *zoneName;
+    NSString *state;
+    NSString *regionName;
     NSMutableArray *messages;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Name of the Availability Zone.
@@ -63,7 +58,7 @@
  * Adds a single object to messages.
  * This function will alloc and init messages if not already done.
  */
--(void)addMessage:(EC2AvailabilityZoneMessage *)messageObject;
+- (void)addMessage:(EC2AvailabilityZoneMessage *)messageObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

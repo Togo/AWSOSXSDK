@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Deregister Image Request
  */
 
-@interface EC2DeregisterImageRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeregisterImageRequest : AmazonServiceRequestConfig {
     NSString *imageId;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeregisterImageRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeregisterImageRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theImageId The ID of the AMI to deregister.
  */
--(id)initWithImageId:(NSString *)theImageId;
+- (id)initWithImageId:(NSString *)theImageId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

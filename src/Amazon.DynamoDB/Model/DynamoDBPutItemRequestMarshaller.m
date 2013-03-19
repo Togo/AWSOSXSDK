@@ -20,8 +20,7 @@
 
 @implementation DynamoDBPutItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBPutItemRequest *)putItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBPutItemRequest *)putItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[putItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.PutItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -43,7 +42,7 @@
         NSMutableDictionary *itemJson = [[NSMutableDictionary alloc] init];
         [json setValue:itemJson forKey:@"Item"];
         for (NSString *itemListValue in putItemRequest.item) {
-            NSMutableDictionary    *itemListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *itemListValueJson = [[NSMutableDictionary alloc] init];
             [itemJson setValue:itemListValueJson forKey:itemListValue];
             DynamoDBAttributeValue *itemListValueValue = [putItemRequest.item valueForKey:itemListValue];
 
@@ -100,7 +99,7 @@
         NSMutableDictionary *expectedJson = [[NSMutableDictionary alloc] init];
         [json setValue:expectedJson forKey:@"Expected"];
         for (NSString *expectedListValue in putItemRequest.expected) {
-            NSMutableDictionary            *expectedListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *expectedListValueJson = [[NSMutableDictionary alloc] init];
             [expectedJson setValue:expectedListValueJson forKey:expectedListValue];
             DynamoDBExpectedAttributeValue *expectedListValueValue = [putItemRequest.expected valueForKey:expectedListValue];
             if (expectedListValueValue != nil) {
@@ -161,7 +160,7 @@
             }
 
             if (expectedListValueValue.existsIsSet) {
-                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true":@"false") forKey:@"Exists"];
+                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true" : @"false") forKey:@"Exists"];
             }
         }
     }
@@ -171,9 +170,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

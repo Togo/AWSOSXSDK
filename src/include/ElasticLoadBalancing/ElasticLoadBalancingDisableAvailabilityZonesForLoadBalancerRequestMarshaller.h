@@ -22,11 +22,11 @@
 /**
  * Disable Availability Zones For Load Balancer Request Marshaller
  */
-@interface ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest *)disableAvailabilityZonesForLoadBalancerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest *)disableAvailabilityZonesForLoadBalancerRequest;
 
 
 @end

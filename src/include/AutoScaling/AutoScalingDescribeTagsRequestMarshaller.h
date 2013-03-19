@@ -23,11 +23,11 @@
 /**
  * Describe Tags Request Marshaller
  */
-@interface AutoScalingDescribeTagsRequestMarshaller:NSObject {
+@interface AutoScalingDescribeTagsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeTagsRequest *)describeTagsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeTagsRequest *)describeTagsRequest;
 
 
 @end

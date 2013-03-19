@@ -17,8 +17,7 @@
 
 @implementation S3Permission
 
--(id)initWithXmlCode:(NSString *)code
-{
+- (id)initWithXmlCode:(NSString *)code {
     self = [super init];
     if (self) {
         xmlValue = code;
@@ -26,8 +25,7 @@
     return self;
 }
 
-+(S3Permission *)permissionWithString:(NSString *)code
-{
++ (S3Permission *)permissionWithString:(NSString *)code {
     if ([code isEqualToString:kS3AclPermissionRead]) {
         return [S3Permission readPermission];
     }
@@ -46,8 +44,7 @@
     return nil;
 }
 
-+(S3Permission *)readPermission
-{
++ (S3Permission *)readPermission {
     static S3Permission *thisPermission = nil;
 
     if (!thisPermission) {
@@ -56,8 +53,7 @@
     return thisPermission;
 }
 
-+(S3Permission *)writePermission
-{
++ (S3Permission *)writePermission {
     static S3Permission *thisPermission = nil;
 
     if (!thisPermission) {
@@ -66,8 +62,7 @@
     return thisPermission;
 }
 
-+(S3Permission *)fullControlPermission
-{
++ (S3Permission *)fullControlPermission {
     static S3Permission *thisPermission = nil;
 
     if (!thisPermission) {
@@ -76,8 +71,7 @@
     return thisPermission;
 }
 
-+(S3Permission *)readAcpPermission
-{
++ (S3Permission *)readAcpPermission {
     static S3Permission *thisPermission = nil;
 
     if (!thisPermission) {
@@ -86,8 +80,7 @@
     return thisPermission;
 }
 
-+(S3Permission *)writeAcpPermission
-{
++ (S3Permission *)writeAcpPermission {
     static S3Permission *thisPermission = nil;
 
     if (!thisPermission) {
@@ -96,12 +89,9 @@
     return thisPermission;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     return xmlValue;
 }
-
-
 
 
 @end

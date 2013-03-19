@@ -22,8 +22,7 @@
 @implementation DynamoDBDescribeTableResponseUnmarshaller
 
 
-+(DynamoDBDescribeTableResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBDescribeTableResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBDescribeTableResponse *describeTableResult = [[DynamoDBDescribeTableResponse alloc] init];
 
 

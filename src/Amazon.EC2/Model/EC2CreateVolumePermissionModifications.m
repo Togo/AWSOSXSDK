@@ -22,10 +22,9 @@
 @synthesize remove;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        add    = [[NSMutableArray alloc] initWithCapacity:1];
+        add = [[NSMutableArray alloc] initWithCapacity:1];
         remove = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addAdd:(EC2CreateVolumePermission *)addObject
-{
+- (void)addAdd:(EC2CreateVolumePermission *)addObject {
     if (add == nil) {
         add = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -42,8 +40,7 @@
     [add addObject:addObject];
 }
 
--(void)addRemove:(EC2CreateVolumePermission *)removeObject
-{
+- (void)addRemove:(EC2CreateVolumePermission *)removeObject {
     if (remove == nil) {
         remove = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

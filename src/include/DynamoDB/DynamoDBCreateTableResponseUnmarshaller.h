@@ -21,10 +21,10 @@
 /**
  * Create Table Result Unmarshaller
  */
-@interface DynamoDBCreateTableResponseUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBCreateTableResponseUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBCreateTableResponse *response;
 }
 
-+(DynamoDBCreateTableResponse *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBCreateTableResponse *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

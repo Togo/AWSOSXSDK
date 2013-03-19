@@ -23,8 +23,7 @@
 @synthesize sSLCertificateId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
         loadBalancerPort = nil;
@@ -34,8 +33,7 @@
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andSSLCertificateId:(NSString *)theSSLCertificateId
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andSSLCertificateId:(NSString *)theSSLCertificateId {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
         self.loadBalancerPort = theLoadBalancerPort;
@@ -46,9 +44,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -60,9 +56,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

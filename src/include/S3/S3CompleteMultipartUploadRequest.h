@@ -20,20 +20,20 @@
 /** Contains the parameters used for the completeMultipartUpload operation.
  *
  */
-@interface S3CompleteMultipartUploadRequest:S3Request {
+@interface S3CompleteMultipartUploadRequest : S3Request {
     NSMutableDictionary *parts;
-    NSString            *uploadId;
+    NSString *uploadId;
 }
 
 @property (nonatomic, strong) NSString *uploadId;
 
 /** Initialize the instance with the bucket, key, and uploadId from an S3MultipartUpload instance. */
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
 
 /** Add a part by part number and the ETag that was returned by uploadPart. */
--(void)addPartWithPartNumber:(int)partNumber withETag:(NSString *)etag;
+- (void)addPartWithPartNumber:(int)partNumber withETag:(NSString *)etag;
 
 /** Build the request body for the request */
--(NSData *)requestBody;
+- (NSData *)requestBody;
 
 @end

@@ -16,8 +16,7 @@
 #import <Foundation/Foundation.h>
 #import "../AmazonServiceResponseUnmarshaller.h"
 
-@interface SecurityTokenServiceResponseUnmarshaller:AmazonServiceResponseUnmarshaller
-{
+@interface SecurityTokenServiceResponseUnmarshaller : AmazonServiceResponseUnmarshaller {
 }
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Put Scaling Policy Request Marshaller
  */
-@interface AutoScalingPutScalingPolicyRequestMarshaller:NSObject {
+@interface AutoScalingPutScalingPolicyRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest;
 
 
 @end

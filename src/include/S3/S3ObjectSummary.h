@@ -19,14 +19,14 @@
 /** Represents an S3 Object Summary.
  *
  */
-@interface S3ObjectSummary:NSObject {
-    NSString  *key;
-    NSString  *etag;
+@interface S3ObjectSummary : NSObject {
+    NSString *key;
+    NSString *etag;
     NSInteger size;
-    NSString  *storageClass;
-    NSString  *lastModified;
+    NSString *storageClass;
+    NSString *lastModified;
 
-    S3Owner   *owner;
+    S3Owner *owner;
 }
 
 
@@ -51,7 +51,7 @@
 @property (nonatomic, strong) S3Owner *owner;
 
 /** The string representation of the S3ObjectSummary */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

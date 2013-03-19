@@ -16,17 +16,17 @@
 #import "EC2EnableVolumeIOResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2EnableVolumeIOResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2EnableVolumeIOResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2EnableVolumeIOResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2EnableVolumeIOResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2EnableVolumeIOResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2EnableVolumeIOResponse *)response;
 
 @end

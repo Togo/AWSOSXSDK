@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Table Request
  */
 
-@interface DynamoDBDescribeTableRequest:AmazonServiceRequestConfig
-
-{
+@interface DynamoDBDescribeTableRequest : AmazonServiceRequestConfig {
     NSString *tableName;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new DescribeTableRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeTableRequest object.
@@ -57,7 +53,7 @@
  * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
  * and <code>.</code> (period).
  */
--(id)initWithTableName:(NSString *)theTableName;
+- (id)initWithTableName:(NSString *)theTableName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

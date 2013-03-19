@@ -20,8 +20,7 @@
 /**
  * Modify Image Attribute
  */
-@interface EC2ModifyImageAttributeResponse:EC2Response
-{
+@interface EC2ModifyImageAttributeResponse : EC2Response {
 }
 
 @end

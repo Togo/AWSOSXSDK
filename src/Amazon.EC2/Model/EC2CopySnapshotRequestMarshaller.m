@@ -17,12 +17,11 @@
 
 @implementation EC2CopySnapshotRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CopySnapshotRequest *)copySnapshotRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CopySnapshotRequest *)copySnapshotRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CopySnapshot"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CopySnapshot" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[copySnapshotRequest delegate]];
     [request setCredentials:[copySnapshotRequest credentials]];

@@ -20,11 +20,11 @@
  * Contains the parameters used for the getBucketCrossOrigin operation.
  *
  */
-@interface S3GetBucketCrossOriginRequest:S3Request
-{
+@interface S3GetBucketCrossOriginRequest : S3Request {
 }
 
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 @end

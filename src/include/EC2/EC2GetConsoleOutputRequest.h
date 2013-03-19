@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Console Output Request
  */
 
-@interface EC2GetConsoleOutputRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2GetConsoleOutputRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new GetConsoleOutputRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetConsoleOutputRequest object.
@@ -49,7 +45,7 @@
  * @param theInstanceId The ID of the instance for which you want console
  * output.
  */
--(id)initWithInstanceId:(NSString *)theInstanceId;
+- (id)initWithInstanceId:(NSString *)theInstanceId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

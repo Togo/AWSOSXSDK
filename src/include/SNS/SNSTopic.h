@@ -20,12 +20,9 @@
  * Topic
  */
 
-@interface SNSTopic:NSObject
-
-{
+@interface SNSTopic : NSObject {
     NSString *topicArn;
 }
-
 
 
 /**
@@ -38,7 +35,7 @@
  * Default constructor for a new Topic object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -46,7 +43,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

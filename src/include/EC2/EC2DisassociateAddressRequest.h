@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Disassociate Address Request
  */
 
-@interface EC2DisassociateAddressRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DisassociateAddressRequest : AmazonServiceRequestConfig {
     NSString *publicIp;
     NSString *associationId;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new DisassociateAddressRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DisassociateAddressRequest object.
@@ -56,7 +52,7 @@
  * @param thePublicIp The elastic IP address that you are disassociating
  * from the instance.
  */
--(id)initWithPublicIp:(NSString *)thePublicIp;
+- (id)initWithPublicIp:(NSString *)thePublicIp;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

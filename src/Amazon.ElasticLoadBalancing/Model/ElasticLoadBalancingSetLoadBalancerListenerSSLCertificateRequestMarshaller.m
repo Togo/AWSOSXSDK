@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"SetLoadBalancerListenerSSLCertificate"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"SetLoadBalancerListenerSSLCertificate" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[setLoadBalancerListenerSSLCertificateRequest delegate]];
     [request setCredentials:[setLoadBalancerListenerSSLCertificateRequest credentials]];

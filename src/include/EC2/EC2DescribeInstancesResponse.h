@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Instances Response
  */
 
-@interface EC2DescribeInstancesResponse:EC2Response
-
-{
+@interface EC2DescribeInstancesResponse : EC2Response {
     NSMutableArray *reservations;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of reservations containing the describes instances.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *reservations;
 
 
-
 /**
  * Returns a value from the reservations array for the specified index
  */
--(EC2Reservation *)reservationsObjectAtIndex:(int)index;
+- (EC2Reservation *)reservationsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Message Batch Request Entry
  */
 
-@interface SQSDeleteMessageBatchRequestEntry:AmazonServiceRequestConfig
-
-{
+@interface SQSDeleteMessageBatchRequestEntry : AmazonServiceRequestConfig {
     NSString *idValue;
     NSString *receiptHandle;
 }
-
 
 
 /**
@@ -48,7 +44,7 @@
  * Default constructor for a new DeleteMessageBatchRequestEntry object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteMessageBatchRequestEntry object.
@@ -59,7 +55,7 @@
  * of a batch request need to be unique within the request.
  * @param theReceiptHandle A receipt handle.
  */
--(id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle;
+- (id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -67,7 +63,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

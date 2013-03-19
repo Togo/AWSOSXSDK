@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Placement Groups Response
  */
 
-@interface EC2DescribePlacementGroupsResponse:EC2Response
-
-{
+@interface EC2DescribePlacementGroupsResponse : EC2Response {
     NSMutableArray *placementGroups;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Contains information about the specified <code>PlacementGroups</code>.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *placementGroups;
 
 
-
 /**
  * Returns a value from the placementGroups array for the specified index
  */
--(EC2PlacementGroup *)placementGroupsObjectAtIndex:(int)index;
+- (EC2PlacementGroup *)placementGroupsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

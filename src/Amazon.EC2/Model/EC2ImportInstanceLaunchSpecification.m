@@ -34,31 +34,29 @@
 @synthesize privateIpAddress;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        architecture                      = nil;
-        securityGroups                    = [[NSMutableArray alloc] initWithCapacity:1];
-        additionalInfo                    = nil;
-        userData                          = nil;
-        instanceType                      = nil;
-        placement                         = nil;
-        blockDeviceMappings               = [[NSMutableArray alloc] initWithCapacity:1];
-        monitoring                        = NO;
-        monitoringIsSet                   = NO;
-        subnetId                          = nil;
-        disableApiTermination             = NO;
-        disableApiTerminationIsSet        = NO;
+        architecture = nil;
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        additionalInfo = nil;
+        userData = nil;
+        instanceType = nil;
+        placement = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        monitoring = NO;
+        monitoringIsSet = NO;
+        subnetId = nil;
+        disableApiTermination = NO;
+        disableApiTerminationIsSet = NO;
         instanceInitiatedShutdownBehavior = nil;
-        privateIpAddress                  = nil;
+        privateIpAddress = nil;
     }
 
     return self;
 }
 
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +64,7 @@
     [securityGroups addObject:securityGroupObject];
 }
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -76,8 +73,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -100,19 +96,15 @@
 }
 
 
--(void)setMonitoring:(bool)theValue
-{
-    monitoring      = theValue;
+- (void)setMonitoring:(bool)theValue {
+    monitoring = theValue;
     monitoringIsSet = YES;
 }
 
--(void)setDisableApiTermination:(bool)theValue
-{
-    disableApiTermination      = theValue;
+- (void)setDisableApiTermination:(bool)theValue {
+    disableApiTermination = theValue;
     disableApiTerminationIsSet = YES;
 }
-
-
 
 
 @end

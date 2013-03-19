@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Key Pair Request
  */
 
-@interface EC2DeleteKeyPairRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeleteKeyPairRequest : AmazonServiceRequestConfig {
     NSString *keyName;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeleteKeyPairRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteKeyPairRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theKeyName The name of the Amazon EC2 key pair to delete.
  */
--(id)initWithKeyName:(NSString *)theKeyName;
+- (id)initWithKeyName:(NSString *)theKeyName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

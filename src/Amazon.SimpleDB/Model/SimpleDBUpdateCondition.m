@@ -24,23 +24,21 @@
 @synthesize existsIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        name        = nil;
-        value       = nil;
-        exists      = NO;
+        name = nil;
+        value = nil;
+        exists = NO;
         existsIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue andExists:(bool)theExists
-{
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue andExists:(bool)theExists {
     if (self = [self init]) {
-        self.name   = theName;
-        self.value  = theValue;
+        self.name = theName;
+        self.value = theValue;
         self.exists = theExists;
     }
 
@@ -48,9 +46,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,13 +60,10 @@
 }
 
 
--(void)setExists:(bool)theValue
-{
-    exists      = theValue;
+- (void)setExists:(bool)theValue {
+    exists = theValue;
     existsIsSet = YES;
 }
-
-
 
 
 @end

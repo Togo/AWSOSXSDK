@@ -33,7 +33,7 @@
  * <br />Required Parameters: bucket
  *
  */
-@interface S3DeleteBucketPolicyRequest:S3Request {
+@interface S3DeleteBucketPolicyRequest : S3Request {
 }
 
 

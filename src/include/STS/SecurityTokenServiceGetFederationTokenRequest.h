@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Federation Token Request
  */
 
-@interface SecurityTokenServiceGetFederationTokenRequest:AmazonServiceRequestConfig
-
-{
+@interface SecurityTokenServiceGetFederationTokenRequest : AmazonServiceRequestConfig {
     NSString *name;
     NSString *policy;
     NSNumber *durationSeconds;
 }
-
 
 
 /**
@@ -78,7 +74,7 @@
  * Default constructor for a new GetFederationTokenRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetFederationTokenRequest object.
@@ -89,7 +85,7 @@
  * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
  * on IAM Entities</a> in <i>Using IAM</i>.
  */
--(id)initWithName:(NSString *)theName;
+- (id)initWithName:(NSString *)theName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -97,7 +93,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

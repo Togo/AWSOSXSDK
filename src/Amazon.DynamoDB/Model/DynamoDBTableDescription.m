@@ -27,25 +27,22 @@
 @synthesize itemCount;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName             = nil;
-        keySchema             = nil;
-        tableStatus           = nil;
-        creationDateTime      = nil;
+        tableName = nil;
+        keySchema = nil;
+        tableStatus = nil;
+        creationDateTime = nil;
         provisionedThroughput = nil;
-        tableSizeBytes        = nil;
-        itemCount             = nil;
+        tableSizeBytes = nil;
+        itemCount = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

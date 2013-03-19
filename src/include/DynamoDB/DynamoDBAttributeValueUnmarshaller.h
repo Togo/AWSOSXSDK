@@ -21,10 +21,10 @@
 /**
  * Attribute Value Unmarshaller
  */
-@interface DynamoDBAttributeValueUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBAttributeValueUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBAttributeValue *response;
 }
 
-+(DynamoDBAttributeValue *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBAttributeValue *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

@@ -25,23 +25,20 @@
 @synthesize availabilityZone;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceType       = nil;
+        instanceType = nil;
         productDescription = nil;
-        spotPrice          = nil;
-        timestamp          = nil;
-        availabilityZone   = nil;
+        spotPrice = nil;
+        timestamp = nil;
+        availabilityZone = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

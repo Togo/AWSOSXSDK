@@ -21,28 +21,22 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
-    if ([elementName isEqualToString:@"Key"])
-    {
+    if ([elementName isEqualToString:@"Key"]) {
         self.deleteError.key = self.currentText;
     }
-    else if ([elementName isEqualToString:@"VersionId"])
-    {
+    else if ([elementName isEqualToString:@"VersionId"]) {
         self.deleteError.versionId = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Code"])
-    {
+    else if ([elementName isEqualToString:@"Code"]) {
         self.deleteError.code = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Message"])
-    {
+    else if ([elementName isEqualToString:@"Message"]) {
         self.deleteError.message = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Error"])
-    {
+    else if ([elementName isEqualToString:@"Error"]) {
         if (caller != nil) {
             [parser setDelegate:caller];
         }
@@ -57,10 +51,8 @@
 
 #pragma mark - Unmarshalled object property
 
--(DeleteError *)deleteError
-{
-    if (deleteError == nil)
-    {
+- (DeleteError *)deleteError {
+    if (deleteError == nil) {
         deleteError = [[DeleteError alloc] init];
     }
 

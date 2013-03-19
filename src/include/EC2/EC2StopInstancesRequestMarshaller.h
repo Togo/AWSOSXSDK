@@ -22,11 +22,11 @@
 /**
  * Stop Instances Request Marshaller
  */
-@interface EC2StopInstancesRequestMarshaller:NSObject {
+@interface EC2StopInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2StopInstancesRequest *)stopInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2StopInstancesRequest *)stopInstancesRequest;
 
 
 @end

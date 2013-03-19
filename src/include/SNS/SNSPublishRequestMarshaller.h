@@ -22,11 +22,11 @@
 /**
  * Publish Request Marshaller
  */
-@interface SNSPublishRequestMarshaller:NSObject {
+@interface SNSPublishRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSPublishRequest *)publishRequest;
++ (AmazonServiceRequest *)createRequest:(SNSPublishRequest *)publishRequest;
 
 
 @end

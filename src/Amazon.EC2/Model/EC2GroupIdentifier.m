@@ -22,20 +22,17 @@
 @synthesize groupId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         groupName = nil;
-        groupId   = nil;
+        groupId = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

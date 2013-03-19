@@ -23,20 +23,20 @@
 @class AmazonServiceResponse;
 @class AmazonServiceException;
 
-@interface AmazonServiceRequest:NSObject {
-    NSString                         *httpMethod;
-    NSMutableDictionary              *parameters;
-    NSString                         *endpoint;
-    NSString                         *userAgent;
-    AmazonCredentials                *credentials;
-    AmazonURLRequest                 *urlRequest;
-    NSURLConnection                  *urlConnection;
-    NSTimer                          *responseTimer;
-    NSString                         *requestTag;
-    NSString                         *serviceName;
-    NSString                         *regionName;
-    NSString                         *hostName;
-    id<AmazonServiceRequestDelegate> __unsafe_unretained delegate;
+@interface AmazonServiceRequest : NSObject {
+    NSString *httpMethod;
+    NSMutableDictionary *parameters;
+    NSString *endpoint;
+    NSString *userAgent;
+    AmazonCredentials *credentials;
+    AmazonURLRequest *urlRequest;
+    NSURLConnection *urlConnection;
+    NSTimer *responseTimer;
+    NSString *requestTag;
+    NSString *serviceName;
+    NSString *regionName;
+    NSString *hostName;
+    id <AmazonServiceRequestDelegate> __unsafe_unretained delegate;
 }
 
 /** Request specific credentials. */
@@ -59,16 +59,16 @@
 /** The URL for the resource.
  * This property is read-only.
  */
-@property (weak, nonatomic, readonly) NSURL             *url;
+@property (weak, nonatomic, readonly) NSURL *url;
 
 @property (nonatomic, strong) NSMutableDictionary *parameters;
-@property (nonatomic, strong) NSString            *endpoint;
-@property (nonatomic, strong) NSString            *serviceName;
-@property (nonatomic, strong) NSString            *regionName;
-@property (nonatomic, strong) NSString            *hostName;
-@property (nonatomic, strong) NSString            *userAgent;
+@property (nonatomic, strong) NSString *endpoint;
+@property (nonatomic, strong) NSString *serviceName;
+@property (nonatomic, strong) NSString *regionName;
+@property (nonatomic, strong) NSString *hostName;
+@property (nonatomic, strong) NSString *userAgent;
 
-@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <AmazonServiceRequestDelegate> delegate;
 
 /**
  * Open property that enables user to distinquish various requests.
@@ -76,12 +76,13 @@
 
 @property (nonatomic, strong) NSString *requestTag;
 
--(AmazonURLRequest *)configureURLRequest;
+- (AmazonURLRequest *)configureURLRequest;
 
--(NSString *)queryString;
--(void)sign;
+- (NSString *)queryString;
 
--(void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey;
+- (void)sign;
+
+- (void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey;
 
 /** Sets the delegate object for the request.
  *
@@ -95,7 +96,7 @@
  * @param delegate An object which implements one or more of the methods in the AmazonServiceRequestDelegate protocol.
  *
  */
--(void)setDelegate:(id<AmazonServiceRequestDelegate> )delegate;
+- (void)setDelegate:(id <AmazonServiceRequestDelegate>)delegate;
 
 /** This method returns nil if the request object passed the validation.
  * If not, it will return an exception.
@@ -111,7 +112,7 @@
 /**
  * Internal helper method to create the appropriate response object for the request.
  */
--(AmazonServiceResponse*)constructResponse;
+- (AmazonServiceResponse *)constructResponse;
 
 @end
 
@@ -133,7 +134,7 @@
  * @param request The AmazonServiceRequest sending the message.
  * @param response The HTTP response information.
  */
--(void)request:(AmazonServiceRequest *)request didReceiveResponse:(NSURLResponse *)response;
+- (void)request:(AmazonServiceRequest *)request didReceiveResponse:(NSURLResponse *)response;
 
 /** Sent when body data has been read. May be called multiple times.
  *
@@ -143,7 +144,7 @@
  * @param request The AmazonServiceRequest sending the message.
  * @param data    The newly available data.
  */
--(void)request:(AmazonServiceRequest *)request didReceiveData:(NSData *)data;
+- (void)request:(AmazonServiceRequest *)request didReceiveData:(NSData *)data;
 
 
 /** Sent when the entire response has been read and processed.
@@ -155,7 +156,7 @@
  * If the service responded with an error response, the <tt>exception</tt> property of the response will
  * be non-nil. This exception can be inspected for more information, or thrown to calling code.
  */
--(void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response;
+- (void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response;
 
 /** Sent when the request transmitted data.
  *
@@ -167,9 +168,9 @@
  * @param totalBytesWritten         The total number of bytes written for this connection.
  * @param totalBytesExpectedToWrite The number of bytes the connection expects to write.
  */
--(void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten
-totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+- (void)request:(AmazonServiceRequest *)request didSendData:(NSInteger)bytesWritten
+        totalBytesWritten:(NSInteger)totalBytesWritten
+        totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 
 /** Sent when there was a basic failure with the underlying connection.
  *
@@ -178,14 +179,14 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
  * @param request The AmazonServiceRequest sending the message.
  * @param error   An error object containing details of why the connection failed to load the request successfully.
  */
--(void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error;
+- (void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error;
 
 /** Sent when the service responded with an exception.
  *
  * @param request   The AmazonServiceRequest sending the message.
  * @param exception The AmazonClientException that would have been thrown in the absence of a delegate.
  */
--(void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception __attribute__((deprecated));
+- (void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)exception __attribute__((deprecated));
 
 @end
 

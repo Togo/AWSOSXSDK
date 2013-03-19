@@ -19,29 +19,24 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Send Email Request
  */
 
-@interface SESSendEmailRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *source;
+@interface SESSendEmailRequest : AmazonServiceRequestConfig {
+    NSString *source;
     SESDestination *destination;
-    SESMessage     *message;
+    SESMessage *message;
     NSMutableArray *replyToAddresses;
-    NSString       *returnPath;
+    NSString *returnPath;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identity's email address.
@@ -77,7 +72,7 @@
  * Adds a single object to replyToAddresses.
  * This function will alloc and init replyToAddresses if not already done.
  */
--(void)addReplyToAddresse:(NSString *)replyToAddresseObject;
+- (void)addReplyToAddresse:(NSString *)replyToAddresseObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -85,7 +80,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -16,17 +16,17 @@
 #import "AutoScalingDeletePolicyResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingDeletePolicyResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingDeletePolicyResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingDeletePolicyResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingDeletePolicyResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingDeletePolicyResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingDeletePolicyResponse *)response;
 
 @end

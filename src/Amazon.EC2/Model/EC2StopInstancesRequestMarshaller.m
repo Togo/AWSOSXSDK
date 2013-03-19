@@ -17,12 +17,11 @@
 
 @implementation EC2StopInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2StopInstancesRequest *)stopInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2StopInstancesRequest *)stopInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"StopInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"StopInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[stopInstancesRequest delegate]];
     [request setCredentials:[stopInstancesRequest credentials]];
@@ -42,7 +41,7 @@
     }
     if (stopInstancesRequest != nil) {
         if (stopInstancesRequest.forceIsSet) {
-            [request setParameterValue:(stopInstancesRequest.force ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"Force"]];
+            [request setParameterValue:(stopInstancesRequest.force ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"Force"]];
         }
     }
 

@@ -20,16 +20,13 @@
  * Listener
  */
 
-@interface ElasticLoadBalancingListener:NSObject
-
-{
+@interface ElasticLoadBalancingListener : NSObject {
     NSString *protocol;
     NSNumber *loadBalancerPort;
     NSString *instanceProtocol;
     NSNumber *instancePort;
     NSString *sSLCertificateId;
 }
-
 
 
 /**
@@ -84,7 +81,7 @@
  * Default constructor for a new Listener object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Listener object.
@@ -100,7 +97,7 @@
  * server is listening. This property cannot be modified for the life of
  * the LoadBalancer.
  */
--(id)initWithProtocol:(NSString *)theProtocol andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andInstancePort:(NSNumber *)theInstancePort;
+- (id)initWithProtocol:(NSString *)theProtocol andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andInstancePort:(NSNumber *)theInstancePort;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -108,7 +105,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

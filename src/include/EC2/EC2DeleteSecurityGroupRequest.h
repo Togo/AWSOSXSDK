@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Security Group Request
  */
 
-@interface EC2DeleteSecurityGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeleteSecurityGroupRequest : AmazonServiceRequestConfig {
     NSString *groupName;
     NSString *groupId;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new DeleteSecurityGroupRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteSecurityGroupRequest object.
@@ -55,7 +51,7 @@
  * @param theGroupName The name of the Amazon EC2 security group to
  * delete.
  */
--(id)initWithGroupName:(NSString *)theGroupName;
+- (id)initWithGroupName:(NSString *)theGroupName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

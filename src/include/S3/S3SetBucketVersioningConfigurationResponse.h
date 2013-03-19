@@ -19,7 +19,7 @@
 /** Result of setting a bucket's versioning configuration.
  *
  */
-@interface S3SetBucketVersioningConfigurationResponse:S3Response {
+@interface S3SetBucketVersioningConfigurationResponse : S3Response {
 }
 
 @end

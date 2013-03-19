@@ -23,11 +23,10 @@
 @synthesize autoEnableIOIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId          = nil;
-        autoEnableIO      = NO;
+        volumeId = nil;
+        autoEnableIO = NO;
         autoEnableIOIsSet = NO;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setAutoEnableIO:(bool)theValue
-{
-    autoEnableIO      = theValue;
+- (void)setAutoEnableIO:(bool)theValue {
+    autoEnableIO = theValue;
     autoEnableIOIsSet = YES;
 }
-
-
 
 
 @end

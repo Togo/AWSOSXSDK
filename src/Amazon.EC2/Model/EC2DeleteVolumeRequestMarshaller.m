@@ -17,12 +17,11 @@
 
 @implementation EC2DeleteVolumeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteVolumeRequest *)deleteVolumeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeleteVolumeRequest *)deleteVolumeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeleteVolume"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteVolume" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deleteVolumeRequest delegate]];
     [request setCredentials:[deleteVolumeRequest credentials]];

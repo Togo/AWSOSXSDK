@@ -22,20 +22,18 @@
 @synthesize publicKeyMaterial;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        keyName           = nil;
+        keyName = nil;
         publicKeyMaterial = nil;
     }
 
     return self;
 }
 
--(id)initWithKeyName:(NSString *)theKeyName andPublicKeyMaterial:(NSString *)thePublicKeyMaterial
-{
+- (id)initWithKeyName:(NSString *)theKeyName andPublicKeyMaterial:(NSString *)thePublicKeyMaterial {
     if (self = [self init]) {
-        self.keyName           = theKeyName;
+        self.keyName = theKeyName;
         self.publicKeyMaterial = thePublicKeyMaterial;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -19,39 +19,32 @@
 
 @synthesize key, version;
 
--(id)initWithKey:(NSString *)theKey withVersion:(NSString *)theVersion
-{
+- (id)initWithKey:(NSString *)theKey withVersion:(NSString *)theVersion {
     self = [super init];
-    if (self)
-    {
-        self.key     = theKey;
+    if (self) {
+        self.key = theKey;
         self.version = theVersion;
     }
 
     return self;
 }
 
--(id)initWithKey:(NSString *)theKey
-{
+- (id)initWithKey:(NSString *)theKey {
     return [self initWithKey:theKey withVersion:nil];
 }
 
-+(id)keyVersionWithKey:(NSString *)theKey withVersion:(NSString *)theVersion
-{
++ (id)keyVersionWithKey:(NSString *)theKey withVersion:(NSString *)theVersion {
     return [[S3KeyVersion alloc] initWithKey:theKey withVersion:theVersion];
 }
 
-+(id)keyVersionWithKey:(NSString *)theKey
-{
++ (id)keyVersionWithKey:(NSString *)theKey {
     return [[S3KeyVersion alloc] initWithKey:theKey];
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSString *innerXml = [NSString stringWithFormat:@"<Key>%@</Key>", self.key];
 
-    if (self.version != nil)
-    {
+    if (self.version != nil) {
         innerXml = [NSString stringWithFormat:@"%@<VersionId>%@</VersionId>", innerXml, self.version];
     }
 

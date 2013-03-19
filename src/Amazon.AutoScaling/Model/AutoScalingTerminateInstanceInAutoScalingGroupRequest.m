@@ -23,11 +23,10 @@
 @synthesize shouldDecrementDesiredCapacityIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId                          = nil;
-        shouldDecrementDesiredCapacity      = NO;
+        instanceId = nil;
+        shouldDecrementDesiredCapacity = NO;
         shouldDecrementDesiredCapacityIsSet = NO;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setShouldDecrementDesiredCapacity:(bool)theValue
-{
-    shouldDecrementDesiredCapacity      = theValue;
+- (void)setShouldDecrementDesiredCapacity:(bool)theValue {
+    shouldDecrementDesiredCapacity = theValue;
     shouldDecrementDesiredCapacityIsSet = YES;
 }
-
-
 
 
 @end

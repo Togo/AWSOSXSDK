@@ -24,11 +24,11 @@
 /**
  * Describe Instances Request Marshaller
  */
-@interface EC2DescribeInstancesRequestMarshaller:NSObject {
+@interface EC2DescribeInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeInstancesRequest *)describeInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeInstancesRequest *)describeInstancesRequest;
 
 
 @end

@@ -22,30 +22,26 @@
 @synthesize strategy;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         groupName = nil;
-        strategy  = nil;
+        strategy = nil;
     }
 
     return self;
 }
 
--(id)initWithGroupName:(NSString *)theGroupName andStrategy:(NSString *)theStrategy
-{
+- (id)initWithGroupName:(NSString *)theGroupName andStrategy:(NSString *)theStrategy {
     if (self = [self init]) {
         self.groupName = theGroupName;
-        self.strategy  = theStrategy;
+        self.strategy = theStrategy;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

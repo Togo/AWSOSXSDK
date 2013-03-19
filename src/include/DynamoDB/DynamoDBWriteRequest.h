@@ -19,26 +19,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Write Request
  */
 
-@interface DynamoDBWriteRequest:AmazonServiceRequestConfig
-
-{
-    DynamoDBPutRequest    *putRequest;
+@interface DynamoDBWriteRequest : AmazonServiceRequestConfig {
+    DynamoDBPutRequest *putRequest;
     DynamoDBDeleteRequest *deleteRequest;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A container for a Put BatchWrite request
@@ -56,7 +51,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

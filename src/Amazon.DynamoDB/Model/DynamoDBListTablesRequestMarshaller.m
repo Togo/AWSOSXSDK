@@ -20,8 +20,7 @@
 
 @implementation DynamoDBListTablesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBListTablesRequest *)listTablesRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBListTablesRequest *)listTablesRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[listTablesRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.ListTables" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -45,9 +44,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

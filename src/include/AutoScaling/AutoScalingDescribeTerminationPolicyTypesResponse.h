@@ -17,27 +17,23 @@
 #import "AutoScalingResponse.h"
 
 
-
 /**
  * Describe Termination Policy Types Result
  */
 
-@interface AutoScalingDescribeTerminationPolicyTypesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeTerminationPolicyTypesResponse : AutoScalingResponse {
     NSMutableArray *terminationPolicyTypes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Termination policies supported by Auto Scaling. They are:
@@ -48,11 +44,10 @@
 @property (nonatomic, strong) NSMutableArray *terminationPolicyTypes;
 
 
-
 /**
  * Returns a value from the terminationPolicyTypes array for the specified index
  */
--(NSString *)terminationPolicyTypesObjectAtIndex:(int)index;
+- (NSString *)terminationPolicyTypesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +55,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

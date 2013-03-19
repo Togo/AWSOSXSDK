@@ -26,24 +26,21 @@
  * Get Federation Token Result
  */
 
-@interface SecurityTokenServiceGetFederationTokenResponse:SecurityTokenServiceResponse
-
-{
-    SecurityTokenServiceCredentials   *credentials;
+@interface SecurityTokenServiceGetFederationTokenResponse : SecurityTokenServiceResponse {
+    SecurityTokenServiceCredentials *credentials;
     SecurityTokenServiceFederatedUser *federatedUser;
-    NSNumber                          *packedPolicySize;
+    NSNumber *packedPolicySize;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Credentials for the service API authentication.
@@ -72,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Describe Adjustment Types Request Marshaller
  */
-@interface AutoScalingDescribeAdjustmentTypesRequestMarshaller:NSObject {
+@interface AutoScalingDescribeAdjustmentTypesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest;
 
 
 @end

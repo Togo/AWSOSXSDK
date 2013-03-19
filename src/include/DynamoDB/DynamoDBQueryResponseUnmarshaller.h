@@ -22,10 +22,10 @@
 /**
  * Query Result Unmarshaller
  */
-@interface DynamoDBQueryResponseUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBQueryResponseUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBQueryResponse *response;
 }
 
-+(DynamoDBQueryResponse *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBQueryResponse *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

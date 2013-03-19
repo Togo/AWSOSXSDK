@@ -28,11 +28,11 @@
  * <br />Required Parameters: bucket
  *
  */
-@interface S3ListVersionsRequest:S3Request {
-    NSString  *prefix;
-    NSString  *keyMarker;
-    NSString  *versionIdMarker;
-    NSString  *delimiter;
+@interface S3ListVersionsRequest : S3Request {
+    NSString *prefix;
+    NSString *keyMarker;
+    NSString *versionIdMarker;
+    NSString *delimiter;
     NSInteger maxKeys;
 }
 

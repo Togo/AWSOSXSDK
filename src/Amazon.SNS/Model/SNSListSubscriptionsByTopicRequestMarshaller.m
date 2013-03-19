@@ -17,12 +17,11 @@
 
 @implementation SNSListSubscriptionsByTopicRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSListSubscriptionsByTopicRequest *)listSubscriptionsByTopicRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"ListSubscriptionsByTopic"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"ListSubscriptionsByTopic" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[listSubscriptionsByTopicRequest delegate]];
     [request setCredentials:[listSubscriptionsByTopicRequest credentials]];

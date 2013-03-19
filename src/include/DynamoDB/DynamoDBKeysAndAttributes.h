@@ -16,28 +16,23 @@
 #import "DynamoDBKey.h"
 
 
-
 /**
  * Keys And Attributes
  */
 
-@interface DynamoDBKeysAndAttributes:NSObject
-
-{
+@interface DynamoDBKeysAndAttributes : NSObject {
     NSMutableArray *keys;
     NSMutableArray *attributesToGet;
-    bool           consistentRead;
-    bool           consistentReadIsSet;
+    bool consistentRead;
+    bool consistentReadIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Keys property for this object.
@@ -61,7 +56,7 @@
  * If set to <code>true</code>, then a consistent read is issued.
  * Otherwise eventually-consistent is used.
  */
-@property (nonatomic) bool           consistentRead;
+@property (nonatomic) bool consistentRead;
 
 @property (nonatomic, readonly) bool consistentReadIsSet;
 
@@ -69,13 +64,13 @@
  * Adds a single object to keys.
  * This function will alloc and init keys if not already done.
  */
--(void)addKey:(DynamoDBKey *)keyObject;
+- (void)addKey:(DynamoDBKey *)keyObject;
 
 /**
  * Adds a single object to attributesToGet.
  * This function will alloc and init attributesToGet if not already done.
  */
--(void)addAttributesToGet:(NSString *)attributesToGetObject;
+- (void)addAttributesToGet:(NSString *)attributesToGetObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -83,7 +78,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

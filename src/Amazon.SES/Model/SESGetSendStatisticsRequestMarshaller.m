@@ -17,18 +17,16 @@
 
 @implementation SESGetSendStatisticsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESGetSendStatisticsRequest *)getSendStatisticsRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESGetSendStatisticsRequest *)getSendStatisticsRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"GetSendStatistics"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetSendStatistics" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[getSendStatisticsRequest delegate]];
     [request setCredentials:[getSendStatisticsRequest credentials]];
     [request setEndpoint:[getSendStatisticsRequest requestEndpoint]];
     [request setRequestTag:[getSendStatisticsRequest requestTag]];
-
 
 
     return request;

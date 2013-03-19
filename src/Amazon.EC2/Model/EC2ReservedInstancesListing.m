@@ -30,27 +30,25 @@
 @synthesize clientToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesListingId = nil;
-        reservedInstancesId        = nil;
-        createDate                 = nil;
-        updateDate                 = nil;
-        status                     = nil;
-        statusMessage              = nil;
-        instanceCounts             = [[NSMutableArray alloc] initWithCapacity:1];
-        priceSchedules             = [[NSMutableArray alloc] initWithCapacity:1];
-        tags                       = [[NSMutableArray alloc] initWithCapacity:1];
-        clientToken                = nil;
+        reservedInstancesId = nil;
+        createDate = nil;
+        updateDate = nil;
+        status = nil;
+        statusMessage = nil;
+        instanceCounts = [[NSMutableArray alloc] initWithCapacity:1];
+        priceSchedules = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
+        clientToken = nil;
     }
 
     return self;
 }
 
 
--(void)addInstanceCount:(EC2InstanceCount *)instanceCountObject
-{
+- (void)addInstanceCount:(EC2InstanceCount *)instanceCountObject {
     if (instanceCounts == nil) {
         instanceCounts = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +56,7 @@
     [instanceCounts addObject:instanceCountObject];
 }
 
--(void)addPriceSchedule:(EC2PriceSchedule *)priceScheduleObject
-{
+- (void)addPriceSchedule:(EC2PriceSchedule *)priceScheduleObject {
     if (priceSchedules == nil) {
         priceSchedules = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -67,8 +64,7 @@
     [priceSchedules addObject:priceScheduleObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -77,8 +73,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -97,9 +92,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Copy Snapshot Request Marshaller
  */
-@interface EC2CopySnapshotRequestMarshaller:NSObject {
+@interface EC2CopySnapshotRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CopySnapshotRequest *)copySnapshotRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CopySnapshotRequest *)copySnapshotRequest;
 
 
 @end

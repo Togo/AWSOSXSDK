@@ -17,12 +17,11 @@
 
 @implementation SESSendRawEmailRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESSendRawEmailRequest *)sendRawEmailRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESSendRawEmailRequest *)sendRawEmailRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"SendRawEmail"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"SendRawEmail" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[sendRawEmailRequest delegate]];
     [request setCredentials:[sendRawEmailRequest credentials]];

@@ -22,11 +22,11 @@
 /**
  * Delete Volume Request Marshaller
  */
-@interface EC2DeleteVolumeRequestMarshaller:NSObject {
+@interface EC2DeleteVolumeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteVolumeRequest *)deleteVolumeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteVolumeRequest *)deleteVolumeRequest;
 
 
 @end

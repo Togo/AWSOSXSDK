@@ -20,42 +20,37 @@
 @synthesize message;
 @synthesize error;
 
-+(id)exceptionWithMessage:(NSString *)theMessage
-{
-    AmazonClientException *e = [[[self class] alloc] initWithName:@"AmazonClientException" 
-                                                                    reason:theMessage
-                                                                  userInfo:nil];
++ (id)exceptionWithMessage:(NSString *)theMessage {
+    AmazonClientException *e = [[[self class] alloc] initWithName:@"AmazonClientException"
+                                                           reason:theMessage
+                                                         userInfo:nil];
     e.error = nil;
     e.message = theMessage;
-    
+
     return e;
 }
 
-+(id)exceptionWithMessage:(NSString *)theMessage andError:(NSError *)theError
-{
++ (id)exceptionWithMessage:(NSString *)theMessage andError:(NSError *)theError {
     AmazonClientException *e = [[[self class] alloc] initWithName:@"AmazonClientException"
-                                                                    reason:theMessage
-                                                                  userInfo:nil];
-    e.error   = theError;
+                                                           reason:theMessage
+                                                         userInfo:nil];
+    e.error = theError;
     e.message = theMessage;
-    
+
     return e;
 }
 
-- (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo
-{
+- (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo {
     self = [super initWithName:name reason:reason userInfo:userInfo];
-    if(self)
-    {
+    if (self) {
         message = nil;
         error = nil;
     }
-    
+
     return self;
 }
 
--(id)initWithMessage:(NSString *)theMessage
-{
+- (id)initWithMessage:(NSString *)theMessage {
     self = [super initWithName:@"AmazonClientException" reason:theMessage userInfo:nil];
     if (self != nil) {
         self.message = theMessage;

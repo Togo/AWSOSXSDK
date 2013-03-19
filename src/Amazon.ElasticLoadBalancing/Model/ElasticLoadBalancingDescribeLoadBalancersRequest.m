@@ -22,18 +22,16 @@
 @synthesize marker;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerNames = [[NSMutableArray alloc] initWithCapacity:1];
-        marker            = nil;
+        marker = nil;
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerNames:(NSMutableArray *)theLoadBalancerNames
-{
+- (id)initWithLoadBalancerNames:(NSMutableArray *)theLoadBalancerNames {
     if (self = [self init]) {
         self.loadBalancerNames = theLoadBalancerNames;
     }
@@ -42,8 +40,7 @@
 }
 
 
--(void)addLoadBalancerName:(NSString *)loadBalancerNameObject
-{
+- (void)addLoadBalancerName:(NSString *)loadBalancerNameObject {
     if (loadBalancerNames == nil) {
         loadBalancerNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

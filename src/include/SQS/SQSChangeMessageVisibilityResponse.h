@@ -22,8 +22,7 @@
 /**
  * Change Message Visibility
  */
-@interface SQSChangeMessageVisibilityResponse:SQSResponse
-{
+@interface SQSChangeMessageVisibilityResponse : SQSResponse {
 }
 
 @end

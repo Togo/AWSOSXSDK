@@ -18,30 +18,25 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Instance Status Request
  */
 
-@interface EC2DescribeInstanceStatusRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeInstanceStatusRequest : AmazonServiceRequestConfig {
     NSMutableArray *instanceIds;
     NSMutableArray *filters;
-    NSString       *nextToken;
-    NSNumber       *maxResults;
-    bool           includeAllInstances;
-    bool           includeAllInstancesIsSet;
+    NSString *nextToken;
+    NSNumber *maxResults;
+    bool includeAllInstances;
+    bool includeAllInstancesIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of instance IDs. If not specified, all instances are
@@ -67,7 +62,7 @@
 /**
  * The value of the IncludeAllInstances property for this object.
  */
-@property (nonatomic) bool           includeAllInstances;
+@property (nonatomic) bool includeAllInstances;
 
 @property (nonatomic, readonly) bool includeAllInstancesIsSet;
 
@@ -75,13 +70,13 @@
  * Adds a single object to instanceIds.
  * This function will alloc and init instanceIds if not already done.
  */
--(void)addInstanceId:(NSString *)instanceIdObject;
+- (void)addInstanceId:(NSString *)instanceIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -89,7 +84,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

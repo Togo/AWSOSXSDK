@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Subnets Request
  */
 
-@interface EC2DescribeSubnetsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeSubnetsRequest : AmazonServiceRequestConfig {
     NSMutableArray *subnetIds;
     NSMutableArray *filters;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A set of one or more subnet IDs.
@@ -56,13 +51,13 @@
  * Adds a single object to subnetIds.
  * This function will alloc and init subnetIds if not already done.
  */
--(void)addSubnetId:(NSString *)subnetIdObject;
+- (void)addSubnetId:(NSString *)subnetIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

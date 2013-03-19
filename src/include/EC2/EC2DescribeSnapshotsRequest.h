@@ -18,14 +18,11 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Snapshots Request
  */
 
-@interface EC2DescribeSnapshotsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeSnapshotsRequest : AmazonServiceRequestConfig {
     NSMutableArray *snapshotIds;
     NSMutableArray *ownerIds;
     NSMutableArray *restorableByUserIds;
@@ -33,13 +30,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The optional list of EBS snapshot IDs to describe.
@@ -70,25 +65,25 @@
  * Adds a single object to snapshotIds.
  * This function will alloc and init snapshotIds if not already done.
  */
--(void)addSnapshotId:(NSString *)snapshotIdObject;
+- (void)addSnapshotId:(NSString *)snapshotIdObject;
 
 /**
  * Adds a single object to ownerIds.
  * This function will alloc and init ownerIds if not already done.
  */
--(void)addOwnerId:(NSString *)ownerIdObject;
+- (void)addOwnerId:(NSString *)ownerIdObject;
 
 /**
  * Adds a single object to restorableByUserIds.
  * This function will alloc and init restorableByUserIds if not already done.
  */
--(void)addRestorableByUserId:(NSString *)restorableByUserIdObject;
+- (void)addRestorableByUserId:(NSString *)restorableByUserIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -96,7 +91,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

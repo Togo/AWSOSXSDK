@@ -25,23 +25,20 @@
 @synthesize historyData;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        alarmName       = nil;
-        timestamp       = nil;
+        alarmName = nil;
+        timestamp = nil;
         historyItemType = nil;
-        historySummary  = nil;
-        historyData     = nil;
+        historySummary = nil;
+        historyData = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

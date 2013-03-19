@@ -18,8 +18,7 @@
 
 @implementation S3GetACLRequest
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceAcl];
 
     [super configureURLRequest];

@@ -16,17 +16,17 @@
 #import "AutoScalingSetDesiredCapacityResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingSetDesiredCapacityResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingSetDesiredCapacityResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingSetDesiredCapacityResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingSetDesiredCapacityResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingSetDesiredCapacityResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingSetDesiredCapacityResponse *)response;
 
 @end

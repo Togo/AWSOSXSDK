@@ -24,10 +24,9 @@
 // When we find a start tag, keep track of the current tag
 // subclasses should really, really call this method if overridden
 //
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
-attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
+        attributes:(NSDictionary *)attributeDict {
     // reset the current text
     if (currentText != nil) {
         currentText = nil;
@@ -39,10 +38,8 @@ attributes:(NSDictionary *)attributeDict
 //
 // Keep track of the current text. Subclasses should not override
 //
--(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
-{
-    if (nil == currentText)
-    {
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if (nil == currentText) {
         currentText = [[NSMutableString alloc] initWithCapacity:50];
     }
 
@@ -50,21 +47,18 @@ attributes:(NSDictionary *)attributeDict
 }
 
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     // We don't do anything with this right now.
 }
 
--(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
-{
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     // We don't do anything with this right now.
 }
 
--(NSString *)currentText
-{
+- (NSString *)currentText {
     if (nil == currentText) {
         return @"";
     }
@@ -78,20 +72,18 @@ qualifiedName:(NSString *)qName
 // - set the parser's delegate to the caller, returning control to it
 // - assign the object it created to the parent field with [parent setter:object]
 //
--(AmazonUnmarshallerXMLParserDelegate *) initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter
-{
-    caller            = aCaller;
-    parentObject      = parent;
-    parentSetter      = setter;
+- (AmazonUnmarshallerXMLParserDelegate *)initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter {
+    caller = aCaller;
+    parentObject = parent;
+    parentSetter = setter;
     endElementTagName = nil;
     return self;
 }
 
--(AmazonUnmarshallerXMLParserDelegate *) initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter withAlias:(NSString *)alias
-{
-    caller            = aCaller;
-    parentObject      = parent;
-    parentSetter      = setter;
+- (AmazonUnmarshallerXMLParserDelegate *)initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter withAlias:(NSString *)alias {
+    caller = aCaller;
+    parentObject = parent;
+    parentSetter = setter;
     endElementTagName = alias;
     return self;
 }

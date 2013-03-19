@@ -23,11 +23,11 @@
 /**
  * Describe Instance Health Request Marshaller
  */
-@interface ElasticLoadBalancingDescribeInstanceHealthRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDescribeInstanceHealthRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest;
 
 
 @end

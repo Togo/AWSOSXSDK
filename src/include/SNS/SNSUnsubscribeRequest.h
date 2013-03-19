@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Unsubscribe Request
  */
 
-@interface SNSUnsubscribeRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSUnsubscribeRequest : AmazonServiceRequestConfig {
     NSString *subscriptionArn;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new UnsubscribeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new UnsubscribeRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theSubscriptionArn The ARN of the subscription to be deleted.
  */
--(id)initWithSubscriptionArn:(NSString *)theSubscriptionArn;
+- (id)initWithSubscriptionArn:(NSString *)theSubscriptionArn;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

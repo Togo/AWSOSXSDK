@@ -22,19 +22,17 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesOfferings = [[NSMutableArray alloc] initWithCapacity:1];
-        nextToken                  = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -47,15 +45,12 @@
 }
 
 
-
--(EC2ReservedInstancesOffering *)reservedInstancesOfferingsObjectAtIndex:(int)index
-{
-    return (EC2ReservedInstancesOffering *)[reservedInstancesOfferings objectAtIndex:index];
+- (EC2ReservedInstancesOffering *)reservedInstancesOfferingsObjectAtIndex:(int)index {
+    return (EC2ReservedInstancesOffering *) [reservedInstancesOfferings objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -66,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

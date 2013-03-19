@@ -20,8 +20,7 @@
 /**
  * Delete Notification Configuration
  */
-@interface AutoScalingDeleteNotificationConfigurationResponse:AutoScalingResponse
-{
+@interface AutoScalingDeleteNotificationConfigurationResponse : AutoScalingResponse {
 }
 
 @end

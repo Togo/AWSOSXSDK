@@ -22,8 +22,7 @@
 @synthesize cookieName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         policyName = nil;
         cookieName = nil;
@@ -32,8 +31,7 @@
     return self;
 }
 
--(id)initWithPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName
-{
+- (id)initWithPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName {
     if (self = [self init]) {
         self.policyName = thePolicyName;
         self.cookieName = theCookieName;
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

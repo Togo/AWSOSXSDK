@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Terminate Instance In Auto Scaling Group Request
  */
 
-@interface AutoScalingTerminateInstanceInAutoScalingGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingTerminateInstanceInAutoScalingGroupRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
-    bool     shouldDecrementDesiredCapacity;
-    bool     shouldDecrementDesiredCapacityIsSet;
+    bool shouldDecrementDesiredCapacity;
+    bool shouldDecrementDesiredCapacityIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the Amazon EC2 instance to be terminated.
@@ -53,7 +48,7 @@
  * instance should also decrement the size of the
  * <a>AutoScalingGroup</a>.
  */
-@property (nonatomic) bool           shouldDecrementDesiredCapacity;
+@property (nonatomic) bool shouldDecrementDesiredCapacity;
 
 @property (nonatomic, readonly) bool shouldDecrementDesiredCapacityIsSet;
 
@@ -63,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

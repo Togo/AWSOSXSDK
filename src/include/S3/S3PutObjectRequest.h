@@ -25,7 +25,7 @@
  * Required parameters: bucket, key.
  *
  */
-@interface S3PutObjectRequest:S3AbstractPutRequest {
+@interface S3PutObjectRequest : S3AbstractPutRequest {
     BOOL expiresSet;
 }
 
@@ -93,6 +93,6 @@
 @property (nonatomic, strong) NSString *redirectLocation;
 
 /** Initializes the request with the key and bucket name */
--(id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket;
+- (id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket;
 
 @end

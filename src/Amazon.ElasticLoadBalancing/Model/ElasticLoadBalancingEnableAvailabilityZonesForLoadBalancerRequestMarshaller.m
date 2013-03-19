@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequest *)enableAvailabilityZonesForLoadBalancerRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequest *)enableAvailabilityZonesForLoadBalancerRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"EnableAvailabilityZonesForLoadBalancer"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"EnableAvailabilityZonesForLoadBalancer" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[enableAvailabilityZonesForLoadBalancerRequest delegate]];
     [request setCredentials:[enableAvailabilityZonesForLoadBalancerRequest credentials]];

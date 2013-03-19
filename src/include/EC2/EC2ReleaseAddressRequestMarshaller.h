@@ -22,11 +22,11 @@
 /**
  * Release Address Request Marshaller
  */
-@interface EC2ReleaseAddressRequestMarshaller:NSObject {
+@interface EC2ReleaseAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ReleaseAddressRequest *)releaseAddressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ReleaseAddressRequest *)releaseAddressRequest;
 
 
 @end

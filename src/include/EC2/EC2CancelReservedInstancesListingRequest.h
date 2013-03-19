@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Cancel Reserved Instances Listing Request
  */
 
-@interface EC2CancelReservedInstancesListingRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CancelReservedInstancesListingRequest : AmazonServiceRequestConfig {
     NSString *reservedInstancesListingId;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ReservedInstancesListingId property for this object.
@@ -48,7 +43,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

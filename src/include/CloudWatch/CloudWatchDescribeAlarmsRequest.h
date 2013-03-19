@@ -17,30 +17,25 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Alarms Request
  */
 
-@interface CloudWatchDescribeAlarmsRequest:AmazonServiceRequestConfig
-
-{
+@interface CloudWatchDescribeAlarmsRequest : AmazonServiceRequestConfig {
     NSMutableArray *alarmNames;
-    NSString       *alarmNamePrefix;
-    NSString       *stateValue;
-    NSString       *actionPrefix;
-    NSNumber       *maxRecords;
-    NSString       *nextToken;
+    NSString *alarmNamePrefix;
+    NSString *stateValue;
+    NSString *actionPrefix;
+    NSNumber *maxRecords;
+    NSString *nextToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of alarm names to retrieve information for.
@@ -93,7 +88,7 @@
  * Adds a single object to alarmNames.
  * This function will alloc and init alarmNames if not already done.
  */
--(void)addAlarmName:(NSString *)alarmNameObject;
+- (void)addAlarmName:(NSString *)alarmNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -101,7 +96,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

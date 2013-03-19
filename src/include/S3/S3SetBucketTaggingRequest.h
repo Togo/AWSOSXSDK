@@ -21,15 +21,17 @@
  * Contains the parameters used for the setBucketTagging operation.
  *
  */
-@interface S3SetBucketTaggingRequest:S3Request
-{
+@interface S3SetBucketTaggingRequest : S3Request {
     S3BucketTaggingConfiguration *configuration;
 }
 
--(id)initWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketTaggingConfiguration *)theConfiguration;
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketTaggingConfiguration *)theConfiguration;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketTaggingConfiguration *)theConfiguration;
+
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketTaggingConfiguration *)theConfiguration;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new cost allocation tagging configuration for the specified bucket. */
 @property (nonatomic, strong) S3BucketTaggingConfiguration *configuration;

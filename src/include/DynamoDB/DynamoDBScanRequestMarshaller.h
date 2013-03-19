@@ -26,11 +26,11 @@
 /**
  * Scan Request Marshaller
  */
-@interface DynamoDBScanRequestMarshaller:NSObject {
+@interface DynamoDBScanRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBScanRequest *)scanRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBScanRequest *)scanRequest;
 
 
 @end

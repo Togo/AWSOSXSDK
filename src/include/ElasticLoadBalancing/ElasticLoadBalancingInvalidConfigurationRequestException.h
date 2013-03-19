@@ -16,24 +16,16 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Requested configuration change is invalid.
  * </p>
  */
-@interface ElasticLoadBalancingInvalidConfigurationRequestException:AmazonServiceException
-{
+@interface ElasticLoadBalancingInvalidConfigurationRequestException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -42,7 +34,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

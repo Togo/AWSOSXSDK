@@ -17,18 +17,16 @@
 
 @implementation AutoScalingDescribeAutoScalingNotificationTypesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeAutoScalingNotificationTypes"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAutoScalingNotificationTypes" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeAutoScalingNotificationTypesRequest delegate]];
     [request setCredentials:[describeAutoScalingNotificationTypesRequest credentials]];
     [request setEndpoint:[describeAutoScalingNotificationTypesRequest requestEndpoint]];
     [request setRequestTag:[describeAutoScalingNotificationTypesRequest requestTag]];
-
 
 
     return request;

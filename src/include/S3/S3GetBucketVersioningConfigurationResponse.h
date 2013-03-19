@@ -20,7 +20,7 @@
 /** Contains the bucket versioning configuration.
  *
  */
-@interface S3GetBucketVersioningConfigurationResponse:S3Response {
+@interface S3GetBucketVersioningConfigurationResponse : S3Response {
     S3BucketVersioningConfiguration *versioningConfiguration;
 }
 

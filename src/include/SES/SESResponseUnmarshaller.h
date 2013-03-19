@@ -16,7 +16,7 @@
 #import <Foundation/Foundation.h>
 #import "../AmazonServiceResponseUnmarshaller.h"
 
-@interface SESResponseUnmarshaller:AmazonServiceResponseUnmarshaller {
+@interface SESResponseUnmarshaller : AmazonServiceResponseUnmarshaller {
 }
 
 @end

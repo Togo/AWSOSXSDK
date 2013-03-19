@@ -20,26 +20,22 @@
  * Volume Attachment
  */
 
-@interface EC2VolumeAttachment:NSObject
-
-{
+@interface EC2VolumeAttachment : NSObject {
     NSString *volumeId;
     NSString *instanceId;
     NSString *device;
     NSString *state;
-    NSDate   *attachTime;
-    bool     deleteOnTermination;
-    bool     deleteOnTerminationIsSet;
+    NSDate *attachTime;
+    bool deleteOnTermination;
+    bool deleteOnTerminationIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  *
@@ -74,7 +70,7 @@
  * ` <p> Whether this volume will be deleted or not when the associated
  * instance is terminated.
  */
-@property (nonatomic) bool           deleteOnTermination;
+@property (nonatomic) bool deleteOnTermination;
 
 @property (nonatomic, readonly) bool deleteOnTerminationIsSet;
 
@@ -84,7 +80,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

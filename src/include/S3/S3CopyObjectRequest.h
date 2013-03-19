@@ -23,7 +23,7 @@
 /** Contains the parameters used for the CopyObject operation.
  *
  */
-@interface S3CopyObjectRequest:S3AbstractPutRequest {
+@interface S3CopyObjectRequest : S3AbstractPutRequest {
 }
 
 /** The name of the source object. */
@@ -60,6 +60,6 @@
  *
  * @return the request object.
  */
--(id)initWithSourceKey:(NSString *)srcKey sourceBucket:(NSString *)srcBucket destinationKey:(NSString *)dstKey destinationBucket:(NSString *)dstBucket;
+- (id)initWithSourceKey:(NSString *)srcKey sourceBucket:(NSString *)srcBucket destinationKey:(NSString *)dstKey destinationBucket:(NSString *)dstBucket;
 
 @end

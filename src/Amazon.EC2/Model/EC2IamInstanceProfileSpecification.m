@@ -22,10 +22,9 @@
 @synthesize name;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        arn  = nil;
+        arn = nil;
         name = nil;
     }
 
@@ -33,9 +32,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

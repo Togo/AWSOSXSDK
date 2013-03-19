@@ -17,12 +17,11 @@
 
 @implementation SecurityTokenServiceGetSessionTokenRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest
-{
++ (AmazonServiceRequest *)createRequest:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest {
     AmazonServiceRequest *request = [[SecurityTokenServiceRequest alloc] init];
 
-    [request setParameterValue:@"GetSessionToken"           forKey:@"Action"];
-    [request setParameterValue:@"2011-06-15"   forKey:@"Version"];
+    [request setParameterValue:@"GetSessionToken" forKey:@"Action"];
+    [request setParameterValue:@"2011-06-15" forKey:@"Version"];
 
     [request setDelegate:[getSessionTokenRequest delegate]];
     [request setCredentials:[getSessionTokenRequest credentials]];

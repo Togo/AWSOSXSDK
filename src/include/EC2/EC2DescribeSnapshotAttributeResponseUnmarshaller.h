@@ -27,7 +27,7 @@
 /**
  * Describe Snapshot Attribute Response Unmarshaller
  */
-@interface EC2DescribeSnapshotAttributeResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2DescribeSnapshotAttributeResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DescribeSnapshotAttributeResponse *response;
 }
 
@@ -35,8 +35,9 @@
 @property (weak, nonatomic, readonly) EC2DescribeSnapshotAttributeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

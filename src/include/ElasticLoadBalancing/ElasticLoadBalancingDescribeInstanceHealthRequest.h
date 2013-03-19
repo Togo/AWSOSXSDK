@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Instance Health Request
  */
 
-@interface ElasticLoadBalancingDescribeInstanceHealthRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingDescribeInstanceHealthRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *instances;
 }
-
 
 
 /**
@@ -48,7 +44,7 @@
  * Default constructor for a new DescribeInstanceHealthRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeInstanceHealthRequest object.
@@ -57,13 +53,13 @@
  * @param theLoadBalancerName The name associated with the LoadBalancer.
  * The name must be unique within the client AWS account.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName;
 
 /**
  * Adds a single object to instances.
  * This function will alloc and init instances if not already done.
  */
--(void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
+- (void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

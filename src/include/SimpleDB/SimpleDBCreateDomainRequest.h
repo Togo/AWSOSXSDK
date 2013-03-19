@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Domain Request
  */
 
-@interface SimpleDBCreateDomainRequest:AmazonServiceRequestConfig
-
-{
+@interface SimpleDBCreateDomainRequest : AmazonServiceRequestConfig {
     NSString *domainName;
 }
-
 
 
 /**
@@ -42,7 +38,7 @@
  * Default constructor for a new CreateDomainRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateDomainRequest object.
@@ -52,7 +48,7 @@
  * range between 3 and 255 characters and can contain the following
  * characters: a-z, A-Z, 0-9, '_', '-', and '.'.
  */
--(id)initWithDomainName:(NSString *)theDomainName;
+- (id)initWithDomainName:(NSString *)theDomainName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeInstancesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeInstancesRequest *)describeInstancesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeInstancesRequest *)describeInstancesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeInstances"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeInstances" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeInstancesRequest delegate]];
     [request setCredentials:[describeInstancesRequest credentials]];

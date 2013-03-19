@@ -23,8 +23,7 @@
 @implementation DynamoDBGetItemResponseUnmarshaller
 
 
-+(DynamoDBGetItemResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBGetItemResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBGetItemResponse *getItemResult = [[DynamoDBGetItemResponse alloc] init];
 
 

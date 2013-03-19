@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Load Balancer Policy Types Request
  */
 
-@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest : AmazonServiceRequestConfig {
     NSMutableArray *policyTypeNames;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the name of the policy types. If no names are specified,
@@ -48,7 +43,7 @@
  * Adds a single object to policyTypeNames.
  * This function will alloc and init policyTypeNames if not already done.
  */
--(void)addPolicyTypeName:(NSString *)policyTypeNameObject;
+- (void)addPolicyTypeName:(NSString *)policyTypeNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +51,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

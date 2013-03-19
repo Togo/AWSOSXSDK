@@ -21,8 +21,7 @@
 
 @synthesize owner;
 
--(void)addGrant:(S3Grant *)aGrant
-{
+- (void)addGrant:(S3Grant *)aGrant {
     if (grantList == nil) {
         grantList = [[NSMutableArray alloc] init];
     }
@@ -30,8 +29,7 @@
     [grantList addObject:aGrant];
 }
 
--(id)initWithOwner:(S3Owner *)theOwner
-{
+- (id)initWithOwner:(S3Owner *)theOwner {
     self = [super init];
     if (self) {
         self.owner = theOwner;
@@ -39,21 +37,18 @@
     return self;
 }
 
--(NSArray *)grantList
-{
+- (NSArray *)grantList {
     return [NSArray arrayWithArray:grantList];
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendFormat:@"<AccessControlPolicy><Owner><ID>%@</ID><DisplayName>%@</DisplayName></Owner>",
-     self.owner.ID, self.owner.displayName];
+                      self.owner.ID, self.owner.displayName];
 
     [xml appendString:@"<AccessControlList>"];
-    for (S3Grant *g in grantList)
-    {
+    for (S3Grant *g in grantList) {
         [xml appendString:[g toXml]];
     }
 
@@ -65,16 +60,14 @@
     return retval;
 }
 
--(NSDictionary *)toHeaders
-{
-    NSMutableString *rPerm    = nil;
-    NSMutableString *wPerm    = nil;
+- (NSDictionary *)toHeaders {
+    NSMutableString *rPerm = nil;
+    NSMutableString *wPerm = nil;
     NSMutableString *racpPerm = nil;
     NSMutableString *wacpPerm = nil;
-    NSMutableString *fPerm    = nil;
-    
-    for (S3Grant *g in grantList)
-    {
+    NSMutableString *fPerm = nil;
+
+    for (S3Grant *g in grantList) {
         NSString *grantee = @"";
         if (!((g.grantee.ID == nil) || [g.grantee.ID isEqualToString:@""])) {
             grantee = [NSString stringWithFormat:@"id=%@", g.grantee.ID];
@@ -85,41 +78,41 @@
         else if (!((g.grantee.emailAddress == nil) || [g.grantee.emailAddress isEqualToString:@""])) {
             grantee = [NSString stringWithFormat:@"emailaddress=%@", g.grantee.emailAddress];
         }
-        
-        if ( g.permission == [S3Permission readPermission] ) {
-            if ( rPerm == nil ) {
+
+        if (g.permission == [S3Permission readPermission]) {
+            if (rPerm == nil) {
                 rPerm = [NSMutableString stringWithString:grantee];
             }
             else {
                 [rPerm appendFormat:@", %@", grantee];
             }
         }
-        else if (g.permission == [S3Permission writePermission] ) {
-            if ( wPerm == nil ) {
+        else if (g.permission == [S3Permission writePermission]) {
+            if (wPerm == nil) {
                 wPerm = [NSMutableString stringWithString:grantee];
             }
             else {
                 [wPerm appendFormat:@", %@", grantee];
             }
         }
-        else if (g.permission == [S3Permission readAcpPermission] ) {
-            if ( racpPerm == nil ) {
+        else if (g.permission == [S3Permission readAcpPermission]) {
+            if (racpPerm == nil) {
                 racpPerm = [NSMutableString stringWithString:grantee];
             }
             else {
                 [racpPerm appendFormat:@", %@", grantee];
             }
         }
-        else if (g.permission == [S3Permission writeAcpPermission] ) {
-            if ( rPerm == nil ) {
+        else if (g.permission == [S3Permission writeAcpPermission]) {
+            if (rPerm == nil) {
                 rPerm = [NSMutableString stringWithString:grantee];
             }
             else {
                 [racpPerm appendFormat:@", %@", grantee];
             }
         }
-        else if (g.permission == [S3Permission fullControlPermission] ) {
-            if ( fPerm == nil ) {
+        else if (g.permission == [S3Permission fullControlPermission]) {
+            if (fPerm == nil) {
                 fPerm = [NSMutableString stringWithString:grantee];
             }
             else {
@@ -127,7 +120,7 @@
             }
         }
     }
-    
+
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:5];
     if (rPerm != nil) {
         [dict setValue:rPerm forKey:kHttpHdrAmzGrantRead];
@@ -144,7 +137,7 @@
     if (fPerm != nil) {
         [dict setValue:fPerm forKey:kHttpHdrAmzGrantFullControl];
     }
-    
+
     return dict;
 }
 

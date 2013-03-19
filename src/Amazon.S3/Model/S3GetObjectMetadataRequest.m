@@ -18,8 +18,7 @@
 // This is the same as GetObjectRequest;
 @implementation S3GetObjectMetadataRequest
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     // same as the GetObject, except using HEAD instead of GET.

@@ -18,25 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Modify Image Attribute Request
  */
 
-@interface EC2ModifyImageAttributeRequest:AmazonServiceRequestConfig
-
-{
-    NSString                         *imageId;
-    NSString                         *attribute;
-    NSString                         *operationType;
-    NSMutableArray                   *userIds;
-    NSMutableArray                   *userGroups;
-    NSMutableArray                   *productCodes;
-    NSString                         *value;
+@interface EC2ModifyImageAttributeRequest : AmazonServiceRequestConfig {
+    NSString *imageId;
+    NSString *attribute;
+    NSString *operationType;
+    NSMutableArray *userIds;
+    NSMutableArray *userGroups;
+    NSMutableArray *productCodes;
+    NSString *value;
     EC2LaunchPermissionModifications *launchPermission;
-    NSString                         *descriptionValue;
+    NSString *descriptionValue;
 }
-
 
 
 /**
@@ -98,7 +94,7 @@
  * Default constructor for a new ModifyImageAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ModifyImageAttributeRequest object.
@@ -110,25 +106,25 @@
  * <p> Available attributes: <code>launchPermission</code>,
  * <code>productCodes</code>
  */
--(id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
+- (id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
 
 /**
  * Adds a single object to userIds.
  * This function will alloc and init userIds if not already done.
  */
--(void)addUserId:(NSString *)userIdObject;
+- (void)addUserId:(NSString *)userIdObject;
 
 /**
  * Adds a single object to userGroups.
  * This function will alloc and init userGroups if not already done.
  */
--(void)addUserGroup:(NSString *)userGroupObject;
+- (void)addUserGroup:(NSString *)userGroupObject;
 
 /**
  * Adds a single object to productCodes.
  * This function will alloc and init productCodes if not already done.
  */
--(void)addProductCode:(NSString *)productCodeObject;
+- (void)addProductCode:(NSString *)productCodeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -136,7 +132,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

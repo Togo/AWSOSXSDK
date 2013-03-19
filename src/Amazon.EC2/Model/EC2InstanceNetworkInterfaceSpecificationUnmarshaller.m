@@ -19,16 +19,15 @@
 @implementation EC2InstanceNetworkInterfaceSpecificationUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"groupSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
-        listUnmarshaller.entryElementName   = @"groupId";
-        listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
+        listUnmarshaller.entryElementName = @"groupId";
+        listUnmarshaller.delegateClass = [AmazonValueUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -36,12 +35,11 @@
     if ([elementName isEqualToString:@"privateIpAddressesSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.privateIpAddresses withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"privateIpAddressesSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2PrivateIpAddressSpecificationUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2PrivateIpAddressSpecificationUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -49,8 +47,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -108,14 +105,12 @@
     }
 }
 
--(EC2InstanceNetworkInterfaceSpecification *)response
-{
+- (EC2InstanceNetworkInterfaceSpecification *)response {
     if (nil == response) {
         response = [[EC2InstanceNetworkInterfaceSpecification alloc] init];
     }
     return response;
 }
-
 
 
 @end

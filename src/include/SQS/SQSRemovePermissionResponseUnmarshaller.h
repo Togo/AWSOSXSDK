@@ -16,17 +16,17 @@
 #import "SQSRemovePermissionResponse.h"
 #import "SQSResponseUnmarshaller.h"
 
-@interface SQSRemovePermissionResponseUnmarshaller:SQSResponseUnmarshaller
-{
+@interface SQSRemovePermissionResponseUnmarshaller : SQSResponseUnmarshaller {
     SQSRemovePermissionResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SQSRemovePermissionResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SQSRemovePermissionResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SQSRemovePermissionResponse *)response;
 
 @end

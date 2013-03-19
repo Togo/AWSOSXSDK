@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Notification Configuration Request
  */
 
-@interface AutoScalingPutNotificationConfigurationRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
-    NSString       *topicARN;
+@interface AutoScalingPutNotificationConfigurationRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
+    NSString *topicARN;
     NSMutableArray *notificationTypes;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -68,7 +63,7 @@
  * Adds a single object to notificationTypes.
  * This function will alloc and init notificationTypes if not already done.
  */
--(void)addNotificationType:(NSString *)notificationTypeObject;
+- (void)addNotificationType:(NSString *)notificationTypeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

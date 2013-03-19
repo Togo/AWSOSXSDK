@@ -22,17 +22,17 @@
  * original request parameters.
  *
  */
-@interface S3ListVersionsResult:NSObject {
+@interface S3ListVersionsResult : NSObject {
     NSMutableArray *versionSummaries;
-    NSString       *name;
-    NSString       *prefix;
-    NSString       *keyMarker;
-    NSString       *nextKeyMarker;
-    NSString       *versionIdMarker;
-    NSString       *nextVersionIdMarker;
-    NSInteger      maxKeys;
-    NSString       *delimiter;
-    bool           isTruncated;
+    NSString *name;
+    NSString *prefix;
+    NSString *keyMarker;
+    NSString *nextKeyMarker;
+    NSString *versionIdMarker;
+    NSString *nextVersionIdMarker;
+    NSInteger maxKeys;
+    NSString *delimiter;
+    bool isTruncated;
     NSMutableArray *commonPrefixes;
 }
 
@@ -80,7 +80,7 @@
 @property (nonatomic, strong) NSMutableArray *commonPrefixes;
 
 
--(void)addDeleteMarker:(S3VersionSummary *)deleteMarker;
+- (void)addDeleteMarker:(S3VersionSummary *)deleteMarker;
 
 
 @end

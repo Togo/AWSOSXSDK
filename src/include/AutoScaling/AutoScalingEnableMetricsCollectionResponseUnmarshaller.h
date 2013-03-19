@@ -16,17 +16,17 @@
 #import "AutoScalingEnableMetricsCollectionResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingEnableMetricsCollectionResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingEnableMetricsCollectionResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingEnableMetricsCollectionResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingEnableMetricsCollectionResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingEnableMetricsCollectionResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingEnableMetricsCollectionResponse *)response;
 
 @end

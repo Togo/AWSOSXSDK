@@ -23,12 +23,12 @@
  * <br />Required Parameters: bucket
  *
  */
-@interface S3SetBucketVersioningConfigurationRequest:S3Request {
+@interface S3SetBucketVersioningConfigurationRequest : S3Request {
     S3BucketVersioningConfiguration *versioningConfiguration;
-    S3MultiFactorAuthentication     *mfa;
+    S3MultiFactorAuthentication *mfa;
 }
 
 @property (nonatomic, strong) S3BucketVersioningConfiguration *versioningConfiguration;
-@property (nonatomic, strong) S3MultiFactorAuthentication     *mfa;
+@property (nonatomic, strong) S3MultiFactorAuthentication *mfa;
 
 @end

@@ -18,26 +18,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Regions Request
  */
 
-@interface EC2DescribeRegionsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeRegionsRequest : AmazonServiceRequestConfig {
     NSMutableArray *regionNames;
     NSMutableArray *filters;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The optional list of regions to describe.
@@ -56,13 +51,13 @@
  * Adds a single object to regionNames.
  * This function will alloc and init regionNames if not already done.
  */
--(void)addRegionName:(NSString *)regionNameObject;
+- (void)addRegionName:(NSString *)regionNameObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

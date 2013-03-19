@@ -24,21 +24,19 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        activityIds          = [[NSMutableArray alloc] initWithCapacity:1];
+        activityIds = [[NSMutableArray alloc] initWithCapacity:1];
         autoScalingGroupName = nil;
-        maxRecords           = nil;
-        nextToken            = nil;
+        maxRecords = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)addActivityId:(NSString *)activityIdObject
-{
+- (void)addActivityId:(NSString *)activityIdObject {
     if (activityIds == nil) {
         activityIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

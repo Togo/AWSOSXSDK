@@ -21,8 +21,7 @@
 @synthesize securityGroups;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -45,15 +43,12 @@
 }
 
 
-
--(EC2SecurityGroup *)securityGroupsObjectAtIndex:(int)index
-{
-    return (EC2SecurityGroup *)[securityGroups objectAtIndex:index];
+- (EC2SecurityGroup *)securityGroupsObjectAtIndex:(int)index {
+    return (EC2SecurityGroup *) [securityGroups objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

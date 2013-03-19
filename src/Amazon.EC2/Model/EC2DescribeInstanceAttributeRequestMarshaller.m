@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeInstanceAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeInstanceAttributeRequest *)describeInstanceAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeInstanceAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeInstanceAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeInstanceAttributeRequest delegate]];
     [request setCredentials:[describeInstanceAttributeRequest credentials]];

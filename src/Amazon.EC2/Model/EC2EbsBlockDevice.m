@@ -26,24 +26,21 @@
 @synthesize iops;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        snapshotId               = nil;
-        volumeSize               = nil;
-        deleteOnTermination      = NO;
+        snapshotId = nil;
+        volumeSize = nil;
+        deleteOnTermination = NO;
         deleteOnTerminationIsSet = NO;
-        volumeType               = nil;
-        iops                     = nil;
+        volumeType = nil;
+        iops = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,13 +56,10 @@
 }
 
 
--(void)setDeleteOnTermination:(bool)theValue
-{
-    deleteOnTermination      = theValue;
+- (void)setDeleteOnTermination:(bool)theValue {
+    deleteOnTermination = theValue;
     deleteOnTerminationIsSet = YES;
 }
-
-
 
 
 @end

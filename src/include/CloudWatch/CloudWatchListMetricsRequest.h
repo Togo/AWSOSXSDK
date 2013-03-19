@@ -18,28 +18,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Metrics Request
  */
 
-@interface CloudWatchListMetricsRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *namespace;
-    NSString       *metricName;
+@interface CloudWatchListMetricsRequest : AmazonServiceRequestConfig {
+    NSString *namespace;
+    NSString *metricName;
     NSMutableArray *dimensions;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The namespace to filter against.
@@ -76,7 +71,7 @@
  * Adds a single object to dimensions.
  * This function will alloc and init dimensions if not already done.
  */
--(void)addDimension:(CloudWatchDimensionFilter *)dimensionObject;
+- (void)addDimension:(CloudWatchDimensionFilter *)dimensionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -84,7 +79,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

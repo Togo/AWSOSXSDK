@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * This exception is thrown when the resource which is being attempted to
  * be changed is in use.
  * </p>
  */
-@interface DynamoDBResourceNotFoundException:AmazonServiceException
-{
+@interface DynamoDBResourceNotFoundException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

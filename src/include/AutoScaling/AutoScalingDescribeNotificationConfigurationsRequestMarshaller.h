@@ -22,11 +22,11 @@
 /**
  * Describe Notification Configurations Request Marshaller
  */
-@interface AutoScalingDescribeNotificationConfigurationsRequestMarshaller:NSObject {
+@interface AutoScalingDescribeNotificationConfigurationsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest;
 
 
 @end

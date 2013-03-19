@@ -20,9 +20,7 @@
  * Policy Attribute Type Description
  */
 
-@interface ElasticLoadBalancingPolicyAttributeTypeDescription:NSObject
-
-{
+@interface ElasticLoadBalancingPolicyAttributeTypeDescription : NSObject {
     NSString *attributeName;
     NSString *attributeType;
     NSString *descriptionValue;
@@ -31,13 +29,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the attribute associated with the policy type.
@@ -74,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

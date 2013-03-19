@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Topic Attributes Request
  */
 
-@interface SNSGetTopicAttributesRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSGetTopicAttributesRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new GetTopicAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetTopicAttributesRequest object.
@@ -49,7 +45,7 @@
  * @param theTopicArn The ARN of the topic whose properties you want to
  * get.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn;
+- (id)initWithTopicArn:(NSString *)theTopicArn;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

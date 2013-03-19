@@ -27,24 +27,22 @@
 @synthesize timestamp;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        itemCount                = nil;
-        itemNamesSizeBytes       = nil;
-        attributeNameCount       = nil;
-        attributeNamesSizeBytes  = nil;
-        attributeValueCount      = nil;
+        itemCount = nil;
+        itemNamesSizeBytes = nil;
+        attributeNameCount = nil;
+        attributeNamesSizeBytes = nil;
+        attributeValueCount = nil;
         attributeValuesSizeBytes = nil;
-        timestamp                = nil;
+        timestamp = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"NoSuchDomain"]) {
@@ -65,9 +63,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -83,9 +79,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

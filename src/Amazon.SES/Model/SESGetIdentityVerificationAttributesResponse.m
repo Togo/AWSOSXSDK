@@ -21,8 +21,7 @@
 @synthesize verificationAttributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         verificationAttributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -45,14 +43,12 @@
 }
 
 
--(SESIdentityVerificationAttributes *)verificationAttributesValueForKey:(NSString *)theKey
-{
-    return (SESIdentityVerificationAttributes *)[verificationAttributes valueForKey:theKey];
+- (SESIdentityVerificationAttributes *)verificationAttributesValueForKey:(NSString *)theKey {
+    return (SESIdentityVerificationAttributes *) [verificationAttributes valueForKey:theKey];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -62,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

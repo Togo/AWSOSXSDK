@@ -27,22 +27,19 @@
  * Subscribe Result
  */
 
-@interface SNSSubscribeResponse:SNSResponse
-
-{
+@interface SNSSubscribeResponse : SNSResponse {
     NSString *subscriptionArn;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ARN of the subscription, if the service was able to create a
@@ -57,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

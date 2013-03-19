@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Instance Attribute Response
  */
 
-@interface EC2DescribeInstanceAttributeResponse:EC2Response
-
-{
+@interface EC2DescribeInstanceAttributeResponse : EC2Response {
     EC2InstanceAttribute *instanceAttribute;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The described instance attribute.
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

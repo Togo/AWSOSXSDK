@@ -22,11 +22,11 @@
 /**
  * Reboot Instances Request Marshaller
  */
-@interface EC2RebootInstancesRequestMarshaller:NSObject {
+@interface EC2RebootInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2RebootInstancesRequest *)rebootInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2RebootInstancesRequest *)rebootInstancesRequest;
 
 
 @end

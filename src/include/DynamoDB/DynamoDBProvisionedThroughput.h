@@ -20,21 +20,17 @@
  * Provisioned Throughput
  */
 
-@interface DynamoDBProvisionedThroughput:NSObject
-
-{
+@interface DynamoDBProvisionedThroughput : NSObject {
     NSNumber *readCapacityUnits;
     NSNumber *writeCapacityUnits;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * <code>ReadCapacityUnits</code> are in terms of strictly consistent
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

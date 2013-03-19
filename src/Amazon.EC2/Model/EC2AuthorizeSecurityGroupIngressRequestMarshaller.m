@@ -17,12 +17,11 @@
 
 @implementation EC2AuthorizeSecurityGroupIngressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2AuthorizeSecurityGroupIngressRequest *)authorizeSecurityGroupIngressRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"AuthorizeSecurityGroupIngress"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"AuthorizeSecurityGroupIngress" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[authorizeSecurityGroupIngressRequest delegate]];
     [request setCredentials:[authorizeSecurityGroupIngressRequest credentials]];

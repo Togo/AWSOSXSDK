@@ -22,11 +22,11 @@
 /**
  * Resume Processes Request Marshaller
  */
-@interface AutoScalingResumeProcessesRequestMarshaller:NSObject {
+@interface AutoScalingResumeProcessesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest;
 
 
 @end

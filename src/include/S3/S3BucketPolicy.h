@@ -25,7 +25,7 @@
  * policy object with <code>null</code> policy text.
  *
  */
-@interface S3BucketPolicy:NSObject {
+@interface S3BucketPolicy : NSObject {
     NSString *policyText;
 }
 
@@ -34,6 +34,6 @@
 
 
 /** Initialize the object with a policy */
--(id)initWithPolicy:(NSString *)policyText;
+- (id)initWithPolicy:(NSString *)policyText;
 
 @end

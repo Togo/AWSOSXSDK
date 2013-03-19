@@ -24,11 +24,11 @@
 /**
  * Batch Delete Attributes Request Marshaller
  */
-@interface SimpleDBBatchDeleteAttributesRequestMarshaller:NSObject {
+@interface SimpleDBBatchDeleteAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest;
 
 
 @end

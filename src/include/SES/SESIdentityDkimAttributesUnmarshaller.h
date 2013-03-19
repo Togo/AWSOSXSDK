@@ -24,7 +24,7 @@
 /**
  * Identity Dkim Attributes Unmarshaller
  */
-@interface SESIdentityDkimAttributesUnmarshaller:SESResponseUnmarshaller {
+@interface SESIdentityDkimAttributesUnmarshaller : SESResponseUnmarshaller {
     SESIdentityDkimAttributes *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) SESIdentityDkimAttributes *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

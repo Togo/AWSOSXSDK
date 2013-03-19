@@ -24,8 +24,7 @@
 /**
  * Remove Permission
  */
-@interface SNSRemovePermissionResponse:SNSResponse
-{
+@interface SNSRemovePermissionResponse : SNSResponse {
 }
 
 @end

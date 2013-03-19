@@ -22,11 +22,11 @@
 /**
  * Delete Launch Configuration Request Marshaller
  */
-@interface AutoScalingDeleteLaunchConfigurationRequestMarshaller:NSObject {
+@interface AutoScalingDeleteLaunchConfigurationRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest;
 
 
 @end

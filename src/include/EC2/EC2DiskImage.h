@@ -17,27 +17,22 @@
 #import "EC2VolumeDetail.h"
 
 
-
 /**
  * Disk Image
  */
 
-@interface EC2DiskImage:NSObject
-
-{
+@interface EC2DiskImage : NSObject {
     EC2DiskImageDetail *image;
-    NSString           *descriptionValue;
-    EC2VolumeDetail    *volume;
+    NSString *descriptionValue;
+    EC2VolumeDetail *volume;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Image property for this object.
@@ -60,7 +55,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

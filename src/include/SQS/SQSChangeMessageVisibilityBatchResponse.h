@@ -28,23 +28,20 @@
  * Change Message Visibility Batch Result
  */
 
-@interface SQSChangeMessageVisibilityBatchResponse:SQSResponse
-
-{
+@interface SQSChangeMessageVisibilityBatchResponse : SQSResponse {
     NSMutableArray *successful;
     NSMutableArray *failed;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of <a>ChangeMessageVisibilityBatchResultEntry</a>s.
@@ -57,18 +54,16 @@
 @property (nonatomic, strong) NSMutableArray *failed;
 
 
-
 /**
  * Returns a value from the successful array for the specified index
  */
--(SQSChangeMessageVisibilityBatchResponseEntry *)successfulObjectAtIndex:(int)index;
-
+- (SQSChangeMessageVisibilityBatchResponseEntry *)successfulObjectAtIndex:(int)index;
 
 
 /**
  * Returns a value from the failed array for the specified index
  */
--(SQSBatchResponseErrorEntry *)failedObjectAtIndex:(int)index;
+- (SQSBatchResponseErrorEntry *)failedObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -16,32 +16,27 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Vpc
  */
 
-@interface EC2Vpc:NSObject
-
-{
-    NSString       *vpcId;
-    NSString       *state;
-    NSString       *cidrBlock;
-    NSString       *dhcpOptionsId;
+@interface EC2Vpc : NSObject {
+    NSString *vpcId;
+    NSString *state;
+    NSString *cidrBlock;
+    NSString *dhcpOptionsId;
     NSMutableArray *tags;
-    NSString       *instanceTenancy;
-    bool           isDefault;
-    bool           isDefaultIsSet;
+    NSString *instanceTenancy;
+    bool isDefault;
+    bool isDefaultIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the ID of the VPC.
@@ -79,7 +74,7 @@
 /**
  *
  */
-@property (nonatomic) bool           isDefault;
+@property (nonatomic) bool isDefault;
 
 @property (nonatomic, readonly) bool isDefaultIsSet;
 
@@ -87,7 +82,7 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -95,7 +90,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -20,8 +20,7 @@
 /** Contains all the information about the getBucketLifecycleConfigurationResponse operation.
  *
  */
-@interface S3GetBucketLifecycleConfigurationResponse:S3Response
-{
+@interface S3GetBucketLifecycleConfigurationResponse : S3Response {
     S3BucketLifecycleConfiguration *configuration;
 }
 

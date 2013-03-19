@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SimpleDBResponse:AmazonServiceResponse {
+@interface SimpleDBResponse : AmazonServiceResponse {
     double boxUsage;
 }
 

@@ -25,22 +25,20 @@
 @synthesize ipRanges;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        ipProtocol       = nil;
-        fromPort         = nil;
-        toPort           = nil;
+        ipProtocol = nil;
+        fromPort = nil;
+        toPort = nil;
         userIdGroupPairs = [[NSMutableArray alloc] initWithCapacity:1];
-        ipRanges         = [[NSMutableArray alloc] initWithCapacity:1];
+        ipRanges = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addUserIdGroupPair:(EC2UserIdGroupPair *)userIdGroupPairObject
-{
+- (void)addUserIdGroupPair:(EC2UserIdGroupPair *)userIdGroupPairObject {
     if (userIdGroupPairs == nil) {
         userIdGroupPairs = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -48,8 +46,7 @@
     [userIdGroupPairs addObject:userIdGroupPairObject];
 }
 
--(void)addIpRange:(NSString *)ipRangeObject
-{
+- (void)addIpRange:(NSString *)ipRangeObject {
     if (ipRanges == nil) {
         ipRanges = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

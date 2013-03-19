@@ -23,21 +23,18 @@
 @synthesize primaryIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         privateIpAddress = nil;
-        primary          = NO;
-        primaryIsSet     = NO;
+        primary = NO;
+        primaryIsSet = NO;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setPrimary:(bool)theValue
-{
-    primary      = theValue;
+- (void)setPrimary:(bool)theValue {
+    primary = theValue;
     primaryIsSet = YES;
 }
-
-
 
 
 @end

@@ -20,25 +20,21 @@
  * Instance Network Interface Attachment
  */
 
-@interface EC2InstanceNetworkInterfaceAttachment:NSObject
-
-{
+@interface EC2InstanceNetworkInterfaceAttachment : NSObject {
     NSString *attachmentId;
     NSNumber *deviceIndex;
     NSString *status;
-    NSDate   *attachTime;
-    bool     deleteOnTermination;
-    bool     deleteOnTerminationIsSet;
+    NSDate *attachTime;
+    bool deleteOnTermination;
+    bool deleteOnTerminationIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AttachmentId property for this object.
@@ -63,7 +59,7 @@
 /**
  * The value of the DeleteOnTermination property for this object.
  */
-@property (nonatomic) bool           deleteOnTermination;
+@property (nonatomic) bool deleteOnTermination;
 
 @property (nonatomic, readonly) bool deleteOnTerminationIsSet;
 
@@ -73,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

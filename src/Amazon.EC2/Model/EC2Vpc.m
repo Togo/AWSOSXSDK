@@ -28,25 +28,23 @@
 @synthesize isDefaultIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        vpcId           = nil;
-        state           = nil;
-        cidrBlock       = nil;
-        dhcpOptionsId   = nil;
-        tags            = [[NSMutableArray alloc] initWithCapacity:1];
+        vpcId = nil;
+        state = nil;
+        cidrBlock = nil;
+        dhcpOptionsId = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
         instanceTenancy = nil;
-        isDefault       = NO;
-        isDefaultIsSet  = NO;
+        isDefault = NO;
+        isDefaultIsSet = NO;
     }
 
     return self;
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -55,8 +53,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -74,13 +71,10 @@
 }
 
 
--(void)setIsDefault:(bool)theValue
-{
-    isDefault      = theValue;
+- (void)setIsDefault:(bool)theValue {
+    isDefault = theValue;
     isDefaultIsSet = YES;
 }
-
-
 
 
 @end

@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Licenses Response
  */
 
-@interface EC2DescribeLicensesResponse:EC2Response
-
-{
+@interface EC2DescribeLicensesResponse : EC2Response {
     NSMutableArray *licenses;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies active licenses in use and attached to an Amazon EC2
@@ -47,11 +43,10 @@
 @property (nonatomic, strong) NSMutableArray *licenses;
 
 
-
 /**
  * Returns a value from the licenses array for the specified index
  */
--(EC2License *)licensesObjectAtIndex:(int)index;
+- (EC2License *)licensesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

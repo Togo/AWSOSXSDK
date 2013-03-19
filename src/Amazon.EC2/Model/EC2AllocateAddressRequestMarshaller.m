@@ -17,12 +17,11 @@
 
 @implementation EC2AllocateAddressRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2AllocateAddressRequest *)allocateAddressRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2AllocateAddressRequest *)allocateAddressRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"AllocateAddress"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"AllocateAddress" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[allocateAddressRequest delegate]];
     [request setCredentials:[allocateAddressRequest credentials]];

@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SNSRequest:AmazonServiceRequest {
+@interface SNSRequest : AmazonServiceRequest {
 }
 
 @end

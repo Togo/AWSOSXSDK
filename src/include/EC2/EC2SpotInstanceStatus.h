@@ -20,22 +20,18 @@
  * Spot Instance Status
  */
 
-@interface EC2SpotInstanceStatus:NSObject
-
-{
+@interface EC2SpotInstanceStatus : NSObject {
     NSString *code;
-    NSDate   *updateTime;
+    NSDate *updateTime;
     NSString *message;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Code property for this object.
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

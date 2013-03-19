@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDescribeAutoScalingGroupsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeAutoScalingGroups"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAutoScalingGroups" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeAutoScalingGroupsRequest delegate]];
     [request setCredentials:[describeAutoScalingGroupsRequest credentials]];

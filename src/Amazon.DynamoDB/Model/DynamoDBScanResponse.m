@@ -25,13 +25,12 @@
 @synthesize consumedCapacityUnits;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        items                 = [[NSMutableArray alloc] initWithCapacity:1];
-        count                 = nil;
-        scannedCount          = nil;
-        lastEvaluatedKey      = nil;
+        items = [[NSMutableArray alloc] initWithCapacity:1];
+        count = nil;
+        scannedCount = nil;
+        lastEvaluatedKey = nil;
         consumedCapacityUnits = nil;
     }
 
@@ -39,8 +38,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ProvisionedThroughputExceededException"]) {
@@ -65,15 +63,12 @@
 }
 
 
-
--(NSDictionary *)itemsObjectAtIndex:(int)index
-{
-    return (NSDictionary *)[items objectAtIndex:index];
+- (NSDictionary *)itemsObjectAtIndex:(int)index {
+    return (NSDictionary *) [items objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -87,9 +82,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

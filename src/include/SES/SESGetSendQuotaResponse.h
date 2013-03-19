@@ -17,29 +17,25 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Get Send Quota Result
  */
 
-@interface SESGetSendQuotaResponse:SESResponse
-
-{
+@interface SESGetSendQuotaResponse : SESResponse {
     NSNumber *max24HourSend;
     NSNumber *maxSendRate;
     NSNumber *sentLast24Hours;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The maximum number of emails the user is allowed to send in a 24-hour
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -19,8 +19,7 @@
 /** Contains all the information about the deleteBucketLifecycleConfigurationResponse operation.
  *
  */
-@interface S3DeleteBucketLifecycleConfigurationResponse:S3Response
-{
+@interface S3DeleteBucketLifecycleConfigurationResponse : S3Response {
 }
 
 @end

@@ -23,7 +23,7 @@
 /**
  * Iam Instance Profile Specification Unmarshaller
  */
-@interface EC2IamInstanceProfileSpecificationUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2IamInstanceProfileSpecificationUnmarshaller : EC2ResponseUnmarshaller {
     EC2IamInstanceProfileSpecification *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2IamInstanceProfileSpecification *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

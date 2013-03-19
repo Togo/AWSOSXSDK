@@ -17,26 +17,21 @@
 #import "EC2LaunchPermission.h"
 
 
-
 /**
  * Launch Permission Modifications
  */
 
-@interface EC2LaunchPermissionModifications:NSObject
-
-{
+@interface EC2LaunchPermissionModifications : NSObject {
     NSMutableArray *add;
     NSMutableArray *remove;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Add property for this object.
@@ -52,13 +47,13 @@
  * Adds a single object to add.
  * This function will alloc and init add if not already done.
  */
--(void)addAdd:(EC2LaunchPermission *)addObject;
+- (void)addAdd:(EC2LaunchPermission *)addObject;
 
 /**
  * Adds a single object to remove.
  * This function will alloc and init remove if not already done.
  */
--(void)addRemove:(EC2LaunchPermission *)removeObject;
+- (void)addRemove:(EC2LaunchPermission *)removeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -66,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

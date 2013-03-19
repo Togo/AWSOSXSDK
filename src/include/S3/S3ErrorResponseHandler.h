@@ -21,15 +21,15 @@
  * AWSServiceException object.
  *
  */
-@interface S3ErrorResponseHandler:AmazonUnmarshallerXMLParserDelegate {
+@interface S3ErrorResponseHandler : AmazonUnmarshallerXMLParserDelegate {
     AmazonServiceException *__weak exception;
-    NSInteger              httpStatusCode;
+    NSInteger httpStatusCode;
 }
 
 /** The exception represented by the XML */
 @property (weak, nonatomic, readonly) AmazonServiceException *exception;
 
 /** Initialize the object with the an HTTP status code */
--(id)initWithStatusCode:(NSInteger)statusCode;
+- (id)initWithStatusCode:(NSInteger)statusCode;
 
 @end

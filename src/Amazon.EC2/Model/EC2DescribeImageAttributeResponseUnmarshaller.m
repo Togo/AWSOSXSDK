@@ -19,8 +19,7 @@
 @implementation EC2DescribeImageAttributeResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
     EC2ImageAttributeUnmarshaller *unmarshaller = [[EC2ImageAttributeUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImageAttribute:)];
@@ -28,14 +27,12 @@
     [parser setDelegate:unmarshaller];
 
 
-
     if ([elementName isEqualToString:@"Error"]) {
         [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -58,14 +55,12 @@
     }
 }
 
--(EC2DescribeImageAttributeResponse *)response
-{
+- (EC2DescribeImageAttributeResponse *)response {
     if (nil == response) {
         response = [[EC2DescribeImageAttributeResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

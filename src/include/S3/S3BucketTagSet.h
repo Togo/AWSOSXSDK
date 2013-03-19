@@ -18,13 +18,13 @@
 /**
  *
  */
-@interface S3BucketTagSet:NSObject {
+@interface S3BucketTagSet : NSObject {
     NSDictionary *tags;
 }
 
 /** The list of rules */
 @property (nonatomic, strong) NSDictionary *tags;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

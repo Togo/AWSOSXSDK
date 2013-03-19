@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Change Message Visibility Batch Request Entry
  */
 
-@interface SQSChangeMessageVisibilityBatchRequestEntry:AmazonServiceRequestConfig
-
-{
+@interface SQSChangeMessageVisibilityBatchRequestEntry : AmazonServiceRequestConfig {
     NSString *idValue;
     NSString *receiptHandle;
     NSNumber *visibilityTimeout;
 }
-
 
 
 /**
@@ -54,7 +50,7 @@
  * Default constructor for a new ChangeMessageVisibilityBatchRequestEntry object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ChangeMessageVisibilityBatchRequestEntry object.
@@ -65,7 +61,7 @@
  * of a batch request need to be unique within the request.
  * @param theReceiptHandle A receipt handle.
  */
--(id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle;
+- (id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

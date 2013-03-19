@@ -20,19 +20,18 @@
 
 @synthesize tags;
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<TagSet>"];
-    
+
     for (NSString *key in [tags allKeys]) {
         [xml appendString:@"<Tag>"];
         [xml appendFormat:@"<Key>%@</Key>", key];
         [xml appendFormat:@"<Value>%@</Value>", [tags objectForKey:key]];
         [xml appendString:@"</Tag>"];
     }
-    
+
     [xml appendString:@"</TagSet>"];
 
 

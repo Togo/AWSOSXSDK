@@ -20,8 +20,7 @@
 /**
  * Delete Placement Group
  */
-@interface EC2DeletePlacementGroupResponse:EC2Response
-{
+@interface EC2DeletePlacementGroupResponse : EC2Response {
 }
 
 @end

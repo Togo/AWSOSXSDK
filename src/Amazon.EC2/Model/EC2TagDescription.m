@@ -24,22 +24,19 @@
 @synthesize value;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        resourceId   = nil;
+        resourceId = nil;
         resourceType = nil;
-        key          = nil;
-        value        = nil;
+        key = nil;
+        value = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

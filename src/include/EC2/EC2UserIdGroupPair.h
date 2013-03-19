@@ -20,22 +20,18 @@
  * User Id Group Pair
  */
 
-@interface EC2UserIdGroupPair:NSObject
-
-{
+@interface EC2UserIdGroupPair : NSObject {
     NSString *userId;
     NSString *groupName;
     NSString *groupId;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The AWS user ID of an account.
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

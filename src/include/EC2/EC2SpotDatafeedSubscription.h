@@ -16,29 +16,24 @@
 #import "EC2SpotInstanceStateFault.h"
 
 
-
 /**
  * Spot Datafeed Subscription
  */
 
-@interface EC2SpotDatafeedSubscription:NSObject
-
-{
-    NSString                  *ownerId;
-    NSString                  *bucket;
-    NSString                  *prefix;
-    NSString                  *state;
+@interface EC2SpotDatafeedSubscription : NSObject {
+    NSString *ownerId;
+    NSString *bucket;
+    NSString *prefix;
+    NSString *state;
     EC2SpotInstanceStateFault *fault;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the AWS account ID of the account.
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

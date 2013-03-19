@@ -18,29 +18,24 @@
 #import "EC2VolumeStatusAction.h"
 
 
-
 /**
  * Volume Status Item
  */
 
-@interface EC2VolumeStatusItem:NSObject
-
-{
-    NSString            *volumeId;
-    NSString            *availabilityZone;
+@interface EC2VolumeStatusItem : NSObject {
+    NSString *volumeId;
+    NSString *availabilityZone;
     EC2VolumeStatusInfo *volumeStatus;
-    NSMutableArray      *events;
-    NSMutableArray      *actions;
+    NSMutableArray *events;
+    NSMutableArray *actions;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeId property for this object.
@@ -71,13 +66,13 @@
  * Adds a single object to events.
  * This function will alloc and init events if not already done.
  */
--(void)addEvent:(EC2VolumeStatusEvent *)eventObject;
+- (void)addEvent:(EC2VolumeStatusEvent *)eventObject;
 
 /**
  * Adds a single object to actions.
  * This function will alloc and init actions if not already done.
  */
--(void)addAction:(EC2VolumeStatusAction *)actionObject;
+- (void)addAction:(EC2VolumeStatusAction *)actionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -85,7 +80,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

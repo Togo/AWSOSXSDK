@@ -19,8 +19,7 @@
 /**
  *
  */
-@interface SecurityTokenServiceResponse:AmazonServiceResponse
-{
+@interface SecurityTokenServiceResponse : AmazonServiceResponse {
 }
 
 @end

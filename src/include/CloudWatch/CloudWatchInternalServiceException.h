@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Indicates that the request processing has failed due to some unknown
  * error, exception, or failure.
  * </p>
  */
-@interface CloudWatchInternalServiceException:AmazonServiceException
-{
+@interface CloudWatchInternalServiceException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

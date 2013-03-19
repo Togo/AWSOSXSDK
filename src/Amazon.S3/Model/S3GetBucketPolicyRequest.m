@@ -18,8 +18,7 @@
 
 @implementation S3GetBucketPolicyRequest
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourcePolicy];
 
     [super configureURLRequest];

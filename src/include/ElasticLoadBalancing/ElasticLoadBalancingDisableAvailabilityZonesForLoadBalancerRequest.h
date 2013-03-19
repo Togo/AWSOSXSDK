@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Disable Availability Zones For Load Balancer Request
  */
 
-@interface ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *availabilityZones;
 }
-
 
 
 /**
@@ -51,7 +47,7 @@
  * Default constructor for a new DisableAvailabilityZonesForLoadBalancerRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DisableAvailabilityZonesForLoadBalancerRequest object.
@@ -65,13 +61,13 @@
  * remove all the Availability Zones from a LoadBalancer. Specified
  * Availability Zones must be in the same Region. </note>
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andAvailabilityZones:(NSMutableArray *)theAvailabilityZones;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andAvailabilityZones:(NSMutableArray *)theAvailabilityZones;
 
 /**
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

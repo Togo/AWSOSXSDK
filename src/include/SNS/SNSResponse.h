@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SNSResponse:AmazonServiceResponse {
+@interface SNSResponse : AmazonServiceResponse {
 }
 
 @end

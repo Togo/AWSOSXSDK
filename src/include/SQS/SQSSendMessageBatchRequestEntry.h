@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Send Message Batch Request Entry
  */
 
-@interface SQSSendMessageBatchRequestEntry:AmazonServiceRequestConfig
-
-{
+@interface SQSSendMessageBatchRequestEntry : AmazonServiceRequestConfig {
     NSString *idValue;
     NSString *messageBody;
     NSNumber *delaySeconds;
 }
-
 
 
 /**
@@ -54,7 +50,7 @@
  * Default constructor for a new SendMessageBatchRequestEntry object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SendMessageBatchRequestEntry object.
@@ -65,7 +61,7 @@
  * a batch request need to be unique within the request.
  * @param theMessageBody Body of the message.
  */
--(id)initWithIdValue:(NSString *)theIdValue andMessageBody:(NSString *)theMessageBody;
+- (id)initWithIdValue:(NSString *)theIdValue andMessageBody:(NSString *)theMessageBody;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

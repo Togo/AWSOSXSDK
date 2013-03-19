@@ -26,22 +26,19 @@
  * Get Attributes Result
  */
 
-@interface SimpleDBGetAttributesResponse:SimpleDBResponse
-
-{
+@interface SimpleDBGetAttributesResponse : SimpleDBResponse {
     NSMutableArray *attributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of attributes returned by the operation.
@@ -49,11 +46,10 @@
 @property (nonatomic, strong) NSMutableArray *attributes;
 
 
-
 /**
  * Returns a value from the attributes array for the specified index
  */
--(SimpleDBAttribute *)attributesObjectAtIndex:(int)index;
+- (SimpleDBAttribute *)attributesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

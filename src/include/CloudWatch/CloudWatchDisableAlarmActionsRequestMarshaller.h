@@ -22,11 +22,11 @@
 /**
  * Disable Alarm Actions Request Marshaller
  */
-@interface CloudWatchDisableAlarmActionsRequestMarshaller:NSObject {
+@interface CloudWatchDisableAlarmActionsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest;
 
 
 @end

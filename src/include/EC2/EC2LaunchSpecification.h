@@ -20,42 +20,37 @@
 #import "EC2IamInstanceProfileSpecification.h"
 
 
-
 /**
  * Launch Specification
  */
 
-@interface EC2LaunchSpecification:NSObject
-
-{
-    NSString                           *imageId;
-    NSString                           *keyName;
-    NSMutableArray                     *allSecurityGroups;
-    NSMutableArray                     *securityGroups;
-    NSString                           *userData;
-    NSString                           *addressingType;
-    NSString                           *instanceType;
-    EC2SpotPlacement                   *placement;
-    NSString                           *kernelId;
-    NSString                           *ramdiskId;
-    NSMutableArray                     *blockDeviceMappings;
-    bool                               monitoringEnabled;
-    bool                               monitoringEnabledIsSet;
-    NSString                           *subnetId;
-    NSMutableArray                     *networkInterfaces;
+@interface EC2LaunchSpecification : NSObject {
+    NSString *imageId;
+    NSString *keyName;
+    NSMutableArray *allSecurityGroups;
+    NSMutableArray *securityGroups;
+    NSString *userData;
+    NSString *addressingType;
+    NSString *instanceType;
+    EC2SpotPlacement *placement;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSMutableArray *blockDeviceMappings;
+    bool monitoringEnabled;
+    bool monitoringEnabledIsSet;
+    NSString *subnetId;
+    NSMutableArray *networkInterfaces;
     EC2IamInstanceProfileSpecification *iamInstanceProfile;
-    bool                               ebsOptimized;
-    bool                               ebsOptimizedIsSet;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The AMI ID.
@@ -125,7 +120,7 @@
 /**
  * Enables monitoring for the instance.
  */
-@property (nonatomic) bool           monitoringEnabled;
+@property (nonatomic) bool monitoringEnabled;
 
 @property (nonatomic, readonly) bool monitoringEnabledIsSet;
 
@@ -148,7 +143,7 @@
 /**
  * The value of the EbsOptimized property for this object.
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -156,25 +151,25 @@
  * Adds a single object to allSecurityGroups.
  * This function will alloc and init allSecurityGroups if not already done.
  */
--(void)addAllSecurityGroup:(EC2GroupIdentifier *)allSecurityGroupObject;
+- (void)addAllSecurityGroup:(EC2GroupIdentifier *)allSecurityGroupObject;
 
 /**
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to networkInterfaces.
  * This function will alloc and init networkInterfaces if not already done.
  */
--(void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject;
+- (void)addNetworkInterface:(EC2InstanceNetworkInterfaceSpecification *)networkInterfaceObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -182,7 +177,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

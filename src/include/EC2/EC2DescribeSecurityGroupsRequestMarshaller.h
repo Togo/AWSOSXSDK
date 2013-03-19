@@ -25,11 +25,11 @@
 /**
  * Describe Security Groups Request Marshaller
  */
-@interface EC2DescribeSecurityGroupsRequestMarshaller:NSObject {
+@interface EC2DescribeSecurityGroupsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSecurityGroupsRequest *)describeSecurityGroupsRequest;
 
 
 @end

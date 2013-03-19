@@ -23,21 +23,19 @@
 @synthesize vpcId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        groupName        = nil;
+        groupName = nil;
         descriptionValue = nil;
-        vpcId            = nil;
+        vpcId = nil;
     }
 
     return self;
 }
 
--(id)initWithGroupName:(NSString *)theGroupName andDescriptionValue:(NSString *)theDescriptionValue
-{
+- (id)initWithGroupName:(NSString *)theGroupName andDescriptionValue:(NSString *)theDescriptionValue {
     if (self = [self init]) {
-        self.groupName        = theGroupName;
+        self.groupName = theGroupName;
         self.descriptionValue = theDescriptionValue;
     }
 
@@ -45,9 +43,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

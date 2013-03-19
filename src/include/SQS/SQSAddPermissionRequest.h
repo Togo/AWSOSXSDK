@@ -17,20 +17,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Add Permission Request
  */
 
-@interface SQSAddPermissionRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *queueUrl;
-    NSString       *label;
+@interface SQSAddPermissionRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
+    NSString *label;
     NSMutableArray *aWSAccountIds;
     NSMutableArray *actions;
 }
-
 
 
 /**
@@ -63,7 +59,7 @@
  * Default constructor for a new AddPermissionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AddPermissionRequest object.
@@ -81,19 +77,19 @@
  * @param theActions The action the client wants to allow for the
  * specified principal.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActions:(NSMutableArray *)theActions;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActions:(NSMutableArray *)theActions;
 
 /**
  * Adds a single object to aWSAccountIds.
  * This function will alloc and init aWSAccountIds if not already done.
  */
--(void)addAWSAccountId:(NSString *)aWSAccountIdObject;
+- (void)addAWSAccountId:(NSString *)aWSAccountIdObject;
 
 /**
  * Adds a single object to actions.
  * This function will alloc and init actions if not already done.
  */
--(void)addAction:(NSString *)actionObject;
+- (void)addAction:(NSString *)actionObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -101,7 +97,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

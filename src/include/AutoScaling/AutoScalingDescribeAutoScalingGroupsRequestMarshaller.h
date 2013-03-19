@@ -22,11 +22,11 @@
 /**
  * Describe Auto Scaling Groups Request Marshaller
  */
-@interface AutoScalingDescribeAutoScalingGroupsRequestMarshaller:NSObject {
+@interface AutoScalingDescribeAutoScalingGroupsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest;
 
 
 @end

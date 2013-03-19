@@ -25,22 +25,20 @@
 @synthesize message;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        idValue          = nil;
-        senderFault      = NO;
+        idValue = nil;
+        senderFault = NO;
         senderFaultIsSet = NO;
-        code             = nil;
-        message          = nil;
+        code = nil;
+        message = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -53,9 +51,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,13 +66,10 @@
 }
 
 
--(void)setSenderFault:(bool)theValue
-{
-    senderFault      = theValue;
+- (void)setSenderFault:(bool)theValue {
+    senderFault = theValue;
     senderFaultIsSet = YES;
 }
-
-
 
 
 @end

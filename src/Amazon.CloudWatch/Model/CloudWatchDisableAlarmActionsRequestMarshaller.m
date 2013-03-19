@@ -17,12 +17,11 @@
 
 @implementation CloudWatchDisableAlarmActionsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"DisableAlarmActions"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"DisableAlarmActions" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[disableAlarmActionsRequest delegate]];
     [request setCredentials:[disableAlarmActionsRequest credentials]];

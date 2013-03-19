@@ -20,13 +20,10 @@
  * Tag
  */
 
-@interface EC2Tag:NSObject
-
-{
+@interface EC2Tag : NSObject {
     NSString *key;
     NSString *value;
 }
-
 
 
 /**
@@ -44,7 +41,7 @@
  * Default constructor for a new Tag object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Tag object.
@@ -53,7 +50,7 @@
  * @param theKey The tag's key.
  * @param theValue The tag's value.
  */
--(id)initWithKey:(NSString *)theKey andValue:(NSString *)theValue;
+- (id)initWithKey:(NSString *)theKey andValue:(NSString *)theValue;
 
 /**
  * Constructs a new Tag object.
@@ -61,7 +58,7 @@
  *
  * @param theKey The tag's key.
  */
--(id)initWithKey:(NSString *)theKey;
+- (id)initWithKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

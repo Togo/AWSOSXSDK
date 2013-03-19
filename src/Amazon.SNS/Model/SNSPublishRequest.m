@@ -24,43 +24,38 @@
 @synthesize messageStructure;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topicArn         = nil;
-        message          = nil;
-        subject          = nil;
+        topicArn = nil;
+        message = nil;
+        subject = nil;
         messageStructure = nil;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
-        self.message  = theMessage;
+        self.message = theMessage;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage andSubject:(NSString *)theSubject
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andMessage:(NSString *)theMessage andSubject:(NSString *)theSubject {
     if (self = [self init]) {
         self.topicArn = theTopicArn;
-        self.message  = theMessage;
-        self.subject  = theSubject;
+        self.message = theMessage;
+        self.subject = theSubject;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +68,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

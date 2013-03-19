@@ -22,11 +22,11 @@
 /**
  * Delete Spot Datafeed Subscription Request Marshaller
  */
-@interface EC2DeleteSpotDatafeedSubscriptionRequestMarshaller:NSObject {
+@interface EC2DeleteSpotDatafeedSubscriptionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteSpotDatafeedSubscriptionRequest *)deleteSpotDatafeedSubscriptionRequest;
 
 
 @end

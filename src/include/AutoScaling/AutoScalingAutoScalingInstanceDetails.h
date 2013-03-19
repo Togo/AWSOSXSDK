@@ -20,9 +20,7 @@
  * Auto Scaling Instance Details
  */
 
-@interface AutoScalingAutoScalingInstanceDetails:NSObject
-
-{
+@interface AutoScalingAutoScalingInstanceDetails : NSObject {
     NSString *instanceId;
     NSString *autoScalingGroupName;
     NSString *availabilityZone;
@@ -32,13 +30,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The instance ID of the Amazon EC2 instance.
@@ -102,7 +98,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

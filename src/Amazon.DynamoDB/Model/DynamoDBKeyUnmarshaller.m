@@ -23,10 +23,8 @@
 @implementation DynamoDBKeyUnmarshaller
 
 
-+(DynamoDBKey *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBKey *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBKey *key = [[DynamoDBKey alloc] init];
-
 
 
     if ([jsonObject valueForKey:@"HashKeyElement"] != nil) {

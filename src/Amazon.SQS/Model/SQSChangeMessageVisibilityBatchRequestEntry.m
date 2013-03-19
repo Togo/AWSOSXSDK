@@ -23,21 +23,19 @@
 @synthesize visibilityTimeout;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        idValue           = nil;
-        receiptHandle     = nil;
+        idValue = nil;
+        receiptHandle = nil;
         visibilityTimeout = nil;
     }
 
     return self;
 }
 
--(id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle
-{
+- (id)initWithIdValue:(NSString *)theIdValue andReceiptHandle:(NSString *)theReceiptHandle {
     if (self = [self init]) {
-        self.idValue       = theIdValue;
+        self.idValue = theIdValue;
         self.receiptHandle = theReceiptHandle;
     }
 
@@ -45,9 +43,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,30 +17,25 @@
 
 @implementation S3ListPartsRequest
 
--(id)init
-{
-    if (self = [super init])
-    {
-        _maxParts         = 1000;
+- (id)init {
+    if (self = [super init]) {
+        _maxParts = 1000;
         _partNumberMarker = 0;
     }
     return self;
 }
 
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload
-{
-    if(self = [self init])
-    {
-        self.bucket   = multipartUpload.bucket;
-        self.key      = multipartUpload.key;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload {
+    if (self = [self init]) {
+        self.bucket = multipartUpload.bucket;
+        self.key = multipartUpload.key;
         self.uploadId = multipartUpload.uploadId;
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *subresource = [NSMutableString stringWithFormat:@"%@=%@", kS3QueryParamUploadId, _uploadId];
 
     if (_maxParts != 1000) {

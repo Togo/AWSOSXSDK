@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Start Instances Request
  */
 
-@interface EC2StartInstancesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2StartInstancesRequest : AmazonServiceRequestConfig {
     NSMutableArray *instanceIds;
-    NSString       *additionalInfo;
+    NSString *additionalInfo;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new StartInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new StartInstancesRequest object.
@@ -54,13 +50,13 @@
  *
  * @param theInstanceIds The list of Amazon EC2 instances to start.
  */
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds;
 
 /**
  * Adds a single object to instanceIds.
  * This function will alloc and init instanceIds if not already done.
  */
--(void)addInstanceId:(NSString *)instanceIdObject;
+- (void)addInstanceId:(NSString *)instanceIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

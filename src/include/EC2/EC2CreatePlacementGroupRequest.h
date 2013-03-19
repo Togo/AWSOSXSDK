@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Placement Group Request
  */
 
-@interface EC2CreatePlacementGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreatePlacementGroupRequest : AmazonServiceRequestConfig {
     NSString *groupName;
     NSString *strategy;
 }
-
 
 
 /**
@@ -49,7 +45,7 @@
  * Default constructor for a new CreatePlacementGroupRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreatePlacementGroupRequest object.
@@ -58,7 +54,7 @@
  * @param theGroupName The name of the <code>PlacementGroup</code>.
  * @param theStrategy The <code>PlacementGroup</code> strategy.
  */
--(id)initWithGroupName:(NSString *)theGroupName andStrategy:(NSString *)theStrategy;
+- (id)initWithGroupName:(NSString *)theGroupName andStrategy:(NSString *)theStrategy;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -66,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -19,20 +19,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Item Request
  */
 
-@interface DynamoDBPutItemRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *tableName;
+@interface DynamoDBPutItemRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
     NSMutableDictionary *item;
     NSMutableDictionary *expected;
-    NSString            *returnValues;
+    NSString *returnValues;
 }
-
 
 
 /**
@@ -89,7 +85,7 @@
  * Default constructor for a new PutItemRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new PutItemRequest object.
@@ -103,21 +99,21 @@
  * the primary key values that define the item. Other attribute
  * name-value pairs can be provided for the item.
  */
--(id)initWithTableName:(NSString *)theTableName andItem:(NSMutableDictionary *)theItem;
+- (id)initWithTableName:(NSString *)theTableName andItem:(NSMutableDictionary *)theItem;
 
 
 /**
  * Set a value in the dictionary item for the specified key.
  * This function will alloc and init item if not already done.
  */
--(void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey;
+- (void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey;
 
 
 /**
  * Set a value in the dictionary expected for the specified key.
  * This function will alloc and init expected if not already done.
  */
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -125,7 +121,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,30 +22,26 @@
 @synthesize arn;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         federatedUserId = nil;
-        arn             = nil;
+        arn = nil;
     }
 
     return self;
 }
 
--(id)initWithFederatedUserId:(NSString *)theFederatedUserId andArn:(NSString *)theArn
-{
+- (id)initWithFederatedUserId:(NSString *)theFederatedUserId andArn:(NSString *)theArn {
     if (self = [self init]) {
         self.federatedUserId = theFederatedUserId;
-        self.arn             = theArn;
+        self.arn = theArn;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

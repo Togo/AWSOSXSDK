@@ -25,11 +25,11 @@
 /**
  * Put Metric Data Request Marshaller
  */
-@interface CloudWatchPutMetricDataRequestMarshaller:NSObject {
+@interface CloudWatchPutMetricDataRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchPutMetricDataRequest *)putMetricDataRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchPutMetricDataRequest *)putMetricDataRequest;
 
 
 @end

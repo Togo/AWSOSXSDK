@@ -17,27 +17,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Associate Address Response
  */
 
-@interface EC2AssociateAddressResponse:EC2Response
-
-{
+@interface EC2AssociateAddressResponse : EC2Response {
     NSString *associationId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AssociationId property for this object.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

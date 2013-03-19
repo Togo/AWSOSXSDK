@@ -31,11 +31,11 @@
 /**
  * Import Instance Request Marshaller
  */
-@interface EC2ImportInstanceRequestMarshaller:NSObject {
+@interface EC2ImportInstanceRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportInstanceRequest *)importInstanceRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ImportInstanceRequest *)importInstanceRequest;
 
 
 @end

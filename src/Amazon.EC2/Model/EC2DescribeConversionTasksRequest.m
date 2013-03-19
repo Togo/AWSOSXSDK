@@ -22,10 +22,9 @@
 @synthesize conversionTaskIds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        filters           = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
         conversionTaskIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -42,8 +40,7 @@
     [filters addObject:filterObject];
 }
 
--(void)addConversionTaskId:(NSString *)conversionTaskIdObject
-{
+- (void)addConversionTaskId:(NSString *)conversionTaskIdObject {
     if (conversionTaskIds == nil) {
         conversionTaskIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

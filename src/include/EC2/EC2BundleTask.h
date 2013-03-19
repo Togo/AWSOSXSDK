@@ -17,32 +17,27 @@
 #import "EC2BundleTaskError.h"
 
 
-
 /**
  * Bundle Task
  */
 
-@interface EC2BundleTask:NSObject
-
-{
-    NSString           *instanceId;
-    NSString           *bundleId;
-    NSString           *state;
-    NSDate             *startTime;
-    NSDate             *updateTime;
-    EC2Storage         *storage;
-    NSString           *progress;
+@interface EC2BundleTask : NSObject {
+    NSString *instanceId;
+    NSString *bundleId;
+    NSString *state;
+    NSDate *startTime;
+    NSDate *updateTime;
+    EC2Storage *storage;
+    NSString *progress;
     EC2BundleTaskError *bundleTaskError;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Instance associated with this bundle task.
@@ -90,7 +85,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

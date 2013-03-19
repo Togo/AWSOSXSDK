@@ -18,28 +18,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Reserved Instances Listing Request
  */
 
-@interface EC2CreateReservedInstancesListingRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *reservedInstancesId;
-    NSNumber       *instanceCount;
+@interface EC2CreateReservedInstancesListingRequest : AmazonServiceRequestConfig {
+    NSString *reservedInstancesId;
+    NSNumber *instanceCount;
     NSMutableArray *priceSchedules;
-    NSString       *clientToken;
+    NSString *clientToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ReservedInstancesId property for this object.
@@ -65,7 +60,7 @@
  * Adds a single object to priceSchedules.
  * This function will alloc and init priceSchedules if not already done.
  */
--(void)addPriceSchedule:(EC2PriceScheduleSpecification *)priceScheduleObject;
+- (void)addPriceSchedule:(EC2PriceScheduleSpecification *)priceScheduleObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -73,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

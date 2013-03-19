@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeletePolicyRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeletePolicyRequest *)deletePolicyRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeletePolicyRequest *)deletePolicyRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeletePolicy"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeletePolicy" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deletePolicyRequest delegate]];
     [request setCredentials:[deletePolicyRequest credentials]];

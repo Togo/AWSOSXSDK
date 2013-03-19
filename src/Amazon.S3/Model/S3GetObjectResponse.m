@@ -22,10 +22,8 @@
 @synthesize redirectLocation;
 
 
-- (id)init
-{
-    if(self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         metadata = nil;
         outputStream = nil;
 
@@ -39,8 +37,7 @@
 
 // This method overrides the S3Response version, processing x-aws-meta-
 // headers, passing all others to the superclass.
--(void)setValue:(id)value forHTTPHeaderField:(NSString *)header
-{
+- (void)setValue:(id)value forHTTPHeaderField:(NSString *)header {
     NSString *tmp = [header lowercaseString];
 
     if ([tmp hasPrefix:@"x-amz-meta-"]) {
@@ -59,8 +56,7 @@
     }
 }
 
--(NSString *)getMetadataForKey:(NSString *)aKey
-{
+- (NSString *)getMetadataForKey:(NSString *)aKey {
     if (nil == metadata) {
         return nil;
     }
@@ -68,13 +64,11 @@
     return [[metadata objectForKey:aKey] description];
 }
 
--(void)setOutputStream:(NSOutputStream *)stream
-{
+- (void)setOutputStream:(NSOutputStream *)stream {
     outputStream = stream;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -89,15 +83,14 @@
 
 #pragma mark NSURLConnection delegate methods
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     if (outputStream) {
-        
+
         //[super connection:connection didReceiveData:data];
-        [outputStream write:(uint8_t *)[data bytes] maxLength:[data length]];
-        
+        [outputStream write:(uint8_t *) [data bytes] maxLength:[data length]];
+
         // skip super's data handling, go directly to delegate
-        if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
+        if ([(NSObject *) self.request.delegate respondsToSelector:@selector(request:didReceiveData:)]) {
             [self.request.delegate request:self.request didReceiveData:data];
         }
     }

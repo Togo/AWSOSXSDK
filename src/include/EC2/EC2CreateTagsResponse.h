@@ -20,8 +20,7 @@
 /**
  * Create Tags
  */
-@interface EC2CreateTagsResponse:EC2Response
-{
+@interface EC2CreateTagsResponse : EC2Response {
 }
 
 @end

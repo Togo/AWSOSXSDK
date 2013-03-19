@@ -17,12 +17,11 @@
 
 @implementation EC2CancelSpotInstanceRequestsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CancelSpotInstanceRequests"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CancelSpotInstanceRequests" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[cancelSpotInstanceRequestsRequest delegate]];
     [request setCredentials:[cancelSpotInstanceRequestsRequest credentials]];

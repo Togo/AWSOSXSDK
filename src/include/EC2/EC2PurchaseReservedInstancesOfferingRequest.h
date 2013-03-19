@@ -18,19 +18,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Purchase Reserved Instances Offering Request
  */
 
-@interface EC2PurchaseReservedInstancesOfferingRequest:AmazonServiceRequestConfig
-
-{
-    NSString                      *reservedInstancesOfferingId;
-    NSNumber                      *instanceCount;
+@interface EC2PurchaseReservedInstancesOfferingRequest : AmazonServiceRequestConfig {
+    NSString *reservedInstancesOfferingId;
+    NSNumber *instanceCount;
     EC2ReservedInstanceLimitPrice *limitPrice;
 }
-
 
 
 /**
@@ -53,7 +49,7 @@
  * Default constructor for a new PurchaseReservedInstancesOfferingRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new PurchaseReservedInstancesOfferingRequest object.
@@ -63,7 +59,7 @@
  * Instances offering being purchased.
  * @param theInstanceCount The number of Reserved Instances to purchase.
  */
--(id)initWithReservedInstancesOfferingId:(NSString *)theReservedInstancesOfferingId andInstanceCount:(NSNumber *)theInstanceCount;
+- (id)initWithReservedInstancesOfferingId:(NSString *)theReservedInstancesOfferingId andInstanceCount:(NSNumber *)theInstanceCount;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

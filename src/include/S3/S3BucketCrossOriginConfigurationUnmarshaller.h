@@ -19,7 +19,7 @@
 #import "S3BucketCrossOriginConfiguration.h"
 
 /** Creates an S3BucketCrossOriginConfiguration from an XML service repsonse. */
-@interface S3BucketCrossOriginConfigurationUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3BucketCrossOriginConfigurationUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3BucketCrossOriginConfiguration *configuration;
 }
 

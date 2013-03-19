@@ -16,18 +16,14 @@
 #import "DynamoDBAttributeValue.h"
 
 
-
 /**
  * Attribute Value Update
  */
 
-@interface DynamoDBAttributeValueUpdate:NSObject
-
-{
+@interface DynamoDBAttributeValueUpdate : NSObject {
     DynamoDBAttributeValue *value;
-    NSString               *action;
+    NSString *action;
 }
-
 
 
 /**
@@ -57,7 +53,7 @@
  * Default constructor for a new AttributeValueUpdate object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AttributeValueUpdate object.
@@ -75,7 +71,7 @@
  * values is specified, then the values in the specified set are removed
  * from the old set.
  */
--(id)initWithValue:(DynamoDBAttributeValue *)theValue andAction:(NSString *)theAction;
+- (id)initWithValue:(DynamoDBAttributeValue *)theValue andAction:(NSString *)theAction;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -83,7 +79,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

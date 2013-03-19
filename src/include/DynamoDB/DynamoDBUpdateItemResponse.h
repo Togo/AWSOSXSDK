@@ -27,23 +27,20 @@
  * Update Item Result
  */
 
-@interface DynamoDBUpdateItemResponse:DynamoDBResponse
-
-{
+@interface DynamoDBUpdateItemResponse : DynamoDBResponse {
     NSMutableDictionary *attributes;
-    NSNumber            *consumedCapacityUnits;
+    NSNumber *consumedCapacityUnits;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of attribute name-value pairs, but only if the
@@ -66,7 +63,7 @@
 /**
  * Returns a value from the attributes dictionary for the specified key.
  */
--(DynamoDBAttributeValue *)attributesValueForKey:(NSString *)theKey;
+- (DynamoDBAttributeValue *)attributesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -74,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

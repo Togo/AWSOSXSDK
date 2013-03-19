@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeSnapshotAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSnapshotAttributeRequest *)describeSnapshotAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSnapshotAttributeRequest *)describeSnapshotAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeSnapshotAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeSnapshotAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeSnapshotAttributeRequest delegate]];
     [request setCredentials:[describeSnapshotAttributeRequest credentials]];

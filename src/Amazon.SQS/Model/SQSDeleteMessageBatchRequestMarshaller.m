@@ -17,12 +17,11 @@
 
 @implementation SQSDeleteMessageBatchRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"DeleteMessageBatch"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteMessageBatch" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[deleteMessageBatchRequest delegate]];
     [request setCredentials:[deleteMessageBatchRequest credentials]];

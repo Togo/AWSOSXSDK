@@ -23,11 +23,11 @@
 /**
  * Describe Tags Request Marshaller
  */
-@interface EC2DescribeTagsRequestMarshaller:NSObject {
+@interface EC2DescribeTagsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeTagsRequest *)describeTagsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeTagsRequest *)describeTagsRequest;
 
 
 @end

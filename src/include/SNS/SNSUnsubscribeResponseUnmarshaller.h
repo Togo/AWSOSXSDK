@@ -16,17 +16,17 @@
 #import "SNSUnsubscribeResponse.h"
 #import "SNSResponseUnmarshaller.h"
 
-@interface SNSUnsubscribeResponseUnmarshaller:SNSResponseUnmarshaller
-{
+@interface SNSUnsubscribeResponseUnmarshaller : SNSResponseUnmarshaller {
     SNSUnsubscribeResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SNSUnsubscribeResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SNSUnsubscribeResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SNSUnsubscribeResponse *)response;
 
 @end

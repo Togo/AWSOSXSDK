@@ -20,20 +20,16 @@
  * Instance License
  */
 
-@interface EC2InstanceLicense:NSObject
-
-{
+@interface EC2InstanceLicense : NSObject {
     NSString *pool;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The license pool from which this license was used (ex:
@@ -47,7 +43,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

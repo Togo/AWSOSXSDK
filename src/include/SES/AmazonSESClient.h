@@ -60,8 +60,7 @@
  * </summary>
  *
  */
-@interface AmazonSESClient:AmazonWebServiceClient
-{
+@interface AmazonSESClient : AmazonWebServiceClient {
 }
 
 
@@ -85,7 +84,7 @@
  * @see SESDeleteIdentityRequest
  * @see SESDeleteIdentityResponse
  */
--(SESDeleteIdentityResponse *)deleteIdentity:(SESDeleteIdentityRequest *)deleteIdentityRequest;
+- (SESDeleteIdentityResponse *)deleteIdentity:(SESDeleteIdentityRequest *)deleteIdentityRequest;
 
 
 /**
@@ -112,7 +111,7 @@
  * @see SESListVerifiedEmailAddressesRequest
  * @see SESListVerifiedEmailAddressesResponse
  */
--(SESListVerifiedEmailAddressesResponse *)listVerifiedEmailAddresses:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest;
+- (SESListVerifiedEmailAddressesResponse *)listVerifiedEmailAddresses:(SESListVerifiedEmailAddressesRequest *)listVerifiedEmailAddressesRequest;
 
 
 /**
@@ -139,7 +138,7 @@
  * @see SESGetSendStatisticsRequest
  * @see SESGetSendStatisticsResponse
  */
--(SESGetSendStatisticsResponse *)getSendStatistics:(SESGetSendStatisticsRequest *)getSendStatisticsRequest;
+- (SESGetSendStatisticsResponse *)getSendStatistics:(SESGetSendStatisticsRequest *)getSendStatisticsRequest;
 
 
 /**
@@ -162,7 +161,7 @@
  * @see SESVerifyEmailIdentityRequest
  * @see SESVerifyEmailIdentityResponse
  */
--(SESVerifyEmailIdentityResponse *)verifyEmailIdentity:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest;
+- (SESVerifyEmailIdentityResponse *)verifyEmailIdentity:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest;
 
 
 /**
@@ -187,7 +186,7 @@
  * @see SESGetIdentityNotificationAttributesRequest
  * @see SESGetIdentityNotificationAttributesResponse
  */
--(SESGetIdentityNotificationAttributesResponse *)getIdentityNotificationAttributes:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest;
+- (SESGetIdentityNotificationAttributesResponse *)getIdentityNotificationAttributes:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest;
 
 
 /**
@@ -221,7 +220,7 @@
  * @see SESVerifyDomainDkimRequest
  * @see SESVerifyDomainDkimResponse
  */
--(SESVerifyDomainDkimResponse *)verifyDomainDkim:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest;
+- (SESVerifyDomainDkimResponse *)verifyDomainDkim:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest;
 
 
 /**
@@ -261,7 +260,7 @@
  * @see SESGetIdentityDkimAttributesRequest
  * @see SESGetIdentityDkimAttributesResponse
  */
--(SESGetIdentityDkimAttributesResponse *)getIdentityDkimAttributes:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest;
+- (SESGetIdentityDkimAttributesResponse *)getIdentityDkimAttributes:(SESGetIdentityDkimAttributesRequest *)getIdentityDkimAttributesRequest;
 
 
 /**
@@ -286,7 +285,7 @@
  * @see SESVerifyEmailAddressRequest
  * @see SESVerifyEmailAddressResponse
  */
--(SESVerifyEmailAddressResponse *)verifyEmailAddress:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest;
+- (SESVerifyEmailAddressResponse *)verifyEmailAddress:(SESVerifyEmailAddressRequest *)verifyEmailAddressRequest;
 
 
 /**
@@ -330,7 +329,7 @@
  * @see SESSendRawEmailRequest
  * @see SESSendRawEmailResponse
  */
--(SESSendRawEmailResponse *)sendRawEmail:(SESSendRawEmailRequest *)sendRawEmailRequest;
+- (SESSendRawEmailResponse *)sendRawEmail:(SESSendRawEmailRequest *)sendRawEmailRequest;
 
 
 /**
@@ -354,7 +353,7 @@
  * @see SESListIdentitiesRequest
  * @see SESListIdentitiesResponse
  */
--(SESListIdentitiesResponse *)listIdentities:(SESListIdentitiesRequest *)listIdentitiesRequest;
+- (SESListIdentitiesResponse *)listIdentities:(SESListIdentitiesRequest *)listIdentitiesRequest;
 
 
 /**
@@ -378,7 +377,7 @@
  * @see SESGetIdentityVerificationAttributesRequest
  * @see SESGetIdentityVerificationAttributesResponse
  */
--(SESGetIdentityVerificationAttributesResponse *)getIdentityVerificationAttributes:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest;
+- (SESGetIdentityVerificationAttributesResponse *)getIdentityVerificationAttributes:(SESGetIdentityVerificationAttributesRequest *)getIdentityVerificationAttributesRequest;
 
 
 /**
@@ -417,7 +416,7 @@
  * @see SESSetIdentityDkimEnabledRequest
  * @see SESSetIdentityDkimEnabledResponse
  */
--(SESSetIdentityDkimEnabledResponse *)setIdentityDkimEnabled:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest;
+- (SESSetIdentityDkimEnabledResponse *)setIdentityDkimEnabled:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest;
 
 
 /**
@@ -440,7 +439,7 @@
  * @see SESGetSendQuotaRequest
  * @see SESGetSendQuotaResponse
  */
--(SESGetSendQuotaResponse *)getSendQuota:(SESGetSendQuotaRequest *)getSendQuotaRequest;
+- (SESGetSendQuotaResponse *)getSendQuota:(SESGetSendQuotaRequest *)getSendQuotaRequest;
 
 
 /**
@@ -466,7 +465,7 @@
  * @see SESSetIdentityFeedbackForwardingEnabledRequest
  * @see SESSetIdentityFeedbackForwardingEnabledResponse
  */
--(SESSetIdentityFeedbackForwardingEnabledResponse *)setIdentityFeedbackForwardingEnabled:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest;
+- (SESSetIdentityFeedbackForwardingEnabledResponse *)setIdentityFeedbackForwardingEnabled:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest;
 
 
 /**
@@ -489,7 +488,7 @@
  * @see SESVerifyDomainIdentityRequest
  * @see SESVerifyDomainIdentityResponse
  */
--(SESVerifyDomainIdentityResponse *)verifyDomainIdentity:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest;
+- (SESVerifyDomainIdentityResponse *)verifyDomainIdentity:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest;
 
 
 /**
@@ -530,7 +529,7 @@
  * @see SESSendEmailRequest
  * @see SESSendEmailResponse
  */
--(SESSendEmailResponse *)sendEmail:(SESSendEmailRequest *)sendEmailRequest;
+- (SESSendEmailResponse *)sendEmail:(SESSendEmailRequest *)sendEmailRequest;
 
 
 /**
@@ -555,7 +554,7 @@
  * @see SESDeleteVerifiedEmailAddressRequest
  * @see SESDeleteVerifiedEmailAddressResponse
  */
--(SESDeleteVerifiedEmailAddressResponse *)deleteVerifiedEmailAddress:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest;
+- (SESDeleteVerifiedEmailAddressResponse *)deleteVerifiedEmailAddress:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest;
 
 
 /**
@@ -582,8 +581,7 @@
  * @see SESSetIdentityNotificationTopicRequest
  * @see SESSetIdentityNotificationTopicResponse
  */
--(SESSetIdentityNotificationTopicResponse *)setIdentityNotificationTopic:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest;
-
+- (SESSetIdentityNotificationTopicResponse *)setIdentityNotificationTopic:(SESSetIdentityNotificationTopicRequest *)setIdentityNotificationTopicRequest;
 
 
 @end

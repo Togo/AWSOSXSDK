@@ -23,7 +23,7 @@
 /**
  * Cancelled Spot Instance Request Unmarshaller
  */
-@interface EC2CancelledSpotInstanceRequestUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2CancelledSpotInstanceRequestUnmarshaller : EC2ResponseUnmarshaller {
     EC2CancelledSpotInstanceRequest *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) EC2CancelledSpotInstanceRequest *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

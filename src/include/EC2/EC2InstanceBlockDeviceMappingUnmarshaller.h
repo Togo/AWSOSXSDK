@@ -24,7 +24,7 @@
 /**
  * Instance Block Device Mapping Unmarshaller
  */
-@interface EC2InstanceBlockDeviceMappingUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2InstanceBlockDeviceMappingUnmarshaller : EC2ResponseUnmarshaller {
     EC2InstanceBlockDeviceMapping *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) EC2InstanceBlockDeviceMapping *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

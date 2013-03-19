@@ -22,20 +22,17 @@
 @synthesize body;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         subject = nil;
-        body    = nil;
+        body = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

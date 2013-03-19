@@ -30,27 +30,25 @@
 @synthesize iops;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId         = nil;
-        size             = nil;
-        snapshotId       = nil;
+        volumeId = nil;
+        size = nil;
+        snapshotId = nil;
         availabilityZone = nil;
-        state            = nil;
-        createTime       = nil;
-        attachments      = [[NSMutableArray alloc] initWithCapacity:1];
-        tags             = [[NSMutableArray alloc] initWithCapacity:1];
-        volumeType       = nil;
-        iops             = nil;
+        state = nil;
+        createTime = nil;
+        attachments = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
+        volumeType = nil;
+        iops = nil;
     }
 
     return self;
 }
 
 
--(void)addAttachment:(EC2VolumeAttachment *)attachmentObject
-{
+- (void)addAttachment:(EC2VolumeAttachment *)attachmentObject {
     if (attachments == nil) {
         attachments = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +56,7 @@
     [attachments addObject:attachmentObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +65,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -88,9 +84,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

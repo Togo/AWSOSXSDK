@@ -20,9 +20,7 @@
  * S3 Storage
  */
 
-@interface EC2S3Storage:NSObject
-
-{
+@interface EC2S3Storage : NSObject {
     NSString *bucket;
     NSString *prefix;
     NSString *aWSAccessKeyId;
@@ -31,13 +29,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The bucket in which to store the AMI. You can specify a bucket that
@@ -74,7 +70,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

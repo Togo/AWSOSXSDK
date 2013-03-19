@@ -112,8 +112,7 @@
  * </summary>
  *
  */
-@interface AmazonAutoScalingClient:AmazonWebServiceClient
-{
+@interface AmazonAutoScalingClient : AmazonWebServiceClient {
 }
 
 
@@ -144,7 +143,7 @@
  * @see AutoScalingDescribeAutoScalingGroupsRequest
  * @see AutoScalingDescribeAutoScalingGroupsResponse
  */
--(AutoScalingDescribeAutoScalingGroupsResponse *)describeAutoScalingGroups:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest;
+- (AutoScalingDescribeAutoScalingGroupsResponse *)describeAutoScalingGroups:(AutoScalingDescribeAutoScalingGroupsRequest *)describeAutoScalingGroupsRequest;
 
 
 /**
@@ -171,7 +170,7 @@
  * @see AutoScalingEnableMetricsCollectionRequest
  * @see AutoScalingEnableMetricsCollectionResponse
  */
--(AutoScalingEnableMetricsCollectionResponse *)enableMetricsCollection:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest;
+- (AutoScalingEnableMetricsCollectionResponse *)enableMetricsCollection:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest;
 
 
 /**
@@ -192,7 +191,7 @@
  * @see AutoScalingResumeProcessesRequest
  * @see AutoScalingResumeProcessesResponse
  */
--(AutoScalingResumeProcessesResponse *)resumeProcesses:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest;
+- (AutoScalingResumeProcessesResponse *)resumeProcesses:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest;
 
 
 /**
@@ -218,7 +217,7 @@
  * @see AutoScalingDeleteLaunchConfigurationRequest
  * @see AutoScalingDeleteLaunchConfigurationResponse
  */
--(AutoScalingDeleteLaunchConfigurationResponse *)deleteLaunchConfiguration:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest;
+- (AutoScalingDeleteLaunchConfigurationResponse *)deleteLaunchConfiguration:(AutoScalingDeleteLaunchConfigurationRequest *)deleteLaunchConfigurationRequest;
 
 
 /**
@@ -244,7 +243,7 @@
  * @see AutoScalingDescribePoliciesRequest
  * @see AutoScalingDescribePoliciesResponse
  */
--(AutoScalingDescribePoliciesResponse *)describePolicies:(AutoScalingDescribePoliciesRequest *)describePoliciesRequest;
+- (AutoScalingDescribePoliciesResponse *)describePolicies:(AutoScalingDescribePoliciesRequest *)describePoliciesRequest;
 
 
 /**
@@ -267,7 +266,7 @@
  * @see AutoScalingDescribeScalingProcessTypesRequest
  * @see AutoScalingDescribeScalingProcessTypesResponse
  */
--(AutoScalingDescribeScalingProcessTypesResponse *)describeScalingProcessTypes:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest;
+- (AutoScalingDescribeScalingProcessTypesResponse *)describeScalingProcessTypes:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest;
 
 
 /**
@@ -295,7 +294,7 @@
  * @see AutoScalingCreateAutoScalingGroupRequest
  * @see AutoScalingCreateAutoScalingGroupResponse
  */
--(AutoScalingCreateAutoScalingGroupResponse *)createAutoScalingGroup:(AutoScalingCreateAutoScalingGroupRequest *)createAutoScalingGroupRequest;
+- (AutoScalingCreateAutoScalingGroupResponse *)createAutoScalingGroup:(AutoScalingCreateAutoScalingGroupRequest *)createAutoScalingGroupRequest;
 
 
 /**
@@ -327,7 +326,7 @@
  * @see AutoScalingDescribeScalingActivitiesRequest
  * @see AutoScalingDescribeScalingActivitiesResponse
  */
--(AutoScalingDescribeScalingActivitiesResponse *)describeScalingActivities:(AutoScalingDescribeScalingActivitiesRequest *)describeScalingActivitiesRequest;
+- (AutoScalingDescribeScalingActivitiesResponse *)describeScalingActivities:(AutoScalingDescribeScalingActivitiesRequest *)describeScalingActivitiesRequest;
 
 
 /**
@@ -351,7 +350,7 @@
  * @see AutoScalingDescribeNotificationConfigurationsRequest
  * @see AutoScalingDescribeNotificationConfigurationsResponse
  */
--(AutoScalingDescribeNotificationConfigurationsResponse *)describeNotificationConfigurations:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest;
+- (AutoScalingDescribeNotificationConfigurationsResponse *)describeNotificationConfigurations:(AutoScalingDescribeNotificationConfigurationsRequest *)describeNotificationConfigurationsRequest;
 
 
 /**
@@ -374,7 +373,7 @@
  * @see AutoScalingDescribeTerminationPolicyTypesRequest
  * @see AutoScalingDescribeTerminationPolicyTypesResponse
  */
--(AutoScalingDescribeTerminationPolicyTypesResponse *)describeTerminationPolicyTypes:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest;
+- (AutoScalingDescribeTerminationPolicyTypesResponse *)describeTerminationPolicyTypes:(AutoScalingDescribeTerminationPolicyTypesRequest *)describeTerminationPolicyTypesRequest;
 
 
 /**
@@ -407,7 +406,7 @@
  * @see AutoScalingDescribeTagsRequest
  * @see AutoScalingDescribeTagsResponse
  */
--(AutoScalingDescribeTagsResponse *)describeTags:(AutoScalingDescribeTagsRequest *)describeTagsRequest;
+- (AutoScalingDescribeTagsResponse *)describeTags:(AutoScalingDescribeTagsRequest *)describeTagsRequest;
 
 
 /**
@@ -429,7 +428,7 @@
  * @see AutoScalingExecutePolicyRequest
  * @see AutoScalingExecutePolicyResponse
  */
--(AutoScalingExecutePolicyResponse *)executePolicy:(AutoScalingExecutePolicyRequest *)executePolicyRequest;
+- (AutoScalingExecutePolicyResponse *)executePolicy:(AutoScalingExecutePolicyRequest *)executePolicyRequest;
 
 
 /**
@@ -450,7 +449,7 @@
  * @see AutoScalingDeleteTagsRequest
  * @see AutoScalingDeleteTagsResponse
  */
--(AutoScalingDeleteTagsResponse *)deleteTags:(AutoScalingDeleteTagsRequest *)deleteTagsRequest;
+- (AutoScalingDeleteTagsResponse *)deleteTags:(AutoScalingDeleteTagsRequest *)deleteTagsRequest;
 
 
 /**
@@ -476,7 +475,7 @@
  * @see AutoScalingPutScalingPolicyRequest
  * @see AutoScalingPutScalingPolicyResponse
  */
--(AutoScalingPutScalingPolicyResponse *)putScalingPolicy:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest;
+- (AutoScalingPutScalingPolicyResponse *)putScalingPolicy:(AutoScalingPutScalingPolicyRequest *)putScalingPolicyRequest;
 
 
 /**
@@ -502,7 +501,7 @@
  * @see AutoScalingPutNotificationConfigurationRequest
  * @see AutoScalingPutNotificationConfigurationResponse
  */
--(AutoScalingPutNotificationConfigurationResponse *)putNotificationConfiguration:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest;
+- (AutoScalingPutNotificationConfigurationResponse *)putNotificationConfiguration:(AutoScalingPutNotificationConfigurationRequest *)putNotificationConfigurationRequest;
 
 
 /**
@@ -523,7 +522,7 @@
  * @see AutoScalingDeletePolicyRequest
  * @see AutoScalingDeletePolicyResponse
  */
--(AutoScalingDeletePolicyResponse *)deletePolicy:(AutoScalingDeletePolicyRequest *)deletePolicyRequest;
+- (AutoScalingDeletePolicyResponse *)deletePolicy:(AutoScalingDeletePolicyRequest *)deletePolicyRequest;
 
 
 /**
@@ -544,7 +543,7 @@
  * @see AutoScalingDeleteNotificationConfigurationRequest
  * @see AutoScalingDeleteNotificationConfigurationResponse
  */
--(AutoScalingDeleteNotificationConfigurationResponse *)deleteNotificationConfiguration:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest;
+- (AutoScalingDeleteNotificationConfigurationResponse *)deleteNotificationConfiguration:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest;
 
 
 /**
@@ -565,7 +564,7 @@
  * @see AutoScalingDeleteScheduledActionRequest
  * @see AutoScalingDeleteScheduledActionResponse
  */
--(AutoScalingDeleteScheduledActionResponse *)deleteScheduledAction:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest;
+- (AutoScalingDeleteScheduledActionResponse *)deleteScheduledAction:(AutoScalingDeleteScheduledActionRequest *)deleteScheduledActionRequest;
 
 
 /**
@@ -586,7 +585,7 @@
  * @see AutoScalingSetInstanceHealthRequest
  * @see AutoScalingSetInstanceHealthResponse
  */
--(AutoScalingSetInstanceHealthResponse *)setInstanceHealth:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest;
+- (AutoScalingSetInstanceHealthResponse *)setInstanceHealth:(AutoScalingSetInstanceHealthRequest *)setInstanceHealthRequest;
 
 
 /**
@@ -609,7 +608,7 @@
  * @see AutoScalingDescribeAutoScalingNotificationTypesRequest
  * @see AutoScalingDescribeAutoScalingNotificationTypesResponse
  */
--(AutoScalingDescribeAutoScalingNotificationTypesResponse *)describeAutoScalingNotificationTypes:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest;
+- (AutoScalingDescribeAutoScalingNotificationTypesResponse *)describeAutoScalingNotificationTypes:(AutoScalingDescribeAutoScalingNotificationTypesRequest *)describeAutoScalingNotificationTypesRequest;
 
 
 /**
@@ -636,7 +635,7 @@
  * @see AutoScalingCreateOrUpdateTagsRequest
  * @see AutoScalingCreateOrUpdateTagsResponse
  */
--(AutoScalingCreateOrUpdateTagsResponse *)createOrUpdateTags:(AutoScalingCreateOrUpdateTagsRequest *)createOrUpdateTagsRequest;
+- (AutoScalingCreateOrUpdateTagsResponse *)createOrUpdateTags:(AutoScalingCreateOrUpdateTagsRequest *)createOrUpdateTagsRequest;
 
 
 /**
@@ -665,7 +664,7 @@
  * @see AutoScalingSuspendProcessesRequest
  * @see AutoScalingSuspendProcessesResponse
  */
--(AutoScalingSuspendProcessesResponse *)suspendProcesses:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest;
+- (AutoScalingSuspendProcessesResponse *)suspendProcesses:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest;
 
 
 /**
@@ -694,7 +693,7 @@
  * @see AutoScalingDescribeAutoScalingInstancesRequest
  * @see AutoScalingDescribeAutoScalingInstancesResponse
  */
--(AutoScalingDescribeAutoScalingInstancesResponse *)describeAutoScalingInstances:(AutoScalingDescribeAutoScalingInstancesRequest *)describeAutoScalingInstancesRequest;
+- (AutoScalingDescribeAutoScalingInstancesResponse *)describeAutoScalingInstances:(AutoScalingDescribeAutoScalingInstancesRequest *)describeAutoScalingInstancesRequest;
 
 
 /**
@@ -726,7 +725,7 @@
  * @see AutoScalingCreateLaunchConfigurationRequest
  * @see AutoScalingCreateLaunchConfigurationResponse
  */
--(AutoScalingCreateLaunchConfigurationResponse *)createLaunchConfiguration:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest;
+- (AutoScalingCreateLaunchConfigurationResponse *)createLaunchConfiguration:(AutoScalingCreateLaunchConfigurationRequest *)createLaunchConfigurationRequest;
 
 
 /**
@@ -753,7 +752,7 @@
  * @see AutoScalingDeleteAutoScalingGroupRequest
  * @see AutoScalingDeleteAutoScalingGroupResponse
  */
--(AutoScalingDeleteAutoScalingGroupResponse *)deleteAutoScalingGroup:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest;
+- (AutoScalingDeleteAutoScalingGroupResponse *)deleteAutoScalingGroup:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest;
 
 
 /**
@@ -775,7 +774,7 @@
  * @see AutoScalingDisableMetricsCollectionRequest
  * @see AutoScalingDisableMetricsCollectionResponse
  */
--(AutoScalingDisableMetricsCollectionResponse *)disableMetricsCollection:(AutoScalingDisableMetricsCollectionRequest *)disableMetricsCollectionRequest;
+- (AutoScalingDisableMetricsCollectionResponse *)disableMetricsCollection:(AutoScalingDisableMetricsCollectionRequest *)disableMetricsCollectionRequest;
 
 
 /**
@@ -815,7 +814,7 @@
  * @see AutoScalingUpdateAutoScalingGroupRequest
  * @see AutoScalingUpdateAutoScalingGroupResponse
  */
--(AutoScalingUpdateAutoScalingGroupResponse *)updateAutoScalingGroup:(AutoScalingUpdateAutoScalingGroupRequest *)updateAutoScalingGroupRequest;
+- (AutoScalingUpdateAutoScalingGroupResponse *)updateAutoScalingGroup:(AutoScalingUpdateAutoScalingGroupRequest *)updateAutoScalingGroupRequest;
 
 
 /**
@@ -842,7 +841,7 @@
  * @see AutoScalingDescribeLaunchConfigurationsRequest
  * @see AutoScalingDescribeLaunchConfigurationsResponse
  */
--(AutoScalingDescribeLaunchConfigurationsResponse *)describeLaunchConfigurations:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest;
+- (AutoScalingDescribeLaunchConfigurationsResponse *)describeLaunchConfigurations:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest;
 
 
 /**
@@ -865,7 +864,7 @@
  * @see AutoScalingDescribeAdjustmentTypesRequest
  * @see AutoScalingDescribeAdjustmentTypesResponse
  */
--(AutoScalingDescribeAdjustmentTypesResponse *)describeAdjustmentTypes:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest;
+- (AutoScalingDescribeAdjustmentTypesResponse *)describeAdjustmentTypes:(AutoScalingDescribeAdjustmentTypesRequest *)describeAdjustmentTypesRequest;
 
 
 /**
@@ -890,7 +889,7 @@
  * @see AutoScalingDescribeScheduledActionsRequest
  * @see AutoScalingDescribeScheduledActionsResponse
  */
--(AutoScalingDescribeScheduledActionsResponse *)describeScheduledActions:(AutoScalingDescribeScheduledActionsRequest *)describeScheduledActionsRequest;
+- (AutoScalingDescribeScheduledActionsResponse *)describeScheduledActions:(AutoScalingDescribeScheduledActionsRequest *)describeScheduledActionsRequest;
 
 
 /**
@@ -914,7 +913,7 @@
  * @see AutoScalingPutScheduledUpdateGroupActionRequest
  * @see AutoScalingPutScheduledUpdateGroupActionResponse
  */
--(AutoScalingPutScheduledUpdateGroupActionResponse *)putScheduledUpdateGroupAction:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest;
+- (AutoScalingPutScheduledUpdateGroupActionResponse *)putScheduledUpdateGroupAction:(AutoScalingPutScheduledUpdateGroupActionRequest *)putScheduledUpdateGroupActionRequest;
 
 
 /**
@@ -937,7 +936,7 @@
  * @see AutoScalingDescribeMetricCollectionTypesRequest
  * @see AutoScalingDescribeMetricCollectionTypesResponse
  */
--(AutoScalingDescribeMetricCollectionTypesResponse *)describeMetricCollectionTypes:(AutoScalingDescribeMetricCollectionTypesRequest *)describeMetricCollectionTypesRequest;
+- (AutoScalingDescribeMetricCollectionTypesResponse *)describeMetricCollectionTypes:(AutoScalingDescribeMetricCollectionTypesRequest *)describeMetricCollectionTypesRequest;
 
 
 /**
@@ -979,7 +978,7 @@
  * @see AutoScalingSetDesiredCapacityRequest
  * @see AutoScalingSetDesiredCapacityResponse
  */
--(AutoScalingSetDesiredCapacityResponse *)setDesiredCapacity:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest;
+- (AutoScalingSetDesiredCapacityResponse *)setDesiredCapacity:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest;
 
 
 /**
@@ -1007,8 +1006,7 @@
  * @see AutoScalingTerminateInstanceInAutoScalingGroupRequest
  * @see AutoScalingTerminateInstanceInAutoScalingGroupResponse
  */
--(AutoScalingTerminateInstanceInAutoScalingGroupResponse *)terminateInstanceInAutoScalingGroup:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest;
-
+- (AutoScalingTerminateInstanceInAutoScalingGroupResponse *)terminateInstanceInAutoScalingGroup:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest;
 
 
 @end

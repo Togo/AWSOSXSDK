@@ -40,14 +40,14 @@
  * </p>
  *
  */
-@interface S3Region:NSObject {
+@interface S3Region : NSObject {
     NSString *stringValue;
 }
 
 @property (readonly, atomic) NSString *stringValue;
 
 /** Returns an S3Region initialized with the supplied string value. */
--(id)initWithStringValue:(NSString *)value;
+- (id)initWithStringValue:(NSString *)value;
 
 /**
  * The US Standard Amazon S3 Region. This region
@@ -63,7 +63,7 @@
  * provides eventual consistency for all requests.
  * </p>
  */
-+(S3Region *)USStandard;
++ (S3Region *)USStandard;
 
 /**
  * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
@@ -80,7 +80,7 @@
  * S3 buckets and eventual consistency for overwrite PUTS and DELETES.
  * </p>
  */
-+(S3Region *)USWest;
++ (S3Region *)USWest;
 
 /**
  * The US-West-2 (Oregon) Region. This region uses Amazon S3 servers located
@@ -92,7 +92,7 @@
  * creating a bucket in this region.
  * </p>
  */
-+(S3Region *)USWest2;
++ (S3Region *)USWest2;
 
 /**
  * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
@@ -103,7 +103,7 @@
  * consistency for overwrite PUTS and DELETES.
  * </p>
  */
-+(S3Region *)EUIreland __attribute__((deprecated));
++ (S3Region *)EUIreland __attribute__((deprecated));
 
 /**
  * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
@@ -114,7 +114,7 @@
  * consistency for overwrite PUTS and DELETES.
  * </p>
  */
-+(S3Region *)EUWest1;
++ (S3Region *)EUWest1;
 
 /**
  * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
@@ -126,7 +126,7 @@
  * creating a bucket in this region.
  * </p>
  */
-+(S3Region *)APSingapore;
++ (S3Region *)APSingapore;
 
 /**
  * The AP-Southeast-2 (Sydney) Region. This region uses Amazon S3 servers located
@@ -138,7 +138,7 @@
  * creating a bucket in this region.
  * </p>
  */
-+(S3Region *)APSydney;
++ (S3Region *)APSydney;
 
 /**
  * The Asia Pacific (Japan) Region. This region uses Amazon S3 servers located
@@ -150,7 +150,7 @@
  * creating a bucket in this region.
  * </p>
  */
-+(S3Region *)APJapan;
++ (S3Region *)APJapan;
 
 /**
  * The South America (Sao Paulo) Region. This region uses Amazon S3 servers
@@ -162,7 +162,7 @@
  * bucket in this region.
  * </p>
  */
-+(S3Region *)SASaoPaulo;
++ (S3Region *)SASaoPaulo;
 
 /** Convert a string describing an Amazon S3 region to the corresponding S3Region
  *
@@ -170,6 +170,6 @@
  * @return The corresponding S3Region.
  * @throws AWSClientException If the specified string does not match one of the Amazon S3 regions.
  */
-+(S3Region *)regionWithString:(NSString *)regionName;
++ (S3Region *)regionWithString:(NSString *)regionName;
 
 @end

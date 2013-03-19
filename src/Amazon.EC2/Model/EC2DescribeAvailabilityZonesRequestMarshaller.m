@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeAvailabilityZonesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeAvailabilityZones"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAvailabilityZones" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeAvailabilityZonesRequest delegate]];
     [request setCredentials:[describeAvailabilityZonesRequest credentials]];

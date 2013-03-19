@@ -36,33 +36,31 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         launchConfigurationName = nil;
-        launchConfigurationARN  = nil;
-        imageId                 = nil;
-        keyName                 = nil;
-        securityGroups          = [[NSMutableArray alloc] initWithCapacity:1];
-        userData                = nil;
-        instanceType            = nil;
-        kernelId                = nil;
-        ramdiskId               = nil;
-        blockDeviceMappings     = [[NSMutableArray alloc] initWithCapacity:1];
-        instanceMonitoring      = nil;
-        spotPrice               = nil;
-        iamInstanceProfile      = nil;
-        createdTime             = nil;
-        ebsOptimized            = NO;
-        ebsOptimizedIsSet       = NO;
+        launchConfigurationARN = nil;
+        imageId = nil;
+        keyName = nil;
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
+        userData = nil;
+        instanceType = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceMonitoring = nil;
+        spotPrice = nil;
+        iamInstanceProfile = nil;
+        createdTime = nil;
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -70,8 +68,7 @@
     [securityGroups addObject:securityGroupObject];
 }
 
--(void)addBlockDeviceMapping:(AutoScalingBlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(AutoScalingBlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -80,8 +77,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -107,13 +103,10 @@
 }
 
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

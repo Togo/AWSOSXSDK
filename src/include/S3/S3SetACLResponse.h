@@ -19,7 +19,7 @@
 /** Contains all the information about the setACL operation.
  *
  */
-@interface S3SetACLResponse:S3Response {
+@interface S3SetACLResponse : S3Response {
 }
 
 @end

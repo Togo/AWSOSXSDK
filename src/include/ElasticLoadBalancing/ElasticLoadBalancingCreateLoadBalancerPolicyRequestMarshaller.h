@@ -23,11 +23,11 @@
 /**
  * Create Load Balancer Policy Request Marshaller
  */
-@interface ElasticLoadBalancingCreateLoadBalancerPolicyRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingCreateLoadBalancerPolicyRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateLoadBalancerPolicyRequest *)createLoadBalancerPolicyRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateLoadBalancerPolicyRequest *)createLoadBalancerPolicyRequest;
 
 
 @end

@@ -28,16 +28,15 @@
 @synthesize bundleTaskError;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId      = nil;
-        bundleId        = nil;
-        state           = nil;
-        startTime       = nil;
-        updateTime      = nil;
-        storage         = nil;
-        progress        = nil;
+        instanceId = nil;
+        bundleId = nil;
+        state = nil;
+        startTime = nil;
+        updateTime = nil;
+        storage = nil;
+        progress = nil;
         bundleTaskError = nil;
     }
 
@@ -45,9 +44,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

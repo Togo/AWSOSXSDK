@@ -22,29 +22,26 @@
 @synthesize entries;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         queueUrl = nil;
-        entries  = [[NSMutableArray alloc] initWithCapacity:1];
+        entries = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries {
     if (self = [self init]) {
         self.queueUrl = theQueueUrl;
-        self.entries  = theEntries;
+        self.entries = theEntries;
     }
 
     return self;
 }
 
 
--(void)addEntry:(SQSChangeMessageVisibilityBatchRequestEntry *)entryObject
-{
+- (void)addEntry:(SQSChangeMessageVisibilityBatchRequestEntry *)entryObject {
     if (entries == nil) {
         entries = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2CreateKeyPairRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateKeyPairRequest *)createKeyPairRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateKeyPairRequest *)createKeyPairRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateKeyPair"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateKeyPair" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createKeyPairRequest delegate]];
     [request setCredentials:[createKeyPairRequest credentials]];

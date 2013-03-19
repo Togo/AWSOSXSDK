@@ -21,8 +21,7 @@
 /**
  * Delete Alarms
  */
-@interface CloudWatchDeleteAlarmsResponse:CloudWatchResponse
-{
+@interface CloudWatchDeleteAlarmsResponse : CloudWatchResponse {
 }
 
 @end

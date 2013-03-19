@@ -21,8 +21,7 @@
 @synthesize subscriptionArn;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         subscriptionArn = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithSubscriptionArn:(NSString *)theSubscriptionArn
-{
+- (id)initWithSubscriptionArn:(NSString *)theSubscriptionArn {
     if (self = [self init]) {
         self.subscriptionArn = theSubscriptionArn;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

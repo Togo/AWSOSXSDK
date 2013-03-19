@@ -24,8 +24,7 @@
 @implementation DynamoDBScanResponseUnmarshaller
 
 
-+(DynamoDBScanResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBScanResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBScanResponse *scanResult = [[DynamoDBScanResponse alloc] init];
 
 

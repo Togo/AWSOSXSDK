@@ -25,22 +25,19 @@
  * Describe Instance Health Result
  */
 
-@interface ElasticLoadBalancingDescribeInstanceHealthResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingDescribeInstanceHealthResponse : ElasticLoadBalancingResponse {
     NSMutableArray *instanceStates;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list containing health information for the specified instances.
@@ -48,11 +45,10 @@
 @property (nonatomic, strong) NSMutableArray *instanceStates;
 
 
-
 /**
  * Returns a value from the instanceStates array for the specified index
  */
--(ElasticLoadBalancingInstanceState *)instanceStatesObjectAtIndex:(int)index;
+- (ElasticLoadBalancingInstanceState *)instanceStatesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

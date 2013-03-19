@@ -23,11 +23,11 @@
 /**
  * Describe Reserved Instances Listings Request Marshaller
  */
-@interface EC2DescribeReservedInstancesListingsRequestMarshaller:NSObject {
+@interface EC2DescribeReservedInstancesListingsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeReservedInstancesListingsRequest *)describeReservedInstancesListingsRequest;
 
 
 @end

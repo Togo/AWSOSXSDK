@@ -23,20 +23,18 @@
 @synthesize otherPolicies;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         appCookieStickinessPolicies = [[NSMutableArray alloc] initWithCapacity:1];
-        lBCookieStickinessPolicies  = [[NSMutableArray alloc] initWithCapacity:1];
-        otherPolicies               = [[NSMutableArray alloc] initWithCapacity:1];
+        lBCookieStickinessPolicies = [[NSMutableArray alloc] initWithCapacity:1];
+        otherPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addAppCookieStickinessPolicy:(ElasticLoadBalancingAppCookieStickinessPolicy *)appCookieStickinessPolicyObject
-{
+- (void)addAppCookieStickinessPolicy:(ElasticLoadBalancingAppCookieStickinessPolicy *)appCookieStickinessPolicyObject {
     if (appCookieStickinessPolicies == nil) {
         appCookieStickinessPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -44,8 +42,7 @@
     [appCookieStickinessPolicies addObject:appCookieStickinessPolicyObject];
 }
 
--(void)addLBCookieStickinessPolicy:(ElasticLoadBalancingLBCookieStickinessPolicy *)lBCookieStickinessPolicyObject
-{
+- (void)addLBCookieStickinessPolicy:(ElasticLoadBalancingLBCookieStickinessPolicy *)lBCookieStickinessPolicyObject {
     if (lBCookieStickinessPolicies == nil) {
         lBCookieStickinessPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
     [lBCookieStickinessPolicies addObject:lBCookieStickinessPolicyObject];
 }
 
--(void)addOtherPolicy:(NSString *)otherPolicyObject
-{
+- (void)addOtherPolicy:(NSString *)otherPolicyObject {
     if (otherPolicies == nil) {
         otherPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +59,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -76,9 +71,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

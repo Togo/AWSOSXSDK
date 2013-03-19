@@ -20,8 +20,7 @@
 /**
  * Modify Volume Attribute
  */
-@interface EC2ModifyVolumeAttributeResponse:EC2Response
-{
+@interface EC2ModifyVolumeAttributeResponse : EC2Response {
 }
 
 @end

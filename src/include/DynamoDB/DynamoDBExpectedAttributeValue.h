@@ -16,19 +16,15 @@
 #import "DynamoDBAttributeValue.h"
 
 
-
 /**
  * Expected Attribute Value
  */
 
-@interface DynamoDBExpectedAttributeValue:NSObject
-
-{
+@interface DynamoDBExpectedAttributeValue : NSObject {
     DynamoDBAttributeValue *value;
-    bool                   exists;
-    bool                   existsIsSet;
+    bool exists;
+    bool existsIsSet;
 }
-
 
 
 /**
@@ -41,7 +37,7 @@
  * Specify whether or not a value already exists for the attribute
  * name-value pair.
  */
-@property (nonatomic) bool           exists;
+@property (nonatomic) bool exists;
 
 @property (nonatomic, readonly) bool existsIsSet;
 
@@ -50,7 +46,7 @@
  * Default constructor for a new ExpectedAttributeValue object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ExpectedAttributeValue object.
@@ -59,7 +55,7 @@
  * @param theValue Specify whether or not a value already exists and has
  * a specific content for the attribute name-value pair.
  */
--(id)initWithValue:(DynamoDBAttributeValue *)theValue;
+- (id)initWithValue:(DynamoDBAttributeValue *)theValue;
 
 /**
  * Constructs a new ExpectedAttributeValue object.
@@ -68,7 +64,7 @@
  * @param theExists Specify whether or not a value already exists for the
  * attribute name-value pair.
  */
--(id)initWithExists:(bool)theExists;
+- (id)initWithExists:(bool)theExists;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

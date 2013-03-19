@@ -21,10 +21,10 @@
 /**
  * Delete Request Unmarshaller
  */
-@interface DynamoDBDeleteRequestUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBDeleteRequestUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBDeleteRequest *response;
 }
 
-+(DynamoDBDeleteRequest *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBDeleteRequest *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

@@ -16,17 +16,17 @@
 #import "EC2CreatePlacementGroupResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2CreatePlacementGroupResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2CreatePlacementGroupResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2CreatePlacementGroupResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2CreatePlacementGroupResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2CreatePlacementGroupResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2CreatePlacementGroupResponse *)response;
 
 @end

@@ -16,8 +16,6 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The request was rejected because the policy document was too large.
@@ -25,17 +23,11 @@
  * form, as a percentage of what the API allows.
  * </p>
  */
-@interface SecurityTokenServicePackedPolicyTooLargeException:AmazonServiceException
-{
+@interface SecurityTokenServicePackedPolicyTooLargeException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -44,7 +36,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

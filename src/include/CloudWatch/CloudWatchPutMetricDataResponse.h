@@ -24,8 +24,7 @@
 /**
  * Put Metric Data
  */
-@interface CloudWatchPutMetricDataResponse:CloudWatchResponse
-{
+@interface CloudWatchPutMetricDataResponse : CloudWatchResponse {
 }
 
 @end

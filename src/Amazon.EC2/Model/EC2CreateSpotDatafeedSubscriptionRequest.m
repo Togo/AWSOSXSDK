@@ -22,8 +22,7 @@
 @synthesize prefix;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         bucket = nil;
         prefix = nil;
@@ -32,8 +31,7 @@
     return self;
 }
 
--(id)initWithBucket:(NSString *)theBucket
-{
+- (id)initWithBucket:(NSString *)theBucket {
     if (self = [self init]) {
         self.bucket = theBucket;
     }
@@ -42,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +51,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

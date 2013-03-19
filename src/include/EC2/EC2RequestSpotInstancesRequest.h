@@ -18,24 +18,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Request Spot Instances Request
  */
 
-@interface EC2RequestSpotInstancesRequest:AmazonServiceRequestConfig
-
-{
-    NSString               *spotPrice;
-    NSNumber               *instanceCount;
-    NSString               *type;
-    NSDate                 *validFrom;
-    NSDate                 *validUntil;
-    NSString               *launchGroup;
-    NSString               *availabilityZoneGroup;
+@interface EC2RequestSpotInstancesRequest : AmazonServiceRequestConfig {
+    NSString *spotPrice;
+    NSNumber *instanceCount;
+    NSString *type;
+    NSDate *validFrom;
+    NSDate *validUntil;
+    NSString *launchGroup;
+    NSString *availabilityZoneGroup;
     EC2LaunchSpecification *launchSpecification;
 }
-
 
 
 /**
@@ -98,7 +94,7 @@
  * Default constructor for a new RequestSpotInstancesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RequestSpotInstancesRequest object.
@@ -107,7 +103,7 @@
  * @param theSpotPrice Specifies the maximum hourly price for any Spot
  * Instance launched to fulfill the request.
  */
--(id)initWithSpotPrice:(NSString *)theSpotPrice;
+- (id)initWithSpotPrice:(NSString *)theSpotPrice;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -115,7 +111,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

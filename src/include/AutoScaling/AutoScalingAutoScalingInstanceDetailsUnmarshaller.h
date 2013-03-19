@@ -23,7 +23,7 @@
 /**
  * Auto Scaling Instance Details Unmarshaller
  */
-@interface AutoScalingAutoScalingInstanceDetailsUnmarshaller:AutoScalingResponseUnmarshaller {
+@interface AutoScalingAutoScalingInstanceDetailsUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingAutoScalingInstanceDetails *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) AutoScalingAutoScalingInstanceDetails *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

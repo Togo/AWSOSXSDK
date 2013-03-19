@@ -20,25 +20,21 @@
  * Tag Description
  */
 
-@interface AutoScalingTagDescription:NSObject
-
-{
+@interface AutoScalingTagDescription : NSObject {
     NSString *resourceId;
     NSString *resourceType;
     NSString *key;
     NSString *value;
-    bool     propagateAtLaunch;
-    bool     propagateAtLaunchIsSet;
+    bool propagateAtLaunch;
+    bool propagateAtLaunchIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -81,7 +77,7 @@
  * change a tag, the changed tag will be applied to all instances
  * launched after you made the change.
  */
-@property (nonatomic) bool           propagateAtLaunch;
+@property (nonatomic) bool propagateAtLaunch;
 
 @property (nonatomic, readonly) bool propagateAtLaunchIsSet;
 
@@ -91,7 +87,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

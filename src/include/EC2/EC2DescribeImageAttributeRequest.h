@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Image Attribute Request
  */
 
-@interface EC2DescribeImageAttributeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeImageAttributeRequest : AmazonServiceRequestConfig {
     NSString *imageId;
     NSString *attribute;
 }
-
 
 
 /**
@@ -48,7 +44,7 @@
  * Default constructor for a new DescribeImageAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeImageAttributeRequest object.
@@ -61,7 +57,7 @@
  * <code>kernel</code>, <code>ramdisk</code>,
  * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
  */
--(id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
+- (id)initWithImageId:(NSString *)theImageId andAttribute:(NSString *)theAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

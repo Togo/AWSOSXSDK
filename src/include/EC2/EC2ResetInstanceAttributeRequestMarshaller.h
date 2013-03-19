@@ -22,11 +22,11 @@
 /**
  * Reset Instance Attribute Request Marshaller
  */
-@interface EC2ResetInstanceAttributeRequestMarshaller:NSObject {
+@interface EC2ResetInstanceAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest;
 
 
 @end

@@ -30,10 +30,8 @@
 @synthesize expires;
 @synthesize redirectLocation;
 
--(id)init
-{
-    if (self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         cacheControl = nil;
         contentDisposition = nil;
         contentEncoding = nil;
@@ -45,20 +43,18 @@
         redirectLocation = nil;
 
         expires = 0;
-        expiresSet  = NO;
+        expiresSet = NO;
         generateMD5 = NO;
     }
     return self;
 }
 
--(void)setExpires:(NSInteger)exp
-{
-    expires    = exp;
+- (void)setExpires:(NSInteger)exp {
+    expires = exp;
     expiresSet = YES;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [super configureURLRequest];
 
     if ((nil == self.contentMD5) && (YES == self.generateMD5)) {
@@ -105,7 +101,7 @@
     }
 
     if (expiresSet) {
-        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long)self.expires]
+        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long) self.expires]
                forHTTPHeaderField:kHttpHdrExpires];
     }
 
@@ -115,7 +111,7 @@
     else {
         [self.urlRequest setHTTPBody:data];
         if (self.contentLength < 1) {
-            [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]]
+            [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [data length]]
                    forHTTPHeaderField:kHttpHdrContentLength];
         }
     }
@@ -123,25 +119,20 @@
     return urlRequest;
 }
 
--(id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket
-{
-    if(self = [self init])
-    {
-        self.key    = aKey;
+- (id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket {
+    if (self = [self init]) {
+        self.key = aKey;
         self.bucket = aBucket;
     }
 
     return self;
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     AmazonClientException *clientException = [super validate];
 
-    if(clientException == nil)
-    {
-        if(self.filename != nil)
-        {
+    if (clientException == nil) {
+        if (self.filename != nil) {
             if (![[NSFileManager defaultManager] isReadableFileAtPath:self.filename]) {
 
                 clientException = [AmazonClientException exceptionWithMessage:@"The specified file cannot be read."];
@@ -149,8 +140,8 @@
             else {
                 self.contentLength = [[[[NSFileManager defaultManager] attributesOfItemAtPath:self.filename
                                                                                         error:nil]
-                                       valueForKey:NSFileSize] intValue];
-                self.contentType   = [AmazonSDKUtil MIMETypeForExtension:[self.filename pathExtension]];
+                        valueForKey:NSFileSize] intValue];
+                self.contentType = [AmazonSDKUtil MIMETypeForExtension:[self.filename pathExtension]];
 
                 @try {
                     NSInputStream *inputStream = [[NSInputStream alloc] initWithFileAtPath:self.filename];
@@ -159,7 +150,7 @@
                 @catch (NSException *e) {
 
                     clientException = [AmazonClientException exceptionWithMessage:
-                                       [NSString stringWithFormat:@"Could not open file for streaming: %@", e.reason]];
+                            [NSString stringWithFormat:@"Could not open file for streaming: %@", e.reason]];
                 }
             }
         }

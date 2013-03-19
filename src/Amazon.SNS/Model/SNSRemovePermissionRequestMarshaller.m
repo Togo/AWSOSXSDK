@@ -17,12 +17,11 @@
 
 @implementation SNSRemovePermissionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSRemovePermissionRequest *)removePermissionRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSRemovePermissionRequest *)removePermissionRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"RemovePermission"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"RemovePermission" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[removePermissionRequest delegate]];
     [request setCredentials:[removePermissionRequest credentials]];

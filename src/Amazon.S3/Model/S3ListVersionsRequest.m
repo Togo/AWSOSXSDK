@@ -24,12 +24,11 @@
 @synthesize maxKeys;
 
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *endQueryString = [NSMutableString stringWithCapacity:512];
 
     if (self.maxKeys > 0) {
-        [endQueryString appendFormat:@"&%@=%ld", kS3QueryParamMaxKeys, (long)self.maxKeys];
+        [endQueryString appendFormat:@"&%@=%ld", kS3QueryParamMaxKeys, (long) self.maxKeys];
     }
 
     if (nil != self.prefix) {
@@ -49,7 +48,7 @@
     }
 
     NSString *queryString = nil;
-    if ( [endQueryString length] > 0) {
+    if ([endQueryString length] > 0) {
         queryString = [NSString stringWithFormat:@"%@=%@", kS3SubResourceVersions, endQueryString];
     }
     else {
@@ -63,7 +62,6 @@
 
     return self.urlRequest;
 }
-
 
 
 @end

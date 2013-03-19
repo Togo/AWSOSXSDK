@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Configure Health Check Request
  */
 
-@interface ElasticLoadBalancingConfigureHealthCheckRequest:AmazonServiceRequestConfig
-
-{
-    NSString                        *loadBalancerName;
+@interface ElasticLoadBalancingConfigureHealthCheckRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     ElasticLoadBalancingHealthCheck *healthCheck;
 }
-
 
 
 /**
@@ -49,7 +45,7 @@
  * Default constructor for a new ConfigureHealthCheckRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ConfigureHealthCheckRequest object.
@@ -60,7 +56,7 @@
  * @param theHealthCheck A structure containing the configuration
  * information for the new healthcheck.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andHealthCheck:(ElasticLoadBalancingHealthCheck *)theHealthCheck;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andHealthCheck:(ElasticLoadBalancingHealthCheck *)theHealthCheck;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

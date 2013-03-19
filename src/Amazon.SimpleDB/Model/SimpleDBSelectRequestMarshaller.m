@@ -17,12 +17,11 @@
 
 @implementation SimpleDBSelectRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBSelectRequest *)selectRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBSelectRequest *)selectRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"Select"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"Select" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[selectRequest delegate]];
     [request setCredentials:[selectRequest credentials]];
@@ -41,7 +40,7 @@
     }
     if (selectRequest != nil) {
         if (selectRequest.consistentReadIsSet) {
-            [request setParameterValue:(selectRequest.consistentRead ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ConsistentRead"]];
+            [request setParameterValue:(selectRequest.consistentRead ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ConsistentRead"]];
         }
     }
 

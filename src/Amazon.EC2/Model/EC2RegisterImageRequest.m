@@ -28,24 +28,22 @@
 @synthesize blockDeviceMappings;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        imageLocation       = nil;
-        name                = nil;
-        descriptionValue    = nil;
-        architecture        = nil;
-        kernelId            = nil;
-        ramdiskId           = nil;
-        rootDeviceName      = nil;
+        imageLocation = nil;
+        name = nil;
+        descriptionValue = nil;
+        architecture = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        rootDeviceName = nil;
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithImageLocation:(NSString *)theImageLocation
-{
+- (id)initWithImageLocation:(NSString *)theImageLocation {
     if (self = [self init]) {
         self.imageLocation = theImageLocation;
     }
@@ -54,8 +52,7 @@
 }
 
 
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -64,8 +61,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +78,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

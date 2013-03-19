@@ -25,21 +25,19 @@
 @synthesize forceIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId   = nil;
+        volumeId = nil;
         instanceId = nil;
-        device     = nil;
-        force      = NO;
+        device = nil;
+        force = NO;
         forceIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithVolumeId:(NSString *)theVolumeId
-{
+- (id)initWithVolumeId:(NSString *)theVolumeId {
     if (self = [self init]) {
         self.volumeId = theVolumeId;
     }
@@ -48,9 +46,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,13 +61,10 @@
 }
 
 
--(void)setForce:(bool)theValue
-{
-    force      = theValue;
+- (void)setForce:(bool)theValue {
+    force = theValue;
     forceIsSet = YES;
 }
-
-
 
 
 @end

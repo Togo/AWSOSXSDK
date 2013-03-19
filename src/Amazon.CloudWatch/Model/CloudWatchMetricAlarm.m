@@ -42,39 +42,37 @@
 @synthesize comparisonOperator;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        alarmName                          = nil;
-        alarmArn                           = nil;
-        alarmDescription                   = nil;
+        alarmName = nil;
+        alarmArn = nil;
+        alarmDescription = nil;
         alarmConfigurationUpdatedTimestamp = nil;
-        actionsEnabled                     = NO;
-        actionsEnabledIsSet                = NO;
-        oKActions                          = [[NSMutableArray alloc] initWithCapacity:1];
-        alarmActions                       = [[NSMutableArray alloc] initWithCapacity:1];
-        insufficientDataActions            = [[NSMutableArray alloc] initWithCapacity:1];
-        stateValue                         = nil;
-        stateReason                        = nil;
-        stateReasonData                    = nil;
-        stateUpdatedTimestamp              = nil;
-        metricName                         = nil;
-        namespace                          = nil;
-        statistic                          = nil;
-        dimensions                         = [[NSMutableArray alloc] initWithCapacity:1];
-        period                             = nil;
-        unit                               = nil;
-        evaluationPeriods                  = nil;
-        threshold                          = nil;
-        comparisonOperator                 = nil;
+        actionsEnabled = NO;
+        actionsEnabledIsSet = NO;
+        oKActions = [[NSMutableArray alloc] initWithCapacity:1];
+        alarmActions = [[NSMutableArray alloc] initWithCapacity:1];
+        insufficientDataActions = [[NSMutableArray alloc] initWithCapacity:1];
+        stateValue = nil;
+        stateReason = nil;
+        stateReasonData = nil;
+        stateUpdatedTimestamp = nil;
+        metricName = nil;
+        namespace = nil;
+        statistic = nil;
+        dimensions = [[NSMutableArray alloc] initWithCapacity:1];
+        period = nil;
+        unit = nil;
+        evaluationPeriods = nil;
+        threshold = nil;
+        comparisonOperator = nil;
     }
 
     return self;
 }
 
 
--(void)addOKAction:(NSString *)oKActionObject
-{
+- (void)addOKAction:(NSString *)oKActionObject {
     if (oKActions == nil) {
         oKActions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -82,8 +80,7 @@
     [oKActions addObject:oKActionObject];
 }
 
--(void)addAlarmAction:(NSString *)alarmActionObject
-{
+- (void)addAlarmAction:(NSString *)alarmActionObject {
     if (alarmActions == nil) {
         alarmActions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -91,8 +88,7 @@
     [alarmActions addObject:alarmActionObject];
 }
 
--(void)addInsufficientDataAction:(NSString *)insufficientDataActionObject
-{
+- (void)addInsufficientDataAction:(NSString *)insufficientDataActionObject {
     if (insufficientDataActions == nil) {
         insufficientDataActions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -100,8 +96,7 @@
     [insufficientDataActions addObject:insufficientDataActionObject];
 }
 
--(void)addDimension:(CloudWatchDimension *)dimensionObject
-{
+- (void)addDimension:(CloudWatchDimension *)dimensionObject {
     if (dimensions == nil) {
         dimensions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -110,8 +105,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -143,13 +137,10 @@
 }
 
 
--(void)setActionsEnabled:(bool)theValue
-{
-    actionsEnabled      = theValue;
+- (void)setActionsEnabled:(bool)theValue {
+    actionsEnabled = theValue;
     actionsEnabledIsSet = YES;
 }
-
-
 
 
 @end

@@ -33,30 +33,28 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId                        = nil;
-        instanceType                      = nil;
-        kernelId                          = nil;
-        ramdiskId                         = nil;
-        userData                          = nil;
-        disableApiTermination             = NO;
-        disableApiTerminationIsSet        = NO;
+        instanceId = nil;
+        instanceType = nil;
+        kernelId = nil;
+        ramdiskId = nil;
+        userData = nil;
+        disableApiTermination = NO;
+        disableApiTerminationIsSet = NO;
         instanceInitiatedShutdownBehavior = nil;
-        rootDeviceName                    = nil;
-        blockDeviceMappings               = [[NSMutableArray alloc] initWithCapacity:1];
-        productCodes                      = [[NSMutableArray alloc] initWithCapacity:1];
-        ebsOptimized                      = NO;
-        ebsOptimizedIsSet                 = NO;
+        rootDeviceName = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
 
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMapping *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -64,8 +62,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addProductCode:(EC2ProductCode *)productCodeObject
-{
+- (void)addProductCode:(EC2ProductCode *)productCodeObject {
     if (productCodes == nil) {
         productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -74,8 +71,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -97,19 +93,15 @@
 }
 
 
--(void)setDisableApiTermination:(bool)theValue
-{
-    disableApiTermination      = theValue;
+- (void)setDisableApiTermination:(bool)theValue {
+    disableApiTermination = theValue;
     disableApiTerminationIsSet = YES;
 }
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

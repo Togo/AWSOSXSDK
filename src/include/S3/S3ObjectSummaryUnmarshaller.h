@@ -20,7 +20,7 @@
 
 @class S3Bucket;
 
-@interface S3ObjectSummaryUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3ObjectSummaryUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3ObjectSummary *summary;
 }
 

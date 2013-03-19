@@ -26,26 +26,23 @@
  * Scan Result
  */
 
-@interface DynamoDBScanResponse:DynamoDBResponse
-
-{
+@interface DynamoDBScanResponse : DynamoDBResponse {
     NSMutableArray *items;
-    NSNumber       *count;
-    NSNumber       *scannedCount;
-    DynamoDBKey    *lastEvaluatedKey;
-    NSNumber       *consumedCapacityUnits;
+    NSNumber *count;
+    NSNumber *scannedCount;
+    DynamoDBKey *lastEvaluatedKey;
+    NSNumber *consumedCapacityUnits;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Items property for this object.
@@ -86,11 +83,10 @@
 @property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 
-
 /**
  * Returns a value from the items array for the specified index
  */
--(NSDictionary *)itemsObjectAtIndex:(int)index;
+- (NSDictionary *)itemsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -98,7 +94,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

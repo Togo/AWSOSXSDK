@@ -17,12 +17,11 @@
 
 @implementation SESVerifyDomainDkimRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESVerifyDomainDkimRequest *)verifyDomainDkimRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"VerifyDomainDkim"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"VerifyDomainDkim" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[verifyDomainDkimRequest delegate]];
     [request setCredentials:[verifyDomainDkimRequest credentials]];

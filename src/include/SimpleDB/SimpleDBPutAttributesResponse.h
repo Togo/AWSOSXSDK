@@ -27,8 +27,7 @@
 /**
  * Put Attributes
  */
-@interface SimpleDBPutAttributesResponse:SimpleDBResponse
-{
+@interface SimpleDBPutAttributesResponse : SimpleDBResponse {
 }
 
 @end

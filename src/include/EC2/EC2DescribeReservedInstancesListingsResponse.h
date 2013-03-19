@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Reserved Instances Listings Response
  */
 
-@interface EC2DescribeReservedInstancesListingsResponse:EC2Response
-
-{
+@interface EC2DescribeReservedInstancesListingsResponse : EC2Response {
     NSMutableArray *reservedInstancesListings;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ReservedInstancesListings property for this object.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *reservedInstancesListings;
 
 
-
 /**
  * Returns a value from the reservedInstancesListings array for the specified index
  */
--(EC2ReservedInstancesListing *)reservedInstancesListingsObjectAtIndex:(int)index;
+- (EC2ReservedInstancesListing *)reservedInstancesListingsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,19 +17,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Put Scheduled Update Group Action Request
  */
 
-@interface AutoScalingPutScheduledUpdateGroupActionRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingPutScheduledUpdateGroupActionRequest : AmazonServiceRequestConfig {
     NSString *autoScalingGroupName;
     NSString *scheduledActionName;
-    NSDate   *time;
-    NSDate   *startTime;
-    NSDate   *endTime;
+    NSDate *time;
+    NSDate *startTime;
+    NSDate *endTime;
     NSString *recurrence;
     NSNumber *minSize;
     NSNumber *maxSize;
@@ -37,13 +34,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name or ARN of the Auto Scaling group.
@@ -123,7 +118,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

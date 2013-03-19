@@ -17,27 +17,22 @@
 #import "EC2InstanceState.h"
 
 
-
 /**
  * Instance State Change
  */
 
-@interface EC2InstanceStateChange:NSObject
-
-{
-    NSString         *instanceId;
+@interface EC2InstanceStateChange : NSObject {
+    NSString *instanceId;
     EC2InstanceState *currentState;
     EC2InstanceState *previousState;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the instance whose state changed.
@@ -60,7 +55,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

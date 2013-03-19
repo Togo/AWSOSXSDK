@@ -22,18 +22,16 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         resources = [[NSMutableArray alloc] initWithCapacity:1];
-        tags      = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithResources:(NSMutableArray *)theResources
-{
+- (id)initWithResources:(NSMutableArray *)theResources {
     if (self = [self init]) {
         self.resources = theResources;
     }
@@ -42,8 +40,7 @@
 }
 
 
--(void)addResource:(NSString *)resourceObject
-{
+- (void)addResource:(NSString *)resourceObject {
     if (resources == nil) {
         resources = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -51,8 +48,7 @@
     [resources addObject:resourceObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +57,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +68,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Describe Account Attributes Request Marshaller
  */
-@interface EC2DescribeAccountAttributesRequestMarshaller:NSObject {
+@interface EC2DescribeAccountAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest;
 
 
 @end

@@ -22,30 +22,26 @@
 @synthesize storage;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instanceId = nil;
-        storage    = nil;
+        storage = nil;
     }
 
     return self;
 }
 
--(id)initWithInstanceId:(NSString *)theInstanceId andStorage:(EC2Storage *)theStorage
-{
+- (id)initWithInstanceId:(NSString *)theInstanceId andStorage:(EC2Storage *)theStorage {
     if (self = [self init]) {
         self.instanceId = theInstanceId;
-        self.storage    = theStorage;
+        self.storage = theStorage;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

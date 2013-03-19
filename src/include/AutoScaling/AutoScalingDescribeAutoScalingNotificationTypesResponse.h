@@ -17,27 +17,23 @@
 #import "AutoScalingResponse.h"
 
 
-
 /**
  * Describe Auto Scaling Notification Types Result
  */
 
-@interface AutoScalingDescribeAutoScalingNotificationTypesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeAutoScalingNotificationTypesResponse : AutoScalingResponse {
     NSMutableArray *autoScalingNotificationTypes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Notification types supported by Auto Scaling. They are:
@@ -50,11 +46,10 @@
 @property (nonatomic, strong) NSMutableArray *autoScalingNotificationTypes;
 
 
-
 /**
  * Returns a value from the autoScalingNotificationTypes array for the specified index
  */
--(NSString *)autoScalingNotificationTypesObjectAtIndex:(int)index;
+- (NSString *)autoScalingNotificationTypesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -62,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -24,8 +24,7 @@
 /**
  * Set Topic Attributes
  */
-@interface SNSSetTopicAttributesResponse:SNSResponse
-{
+@interface SNSSetTopicAttributesResponse : SNSResponse {
 }
 
 @end

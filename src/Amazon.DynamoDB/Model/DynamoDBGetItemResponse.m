@@ -22,10 +22,9 @@
 @synthesize consumedCapacityUnits;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        item                  = [[NSMutableDictionary alloc] initWithCapacity:1];
+        item = [[NSMutableDictionary alloc] initWithCapacity:1];
         consumedCapacityUnits = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ProvisionedThroughputExceededException"]) {
@@ -59,14 +57,12 @@
 }
 
 
--(DynamoDBAttributeValue *)itemValueForKey:(NSString *)theKey
-{
-    return (DynamoDBAttributeValue *)[item valueForKey:theKey];
+- (DynamoDBAttributeValue *)itemValueForKey:(NSString *)theKey {
+    return (DynamoDBAttributeValue *) [item valueForKey:theKey];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -77,9 +73,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

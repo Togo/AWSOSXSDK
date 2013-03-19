@@ -26,24 +26,21 @@
  * Assume Role Result
  */
 
-@interface SecurityTokenServiceAssumeRoleResponse:SecurityTokenServiceResponse
-
-{
-    SecurityTokenServiceCredentials     *credentials;
+@interface SecurityTokenServiceAssumeRoleResponse : SecurityTokenServiceResponse {
+    SecurityTokenServiceCredentials *credentials;
     SecurityTokenServiceAssumedRoleUser *assumedRoleUser;
-    NSNumber                            *packedPolicySize;
+    NSNumber *packedPolicySize;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The temporary security credentials, which includes an Access Key ID, a
@@ -78,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2CreateVolumeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateVolumeRequest *)createVolumeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateVolumeRequest *)createVolumeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateVolume"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateVolume" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createVolumeRequest delegate]];
     [request setCredentials:[createVolumeRequest credentials]];

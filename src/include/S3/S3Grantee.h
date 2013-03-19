@@ -33,7 +33,7 @@
  * </p>
  *
  */
-@interface S3Grantee:S3Owner {
+@interface S3Grantee : S3Owner {
     NSString *URI;
     NSString *emailAddress;
 }
@@ -50,14 +50,14 @@
  *
  * @return An initialized S3Grantee object representing a CanonicalUser with the specified ID and displayName.
  */
-+(id)granteeWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
++ (id)granteeWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
 
 /** Returns an initialized S3Grantee representing a group with the specified URI.
  * @param theURI The URI for the group.
  *
  * @return An initialized S3Grantee representing a group with the specified URI.
  **/
-+(id)granteeWithURI:(NSString *)theURI;
++ (id)granteeWithURI:(NSString *)theURI;
 
 /** Returns an initialized S3Grantee representing a user with the specified email address.
  *
@@ -65,15 +65,15 @@
  *
  * @return An initialized S3Grantee representing a user with the specified email address.
  */
-+(id)granteeWithEmailAddress:(NSString *)theEmailAddress;
++ (id)granteeWithEmailAddress:(NSString *)theEmailAddress;
 
 /** Represents the group of all users */
-+(id)allUsers;
++ (id)allUsers;
 
 /** Represents the group of authenticated users */
-+(id)authenticatedUsers;
++ (id)authenticatedUsers;
 
 /** Returns the XML representation of the grantee */
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

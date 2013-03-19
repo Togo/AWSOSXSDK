@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Auto Scaling Groups Request
  */
 
-@interface AutoScalingDescribeAutoScalingGroupsRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDescribeAutoScalingGroupsRequest : AmazonServiceRequestConfig {
     NSMutableArray *autoScalingGroupNames;
-    NSString       *nextToken;
-    NSNumber       *maxRecords;
+    NSString *nextToken;
+    NSNumber *maxRecords;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of Auto Scaling group names.
@@ -64,7 +59,7 @@
  * Adds a single object to autoScalingGroupNames.
  * This function will alloc and init autoScalingGroupNames if not already done.
  */
--(void)addAutoScalingGroupName:(NSString *)autoScalingGroupNameObject;
+- (void)addAutoScalingGroupName:(NSString *)autoScalingGroupNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create L B Cookie Stickiness Policy Request
  */
 
-@interface ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest : AmazonServiceRequestConfig {
     NSString *loadBalancerName;
     NSString *policyName;
     NSNumber *cookieExpirationPeriod;
 }
-
 
 
 /**
@@ -56,7 +52,7 @@
  * Default constructor for a new CreateLBCookieStickinessPolicyRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateLBCookieStickinessPolicyRequest object.
@@ -67,7 +63,7 @@
  * @param thePolicyName The name of the policy being created. The name
  * must be unique within the set of policies for this LoadBalancer.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

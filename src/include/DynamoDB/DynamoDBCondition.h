@@ -16,18 +16,14 @@
 #import "DynamoDBAttributeValue.h"
 
 
-
 /**
  * Condition
  */
 
-@interface DynamoDBCondition:NSObject
-
-{
+@interface DynamoDBCondition : NSObject {
     NSMutableArray *attributeValueList;
-    NSString       *comparisonOperator;
+    NSString *comparisonOperator;
 }
-
 
 
 /**
@@ -67,13 +63,13 @@
  * Default constructor for a new Condition object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Adds a single object to attributeValueList.
  * This function will alloc and init attributeValueList if not already done.
  */
--(void)addAttributeValueList:(DynamoDBAttributeValue *)attributeValueListObject;
+- (void)addAttributeValueList:(DynamoDBAttributeValue *)attributeValueListObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -81,7 +77,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

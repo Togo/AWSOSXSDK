@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeImageAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeImageAttributeRequest *)describeImageAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeImageAttributeRequest *)describeImageAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeImageAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeImageAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeImageAttributeRequest delegate]];
     [request setCredentials:[describeImageAttributeRequest credentials]];

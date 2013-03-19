@@ -20,8 +20,7 @@
 /**
  * Disassociate Address
  */
-@interface EC2DisassociateAddressResponse:EC2Response
-{
+@interface EC2DisassociateAddressResponse : EC2Response {
 }
 
 @end

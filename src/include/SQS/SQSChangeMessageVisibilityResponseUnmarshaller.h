@@ -16,17 +16,17 @@
 #import "SQSChangeMessageVisibilityResponse.h"
 #import "SQSResponseUnmarshaller.h"
 
-@interface SQSChangeMessageVisibilityResponseUnmarshaller:SQSResponseUnmarshaller
-{
+@interface SQSChangeMessageVisibilityResponseUnmarshaller : SQSResponseUnmarshaller {
     SQSChangeMessageVisibilityResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SQSChangeMessageVisibilityResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SQSChangeMessageVisibilityResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SQSChangeMessageVisibilityResponse *)response;
 
 @end

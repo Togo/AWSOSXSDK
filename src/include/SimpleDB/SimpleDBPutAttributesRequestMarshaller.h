@@ -24,11 +24,11 @@
 /**
  * Put Attributes Request Marshaller
  */
-@interface SimpleDBPutAttributesRequestMarshaller:NSObject {
+@interface SimpleDBPutAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBPutAttributesRequest *)putAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBPutAttributesRequest *)putAttributesRequest;
 
 
 @end

@@ -26,24 +26,21 @@
 @synthesize minAdjustmentStep;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        policyName           = nil;
-        scalingAdjustment    = nil;
-        adjustmentType       = nil;
-        cooldown             = nil;
-        minAdjustmentStep    = nil;
+        policyName = nil;
+        scalingAdjustment = nil;
+        adjustmentType = nil;
+        cooldown = nil;
+        minAdjustmentStep = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

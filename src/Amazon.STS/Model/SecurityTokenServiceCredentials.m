@@ -24,34 +24,30 @@
 @synthesize expiration;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        accessKeyId     = nil;
+        accessKeyId = nil;
         secretAccessKey = nil;
-        sessionToken    = nil;
-        expiration      = nil;
+        sessionToken = nil;
+        expiration = nil;
     }
 
     return self;
 }
 
--(id)initWithAccessKeyId:(NSString *)theAccessKeyId andSecretAccessKey:(NSString *)theSecretAccessKey andSessionToken:(NSString *)theSessionToken andExpiration:(NSDate *)theExpiration
-{
+- (id)initWithAccessKeyId:(NSString *)theAccessKeyId andSecretAccessKey:(NSString *)theSecretAccessKey andSessionToken:(NSString *)theSessionToken andExpiration:(NSDate *)theExpiration {
     if (self = [self init]) {
-        self.accessKeyId     = theAccessKeyId;
+        self.accessKeyId = theAccessKeyId;
         self.secretAccessKey = theSecretAccessKey;
-        self.sessionToken    = theSessionToken;
-        self.expiration      = theExpiration;
+        self.sessionToken = theSessionToken;
+        self.expiration = theExpiration;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

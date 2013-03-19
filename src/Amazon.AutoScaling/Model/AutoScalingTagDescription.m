@@ -26,14 +26,13 @@
 @synthesize propagateAtLaunchIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        resourceId             = nil;
-        resourceType           = nil;
-        key                    = nil;
-        value                  = nil;
-        propagateAtLaunch      = NO;
+        resourceId = nil;
+        resourceType = nil;
+        key = nil;
+        value = nil;
+        propagateAtLaunch = NO;
         propagateAtLaunchIsSet = NO;
     }
 
@@ -41,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,13 +56,10 @@
 }
 
 
--(void)setPropagateAtLaunch:(bool)theValue
-{
-    propagateAtLaunch      = theValue;
+- (void)setPropagateAtLaunch:(bool)theValue {
+    propagateAtLaunch = theValue;
     propagateAtLaunchIsSet = YES;
 }
-
-
 
 
 @end

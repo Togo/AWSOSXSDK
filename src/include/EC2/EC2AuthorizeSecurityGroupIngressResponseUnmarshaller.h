@@ -16,17 +16,17 @@
 #import "EC2AuthorizeSecurityGroupIngressResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2AuthorizeSecurityGroupIngressResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2AuthorizeSecurityGroupIngressResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2AuthorizeSecurityGroupIngressResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2AuthorizeSecurityGroupIngressResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2AuthorizeSecurityGroupIngressResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2AuthorizeSecurityGroupIngressResponse *)response;
 
 @end

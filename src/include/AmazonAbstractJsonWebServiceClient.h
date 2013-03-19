@@ -16,8 +16,7 @@
 #import "AmazonAbstractWebServiceClient.h"
 
 
-@interface AmazonAbstractJsonWebServiceClient : AmazonAbstractWebServiceClient
-{
+@interface AmazonAbstractJsonWebServiceClient : AmazonAbstractWebServiceClient {
 }
 
 @end

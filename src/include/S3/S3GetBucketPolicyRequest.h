@@ -32,7 +32,7 @@
  * <br />Required Parameters: bucket
  *
  */
-@interface S3GetBucketPolicyRequest:S3Request {
+@interface S3GetBucketPolicyRequest : S3Request {
 }
 
 @end

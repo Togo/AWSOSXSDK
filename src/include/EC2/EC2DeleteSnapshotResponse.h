@@ -20,8 +20,7 @@
 /**
  * Delete Snapshot
  */
-@interface EC2DeleteSnapshotResponse:EC2Response
-{
+@interface EC2DeleteSnapshotResponse : EC2Response {
 }
 
 @end

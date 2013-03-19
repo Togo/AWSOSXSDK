@@ -21,7 +21,7 @@
 #import "S3OwnerUnmarshaller.h"
 #import "S3GrantUnmarshaller.h"
 
-@interface S3AccessControlListUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3AccessControlListUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3AccessControlList *accessControlList;
 }
 

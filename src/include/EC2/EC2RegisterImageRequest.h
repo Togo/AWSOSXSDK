@@ -18,24 +18,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Register Image Request
  */
 
-@interface EC2RegisterImageRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *imageLocation;
-    NSString       *name;
-    NSString       *descriptionValue;
-    NSString       *architecture;
-    NSString       *kernelId;
-    NSString       *ramdiskId;
-    NSString       *rootDeviceName;
+@interface EC2RegisterImageRequest : AmazonServiceRequestConfig {
+    NSString *imageLocation;
+    NSString *name;
+    NSString *descriptionValue;
+    NSString *architecture;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSString *rootDeviceName;
     NSMutableArray *blockDeviceMappings;
 }
-
 
 
 /**
@@ -92,7 +88,7 @@
  * Default constructor for a new RegisterImageRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new RegisterImageRequest object.
@@ -101,13 +97,13 @@
  * @param theImageLocation The full path to your AMI manifest in Amazon
  * S3 storage.
  */
--(id)initWithImageLocation:(NSString *)theImageLocation;
+- (id)initWithImageLocation:(NSString *)theImageLocation;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -115,7 +111,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

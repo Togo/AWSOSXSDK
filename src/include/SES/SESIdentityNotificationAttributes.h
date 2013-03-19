@@ -20,23 +20,19 @@
  * Identity Notification Attributes
  */
 
-@interface SESIdentityNotificationAttributes:NSObject
-
-{
+@interface SESIdentityNotificationAttributes : NSObject {
     NSString *bounceTopic;
     NSString *complaintTopic;
-    bool     forwardingEnabled;
-    bool     forwardingEnabledIsSet;
+    bool forwardingEnabled;
+    bool forwardingEnabledIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The Amazon Resource Name (ARN) of the Amazon Simple Notification
@@ -58,7 +54,7 @@
  * email, while <code>false</code> indicates that feedback will be
  * published only to the specified Bounce and Complaint topics.
  */
-@property (nonatomic) bool           forwardingEnabled;
+@property (nonatomic) bool forwardingEnabled;
 
 @property (nonatomic, readonly) bool forwardingEnabledIsSet;
 
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

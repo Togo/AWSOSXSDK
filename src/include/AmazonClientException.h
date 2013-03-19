@@ -22,7 +22,7 @@
  */
 @interface AmazonClientException : NSException {
     NSString *message;
-    NSError  *error;
+    NSError *error;
 }
 
 /** Description of the exception */
@@ -35,7 +35,7 @@
  *
  * @param message The message.
  */
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 /** Initialize the exception with a name, reason and userInfo.
  *
@@ -49,14 +49,14 @@
  *
  * @param theMessage The user-friendly message
  */
-+(id)exceptionWithMessage:(NSString *)theMessage;
++ (id)exceptionWithMessage:(NSString *)theMessage;
 
 /** Return an exception with the given message and error.
  *
  * @param theMessage The user-friendly message
  * @param theError The error
  */
-+(id)exceptionWithMessage:(NSString *)theMessage andError:(NSError *)theError;
++ (id)exceptionWithMessage:(NSString *)theMessage andError:(NSError *)theError;
 
 
 @end

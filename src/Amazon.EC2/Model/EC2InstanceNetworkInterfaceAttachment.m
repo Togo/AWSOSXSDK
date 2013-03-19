@@ -26,14 +26,13 @@
 @synthesize deleteOnTerminationIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        attachmentId             = nil;
-        deviceIndex              = nil;
-        status                   = nil;
-        attachTime               = nil;
-        deleteOnTermination      = NO;
+        attachmentId = nil;
+        deviceIndex = nil;
+        status = nil;
+        attachTime = nil;
+        deleteOnTermination = NO;
         deleteOnTerminationIsSet = NO;
     }
 
@@ -41,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,13 +56,10 @@
 }
 
 
--(void)setDeleteOnTermination:(bool)theValue
-{
-    deleteOnTermination      = theValue;
+- (void)setDeleteOnTermination:(bool)theValue {
+    deleteOnTermination = theValue;
     deleteOnTerminationIsSet = YES;
 }
-
-
 
 
 @end

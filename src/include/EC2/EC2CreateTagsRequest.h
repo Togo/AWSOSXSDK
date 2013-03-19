@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Tags Request
  */
 
-@interface EC2CreateTagsRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateTagsRequest : AmazonServiceRequestConfig {
     NSMutableArray *resources;
     NSMutableArray *tags;
 }
-
 
 
 /**
@@ -49,7 +45,7 @@
  * Default constructor for a new CreateTagsRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateTagsRequest object.
@@ -60,19 +56,19 @@
  * @param theTags The tags to add or overwrite for the specified
  * resources. Each tag item consists of a key-value pair.
  */
--(id)initWithResources:(NSMutableArray *)theResources andTags:(NSMutableArray *)theTags;
+- (id)initWithResources:(NSMutableArray *)theResources andTags:(NSMutableArray *)theTags;
 
 /**
  * Adds a single object to resources.
  * This function will alloc and init resources if not already done.
  */
--(void)addResource:(NSString *)resourceObject;
+- (void)addResource:(NSString *)resourceObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -80,7 +76,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

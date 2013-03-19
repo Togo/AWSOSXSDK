@@ -26,8 +26,7 @@
 @implementation DynamoDBBatchWriteItemResponseUnmarshaller
 
 
-+(DynamoDBBatchWriteItemResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBBatchWriteItemResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBBatchWriteItemResponse *batchWriteItemResult = [[DynamoDBBatchWriteItemResponse alloc] init];
 
 
@@ -46,7 +45,6 @@
         for (NSString *key in [unprocessedItemsObject allKeys]) {
             NSMutableArray *arrayObject = [[NSMutableArray alloc] init];
             [batchWriteItemResult.unprocessedItems setValue:arrayObject forKey:key];
-
 
 
             NSArray *valueArray = [unprocessedItemsObject valueForKey:key];

@@ -20,7 +20,7 @@
 /** Contains all the information about the getBucketPolicy operation.
  *
  */
-@interface S3GetBucketPolicyResponse:S3Response {
+@interface S3GetBucketPolicyResponse : S3Response {
     S3BucketPolicy *policy;
 }
 

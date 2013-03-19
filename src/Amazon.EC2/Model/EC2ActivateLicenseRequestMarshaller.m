@@ -17,12 +17,11 @@
 
 @implementation EC2ActivateLicenseRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ActivateLicenseRequest *)activateLicenseRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ActivateLicenseRequest *)activateLicenseRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ActivateLicense"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ActivateLicense" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[activateLicenseRequest delegate]];
     [request setCredentials:[activateLicenseRequest credentials]];

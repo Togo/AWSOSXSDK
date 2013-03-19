@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Snapshot Request
  */
 
-@interface EC2CreateSnapshotRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateSnapshotRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
     NSString *descriptionValue;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new CreateSnapshotRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateSnapshotRequest object.
@@ -56,7 +52,7 @@
  * snapshot.
  * @param theDescriptionValue The description for the new snapshot.
  */
--(id)initWithVolumeId:(NSString *)theVolumeId andDescriptionValue:(NSString *)theDescriptionValue;
+- (id)initWithVolumeId:(NSString *)theVolumeId andDescriptionValue:(NSString *)theDescriptionValue;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

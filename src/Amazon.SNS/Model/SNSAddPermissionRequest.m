@@ -24,33 +24,30 @@
 @synthesize actionNames;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topicArn      = nil;
-        label         = nil;
+        topicArn = nil;
+        label = nil;
         aWSAccountIds = [[NSMutableArray alloc] initWithCapacity:1];
-        actionNames   = [[NSMutableArray alloc] initWithCapacity:1];
+        actionNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActionNames:(NSMutableArray *)theActionNames
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActionNames:(NSMutableArray *)theActionNames {
     if (self = [self init]) {
-        self.topicArn      = theTopicArn;
-        self.label         = theLabel;
+        self.topicArn = theTopicArn;
+        self.label = theLabel;
         self.aWSAccountIds = theAWSAccountIds;
-        self.actionNames   = theActionNames;
+        self.actionNames = theActionNames;
     }
 
     return self;
 }
 
 
--(void)addAWSAccountId:(NSString *)aWSAccountIdObject
-{
+- (void)addAWSAccountId:(NSString *)aWSAccountIdObject {
     if (aWSAccountIds == nil) {
         aWSAccountIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
     [aWSAccountIds addObject:aWSAccountIdObject];
 }
 
--(void)addActionName:(NSString *)actionNameObject
-{
+- (void)addActionName:(NSString *)actionNameObject {
     if (actionNames == nil) {
         actionNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +64,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +77,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

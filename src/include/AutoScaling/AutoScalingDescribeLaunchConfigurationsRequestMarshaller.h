@@ -22,11 +22,11 @@
 /**
  * Describe Launch Configurations Request Marshaller
  */
-@interface AutoScalingDescribeLaunchConfigurationsRequestMarshaller:NSObject {
+@interface AutoScalingDescribeLaunchConfigurationsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeLaunchConfigurationsRequest *)describeLaunchConfigurationsRequest;
 
 
 @end

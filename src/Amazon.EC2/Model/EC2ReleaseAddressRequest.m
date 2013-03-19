@@ -22,18 +22,16 @@
 @synthesize allocationId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        publicIp     = nil;
+        publicIp = nil;
         allocationId = nil;
     }
 
     return self;
 }
 
--(id)initWithPublicIp:(NSString *)thePublicIp
-{
+- (id)initWithPublicIp:(NSString *)thePublicIp {
     if (self = [self init]) {
         self.publicIp = thePublicIp;
     }
@@ -42,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +51,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

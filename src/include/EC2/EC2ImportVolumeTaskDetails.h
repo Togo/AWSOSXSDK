@@ -17,29 +17,24 @@
 #import "EC2DiskImageVolumeDescription.h"
 
 
-
 /**
  * Import Volume Task Details
  */
 
-@interface EC2ImportVolumeTaskDetails:NSObject
-
-{
-    NSNumber                      *bytesConverted;
-    NSString                      *availabilityZone;
-    NSString                      *descriptionValue;
-    EC2DiskImageDescription       *image;
+@interface EC2ImportVolumeTaskDetails : NSObject {
+    NSNumber *bytesConverted;
+    NSString *availabilityZone;
+    NSString *descriptionValue;
+    EC2DiskImageDescription *image;
     EC2DiskImageVolumeDescription *volume;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the BytesConverted property for this object.
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

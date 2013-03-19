@@ -22,10 +22,9 @@
 @synthesize enabledIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        enabled      = NO;
+        enabled = NO;
         enabledIsSet = NO;
     }
 
@@ -33,9 +32,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -47,13 +44,10 @@
 }
 
 
--(void)setEnabled:(bool)theValue
-{
-    enabled      = theValue;
+- (void)setEnabled:(bool)theValue {
+    enabled = theValue;
     enabledIsSet = YES;
 }
-
-
 
 
 @end

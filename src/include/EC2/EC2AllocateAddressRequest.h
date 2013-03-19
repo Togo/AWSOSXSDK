@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Allocate Address Request
  */
 
-@interface EC2AllocateAddressRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2AllocateAddressRequest : AmazonServiceRequestConfig {
     NSString *domain;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Set to <code>vpc</code> to allocate the address to your VPC. By
@@ -52,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

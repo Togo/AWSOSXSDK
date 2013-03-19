@@ -25,13 +25,12 @@
 @synthesize launchConfigurationName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId              = nil;
-        availabilityZone        = nil;
-        lifecycleState          = nil;
-        healthStatus            = nil;
+        instanceId = nil;
+        availabilityZone = nil;
+        lifecycleState = nil;
+        healthStatus = nil;
         launchConfigurationName = nil;
     }
 
@@ -39,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation SQSSendMessageBatchRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSSendMessageBatchRequest *)sendMessageBatchRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSSendMessageBatchRequest *)sendMessageBatchRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"SendMessageBatch"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"SendMessageBatch" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[sendMessageBatchRequest delegate]];
     [request setCredentials:[sendMessageBatchRequest credentials]];

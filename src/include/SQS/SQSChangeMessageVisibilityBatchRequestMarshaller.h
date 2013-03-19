@@ -23,11 +23,11 @@
 /**
  * Change Message Visibility Batch Request Marshaller
  */
-@interface SQSChangeMessageVisibilityBatchRequestMarshaller:NSObject {
+@interface SQSChangeMessageVisibilityBatchRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest;
++ (AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest;
 
 
 @end

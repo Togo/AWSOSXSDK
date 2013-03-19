@@ -21,45 +21,38 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
-    
-    if ([elementName isEqualToString:@"StorageClass"])
-    {
+
+    if ([elementName isEqualToString:@"StorageClass"]) {
         self.transition.storageClass = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Days"])
-    {
+    else if ([elementName isEqualToString:@"Days"]) {
         self.transition.transitionDays = [self.currentText integerValue];
     }
-    else if ([elementName isEqualToString:@"Date"])
-    {
+    else if ([elementName isEqualToString:@"Date"]) {
         self.transition.transitionDate = [AmazonSDKUtil convertStringToDate:self.currentText];
     }
-    else if ([elementName isEqualToString:@"Transition"])
-    {
+    else if ([elementName isEqualToString:@"Transition"]) {
         if (caller != nil) {
             [parser setDelegate:caller];
         }
-        
+
         if (parentObject != nil && [parentObject respondsToSelector:parentSetter]) {
             [parentObject performSelector:parentSetter withObject:self.transition];
         }
-        
+
         return;
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(S3BucketLifecycleConfigurationTransition *)transition
-{
-    if (transition == nil)
-    {
+- (S3BucketLifecycleConfigurationTransition *)transition {
+    if (transition == nil) {
         transition = [[S3BucketLifecycleConfigurationTransition alloc] init];
     }
-    
+
     return transition;
 }
 

@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Queue Attributes Request
  */
 
-@interface SQSSetQueueAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *queueUrl;
+@interface SQSSetQueueAttributesRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
     NSMutableDictionary *attributes;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new SetQueueAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SetQueueAttributesRequest object.
@@ -55,14 +51,14 @@
  * @param theQueueUrl The URL of the SQS queue to take action on.
  * @param theAttributes A map of attributes to set.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andAttributes:(NSMutableDictionary *)theAttributes;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andAttributes:(NSMutableDictionary *)theAttributes;
 
 
 /**
  * Set a value in the dictionary attributes for the specified key.
  * This function will alloc and init attributes if not already done.
  */
--(void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
+- (void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -70,7 +66,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

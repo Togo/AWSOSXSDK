@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Spot Datafeed Subscription Request
  */
 
-@interface EC2CreateSpotDatafeedSubscriptionRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateSpotDatafeedSubscriptionRequest : AmazonServiceRequestConfig {
     NSString *bucket;
     NSString *prefix;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new CreateSpotDatafeedSubscriptionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateSpotDatafeedSubscriptionRequest object.
@@ -55,7 +51,7 @@
  * @param theBucket The Amazon S3 bucket in which to store the Spot
  * Instance datafeed.
  */
--(id)initWithBucket:(NSString *)theBucket;
+- (id)initWithBucket:(NSString *)theBucket;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -16,14 +16,10 @@
 #import "ElasticLoadBalancingInvalidSubnetException.h"
 
 
-
-
 @implementation ElasticLoadBalancingInvalidSubnetException
 
 
-
--(id)initWithMessage:(NSString *)theMessage
-{
+- (id)initWithMessage:(NSString *)theMessage {
     if (self = [super initWithMessage:theMessage]) {
     }
 
@@ -31,14 +27,12 @@
 }
 
 
--(void)setPropertiesWithException:(AmazonServiceException *)theException
-{
+- (void)setPropertiesWithException:(AmazonServiceException *)theException {
     [super setPropertiesWithException:theException];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -47,7 +41,6 @@
 
     return buffer;
 }
-
 
 
 @end

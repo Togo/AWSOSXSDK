@@ -20,8 +20,7 @@
 
 @implementation DynamoDBQueryRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBQueryRequest *)queryRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBQueryRequest *)queryRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[queryRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.Query" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -57,11 +56,11 @@
     }
 
     if (queryRequest.consistentReadIsSet) {
-        [json setValue:(queryRequest.consistentRead ? @"true":@"false") forKey:@"ConsistentRead"];
+        [json setValue:(queryRequest.consistentRead ? @"true" : @"false") forKey:@"ConsistentRead"];
     }
 
     if (queryRequest.countIsSet) {
-        [json setValue:(queryRequest.count ? @"true":@"false") forKey:@"Count"];
+        [json setValue:(queryRequest.count ? @"true" : @"false") forKey:@"Count"];
     }
     if (queryRequest != nil) {
         DynamoDBAttributeValue *hashKeyValue = queryRequest.hashKeyValue;
@@ -124,7 +123,6 @@
         if (rangeKeyCondition != nil) {
             NSMutableDictionary *rangeKeyConditionJson = [[NSMutableDictionary alloc] init];
             [json setValue:rangeKeyConditionJson forKey:@"RangeKeyCondition"];
-
 
 
             if (rangeKeyCondition != nil) {
@@ -194,7 +192,7 @@
     }
 
     if (queryRequest.scanIndexForwardIsSet) {
-        [json setValue:(queryRequest.scanIndexForward ? @"true":@"false") forKey:@"ScanIndexForward"];
+        [json setValue:(queryRequest.scanIndexForward ? @"true" : @"false") forKey:@"ScanIndexForward"];
     }
     if (queryRequest != nil) {
         DynamoDBKey *exclusiveStartKey = queryRequest.exclusiveStartKey;
@@ -318,9 +316,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

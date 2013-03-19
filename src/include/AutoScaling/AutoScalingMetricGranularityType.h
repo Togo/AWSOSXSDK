@@ -20,20 +20,16 @@
  * Metric Granularity Type
  */
 
-@interface AutoScalingMetricGranularityType:NSObject
-
-{
+@interface AutoScalingMetricGranularityType : NSObject {
     NSString *granularity;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The granularity of a Metric.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

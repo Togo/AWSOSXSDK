@@ -16,17 +16,17 @@
 #import "AutoScalingSetInstanceHealthResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingSetInstanceHealthResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingSetInstanceHealthResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingSetInstanceHealthResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingSetInstanceHealthResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingSetInstanceHealthResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingSetInstanceHealthResponse *)response;
 
 @end

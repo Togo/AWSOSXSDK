@@ -17,12 +17,11 @@
 
 @implementation SimpleDBDeleteAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"DeleteAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[deleteAttributesRequest delegate]];
     [request setCredentials:[deleteAttributesRequest credentials]];
@@ -81,7 +80,7 @@
         }
         if (expected != nil) {
             if (expected.existsIsSet) {
-                [request setParameterValue:(expected.exists ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@", @"Expected", @"Exists"]];
+                [request setParameterValue:(expected.exists ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@", @"Expected", @"Exists"]];
             }
         }
     }

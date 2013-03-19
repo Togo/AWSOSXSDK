@@ -22,11 +22,11 @@
 /**
  * Get Send Quota Request Marshaller
  */
-@interface SESGetSendQuotaRequestMarshaller:NSObject {
+@interface SESGetSendQuotaRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESGetSendQuotaRequest *)getSendQuotaRequest;
++ (AmazonServiceRequest *)createRequest:(SESGetSendQuotaRequest *)getSendQuotaRequest;
 
 
 @end

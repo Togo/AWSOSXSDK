@@ -23,41 +23,35 @@
 @synthesize redirectLocation;
 @synthesize expires;
 
--(id)init
-{
-    if (self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         cacheControl = nil;
         contentDisposition = nil;
         contentEncoding = nil;
         redirectLocation = nil;
         expires = 0;
-        
+
         expiresSet = NO;
     }
-    
+
     return self;
 }
 
--(id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket
-{
-    if(self = [self init])
-    {
-        self.key    = aKey;
+- (id)initWithKey:(NSString *)aKey inBucket:(NSString *)aBucket {
+    if (self = [self init]) {
+        self.key = aKey;
         self.bucket = aBucket;
     }
 
     return self;
 }
 
--(void)setExpires:(NSInteger)exp
-{
-    expires    = exp;
+- (void)setExpires:(NSInteger)exp {
+    expires = exp;
     expiresSet = YES;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceUploads];
 
     [super configureURLRequest];
@@ -82,7 +76,7 @@
     }
 
     if (expiresSet) {
-        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long)self.expires]
+        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long) self.expires]
                forHTTPHeaderField:kHttpHdrExpires];
     }
 

@@ -23,23 +23,20 @@
  * Send Message Result
  */
 
-@interface SQSSendMessageResponse:SQSResponse
-
-{
+@interface SQSSendMessageResponse : SQSResponse {
     NSString *mD5OfMessageBody;
     NSString *messageId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * An MD5 digest of the non-URL-encoded message body string. This can be
@@ -61,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

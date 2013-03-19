@@ -22,20 +22,18 @@
 @synthesize action;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        value  = nil;
+        value = nil;
         action = nil;
     }
 
     return self;
 }
 
--(id)initWithValue:(DynamoDBAttributeValue *)theValue andAction:(NSString *)theAction
-{
+- (id)initWithValue:(DynamoDBAttributeValue *)theValue andAction:(NSString *)theAction {
     if (self = [self init]) {
-        self.value  = theValue;
+        self.value = theValue;
         self.action = theAction;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

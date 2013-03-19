@@ -21,8 +21,7 @@
 @implementation DynamoDBBatchWriteResponseUnmarshaller
 
 
-+(DynamoDBBatchWriteResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBBatchWriteResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBBatchWriteResponse *batchWriteResponse = [[DynamoDBBatchWriteResponse alloc] init];
 
 

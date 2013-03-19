@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Load Balancer Policy Request
  */
 
-@interface ElasticLoadBalancingDeleteLoadBalancerPolicyRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingDeleteLoadBalancerPolicyRequest : AmazonServiceRequestConfig {
     NSString *loadBalancerName;
     NSString *policyName;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteLoadBalancerPolicyRequest object.
@@ -57,7 +53,7 @@
  * LoadBalancer. The name must be unique within your AWS account.
  * @param thePolicyName The mnemonic name for the policy being deleted.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

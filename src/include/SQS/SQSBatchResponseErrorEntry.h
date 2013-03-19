@@ -17,31 +17,27 @@
 #import "SQSResponse.h"
 
 
-
 /**
  * Batch Result Error Entry
  */
 
-@interface SQSBatchResponseErrorEntry:SQSResponse
-
-{
+@interface SQSBatchResponseErrorEntry : SQSResponse {
     NSString *idValue;
-    bool     senderFault;
-    bool     senderFaultIsSet;
+    bool senderFault;
+    bool senderFaultIsSet;
     NSString *code;
     NSString *message;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The id of an entry in a batch request.
@@ -51,7 +47,7 @@
 /**
  * Whether the error happened due to the sender's fault.
  */
-@property (nonatomic) bool           senderFault;
+@property (nonatomic) bool senderFault;
 
 @property (nonatomic, readonly) bool senderFaultIsSet;
 
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

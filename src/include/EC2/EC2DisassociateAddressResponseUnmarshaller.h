@@ -16,17 +16,17 @@
 #import "EC2DisassociateAddressResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DisassociateAddressResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DisassociateAddressResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DisassociateAddressResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DisassociateAddressResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DisassociateAddressResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DisassociateAddressResponse *)response;
 
 @end

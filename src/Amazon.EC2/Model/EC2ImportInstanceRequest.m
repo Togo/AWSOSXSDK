@@ -24,21 +24,19 @@
 @synthesize platform;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        descriptionValue    = nil;
+        descriptionValue = nil;
         launchSpecification = nil;
-        diskImages          = [[NSMutableArray alloc] initWithCapacity:1];
-        platform            = nil;
+        diskImages = [[NSMutableArray alloc] initWithCapacity:1];
+        platform = nil;
     }
 
     return self;
 }
 
 
--(void)addDiskImage:(EC2DiskImage *)diskImageObject
-{
+- (void)addDiskImage:(EC2DiskImage *)diskImageObject {
     if (diskImages == nil) {
         diskImages = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

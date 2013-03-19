@@ -19,35 +19,29 @@
 
 @synthesize configuration;
 
--(id)initWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration
-{
+- (id)initWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration {
     self = [super init];
-    if (self)
-    {
-        self.bucket        = theBucketName;
+    if (self) {
+        self.bucket = theBucketName;
         self.configuration = theConfiguration;
     }
 
     return self;
 }
 
--(id)initWithBucketName:(NSString *)theBucketName
-{
+- (id)initWithBucketName:(NSString *)theBucketName {
     return [self initWithBucketName:theBucketName withConfiguration:nil];
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration
-{
++ (id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(BucketWebsiteConfiguration *)theConfiguration {
     return [[S3SetBucketWebsiteConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration];
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName
-{
++ (id)requestWithBucketName:(NSString *)theBucketName {
     return [[S3SetBucketWebsiteConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:nil];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceWebsite];
 
     [super configureURLRequest];
@@ -56,7 +50,7 @@
 
     NSData *data = [[self.configuration toXml] dataUsingEncoding:NSUTF8StringEncoding];
 
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [data length]] forHTTPHeaderField:kHttpHdrContentLength];
     [self.urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
     [self.urlRequest setHTTPBody:data];
 

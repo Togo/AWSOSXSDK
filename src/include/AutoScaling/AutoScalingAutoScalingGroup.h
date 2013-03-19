@@ -19,44 +19,39 @@
 #import "AutoScalingTagDescription.h"
 
 
-
 /**
  * Auto Scaling Group
  */
 
-@interface AutoScalingAutoScalingGroup:NSObject
-
-{
-    NSString       *autoScalingGroupName;
-    NSString       *autoScalingGroupARN;
-    NSString       *launchConfigurationName;
-    NSNumber       *minSize;
-    NSNumber       *maxSize;
-    NSNumber       *desiredCapacity;
-    NSNumber       *defaultCooldown;
+@interface AutoScalingAutoScalingGroup : NSObject {
+    NSString *autoScalingGroupName;
+    NSString *autoScalingGroupARN;
+    NSString *launchConfigurationName;
+    NSNumber *minSize;
+    NSNumber *maxSize;
+    NSNumber *desiredCapacity;
+    NSNumber *defaultCooldown;
     NSMutableArray *availabilityZones;
     NSMutableArray *loadBalancerNames;
-    NSString       *healthCheckType;
-    NSNumber       *healthCheckGracePeriod;
+    NSString *healthCheckType;
+    NSNumber *healthCheckGracePeriod;
     NSMutableArray *instances;
-    NSDate         *createdTime;
+    NSDate *createdTime;
     NSMutableArray *suspendedProcesses;
-    NSString       *placementGroup;
-    NSString       *vPCZoneIdentifier;
+    NSString *placementGroup;
+    NSString *vPCZoneIdentifier;
     NSMutableArray *enabledMetrics;
-    NSString       *status;
+    NSString *status;
     NSMutableArray *tags;
     NSMutableArray *terminationPolicies;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the name of the group.
@@ -205,43 +200,43 @@
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Adds a single object to loadBalancerNames.
  * This function will alloc and init loadBalancerNames if not already done.
  */
--(void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
+- (void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
 
 /**
  * Adds a single object to instances.
  * This function will alloc and init instances if not already done.
  */
--(void)addInstance:(AutoScalingInstance *)instanceObject;
+- (void)addInstance:(AutoScalingInstance *)instanceObject;
 
 /**
  * Adds a single object to suspendedProcesses.
  * This function will alloc and init suspendedProcesses if not already done.
  */
--(void)addSuspendedProcesse:(AutoScalingSuspendedProcess *)suspendedProcesseObject;
+- (void)addSuspendedProcesse:(AutoScalingSuspendedProcess *)suspendedProcesseObject;
 
 /**
  * Adds a single object to enabledMetrics.
  * This function will alloc and init enabledMetrics if not already done.
  */
--(void)addEnabledMetric:(AutoScalingEnabledMetric *)enabledMetricObject;
+- (void)addEnabledMetric:(AutoScalingEnabledMetric *)enabledMetricObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(AutoScalingTagDescription *)tagObject;
+- (void)addTag:(AutoScalingTagDescription *)tagObject;
 
 /**
  * Adds a single object to terminationPolicies.
  * This function will alloc and init terminationPolicies if not already done.
  */
--(void)addTerminationPolicy:(NSString *)terminationPolicyObject;
+- (void)addTerminationPolicy:(NSString *)terminationPolicyObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -249,7 +244,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

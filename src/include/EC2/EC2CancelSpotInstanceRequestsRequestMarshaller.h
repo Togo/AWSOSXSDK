@@ -22,11 +22,11 @@
 /**
  * Cancel Spot Instance Requests Request Marshaller
  */
-@interface EC2CancelSpotInstanceRequestsRequestMarshaller:NSObject {
+@interface EC2CancelSpotInstanceRequestsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CancelSpotInstanceRequestsRequest *)cancelSpotInstanceRequestsRequest;
 
 
 @end

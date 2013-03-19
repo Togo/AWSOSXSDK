@@ -20,8 +20,7 @@
 /**
  * Release Address
  */
-@interface EC2ReleaseAddressResponse:EC2Response
-{
+@interface EC2ReleaseAddressResponse : EC2Response {
 }
 
 @end

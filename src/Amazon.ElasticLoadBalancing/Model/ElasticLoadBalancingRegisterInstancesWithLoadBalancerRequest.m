@@ -22,29 +22,26 @@
 @synthesize instances;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
-        instances        = [[NSMutableArray alloc] initWithCapacity:1];
+        instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andInstances:(NSMutableArray *)theInstances
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andInstances:(NSMutableArray *)theInstances {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
-        self.instances        = theInstances;
+        self.instances = theInstances;
     }
 
     return self;
 }
 
 
--(void)addInstance:(ElasticLoadBalancingInstance *)instanceObject
-{
+- (void)addInstance:(ElasticLoadBalancingInstance *)instanceObject {
     if (instances == nil) {
         instances = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

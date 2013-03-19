@@ -18,25 +18,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Batch Get Item Request
  */
 
-@interface DynamoDBBatchGetItemRequest:AmazonServiceRequestConfig
-
-{
+@interface DynamoDBBatchGetItemRequest : AmazonServiceRequestConfig {
     NSMutableDictionary *requestItems;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of the table name and corresponding items to get by primary key.
@@ -53,7 +48,7 @@
  * Set a value in the dictionary requestItems for the specified key.
  * This function will alloc and init requestItems if not already done.
  */
--(void)setRequestItemsValue:(DynamoDBKeysAndAttributes *)theValue forKey:(NSString *)theKey;
+- (void)setRequestItemsValue:(DynamoDBKeysAndAttributes *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

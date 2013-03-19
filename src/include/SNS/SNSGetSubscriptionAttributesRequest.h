@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Subscription Attributes Request
  */
 
-@interface SNSGetSubscriptionAttributesRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSGetSubscriptionAttributesRequest : AmazonServiceRequestConfig {
     NSString *subscriptionArn;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new GetSubscriptionAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetSubscriptionAttributesRequest object.
@@ -49,7 +45,7 @@
  * @param theSubscriptionArn The ARN of the subscription whose properties
  * you want to get.
  */
--(id)initWithSubscriptionArn:(NSString *)theSubscriptionArn;
+- (id)initWithSubscriptionArn:(NSString *)theSubscriptionArn;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

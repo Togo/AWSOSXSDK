@@ -23,11 +23,11 @@
 /**
  * Deregister Instances From Load Balancer Request Marshaller
  */
-@interface ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequest *)deregisterInstancesFromLoadBalancerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequest *)deregisterInstancesFromLoadBalancerRequest;
 
 
 @end

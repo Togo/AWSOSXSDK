@@ -20,12 +20,11 @@
 
 @synthesize tagsets;
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     NSMutableString *xml = [[NSMutableString alloc] init];
 
     [xml appendString:@"<Tagging>"];
-    
+
     for (S3BucketTagSet *tagset in tagsets) {
         [xml appendString:[tagset toXml]];
     }

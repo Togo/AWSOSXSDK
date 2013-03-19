@@ -18,7 +18,7 @@
 /** The S3CompleteMultipartUploadResult contains all the information about the completeMultipartUploadResult method.
  *
  */
-@interface S3CompleteMultipartUploadResult:NSObject {
+@interface S3CompleteMultipartUploadResult : NSObject {
     NSString *location;
     NSString *bucket;
     NSString *key;

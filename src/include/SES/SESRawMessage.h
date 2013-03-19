@@ -16,25 +16,20 @@
 #import "../AmazonSDKUtil.h"
 
 
-
 /**
  * Raw Message
  */
 
-@interface SESRawMessage:NSObject
-
-{
+@interface SESRawMessage : NSObject {
     NSData *data;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The raw data of the message. The client must ensure that the message
@@ -52,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

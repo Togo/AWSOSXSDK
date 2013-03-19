@@ -22,11 +22,11 @@
 /**
  * Detach Load Balancer From Subnets Request Marshaller
  */
-@interface ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest;
 
 
 @end

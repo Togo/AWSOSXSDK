@@ -22,11 +22,11 @@
 /**
  * Delete Policy Request Marshaller
  */
-@interface AutoScalingDeletePolicyRequestMarshaller:NSObject {
+@interface AutoScalingDeletePolicyRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeletePolicyRequest *)deletePolicyRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeletePolicyRequest *)deletePolicyRequest;
 
 
 @end

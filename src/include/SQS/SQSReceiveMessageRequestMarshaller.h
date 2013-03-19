@@ -22,11 +22,11 @@
 /**
  * Receive Message Request Marshaller
  */
-@interface SQSReceiveMessageRequestMarshaller:NSObject {
+@interface SQSReceiveMessageRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSReceiveMessageRequest *)receiveMessageRequest;
++ (AmazonServiceRequest *)createRequest:(SQSReceiveMessageRequest *)receiveMessageRequest;
 
 
 @end

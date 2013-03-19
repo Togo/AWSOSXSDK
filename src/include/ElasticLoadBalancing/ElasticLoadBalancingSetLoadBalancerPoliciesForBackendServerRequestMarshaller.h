@@ -22,11 +22,11 @@
 /**
  * Set Load Balancer Policies For Backend Server Request Marshaller
  */
-@interface ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequest *)setLoadBalancerPoliciesForBackendServerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequest *)setLoadBalancerPoliciesForBackendServerRequest;
 
 
 @end

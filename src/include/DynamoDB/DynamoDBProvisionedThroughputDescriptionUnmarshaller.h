@@ -22,10 +22,10 @@
 /**
  * Provisioned Throughput Description Unmarshaller
  */
-@interface DynamoDBProvisionedThroughputDescriptionUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBProvisionedThroughputDescriptionUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBProvisionedThroughputDescription *response;
 }
 
-+(DynamoDBProvisionedThroughputDescription *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBProvisionedThroughputDescription *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

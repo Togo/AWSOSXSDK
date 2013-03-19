@@ -22,11 +22,11 @@
 /**
  * Cancel Export Task Request Marshaller
  */
-@interface EC2CancelExportTaskRequestMarshaller:NSObject {
+@interface EC2CancelExportTaskRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelExportTaskRequest *)cancelExportTaskRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CancelExportTaskRequest *)cancelExportTaskRequest;
 
 
 @end

@@ -24,12 +24,11 @@
 @synthesize earliestAllowedDeactivationTime;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        capacity                        = nil;
-        instanceCapacity                = nil;
-        state                           = nil;
+        capacity = nil;
+        instanceCapacity = nil;
+        state = nil;
         earliestAllowedDeactivationTime = nil;
     }
 
@@ -37,9 +36,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -25,11 +25,11 @@
 /**
  * Get Metric Statistics Request Marshaller
  */
-@interface CloudWatchGetMetricStatisticsRequestMarshaller:NSObject {
+@interface CloudWatchGetMetricStatisticsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest;
 
 
 @end

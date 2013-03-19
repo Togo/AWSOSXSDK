@@ -25,8 +25,7 @@
 @implementation DynamoDBBatchGetItemResponseUnmarshaller
 
 
-+(DynamoDBBatchGetItemResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBBatchGetItemResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBBatchGetItemResponse *batchGetItemResult = [[DynamoDBBatchGetItemResponse alloc] init];
 
 

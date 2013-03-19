@@ -16,17 +16,17 @@
 #import "EC2DeleteSecurityGroupResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DeleteSecurityGroupResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DeleteSecurityGroupResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DeleteSecurityGroupResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DeleteSecurityGroupResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DeleteSecurityGroupResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DeleteSecurityGroupResponse *)response;
 
 @end

@@ -21,7 +21,6 @@
 #define S3_BUCKET_VERSIONING_ENABLED      @"Enabled"
 
 
-
 /**
  * Represents the versioning configuration for a bucket.
  * A bucket's versioning configuration can be in one of three possible states:
@@ -51,9 +50,9 @@
  * for information on how versioning status affects the semantics of that
  * particular API.
  */
-@interface S3BucketVersioningConfiguration:NSObject {
+@interface S3BucketVersioningConfiguration : NSObject {
     NSString *status;
-    bool     isMfaDeleteEnabled;
+    bool isMfaDeleteEnabled;
 }
 
 /** The current status of versioning */
@@ -68,9 +67,9 @@
 
 
 /** Initialize the object with a status */
--(id)initWithStatus:(NSString *)status;
+- (id)initWithStatus:(NSString *)status;
 
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

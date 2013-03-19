@@ -22,11 +22,11 @@
 /**
  * Terminate Instances Request Marshaller
  */
-@interface EC2TerminateInstancesRequestMarshaller:NSObject {
+@interface EC2TerminateInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2TerminateInstancesRequest *)terminateInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2TerminateInstancesRequest *)terminateInstancesRequest;
 
 
 @end

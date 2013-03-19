@@ -19,23 +19,19 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Scan Request
  */
 
-@interface DynamoDBScanRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *tableName;
-    NSMutableArray      *attributesToGet;
-    NSNumber            *limit;
-    bool                count;
-    bool                countIsSet;
+@interface DynamoDBScanRequest : AmazonServiceRequestConfig {
+    NSString *tableName;
+    NSMutableArray *attributesToGet;
+    NSNumber *limit;
+    bool count;
+    bool countIsSet;
     NSMutableDictionary *scanFilter;
-    DynamoDBKey         *exclusiveStartKey;
+    DynamoDBKey *exclusiveStartKey;
 }
-
 
 
 /**
@@ -83,7 +79,7 @@
  * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
  * validation error.
  */
-@property (nonatomic) bool           count;
+@property (nonatomic) bool count;
 
 @property (nonatomic, readonly) bool countIsSet;
 
@@ -107,7 +103,7 @@
  * Default constructor for a new ScanRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ScanRequest object.
@@ -118,20 +114,20 @@
  * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
  * and <code>.</code> (period).
  */
--(id)initWithTableName:(NSString *)theTableName;
+- (id)initWithTableName:(NSString *)theTableName;
 
 /**
  * Adds a single object to attributesToGet.
  * This function will alloc and init attributesToGet if not already done.
  */
--(void)addAttributesToGet:(NSString *)attributesToGetObject;
+- (void)addAttributesToGet:(NSString *)attributesToGetObject;
 
 
 /**
  * Set a value in the dictionary scanFilter for the specified key.
  * This function will alloc and init scanFilter if not already done.
  */
--(void)setScanFilterValue:(DynamoDBCondition *)theValue forKey:(NSString *)theKey;
+- (void)setScanFilterValue:(DynamoDBCondition *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -139,7 +135,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

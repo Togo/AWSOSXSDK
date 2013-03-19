@@ -22,11 +22,11 @@
 /**
  * Delete Key Pair Request Marshaller
  */
-@interface EC2DeleteKeyPairRequestMarshaller:NSObject {
+@interface EC2DeleteKeyPairRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation SimpleDBDomainMetadataRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDomainMetadataRequest *)domainMetadataRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBDomainMetadataRequest *)domainMetadataRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"DomainMetadata"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"DomainMetadata" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[domainMetadataRequest delegate]];
     [request setCredentials:[domainMetadataRequest credentials]];

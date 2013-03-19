@@ -20,16 +20,15 @@
 
 @synthesize deletedObjects, deleteErrors;
 
--(void)processBody
-{
-    NSXMLParser                       *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3DeleteObjectsResultUnmarshaller *unmarshaller = [[S3DeleteObjectsResultUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];
     [parser parse];
 
     self.deletedObjects = [NSArray arrayWithArray:unmarshaller.deletedObjects];
-    self.deleteErrors   = [NSArray arrayWithArray:unmarshaller.deleteErrors];
+    self.deleteErrors = [NSArray arrayWithArray:unmarshaller.deleteErrors];
 
 }
 

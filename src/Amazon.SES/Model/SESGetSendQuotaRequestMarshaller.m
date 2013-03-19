@@ -17,18 +17,16 @@
 
 @implementation SESGetSendQuotaRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESGetSendQuotaRequest *)getSendQuotaRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESGetSendQuotaRequest *)getSendQuotaRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"GetSendQuota"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetSendQuota" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[getSendQuotaRequest delegate]];
     [request setCredentials:[getSendQuotaRequest credentials]];
     [request setEndpoint:[getSendQuotaRequest requestEndpoint]];
     [request setRequestTag:[getSendQuotaRequest requestTag]];
-
 
 
     return request;

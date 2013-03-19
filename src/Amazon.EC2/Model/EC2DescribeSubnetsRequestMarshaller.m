@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeSubnetsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSubnetsRequest *)describeSubnetsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSubnetsRequest *)describeSubnetsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeSubnets"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeSubnets" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeSubnetsRequest delegate]];
     [request setCredentials:[describeSubnetsRequest credentials]];

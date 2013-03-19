@@ -18,32 +18,27 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Spot Price History Request
  */
 
-@interface EC2DescribeSpotPriceHistoryRequest:AmazonServiceRequestConfig
-
-{
-    NSDate         *startTime;
-    NSDate         *endTime;
+@interface EC2DescribeSpotPriceHistoryRequest : AmazonServiceRequestConfig {
+    NSDate *startTime;
+    NSDate *endTime;
     NSMutableArray *instanceTypes;
     NSMutableArray *productDescriptions;
     NSMutableArray *filters;
-    NSString       *availabilityZone;
-    NSNumber       *maxResults;
-    NSString       *nextToken;
+    NSString *availabilityZone;
+    NSNumber *maxResults;
+    NSString *nextToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The start date and time of the Spot Instance price history data.
@@ -93,19 +88,19 @@
  * Adds a single object to instanceTypes.
  * This function will alloc and init instanceTypes if not already done.
  */
--(void)addInstanceType:(NSString *)instanceTypeObject;
+- (void)addInstanceType:(NSString *)instanceTypeObject;
 
 /**
  * Adds a single object to productDescriptions.
  * This function will alloc and init productDescriptions if not already done.
  */
--(void)addProductDescription:(NSString *)productDescriptionObject;
+- (void)addProductDescription:(NSString *)productDescriptionObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -113,7 +108,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

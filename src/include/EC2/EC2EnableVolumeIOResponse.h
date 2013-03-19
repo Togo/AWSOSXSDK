@@ -20,8 +20,7 @@
 /**
  * Enable Volume I O
  */
-@interface EC2EnableVolumeIOResponse:EC2Response
-{
+@interface EC2EnableVolumeIOResponse : EC2Response {
 }
 
 @end

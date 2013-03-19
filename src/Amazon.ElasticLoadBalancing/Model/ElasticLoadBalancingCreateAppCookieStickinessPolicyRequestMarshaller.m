@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingCreateAppCookieStickinessPolicyRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest *)createAppCookieStickinessPolicyRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest *)createAppCookieStickinessPolicyRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"CreateAppCookieStickinessPolicy"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"CreateAppCookieStickinessPolicy" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[createAppCookieStickinessPolicyRequest delegate]];
     [request setCredentials:[createAppCookieStickinessPolicyRequest credentials]];

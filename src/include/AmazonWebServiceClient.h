@@ -15,8 +15,7 @@
 
 #import "AmazonAbstractWebServiceClient.h"
 
-@interface AmazonWebServiceClient:AmazonAbstractWebServiceClient
-{
+@interface AmazonWebServiceClient : AmazonAbstractWebServiceClient {
 }
 
 /** Inits the client with the access key and the secret key.
@@ -24,7 +23,7 @@
  * @param accessKey The AWS Access Key
  * @param secretKey The AWS Secret Key
  */
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
 
 @end
 

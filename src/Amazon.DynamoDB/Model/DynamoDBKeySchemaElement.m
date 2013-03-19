@@ -22,8 +22,7 @@
 @synthesize attributeType;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         attributeName = nil;
         attributeType = nil;
@@ -32,8 +31,7 @@
     return self;
 }
 
--(id)initWithAttributeName:(NSString *)theAttributeName andAttributeType:(NSString *)theAttributeType
-{
+- (id)initWithAttributeName:(NSString *)theAttributeName andAttributeType:(NSString *)theAttributeType {
     if (self = [self init]) {
         self.attributeName = theAttributeName;
         self.attributeType = theAttributeType;
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

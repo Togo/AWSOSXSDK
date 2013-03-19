@@ -24,11 +24,11 @@
 /**
  * Describe Key Pairs Request Marshaller
  */
-@interface EC2DescribeKeyPairsRequestMarshaller:NSObject {
+@interface EC2DescribeKeyPairsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeKeyPairsRequest *)describeKeyPairsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeKeyPairsRequest *)describeKeyPairsRequest;
 
 
 @end

@@ -23,21 +23,18 @@
 @synthesize forceDeleteIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        forceDelete          = NO;
-        forceDeleteIsSet     = NO;
+        forceDelete = NO;
+        forceDeleteIsSet = NO;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setForceDelete:(bool)theValue
-{
-    forceDelete      = theValue;
+- (void)setForceDelete:(bool)theValue {
+    forceDelete = theValue;
     forceDeleteIsSet = YES;
 }
-
-
 
 
 @end

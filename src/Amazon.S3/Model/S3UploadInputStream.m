@@ -24,57 +24,49 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
--(id)init 
-{
+- (id)init {
     if ((self = [super init]) != nil) {
         delay = 0.0;
         packetSize = 32;
         stream = nil;
     }
-    
-    return self;    
+
+    return self;
 }
 
-+(id)inputStreamWithData:(NSData *)data
-{
-	S3UploadInputStream *uploadStream = [S3UploadInputStream new];
-    if(data)
-    {
++ (id)inputStreamWithData:(NSData *)data {
+    S3UploadInputStream *uploadStream = [S3UploadInputStream new];
+    if (data) {
         [uploadStream setStream:[NSInputStream inputStreamWithData:data]];
     }
-	return uploadStream;
+    return uploadStream;
 }
 
-+(id)inputStreamWithFileAtPath:(NSString *)path
-{
-	S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
-	[uploadStream setStream:[NSInputStream inputStreamWithFileAtPath:path]];
-	return uploadStream;
++ (id)inputStreamWithFileAtPath:(NSString *)path {
+    S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
+    [uploadStream setStream:[NSInputStream inputStreamWithFileAtPath:path]];
+    return uploadStream;
 }
 
-+(id)inputStreamWithStream:(NSInputStream *)aStream
-{
-	S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
-	[uploadStream setStream:aStream];
-	return uploadStream;
++ (id)inputStreamWithStream:(NSInputStream *)aStream {
+    S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
+    [uploadStream setStream:aStream];
+    return uploadStream;
 }
 
--(NSInteger)read:(uint8_t *)buffer maxLength:(NSUInteger)len
-{
-	NSInteger nBytesRead = [stream read:buffer maxLength:(kS3UploadInputStreamChunkSize * packetSize)];
-	AMZLogDebug(@"S3UploadInputStream: read %ld bytes (%ld max)", (long)nBytesRead, (unsigned long)len);
-	[NSThread sleepForTimeInterval:delay];
-	return nBytesRead;
+- (NSInteger)read:(uint8_t *)buffer maxLength:(NSUInteger)len {
+    NSInteger nBytesRead = [stream read:buffer maxLength:(kS3UploadInputStreamChunkSize * packetSize)];
+    AMZLogDebug(@"S3UploadInputStream: read %ld bytes (%ld max)", (long) nBytesRead, (unsigned long) len);
+    [NSThread sleepForTimeInterval:delay];
+    return nBytesRead;
 }
 
--(BOOL)hasBytesAvailable
-{
-	return [stream hasBytesAvailable];
+- (BOOL)hasBytesAvailable {
+    return [stream hasBytesAvailable];
 }
 
-- (BOOL)getBuffer:(uint8_t **)buffer length:(NSUInteger *)len
-{
-	return NO;
+- (BOOL)getBuffer:(uint8_t **)buffer length:(NSUInteger *)len {
+    return NO;
 }
 
 /*
@@ -82,64 +74,52 @@
  * (necessary for MacRuby for example) and avoid the overhead of method
  * forwarding for these common methods.
  */
-- (void)open
-{
-	[stream open];
+- (void)open {
+    [stream open];
 }
 
-- (void)close
-{
-	[stream close];
+- (void)close {
+    [stream close];
 }
 
-- (id)delegate
-{
-	return [stream delegate];
+- (id)delegate {
+    return [stream delegate];
 }
 
-- (void)setDelegate:(id)delegate
-{
-	[stream setDelegate:delegate];
+- (void)setDelegate:(id)delegate {
+    [stream setDelegate:delegate];
 }
 
-- (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode
-{
-	[stream scheduleInRunLoop:aRunLoop forMode:mode];
+- (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode {
+    [stream scheduleInRunLoop:aRunLoop forMode:mode];
 }
 
-- (void)removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode
-{
-	[stream removeFromRunLoop:aRunLoop forMode:mode];
+- (void)removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode {
+    [stream removeFromRunLoop:aRunLoop forMode:mode];
 }
 
-- (id)propertyForKey:(NSString *)key
-{
-	return [stream propertyForKey:key];
+- (id)propertyForKey:(NSString *)key {
+    return [stream propertyForKey:key];
 }
 
-- (BOOL)setProperty:(id)property forKey:(NSString *)key
-{
-	return [stream setProperty:property forKey:key];
+- (BOOL)setProperty:(id)property forKey:(NSString *)key {
+    return [stream setProperty:property forKey:key];
 }
 
-- (NSStreamStatus)streamStatus
-{
-	return [stream streamStatus];
+- (NSStreamStatus)streamStatus {
+    return [stream streamStatus];
 }
 
-- (NSError *)streamError
-{
-	return [stream streamError];
+- (NSError *)streamError {
+    return [stream streamError];
 }
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
-{
-	return [stream methodSignatureForSelector:aSelector];
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    return [stream methodSignatureForSelector:aSelector];
 }
 
-- (void)forwardInvocation:(NSInvocation *)anInvocation
-{
-	[anInvocation invokeWithTarget:stream];
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    [anInvocation invokeWithTarget:stream];
 }
 
 #pragma clang diagnostic pop

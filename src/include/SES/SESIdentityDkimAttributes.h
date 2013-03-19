@@ -20,29 +20,25 @@
  * Identity Dkim Attributes
  */
 
-@interface SESIdentityDkimAttributes:NSObject
-
-{
-    bool           dkimEnabled;
-    bool           dkimEnabledIsSet;
-    NSString       *dkimVerificationStatus;
+@interface SESIdentityDkimAttributes : NSObject {
+    bool dkimEnabled;
+    bool dkimEnabledIsSet;
+    NSString *dkimVerificationStatus;
     NSMutableArray *dkimTokens;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * True if DKIM signing is enabled for email sent from the identity;
  * false otherwise.
  */
-@property (nonatomic) bool           dkimEnabled;
+@property (nonatomic) bool dkimEnabled;
 
 @property (nonatomic, readonly) bool dkimEnabledIsSet;
 
@@ -70,7 +66,7 @@
  * Adds a single object to dkimTokens.
  * This function will alloc and init dkimTokens if not already done.
  */
--(void)addDkimToken:(NSString *)dkimTokenObject;
+- (void)addDkimToken:(NSString *)dkimTokenObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -78,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

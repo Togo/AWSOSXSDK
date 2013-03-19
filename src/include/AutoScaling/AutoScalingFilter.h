@@ -20,21 +20,17 @@
  * Filter
  */
 
-@interface AutoScalingFilter:NSObject
-
-{
-    NSString       *name;
+@interface AutoScalingFilter : NSObject {
+    NSString *name;
     NSMutableArray *values;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the filter. Valid Name values are:
@@ -55,7 +51,7 @@
  * Adds a single object to values.
  * This function will alloc and init values if not already done.
  */
--(void)addValue:(NSString *)valueObject;
+- (void)addValue:(NSString *)valueObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

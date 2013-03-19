@@ -17,18 +17,16 @@
 
 @implementation AutoScalingDescribeScalingProcessTypesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeScalingProcessTypesRequest *)describeScalingProcessTypesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribeScalingProcessTypes"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeScalingProcessTypes" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describeScalingProcessTypesRequest delegate]];
     [request setCredentials:[describeScalingProcessTypesRequest credentials]];
     [request setEndpoint:[describeScalingProcessTypesRequest requestEndpoint]];
     [request setRequestTag:[describeScalingProcessTypesRequest requestTag]];
-
 
 
     return request;

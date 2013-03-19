@@ -17,12 +17,11 @@
 
 @implementation SESDeleteIdentityRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESDeleteIdentityRequest *)deleteIdentityRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESDeleteIdentityRequest *)deleteIdentityRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"DeleteIdentity"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteIdentity" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[deleteIdentityRequest delegate]];
     [request setCredentials:[deleteIdentityRequest credentials]];

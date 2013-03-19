@@ -15,8 +15,7 @@
 
 #import "S3SetBucketCrossOriginResponse.h"
 
-@implementation S3SetBucketCrossOriginResponse
-{
+@implementation S3SetBucketCrossOriginResponse {
 }
 
 @end

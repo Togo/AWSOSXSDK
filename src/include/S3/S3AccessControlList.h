@@ -39,8 +39,8 @@
  * the bucket owner.
  *
  */
-@interface S3AccessControlList:NSObject {
-    S3Owner        *owner;
+@interface S3AccessControlList : NSObject {
+    S3Owner *owner;
     NSMutableArray *grantList;
 }
 
@@ -51,17 +51,17 @@
 @property (weak, nonatomic, readonly) NSArray *grantList;
 
 /** Initialize the object with an owner */
--(id)initWithOwner:(S3Owner *)theOwner;
+- (id)initWithOwner:(S3Owner *)theOwner;
 
 /** Adds the grant to the grant list
  * @param aGrant A Grant to add to the list.
  */
--(void)addGrant:(S3Grant *)aGrant;
+- (void)addGrant:(S3Grant *)aGrant;
 
 /** Returns the XML represenation of the ACL */
--(NSString *)toXml;
+- (NSString *)toXml;
 
 /** Returns x-amz header representation of the ACL */
--(NSDictionary *)toHeaders;
+- (NSDictionary *)toHeaders;
 
 @end

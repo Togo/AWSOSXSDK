@@ -17,20 +17,20 @@
 
 /** Contains all the information about the listMultipartUploads method.
  */
-@interface S3ListMultipartUploadsResult:NSObject {
-    NSString       *bucket;
-    NSString       *keyMarker;
-    NSString       *uploadIdMarker;
-    NSString       *nextKeyMarker;
-    NSString       *nextUploadIdMarker;
-    NSString       *delimiter;
-    NSString       *prefix;
+@interface S3ListMultipartUploadsResult : NSObject {
+    NSString *bucket;
+    NSString *keyMarker;
+    NSString *uploadIdMarker;
+    NSString *nextKeyMarker;
+    NSString *nextUploadIdMarker;
+    NSString *delimiter;
+    NSString *prefix;
 
     NSMutableArray *commonPrefixes;
     NSMutableArray *uploads;
 
-    bool           isTruncated;
-    NSInteger      maxUploads;
+    bool isTruncated;
+    NSInteger maxUploads;
 }
 
 

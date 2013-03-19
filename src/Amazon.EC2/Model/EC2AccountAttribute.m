@@ -22,10 +22,9 @@
 @synthesize attributeValues;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        attributeName   = nil;
+        attributeName = nil;
         attributeValues = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addAttributeValue:(EC2AccountAttributeValue *)attributeValueObject
-{
+- (void)addAttributeValue:(EC2AccountAttributeValue *)attributeValueObject {
     if (attributeValues == nil) {
         attributeValues = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

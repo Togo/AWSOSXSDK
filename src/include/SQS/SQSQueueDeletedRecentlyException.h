@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * You must wait 60 seconds after deleting a queue before you can create
  * another with the same name.
  * </p>
  */
-@interface SQSQueueDeletedRecentlyException:AmazonServiceException
-{
+@interface SQSQueueDeletedRecentlyException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

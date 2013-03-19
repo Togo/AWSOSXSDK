@@ -26,11 +26,11 @@
 /**
  * Delete Item Request Marshaller
  */
-@interface DynamoDBDeleteItemRequestMarshaller:NSObject {
+@interface DynamoDBDeleteItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBDeleteItemRequest *)deleteItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBDeleteItemRequest *)deleteItemRequest;
 
 
 @end

@@ -25,23 +25,20 @@
 @synthesize cardinality;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        attributeName    = nil;
-        attributeType    = nil;
+        attributeName = nil;
+        attributeType = nil;
         descriptionValue = nil;
-        defaultValue     = nil;
-        cardinality      = nil;
+        defaultValue = nil;
+        cardinality = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

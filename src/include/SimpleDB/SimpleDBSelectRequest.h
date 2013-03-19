@@ -17,20 +17,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Select Request
  */
 
-@interface SimpleDBSelectRequest:AmazonServiceRequestConfig
-
-{
+@interface SimpleDBSelectRequest : AmazonServiceRequestConfig {
     NSString *selectExpression;
     NSString *nextToken;
-    bool     consistentRead;
-    bool     consistentReadIsSet;
+    bool consistentRead;
+    bool consistentReadIsSet;
 }
-
 
 
 /**
@@ -51,7 +47,7 @@
  * consistent eventually, and the client may not see data that was
  * written immediately before your read.
  */
-@property (nonatomic) bool           consistentRead;
+@property (nonatomic) bool consistentRead;
 
 @property (nonatomic, readonly) bool consistentReadIsSet;
 
@@ -60,7 +56,7 @@
  * Default constructor for a new SelectRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SelectRequest object.
@@ -68,7 +64,7 @@
  *
  * @param theSelectExpression The expression used to query the domain.
  */
--(id)initWithSelectExpression:(NSString *)theSelectExpression;
+- (id)initWithSelectExpression:(NSString *)theSelectExpression;
 
 /**
  * Constructs a new SelectRequest object.
@@ -81,7 +77,7 @@
  * returned. Otherwise, results will be consistent eventually, and the
  * client may not see data that was written immediately before your read.
  */
--(id)initWithSelectExpression:(NSString *)theSelectExpression andConsistentRead:(bool)theConsistentRead;
+- (id)initWithSelectExpression:(NSString *)theSelectExpression andConsistentRead:(bool)theConsistentRead;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -89,7 +85,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

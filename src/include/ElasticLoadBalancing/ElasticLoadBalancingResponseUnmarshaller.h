@@ -16,7 +16,7 @@
 #import <Foundation/Foundation.h>
 #import "../AmazonServiceResponseUnmarshaller.h"
 
-@interface ElasticLoadBalancingResponseUnmarshaller:AmazonServiceResponseUnmarshaller {
+@interface ElasticLoadBalancingResponseUnmarshaller : AmazonServiceResponseUnmarshaller {
 }
 
 @end

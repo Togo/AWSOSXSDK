@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Queue Request
  */
 
-@interface SQSCreateQueueRequest:AmazonServiceRequestConfig
-
-{
-    NSString            *queueName;
+@interface SQSCreateQueueRequest : AmazonServiceRequestConfig {
+    NSString *queueName;
     NSMutableDictionary *attributes;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new CreateQueueRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateQueueRequest object.
@@ -54,14 +50,14 @@
  *
  * @param theQueueName The name for the queue to be created.
  */
--(id)initWithQueueName:(NSString *)theQueueName;
+- (id)initWithQueueName:(NSString *)theQueueName;
 
 
 /**
  * Set a value in the dictionary attributes for the specified key.
  * This function will alloc and init attributes if not already done.
  */
--(void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
+- (void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

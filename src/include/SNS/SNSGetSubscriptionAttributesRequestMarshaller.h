@@ -22,11 +22,11 @@
 /**
  * Get Subscription Attributes Request Marshaller
  */
-@interface SNSGetSubscriptionAttributesRequestMarshaller:NSObject {
+@interface SNSGetSubscriptionAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SNSGetSubscriptionAttributesRequest *)getSubscriptionAttributesRequest;
 
 
 @end

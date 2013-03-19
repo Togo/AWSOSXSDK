@@ -29,11 +29,10 @@
 #import "AmazonCredentialsProvider.h"
 
 
-@interface AmazonAbstractWebServiceClient : NSObject
-{
+@interface AmazonAbstractWebServiceClient : NSObject {
 }
 
-@property (atomic, strong) id<AmazonCredentialsProvider> provider;
+@property (atomic, strong) id <AmazonCredentialsProvider> provider;
 
 /** The service endpoint to which requests should be sent. */
 @property (nonatomic, strong) NSString *endpoint;
@@ -71,10 +70,10 @@
 @property (nonatomic, strong) NSString *userAgent;
 
 /** Inits the client with the given credentials. */
--(id)initWithCredentials:(AmazonCredentials *)credentials;
+- (id)initWithCredentials:(AmazonCredentials *)credentials;
 
 /** Inits the client with a credentials provider which will provide refreshable credentials */
--(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider>)provider;
+- (id)initWithCredentialsProvider:(id <AmazonCredentialsProvider>)provider;
 
 
 /** Constructs an empty response object of the appropriate type to match the given request
@@ -84,31 +83,36 @@
  *         an instance of AmazonServiceResponse if there is no response class to
  *         match the instance passed in.
  */
-+(AmazonServiceResponse *)constructResponseFromRequest:(AmazonServiceRequest *)request;
++ (AmazonServiceResponse *)constructResponseFromRequest:(AmazonServiceRequest *)request;
 
 /** Utility method that sends the raw S3 Request to be processed.
  *
  * @param request An AmazonServiceRequest describing the parameters of a request.
  * @return The response from the service.
  */
--(AmazonServiceResponse *)invoke:(AmazonServiceRequest *)generatedRequest rawRequest:(AmazonServiceRequestConfig *)originalRequest unmarshallerDelegate:(Class)unmarshallerDelegate;
+- (AmazonServiceResponse *)invoke:(AmazonServiceRequest *)generatedRequest rawRequest:(AmazonServiceRequestConfig *)originalRequest unmarshallerDelegate:(Class)unmarshallerDelegate;
 
--(void)pauseExponentially:(NSInteger)tryCount;
--(BOOL)shouldRetry:(AmazonServiceResponse *)response;
--(BOOL)shouldRetry:(AmazonServiceResponse *)response exception:(NSException *)theException;
+- (void)pauseExponentially:(NSInteger)tryCount;
 
--(AmazonServiceResponse *)nilRequestResponse;
--(AmazonServiceResponse *)createResponse:(AmazonServiceRequest *)generatedRequest withUnmarshallerDelegate:(Class)unmarshallerDelegate;
+- (BOOL)shouldRetry:(AmazonServiceResponse *)response;
 
--(void)logTheRequest:(NSMutableURLRequest *)urlRequest;
--(void)logTheRequestHeaders:(NSMutableURLRequest *)urlRequest;
+- (BOOL)shouldRetry:(AmazonServiceResponse *)response exception:(NSException *)theException;
 
--(void)setupRequestTimeout:(NSMutableURLRequest *)urlRequest;
+- (AmazonServiceResponse *)nilRequestResponse;
 
--(AmazonServiceResponse*)returnErrorOrResponse:(AmazonServiceResponse*)response forRequest:(AmazonServiceRequest *)generatedRequest;
+- (AmazonServiceResponse *)createResponse:(AmazonServiceRequest *)generatedRequest withUnmarshallerDelegate:(Class)unmarshallerDelegate;
 
--(void)startAsyncRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest;
--(void)startSyncRequest:(AmazonServiceRequest *)generatedRequest forRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest;
+- (void)logTheRequest:(NSMutableURLRequest *)urlRequest;
+
+- (void)logTheRequestHeaders:(NSMutableURLRequest *)urlRequest;
+
+- (void)setupRequestTimeout:(NSMutableURLRequest *)urlRequest;
+
+- (AmazonServiceResponse *)returnErrorOrResponse:(AmazonServiceResponse *)response forRequest:(AmazonServiceRequest *)generatedRequest;
+
+- (void)startAsyncRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest;
+
+- (void)startSyncRequest:(AmazonServiceRequest *)generatedRequest forRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest;
 
 @end
 

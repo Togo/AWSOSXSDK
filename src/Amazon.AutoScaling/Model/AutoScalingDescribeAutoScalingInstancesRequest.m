@@ -23,20 +23,18 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
-        maxRecords  = nil;
-        nextToken   = nil;
+        maxRecords = nil;
+        nextToken = nil;
     }
 
     return self;
 }
 
 
--(void)addInstanceId:(NSString *)instanceIdObject
-{
+- (void)addInstanceId:(NSString *)instanceIdObject {
     if (instanceIds == nil) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

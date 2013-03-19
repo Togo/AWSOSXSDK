@@ -22,19 +22,17 @@
 @synthesize subnets;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
-        subnets          = [[NSMutableArray alloc] initWithCapacity:1];
+        subnets = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addSubnet:(NSString *)subnetObject
-{
+- (void)addSubnet:(NSString *)subnetObject {
     if (subnets == nil) {
         subnets = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

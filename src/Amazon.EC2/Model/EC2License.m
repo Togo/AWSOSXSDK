@@ -25,22 +25,20 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        licenseId  = nil;
-        type       = nil;
-        pool       = nil;
+        licenseId = nil;
+        type = nil;
+        pool = nil;
         capacities = [[NSMutableArray alloc] initWithCapacity:1];
-        tags       = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addCapacity:(EC2LicenseCapacity *)capacityObject
-{
+- (void)addCapacity:(EC2LicenseCapacity *)capacityObject {
     if (capacities == nil) {
         capacities = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -48,8 +46,7 @@
     [capacities addObject:capacityObject];
 }
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -58,8 +55,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,9 +69,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

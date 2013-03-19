@@ -16,13 +16,13 @@
 #import <Foundation/Foundation.h>
 
 
-@interface AmazonMD5Util:NSObject {
+@interface AmazonMD5Util : NSObject {
 }
 
 /**
  * Returns a Base 64 encoded MD5 of the given data.
  **/
-+(NSString *)base64md5FromData:(NSData *)data;
++ (NSString *)base64md5FromData:(NSData *)data;
 
 /**
  * Returns a Base 64 encoded MD5 of the data read from the given input stream.
@@ -33,6 +33,6 @@
  *
  * @exception NSException thrown if unable to read stream.
  **/
-+(NSString *)base64md5FromStream:(NSInputStream *)inputStream;
++ (NSString *)base64md5FromStream:(NSInputStream *)inputStream;
 
 @end

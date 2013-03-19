@@ -17,12 +17,11 @@
 
 @implementation EC2CreateTagsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateTagsRequest *)createTagsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateTagsRequest *)createTagsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateTags"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateTags" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createTagsRequest delegate]];
     [request setCredentials:[createTagsRequest credentials]];

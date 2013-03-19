@@ -19,11 +19,10 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Name"]) {
@@ -52,10 +51,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3Bucket *)bucket
-{
-    if (nil == bucket)
-    {
+- (S3Bucket *)bucket {
+    if (nil == bucket) {
         bucket = [[S3Bucket alloc] init];
     }
     return bucket;

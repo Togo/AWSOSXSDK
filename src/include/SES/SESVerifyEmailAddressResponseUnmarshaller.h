@@ -16,17 +16,17 @@
 #import "SESVerifyEmailAddressResponse.h"
 #import "SESResponseUnmarshaller.h"
 
-@interface SESVerifyEmailAddressResponseUnmarshaller:SESResponseUnmarshaller
-{
+@interface SESVerifyEmailAddressResponseUnmarshaller : SESResponseUnmarshaller {
     SESVerifyEmailAddressResponse *response;
 }
 
 @property (weak, nonatomic, readonly) SESVerifyEmailAddressResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(SESVerifyEmailAddressResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (SESVerifyEmailAddressResponse *)response;
 
 @end

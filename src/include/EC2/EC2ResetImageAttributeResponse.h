@@ -20,8 +20,7 @@
 /**
  * Reset Image Attribute
  */
-@interface EC2ResetImageAttributeResponse:EC2Response
-{
+@interface EC2ResetImageAttributeResponse : EC2Response {
 }
 
 @end

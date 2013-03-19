@@ -17,12 +17,11 @@
 
 @implementation EC2CancelConversionTaskRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CancelConversionTask"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CancelConversionTask" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[cancelConversionTaskRequest delegate]];
     [request setCredentials:[cancelConversionTaskRequest credentials]];

@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create App Cookie Stickiness Policy Request
  */
 
-@interface ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest : AmazonServiceRequestConfig {
     NSString *loadBalancerName;
     NSString *policyName;
     NSString *cookieName;
 }
-
 
 
 /**
@@ -54,7 +50,7 @@
  * Default constructor for a new CreateAppCookieStickinessPolicyRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateAppCookieStickinessPolicyRequest object.
@@ -67,7 +63,7 @@
  * @param theCookieName Name of the application cookie used for
  * stickiness.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

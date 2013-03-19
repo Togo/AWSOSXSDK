@@ -18,6 +18,6 @@
 
 /** Contains all the information about the setBucketLifecycleConfigurationResponse operation.
  */
-@interface S3SetBucketLifecycleConfigurationResponse:S3Response
+@interface S3SetBucketLifecycleConfigurationResponse : S3Response
 
 @end

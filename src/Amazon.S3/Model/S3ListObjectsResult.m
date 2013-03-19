@@ -28,34 +28,29 @@
 @synthesize commonPrefixes;
 
 
--(void)setObjectSummaries:(NSMutableArray *)theSummaries
-{
+- (void)setObjectSummaries:(NSMutableArray *)theSummaries {
     objectSummaries = theSummaries;
 }
 
--(NSMutableArray *)objectSummaries
-{
+- (NSMutableArray *)objectSummaries {
     if (nil == objectSummaries) {
         objectSummaries = [[NSMutableArray alloc] init];
     }
     return objectSummaries;
 }
 
--(void)setCommonPrefixes:(NSMutableArray *)prefixes
-{
+- (void)setCommonPrefixes:(NSMutableArray *)prefixes {
     commonPrefixes = prefixes;
 }
 
--(NSMutableArray *)commonPrefixes
-{
+- (NSMutableArray *)commonPrefixes {
     if (nil == commonPrefixes) {
         commonPrefixes = [[NSMutableArray alloc] init];
     }
     return commonPrefixes;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,14 +60,13 @@
     [buffer appendString:[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Marker: %@,", marker]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter]];
-    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long) maxKeys]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
     return buffer;
 }
-
 
 
 @end

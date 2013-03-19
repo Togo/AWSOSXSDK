@@ -34,10 +34,8 @@
 @synthesize hostName;
 @synthesize delegate;
 
-- (id)init
-{
-    if(self = [super init])
-    {
+- (id)init {
+    if (self = [super init]) {
         httpMethod = nil;
         parameters = nil;
         endpoint = nil;
@@ -56,21 +54,19 @@
     return self;
 }
 
--(void)sign
-{
+- (void)sign {
     [self setParameterValue:credentials.accessKey forKey:@"AWSAccessKeyId"];
-    [self setParameterValue:@"2"                                        forKey:@"SignatureVersion"];
-    [self setParameterValue:[NSDate ISO8061FormattedCurrentTimestamp]   forKey:@"Timestamp"];
-    [self setParameterValue:@"HmacSHA256"                               forKey:@"SignatureMethod"];
+    [self setParameterValue:@"2" forKey:@"SignatureVersion"];
+    [self setParameterValue:[NSDate ISO8061FormattedCurrentTimestamp] forKey:@"Timestamp"];
+    [self setParameterValue:@"HmacSHA256" forKey:@"SignatureMethod"];
 
-    NSData   *dataToSign = [[AmazonAuthUtils getV2StringToSign:[NSURL URLWithString:self.endpoint] request:self] dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *signature  = [AmazonAuthUtils HMACSign:dataToSign withKey:credentials.secretKey usingAlgorithm:kCCHmacAlgSHA256];
+    NSData *dataToSign = [[AmazonAuthUtils getV2StringToSign:[NSURL URLWithString:self.endpoint] request:self] dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *signature = [AmazonAuthUtils HMACSign:dataToSign withKey:credentials.secretKey usingAlgorithm:kCCHmacAlgSHA256];
 
     [self setParameterValue:signature forKey:@"Signature"];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     if (self.credentials != nil && self.credentials.securityToken != nil) {
         [self setParameterValue:self.credentials.securityToken forKey:@"SecurityToken"];
     }
@@ -87,15 +83,14 @@
     return self.urlRequest;
 }
 
--(NSString *)queryString
-{
+- (NSString *)queryString {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
-    NSArray         *keys       = [[self parameters] allKeys];
-    NSArray         *sortedKeys = [keys sortedArrayUsingSelector:@selector(compare:)];
+    NSArray *keys = [[self parameters] allKeys];
+    NSArray *sortedKeys = [keys sortedArrayUsingSelector:@selector(compare:)];
     for (NSInteger index = 0; index < [sortedKeys count]; index++) {
-        NSString *key   = [sortedKeys objectAtIndex:index];
-        NSString *value = (NSString *)[[self parameters] valueForKey:key];
+        NSString *key = [sortedKeys objectAtIndex:index];
+        NSString *value = (NSString *) [[self parameters] valueForKey:key];
 
         [buffer appendString:[AmazonSDKUtil urlEncode:key]];
         [buffer appendString:@"="];
@@ -109,15 +104,14 @@
     return buffer;
 }
 
--(NSString *)hostName
-{
+- (NSString *)hostName {
     // hostName was explicitly set
     if (hostName != nil) {
         return hostName;
     }
-    
+
     NSRange startOfHost = [self.endpoint rangeOfString:@"://"];
-    
+
     NSString *trimmed = [self.endpoint substringFromIndex:(startOfHost.location + 3)];
     NSRange endOfHost = [trimmed rangeOfString:@"/"];
     if (endOfHost.location == NSNotFound) {
@@ -127,33 +121,32 @@
     return [trimmed substringToIndex:(endOfHost.location)];
 }
 
--(NSString *)regionName
-{
+- (NSString *)regionName {
     // regionName was explicitly set
     if (regionName != nil) {
         return regionName;
     }
     // If we don't recognize the domain, just return the default
-    if ([self.hostName hasSuffix:@".queue.amazonaws.com"]){
-        NSRange  range             = [self.hostName rangeOfString:@".queue.amazonaws.com"];
+    if ([self.hostName hasSuffix:@".queue.amazonaws.com"]) {
+        NSRange range = [self.hostName rangeOfString:@".queue.amazonaws.com"];
         return [self.hostName substringToIndex:range.location];
     }
     else if ([self.hostName hasSuffix:@".amazonaws.com"]) {
-        NSRange  range             = [self.hostName rangeOfString:@".amazonaws.com"];
+        NSRange range = [self.hostName rangeOfString:@".amazonaws.com"];
         NSString *serviceAndRegion = [self.hostName substringToIndex:range.location];
-        
+
         NSString *separator = @".";
-        if ( [serviceAndRegion hasPrefix:@"s3"]) {
+        if ([serviceAndRegion hasPrefix:@"s3"]) {
             separator = @"-";
         }
-        
-        if ( [serviceAndRegion rangeOfString:separator].location == NSNotFound) {
+
+        if ([serviceAndRegion rangeOfString:separator].location == NSNotFound) {
             return @"us-east-1";
         }
-        
-        NSRange  index   = [serviceAndRegion rangeOfString:separator];
+
+        NSRange index = [serviceAndRegion rangeOfString:separator];
         NSString *region = [serviceAndRegion substringFromIndex:(index.location + 1)];
-        if ( [region isEqualToString:@"us-gov"]) {
+        if ([region isEqualToString:@"us-gov"]) {
             return @"us-gov-west-1";
         }
         else {
@@ -163,33 +156,32 @@
     else {
         return @"us-east-1";
     }
-    
+
 }
 
--(NSString *)serviceName
-{
+- (NSString *)serviceName {
     // serviceName was explicitly set
     if (serviceName != nil) {
         return serviceName;
     }
-    
+
     // If we don't recognize the domain, just return nil
-    if ([self.hostName hasSuffix:@"queue.amazonaws.com"]){
+    if ([self.hostName hasSuffix:@"queue.amazonaws.com"]) {
         return @"sqs";
     }
     else if ([self.hostName hasSuffix:@".amazonaws.com"]) {
-        NSRange  range             = [self.hostName rangeOfString:@".amazonaws.com"];
+        NSRange range = [self.hostName rangeOfString:@".amazonaws.com"];
         NSString *serviceAndRegion = [self.hostName substringToIndex:range.location];
-        
+
         NSString *separator = @".";
-        if ( [serviceAndRegion hasPrefix:@"s3"]) {
+        if ([serviceAndRegion hasPrefix:@"s3"]) {
             return @"s3";
         }
-        
-        if ( [serviceAndRegion rangeOfString:separator].location == NSNotFound) {
+
+        if ([serviceAndRegion rangeOfString:separator].location == NSNotFound) {
             return serviceAndRegion;
         }
-        
+
         NSRange index = [serviceAndRegion rangeOfString:separator];
         return [serviceAndRegion substringToIndex:index.location];
     }
@@ -198,37 +190,31 @@
     }
 }
 
--(void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey
-{
+- (void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey {
     if (nil == parameters) {
         parameters = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
     [parameters setValue:theValue forKey:theKey];
 }
 
--(NSURL *)url
-{
+- (NSURL *)url {
     return nil;
 }
 
-- (AmazonClientException *)validate
-{
+- (AmazonClientException *)validate {
     return nil;
 }
 
-- (void)cancel
-{
+- (void)cancel {
     [self.urlConnection cancel];
     [self.responseTimer invalidate];
 }
 
--(AmazonServiceResponse*)constructResponse
-{
+- (AmazonServiceResponse *)constructResponse {
     return [AmazonServiceResponse new];
 }
 
--(void)dealloc
-{
+- (void)dealloc {
     delegate = nil;
 
 }

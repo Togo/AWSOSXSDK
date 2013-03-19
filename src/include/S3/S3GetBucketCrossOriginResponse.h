@@ -20,8 +20,7 @@
 /** Contains all the information about the getBucketCrossOriginResponse operation.
  *
  */
-@interface S3GetBucketCrossOriginResponse:S3Response
-{
+@interface S3GetBucketCrossOriginResponse : S3Response {
     S3BucketCrossOriginConfiguration *configuration;
 }
 

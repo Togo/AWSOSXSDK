@@ -24,23 +24,20 @@
  * Describe Launch Configurations Result
  */
 
-@interface AutoScalingDescribeLaunchConfigurationsResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeLaunchConfigurationsResponse : AutoScalingResponse {
     NSMutableArray *launchConfigurations;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of launch configurations.
@@ -56,11 +53,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the launchConfigurations array for the specified index
  */
--(AutoScalingLaunchConfiguration *)launchConfigurationsObjectAtIndex:(int)index;
+- (AutoScalingLaunchConfiguration *)launchConfigurationsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

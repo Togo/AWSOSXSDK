@@ -20,8 +20,7 @@
 /**
  * Reset Instance Attribute
  */
-@interface EC2ResetInstanceAttributeResponse:EC2Response
-{
+@interface EC2ResetInstanceAttributeResponse : EC2Response {
 }
 
 @end

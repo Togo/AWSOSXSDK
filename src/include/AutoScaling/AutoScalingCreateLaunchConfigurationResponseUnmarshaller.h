@@ -16,17 +16,17 @@
 #import "AutoScalingCreateLaunchConfigurationResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingCreateLaunchConfigurationResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingCreateLaunchConfigurationResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingCreateLaunchConfigurationResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingCreateLaunchConfigurationResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingCreateLaunchConfigurationResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingCreateLaunchConfigurationResponse *)response;
 
 @end

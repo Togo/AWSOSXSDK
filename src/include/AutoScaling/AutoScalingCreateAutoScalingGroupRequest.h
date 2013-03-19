@@ -18,38 +18,33 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Auto Scaling Group Request
  */
 
-@interface AutoScalingCreateAutoScalingGroupRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
-    NSString       *launchConfigurationName;
-    NSNumber       *minSize;
-    NSNumber       *maxSize;
-    NSNumber       *desiredCapacity;
-    NSNumber       *defaultCooldown;
+@interface AutoScalingCreateAutoScalingGroupRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
+    NSString *launchConfigurationName;
+    NSNumber *minSize;
+    NSNumber *maxSize;
+    NSNumber *desiredCapacity;
+    NSNumber *defaultCooldown;
     NSMutableArray *availabilityZones;
     NSMutableArray *loadBalancerNames;
-    NSString       *healthCheckType;
-    NSNumber       *healthCheckGracePeriod;
-    NSString       *placementGroup;
-    NSString       *vPCZoneIdentifier;
+    NSString *healthCheckType;
+    NSNumber *healthCheckGracePeriod;
+    NSString *placementGroup;
+    NSString *vPCZoneIdentifier;
     NSMutableArray *terminationPolicies;
     NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -168,25 +163,25 @@
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Adds a single object to loadBalancerNames.
  * This function will alloc and init loadBalancerNames if not already done.
  */
--(void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
+- (void)addLoadBalancerName:(NSString *)loadBalancerNameObject;
 
 /**
  * Adds a single object to terminationPolicies.
  * This function will alloc and init terminationPolicies if not already done.
  */
--(void)addTerminationPolicy:(NSString *)terminationPolicyObject;
+- (void)addTerminationPolicy:(NSString *)terminationPolicyObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(AutoScalingTag *)tagObject;
+- (void)addTag:(AutoScalingTag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -194,7 +189,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

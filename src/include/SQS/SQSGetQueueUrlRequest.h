@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Queue Url Request
  */
 
-@interface SQSGetQueueUrlRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSGetQueueUrlRequest : AmazonServiceRequestConfig {
     NSString *queueName;
     NSString *queueOwnerAWSAccountId;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new GetQueueUrlRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new GetQueueUrlRequest object.
@@ -54,7 +50,7 @@
  *
  * @param theQueueName The name of the queue whose URL must be fetched.
  */
--(id)initWithQueueName:(NSString *)theQueueName;
+- (id)initWithQueueName:(NSString *)theQueueName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -62,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

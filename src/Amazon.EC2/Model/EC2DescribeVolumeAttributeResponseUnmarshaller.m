@@ -19,14 +19,13 @@
 @implementation EC2DescribeVolumeAttributeResponseUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
     if ([elementName isEqualToString:@"autoEnableIO"]) {
         AmazonBoolValueUnmarshaller *unmarshaller = [[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAutoEnableIO:)];
-        unmarshaller.endElementTagName   = @"autoEnableIO";
+        unmarshaller.endElementTagName = @"autoEnableIO";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
@@ -34,12 +33,11 @@
     if ([elementName isEqualToString:@"productCodes"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.productCodes withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"productCodes";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2ProductCodeUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2ProductCodeUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -47,8 +45,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -76,14 +73,12 @@
     }
 }
 
--(EC2DescribeVolumeAttributeResponse *)response
-{
+- (EC2DescribeVolumeAttributeResponse *)response {
     if (nil == response) {
         response = [[EC2DescribeVolumeAttributeResponse alloc] init];
     }
     return response;
 }
-
 
 
 @end

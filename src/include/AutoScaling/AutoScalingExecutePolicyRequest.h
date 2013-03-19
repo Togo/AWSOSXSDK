@@ -17,28 +17,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Execute Policy Request
  */
 
-@interface AutoScalingExecutePolicyRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingExecutePolicyRequest : AmazonServiceRequestConfig {
     NSString *autoScalingGroupName;
     NSString *policyName;
-    bool     honorCooldown;
-    bool     honorCooldownIsSet;
+    bool honorCooldown;
+    bool honorCooldownIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name or ARN of the Auto Scaling group.
@@ -62,7 +57,7 @@
  * Set to <code>True</code> if you want Auto Scaling to reject this
  * request when the Auto Scaling group is in cooldown.
  */
-@property (nonatomic) bool           honorCooldown;
+@property (nonatomic) bool honorCooldown;
 
 @property (nonatomic, readonly) bool honorCooldownIsSet;
 
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Delete Verified Email Address Request Marshaller
  */
-@interface SESDeleteVerifiedEmailAddressRequestMarshaller:NSObject {
+@interface SESDeleteVerifiedEmailAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest;
++ (AmazonServiceRequest *)createRequest:(SESDeleteVerifiedEmailAddressRequest *)deleteVerifiedEmailAddressRequest;
 
 
 @end

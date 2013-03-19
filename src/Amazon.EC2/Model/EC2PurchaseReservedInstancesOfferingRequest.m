@@ -23,31 +23,27 @@
 @synthesize limitPrice;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesOfferingId = nil;
-        instanceCount               = nil;
-        limitPrice                  = nil;
+        instanceCount = nil;
+        limitPrice = nil;
     }
 
     return self;
 }
 
--(id)initWithReservedInstancesOfferingId:(NSString *)theReservedInstancesOfferingId andInstanceCount:(NSNumber *)theInstanceCount
-{
+- (id)initWithReservedInstancesOfferingId:(NSString *)theReservedInstancesOfferingId andInstanceCount:(NSNumber *)theInstanceCount {
     if (self = [self init]) {
         self.reservedInstancesOfferingId = theReservedInstancesOfferingId;
-        self.instanceCount               = theInstanceCount;
+        self.instanceCount = theInstanceCount;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -59,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -20,8 +20,7 @@
 @synthesize emailAddress;
 @synthesize URI;
 
-+(id)granteeWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName
-{
++ (id)granteeWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName {
     S3Grantee *canonicalUser = [[S3Grantee alloc] init];
 
     [canonicalUser setID:theID];
@@ -29,28 +28,25 @@
     return canonicalUser;
 }
 
-+(id)granteeWithURI:(NSString *)theURI
-{
++ (id)granteeWithURI:(NSString *)theURI {
     S3Grantee *group = [[S3Grantee alloc] init];
 
     [group setURI:theURI];
     return group;
 }
 
-+(id)granteeWithEmailAddress:(NSString *)theEmailAddress
-{
++ (id)granteeWithEmailAddress:(NSString *)theEmailAddress {
     S3Grantee *user = [[S3Grantee alloc] init];
 
     [user setEmailAddress:theEmailAddress];
     return user;
 }
 
-+(id)allUsers
-{
++ (id)allUsers {
     static S3Grantee *allUsers = nil;
 
     if (allUsers == nil) {
-        @synchronized([self class]) {
+        @synchronized ([self class]) {
             if (allUsers == nil) {
                 allUsers = [S3Grantee granteeWithURI:kS3GroupURIAllUsers];
             }
@@ -59,12 +55,11 @@
     return allUsers;
 }
 
-+(id)authenticatedUsers
-{
++ (id)authenticatedUsers {
     static S3Grantee *authUsers = nil;
 
     if (authUsers == nil) {
-        @synchronized([self class]) {
+        @synchronized ([self class]) {
             if (authUsers == nil) {
                 authUsers = [S3Grantee granteeWithURI:kS3GroupURIAuthUsers];
             }
@@ -73,22 +68,20 @@
     return authUsers;
 }
 
--(NSString *)toXml
-{
+- (NSString *)toXml {
     if (self.URI != nil) {
         return [NSString stringWithFormat:@"<Grantee %@><URI>%@</URI></Grantee>",
-                [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeGroup], self.URI];
+                                          [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeGroup], self.URI];
     }
     if (self.emailAddress != nil) {
         return [NSString stringWithFormat:@"<Grantee %@><EmailAddress>%@</EmailAddress></Grantee>",
-                [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeAmazonCustomerByEmail], self.emailAddress];
+                                          [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeAmazonCustomerByEmail], self.emailAddress];
     }
     return [NSString stringWithFormat:@"<Grantee %@><ID>%@</ID><DisplayName>%@</DisplayName></Grantee>",
-            [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeCanonicalUser], self.ID, self.displayName];
+                                      [NSString stringWithFormat:kXsiNamespaceSpec, kXsiTypeCanonicalUser], self.ID, self.displayName];
 }
 
--(BOOL)isEqual:(id)object
-{
+- (BOOL)isEqual:(id)object {
     if (self.URI != nil) {
         if (![object respondsToSelector:@selector(URI)]) {
             return NO;
@@ -110,8 +103,7 @@
     return [self.ID isEqual:[object ID]] && [self.displayName isEqual:[object displayName]];
 }
 
--(NSUInteger)hash
-{
+- (NSUInteger)hash {
     if (self.URI != nil) {
         return [self.URI hash];
     }

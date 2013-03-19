@@ -17,20 +17,16 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Add Permission Request
  */
 
-@interface SNSAddPermissionRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *topicArn;
-    NSString       *label;
+@interface SNSAddPermissionRequest : AmazonServiceRequestConfig {
+    NSString *topicArn;
+    NSString *label;
     NSMutableArray *aWSAccountIds;
     NSMutableArray *actionNames;
 }
-
 
 
 /**
@@ -64,7 +60,7 @@
  * Default constructor for a new AddPermissionRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AddPermissionRequest object.
@@ -83,19 +79,19 @@
  * @param theActionNames The action you want to allow for the specified
  * principal(s). <p>Valid values: any Amazon SNS action name.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActionNames:(NSMutableArray *)theActionNames;
+- (id)initWithTopicArn:(NSString *)theTopicArn andLabel:(NSString *)theLabel andAWSAccountIds:(NSMutableArray *)theAWSAccountIds andActionNames:(NSMutableArray *)theActionNames;
 
 /**
  * Adds a single object to aWSAccountIds.
  * This function will alloc and init aWSAccountIds if not already done.
  */
--(void)addAWSAccountId:(NSString *)aWSAccountIdObject;
+- (void)addAWSAccountId:(NSString *)aWSAccountIdObject;
 
 /**
  * Adds a single object to actionNames.
  * This function will alloc and init actionNames if not already done.
  */
--(void)addActionName:(NSString *)actionNameObject;
+- (void)addActionName:(NSString *)actionNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -103,7 +99,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

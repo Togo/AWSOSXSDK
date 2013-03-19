@@ -16,28 +16,23 @@
 #import "EC2EbsBlockDevice.h"
 
 
-
 /**
  * Block Device Mapping
  */
 
-@interface EC2BlockDeviceMapping:NSObject
-
-{
-    NSString          *virtualName;
-    NSString          *deviceName;
+@interface EC2BlockDeviceMapping : NSObject {
+    NSString *virtualName;
+    NSString *deviceName;
     EC2EbsBlockDevice *ebs;
-    NSString          *noDevice;
+    NSString *noDevice;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the virtual device name.
@@ -66,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

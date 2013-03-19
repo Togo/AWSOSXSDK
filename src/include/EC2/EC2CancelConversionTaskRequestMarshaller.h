@@ -22,11 +22,11 @@
 /**
  * Cancel Conversion Task Request Marshaller
  */
-@interface EC2CancelConversionTaskRequestMarshaller:NSObject {
+@interface EC2CancelConversionTaskRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CancelConversionTaskRequest *)cancelConversionTaskRequest;
 
 
 @end

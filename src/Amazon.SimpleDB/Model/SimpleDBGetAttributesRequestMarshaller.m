@@ -17,12 +17,11 @@
 
 @implementation SimpleDBGetAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBGetAttributesRequest *)getAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBGetAttributesRequest *)getAttributesRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"GetAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"GetAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[getAttributesRequest delegate]];
     [request setCredentials:[getAttributesRequest credentials]];
@@ -52,7 +51,7 @@
     }
     if (getAttributesRequest != nil) {
         if (getAttributesRequest.consistentReadIsSet) {
-            [request setParameterValue:(getAttributesRequest.consistentRead ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ConsistentRead"]];
+            [request setParameterValue:(getAttributesRequest.consistentRead ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ConsistentRead"]];
         }
     }
 

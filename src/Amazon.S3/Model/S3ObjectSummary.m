@@ -26,8 +26,7 @@
 @synthesize owner;
 
 
--(NSString *)description
-{
+- (NSString *)description {
     return self.key;
 }
 

@@ -22,11 +22,11 @@
 /**
  * Monitor Instances Request Marshaller
  */
-@interface EC2MonitorInstancesRequestMarshaller:NSObject {
+@interface EC2MonitorInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2MonitorInstancesRequest *)monitorInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2MonitorInstancesRequest *)monitorInstancesRequest;
 
 
 @end

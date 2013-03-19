@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Identity Dkim Enabled Request
  */
 
-@interface SESSetIdentityDkimEnabledRequest:AmazonServiceRequestConfig
-
-{
+@interface SESSetIdentityDkimEnabledRequest : AmazonServiceRequestConfig {
     NSString *identity;
-    bool     dkimEnabled;
-    bool     dkimEnabledIsSet;
+    bool dkimEnabled;
+    bool dkimEnabledIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identity for which DKIM signing should be enabled or disabled.
@@ -49,7 +44,7 @@
  * <code>true</code> to enable DKIM signing for this identity;
  * <code>false</code> to disable it.
  */
-@property (nonatomic) bool           dkimEnabled;
+@property (nonatomic) bool dkimEnabled;
 
 @property (nonatomic, readonly) bool dkimEnabledIsSet;
 
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

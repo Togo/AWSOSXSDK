@@ -19,11 +19,8 @@
 @implementation CloudWatchAlarmHistoryItemUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
-
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -31,8 +28,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -74,14 +70,12 @@
     }
 }
 
--(CloudWatchAlarmHistoryItem *)response
-{
+- (CloudWatchAlarmHistoryItem *)response {
     if (nil == response) {
         response = [[CloudWatchAlarmHistoryItem alloc] init];
     }
     return response;
 }
-
 
 
 @end

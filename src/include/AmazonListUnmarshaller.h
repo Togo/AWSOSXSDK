@@ -17,24 +17,24 @@
 #import "AmazonServiceResponseUnmarshaller.h"
 
 
-@interface AmazonListUnmarshaller:AmazonServiceResponseUnmarshaller {
+@interface AmazonListUnmarshaller : AmazonServiceResponseUnmarshaller {
     NSMutableArray *list;
 
-    NSString       *entryElementName;
-    NSString       *endListElementName;
-    id             delegateClass;
+    NSString *entryElementName;
+    NSString *endListElementName;
+    id delegateClass;
 }
 
 @property (nonatomic, readonly) NSMutableArray *list;
 
-@property (nonatomic, strong) id               delegateClass;
-@property (nonatomic, strong) NSString         *entryElementName;
-@property (nonatomic, strong) NSString         *endListElementName;
+@property (nonatomic, strong) id delegateClass;
+@property (nonatomic, strong) NSString *entryElementName;
+@property (nonatomic, strong) NSString *endListElementName;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

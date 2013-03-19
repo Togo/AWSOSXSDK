@@ -20,7 +20,7 @@
 /**
  *
  */
-@interface S3CompleteMultipartUploadResultUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3CompleteMultipartUploadResultUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3CompleteMultipartUploadResult *completeMultipartUploadResult;
 }
 

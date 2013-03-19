@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * The quota for capacity groups or launch configurations for this
  * customer has already been reached.
  * </p>
  */
-@interface AutoScalingLimitExceededException:AmazonServiceException
-{
+@interface AutoScalingLimitExceededException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

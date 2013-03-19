@@ -22,20 +22,18 @@
 @synthesize cookieExpirationPeriod;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        policyName             = nil;
+        policyName = nil;
         cookieExpirationPeriod = nil;
     }
 
     return self;
 }
 
--(id)initWithPolicyName:(NSString *)thePolicyName andCookieExpirationPeriod:(NSNumber *)theCookieExpirationPeriod
-{
+- (id)initWithPolicyName:(NSString *)thePolicyName andCookieExpirationPeriod:(NSNumber *)theCookieExpirationPeriod {
     if (self = [self init]) {
-        self.policyName             = thePolicyName;
+        self.policyName = thePolicyName;
         self.cookieExpirationPeriod = theCookieExpirationPeriod;
     }
 
@@ -43,9 +41,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

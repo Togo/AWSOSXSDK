@@ -20,22 +20,18 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
-    
-    if ([elementName isEqualToString:@"Rule"])
-    {
+
+    if ([elementName isEqualToString:@"Rule"]) {
         [parser setDelegate:[[S3BucketLifecycleConfigurationRuleUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].rules withSetter:@selector(addObject:)]];
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(S3BucketLifecycleConfiguration *)configuration
-{
-    if (nil == configuration)
-    {
+- (S3BucketLifecycleConfiguration *)configuration {
+    if (nil == configuration) {
         configuration = [[S3BucketLifecycleConfiguration alloc] init];
         configuration.rules = [NSMutableArray arrayWithCapacity:1];
     }

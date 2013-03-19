@@ -22,11 +22,11 @@
 /**
  * Create Queue Request Marshaller
  */
-@interface SQSCreateQueueRequestMarshaller:NSObject {
+@interface SQSCreateQueueRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSCreateQueueRequest *)createQueueRequest;
++ (AmazonServiceRequest *)createRequest:(SQSCreateQueueRequest *)createQueueRequest;
 
 
 @end

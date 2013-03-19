@@ -19,8 +19,7 @@
 @implementation EC2VolumeStatusItemUnmarshaller
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
 
@@ -33,8 +32,8 @@
     if ([elementName isEqualToString:@"eventsSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.events withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"eventsSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2VolumeStatusEventUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2VolumeStatusEventUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
@@ -42,12 +41,11 @@
     if ([elementName isEqualToString:@"actionsSet"]) {
         AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.actions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"actionsSet";
-        listUnmarshaller.entryElementName   = @"item";
-        listUnmarshaller.delegateClass      = [EC2VolumeStatusActionUnmarshaller class];
+        listUnmarshaller.entryElementName = @"item";
+        listUnmarshaller.delegateClass = [EC2VolumeStatusActionUnmarshaller class];
 
         [parser setDelegate:listUnmarshaller];
     }
-
 
 
     if ([elementName isEqualToString:@"Error"]) {
@@ -55,8 +53,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
 
@@ -89,14 +86,12 @@
     }
 }
 
--(EC2VolumeStatusItem *)response
-{
+- (EC2VolumeStatusItem *)response {
     if (nil == response) {
         response = [[EC2VolumeStatusItem alloc] init];
     }
     return response;
 }
-
 
 
 @end

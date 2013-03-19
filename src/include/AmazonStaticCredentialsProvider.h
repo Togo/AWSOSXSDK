@@ -20,8 +20,8 @@
  *
  * @see AmazonCredentialsProvider
  */
-@interface AmazonStaticCredentialsProvider : NSObject<AmazonCredentialsProvider> {
-    AmazonCredentials* staticCredentials;
+@interface AmazonStaticCredentialsProvider : NSObject <AmazonCredentialsProvider> {
+    AmazonCredentials *staticCredentials;
 }
 
 /** Inits the provider with the access key and the secret key.
@@ -29,12 +29,12 @@
  * @param accessKey The AWS Access Key
  * @param secretKey The AWS Secret Key
  */
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
+- (id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
 
 /** Inits the provider with a pre-allocated AmazonCredentials object
  *
  * @param theCredentials the static credentials to provide to clients
  */
--(id)initWithCredentials:(AmazonCredentials *)theCredentials;
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials;
 
 @end

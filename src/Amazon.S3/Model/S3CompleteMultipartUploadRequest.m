@@ -20,20 +20,17 @@
 
 @synthesize uploadId;
 
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload
-{
-    if(self = [super init])
-    {
-        self.bucket   = multipartUpload.bucket;
-        self.key      = multipartUpload.key;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload {
+    if (self = [super init]) {
+        self.bucket = multipartUpload.bucket;
+        self.key = multipartUpload.key;
         self.uploadId = multipartUpload.uploadId;
     }
 
     return self;
 }
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     [self setSubResource:[NSString stringWithFormat:@"%@=%@", kS3QueryParamUploadId, self.uploadId]];
 
     [super configureURLRequest];
@@ -41,14 +38,13 @@
     [urlRequest setHTTPMethod:kHttpMethodPost];
 
     [urlRequest setHTTPBody:[self requestBody]];
-    [urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[urlRequest HTTPBody] length]] forHTTPHeaderField:kHttpHdrContentLength];
+    [urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[urlRequest HTTPBody] length]] forHTTPHeaderField:kHttpHdrContentLength];
     [urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
 
     return urlRequest;
 }
 
--(void)addPartWithPartNumber:(int)partNumber withETag:(NSString *)etag
-{
+- (void)addPartWithPartNumber:(int)partNumber withETag:(NSString *)etag {
     if (nil == parts) {
         parts = [[NSMutableDictionary alloc] init];
     }
@@ -56,18 +52,16 @@
     [parts setObject:etag forKey:[NSNumber numberWithInt:partNumber]];
 }
 
--(NSData *)requestBody
-{
+- (NSData *)requestBody {
     NSMutableString *xml = [NSMutableString stringWithFormat:@"<CompleteMultipartUpload>"];
 
-    NSComparator    comparePartNumbers = ^ (id part1, id part2) {
+    NSComparator comparePartNumbers = ^(id part1, id part2) {
         return [part1 compare:part2];
     };
 
     NSArray *keys = [[parts allKeys] sortedArrayUsingComparator:comparePartNumbers];
-    for (NSNumber *partNumber in keys)
-    {
-        [xml appendFormat:@"<Part><PartNumber>%ld</PartNumber><ETag>%@</ETag></Part>", (long)[partNumber integerValue], [parts objectForKey:partNumber]];
+    for (NSNumber *partNumber in keys) {
+        [xml appendFormat:@"<Part><PartNumber>%ld</PartNumber><ETag>%@</ETag></Part>", (long) [partNumber integerValue], [parts objectForKey:partNumber]];
     }
 
     [xml appendString:@"</CompleteMultipartUpload>"];

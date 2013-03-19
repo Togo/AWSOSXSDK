@@ -16,8 +16,7 @@
 #import <Foundation/Foundation.h>
 #import "../AmazonUnmarshallerXMLParserDelegate.h"
 
-@interface S3DeleteObjectsResultUnmarshaller:AmazonUnmarshallerXMLParserDelegate
-{
+@interface S3DeleteObjectsResultUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     NSMutableArray *deletedObjects;
     NSMutableArray *deleteErrors;
 }

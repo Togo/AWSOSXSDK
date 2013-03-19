@@ -23,8 +23,7 @@
 @implementation DynamoDBPutItemResponseUnmarshaller
 
 
-+(DynamoDBPutItemResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBPutItemResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBPutItemResponse *putItemResult = [[DynamoDBPutItemResponse alloc] init];
 
 

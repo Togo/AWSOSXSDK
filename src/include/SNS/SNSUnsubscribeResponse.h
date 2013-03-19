@@ -24,8 +24,7 @@
 /**
  * Unsubscribe
  */
-@interface SNSUnsubscribeResponse:SNSResponse
-{
+@interface SNSUnsubscribeResponse : SNSResponse {
 }
 
 @end

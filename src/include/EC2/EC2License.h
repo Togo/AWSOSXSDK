@@ -17,29 +17,24 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * License
  */
 
-@interface EC2License:NSObject
-
-{
-    NSString       *licenseId;
-    NSString       *type;
-    NSString       *pool;
+@interface EC2License : NSObject {
+    NSString *licenseId;
+    NSString *type;
+    NSString *pool;
     NSMutableArray *capacities;
     NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID identifying the license.
@@ -72,13 +67,13 @@
  * Adds a single object to capacities.
  * This function will alloc and init capacities if not already done.
  */
--(void)addCapacity:(EC2LicenseCapacity *)capacityObject;
+- (void)addCapacity:(EC2LicenseCapacity *)capacityObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -86,7 +81,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

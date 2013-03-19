@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeAddressesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAddressesRequest *)describeAddressesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAddressesRequest *)describeAddressesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeAddresses"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAddresses" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeAddressesRequest delegate]];
     [request setCredentials:[describeAddressesRequest credentials]];

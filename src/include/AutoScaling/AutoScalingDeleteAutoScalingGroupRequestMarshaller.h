@@ -22,11 +22,11 @@
 /**
  * Delete Auto Scaling Group Request Marshaller
  */
-@interface AutoScalingDeleteAutoScalingGroupRequestMarshaller:NSObject {
+@interface AutoScalingDeleteAutoScalingGroupRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest;
 
 
 @end

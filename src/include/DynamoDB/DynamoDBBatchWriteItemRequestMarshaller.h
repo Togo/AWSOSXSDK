@@ -23,11 +23,11 @@
 /**
  * Batch Write Item Request Marshaller
  */
-@interface DynamoDBBatchWriteItemRequestMarshaller:NSObject {
+@interface DynamoDBBatchWriteItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest;
 
 
 @end

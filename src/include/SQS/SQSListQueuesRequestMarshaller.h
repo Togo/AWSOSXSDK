@@ -22,11 +22,11 @@
 /**
  * List Queues Request Marshaller
  */
-@interface SQSListQueuesRequestMarshaller:NSObject {
+@interface SQSListQueuesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSListQueuesRequest *)listQueuesRequest;
++ (AmazonServiceRequest *)createRequest:(SQSListQueuesRequest *)listQueuesRequest;
 
 
 @end

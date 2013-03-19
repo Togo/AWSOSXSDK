@@ -25,23 +25,20 @@
  * List Metrics Result
  */
 
-@interface CloudWatchListMetricsResponse:CloudWatchResponse
-
-{
+@interface CloudWatchListMetricsResponse : CloudWatchResponse {
     NSMutableArray *metrics;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of metrics used to generate statistics for an AWS account.
@@ -54,11 +51,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the metrics array for the specified index
  */
--(CloudWatchMetric *)metricsObjectAtIndex:(int)index;
+- (CloudWatchMetric *)metricsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -66,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

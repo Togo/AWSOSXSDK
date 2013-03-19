@@ -17,12 +17,11 @@
 
 @implementation AutoScalingCreateAutoScalingGroupRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingCreateAutoScalingGroupRequest *)createAutoScalingGroupRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingCreateAutoScalingGroupRequest *)createAutoScalingGroupRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"CreateAutoScalingGroup"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateAutoScalingGroup" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[createAutoScalingGroupRequest delegate]];
     [request setCredentials:[createAutoScalingGroupRequest credentials]];
@@ -138,7 +137,7 @@
             }
             if (tagsListValue != nil) {
                 if (tagsListValue.propagateAtLaunchIsSet) {
-                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
+                    [request setParameterValue:(tagsListValue.propagateAtLaunch ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.member.%d.%@", @"Tags", tagsListIndex, @"PropagateAtLaunch"]];
                 }
             }
 

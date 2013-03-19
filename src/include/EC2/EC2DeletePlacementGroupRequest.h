@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Placement Group Request
  */
 
-@interface EC2DeletePlacementGroupRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeletePlacementGroupRequest : AmazonServiceRequestConfig {
     NSString *groupName;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeletePlacementGroupRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeletePlacementGroupRequest object.
@@ -49,7 +45,7 @@
  * @param theGroupName The name of the <code>PlacementGroup</code> to
  * delete.
  */
--(id)initWithGroupName:(NSString *)theGroupName;
+- (id)initWithGroupName:(NSString *)theGroupName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -20,21 +20,17 @@
  * Instance Export Details
  */
 
-@interface EC2InstanceExportDetails:NSObject
-
-{
+@interface EC2InstanceExportDetails : NSObject {
     NSString *instanceId;
     NSString *targetEnvironment;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the InstanceId property for this object.
@@ -55,7 +51,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

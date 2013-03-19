@@ -21,9 +21,8 @@
 
 @synthesize listPartsResult;
 
--(void)processBody
-{
-    NSXMLParser                   *parser       = [[NSXMLParser alloc] initWithData:self.body];
+- (void)processBody {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.body];
     S3ListPartsResultUnmarshaller *unmarshaller = [[S3ListPartsResultUnmarshaller alloc] init];
 
     [parser setDelegate:unmarshaller];

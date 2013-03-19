@@ -17,38 +17,33 @@
 #import "EC2PricingDetail.h"
 
 
-
 /**
  * Reserved Instances Offering
  */
 
-@interface EC2ReservedInstancesOffering:NSObject
-
-{
-    NSString       *reservedInstancesOfferingId;
-    NSString       *instanceType;
-    NSString       *availabilityZone;
-    NSNumber       *duration;
-    NSNumber       *usagePrice;
-    NSNumber       *fixedPrice;
-    NSString       *productDescription;
-    NSString       *instanceTenancy;
-    NSString       *currencyCode;
-    NSString       *offeringType;
+@interface EC2ReservedInstancesOffering : NSObject {
+    NSString *reservedInstancesOfferingId;
+    NSString *instanceType;
+    NSString *availabilityZone;
+    NSNumber *duration;
+    NSNumber *usagePrice;
+    NSNumber *fixedPrice;
+    NSString *productDescription;
+    NSString *instanceTenancy;
+    NSString *currencyCode;
+    NSString *offeringType;
     NSMutableArray *recurringCharges;
-    bool           marketplace;
-    bool           marketplaceIsSet;
+    bool marketplace;
+    bool marketplaceIsSet;
     NSMutableArray *pricingDetails;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of this Reserved Instances offering.
@@ -112,7 +107,7 @@
 /**
  * The value of the Marketplace property for this object.
  */
-@property (nonatomic) bool           marketplace;
+@property (nonatomic) bool marketplace;
 
 @property (nonatomic, readonly) bool marketplaceIsSet;
 
@@ -125,13 +120,13 @@
  * Adds a single object to recurringCharges.
  * This function will alloc and init recurringCharges if not already done.
  */
--(void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject;
+- (void)addRecurringCharge:(EC2RecurringCharge *)recurringChargeObject;
 
 /**
  * Adds a single object to pricingDetails.
  * This function will alloc and init pricingDetails if not already done.
  */
--(void)addPricingDetail:(EC2PricingDetail *)pricingDetailObject;
+- (void)addPricingDetail:(EC2PricingDetail *)pricingDetailObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -139,7 +134,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

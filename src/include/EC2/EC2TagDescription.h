@@ -20,9 +20,7 @@
  * Tag Description
  */
 
-@interface EC2TagDescription:NSObject
-
-{
+@interface EC2TagDescription : NSObject {
     NSString *resourceId;
     NSString *resourceType;
     NSString *key;
@@ -30,13 +28,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The resource ID for the tag.
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

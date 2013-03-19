@@ -25,7 +25,7 @@
 /**
  * Describe Availability Zones Response Unmarshaller
  */
-@interface EC2DescribeAvailabilityZonesResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2DescribeAvailabilityZonesResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DescribeAvailabilityZonesResponse *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) EC2DescribeAvailabilityZonesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

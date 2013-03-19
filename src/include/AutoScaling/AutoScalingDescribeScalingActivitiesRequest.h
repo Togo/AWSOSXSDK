@@ -17,28 +17,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Scaling Activities Request
  */
 
-@interface AutoScalingDescribeScalingActivitiesRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDescribeScalingActivitiesRequest : AmazonServiceRequestConfig {
     NSMutableArray *activityIds;
-    NSString       *autoScalingGroupName;
-    NSNumber       *maxRecords;
-    NSString       *nextToken;
+    NSString *autoScalingGroupName;
+    NSNumber *maxRecords;
+    NSString *nextToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list containing the activity IDs of the desired scaling activities.
@@ -80,7 +75,7 @@
  * Adds a single object to activityIds.
  * This function will alloc and init activityIds if not already done.
  */
--(void)addActivityId:(NSString *)activityIdObject;
+- (void)addActivityId:(NSString *)activityIdObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -88,7 +83,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

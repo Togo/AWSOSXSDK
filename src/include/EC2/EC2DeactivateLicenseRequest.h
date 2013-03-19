@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Deactivate License Request
  */
 
-@interface EC2DeactivateLicenseRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DeactivateLicenseRequest : AmazonServiceRequestConfig {
     NSString *licenseId;
     NSNumber *capacity;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new DeactivateLicenseRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeactivateLicenseRequest object.
@@ -57,7 +53,7 @@
  * @param theCapacity Specifies the amount of capacity to deactivate
  * against the license.
  */
--(id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity;
+- (id)initWithLicenseId:(NSString *)theLicenseId andCapacity:(NSNumber *)theCapacity;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -20,8 +20,7 @@
 /**
  * Modify Instance Attribute
  */
-@interface EC2ModifyInstanceAttributeResponse:EC2Response
-{
+@interface EC2ModifyInstanceAttributeResponse : EC2Response {
 }
 
 @end

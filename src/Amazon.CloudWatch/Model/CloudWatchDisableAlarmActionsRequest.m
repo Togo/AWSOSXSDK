@@ -21,8 +21,7 @@
 @synthesize alarmNames;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         alarmNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)addAlarmName:(NSString *)alarmNameObject
-{
+- (void)addAlarmName:(NSString *)alarmNameObject {
     if (alarmNames == nil) {
         alarmNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -41,8 +39,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

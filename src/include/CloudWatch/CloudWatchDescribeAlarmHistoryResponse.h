@@ -24,23 +24,20 @@
  * Describe Alarm History Result
  */
 
-@interface CloudWatchDescribeAlarmHistoryResponse:CloudWatchResponse
-
-{
+@interface CloudWatchDescribeAlarmHistoryResponse : CloudWatchResponse {
     NSMutableArray *alarmHistoryItems;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of alarm histories in JSON format.
@@ -53,11 +50,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the alarmHistoryItems array for the specified index
  */
--(CloudWatchAlarmHistoryItem *)alarmHistoryItemsObjectAtIndex:(int)index;
+- (CloudWatchAlarmHistoryItem *)alarmHistoryItemsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -65,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

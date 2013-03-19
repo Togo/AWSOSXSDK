@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Send Message Request
  */
 
-@interface SQSSendMessageRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSSendMessageRequest : AmazonServiceRequestConfig {
     NSString *queueUrl;
     NSString *messageBody;
     NSNumber *delaySeconds;
 }
-
 
 
 /**
@@ -52,7 +48,7 @@
  * Default constructor for a new SendMessageRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SendMessageRequest object.
@@ -61,7 +57,7 @@
  * @param theQueueUrl The URL of the SQS queue to take action on.
  * @param theMessageBody The message to send.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andMessageBody:(NSString *)theMessageBody;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andMessageBody:(NSString *)theMessageBody;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -69,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

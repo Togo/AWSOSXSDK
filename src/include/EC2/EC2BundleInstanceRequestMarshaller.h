@@ -24,11 +24,11 @@
 /**
  * Bundle Instance Request Marshaller
  */
-@interface EC2BundleInstanceRequestMarshaller:NSObject {
+@interface EC2BundleInstanceRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2BundleInstanceRequest *)bundleInstanceRequest;
++ (AmazonServiceRequest *)createRequest:(EC2BundleInstanceRequest *)bundleInstanceRequest;
 
 
 @end

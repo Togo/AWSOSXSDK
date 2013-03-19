@@ -36,43 +36,40 @@
 @synthesize ebsOptimizedIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId                        = nil;
-        attribute                         = nil;
-        value                             = nil;
-        blockDeviceMappings               = [[NSMutableArray alloc] initWithCapacity:1];
-        sourceDestCheck                   = NO;
-        sourceDestCheckIsSet              = NO;
-        disableApiTermination             = NO;
-        disableApiTerminationIsSet        = NO;
-        instanceType                      = nil;
-        kernel                            = nil;
-        ramdisk                           = nil;
-        userData                          = nil;
+        instanceId = nil;
+        attribute = nil;
+        value = nil;
+        blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
+        sourceDestCheck = NO;
+        sourceDestCheckIsSet = NO;
+        disableApiTermination = NO;
+        disableApiTerminationIsSet = NO;
+        instanceType = nil;
+        kernel = nil;
+        ramdisk = nil;
+        userData = nil;
         instanceInitiatedShutdownBehavior = nil;
-        groups                            = [[NSMutableArray alloc] initWithCapacity:1];
-        ebsOptimized                      = NO;
-        ebsOptimizedIsSet                 = NO;
+        groups = [[NSMutableArray alloc] initWithCapacity:1];
+        ebsOptimized = NO;
+        ebsOptimizedIsSet = NO;
     }
 
     return self;
 }
 
--(id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute
-{
+- (id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute {
     if (self = [self init]) {
         self.instanceId = theInstanceId;
-        self.attribute  = theAttribute;
+        self.attribute = theAttribute;
     }
 
     return self;
 }
 
 
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingObject
-{
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingObject {
     if (blockDeviceMappings == nil) {
         blockDeviceMappings = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -80,8 +77,7 @@
     [blockDeviceMappings addObject:blockDeviceMappingObject];
 }
 
--(void)addGroup:(NSString *)groupObject
-{
+- (void)addGroup:(NSString *)groupObject {
     if (groups == nil) {
         groups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -90,8 +86,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -115,25 +110,20 @@
 }
 
 
--(void)setSourceDestCheck:(bool)theValue
-{
-    sourceDestCheck      = theValue;
+- (void)setSourceDestCheck:(bool)theValue {
+    sourceDestCheck = theValue;
     sourceDestCheckIsSet = YES;
 }
 
--(void)setDisableApiTermination:(bool)theValue
-{
-    disableApiTermination      = theValue;
+- (void)setDisableApiTermination:(bool)theValue {
+    disableApiTermination = theValue;
     disableApiTerminationIsSet = YES;
 }
 
--(void)setEbsOptimized:(bool)theValue
-{
-    ebsOptimized      = theValue;
+- (void)setEbsOptimized:(bool)theValue {
+    ebsOptimized = theValue;
     ebsOptimizedIsSet = YES;
 }
-
-
 
 
 @end

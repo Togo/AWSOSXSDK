@@ -17,12 +17,11 @@
 
 @implementation SimpleDBDeleteDomainRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDeleteDomainRequest *)deleteDomainRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBDeleteDomainRequest *)deleteDomainRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"DeleteDomain"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteDomain" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[deleteDomainRequest delegate]];
     [request setCredentials:[deleteDomainRequest credentials]];

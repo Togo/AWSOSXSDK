@@ -20,8 +20,7 @@
 /**
  * Activate License
  */
-@interface EC2ActivateLicenseResponse:EC2Response
-{
+@interface EC2ActivateLicenseResponse : EC2Response {
 }
 
 @end

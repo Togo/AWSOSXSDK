@@ -18,14 +18,13 @@
 
 @implementation DynamoDBExceptionUnmarshaller
 
-+(AmazonServiceException *)unmarshall:(NSDictionary *)jsonObject
-{
++ (AmazonServiceException *)unmarshall:(NSDictionary *)jsonObject {
     AmazonServiceException *exception = [AmazonServiceException exceptionWithMessage:@""];
 
-    NSString               *exceptionString = [jsonObject valueForKey:@"__type"];
+    NSString *exceptionString = [jsonObject valueForKey:@"__type"];
 
     exception.errorCode = [[exceptionString componentsSeparatedByString:@"#"] objectAtIndex:1];
-    exception.message   = [jsonObject valueForKey:@"message"];
+    exception.message = [jsonObject valueForKey:@"message"];
 
     return exception;
 }

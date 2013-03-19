@@ -16,17 +16,17 @@
 #import "EC2ReleaseAddressResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2ReleaseAddressResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2ReleaseAddressResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2ReleaseAddressResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2ReleaseAddressResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2ReleaseAddressResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2ReleaseAddressResponse *)response;
 
 @end

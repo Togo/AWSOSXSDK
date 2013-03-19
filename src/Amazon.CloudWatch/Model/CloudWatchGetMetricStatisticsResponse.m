@@ -22,10 +22,9 @@
 @synthesize datapoints;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        label      = nil;
+        label = nil;
         datapoints = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
@@ -63,15 +61,12 @@
 }
 
 
-
--(CloudWatchDatapoint *)datapointsObjectAtIndex:(int)index
-{
-    return (CloudWatchDatapoint *)[datapoints objectAtIndex:index];
+- (CloudWatchDatapoint *)datapointsObjectAtIndex:(int)index {
+    return (CloudWatchDatapoint *) [datapoints objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +77,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

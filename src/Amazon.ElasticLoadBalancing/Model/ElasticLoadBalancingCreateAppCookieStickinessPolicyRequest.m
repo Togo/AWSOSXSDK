@@ -23,32 +23,28 @@
 @synthesize cookieName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerName = nil;
-        policyName       = nil;
-        cookieName       = nil;
+        policyName = nil;
+        cookieName = nil;
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andPolicyName:(NSString *)thePolicyName andCookieName:(NSString *)theCookieName {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
-        self.policyName       = thePolicyName;
-        self.cookieName       = theCookieName;
+        self.policyName = thePolicyName;
+        self.cookieName = theCookieName;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -60,9 +56,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Terminate Instance In Auto Scaling Group Request Marshaller
  */
-@interface AutoScalingTerminateInstanceInAutoScalingGroupRequestMarshaller:NSObject {
+@interface AutoScalingTerminateInstanceInAutoScalingGroupRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingTerminateInstanceInAutoScalingGroupRequest *)terminateInstanceInAutoScalingGroupRequest;
 
 
 @end

@@ -26,11 +26,11 @@
 /**
  * Put Metric Alarm Request Marshaller
  */
-@interface CloudWatchPutMetricAlarmRequestMarshaller:NSObject {
+@interface CloudWatchPutMetricAlarmRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest;
 
 
 @end

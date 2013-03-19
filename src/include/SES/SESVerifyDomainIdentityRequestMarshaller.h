@@ -22,11 +22,11 @@
 /**
  * Verify Domain Identity Request Marshaller
  */
-@interface SESVerifyDomainIdentityRequestMarshaller:NSObject {
+@interface SESVerifyDomainIdentityRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest;
++ (AmazonServiceRequest *)createRequest:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest;
 
 
 @end

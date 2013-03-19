@@ -23,11 +23,10 @@
 @synthesize bccAddresses;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        toAddresses  = [[NSMutableArray alloc] initWithCapacity:1];
-        ccAddresses  = [[NSMutableArray alloc] initWithCapacity:1];
+        toAddresses = [[NSMutableArray alloc] initWithCapacity:1];
+        ccAddresses = [[NSMutableArray alloc] initWithCapacity:1];
         bccAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)addToAddresse:(NSString *)toAddresseObject
-{
+- (void)addToAddresse:(NSString *)toAddresseObject {
     if (toAddresses == nil) {
         toAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -44,8 +42,7 @@
     [toAddresses addObject:toAddresseObject];
 }
 
--(void)addCcAddresse:(NSString *)ccAddresseObject
-{
+- (void)addCcAddresse:(NSString *)ccAddresseObject {
     if (ccAddresses == nil) {
         ccAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
     [ccAddresses addObject:ccAddresseObject];
 }
 
--(void)addBccAddresse:(NSString *)bccAddresseObject
-{
+- (void)addBccAddresse:(NSString *)bccAddresseObject {
     if (bccAddresses == nil) {
         bccAddresses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +59,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -76,9 +71,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

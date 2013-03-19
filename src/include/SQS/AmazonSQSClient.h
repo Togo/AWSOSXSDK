@@ -54,8 +54,7 @@
  * </summary>
  *
  */
-@interface AmazonSQSClient:AmazonWebServiceClient
-{
+@interface AmazonSQSClient : AmazonWebServiceClient {
 }
 
 
@@ -79,7 +78,7 @@
  * @see SQSSetQueueAttributesRequest
  * @see SQSSetQueueAttributesResponse
  */
--(SQSSetQueueAttributesResponse *)setQueueAttributes:(SQSSetQueueAttributesRequest *)setQueueAttributesRequest;
+- (SQSSetQueueAttributesResponse *)setQueueAttributes:(SQSSetQueueAttributesRequest *)setQueueAttributesRequest;
 
 
 /**
@@ -107,7 +106,7 @@
  * @see SQSChangeMessageVisibilityBatchRequest
  * @see SQSChangeMessageVisibilityBatchResponse
  */
--(SQSChangeMessageVisibilityBatchResponse *)changeMessageVisibilityBatch:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest;
+- (SQSChangeMessageVisibilityBatchResponse *)changeMessageVisibilityBatch:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest;
 
 
 /**
@@ -150,7 +149,7 @@
  * @see SQSChangeMessageVisibilityRequest
  * @see SQSChangeMessageVisibilityResponse
  */
--(SQSChangeMessageVisibilityResponse *)changeMessageVisibility:(SQSChangeMessageVisibilityRequest *)changeMessageVisibilityRequest;
+- (SQSChangeMessageVisibilityResponse *)changeMessageVisibility:(SQSChangeMessageVisibilityRequest *)changeMessageVisibilityRequest;
 
 
 /**
@@ -173,7 +172,7 @@
  * @see SQSGetQueueUrlRequest
  * @see SQSGetQueueUrlResponse
  */
--(SQSGetQueueUrlResponse *)getQueueUrl:(SQSGetQueueUrlRequest *)getQueueUrlRequest;
+- (SQSGetQueueUrlResponse *)getQueueUrl:(SQSGetQueueUrlRequest *)getQueueUrlRequest;
 
 
 /**
@@ -195,7 +194,7 @@
  * @see SQSRemovePermissionRequest
  * @see SQSRemovePermissionResponse
  */
--(SQSRemovePermissionResponse *)removePermission:(SQSRemovePermissionRequest *)removePermissionRequest;
+- (SQSRemovePermissionResponse *)removePermission:(SQSRemovePermissionRequest *)removePermissionRequest;
 
 
 /**
@@ -241,7 +240,7 @@
  * @see SQSGetQueueAttributesRequest
  * @see SQSGetQueueAttributesResponse
  */
--(SQSGetQueueAttributesResponse *)getQueueAttributes:(SQSGetQueueAttributesRequest *)getQueueAttributesRequest;
+- (SQSGetQueueAttributesResponse *)getQueueAttributes:(SQSGetQueueAttributesRequest *)getQueueAttributesRequest;
 
 
 /**
@@ -270,7 +269,7 @@
  * @see SQSSendMessageBatchRequest
  * @see SQSSendMessageBatchResponse
  */
--(SQSSendMessageBatchResponse *)sendMessageBatch:(SQSSendMessageBatchRequest *)sendMessageBatchRequest;
+- (SQSSendMessageBatchResponse *)sendMessageBatch:(SQSSendMessageBatchRequest *)sendMessageBatchRequest;
 
 
 /**
@@ -294,7 +293,7 @@
  * @see SQSDeleteQueueRequest
  * @see SQSDeleteQueueResponse
  */
--(SQSDeleteQueueResponse *)deleteQueue:(SQSDeleteQueueRequest *)deleteQueueRequest;
+- (SQSDeleteQueueResponse *)deleteQueue:(SQSDeleteQueueRequest *)deleteQueueRequest;
 
 
 /**
@@ -317,7 +316,7 @@
  * @see SQSSendMessageRequest
  * @see SQSSendMessageResponse
  */
--(SQSSendMessageResponse *)sendMessage:(SQSSendMessageRequest *)sendMessageRequest;
+- (SQSSendMessageResponse *)sendMessage:(SQSSendMessageRequest *)sendMessageRequest;
 
 
 /**
@@ -354,7 +353,7 @@
  * @see SQSReceiveMessageRequest
  * @see SQSReceiveMessageResponse
  */
--(SQSReceiveMessageResponse *)receiveMessage:(SQSReceiveMessageRequest *)receiveMessageRequest;
+- (SQSReceiveMessageResponse *)receiveMessage:(SQSReceiveMessageRequest *)receiveMessageRequest;
 
 
 /**
@@ -376,7 +375,7 @@
  * @see SQSListQueuesRequest
  * @see SQSListQueuesResponse
  */
--(SQSListQueuesResponse *)listQueues:(SQSListQueuesRequest *)listQueuesRequest;
+- (SQSListQueuesResponse *)listQueues:(SQSListQueuesRequest *)listQueuesRequest;
 
 
 /**
@@ -404,7 +403,7 @@
  * @see SQSDeleteMessageBatchRequest
  * @see SQSDeleteMessageBatchResponse
  */
--(SQSDeleteMessageBatchResponse *)deleteMessageBatch:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest;
+- (SQSDeleteMessageBatchResponse *)deleteMessageBatch:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest;
 
 
 /**
@@ -439,7 +438,7 @@
  * @see SQSCreateQueueRequest
  * @see SQSCreateQueueResponse
  */
--(SQSCreateQueueResponse *)createQueue:(SQSCreateQueueRequest *)createQueueRequest;
+- (SQSCreateQueueResponse *)createQueue:(SQSCreateQueueRequest *)createQueueRequest;
 
 
 /**
@@ -475,7 +474,7 @@
  * @see SQSAddPermissionRequest
  * @see SQSAddPermissionResponse
  */
--(SQSAddPermissionResponse *)addPermission:(SQSAddPermissionRequest *)addPermissionRequest;
+- (SQSAddPermissionResponse *)addPermission:(SQSAddPermissionRequest *)addPermissionRequest;
 
 
 /**
@@ -499,8 +498,7 @@
  * @see SQSDeleteMessageRequest
  * @see SQSDeleteMessageResponse
  */
--(SQSDeleteMessageResponse *)deleteMessage:(SQSDeleteMessageRequest *)deleteMessageRequest;
-
+- (SQSDeleteMessageResponse *)deleteMessage:(SQSDeleteMessageRequest *)deleteMessageRequest;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2CreateSpotDatafeedSubscriptionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateSpotDatafeedSubscriptionRequest *)createSpotDatafeedSubscriptionRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateSpotDatafeedSubscriptionRequest *)createSpotDatafeedSubscriptionRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateSpotDatafeedSubscription"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateSpotDatafeedSubscription" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createSpotDatafeedSubscriptionRequest delegate]];
     [request setCredentials:[createSpotDatafeedSubscriptionRequest credentials]];

@@ -49,8 +49,7 @@
  * </summary>
  *
  */
-@interface AmazonSecurityTokenServiceClient:AmazonWebServiceClient
-{
+@interface AmazonSecurityTokenServiceClient : AmazonWebServiceClient {
 }
 
 
@@ -83,7 +82,7 @@
  * @see SecurityTokenServiceGetSessionTokenRequest
  * @see SecurityTokenServiceGetSessionTokenResponse
  */
--(SecurityTokenServiceGetSessionTokenResponse *)getSessionToken:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest;
+- (SecurityTokenServiceGetSessionTokenResponse *)getSessionToken:(SecurityTokenServiceGetSessionTokenRequest *)getSessionTokenRequest;
 
 
 /**
@@ -120,7 +119,7 @@
  * @see SecurityTokenServiceGetFederationTokenRequest
  * @see SecurityTokenServiceGetFederationTokenResponse
  */
--(SecurityTokenServiceGetFederationTokenResponse *)getFederationToken:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest;
+- (SecurityTokenServiceGetFederationTokenResponse *)getFederationToken:(SecurityTokenServiceGetFederationTokenRequest *)getFederationTokenRequest;
 
 
 /**
@@ -175,8 +174,7 @@
  * @see SecurityTokenServiceAssumeRoleRequest
  * @see SecurityTokenServiceAssumeRoleResponse
  */
--(SecurityTokenServiceAssumeRoleResponse *)assumeRole:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest;
-
+- (SecurityTokenServiceAssumeRoleResponse *)assumeRole:(SecurityTokenServiceAssumeRoleRequest *)assumeRoleRequest;
 
 
 @end

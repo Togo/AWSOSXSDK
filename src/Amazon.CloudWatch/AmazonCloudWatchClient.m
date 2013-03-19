@@ -42,107 +42,92 @@
 
 @implementation AmazonCloudWatchClient
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [super initWithAccessKey:theAccessKey withSecretKey:theSecretKey]) {
         self.endpoint = AMAZON_CW_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentials:(AmazonCredentials *)theCredentials
-{
+- (id)initWithCredentials:(AmazonCredentials *)theCredentials {
     if (self = [super initWithCredentials:theCredentials]) {
         self.endpoint = AMAZON_CW_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider> )theProvider
-{
+- (id)initWithCredentialsProvider:(id <AmazonCredentialsProvider>)theProvider {
     if (self = [super initWithCredentialsProvider:theProvider]) {
         self.endpoint = AMAZON_CW_US_EAST_1_ENDPOINT_SECURE;
     }
     return self;
 }
 
--(CloudWatchPutMetricAlarmResponse *)putMetricAlarm:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest
-{
+- (CloudWatchPutMetricAlarmResponse *)putMetricAlarm:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest {
     AmazonServiceRequest *request = [CloudWatchPutMetricAlarmRequestMarshaller createRequest:putMetricAlarmRequest];
 
-    return (CloudWatchPutMetricAlarmResponse *)[self invoke:request rawRequest:putMetricAlarmRequest unmarshallerDelegate:[CloudWatchPutMetricAlarmResponseUnmarshaller class]];
+    return (CloudWatchPutMetricAlarmResponse *) [self invoke:request rawRequest:putMetricAlarmRequest unmarshallerDelegate:[CloudWatchPutMetricAlarmResponseUnmarshaller class]];
 }
 
--(CloudWatchPutMetricDataResponse *)putMetricData:(CloudWatchPutMetricDataRequest *)putMetricDataRequest
-{
+- (CloudWatchPutMetricDataResponse *)putMetricData:(CloudWatchPutMetricDataRequest *)putMetricDataRequest {
     AmazonServiceRequest *request = [CloudWatchPutMetricDataRequestMarshaller createRequest:putMetricDataRequest];
 
-    return (CloudWatchPutMetricDataResponse *)[self invoke:request rawRequest:putMetricDataRequest unmarshallerDelegate:[CloudWatchPutMetricDataResponseUnmarshaller class]];
+    return (CloudWatchPutMetricDataResponse *) [self invoke:request rawRequest:putMetricDataRequest unmarshallerDelegate:[CloudWatchPutMetricDataResponseUnmarshaller class]];
 }
 
--(CloudWatchListMetricsResponse *)listMetrics:(CloudWatchListMetricsRequest *)listMetricsRequest
-{
+- (CloudWatchListMetricsResponse *)listMetrics:(CloudWatchListMetricsRequest *)listMetricsRequest {
     AmazonServiceRequest *request = [CloudWatchListMetricsRequestMarshaller createRequest:listMetricsRequest];
 
-    return (CloudWatchListMetricsResponse *)[self invoke:request rawRequest:listMetricsRequest unmarshallerDelegate:[CloudWatchListMetricsResponseUnmarshaller class]];
+    return (CloudWatchListMetricsResponse *) [self invoke:request rawRequest:listMetricsRequest unmarshallerDelegate:[CloudWatchListMetricsResponseUnmarshaller class]];
 }
 
--(CloudWatchGetMetricStatisticsResponse *)getMetricStatistics:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest
-{
+- (CloudWatchGetMetricStatisticsResponse *)getMetricStatistics:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest {
     AmazonServiceRequest *request = [CloudWatchGetMetricStatisticsRequestMarshaller createRequest:getMetricStatisticsRequest];
 
-    return (CloudWatchGetMetricStatisticsResponse *)[self invoke:request rawRequest:getMetricStatisticsRequest unmarshallerDelegate:[CloudWatchGetMetricStatisticsResponseUnmarshaller class]];
+    return (CloudWatchGetMetricStatisticsResponse *) [self invoke:request rawRequest:getMetricStatisticsRequest unmarshallerDelegate:[CloudWatchGetMetricStatisticsResponseUnmarshaller class]];
 }
 
--(CloudWatchDisableAlarmActionsResponse *)disableAlarmActions:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest
-{
+- (CloudWatchDisableAlarmActionsResponse *)disableAlarmActions:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest {
     AmazonServiceRequest *request = [CloudWatchDisableAlarmActionsRequestMarshaller createRequest:disableAlarmActionsRequest];
 
-    return (CloudWatchDisableAlarmActionsResponse *)[self invoke:request rawRequest:disableAlarmActionsRequest unmarshallerDelegate:[CloudWatchDisableAlarmActionsResponseUnmarshaller class]];
+    return (CloudWatchDisableAlarmActionsResponse *) [self invoke:request rawRequest:disableAlarmActionsRequest unmarshallerDelegate:[CloudWatchDisableAlarmActionsResponseUnmarshaller class]];
 }
 
--(CloudWatchDescribeAlarmsResponse *)describeAlarms:(CloudWatchDescribeAlarmsRequest *)describeAlarmsRequest
-{
+- (CloudWatchDescribeAlarmsResponse *)describeAlarms:(CloudWatchDescribeAlarmsRequest *)describeAlarmsRequest {
     AmazonServiceRequest *request = [CloudWatchDescribeAlarmsRequestMarshaller createRequest:describeAlarmsRequest];
 
-    return (CloudWatchDescribeAlarmsResponse *)[self invoke:request rawRequest:describeAlarmsRequest unmarshallerDelegate:[CloudWatchDescribeAlarmsResponseUnmarshaller class]];
+    return (CloudWatchDescribeAlarmsResponse *) [self invoke:request rawRequest:describeAlarmsRequest unmarshallerDelegate:[CloudWatchDescribeAlarmsResponseUnmarshaller class]];
 }
 
--(CloudWatchDescribeAlarmsForMetricResponse *)describeAlarmsForMetric:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest
-{
+- (CloudWatchDescribeAlarmsForMetricResponse *)describeAlarmsForMetric:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest {
     AmazonServiceRequest *request = [CloudWatchDescribeAlarmsForMetricRequestMarshaller createRequest:describeAlarmsForMetricRequest];
 
-    return (CloudWatchDescribeAlarmsForMetricResponse *)[self invoke:request rawRequest:describeAlarmsForMetricRequest unmarshallerDelegate:[CloudWatchDescribeAlarmsForMetricResponseUnmarshaller class]];
+    return (CloudWatchDescribeAlarmsForMetricResponse *) [self invoke:request rawRequest:describeAlarmsForMetricRequest unmarshallerDelegate:[CloudWatchDescribeAlarmsForMetricResponseUnmarshaller class]];
 }
 
--(CloudWatchDescribeAlarmHistoryResponse *)describeAlarmHistory:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest
-{
+- (CloudWatchDescribeAlarmHistoryResponse *)describeAlarmHistory:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest {
     AmazonServiceRequest *request = [CloudWatchDescribeAlarmHistoryRequestMarshaller createRequest:describeAlarmHistoryRequest];
 
-    return (CloudWatchDescribeAlarmHistoryResponse *)[self invoke:request rawRequest:describeAlarmHistoryRequest unmarshallerDelegate:[CloudWatchDescribeAlarmHistoryResponseUnmarshaller class]];
+    return (CloudWatchDescribeAlarmHistoryResponse *) [self invoke:request rawRequest:describeAlarmHistoryRequest unmarshallerDelegate:[CloudWatchDescribeAlarmHistoryResponseUnmarshaller class]];
 }
 
--(CloudWatchEnableAlarmActionsResponse *)enableAlarmActions:(CloudWatchEnableAlarmActionsRequest *)enableAlarmActionsRequest
-{
+- (CloudWatchEnableAlarmActionsResponse *)enableAlarmActions:(CloudWatchEnableAlarmActionsRequest *)enableAlarmActionsRequest {
     AmazonServiceRequest *request = [CloudWatchEnableAlarmActionsRequestMarshaller createRequest:enableAlarmActionsRequest];
 
-    return (CloudWatchEnableAlarmActionsResponse *)[self invoke:request rawRequest:enableAlarmActionsRequest unmarshallerDelegate:[CloudWatchEnableAlarmActionsResponseUnmarshaller class]];
+    return (CloudWatchEnableAlarmActionsResponse *) [self invoke:request rawRequest:enableAlarmActionsRequest unmarshallerDelegate:[CloudWatchEnableAlarmActionsResponseUnmarshaller class]];
 }
 
--(CloudWatchDeleteAlarmsResponse *)deleteAlarms:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest
-{
+- (CloudWatchDeleteAlarmsResponse *)deleteAlarms:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest {
     AmazonServiceRequest *request = [CloudWatchDeleteAlarmsRequestMarshaller createRequest:deleteAlarmsRequest];
 
-    return (CloudWatchDeleteAlarmsResponse *)[self invoke:request rawRequest:deleteAlarmsRequest unmarshallerDelegate:[CloudWatchDeleteAlarmsResponseUnmarshaller class]];
+    return (CloudWatchDeleteAlarmsResponse *) [self invoke:request rawRequest:deleteAlarmsRequest unmarshallerDelegate:[CloudWatchDeleteAlarmsResponseUnmarshaller class]];
 }
 
--(CloudWatchSetAlarmStateResponse *)setAlarmState:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest
-{
+- (CloudWatchSetAlarmStateResponse *)setAlarmState:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest {
     AmazonServiceRequest *request = [CloudWatchSetAlarmStateRequestMarshaller createRequest:setAlarmStateRequest];
 
-    return (CloudWatchSetAlarmStateResponse *)[self invoke:request rawRequest:setAlarmStateRequest unmarshallerDelegate:[CloudWatchSetAlarmStateResponseUnmarshaller class]];
+    return (CloudWatchSetAlarmStateResponse *) [self invoke:request rawRequest:setAlarmStateRequest unmarshallerDelegate:[CloudWatchSetAlarmStateResponseUnmarshaller class]];
 }
-
 
 
 @end

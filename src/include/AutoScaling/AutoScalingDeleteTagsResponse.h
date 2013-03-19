@@ -20,8 +20,7 @@
 /**
  * Delete Tags
  */
-@interface AutoScalingDeleteTagsResponse:AutoScalingResponse
-{
+@interface AutoScalingDeleteTagsResponse : AutoScalingResponse {
 }
 
 @end

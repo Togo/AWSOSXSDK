@@ -21,8 +21,7 @@
 @synthesize queueNamePrefix;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         queueNamePrefix = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithQueueNamePrefix:(NSString *)theQueueNamePrefix
-{
+- (id)initWithQueueNamePrefix:(NSString *)theQueueNamePrefix {
     if (self = [self init]) {
         self.queueNamePrefix = theQueueNamePrefix;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

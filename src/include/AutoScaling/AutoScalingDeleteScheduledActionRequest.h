@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Scheduled Action Request
  */
 
-@interface AutoScalingDeleteScheduledActionRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDeleteScheduledActionRequest : AmazonServiceRequestConfig {
     NSString *autoScalingGroupName;
     NSString *scheduledActionName;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -62,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

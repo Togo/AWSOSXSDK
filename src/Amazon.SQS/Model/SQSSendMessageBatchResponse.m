@@ -22,19 +22,17 @@
 @synthesize failed;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         successful = [[NSMutableArray alloc] initWithCapacity:1];
-        failed     = [[NSMutableArray alloc] initWithCapacity:1];
+        failed = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.BatchEntryIdsNotDistinct"]) {
@@ -67,21 +65,17 @@
 }
 
 
-
--(SQSSendMessageBatchResponseEntry *)successfulObjectAtIndex:(int)index
-{
-    return (SQSSendMessageBatchResponseEntry *)[successful objectAtIndex:index];
+- (SQSSendMessageBatchResponseEntry *)successfulObjectAtIndex:(int)index {
+    return (SQSSendMessageBatchResponseEntry *) [successful objectAtIndex:index];
 }
 
 
--(SQSBatchResponseErrorEntry *)failedObjectAtIndex:(int)index
-{
-    return (SQSBatchResponseErrorEntry *)[failed objectAtIndex:index];
+- (SQSBatchResponseErrorEntry *)failedObjectAtIndex:(int)index {
+    return (SQSBatchResponseErrorEntry *) [failed objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -92,9 +86,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

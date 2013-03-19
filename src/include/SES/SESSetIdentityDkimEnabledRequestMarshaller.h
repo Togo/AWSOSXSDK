@@ -22,11 +22,11 @@
 /**
  * Set Identity Dkim Enabled Request Marshaller
  */
-@interface SESSetIdentityDkimEnabledRequestMarshaller:NSObject {
+@interface SESSetIdentityDkimEnabledRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest;
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityDkimEnabledRequest *)setIdentityDkimEnabledRequest;
 
 
 @end

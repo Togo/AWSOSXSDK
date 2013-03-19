@@ -17,12 +17,11 @@
 
 @implementation SNSSetTopicAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSSetTopicAttributesRequest *)setTopicAttributesRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"SetTopicAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"SetTopicAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[setTopicAttributesRequest delegate]];
     [request setCredentials:[setTopicAttributesRequest credentials]];

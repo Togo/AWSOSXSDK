@@ -19,7 +19,7 @@
 /** Contains all the information about the deleteBucketPolicy operation.
  *
  */
-@interface S3DeleteBucketPolicyResponse:S3Response {
+@interface S3DeleteBucketPolicyResponse : S3Response {
 }
 
 @end

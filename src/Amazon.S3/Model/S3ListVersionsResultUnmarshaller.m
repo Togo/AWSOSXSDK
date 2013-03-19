@@ -19,12 +19,11 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didStartElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qualifiedName
-attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser
+        didStartElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qualifiedName
+        attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Version"]) {
@@ -41,11 +40,10 @@ attributes:(NSDictionary *)attributeDict
 }
 
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Name"]) {
@@ -108,10 +106,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3ListVersionsResult *)listVersionsResult
-{
-    if (nil == listVersionsResult)
-    {
+- (S3ListVersionsResult *)listVersionsResult {
+    if (nil == listVersionsResult) {
         listVersionsResult = [[S3ListVersionsResult alloc] init];
     }
     return listVersionsResult;

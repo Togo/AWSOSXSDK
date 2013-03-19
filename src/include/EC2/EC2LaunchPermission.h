@@ -20,21 +20,17 @@
  * Launch Permission
  */
 
-@interface EC2LaunchPermission:NSObject
-
-{
+@interface EC2LaunchPermission : NSObject {
     NSString *userId;
     NSString *group;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The AWS user ID of the user involved in this launch permission.
@@ -53,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

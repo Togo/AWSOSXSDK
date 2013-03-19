@@ -62,11 +62,11 @@
 /**
  * Request Spot Instances Request Marshaller
  */
-@interface EC2RequestSpotInstancesRequestMarshaller:NSObject {
+@interface EC2RequestSpotInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2RequestSpotInstancesRequest *)requestSpotInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2RequestSpotInstancesRequest *)requestSpotInstancesRequest;
 
 
 @end

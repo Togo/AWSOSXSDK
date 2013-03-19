@@ -22,11 +22,11 @@
 /**
  * Cancel Bundle Task Request Marshaller
  */
-@interface EC2CancelBundleTaskRequestMarshaller:NSObject {
+@interface EC2CancelBundleTaskRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CancelBundleTaskRequest *)cancelBundleTaskRequest;
 
 
 @end

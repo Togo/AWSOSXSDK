@@ -22,10 +22,9 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tags      = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
         nextToken = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidNextToken"]) {
@@ -51,15 +49,12 @@
 }
 
 
-
--(AutoScalingTagDescription *)tagsObjectAtIndex:(int)index
-{
-    return (AutoScalingTagDescription *)[tags objectAtIndex:index];
+- (AutoScalingTagDescription *)tagsObjectAtIndex:(int)index {
+    return (AutoScalingTagDescription *) [tags objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +65,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

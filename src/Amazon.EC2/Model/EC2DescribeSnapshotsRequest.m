@@ -24,21 +24,19 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        snapshotIds         = [[NSMutableArray alloc] initWithCapacity:1];
-        ownerIds            = [[NSMutableArray alloc] initWithCapacity:1];
+        snapshotIds = [[NSMutableArray alloc] initWithCapacity:1];
+        ownerIds = [[NSMutableArray alloc] initWithCapacity:1];
         restorableByUserIds = [[NSMutableArray alloc] initWithCapacity:1];
-        filters             = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addSnapshotId:(NSString *)snapshotIdObject
-{
+- (void)addSnapshotId:(NSString *)snapshotIdObject {
     if (snapshotIds == nil) {
         snapshotIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -46,8 +44,7 @@
     [snapshotIds addObject:snapshotIdObject];
 }
 
--(void)addOwnerId:(NSString *)ownerIdObject
-{
+- (void)addOwnerId:(NSString *)ownerIdObject {
     if (ownerIds == nil) {
         ownerIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -55,8 +52,7 @@
     [ownerIds addObject:ownerIdObject];
 }
 
--(void)addRestorableByUserId:(NSString *)restorableByUserIdObject
-{
+- (void)addRestorableByUserId:(NSString *)restorableByUserIdObject {
     if (restorableByUserIds == nil) {
         restorableByUserIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -64,8 +60,7 @@
     [restorableByUserIds addObject:restorableByUserIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -74,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -88,9 +82,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

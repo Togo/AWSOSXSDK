@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Two or more batch entries have the same <code>Id</code> in the
  * request.
  * </p>
  */
-@interface SQSBatchEntryIdsNotDistinctException:AmazonServiceException
-{
+@interface SQSBatchEntryIdsNotDistinctException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

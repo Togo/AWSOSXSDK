@@ -22,11 +22,11 @@
 /**
  * Suspend Processes Request Marshaller
  */
-@interface AutoScalingSuspendProcessesRequestMarshaller:NSObject {
+@interface AutoScalingSuspendProcessesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingSuspendProcessesRequest *)suspendProcessesRequest;
 
 
 @end

@@ -22,12 +22,12 @@
  * @see http://docs.amazonwebservices.com/AmazonS3/latest/S3_QSAuth.html
  *
  */
-@interface S3GetPreSignedURLRequest:S3Request {
-    NSDate                    *expires;
-    NSString                  *protocol;
-    NSString                  *httpVerb;
-    NSString                  *accessKey;
-    NSString                  *versionId;
+@interface S3GetPreSignedURLRequest : S3Request {
+    NSDate *expires;
+    NSString *protocol;
+    NSString *httpVerb;
+    NSString *accessKey;
+    NSString *versionId;
 
     S3ResponseHeaderOverrides *responseHeaderOverrides;
 }
@@ -64,6 +64,6 @@
 /** Specify one or more overrides to headers in the response to this request */
 @property (nonatomic, strong) S3ResponseHeaderOverrides *responseHeaderOverrides;
 
-@property (weak, nonatomic, readonly) NSString                *queryString;
+@property (weak, nonatomic, readonly) NSString *queryString;
 
 @end

@@ -24,12 +24,11 @@
 @synthesize shouldRespectGracePeriodIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId                    = nil;
-        healthStatus                  = nil;
-        shouldRespectGracePeriod      = NO;
+        instanceId = nil;
+        healthStatus = nil;
+        shouldRespectGracePeriod = NO;
         shouldRespectGracePeriodIsSet = NO;
     }
 
@@ -37,9 +36,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -53,13 +50,10 @@
 }
 
 
--(void)setShouldRespectGracePeriod:(bool)theValue
-{
-    shouldRespectGracePeriod      = theValue;
+- (void)setShouldRespectGracePeriod:(bool)theValue {
+    shouldRespectGracePeriod = theValue;
     shouldRespectGracePeriodIsSet = YES;
 }
-
-
 
 
 @end

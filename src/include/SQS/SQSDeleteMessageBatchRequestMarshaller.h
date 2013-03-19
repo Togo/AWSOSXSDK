@@ -23,11 +23,11 @@
 /**
  * Delete Message Batch Request Marshaller
  */
-@interface SQSDeleteMessageBatchRequestMarshaller:NSObject {
+@interface SQSDeleteMessageBatchRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest;
++ (AmazonServiceRequest *)createRequest:(SQSDeleteMessageBatchRequest *)deleteMessageBatchRequest;
 
 
 @end

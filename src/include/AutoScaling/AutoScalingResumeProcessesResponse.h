@@ -20,8 +20,7 @@
 /**
  * Resume Processes
  */
-@interface AutoScalingResumeProcessesResponse:AutoScalingResponse
-{
+@interface AutoScalingResumeProcessesResponse : AutoScalingResponse {
 }
 
 @end

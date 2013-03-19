@@ -17,28 +17,24 @@
 #import "SESResponse.h"
 
 
-
 /**
  * List Identities Result
  */
 
-@interface SESListIdentitiesResponse:SESResponse
-
-{
+@interface SESListIdentitiesResponse : SESResponse {
     NSMutableArray *identities;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of identities.
@@ -51,11 +47,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the identities array for the specified index
  */
--(NSString *)identitiesObjectAtIndex:(int)index;
+- (NSString *)identitiesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -63,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

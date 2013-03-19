@@ -25,21 +25,19 @@
 @synthesize securityGroups;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        loadBalancerName  = nil;
-        listeners         = [[NSMutableArray alloc] initWithCapacity:1];
+        loadBalancerName = nil;
+        listeners = [[NSMutableArray alloc] initWithCapacity:1];
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
-        subnets           = [[NSMutableArray alloc] initWithCapacity:1];
-        securityGroups    = [[NSMutableArray alloc] initWithCapacity:1];
+        subnets = [[NSMutableArray alloc] initWithCapacity:1];
+        securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName {
     if (self = [self init]) {
         self.loadBalancerName = theLoadBalancerName;
     }
@@ -47,11 +45,10 @@
     return self;
 }
 
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners andAvailabilityZones:(NSMutableArray *)theAvailabilityZones
-{
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andListeners:(NSMutableArray *)theListeners andAvailabilityZones:(NSMutableArray *)theAvailabilityZones {
     if (self = [self init]) {
-        self.loadBalancerName  = theLoadBalancerName;
-        self.listeners         = theListeners;
+        self.loadBalancerName = theLoadBalancerName;
+        self.listeners = theListeners;
         self.availabilityZones = theAvailabilityZones;
     }
 
@@ -59,8 +56,7 @@
 }
 
 
--(void)addListener:(ElasticLoadBalancingListener *)listenerObject
-{
+- (void)addListener:(ElasticLoadBalancingListener *)listenerObject {
     if (listeners == nil) {
         listeners = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -68,8 +64,7 @@
     [listeners addObject:listenerObject];
 }
 
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject
-{
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject {
     if (availabilityZones == nil) {
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -77,8 +72,7 @@
     [availabilityZones addObject:availabilityZoneObject];
 }
 
--(void)addSubnet:(NSString *)subnetObject
-{
+- (void)addSubnet:(NSString *)subnetObject {
     if (subnets == nil) {
         subnets = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -86,8 +80,7 @@
     [subnets addObject:subnetObject];
 }
 
--(void)addSecurityGroup:(NSString *)securityGroupObject
-{
+- (void)addSecurityGroup:(NSString *)securityGroupObject {
     if (securityGroups == nil) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -96,8 +89,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -111,9 +103,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -20,13 +20,10 @@
  * L B Cookie Stickiness Policy
  */
 
-@interface ElasticLoadBalancingLBCookieStickinessPolicy:NSObject
-
-{
+@interface ElasticLoadBalancingLBCookieStickinessPolicy : NSObject {
     NSString *policyName;
     NSNumber *cookieExpirationPeriod;
 }
-
 
 
 /**
@@ -47,7 +44,7 @@
  * Default constructor for a new LBCookieStickinessPolicy object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new LBCookieStickinessPolicy object.
@@ -60,7 +57,7 @@
  * parameter indicates that the stickiness session will last for the
  * duration of the browser session.
  */
--(id)initWithPolicyName:(NSString *)thePolicyName andCookieExpirationPeriod:(NSNumber *)theCookieExpirationPeriod;
+- (id)initWithPolicyName:(NSString *)thePolicyName andCookieExpirationPeriod:(NSNumber *)theCookieExpirationPeriod;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +65,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

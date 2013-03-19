@@ -17,23 +17,19 @@
 #import "DynamoDBProvisionedThroughputDescription.h"
 
 
-
 /**
  * Table Description
  */
 
-@interface DynamoDBTableDescription:NSObject
-
-{
-    NSString                                 *tableName;
-    DynamoDBKeySchema                        *keySchema;
-    NSString                                 *tableStatus;
-    NSDate                                   *creationDateTime;
+@interface DynamoDBTableDescription : NSObject {
+    NSString *tableName;
+    DynamoDBKeySchema *keySchema;
+    NSString *tableStatus;
+    NSDate *creationDateTime;
     DynamoDBProvisionedThroughputDescription *provisionedThroughput;
-    NSNumber                                 *tableSizeBytes;
-    NSNumber                                 *itemCount;
+    NSNumber *tableSizeBytes;
+    NSNumber *itemCount;
 }
-
 
 
 /**
@@ -88,7 +84,7 @@
  * Default constructor for a new TableDescription object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -96,7 +92,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -24,14 +24,13 @@
 @synthesize isDeleteMarker;
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Key: %@,", key]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"ETag: %@,", etag]];
-    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %ld,", (long)size]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %ld,", (long) size]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Last Modified: %@,", lastModified]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Storage Class: %@,", storageClass]];
     [buffer appendString:[[NSString alloc] initWithFormat:@"Owner: %@,", owner]];

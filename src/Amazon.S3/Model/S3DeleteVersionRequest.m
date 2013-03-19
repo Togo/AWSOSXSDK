@@ -20,8 +20,7 @@
 @synthesize versionId;
 @synthesize mfa;
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     NSMutableString *queryString = [NSMutableString stringWithCapacity:512];
 
     if (nil != self.versionId) {
@@ -38,7 +37,6 @@
 
     return urlRequest;
 }
-
 
 
 @end

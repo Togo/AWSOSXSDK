@@ -24,11 +24,11 @@
 /**
  * Describe Availability Zones Request Marshaller
  */
-@interface EC2DescribeAvailabilityZonesRequestMarshaller:NSObject {
+@interface EC2DescribeAvailabilityZonesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAvailabilityZonesRequest *)describeAvailabilityZonesRequest;
 
 
 @end

@@ -19,7 +19,7 @@
 /** Contains all the information about the setBucketPolicy operation.
  *
  */
-@interface S3SetBucketPolicyResponse:S3Response {
+@interface S3SetBucketPolicyResponse : S3Response {
 }
 
 @end

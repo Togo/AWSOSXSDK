@@ -17,12 +17,11 @@
 
 @implementation EC2PurchaseReservedInstancesOfferingRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2PurchaseReservedInstancesOfferingRequest *)purchaseReservedInstancesOfferingRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"PurchaseReservedInstancesOffering"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"PurchaseReservedInstancesOffering" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[purchaseReservedInstancesOfferingRequest delegate]];
     [request setCredentials:[purchaseReservedInstancesOfferingRequest credentials]];

@@ -21,31 +21,27 @@
 #import "ElasticLoadBalancingSourceSecurityGroup.h"
 
 
-
 /**
  * Load Balancer Description
  */
 
-@interface ElasticLoadBalancingLoadBalancerDescription:NSObject
-
-{
-    NSString                                *loadBalancerName;
-    NSString                                *dNSName;
-    NSString                                *canonicalHostedZoneName;
-    NSString                                *canonicalHostedZoneNameID;
-    NSMutableArray                          *listenerDescriptions;
-    ElasticLoadBalancingPolicies            *policies;
-    NSMutableArray                          *backendServerDescriptions;
-    NSMutableArray                          *availabilityZones;
-    NSMutableArray                          *subnets;
-    NSString                                *vPCId;
-    NSMutableArray                          *instances;
-    ElasticLoadBalancingHealthCheck         *healthCheck;
+@interface ElasticLoadBalancingLoadBalancerDescription : NSObject {
+    NSString *loadBalancerName;
+    NSString *dNSName;
+    NSString *canonicalHostedZoneName;
+    NSString *canonicalHostedZoneNameID;
+    NSMutableArray *listenerDescriptions;
+    ElasticLoadBalancingPolicies *policies;
+    NSMutableArray *backendServerDescriptions;
+    NSMutableArray *availabilityZones;
+    NSMutableArray *subnets;
+    NSString *vPCId;
+    NSMutableArray *instances;
+    ElasticLoadBalancingHealthCheck *healthCheck;
     ElasticLoadBalancingSourceSecurityGroup *sourceSecurityGroup;
-    NSMutableArray                          *securityGroups;
-    NSDate                                  *createdTime;
+    NSMutableArray *securityGroups;
+    NSDate *createdTime;
 }
-
 
 
 /**
@@ -145,43 +141,43 @@
  * Default constructor for a new LoadBalancerDescription object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Adds a single object to listenerDescriptions.
  * This function will alloc and init listenerDescriptions if not already done.
  */
--(void)addListenerDescription:(ElasticLoadBalancingListenerDescription *)listenerDescriptionObject;
+- (void)addListenerDescription:(ElasticLoadBalancingListenerDescription *)listenerDescriptionObject;
 
 /**
  * Adds a single object to backendServerDescriptions.
  * This function will alloc and init backendServerDescriptions if not already done.
  */
--(void)addBackendServerDescription:(ElasticLoadBalancingBackendServerDescription *)backendServerDescriptionObject;
+- (void)addBackendServerDescription:(ElasticLoadBalancingBackendServerDescription *)backendServerDescriptionObject;
 
 /**
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Adds a single object to subnets.
  * This function will alloc and init subnets if not already done.
  */
--(void)addSubnet:(NSString *)subnetObject;
+- (void)addSubnet:(NSString *)subnetObject;
 
 /**
  * Adds a single object to instances.
  * This function will alloc and init instances if not already done.
  */
--(void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
+- (void)addInstance:(ElasticLoadBalancingInstance *)instanceObject;
 
 /**
  * Adds a single object to securityGroups.
  * This function will alloc and init securityGroups if not already done.
  */
--(void)addSecurityGroup:(NSString *)securityGroupObject;
+- (void)addSecurityGroup:(NSString *)securityGroupObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -189,7 +185,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

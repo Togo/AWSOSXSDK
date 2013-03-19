@@ -17,30 +17,25 @@
 #import "EC2ExportToS3Task.h"
 
 
-
 /**
  * Export Task
  */
 
-@interface EC2ExportTask:NSObject
-
-{
-    NSString                 *exportTaskId;
-    NSString                 *descriptionValue;
-    NSString                 *state;
-    NSString                 *statusMessage;
+@interface EC2ExportTask : NSObject {
+    NSString *exportTaskId;
+    NSString *descriptionValue;
+    NSString *state;
+    NSString *statusMessage;
     EC2InstanceExportDetails *instanceExportDetails;
-    EC2ExportToS3Task        *exportToS3Task;
+    EC2ExportToS3Task *exportToS3Task;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ExportTaskId property for this object.
@@ -78,7 +73,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

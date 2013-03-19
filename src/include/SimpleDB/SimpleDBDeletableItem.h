@@ -16,18 +16,14 @@
 #import "SimpleDBAttribute.h"
 
 
-
 /**
  * Deletable Item
  */
 
-@interface SimpleDBDeletableItem:NSObject
-
-{
-    NSString       *name;
+@interface SimpleDBDeletableItem : NSObject {
+    NSString *name;
     NSMutableArray *attributes;
 }
-
 
 
 /**
@@ -45,7 +41,7 @@
  * Default constructor for a new DeletableItem object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeletableItem object.
@@ -54,13 +50,13 @@
  * @param theName
  * @param theAttributes
  */
--(id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes;
+- (id)initWithName:(NSString *)theName andAttributes:(NSMutableArray *)theAttributes;
 
 /**
  * Adds a single object to attributes.
  * This function will alloc and init attributes if not already done.
  */
--(void)addAttribute:(SimpleDBAttribute *)attributeObject;
+- (void)addAttribute:(SimpleDBAttribute *)attributeObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

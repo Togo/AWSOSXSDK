@@ -33,7 +33,7 @@
  * href="http://aws.amazon.com/mfa"/>http://aws.amazon.com/mfa</a>
  * </p>
  */
-@interface S3MultiFactorAuthentication:NSObject {
+@interface S3MultiFactorAuthentication : NSObject {
     NSString *deviceSerialNumber;
     NSString *token;
 }
@@ -52,6 +52,6 @@
 
 
 /** Initialize the object with the device serial number and token. */
--(id)initWithSerialNumber:(NSString *)deviceSerialNumber andToken:(NSString *)token;
+- (id)initWithSerialNumber:(NSString *)deviceSerialNumber andToken:(NSString *)token;
 
 @end

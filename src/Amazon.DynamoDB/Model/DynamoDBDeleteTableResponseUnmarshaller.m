@@ -22,8 +22,7 @@
 @implementation DynamoDBDeleteTableResponseUnmarshaller
 
 
-+(DynamoDBDeleteTableResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBDeleteTableResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBDeleteTableResponse *deleteTableResult = [[DynamoDBDeleteTableResponse alloc] init];
 
 

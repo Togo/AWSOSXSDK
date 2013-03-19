@@ -22,18 +22,16 @@
 @synthesize additionalInfo;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceIds    = [[NSMutableArray alloc] initWithCapacity:1];
+        instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
         additionalInfo = nil;
     }
 
     return self;
 }
 
--(id)initWithInstanceIds:(NSMutableArray *)theInstanceIds
-{
+- (id)initWithInstanceIds:(NSMutableArray *)theInstanceIds {
     if (self = [self init]) {
         self.instanceIds = theInstanceIds;
     }
@@ -42,8 +40,7 @@
 }
 
 
--(void)addInstanceId:(NSString *)instanceIdObject
-{
+- (void)addInstanceId:(NSString *)instanceIdObject {
     if (instanceIds == nil) {
         instanceIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

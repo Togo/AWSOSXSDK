@@ -23,7 +23,7 @@
  */
 __attribute__ ((deprecated))
 @interface S3UploadInputStream : NSInputStream {
-	NSInputStream *stream;
+    NSInputStream *stream;
     NSInteger packetSize;
     double delay;
 }
@@ -43,8 +43,8 @@ __attribute__ ((deprecated))
  * Delay (in seconds) between packet uploads.
  * Recommend using a delay between 0.00 and 0.25.
  */
-@property (atomic) double delay; 
+@property (atomic) double delay;
 
-+(id)inputStreamWithStream:(NSInputStream *)aStream;
++ (id)inputStreamWithStream:(NSInputStream *)aStream;
 
 @end

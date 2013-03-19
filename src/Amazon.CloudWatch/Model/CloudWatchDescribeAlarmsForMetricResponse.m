@@ -21,8 +21,7 @@
 @synthesize metricAlarms;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         metricAlarms = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -45,15 +43,12 @@
 }
 
 
-
--(CloudWatchMetricAlarm *)metricAlarmsObjectAtIndex:(int)index
-{
-    return (CloudWatchMetricAlarm *)[metricAlarms objectAtIndex:index];
+- (CloudWatchMetricAlarm *)metricAlarmsObjectAtIndex:(int)index {
+    return (CloudWatchMetricAlarm *) [metricAlarms objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

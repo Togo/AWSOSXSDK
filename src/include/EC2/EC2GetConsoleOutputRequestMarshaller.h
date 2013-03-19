@@ -22,11 +22,11 @@
 /**
  * Get Console Output Request Marshaller
  */
-@interface EC2GetConsoleOutputRequestMarshaller:NSObject {
+@interface EC2GetConsoleOutputRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest;
++ (AmazonServiceRequest *)createRequest:(EC2GetConsoleOutputRequest *)getConsoleOutputRequest;
 
 
 @end

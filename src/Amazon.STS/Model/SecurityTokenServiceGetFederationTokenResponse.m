@@ -23,11 +23,10 @@
 @synthesize packedPolicySize;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        credentials      = nil;
-        federatedUser    = nil;
+        credentials = nil;
+        federatedUser = nil;
         packedPolicySize = nil;
     }
 
@@ -35,8 +34,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"PackedPolicyTooLarge"]) {
@@ -57,9 +55,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -71,9 +67,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

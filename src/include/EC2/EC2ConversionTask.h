@@ -18,31 +18,26 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Conversion Task
  */
 
-@interface EC2ConversionTask:NSObject
-
-{
-    NSString                     *conversionTaskId;
-    NSString                     *expirationTime;
+@interface EC2ConversionTask : NSObject {
+    NSString *conversionTaskId;
+    NSString *expirationTime;
     EC2ImportInstanceTaskDetails *importInstance;
-    EC2ImportVolumeTaskDetails   *importVolume;
-    NSString                     *state;
-    NSString                     *statusMessage;
-    NSMutableArray               *tags;
+    EC2ImportVolumeTaskDetails *importVolume;
+    NSString *state;
+    NSString *statusMessage;
+    NSMutableArray *tags;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ConversionTaskId property for this object.
@@ -83,7 +78,7 @@
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -91,7 +86,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

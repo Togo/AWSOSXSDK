@@ -36,24 +36,23 @@
 @synthesize launchedAvailabilityZone;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        spotInstanceRequestId    = nil;
-        spotPrice                = nil;
-        type                     = nil;
-        state                    = nil;
-        fault                    = nil;
-        status                   = nil;
-        validFrom                = nil;
-        validUntil               = nil;
-        launchGroup              = nil;
-        availabilityZoneGroup    = nil;
-        launchSpecification      = nil;
-        instanceId               = nil;
-        createTime               = nil;
-        productDescription       = nil;
-        tags                     = [[NSMutableArray alloc] initWithCapacity:1];
+        spotInstanceRequestId = nil;
+        spotPrice = nil;
+        type = nil;
+        state = nil;
+        fault = nil;
+        status = nil;
+        validFrom = nil;
+        validUntil = nil;
+        launchGroup = nil;
+        availabilityZoneGroup = nil;
+        launchSpecification = nil;
+        instanceId = nil;
+        createTime = nil;
+        productDescription = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
         launchedAvailabilityZone = nil;
     }
 
@@ -61,8 +60,7 @@
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -71,8 +69,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -97,9 +94,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

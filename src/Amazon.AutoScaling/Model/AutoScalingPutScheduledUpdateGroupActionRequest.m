@@ -29,27 +29,24 @@
 @synthesize desiredCapacity;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        scheduledActionName  = nil;
-        time                 = nil;
-        startTime            = nil;
-        endTime              = nil;
-        recurrence           = nil;
-        minSize              = nil;
-        maxSize              = nil;
-        desiredCapacity      = nil;
+        scheduledActionName = nil;
+        time = nil;
+        startTime = nil;
+        endTime = nil;
+        recurrence = nil;
+        minSize = nil;
+        maxSize = nil;
+        desiredCapacity = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -67,9 +64,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SimpleDBRequest:AmazonServiceRequest {
+@interface SimpleDBRequest : AmazonServiceRequest {
 }
 
 @end

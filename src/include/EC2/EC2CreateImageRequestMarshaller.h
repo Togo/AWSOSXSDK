@@ -24,11 +24,11 @@
 /**
  * Create Image Request Marshaller
  */
-@interface EC2CreateImageRequestMarshaller:NSObject {
+@interface EC2CreateImageRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateImageRequest *)createImageRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CreateImageRequest *)createImageRequest;
 
 
 @end

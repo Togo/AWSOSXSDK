@@ -22,11 +22,11 @@
 /**
  * Set Alarm State Request Marshaller
  */
-@interface CloudWatchSetAlarmStateRequestMarshaller:NSObject {
+@interface CloudWatchSetAlarmStateRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest;
 
 
 @end

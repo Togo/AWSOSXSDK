@@ -22,11 +22,11 @@
 /**
  * Change Message Visibility Request Marshaller
  */
-@interface SQSChangeMessageVisibilityRequestMarshaller:NSObject {
+@interface SQSChangeMessageVisibilityRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityRequest *)changeMessageVisibilityRequest;
++ (AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityRequest *)changeMessageVisibilityRequest;
 
 
 @end

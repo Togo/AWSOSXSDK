@@ -20,8 +20,7 @@
 /**
  * Verify Email Address
  */
-@interface SESVerifyEmailAddressResponse:SESResponse
-{
+@interface SESVerifyEmailAddressResponse : SESResponse {
 }
 
 @end

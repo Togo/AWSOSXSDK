@@ -28,25 +28,23 @@
 @synthesize unit;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        namespace  = nil;
+        namespace = nil;
         metricName = nil;
         dimensions = [[NSMutableArray alloc] initWithCapacity:1];
-        startTime  = nil;
-        endTime    = nil;
-        period     = nil;
+        startTime = nil;
+        endTime = nil;
+        period = nil;
         statistics = [[NSMutableArray alloc] initWithCapacity:1];
-        unit       = nil;
+        unit = nil;
     }
 
     return self;
 }
 
 
--(void)addDimension:(CloudWatchDimension *)dimensionObject
-{
+- (void)addDimension:(CloudWatchDimension *)dimensionObject {
     if (dimensions == nil) {
         dimensions = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -54,8 +52,7 @@
     [dimensions addObject:dimensionObject];
 }
 
--(void)addStatistic:(NSString *)statisticObject
-{
+- (void)addStatistic:(NSString *)statisticObject {
     if (statistics == nil) {
         statistics = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -64,8 +61,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,9 +78,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

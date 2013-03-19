@@ -21,8 +21,7 @@
 @synthesize tableName;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         tableName = nil;
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName
-{
+- (id)initWithTableName:(NSString *)theTableName {
     if (self = [self init]) {
         self.tableName = theTableName;
     }
@@ -40,9 +38,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +48,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

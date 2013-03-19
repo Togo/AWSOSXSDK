@@ -20,10 +20,8 @@
  * Datapoint
  */
 
-@interface CloudWatchDatapoint:NSObject
-
-{
-    NSDate   *timestamp;
+@interface CloudWatchDatapoint : NSObject {
+    NSDate *timestamp;
     NSNumber *sampleCount;
     NSNumber *average;
     NSNumber *sum;
@@ -33,13 +31,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The time stamp used for the datapoint.
@@ -86,7 +82,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

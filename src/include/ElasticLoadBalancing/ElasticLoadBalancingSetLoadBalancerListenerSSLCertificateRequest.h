@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Load Balancer Listener S S L Certificate Request
  */
 
-@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest:AmazonServiceRequestConfig
-
-{
+@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest : AmazonServiceRequestConfig {
     NSString *loadBalancerName;
     NSNumber *loadBalancerPort;
     NSString *sSLCertificateId;
 }
-
 
 
 /**
@@ -56,7 +52,7 @@
  * Default constructor for a new SetLoadBalancerListenerSSLCertificateRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SetLoadBalancerListenerSSLCertificateRequest object.
@@ -71,7 +67,7 @@
  * Managing Server Certificates </a> in the AWS Identity and Access
  * Management documentation.
  */
--(id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andSSLCertificateId:(NSString *)theSSLCertificateId;
+- (id)initWithLoadBalancerName:(NSString *)theLoadBalancerName andLoadBalancerPort:(NSNumber *)theLoadBalancerPort andSSLCertificateId:(NSString *)theSSLCertificateId;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

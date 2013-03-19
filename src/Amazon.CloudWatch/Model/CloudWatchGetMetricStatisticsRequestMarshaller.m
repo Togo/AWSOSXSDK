@@ -17,12 +17,11 @@
 
 @implementation CloudWatchGetMetricStatisticsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"GetMetricStatistics"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetMetricStatistics" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[getMetricStatisticsRequest delegate]];
     [request setCredentials:[getMetricStatisticsRequest credentials]];

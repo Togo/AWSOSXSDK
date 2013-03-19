@@ -21,28 +21,22 @@
 
 #pragma mark - NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
-    if ([elementName isEqualToString:@"Key"])
-    {
+    if ([elementName isEqualToString:@"Key"]) {
         self.deletedObject.key = self.currentText;
     }
-    else if ([elementName isEqualToString:@"VersionId"])
-    {
+    else if ([elementName isEqualToString:@"VersionId"]) {
         self.deletedObject.versionId = self.currentText;
     }
-    else if ([elementName isEqualToString:@"DeleteMarker"])
-    {
+    else if ([elementName isEqualToString:@"DeleteMarker"]) {
         self.deletedObject.deleteMarker = [self.currentText isEqualToString:@"true"];
     }
-    else if ([elementName isEqualToString:@"DeleteMarkerVersionId"])
-    {
+    else if ([elementName isEqualToString:@"DeleteMarkerVersionId"]) {
         self.deletedObject.deleteMarkerVersionId = self.currentText;
     }
-    else if ([elementName isEqualToString:@"Deleted"])
-    {
+    else if ([elementName isEqualToString:@"Deleted"]) {
         if (caller != nil) {
             [parser setDelegate:caller];
         }
@@ -57,10 +51,8 @@
 
 #pragma mark - Unmarshalled object property
 
--(DeletedObject *)deletedObject
-{
-    if (deletedObject == nil)
-    {
+- (DeletedObject *)deletedObject {
+    if (deletedObject == nil) {
         deletedObject = [[DeletedObject alloc] init];
     }
 

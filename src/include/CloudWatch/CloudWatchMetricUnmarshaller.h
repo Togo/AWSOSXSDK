@@ -25,7 +25,7 @@
 /**
  * Metric Unmarshaller
  */
-@interface CloudWatchMetricUnmarshaller:CloudWatchResponseUnmarshaller {
+@interface CloudWatchMetricUnmarshaller : CloudWatchResponseUnmarshaller {
     CloudWatchMetric *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) CloudWatchMetric *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

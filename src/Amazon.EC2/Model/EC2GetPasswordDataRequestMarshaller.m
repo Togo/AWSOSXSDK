@@ -17,12 +17,11 @@
 
 @implementation EC2GetPasswordDataRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2GetPasswordDataRequest *)getPasswordDataRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2GetPasswordDataRequest *)getPasswordDataRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"GetPasswordData"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetPasswordData" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[getPasswordDataRequest delegate]];
     [request setCredentials:[getPasswordDataRequest credentials]];

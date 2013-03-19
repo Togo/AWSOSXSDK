@@ -22,11 +22,11 @@
 /**
  * Start Instances Request Marshaller
  */
-@interface EC2StartInstancesRequestMarshaller:NSObject {
+@interface EC2StartInstancesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2StartInstancesRequest *)startInstancesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2StartInstancesRequest *)startInstancesRequest;
 
 
 @end

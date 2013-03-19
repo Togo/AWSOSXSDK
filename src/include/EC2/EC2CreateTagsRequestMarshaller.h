@@ -24,11 +24,11 @@
 /**
  * Create Tags Request Marshaller
  */
-@interface EC2CreateTagsRequestMarshaller:NSObject {
+@interface EC2CreateTagsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateTagsRequest *)createTagsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CreateTagsRequest *)createTagsRequest;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeLicensesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeLicensesRequest *)describeLicensesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeLicensesRequest *)describeLicensesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeLicenses"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeLicenses" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeLicensesRequest delegate]];
     [request setCredentials:[describeLicensesRequest credentials]];

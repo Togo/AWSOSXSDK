@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeleteAutoScalingGroupRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteAutoScalingGroupRequest *)deleteAutoScalingGroupRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteAutoScalingGroup"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteAutoScalingGroup" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deleteAutoScalingGroupRequest delegate]];
     [request setCredentials:[deleteAutoScalingGroupRequest credentials]];
@@ -36,7 +35,7 @@
     }
     if (deleteAutoScalingGroupRequest != nil) {
         if (deleteAutoScalingGroupRequest.forceDeleteIsSet) {
-            [request setParameterValue:(deleteAutoScalingGroupRequest.forceDelete ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ForceDelete"]];
+            [request setParameterValue:(deleteAutoScalingGroupRequest.forceDelete ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ForceDelete"]];
         }
     }
 

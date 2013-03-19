@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDescribePoliciesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribePoliciesRequest *)describePoliciesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribePoliciesRequest *)describePoliciesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DescribePolicies"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribePolicies" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[describePoliciesRequest delegate]];
     [request setCredentials:[describePoliciesRequest credentials]];

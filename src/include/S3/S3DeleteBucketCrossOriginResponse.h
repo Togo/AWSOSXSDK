@@ -19,8 +19,7 @@
 /** Contains all the information about the deleteBucketCrossOriginResponse operation.
  *
  */
-@interface S3DeleteBucketCrossOriginResponse:S3Response
-{
+@interface S3DeleteBucketCrossOriginResponse : S3Response {
 }
 
 @end

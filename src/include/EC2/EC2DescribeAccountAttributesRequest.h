@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Account Attributes Request
  */
 
-@interface EC2DescribeAccountAttributesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeAccountAttributesRequest : AmazonServiceRequestConfig {
     NSMutableArray *attributeNames;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AttributeNames property for this object.
@@ -46,7 +41,7 @@
  * Adds a single object to attributeNames.
  * This function will alloc and init attributeNames if not already done.
  */
--(void)addAttributeName:(NSString *)attributeNameObject;
+- (void)addAttributeName:(NSString *)attributeNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -54,7 +49,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

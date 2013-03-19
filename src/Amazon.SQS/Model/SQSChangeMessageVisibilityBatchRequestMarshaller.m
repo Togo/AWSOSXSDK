@@ -17,12 +17,11 @@
 
 @implementation SQSChangeMessageVisibilityBatchRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSChangeMessageVisibilityBatchRequest *)changeMessageVisibilityBatchRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"ChangeMessageVisibilityBatch"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"ChangeMessageVisibilityBatch" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[changeMessageVisibilityBatchRequest delegate]];
     [request setCredentials:[changeMessageVisibilityBatchRequest credentials]];

@@ -22,10 +22,9 @@
 @synthesize nextToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topics    = [[NSMutableArray alloc] initWithCapacity:1];
+        topics = [[NSMutableArray alloc] initWithCapacity:1];
         nextToken = nil;
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"AuthorizationError"]) {
@@ -59,15 +57,12 @@
 }
 
 
-
--(SNSTopic *)topicsObjectAtIndex:(int)index
-{
-    return (SNSTopic *)[topics objectAtIndex:index];
+- (SNSTopic *)topicsObjectAtIndex:(int)index {
+    return (SNSTopic *) [topics objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -78,9 +73,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

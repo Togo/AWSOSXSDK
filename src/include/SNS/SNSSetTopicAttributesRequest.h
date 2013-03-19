@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Topic Attributes Request
  */
 
-@interface SNSSetTopicAttributesRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSSetTopicAttributesRequest : AmazonServiceRequestConfig {
     NSString *topicArn;
     NSString *attributeName;
     NSString *attributeValue;
 }
-
 
 
 /**
@@ -54,7 +50,7 @@
  * Default constructor for a new SetTopicAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SetTopicAttributesRequest object.
@@ -67,7 +63,7 @@
  * <code>DeliveryPolicy</code>
  * @param theAttributeValue The new value for the attribute.
  */
--(id)initWithTopicArn:(NSString *)theTopicArn andAttributeName:(NSString *)theAttributeName andAttributeValue:(NSString *)theAttributeValue;
+- (id)initWithTopicArn:(NSString *)theTopicArn andAttributeName:(NSString *)theAttributeName andAttributeValue:(NSString *)theAttributeValue;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -75,7 +71,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

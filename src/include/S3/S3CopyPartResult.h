@@ -18,7 +18,7 @@
 /** Represents the response body from a copyObject response
  *
  */
-@interface S3CopyPartResult:NSObject {
+@interface S3CopyPartResult : NSObject {
     NSString *lastModified;
     NSString *etag;
 }

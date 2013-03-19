@@ -18,13 +18,11 @@
 @implementation AutoScalingDeleteLaunchConfigurationResponse
 
 
--(id)init
-{
+- (id)init {
     return [super init];
 }
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ResourceInUse"]) {
@@ -40,8 +38,7 @@
     }
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];

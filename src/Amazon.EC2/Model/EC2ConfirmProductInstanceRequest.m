@@ -22,30 +22,26 @@
 @synthesize instanceId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         productCode = nil;
-        instanceId  = nil;
+        instanceId = nil;
     }
 
     return self;
 }
 
--(id)initWithProductCode:(NSString *)theProductCode andInstanceId:(NSString *)theInstanceId
-{
+- (id)initWithProductCode:(NSString *)theProductCode andInstanceId:(NSString *)theInstanceId {
     if (self = [self init]) {
         self.productCode = theProductCode;
-        self.instanceId  = theInstanceId;
+        self.instanceId = theInstanceId;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

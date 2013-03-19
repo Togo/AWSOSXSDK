@@ -22,20 +22,18 @@
 @synthesize attributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueUrl   = nil;
+        queueUrl = nil;
         attributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andAttributes:(NSMutableDictionary *)theAttributes
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andAttributes:(NSMutableDictionary *)theAttributes {
     if (self = [self init]) {
-        self.queueUrl   = theQueueUrl;
+        self.queueUrl = theQueueUrl;
         self.attributes = theAttributes;
     }
 
@@ -43,8 +41,7 @@
 }
 
 
--(void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey
-{
+- (void)setAttributesValue:(NSString *)theValue forKey:(NSString *)theKey {
     if (attributes == nil) {
         attributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -65,9 +61,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

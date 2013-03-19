@@ -20,7 +20,7 @@
 /**
  *
  */
-@interface SESRequest:AmazonServiceRequest {
+@interface SESRequest : AmazonServiceRequest {
 }
 
 @end

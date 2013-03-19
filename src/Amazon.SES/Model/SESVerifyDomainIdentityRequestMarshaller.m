@@ -17,12 +17,11 @@
 
 @implementation SESVerifyDomainIdentityRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESVerifyDomainIdentityRequest *)verifyDomainIdentityRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"VerifyDomainIdentity"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"VerifyDomainIdentity" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[verifyDomainIdentityRequest delegate]];
     [request setCredentials:[verifyDomainIdentityRequest credentials]];

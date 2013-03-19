@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Vpcs Response
  */
 
-@interface EC2DescribeVpcsResponse:EC2Response
-
-{
+@interface EC2DescribeVpcsResponse : EC2Response {
     NSMutableArray *vpcs;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  *
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *vpcs;
 
 
-
 /**
  * Returns a value from the vpcs array for the specified index
  */
--(EC2Vpc *)vpcsObjectAtIndex:(int)index;
+- (EC2Vpc *)vpcsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

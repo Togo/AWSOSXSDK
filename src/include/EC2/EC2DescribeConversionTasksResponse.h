@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Conversion Tasks Response
  */
 
-@interface EC2DescribeConversionTasksResponse:EC2Response
-
-{
+@interface EC2DescribeConversionTasksResponse : EC2Response {
     NSMutableArray *conversionTasks;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ConversionTasks property for this object.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *conversionTasks;
 
 
-
 /**
  * Returns a value from the conversionTasks array for the specified index
  */
--(EC2ConversionTask *)conversionTasksObjectAtIndex:(int)index;
+- (EC2ConversionTask *)conversionTasksObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

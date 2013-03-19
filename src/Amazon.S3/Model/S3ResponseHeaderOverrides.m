@@ -18,19 +18,18 @@
 // Category for accumulating Query parameters
 @interface NSMutableString (S3ResponseHeaderOverrides)
 
--(void)appendQueryParameter:(NSString *)key withValue:(NSString *)value;
+- (void)appendQueryParameter:(NSString *)key withValue:(NSString *)value;
 
 @end
 
 @implementation NSMutableString (S3ResponseHeaderOverrides)
 
--(void)appendQueryParameter:(NSString *)key withValue:(NSString *)value
-{
+- (void)appendQueryParameter:(NSString *)key withValue:(NSString *)value {
     if (nil == value) {
         return;
     }
 
-    [self appendString:[NSString stringWithFormat:@"%@%@=%@", [self length] > 0 ? @"&":@"", key, [value stringWithURLEncoding]]];
+    [self appendString:[NSString stringWithFormat:@"%@%@=%@", [self length] > 0 ? @"&" : @"", key, [value stringWithURLEncoding]]];
 }
 
 @end
@@ -45,8 +44,7 @@
 @synthesize contentDisposition;
 @synthesize contentEncoding;
 
--(NSString *)queryString
-{
+- (NSString *)queryString {
     NSMutableString *queryString = [[NSMutableString alloc] initWithString:@""];
 
     // These have to be added in lexical order

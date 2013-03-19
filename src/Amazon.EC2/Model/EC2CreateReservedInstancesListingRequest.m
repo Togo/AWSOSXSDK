@@ -24,21 +24,19 @@
 @synthesize clientToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesId = nil;
-        instanceCount       = nil;
-        priceSchedules      = [[NSMutableArray alloc] initWithCapacity:1];
-        clientToken         = nil;
+        instanceCount = nil;
+        priceSchedules = [[NSMutableArray alloc] initWithCapacity:1];
+        clientToken = nil;
     }
 
     return self;
 }
 
 
--(void)addPriceSchedule:(EC2PriceScheduleSpecification *)priceScheduleObject
-{
+- (void)addPriceSchedule:(EC2PriceScheduleSpecification *)priceScheduleObject {
     if (priceSchedules == nil) {
         priceSchedules = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

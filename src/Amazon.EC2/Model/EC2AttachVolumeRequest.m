@@ -23,32 +23,28 @@
 @synthesize device;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId   = nil;
+        volumeId = nil;
         instanceId = nil;
-        device     = nil;
+        device = nil;
     }
 
     return self;
 }
 
--(id)initWithVolumeId:(NSString *)theVolumeId andInstanceId:(NSString *)theInstanceId andDevice:(NSString *)theDevice
-{
+- (id)initWithVolumeId:(NSString *)theVolumeId andInstanceId:(NSString *)theInstanceId andDevice:(NSString *)theDevice {
     if (self = [self init]) {
-        self.volumeId   = theVolumeId;
+        self.volumeId = theVolumeId;
         self.instanceId = theInstanceId;
-        self.device     = theDevice;
+        self.device = theDevice;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -60,9 +56,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

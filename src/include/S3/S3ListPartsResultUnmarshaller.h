@@ -20,7 +20,7 @@
 #import "S3PartUnmarshaller.h"
 #import "S3OwnerUnmarshaller.h"
 
-@interface S3ListPartsResultUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3ListPartsResultUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3ListPartsResult *listPartsResult;
 }
 

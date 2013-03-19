@@ -17,28 +17,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Instance Health Request
  */
 
-@interface AutoScalingSetInstanceHealthRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingSetInstanceHealthRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
     NSString *healthStatus;
-    bool     shouldRespectGracePeriod;
-    bool     shouldRespectGracePeriodIsSet;
+    bool shouldRespectGracePeriod;
+    bool shouldRespectGracePeriodIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identifier of the Amazon EC2 instance.
@@ -64,7 +59,7 @@
  * If True, this call should respect the grace period associated with the
  * group.
  */
-@property (nonatomic) bool           shouldRespectGracePeriod;
+@property (nonatomic) bool shouldRespectGracePeriod;
 
 @property (nonatomic, readonly) bool shouldRespectGracePeriodIsSet;
 
@@ -74,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

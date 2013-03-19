@@ -20,8 +20,8 @@
 /** Contains the parameters used for the uploadPart operation.
  *
  */
-@interface S3CopyPartRequest:S3Request {
-    int      partNumber;
+@interface S3CopyPartRequest : S3Request {
+    int partNumber;
     NSString *uploadId;
 
     NSString *sourceBucketName;
@@ -34,8 +34,8 @@
     NSString *ifMatch;
     NSString *ifNoneMatch;
 
-    NSDate   *ifModifiedSince;
-    NSDate   *ifUnmodifiedSince;
+    NSDate *ifModifiedSince;
+    NSDate *ifUnmodifiedSince;
 
     NSNumber *firstByte;
     NSNumber *lastByte;
@@ -57,8 +57,8 @@
 @property (nonatomic, strong) NSString *ifMatch;
 @property (nonatomic, strong) NSString *ifNoneMatch;
 
-@property (nonatomic, strong) NSDate   *ifModifiedSince;
-@property (nonatomic, strong) NSDate   *ifUnmodifiedSince;
+@property (nonatomic, strong) NSDate *ifModifiedSince;
+@property (nonatomic, strong) NSDate *ifUnmodifiedSince;
 
 @property (nonatomic, strong) NSNumber *firstByte;
 @property (nonatomic, strong) NSNumber *lastByte;

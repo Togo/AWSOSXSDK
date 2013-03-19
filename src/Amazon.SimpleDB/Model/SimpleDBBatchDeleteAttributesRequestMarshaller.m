@@ -17,12 +17,11 @@
 
 @implementation SimpleDBBatchDeleteAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBBatchDeleteAttributesRequest *)batchDeleteAttributesRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"BatchDeleteAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"BatchDeleteAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[batchDeleteAttributesRequest delegate]];
     [request setCredentials:[batchDeleteAttributesRequest credentials]];

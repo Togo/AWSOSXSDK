@@ -25,7 +25,7 @@
 /**
  * Describe Spot Instance Requests Response Unmarshaller
  */
-@interface EC2DescribeSpotInstanceRequestsResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2DescribeSpotInstanceRequestsResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DescribeSpotInstanceRequestsResponse *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) EC2DescribeSpotInstanceRequestsResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

@@ -24,22 +24,19 @@
 @synthesize checksum;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        format            = nil;
-        size              = nil;
+        format = nil;
+        size = nil;
         importManifestUrl = nil;
-        checksum          = nil;
+        checksum = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

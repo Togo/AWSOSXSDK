@@ -20,13 +20,10 @@
  * Key Schema Element
  */
 
-@interface DynamoDBKeySchemaElement:NSObject
-
-{
+@interface DynamoDBKeySchemaElement : NSObject {
     NSString *attributeName;
     NSString *attributeType;
 }
-
 
 
 /**
@@ -51,7 +48,7 @@
  * Default constructor for a new KeySchemaElement object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new KeySchemaElement object.
@@ -63,7 +60,7 @@
  * <code>KeySchemaElement</code> which can be a <code>String</code> or a
  * <code>Number</code>.
  */
--(id)initWithAttributeName:(NSString *)theAttributeName andAttributeType:(NSString *)theAttributeType;
+- (id)initWithAttributeName:(NSString *)theAttributeName andAttributeType:(NSString *)theAttributeType;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

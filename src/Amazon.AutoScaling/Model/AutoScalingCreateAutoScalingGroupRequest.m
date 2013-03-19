@@ -34,31 +34,29 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        autoScalingGroupName    = nil;
+        autoScalingGroupName = nil;
         launchConfigurationName = nil;
-        minSize                 = nil;
-        maxSize                 = nil;
-        desiredCapacity         = nil;
-        defaultCooldown         = nil;
-        availabilityZones       = [[NSMutableArray alloc] initWithCapacity:1];
-        loadBalancerNames       = [[NSMutableArray alloc] initWithCapacity:1];
-        healthCheckType         = nil;
-        healthCheckGracePeriod  = nil;
-        placementGroup          = nil;
-        vPCZoneIdentifier       = nil;
-        terminationPolicies     = [[NSMutableArray alloc] initWithCapacity:1];
-        tags                    = [[NSMutableArray alloc] initWithCapacity:1];
+        minSize = nil;
+        maxSize = nil;
+        desiredCapacity = nil;
+        defaultCooldown = nil;
+        availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
+        loadBalancerNames = [[NSMutableArray alloc] initWithCapacity:1];
+        healthCheckType = nil;
+        healthCheckGracePeriod = nil;
+        placementGroup = nil;
+        vPCZoneIdentifier = nil;
+        terminationPolicies = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject
-{
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject {
     if (availabilityZones == nil) {
         availabilityZones = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -66,8 +64,7 @@
     [availabilityZones addObject:availabilityZoneObject];
 }
 
--(void)addLoadBalancerName:(NSString *)loadBalancerNameObject
-{
+- (void)addLoadBalancerName:(NSString *)loadBalancerNameObject {
     if (loadBalancerNames == nil) {
         loadBalancerNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -75,8 +72,7 @@
     [loadBalancerNames addObject:loadBalancerNameObject];
 }
 
--(void)addTerminationPolicy:(NSString *)terminationPolicyObject
-{
+- (void)addTerminationPolicy:(NSString *)terminationPolicyObject {
     if (terminationPolicies == nil) {
         terminationPolicies = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -84,8 +80,7 @@
     [terminationPolicies addObject:terminationPolicyObject];
 }
 
--(void)addTag:(AutoScalingTag *)tagObject
-{
+- (void)addTag:(AutoScalingTag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -94,8 +89,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -118,9 +112,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

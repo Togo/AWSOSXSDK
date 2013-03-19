@@ -17,12 +17,11 @@
 
 @implementation EC2DeactivateLicenseRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeactivateLicenseRequest *)deactivateLicenseRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeactivateLicense"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeactivateLicense" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deactivateLicenseRequest delegate]];
     [request setCredentials:[deactivateLicenseRequest credentials]];

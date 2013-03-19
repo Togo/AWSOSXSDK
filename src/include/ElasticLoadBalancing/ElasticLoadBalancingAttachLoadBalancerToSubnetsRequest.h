@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Attach Load Balancer To Subnets Request
  */
 
-@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *loadBalancerName;
+@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest : AmazonServiceRequestConfig {
+    NSString *loadBalancerName;
     NSMutableArray *subnets;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name associated with the LoadBalancer. The name must be unique
@@ -53,7 +48,7 @@
  * Adds a single object to subnets.
  * This function will alloc and init subnets if not already done.
  */
--(void)addSubnet:(NSString *)subnetObject;
+- (void)addSubnet:(NSString *)subnetObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

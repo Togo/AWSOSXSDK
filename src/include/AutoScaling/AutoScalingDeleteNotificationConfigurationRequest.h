@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Notification Configuration Request
  */
 
-@interface AutoScalingDeleteNotificationConfigurationRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDeleteNotificationConfigurationRequest : AmazonServiceRequestConfig {
     NSString *autoScalingGroupName;
     NSString *topicARN;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -63,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

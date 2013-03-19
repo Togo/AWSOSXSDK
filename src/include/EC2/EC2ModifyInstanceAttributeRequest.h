@@ -18,32 +18,28 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Modify Instance Attribute Request
  */
 
-@interface EC2ModifyInstanceAttributeRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *instanceId;
-    NSString       *attribute;
-    NSString       *value;
+@interface EC2ModifyInstanceAttributeRequest : AmazonServiceRequestConfig {
+    NSString *instanceId;
+    NSString *attribute;
+    NSString *value;
     NSMutableArray *blockDeviceMappings;
-    bool           sourceDestCheck;
-    bool           sourceDestCheckIsSet;
-    bool           disableApiTermination;
-    bool           disableApiTerminationIsSet;
-    NSString       *instanceType;
-    NSString       *kernel;
-    NSString       *ramdisk;
-    NSString       *userData;
-    NSString       *instanceInitiatedShutdownBehavior;
+    bool sourceDestCheck;
+    bool sourceDestCheckIsSet;
+    bool disableApiTermination;
+    bool disableApiTerminationIsSet;
+    NSString *instanceType;
+    NSString *kernel;
+    NSString *ramdisk;
+    NSString *userData;
+    NSString *instanceInitiatedShutdownBehavior;
     NSMutableArray *groups;
-    bool           ebsOptimized;
-    bool           ebsOptimizedIsSet;
+    bool ebsOptimized;
+    bool ebsOptimizedIsSet;
 }
-
 
 
 /**
@@ -83,14 +79,14 @@
 /**
  * Boolean value
  */
-@property (nonatomic) bool           sourceDestCheck;
+@property (nonatomic) bool sourceDestCheck;
 
 @property (nonatomic, readonly) bool sourceDestCheckIsSet;
 
 /**
  * Boolean value
  */
-@property (nonatomic) bool           disableApiTermination;
+@property (nonatomic) bool disableApiTermination;
 
 @property (nonatomic, readonly) bool disableApiTerminationIsSet;
 
@@ -127,7 +123,7 @@
 /**
  * Boolean value
  */
-@property (nonatomic) bool           ebsOptimized;
+@property (nonatomic) bool ebsOptimized;
 
 @property (nonatomic, readonly) bool ebsOptimizedIsSet;
 
@@ -136,7 +132,7 @@
  * Default constructor for a new ModifyInstanceAttributeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ModifyInstanceAttributeRequest object.
@@ -151,19 +147,19 @@
  * <code>instanceInitiatedShutdownBehavior</code>,
  * <code>rootDevice</code>, <code>blockDeviceMapping</code>
  */
--(id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute;
+- (id)initWithInstanceId:(NSString *)theInstanceId andAttribute:(NSString *)theAttribute;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingObject;
 
 /**
  * Adds a single object to groups.
  * This function will alloc and init groups if not already done.
  */
--(void)addGroup:(NSString *)groupObject;
+- (void)addGroup:(NSString *)groupObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -171,7 +167,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

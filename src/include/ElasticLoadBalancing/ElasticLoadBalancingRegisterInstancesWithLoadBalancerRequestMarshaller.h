@@ -23,11 +23,11 @@
 /**
  * Register Instances With Load Balancer Request Marshaller
  */
-@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest;
 
 
 @end

@@ -23,22 +23,19 @@
  * Put Scaling Policy Result
  */
 
-@interface AutoScalingPutScalingPolicyResponse:AutoScalingResponse
-
-{
+@interface AutoScalingPutScalingPolicyResponse : AutoScalingResponse {
     NSString *policyARN;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A policy's Amazon Resource Name (ARN).
@@ -55,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

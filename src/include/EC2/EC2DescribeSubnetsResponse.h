@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Subnets Response
  */
 
-@interface EC2DescribeSubnetsResponse:EC2Response
-
-{
+@interface EC2DescribeSubnetsResponse : EC2Response {
     NSMutableArray *subnets;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Contains a set of one or more <a>Subnet</a> instances.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *subnets;
 
 
-
 /**
  * Returns a value from the subnets array for the specified index
  */
--(EC2Subnet *)subnetsObjectAtIndex:(int)index;
+- (EC2Subnet *)subnetsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

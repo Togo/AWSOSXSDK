@@ -18,27 +18,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Get Identity Verification Attributes Result
  */
 
-@interface SESGetIdentityVerificationAttributesResponse:SESResponse
-
-{
+@interface SESGetIdentityVerificationAttributesResponse : SESResponse {
     NSMutableDictionary *verificationAttributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A map of Identities to IdentityVerificationAttributes objects.
@@ -48,7 +44,7 @@
 /**
  * Returns a value from the verificationAttributes dictionary for the specified key.
  */
--(SESIdentityVerificationAttributes *)verificationAttributesValueForKey:(NSString *)theKey;
+- (SESIdentityVerificationAttributes *)verificationAttributesValueForKey:(NSString *)theKey;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

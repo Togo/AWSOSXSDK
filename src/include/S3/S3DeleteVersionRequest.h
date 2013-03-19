@@ -35,8 +35,8 @@
  * <br />Required Parameters: bucket, key
  *
  */
-@interface S3DeleteVersionRequest:S3Request {
-    NSString                    *versionId;
+@interface S3DeleteVersionRequest : S3Request {
+    NSString *versionId;
     S3MultiFactorAuthentication *mfa;
 }
 

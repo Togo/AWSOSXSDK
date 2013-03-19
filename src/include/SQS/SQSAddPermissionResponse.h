@@ -21,8 +21,7 @@
 /**
  * Add Permission
  */
-@interface SQSAddPermissionResponse:SQSResponse
-{
+@interface SQSAddPermissionResponse : SQSResponse {
 }
 
 @end

@@ -22,18 +22,16 @@
 @synthesize queueOwnerAWSAccountId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        queueName              = nil;
+        queueName = nil;
         queueOwnerAWSAccountId = nil;
     }
 
     return self;
 }
 
--(id)initWithQueueName:(NSString *)theQueueName
-{
+- (id)initWithQueueName:(NSString *)theQueueName {
     if (self = [self init]) {
         self.queueName = theQueueName;
     }
@@ -42,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +51,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

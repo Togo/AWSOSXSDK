@@ -20,13 +20,10 @@
  * Spot Placement
  */
 
-@interface EC2SpotPlacement:NSObject
-
-{
+@interface EC2SpotPlacement : NSObject {
     NSString *availabilityZone;
     NSString *groupName;
 }
-
 
 
 /**
@@ -47,7 +44,7 @@
  * Default constructor for a new SpotPlacement object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SpotPlacement object.
@@ -56,7 +53,7 @@
  * @param theAvailabilityZone The availability zone in which an Amazon
  * EC2 instance runs.
  */
--(id)initWithAvailabilityZone:(NSString *)theAvailabilityZone;
+- (id)initWithAvailabilityZone:(NSString *)theAvailabilityZone;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +61,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

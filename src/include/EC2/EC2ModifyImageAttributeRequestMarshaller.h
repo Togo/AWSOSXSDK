@@ -27,11 +27,11 @@
 /**
  * Modify Image Attribute Request Marshaller
  */
-@interface EC2ModifyImageAttributeRequestMarshaller:NSObject {
+@interface EC2ModifyImageAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ModifyImageAttributeRequest *)modifyImageAttributeRequest;
 
 
 @end

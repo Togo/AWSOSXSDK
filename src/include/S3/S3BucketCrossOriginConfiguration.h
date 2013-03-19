@@ -20,12 +20,12 @@
 /**
  *
  */
-@interface S3BucketCrossOriginConfiguration:NSObject {
+@interface S3BucketCrossOriginConfiguration : NSObject {
 }
 
 /** The list of rules */
 @property (nonatomic, strong) NSArray *rules;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

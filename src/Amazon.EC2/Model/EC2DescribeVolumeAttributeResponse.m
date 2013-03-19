@@ -24,21 +24,19 @@
 @synthesize productCodes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        volumeId          = nil;
-        autoEnableIO      = NO;
+        volumeId = nil;
+        autoEnableIO = NO;
         autoEnableIOIsSet = NO;
-        productCodes      = [[NSMutableArray alloc] initWithCapacity:1];
+        productCodes = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -51,15 +49,12 @@
 }
 
 
-
--(EC2ProductCode *)productCodesObjectAtIndex:(int)index
-{
-    return (EC2ProductCode *)[productCodes objectAtIndex:index];
+- (EC2ProductCode *)productCodesObjectAtIndex:(int)index {
+    return (EC2ProductCode *) [productCodes objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -73,13 +68,10 @@
 }
 
 
--(void)setAutoEnableIO:(bool)theValue
-{
-    autoEnableIO      = theValue;
+- (void)setAutoEnableIO:(bool)theValue {
+    autoEnableIO = theValue;
     autoEnableIOIsSet = YES;
 }
-
-
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation AutoScalingEnableMetricsCollectionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"EnableMetricsCollection"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"EnableMetricsCollection" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[enableMetricsCollectionRequest delegate]];
     [request setCredentials:[enableMetricsCollectionRequest credentials]];

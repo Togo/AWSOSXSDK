@@ -17,18 +17,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Import Key Pair Request
  */
 
-@interface EC2ImportKeyPairRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2ImportKeyPairRequest : AmazonServiceRequestConfig {
     NSString *keyName;
     NSString *publicKeyMaterial;
 }
-
 
 
 /**
@@ -46,7 +42,7 @@
  * Default constructor for a new ImportKeyPairRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new ImportKeyPairRequest object.
@@ -56,7 +52,7 @@
  * @param thePublicKeyMaterial The public key portion of the key pair
  * being imported.
  */
--(id)initWithKeyName:(NSString *)theKeyName andPublicKeyMaterial:(NSString *)thePublicKeyMaterial;
+- (id)initWithKeyName:(NSString *)theKeyName andPublicKeyMaterial:(NSString *)thePublicKeyMaterial;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

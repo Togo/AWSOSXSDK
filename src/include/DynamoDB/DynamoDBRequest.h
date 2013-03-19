@@ -20,8 +20,8 @@
 /**
  *
  */
-@interface DynamoDBRequest:AmazonServiceRequest {
-    NSString            *content;
+@interface DynamoDBRequest : AmazonServiceRequest {
+    NSString *content;
     NSMutableDictionary *headers;
 }
 
@@ -29,6 +29,6 @@
 @property (nonatomic, strong) NSString *content;
 
 
--(void)addValue:(NSString *)theValue forHeader:(NSString *)theHeader;
+- (void)addValue:(NSString *)theValue forHeader:(NSString *)theHeader;
 
 @end

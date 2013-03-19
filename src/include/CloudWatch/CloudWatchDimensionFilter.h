@@ -20,21 +20,17 @@
  * Dimension Filter
  */
 
-@interface CloudWatchDimensionFilter:NSObject
-
-{
+@interface CloudWatchDimensionFilter : NSObject {
     NSString *name;
     NSString *value;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The dimension name to be matched.
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

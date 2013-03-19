@@ -22,19 +22,17 @@
 @synthesize scalingProcesses;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        scalingProcesses     = [[NSMutableArray alloc] initWithCapacity:1];
+        scalingProcesses = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addScalingProcesse:(NSString *)scalingProcesseObject
-{
+- (void)addScalingProcesse:(NSString *)scalingProcesseObject {
     if (scalingProcesses == nil) {
         scalingProcesses = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

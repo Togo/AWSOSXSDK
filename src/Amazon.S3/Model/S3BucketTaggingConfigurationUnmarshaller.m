@@ -20,22 +20,18 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
-{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
-    
-    if ([elementName isEqualToString:@"TagSet"])
-    {
+
+    if ([elementName isEqualToString:@"TagSet"]) {
         [parser setDelegate:[[S3BucketTagSetUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].tagsets withSetter:@selector(addObject:)]];
     }
 }
 
 #pragma mark - Unmarshalled object property
 
--(S3BucketTaggingConfiguration *)configuration
-{
-    if (nil == configuration)
-    {
+- (S3BucketTaggingConfiguration *)configuration {
+    if (nil == configuration) {
         configuration = [[S3BucketTaggingConfiguration alloc] init];
         configuration.tagsets = [NSMutableArray arrayWithCapacity:1];
     }

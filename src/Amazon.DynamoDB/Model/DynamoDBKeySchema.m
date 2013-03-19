@@ -22,18 +22,16 @@
 @synthesize rangeKeyElement;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        hashKeyElement  = nil;
+        hashKeyElement = nil;
         rangeKeyElement = nil;
     }
 
     return self;
 }
 
--(id)initWithHashKeyElement:(DynamoDBKeySchemaElement *)theHashKeyElement
-{
+- (id)initWithHashKeyElement:(DynamoDBKeySchemaElement *)theHashKeyElement {
     if (self = [self init]) {
         self.hashKeyElement = theHashKeyElement;
     }
@@ -42,9 +40,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +51,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

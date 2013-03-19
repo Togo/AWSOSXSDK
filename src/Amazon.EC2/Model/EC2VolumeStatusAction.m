@@ -24,22 +24,19 @@
 @synthesize eventId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        code             = nil;
+        code = nil;
         descriptionValue = nil;
-        eventType        = nil;
-        eventId          = nil;
+        eventType = nil;
+        eventId = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

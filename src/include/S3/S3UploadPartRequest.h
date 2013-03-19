@@ -20,11 +20,11 @@
 /** Contains the parameters used for the uploadPart operation.
  *
  */
-@interface S3UploadPartRequest:S3Request {
+@interface S3UploadPartRequest : S3Request {
     NSInteger partNumber;
-    NSString  *uploadId;
-    NSString  *contentMD5;
-    NSData    *data;
+    NSString *uploadId;
+    NSString *contentMD5;
+    NSData *data;
     NSInputStream *stream;
 }
 
@@ -56,6 +56,6 @@
 @property (nonatomic, strong) NSInputStream *stream;
 
 /** Initializes the instance with the bucket, key, and uploadId from an S3MultipartUpload instance returned in an S3MultipartUploadResponse. */
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;
 
 @end

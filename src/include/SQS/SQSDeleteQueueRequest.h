@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Queue Request
  */
 
-@interface SQSDeleteQueueRequest:AmazonServiceRequestConfig
-
-{
+@interface SQSDeleteQueueRequest : AmazonServiceRequestConfig {
     NSString *queueUrl;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeleteQueueRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteQueueRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theQueueUrl The URL of the SQS queue to take action on.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

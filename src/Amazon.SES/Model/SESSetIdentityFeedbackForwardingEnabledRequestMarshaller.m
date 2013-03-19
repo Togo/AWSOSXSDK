@@ -17,12 +17,11 @@
 
 @implementation SESSetIdentityFeedbackForwardingEnabledRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESSetIdentityFeedbackForwardingEnabledRequest *)setIdentityFeedbackForwardingEnabledRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"SetIdentityFeedbackForwardingEnabled"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetIdentityFeedbackForwardingEnabled" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[setIdentityFeedbackForwardingEnabledRequest delegate]];
     [request setCredentials:[setIdentityFeedbackForwardingEnabledRequest credentials]];
@@ -36,7 +35,7 @@
     }
     if (setIdentityFeedbackForwardingEnabledRequest != nil) {
         if (setIdentityFeedbackForwardingEnabledRequest.forwardingEnabledIsSet) {
-            [request setParameterValue:(setIdentityFeedbackForwardingEnabledRequest.forwardingEnabled ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"ForwardingEnabled"]];
+            [request setParameterValue:(setIdentityFeedbackForwardingEnabledRequest.forwardingEnabled ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"ForwardingEnabled"]];
         }
     }
 

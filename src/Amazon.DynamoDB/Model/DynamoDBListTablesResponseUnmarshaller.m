@@ -21,8 +21,7 @@
 @implementation DynamoDBListTablesResponseUnmarshaller
 
 
-+(DynamoDBListTablesResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBListTablesResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBListTablesResponse *listTablesResult = [[DynamoDBListTablesResponse alloc] init];
 
 

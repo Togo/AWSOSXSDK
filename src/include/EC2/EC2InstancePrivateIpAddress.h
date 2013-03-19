@@ -16,29 +16,24 @@
 #import "EC2InstanceNetworkInterfaceAssociation.h"
 
 
-
 /**
  * Instance Private Ip Address
  */
 
-@interface EC2InstancePrivateIpAddress:NSObject
-
-{
-    NSString                               *privateIpAddress;
-    NSString                               *privateDnsName;
-    bool                                   primary;
-    bool                                   primaryIsSet;
+@interface EC2InstancePrivateIpAddress : NSObject {
+    NSString *privateIpAddress;
+    NSString *privateDnsName;
+    bool primary;
+    bool primaryIsSet;
     EC2InstanceNetworkInterfaceAssociation *association;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the PrivateIpAddress property for this object.
@@ -53,7 +48,7 @@
 /**
  * The value of the Primary property for this object.
  */
-@property (nonatomic) bool           primary;
+@property (nonatomic) bool primary;
 
 @property (nonatomic, readonly) bool primaryIsSet;
 
@@ -68,7 +63,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

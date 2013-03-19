@@ -18,28 +18,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Volume Status Request
  */
 
-@interface EC2DescribeVolumeStatusRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeVolumeStatusRequest : AmazonServiceRequestConfig {
     NSMutableArray *volumeIds;
     NSMutableArray *filters;
-    NSString       *nextToken;
-    NSNumber       *maxResults;
+    NSString *nextToken;
+    NSNumber *maxResults;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the VolumeIds property for this object.
@@ -65,13 +60,13 @@
  * Adds a single object to volumeIds.
  * This function will alloc and init volumeIds if not already done.
  */
--(void)addVolumeId:(NSString *)volumeIdObject;
+- (void)addVolumeId:(NSString *)volumeIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

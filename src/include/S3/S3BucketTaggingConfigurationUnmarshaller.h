@@ -19,7 +19,7 @@
 #import "S3BucketTaggingConfiguration.h"
 
 /** Creates an S3BucketTaggingConfiguration from an XML service repsonse. */
-@interface S3BucketTaggingConfigurationUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3BucketTaggingConfigurationUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3BucketTaggingConfiguration *configuration;
 }
 

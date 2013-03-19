@@ -24,8 +24,7 @@
 /**
  * Create Load Balancer Listeners
  */
-@interface ElasticLoadBalancingCreateLoadBalancerListenersResponse:ElasticLoadBalancingResponse
-{
+@interface ElasticLoadBalancingCreateLoadBalancerListenersResponse : ElasticLoadBalancingResponse {
 }
 
 @end

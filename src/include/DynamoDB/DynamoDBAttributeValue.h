@@ -16,22 +16,18 @@
 #import "../AmazonSDKUtil.h"
 
 
-
 /**
  * Attribute Value
  */
 
-@interface DynamoDBAttributeValue:NSObject
-
-{
-    NSString       *s;
-    NSString       *n;
-    NSData         *b;
+@interface DynamoDBAttributeValue : NSObject {
+    NSString *s;
+    NSString *n;
+    NSData *b;
     NSMutableArray *sS;
     NSMutableArray *nS;
     NSMutableArray *bS;
 }
-
 
 
 /**
@@ -73,7 +69,7 @@
  * Default constructor for a new AttributeValue object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AttributeValue object.
@@ -84,7 +80,7 @@
  * a range part of a key or 2048 bytes as a single part hash key) or the
  * item size (64k).
  */
--(id)initWithS:(NSString *)theS;
+- (id)initWithS:(NSString *)theS;
 
 /**
  * Constructs a new AttributeValue object.
@@ -92,7 +88,7 @@
  *
  * @param theSS A set of strings.
  */
--(id)initWithSS:(NSMutableArray *)theSS;
+- (id)initWithSS:(NSMutableArray *)theSS;
 
 /**
  * Constructs a new AttributeValue object.
@@ -102,7 +98,7 @@
  * integers. A number can have up to 38 digits precision and can be
  * between 10^-128 to 10^+126.
  */
--(id)initWithN:(NSString *)theN;
+- (id)initWithN:(NSString *)theN;
 
 /**
  * Constructs a new AttributeValue object.
@@ -110,7 +106,7 @@
  *
  * @param theNS A set of numbers.
  */
--(id)initWithNS:(NSMutableArray *)theNS;
+- (id)initWithNS:(NSMutableArray *)theNS;
 
 /**
  * Constructs a new AttributeValue object.
@@ -118,7 +114,7 @@
  *
  * @param theB Binary attributes are sequences of unsigned bytes.
  */
--(id)initWithB:(NSData *)theB;
+- (id)initWithB:(NSData *)theB;
 
 /**
  * Constructs a new AttributeValue object.
@@ -126,25 +122,25 @@
  *
  * @param theBS A set of binary attributes.
  */
--(id)initWithBS:(NSMutableArray *)theBS;
+- (id)initWithBS:(NSMutableArray *)theBS;
 
 /**
  * Adds a single object to sS.
  * This function will alloc and init sS if not already done.
  */
--(void)addSS:(NSString *)sSObject;
+- (void)addSS:(NSString *)sSObject;
 
 /**
  * Adds a single object to nS.
  * This function will alloc and init nS if not already done.
  */
--(void)addNS:(NSString *)nSObject;
+- (void)addNS:(NSString *)nSObject;
 
 /**
  * Adds a single object to bS.
  * This function will alloc and init bS if not already done.
  */
--(void)addBS:(NSData *)bSObject;
+- (void)addBS:(NSData *)bSObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -152,7 +148,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

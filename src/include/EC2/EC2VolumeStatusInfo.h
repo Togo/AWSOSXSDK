@@ -16,26 +16,21 @@
 #import "EC2VolumeStatusDetails.h"
 
 
-
 /**
  * Volume Status Info
  */
 
-@interface EC2VolumeStatusInfo:NSObject
-
-{
-    NSString       *status;
+@interface EC2VolumeStatusInfo : NSObject {
+    NSString *status;
     NSMutableArray *details;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Status property for this object.
@@ -51,7 +46,7 @@
  * Adds a single object to details.
  * This function will alloc and init details if not already done.
  */
--(void)addDetail:(EC2VolumeStatusDetails *)detailObject;
+- (void)addDetail:(EC2VolumeStatusDetails *)detailObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

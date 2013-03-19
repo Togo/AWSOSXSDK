@@ -20,9 +20,7 @@
  * Statistic Set
  */
 
-@interface CloudWatchStatisticSet:NSObject
-
-{
+@interface CloudWatchStatisticSet : NSObject {
     NSNumber *sampleCount;
     NSNumber *sum;
     NSNumber *minimum;
@@ -30,13 +28,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The number of samples used for the statistic set.
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -16,15 +16,12 @@
 #import "SimpleDBAttributeDoesNotExistException.h"
 
 
-
-
 @implementation SimpleDBAttributeDoesNotExistException
 
 @synthesize boxUsage;
 
 
--(id)initWithMessage:(NSString *)theMessage
-{
+- (id)initWithMessage:(NSString *)theMessage {
     if (self = [super initWithMessage:theMessage]) {
     }
 
@@ -32,8 +29,7 @@
 }
 
 
--(void)setPropertiesWithException:(AmazonServiceException *)theException
-{
+- (void)setPropertiesWithException:(AmazonServiceException *)theException {
     [super setPropertiesWithException:theException];
 
     if ([theException.additionalFields valueForKey:@"BoxUsage"] != nil) {
@@ -42,8 +38,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -53,7 +48,6 @@
 
     return buffer;
 }
-
 
 
 @end

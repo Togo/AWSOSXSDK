@@ -20,15 +20,12 @@
  * Credentials
  */
 
-@interface SecurityTokenServiceCredentials:NSObject
-
-{
+@interface SecurityTokenServiceCredentials : NSObject {
     NSString *accessKeyId;
     NSString *secretAccessKey;
     NSString *sessionToken;
-    NSDate   *expiration;
+    NSDate *expiration;
 }
-
 
 
 /**
@@ -61,7 +58,7 @@
  * Default constructor for a new Credentials object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new Credentials object.
@@ -74,7 +71,7 @@
  * service API to use the temporary credentials.
  * @param theExpiration The date on which these credentials expire.
  */
--(id)initWithAccessKeyId:(NSString *)theAccessKeyId andSecretAccessKey:(NSString *)theSecretAccessKey andSessionToken:(NSString *)theSessionToken andExpiration:(NSDate *)theExpiration;
+- (id)initWithAccessKeyId:(NSString *)theAccessKeyId andSecretAccessKey:(NSString *)theSecretAccessKey andSessionToken:(NSString *)theSessionToken andExpiration:(NSDate *)theExpiration;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -82,7 +79,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

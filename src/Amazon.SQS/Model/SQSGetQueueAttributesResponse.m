@@ -21,8 +21,7 @@
 @synthesize attributes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         attributes = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidAttributeName"]) {
@@ -49,14 +47,12 @@
 }
 
 
--(NSString *)attributesValueForKey:(NSString *)theKey
-{
-    return (NSString *)[attributes valueForKey:theKey];
+- (NSString *)attributesValueForKey:(NSString *)theKey {
+    return (NSString *) [attributes valueForKey:theKey];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -66,9 +62,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

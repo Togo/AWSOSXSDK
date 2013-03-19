@@ -22,8 +22,7 @@
  *
  * Underneath, it uses NSOperationQueue to handle multiple uploads efficiently, and automatically choose the right upload mode: multi-part uploads for large files, and put requests for small files.
  */
-@interface S3TransferManager : NSObject <AmazonServiceRequestDelegate>
-{
+@interface S3TransferManager : NSObject <AmazonServiceRequestDelegate> {
 }
 
 #pragma mark - S3TransferManager properties
@@ -33,7 +32,7 @@
  *
  * Asynchronous operations use this delegate for AmazonServiceRequestDelegate callbacks. Once assigned, it is not recommended to reassigned this property. You can overwrite this default by specifying the delegate property of a S3PutObject request.
  */
-@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <AmazonServiceRequestDelegate> delegate;
 
 /*
  * The AmazonS3Client object used internally.

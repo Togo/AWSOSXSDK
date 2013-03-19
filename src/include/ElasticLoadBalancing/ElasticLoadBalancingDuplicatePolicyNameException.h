@@ -16,25 +16,17 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Policy with the same name exists for this LoadBalancer. Please choose
  * another name.
  * </p>
  */
-@interface ElasticLoadBalancingDuplicatePolicyNameException:AmazonServiceException
-{
+@interface ElasticLoadBalancingDuplicatePolicyNameException : AmazonServiceException {
 }
 
 
-
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -43,7 +35,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

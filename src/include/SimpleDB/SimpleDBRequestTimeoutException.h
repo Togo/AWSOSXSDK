@@ -16,16 +16,13 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * A timeout occurred when attempting to query the specified domain with
  * specified query expression.
  * </p>
  */
-@interface SimpleDBRequestTimeoutException:AmazonServiceException
-{
+@interface SimpleDBRequestTimeoutException : AmazonServiceException {
     NSNumber *boxUsage;
 }
 
@@ -36,11 +33,7 @@
 @property (nonatomic, strong) NSNumber *boxUsage;
 
 
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -49,7 +42,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

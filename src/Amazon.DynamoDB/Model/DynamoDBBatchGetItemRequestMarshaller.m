@@ -20,8 +20,7 @@
 
 @implementation DynamoDBBatchGetItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBBatchGetItemRequest *)batchGetItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBBatchGetItemRequest *)batchGetItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[batchGetItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.BatchGetItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -39,7 +38,7 @@
         NSMutableDictionary *requestItemsJson = [[NSMutableDictionary alloc] init];
         [json setValue:requestItemsJson forKey:@"RequestItems"];
         for (NSString *requestItemsListValue in batchGetItemRequest.requestItems) {
-            NSMutableDictionary       *requestItemsListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *requestItemsListValueJson = [[NSMutableDictionary alloc] init];
             [requestItemsJson setValue:requestItemsListValueJson forKey:requestItemsListValue];
             DynamoDBKeysAndAttributes *requestItemsListValueValue = [batchGetItemRequest.requestItems valueForKey:requestItemsListValue];
 
@@ -181,15 +180,14 @@
             }
 
             if (requestItemsListValueValue.consistentReadIsSet) {
-                [requestItemsListValueJson setValue:(requestItemsListValueValue.consistentRead ? @"true":@"false") forKey:@"ConsistentRead"];
+                [requestItemsListValueJson setValue:(requestItemsListValueValue.consistentRead ? @"true" : @"false") forKey:@"ConsistentRead"];
             }
         }
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

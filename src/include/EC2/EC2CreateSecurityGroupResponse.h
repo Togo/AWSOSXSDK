@@ -17,27 +17,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Create Security Group Response
  */
 
-@interface EC2CreateSecurityGroupResponse:EC2Response
-
-{
+@interface EC2CreateSecurityGroupResponse : EC2Response {
     NSString *groupId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the GroupId property for this object.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

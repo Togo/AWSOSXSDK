@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Bundle Instance Request
  */
 
-@interface EC2BundleInstanceRequest:AmazonServiceRequestConfig
-
-{
-    NSString   *instanceId;
+@interface EC2BundleInstanceRequest : AmazonServiceRequestConfig {
+    NSString *instanceId;
     EC2Storage *storage;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new BundleInstanceRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new BundleInstanceRequest object.
@@ -56,7 +52,7 @@
  * @param theInstanceId The ID of the instance to bundle.
  * @param theStorage
  */
--(id)initWithInstanceId:(NSString *)theInstanceId andStorage:(EC2Storage *)theStorage;
+- (id)initWithInstanceId:(NSString *)theInstanceId andStorage:(EC2Storage *)theStorage;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -64,7 +60,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

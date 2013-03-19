@@ -23,7 +23,7 @@
 /**
  * Adjustment Type Unmarshaller
  */
-@interface AutoScalingAdjustmentTypeUnmarshaller:AutoScalingResponseUnmarshaller {
+@interface AutoScalingAdjustmentTypeUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingAdjustmentType *response;
 }
 
@@ -31,8 +31,9 @@
 @property (weak, nonatomic, readonly) AutoScalingAdjustmentType *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

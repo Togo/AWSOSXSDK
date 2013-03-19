@@ -24,31 +24,28 @@
 @synthesize returnValues;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        tableName    = nil;
-        item         = [[NSMutableDictionary alloc] initWithCapacity:1];
-        expected     = [[NSMutableDictionary alloc] initWithCapacity:1];
+        tableName = nil;
+        item = [[NSMutableDictionary alloc] initWithCapacity:1];
+        expected = [[NSMutableDictionary alloc] initWithCapacity:1];
         returnValues = nil;
     }
 
     return self;
 }
 
--(id)initWithTableName:(NSString *)theTableName andItem:(NSMutableDictionary *)theItem
-{
+- (id)initWithTableName:(NSString *)theTableName andItem:(NSMutableDictionary *)theItem {
     if (self = [self init]) {
         self.tableName = theTableName;
-        self.item      = theItem;
+        self.item = theItem;
     }
 
     return self;
 }
 
 
--(void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey
-{
+- (void)setItemValue:(DynamoDBAttributeValue *)theValue forKey:(NSString *)theKey {
     if (item == nil) {
         item = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -56,8 +53,7 @@
     [item setValue:theValue forKey:theKey];
 }
 
--(void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey
-{
+- (void)setExpectedValue:(DynamoDBExpectedAttributeValue *)theValue forKey:(NSString *)theKey {
     if (expected == nil) {
         expected = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
@@ -66,8 +62,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -80,9 +75,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

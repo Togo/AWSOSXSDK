@@ -20,15 +20,12 @@
  * Update Condition
  */
 
-@interface SimpleDBUpdateCondition:NSObject
-
-{
+@interface SimpleDBUpdateCondition : NSObject {
     NSString *name;
     NSString *value;
-    bool     exists;
-    bool     existsIsSet;
+    bool exists;
+    bool existsIsSet;
 }
-
 
 
 /**
@@ -50,7 +47,7 @@
  * the attribute should not exist in order for the update condition to be
  * satisfied.
  */
-@property (nonatomic) bool           exists;
+@property (nonatomic) bool exists;
 
 @property (nonatomic, readonly) bool existsIsSet;
 
@@ -59,7 +56,7 @@
  * Default constructor for a new UpdateCondition object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new UpdateCondition object.
@@ -76,7 +73,7 @@
  * <code>false</code> if the attribute should not exist in order for the
  * update condition to be satisfied.
  */
--(id)initWithName:(NSString *)theName andValue:(NSString *)theValue andExists:(bool)theExists;
+- (id)initWithName:(NSString *)theName andValue:(NSString *)theValue andExists:(bool)theExists;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -84,7 +81,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

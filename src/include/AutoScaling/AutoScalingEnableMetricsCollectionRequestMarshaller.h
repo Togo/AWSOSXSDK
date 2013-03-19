@@ -22,11 +22,11 @@
 /**
  * Enable Metrics Collection Request Marshaller
  */
-@interface AutoScalingEnableMetricsCollectionRequestMarshaller:NSObject {
+@interface AutoScalingEnableMetricsCollectionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingEnableMetricsCollectionRequest *)enableMetricsCollectionRequest;
 
 
 @end

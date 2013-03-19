@@ -19,11 +19,10 @@
 
 @protocol AmazonCredentialsProvider;
 
-@interface S3PutObjectOperation_Internal : NSOperation <AmazonServiceRequestDelegate>
-{
+@interface S3PutObjectOperation_Internal : NSOperation <AmazonServiceRequestDelegate> {
 }
 
-@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <AmazonServiceRequestDelegate> delegate;
 
 @property (nonatomic, strong) AmazonS3Client *s3;
 @property (nonatomic, strong) S3PutObjectRequest *request;

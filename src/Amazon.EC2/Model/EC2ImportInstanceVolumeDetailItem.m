@@ -27,15 +27,14 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        bytesConverted   = nil;
+        bytesConverted = nil;
         availabilityZone = nil;
-        image            = nil;
-        volume           = nil;
-        status           = nil;
-        statusMessage    = nil;
+        image = nil;
+        volume = nil;
+        status = nil;
+        statusMessage = nil;
         descriptionValue = nil;
     }
 
@@ -43,9 +42,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

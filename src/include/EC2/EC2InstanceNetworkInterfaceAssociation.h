@@ -20,22 +20,18 @@
  * Instance Network Interface Association
  */
 
-@interface EC2InstanceNetworkInterfaceAssociation:NSObject
-
-{
+@interface EC2InstanceNetworkInterfaceAssociation : NSObject {
     NSString *publicIp;
     NSString *publicDnsName;
     NSString *ipOwnerId;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the PublicIp property for this object.
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

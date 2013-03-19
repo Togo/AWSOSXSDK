@@ -22,11 +22,11 @@
 /**
  * Set Load Balancer Listener S S L Certificate Request Marshaller
  */
-@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest;
 
 
 @end

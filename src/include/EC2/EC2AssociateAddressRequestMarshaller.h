@@ -22,11 +22,11 @@
 /**
  * Associate Address Request Marshaller
  */
-@interface EC2AssociateAddressRequestMarshaller:NSObject {
+@interface EC2AssociateAddressRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2AssociateAddressRequest *)associateAddressRequest;
++ (AmazonServiceRequest *)createRequest:(EC2AssociateAddressRequest *)associateAddressRequest;
 
 
 @end

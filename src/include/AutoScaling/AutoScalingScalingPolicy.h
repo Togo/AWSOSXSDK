@@ -16,32 +16,27 @@
 #import "AutoScalingAlarm.h"
 
 
-
 /**
  * Scaling Policy
  */
 
-@interface AutoScalingScalingPolicy:NSObject
-
-{
-    NSString       *autoScalingGroupName;
-    NSString       *policyName;
-    NSNumber       *scalingAdjustment;
-    NSString       *adjustmentType;
-    NSNumber       *cooldown;
-    NSString       *policyARN;
+@interface AutoScalingScalingPolicy : NSObject {
+    NSString *autoScalingGroupName;
+    NSString *policyName;
+    NSNumber *scalingAdjustment;
+    NSString *adjustmentType;
+    NSNumber *cooldown;
+    NSString *policyARN;
     NSMutableArray *alarms;
-    NSNumber       *minAdjustmentStep;
+    NSNumber *minAdjustmentStep;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group associated with this scaling
@@ -111,7 +106,7 @@
  * Adds a single object to alarms.
  * This function will alloc and init alarms if not already done.
  */
--(void)addAlarm:(AutoScalingAlarm *)alarmObject;
+- (void)addAlarm:(AutoScalingAlarm *)alarmObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -119,7 +114,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

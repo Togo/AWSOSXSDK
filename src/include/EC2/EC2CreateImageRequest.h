@@ -18,22 +18,18 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Image Request
  */
 
-@interface EC2CreateImageRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *instanceId;
-    NSString       *name;
-    NSString       *descriptionValue;
-    bool           noReboot;
-    bool           noRebootIsSet;
+@interface EC2CreateImageRequest : AmazonServiceRequestConfig {
+    NSString *instanceId;
+    NSString *name;
+    NSString *descriptionValue;
+    bool noReboot;
+    bool noRebootIsSet;
     NSMutableArray *blockDeviceMappings;
 }
-
 
 
 /**
@@ -59,7 +55,7 @@
  * this option is used, file system integrity on the created image cannot
  * be guaranteed.
  */
-@property (nonatomic) bool           noReboot;
+@property (nonatomic) bool noReboot;
 
 @property (nonatomic, readonly) bool noRebootIsSet;
 
@@ -73,7 +69,7 @@
  * Default constructor for a new CreateImageRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateImageRequest object.
@@ -83,13 +79,13 @@
  * new image.
  * @param theName The name for the new AMI being created.
  */
--(id)initWithInstanceId:(NSString *)theInstanceId andName:(NSString *)theName;
+- (id)initWithInstanceId:(NSString *)theInstanceId andName:(NSString *)theName;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -97,7 +93,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

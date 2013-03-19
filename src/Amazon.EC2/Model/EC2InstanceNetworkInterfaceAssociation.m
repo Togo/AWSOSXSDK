@@ -23,21 +23,18 @@
 @synthesize ipOwnerId;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        publicIp      = nil;
+        publicIp = nil;
         publicDnsName = nil;
-        ipOwnerId     = nil;
+        ipOwnerId = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -25,23 +25,20 @@
 @synthesize topicArn;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         subscriptionArn = nil;
-        owner           = nil;
-        protocol        = nil;
-        endpoint        = nil;
-        topicArn        = nil;
+        owner = nil;
+        protocol = nil;
+        endpoint = nil;
+        topicArn = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,9 +17,8 @@
 
 @implementation EC2Request
 
--(void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey
-{
-    if ( [theKey isEqualToString:@"PublicKeyMaterial"]) {
+- (void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey {
+    if ([theKey isEqualToString:@"PublicKeyMaterial"]) {
         NSData *data = [theValue dataUsingEncoding:NSUTF8StringEncoding];
         [super setParameterValue:[data base64EncodedString] forKey:theKey];
     }

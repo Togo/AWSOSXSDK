@@ -21,11 +21,10 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"LastModified"]) {
@@ -53,10 +52,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3CopyObjectResult *)objectCopyResult
-{
-    if (nil == objectCopyResult)
-    {
+- (S3CopyObjectResult *)objectCopyResult {
+    if (nil == objectCopyResult) {
         objectCopyResult = [[S3CopyObjectResult alloc] init];
     }
     return objectCopyResult;

@@ -17,12 +17,11 @@
 
 @implementation SQSRemovePermissionRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSRemovePermissionRequest *)removePermissionRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSRemovePermissionRequest *)removePermissionRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"RemovePermission"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"RemovePermission" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[removePermissionRequest delegate]];
     [request setCredentials:[removePermissionRequest credentials]];

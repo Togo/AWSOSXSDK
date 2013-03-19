@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Delete Domain Request
  */
 
-@interface SimpleDBDeleteDomainRequest:AmazonServiceRequestConfig
-
-{
+@interface SimpleDBDeleteDomainRequest : AmazonServiceRequestConfig {
     NSString *domainName;
 }
-
 
 
 /**
@@ -40,7 +36,7 @@
  * Default constructor for a new DeleteDomainRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DeleteDomainRequest object.
@@ -48,7 +44,7 @@
  *
  * @param theDomainName The name of the domain to delete.
  */
--(id)initWithDomainName:(NSString *)theDomainName;
+- (id)initWithDomainName:(NSString *)theDomainName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -56,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

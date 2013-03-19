@@ -21,74 +21,64 @@
 
 @synthesize requestId, errorCode, serviceName, statusCode;
 
-+(id)exceptionWithMessage:(NSString *)theMessage
-{
++ (id)exceptionWithMessage:(NSString *)theMessage {
     AmazonServiceException *e = [[[self class] alloc] initWithName:@"AmazonServiceException"
-                                                                      reason:theMessage
-                                                                    userInfo:nil];
+                                                            reason:theMessage
+                                                          userInfo:nil];
     e.message = theMessage;
-    
+
     return e;
 }
 
-+(id)exceptionWithStatusCode:(NSInteger)theStatusCode
-{
++ (id)exceptionWithStatusCode:(NSInteger)theStatusCode {
     AmazonServiceException *e = [[[self class] alloc] initWithName:@"AmazonServiceException"
-                                                                      reason:nil
-                                                                    userInfo:nil];
+                                                            reason:nil userInfo:nil];
     e.statusCode = theStatusCode;
-    
+
     return e;
 }
 
-+(id)exceptionWithMessage:(NSString *)theMessage withErrorCode:(NSString *)theErrorCode withStatusCode:(NSInteger)theStatusCode withRequestId:(NSString *)theRequestId
-{
-    AmazonServiceException *e = [[[self class] alloc] initWithName:@"AmazonServiceException" 
-                                                                      reason:theMessage 
-                                                                    userInfo:nil];
-    e.errorCode  = theErrorCode;
++ (id)exceptionWithMessage:(NSString *)theMessage withErrorCode:(NSString *)theErrorCode withStatusCode:(NSInteger)theStatusCode withRequestId:(NSString *)theRequestId {
+    AmazonServiceException *e = [[[self class] alloc] initWithName:@"AmazonServiceException"
+                                                            reason:theMessage
+                                                          userInfo:nil];
+    e.errorCode = theErrorCode;
     e.statusCode = theStatusCode;
-    e.requestId  = theRequestId;
-    
+    e.requestId = theRequestId;
+
     return e;
 }
 
-- (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo
-{
+- (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo {
     self = [super initWithName:name reason:reason userInfo:userInfo];
-    if(self)
-    {
+    if (self) {
         requestId = nil;
         errorCode = nil;
         serviceName = nil;
         statusCode = 0;
     }
-    
+
     return self;
 }
 
--(void)setPropertiesWithException:(AmazonServiceException *)theException
-{
-    self.errorCode   = theException.errorCode;
-    self.message     = theException.message;
-    self.requestId   = theException.requestId;
-    self.statusCode  = theException.statusCode;
+- (void)setPropertiesWithException:(AmazonServiceException *)theException {
+    self.errorCode = theException.errorCode;
+    self.message = theException.message;
+    self.requestId = theException.requestId;
+    self.statusCode = theException.statusCode;
     self.serviceName = theException.serviceName;
 }
 
--(NSString *)description
-{
+- (NSString *)description {
     return [[NSString alloc] initWithFormat:@"%@ { RequestId:%@, ErrorCode:%@, Message:%@ }", NSStringFromClass([self class]), requestId, errorCode, message];
 }
 
--(NSMutableDictionary *)additionalFields
-{
+- (NSMutableDictionary *)additionalFields {
     if (nil == additionalFields) {
         additionalFields = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
     return additionalFields;
 }
-
 
 
 @end

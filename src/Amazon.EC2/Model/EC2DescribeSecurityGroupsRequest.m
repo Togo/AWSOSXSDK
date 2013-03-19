@@ -23,20 +23,18 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         groupNames = [[NSMutableArray alloc] initWithCapacity:1];
-        groupIds   = [[NSMutableArray alloc] initWithCapacity:1];
-        filters    = [[NSMutableArray alloc] initWithCapacity:1];
+        groupIds = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addGroupName:(NSString *)groupNameObject
-{
+- (void)addGroupName:(NSString *)groupNameObject {
     if (groupNames == nil) {
         groupNames = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -44,8 +42,7 @@
     [groupNames addObject:groupNameObject];
 }
 
--(void)addGroupId:(NSString *)groupIdObject
-{
+- (void)addGroupId:(NSString *)groupIdObject {
     if (groupIds == nil) {
         groupIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -53,8 +50,7 @@
     [groupIds addObject:groupIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -63,8 +59,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -76,9 +71,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

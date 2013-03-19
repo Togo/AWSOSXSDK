@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"DetachLoadBalancerFromSubnets"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"DetachLoadBalancerFromSubnets" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[detachLoadBalancerFromSubnetsRequest delegate]];
     [request setCredentials:[detachLoadBalancerFromSubnetsRequest credentials]];

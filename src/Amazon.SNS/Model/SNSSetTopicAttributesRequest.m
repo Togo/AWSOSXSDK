@@ -23,22 +23,20 @@
 @synthesize attributeValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        topicArn       = nil;
-        attributeName  = nil;
+        topicArn = nil;
+        attributeName = nil;
         attributeValue = nil;
     }
 
     return self;
 }
 
--(id)initWithTopicArn:(NSString *)theTopicArn andAttributeName:(NSString *)theAttributeName andAttributeValue:(NSString *)theAttributeValue
-{
+- (id)initWithTopicArn:(NSString *)theTopicArn andAttributeName:(NSString *)theAttributeName andAttributeValue:(NSString *)theAttributeValue {
     if (self = [self init]) {
-        self.topicArn       = theTopicArn;
-        self.attributeName  = theAttributeName;
+        self.topicArn = theTopicArn;
+        self.attributeName = theAttributeName;
         self.attributeValue = theAttributeValue;
     }
 
@@ -46,9 +44,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -60,9 +56,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

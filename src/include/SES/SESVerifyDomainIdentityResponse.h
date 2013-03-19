@@ -17,27 +17,23 @@
 #import "SESResponse.h"
 
 
-
 /**
  * Verify Domain Identity Result
  */
 
-@interface SESVerifyDomainIdentityResponse:SESResponse
-
-{
+@interface SESVerifyDomainIdentityResponse : SESResponse {
     NSString *verificationToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A TXT record that must be placed in the DNS settings for the domain,
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

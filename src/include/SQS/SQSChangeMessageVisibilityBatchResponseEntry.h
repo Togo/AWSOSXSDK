@@ -17,27 +17,23 @@
 #import "SQSResponse.h"
 
 
-
 /**
  * Change Message Visibility Batch Result Entry
  */
 
-@interface SQSChangeMessageVisibilityBatchResponseEntry:SQSResponse
-
-{
+@interface SQSChangeMessageVisibilityBatchResponseEntry : SQSResponse {
     NSString *idValue;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Represents a message whose visibility timeout has been changed
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

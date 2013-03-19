@@ -17,12 +17,11 @@
 
 @implementation AutoScalingDeleteNotificationConfigurationRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingDeleteNotificationConfigurationRequest *)deleteNotificationConfigurationRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteNotificationConfiguration"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteNotificationConfiguration" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[deleteNotificationConfigurationRequest delegate]];
     [request setCredentials:[deleteNotificationConfigurationRequest credentials]];

@@ -15,8 +15,7 @@
 
 #import "S3SetBucketLifecycleConfigurationResponse.h"
 
-@implementation S3SetBucketLifecycleConfigurationResponse
-{
+@implementation S3SetBucketLifecycleConfigurationResponse {
 }
 
 @end

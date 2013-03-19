@@ -23,20 +23,18 @@
 @synthesize notificationTypes;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        topicARN             = nil;
-        notificationTypes    = [[NSMutableArray alloc] initWithCapacity:1];
+        topicARN = nil;
+        notificationTypes = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addNotificationType:(NSString *)notificationTypeObject
-{
+- (void)addNotificationType:(NSString *)notificationTypeObject {
     if (notificationTypes == nil) {
         notificationTypes = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -45,8 +43,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -58,9 +55,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -15,8 +15,7 @@
 
 #import "S3SetBucketWebsiteConfigurationResponse.h"
 
-@implementation S3SetBucketWebsiteConfigurationResponse
-{
+@implementation S3SetBucketWebsiteConfigurationResponse {
 }
 
 @end

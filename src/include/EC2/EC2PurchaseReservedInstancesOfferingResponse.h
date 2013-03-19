@@ -17,27 +17,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Purchase Reserved Instances Offering Response
  */
 
-@interface EC2PurchaseReservedInstancesOfferingResponse:EC2Response
-
-{
+@interface EC2PurchaseReservedInstancesOfferingResponse : EC2Response {
     NSString *reservedInstancesId;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The unique ID of the Reserved Instances purchased for your account.
@@ -50,7 +46,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

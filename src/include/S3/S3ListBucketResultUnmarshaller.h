@@ -19,7 +19,7 @@
 #import "../AmazonUnmarshallerXMLParserDelegate.h"
 
 
-@interface S3ListBucketResultUnmarshaller:AmazonUnmarshallerXMLParserDelegate {
+@interface S3ListBucketResultUnmarshaller : AmazonUnmarshallerXMLParserDelegate {
     S3ListObjectsResult *objectListing;
 }
 

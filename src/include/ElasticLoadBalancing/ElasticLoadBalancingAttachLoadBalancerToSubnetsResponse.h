@@ -26,22 +26,19 @@
  * Attach Load Balancer To Subnets Result
  */
 
-@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingAttachLoadBalancerToSubnetsResponse : ElasticLoadBalancingResponse {
     NSMutableArray *subnets;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of subnet IDs added for the LoadBalancer.
@@ -49,11 +46,10 @@
 @property (nonatomic, strong) NSMutableArray *subnets;
 
 
-
 /**
  * Returns a value from the subnets array for the specified index
  */
--(NSString *)subnetsObjectAtIndex:(int)index;
+- (NSString *)subnetsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -61,7 +57,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

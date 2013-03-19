@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Send Message Batch Request
  */
 
-@interface SQSSendMessageBatchRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *queueUrl;
+@interface SQSSendMessageBatchRequest : AmazonServiceRequestConfig {
+    NSString *queueUrl;
     NSMutableArray *entries;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new SendMessageBatchRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new SendMessageBatchRequest object.
@@ -55,7 +51,7 @@
  *
  * @param theQueueUrl The URL of the SQS queue to take action on.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl;
 
 /**
  * Constructs a new SendMessageBatchRequest object.
@@ -64,13 +60,13 @@
  * @param theQueueUrl The URL of the SQS queue to take action on.
  * @param theEntries A list of <a>SendMessageBatchRequestEntry</a>s.
  */
--(id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andEntries:(NSMutableArray *)theEntries;
 
 /**
  * Adds a single object to entries.
  * This function will alloc and init entries if not already done.
  */
--(void)addEntry:(SQSSendMessageBatchRequestEntry *)entryObject;
+- (void)addEntry:(SQSSendMessageBatchRequestEntry *)entryObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -78,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

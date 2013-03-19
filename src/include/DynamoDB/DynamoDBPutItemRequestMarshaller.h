@@ -23,11 +23,11 @@
 /**
  * Put Item Request Marshaller
  */
-@interface DynamoDBPutItemRequestMarshaller:NSObject {
+@interface DynamoDBPutItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBPutItemRequest *)putItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBPutItemRequest *)putItemRequest;
 
 
 @end

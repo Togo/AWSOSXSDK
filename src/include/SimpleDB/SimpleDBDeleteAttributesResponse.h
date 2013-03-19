@@ -24,8 +24,7 @@
 /**
  * Delete Attributes
  */
-@interface SimpleDBDeleteAttributesResponse:SimpleDBResponse
-{
+@interface SimpleDBDeleteAttributesResponse : SimpleDBResponse {
 }
 
 @end

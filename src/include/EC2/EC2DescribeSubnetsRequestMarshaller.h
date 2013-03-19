@@ -24,11 +24,11 @@
 /**
  * Describe Subnets Request Marshaller
  */
-@interface EC2DescribeSubnetsRequestMarshaller:NSObject {
+@interface EC2DescribeSubnetsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSubnetsRequest *)describeSubnetsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSubnetsRequest *)describeSubnetsRequest;
 
 
 @end

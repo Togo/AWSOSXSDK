@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Start Instances Response
  */
 
-@interface EC2StartInstancesResponse:EC2Response
-
-{
+@interface EC2StartInstancesResponse : EC2Response {
     NSMutableArray *startingInstances;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of the starting instances and details on how their state has
@@ -47,11 +43,10 @@
 @property (nonatomic, strong) NSMutableArray *startingInstances;
 
 
-
 /**
  * Returns a value from the startingInstances array for the specified index
  */
--(EC2InstanceStateChange *)startingInstancesObjectAtIndex:(int)index;
+- (EC2InstanceStateChange *)startingInstancesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -59,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -73,8 +73,7 @@
  * </summary>
  *
  */
-@interface AmazonElasticLoadBalancingClient:AmazonWebServiceClient
-{
+@interface AmazonElasticLoadBalancingClient : AmazonWebServiceClient {
 }
 
 
@@ -97,7 +96,7 @@
  * @see ElasticLoadBalancingDeleteLoadBalancerListenersRequest
  * @see ElasticLoadBalancingDeleteLoadBalancerListenersResponse
  */
--(ElasticLoadBalancingDeleteLoadBalancerListenersResponse *)deleteLoadBalancerListeners:(ElasticLoadBalancingDeleteLoadBalancerListenersRequest *)deleteLoadBalancerListenersRequest;
+- (ElasticLoadBalancingDeleteLoadBalancerListenersResponse *)deleteLoadBalancerListeners:(ElasticLoadBalancingDeleteLoadBalancerListenersRequest *)deleteLoadBalancerListenersRequest;
 
 
 /**
@@ -126,7 +125,7 @@
  * @see ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequest
  * @see ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponse
  */
--(ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponse *)setLoadBalancerPoliciesOfListener:(ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequest *)setLoadBalancerPoliciesOfListenerRequest;
+- (ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerResponse *)setLoadBalancerPoliciesOfListener:(ElasticLoadBalancingSetLoadBalancerPoliciesOfListenerRequest *)setLoadBalancerPoliciesOfListenerRequest;
 
 
 /**
@@ -159,7 +158,7 @@
  * @see ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequest
  * @see ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse
  */
--(ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse *)enableAvailabilityZonesForLoadBalancer:(ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequest *)enableAvailabilityZonesForLoadBalancerRequest;
+- (ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse *)enableAvailabilityZonesForLoadBalancer:(ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerRequest *)enableAvailabilityZonesForLoadBalancerRequest;
 
 
 /**
@@ -190,7 +189,7 @@
  * @see ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequest
  * @see ElasticLoadBalancingDeregisterInstancesFromLoadBalancerResponse
  */
--(ElasticLoadBalancingDeregisterInstancesFromLoadBalancerResponse *)deregisterInstancesFromLoadBalancer:(ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequest *)deregisterInstancesFromLoadBalancerRequest;
+- (ElasticLoadBalancingDeregisterInstancesFromLoadBalancerResponse *)deregisterInstancesFromLoadBalancer:(ElasticLoadBalancingDeregisterInstancesFromLoadBalancerRequest *)deregisterInstancesFromLoadBalancerRequest;
 
 
 /**
@@ -218,7 +217,7 @@
  * @see ElasticLoadBalancingDescribeLoadBalancerPoliciesRequest
  * @see ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse
  */
--(ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse *)describeLoadBalancerPolicies:(ElasticLoadBalancingDescribeLoadBalancerPoliciesRequest *)describeLoadBalancerPoliciesRequest;
+- (ElasticLoadBalancingDescribeLoadBalancerPoliciesResponse *)describeLoadBalancerPolicies:(ElasticLoadBalancingDescribeLoadBalancerPoliciesRequest *)describeLoadBalancerPoliciesRequest;
 
 
 /**
@@ -244,7 +243,7 @@
  * @see ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest
  * @see ElasticLoadBalancingDescribeLoadBalancerPolicyTypesResponse
  */
--(ElasticLoadBalancingDescribeLoadBalancerPolicyTypesResponse *)describeLoadBalancerPolicyTypes:(ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest *)describeLoadBalancerPolicyTypesRequest;
+- (ElasticLoadBalancingDescribeLoadBalancerPolicyTypesResponse *)describeLoadBalancerPolicyTypes:(ElasticLoadBalancingDescribeLoadBalancerPolicyTypesRequest *)describeLoadBalancerPolicyTypesRequest;
 
 
 /**
@@ -270,7 +269,7 @@
  * @see ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest
  * @see ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse
  */
--(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *)setLoadBalancerListenerSSLCertificate:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest;
+- (ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *)setLoadBalancerListenerSSLCertificate:(ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateRequest *)setLoadBalancerListenerSSLCertificateRequest;
 
 
 /**
@@ -308,7 +307,7 @@
  * @see ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest
  * @see ElasticLoadBalancingCreateLBCookieStickinessPolicyResponse
  */
--(ElasticLoadBalancingCreateLBCookieStickinessPolicyResponse *)createLBCookieStickinessPolicy:(ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest *)createLBCookieStickinessPolicyRequest;
+- (ElasticLoadBalancingCreateLBCookieStickinessPolicyResponse *)createLBCookieStickinessPolicy:(ElasticLoadBalancingCreateLBCookieStickinessPolicyRequest *)createLBCookieStickinessPolicyRequest;
 
 
 /**
@@ -333,7 +332,7 @@
  * @see ElasticLoadBalancingDeleteLoadBalancerPolicyRequest
  * @see ElasticLoadBalancingDeleteLoadBalancerPolicyResponse
  */
--(ElasticLoadBalancingDeleteLoadBalancerPolicyResponse *)deleteLoadBalancerPolicy:(ElasticLoadBalancingDeleteLoadBalancerPolicyRequest *)deleteLoadBalancerPolicyRequest;
+- (ElasticLoadBalancingDeleteLoadBalancerPolicyResponse *)deleteLoadBalancerPolicy:(ElasticLoadBalancingDeleteLoadBalancerPolicyRequest *)deleteLoadBalancerPolicyRequest;
 
 
 /**
@@ -372,7 +371,7 @@
  * @see ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest
  * @see ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse
  */
--(ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse *)registerInstancesWithLoadBalancer:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest;
+- (ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse *)registerInstancesWithLoadBalancer:(ElasticLoadBalancingRegisterInstancesWithLoadBalancerRequest *)registerInstancesWithLoadBalancerRequest;
 
 
 /**
@@ -396,7 +395,7 @@
  * @see ElasticLoadBalancingConfigureHealthCheckRequest
  * @see ElasticLoadBalancingConfigureHealthCheckResponse
  */
--(ElasticLoadBalancingConfigureHealthCheckResponse *)configureHealthCheck:(ElasticLoadBalancingConfigureHealthCheckRequest *)configureHealthCheckRequest;
+- (ElasticLoadBalancingConfigureHealthCheckResponse *)configureHealthCheck:(ElasticLoadBalancingConfigureHealthCheckRequest *)configureHealthCheckRequest;
 
 
 /**
@@ -425,7 +424,7 @@
  * @see ElasticLoadBalancingDescribeLoadBalancersRequest
  * @see ElasticLoadBalancingDescribeLoadBalancersResponse
  */
--(ElasticLoadBalancingDescribeLoadBalancersResponse *)describeLoadBalancers:(ElasticLoadBalancingDescribeLoadBalancersRequest *)describeLoadBalancersRequest;
+- (ElasticLoadBalancingDescribeLoadBalancersResponse *)describeLoadBalancers:(ElasticLoadBalancingDescribeLoadBalancersRequest *)describeLoadBalancersRequest;
 
 
 /**
@@ -455,7 +454,7 @@
  * @see ElasticLoadBalancingDescribeInstanceHealthRequest
  * @see ElasticLoadBalancingDescribeInstanceHealthResponse
  */
--(ElasticLoadBalancingDescribeInstanceHealthResponse *)describeInstanceHealth:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest;
+- (ElasticLoadBalancingDescribeInstanceHealthResponse *)describeInstanceHealth:(ElasticLoadBalancingDescribeInstanceHealthRequest *)describeInstanceHealthRequest;
 
 
 /**
@@ -485,7 +484,7 @@
  * @see ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest
  * @see ElasticLoadBalancingAttachLoadBalancerToSubnetsResponse
  */
--(ElasticLoadBalancingAttachLoadBalancerToSubnetsResponse *)attachLoadBalancerToSubnets:(ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest *)attachLoadBalancerToSubnetsRequest;
+- (ElasticLoadBalancingAttachLoadBalancerToSubnetsResponse *)attachLoadBalancerToSubnets:(ElasticLoadBalancingAttachLoadBalancerToSubnetsRequest *)attachLoadBalancerToSubnetsRequest;
 
 
 /**
@@ -522,7 +521,7 @@
  * @see ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest
  * @see ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerResponse
  */
--(ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerResponse *)disableAvailabilityZonesForLoadBalancer:(ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest *)disableAvailabilityZonesForLoadBalancerRequest;
+- (ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerResponse *)disableAvailabilityZonesForLoadBalancer:(ElasticLoadBalancingDisableAvailabilityZonesForLoadBalancerRequest *)disableAvailabilityZonesForLoadBalancerRequest;
 
 
 /**
@@ -549,7 +548,7 @@
  * @see ElasticLoadBalancingCreateLoadBalancerListenersRequest
  * @see ElasticLoadBalancingCreateLoadBalancerListenersResponse
  */
--(ElasticLoadBalancingCreateLoadBalancerListenersResponse *)createLoadBalancerListeners:(ElasticLoadBalancingCreateLoadBalancerListenersRequest *)createLoadBalancerListenersRequest;
+- (ElasticLoadBalancingCreateLoadBalancerListenersResponse *)createLoadBalancerListeners:(ElasticLoadBalancingCreateLoadBalancerListenersRequest *)createLoadBalancerListenersRequest;
 
 
 /**
@@ -579,7 +578,7 @@
  * @see ElasticLoadBalancingCreateLoadBalancerPolicyRequest
  * @see ElasticLoadBalancingCreateLoadBalancerPolicyResponse
  */
--(ElasticLoadBalancingCreateLoadBalancerPolicyResponse *)createLoadBalancerPolicy:(ElasticLoadBalancingCreateLoadBalancerPolicyRequest *)createLoadBalancerPolicyRequest;
+- (ElasticLoadBalancingCreateLoadBalancerPolicyResponse *)createLoadBalancerPolicy:(ElasticLoadBalancingCreateLoadBalancerPolicyRequest *)createLoadBalancerPolicyRequest;
 
 
 /**
@@ -609,7 +608,7 @@
  * @see ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequest
  * @see ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerResponse
  */
--(ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerResponse *)setLoadBalancerPoliciesForBackendServer:(ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequest *)setLoadBalancerPoliciesForBackendServerRequest;
+- (ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerResponse *)setLoadBalancerPoliciesForBackendServer:(ElasticLoadBalancingSetLoadBalancerPoliciesForBackendServerRequest *)setLoadBalancerPoliciesForBackendServerRequest;
 
 
 /**
@@ -639,7 +638,7 @@
  * @see ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest
  * @see ElasticLoadBalancingDetachLoadBalancerFromSubnetsResponse
  */
--(ElasticLoadBalancingDetachLoadBalancerFromSubnetsResponse *)detachLoadBalancerFromSubnets:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest;
+- (ElasticLoadBalancingDetachLoadBalancerFromSubnetsResponse *)detachLoadBalancerFromSubnets:(ElasticLoadBalancingDetachLoadBalancerFromSubnetsRequest *)detachLoadBalancerFromSubnetsRequest;
 
 
 /**
@@ -667,7 +666,7 @@
  * @see ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequest
  * @see ElasticLoadBalancingApplySecurityGroupsToLoadBalancerResponse
  */
--(ElasticLoadBalancingApplySecurityGroupsToLoadBalancerResponse *)applySecurityGroupsToLoadBalancer:(ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequest *)applySecurityGroupsToLoadBalancerRequest;
+- (ElasticLoadBalancingApplySecurityGroupsToLoadBalancerResponse *)applySecurityGroupsToLoadBalancer:(ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequest *)applySecurityGroupsToLoadBalancerRequest;
 
 
 /**
@@ -702,7 +701,7 @@
  * @see ElasticLoadBalancingDeleteLoadBalancerRequest
  * @see ElasticLoadBalancingDeleteLoadBalancerResponse
  */
--(ElasticLoadBalancingDeleteLoadBalancerResponse *)deleteLoadBalancer:(ElasticLoadBalancingDeleteLoadBalancerRequest *)deleteLoadBalancerRequest;
+- (ElasticLoadBalancingDeleteLoadBalancerResponse *)deleteLoadBalancer:(ElasticLoadBalancingDeleteLoadBalancerRequest *)deleteLoadBalancerRequest;
 
 
 /**
@@ -748,7 +747,7 @@
  * @see ElasticLoadBalancingCreateLoadBalancerRequest
  * @see ElasticLoadBalancingCreateLoadBalancerResponse
  */
--(ElasticLoadBalancingCreateLoadBalancerResponse *)createLoadBalancer:(ElasticLoadBalancingCreateLoadBalancerRequest *)createLoadBalancerRequest;
+- (ElasticLoadBalancingCreateLoadBalancerResponse *)createLoadBalancer:(ElasticLoadBalancingCreateLoadBalancerRequest *)createLoadBalancerRequest;
 
 
 /**
@@ -790,8 +789,7 @@
  * @see ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest
  * @see ElasticLoadBalancingCreateAppCookieStickinessPolicyResponse
  */
--(ElasticLoadBalancingCreateAppCookieStickinessPolicyResponse *)createAppCookieStickinessPolicy:(ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest *)createAppCookieStickinessPolicyRequest;
-
+- (ElasticLoadBalancingCreateAppCookieStickinessPolicyResponse *)createAppCookieStickinessPolicy:(ElasticLoadBalancingCreateAppCookieStickinessPolicyRequest *)createAppCookieStickinessPolicyRequest;
 
 
 @end

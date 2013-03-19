@@ -17,12 +17,11 @@
 
 @implementation AutoScalingResumeProcessesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingResumeProcessesRequest *)resumeProcessesRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"ResumeProcesses"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"ResumeProcesses" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[resumeProcessesRequest delegate]];
     [request setCredentials:[resumeProcessesRequest credentials]];

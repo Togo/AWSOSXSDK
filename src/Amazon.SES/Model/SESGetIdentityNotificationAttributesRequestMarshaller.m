@@ -17,12 +17,11 @@
 
 @implementation SESGetIdentityNotificationAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESGetIdentityNotificationAttributesRequest *)getIdentityNotificationAttributesRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"GetIdentityNotificationAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"GetIdentityNotificationAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[getIdentityNotificationAttributesRequest delegate]];
     [request setCredentials:[getIdentityNotificationAttributesRequest credentials]];

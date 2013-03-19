@@ -22,20 +22,17 @@
 @synthesize limit;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         exclusiveStartTableName = nil;
-        limit                   = nil;
+        limit = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -17,19 +17,19 @@
 
 /** Base class for type-specific response unmarshallers.
  */
-@interface AmazonUnmarshallerXMLParserDelegate:NSObject<NSXMLParserDelegate> {
-    NSMutableString                     *currentText;
-    NSString                            *currentTag;
+@interface AmazonUnmarshallerXMLParserDelegate : NSObject <NSXMLParserDelegate> {
+    NSMutableString *currentText;
+    NSString *currentTag;
     AmazonUnmarshallerXMLParserDelegate *caller;
-    id                                  parentObject;
-    SEL                                 parentSetter;
-    NSString                            *endElementTagName;
+    id parentObject;
+    SEL parentSetter;
+    NSString *endElementTagName;
 }
 
 /** Inner text of the current XML node */
 @property (weak, nonatomic, readonly) NSString *currentText;
 /** The tag name of the current XML node */
-@property (nonatomic, strong) NSString   *currentTag;
+@property (nonatomic, strong) NSString *currentTag;
 
 /** If an alias has been set, this is the expected container tag for the unmarshaller. */
 @property (nonatomic, strong) NSString *endElementTagName;
@@ -45,7 +45,7 @@
  * @param parent	The object to set my unmarshalled value on
  * @param setter	The setter to call on the parent object
  */
--(AmazonUnmarshallerXMLParserDelegate *) initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter;
+- (AmazonUnmarshallerXMLParserDelegate *)initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter;
 
 /** Set up this unmarshaller at the bottom of a call chain.
  * When parsing nested tags, control is handed to another delegate.
@@ -59,6 +59,6 @@
  * @param setter	The setter to call on the parent object
  * @param alias		Use this parser for a different container tag which has the same contents.
  */
--(AmazonUnmarshallerXMLParserDelegate *) initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter withAlias:(NSString *)alias;
+- (AmazonUnmarshallerXMLParserDelegate *)initWithCaller:(AmazonUnmarshallerXMLParserDelegate *)aCaller withParentObject:(id)parent withSetter:(SEL)setter withAlias:(NSString *)alias;
 
 @end

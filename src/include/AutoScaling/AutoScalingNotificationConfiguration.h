@@ -20,22 +20,18 @@
  * Notification Configuration
  */
 
-@interface AutoScalingNotificationConfiguration:NSObject
-
-{
+@interface AutoScalingNotificationConfiguration : NSObject {
     NSString *autoScalingGroupName;
     NSString *topicARN;
     NSString *notificationType;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Specifies the Auto Scaling group name.
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

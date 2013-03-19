@@ -23,11 +23,11 @@
 /**
  * Describe Alarms For Metric Request Marshaller
  */
-@interface CloudWatchDescribeAlarmsForMetricRequestMarshaller:NSObject {
+@interface CloudWatchDescribeAlarmsForMetricRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest;
 
 
 @end

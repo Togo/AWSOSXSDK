@@ -17,12 +17,11 @@
 
 @implementation EC2DescribePlacementGroupsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribePlacementGroups"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribePlacementGroups" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describePlacementGroupsRequest delegate]];
     [request setCredentials:[describePlacementGroupsRequest credentials]];

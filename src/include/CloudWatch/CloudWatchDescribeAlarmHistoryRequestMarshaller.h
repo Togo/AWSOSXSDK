@@ -23,11 +23,11 @@
 /**
  * Describe Alarm History Request Marshaller
  */
-@interface CloudWatchDescribeAlarmHistoryRequestMarshaller:NSObject {
+@interface CloudWatchDescribeAlarmHistoryRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest;
 
 
 @end

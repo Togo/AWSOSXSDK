@@ -22,11 +22,11 @@
 /**
  * Describe Spot Datafeed Subscription Request Marshaller
  */
-@interface EC2DescribeSpotDatafeedSubscriptionRequestMarshaller:NSObject {
+@interface EC2DescribeSpotDatafeedSubscriptionRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeSpotDatafeedSubscriptionRequest *)describeSpotDatafeedSubscriptionRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeSpotDatafeedSubscriptionRequest *)describeSpotDatafeedSubscriptionRequest;
 
 
 @end

@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Volumes Request
  */
 
-@interface EC2DescribeVolumesRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2DescribeVolumesRequest : AmazonServiceRequestConfig {
     NSMutableArray *volumeIds;
     NSMutableArray *filters;
 }
-
 
 
 /**
@@ -50,7 +46,7 @@
  * Default constructor for a new DescribeVolumesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new DescribeVolumesRequest object.
@@ -58,19 +54,19 @@
  *
  * @param theVolumeIds The optional list of EBS volumes to describe.
  */
--(id)initWithVolumeIds:(NSMutableArray *)theVolumeIds;
+- (id)initWithVolumeIds:(NSMutableArray *)theVolumeIds;
 
 /**
  * Adds a single object to volumeIds.
  * This function will alloc and init volumeIds if not already done.
  */
--(void)addVolumeId:(NSString *)volumeIdObject;
+- (void)addVolumeId:(NSString *)volumeIdObject;
 
 /**
  * Adds a single object to filters.
  * This function will alloc and init filters if not already done.
  */
--(void)addFilter:(EC2Filter *)filterObject;
+- (void)addFilter:(EC2Filter *)filterObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -78,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -23,11 +23,11 @@
 /**
  * Describe Scheduled Actions Request Marshaller
  */
-@interface AutoScalingDescribeScheduledActionsRequestMarshaller:NSObject {
+@interface AutoScalingDescribeScheduledActionsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingDescribeScheduledActionsRequest *)describeScheduledActionsRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingDescribeScheduledActionsRequest *)describeScheduledActionsRequest;
 
 
 @end

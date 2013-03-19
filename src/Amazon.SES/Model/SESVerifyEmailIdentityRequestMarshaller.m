@@ -17,12 +17,11 @@
 
 @implementation SESVerifyEmailIdentityRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest
-{
++ (AmazonServiceRequest *)createRequest:(SESVerifyEmailIdentityRequest *)verifyEmailIdentityRequest {
     AmazonServiceRequest *request = [[SESRequest alloc] init];
 
-    [request setParameterValue:@"VerifyEmailIdentity"           forKey:@"Action"];
-    [request setParameterValue:@"2010-12-01"   forKey:@"Version"];
+    [request setParameterValue:@"VerifyEmailIdentity" forKey:@"Action"];
+    [request setParameterValue:@"2010-12-01" forKey:@"Version"];
 
     [request setDelegate:[verifyEmailIdentityRequest delegate]];
     [request setCredentials:[verifyEmailIdentityRequest credentials]];

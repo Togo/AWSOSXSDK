@@ -19,6 +19,6 @@
 /** Contains all the information about the setBucketWebsiteConfigurationResponse operation.
  *
  */
-@interface S3SetBucketWebsiteConfigurationResponse:S3Response
+@interface S3SetBucketWebsiteConfigurationResponse : S3Response
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Set Desired Capacity Request Marshaller
  */
-@interface AutoScalingSetDesiredCapacityRequestMarshaller:NSObject {
+@interface AutoScalingSetDesiredCapacityRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest;
 
 
 @end

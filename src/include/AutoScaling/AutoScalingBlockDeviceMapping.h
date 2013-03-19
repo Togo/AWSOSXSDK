@@ -16,27 +16,22 @@
 #import "AutoScalingEbs.h"
 
 
-
 /**
  * Block Device Mapping
  */
 
-@interface AutoScalingBlockDeviceMapping:NSObject
-
-{
-    NSString       *virtualName;
-    NSString       *deviceName;
+@interface AutoScalingBlockDeviceMapping : NSObject {
+    NSString *virtualName;
+    NSString *deviceName;
     AutoScalingEbs *ebs;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The virtual name associated with the device.
@@ -67,7 +62,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

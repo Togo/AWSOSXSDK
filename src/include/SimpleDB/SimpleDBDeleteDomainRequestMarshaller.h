@@ -22,11 +22,11 @@
 /**
  * Delete Domain Request Marshaller
  */
-@interface SimpleDBDeleteDomainRequestMarshaller:NSObject {
+@interface SimpleDBDeleteDomainRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDeleteDomainRequest *)deleteDomainRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBDeleteDomainRequest *)deleteDomainRequest;
 
 
 @end

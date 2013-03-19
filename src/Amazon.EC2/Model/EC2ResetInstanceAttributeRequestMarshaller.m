@@ -17,12 +17,11 @@
 
 @implementation EC2ResetInstanceAttributeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ResetInstanceAttributeRequest *)resetInstanceAttributeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ResetInstanceAttribute"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ResetInstanceAttribute" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[resetInstanceAttributeRequest delegate]];
     [request setCredentials:[resetInstanceAttributeRequest credentials]];

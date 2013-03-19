@@ -22,11 +22,11 @@
 /**
  * Describe Load Balancers Request Marshaller
  */
-@interface ElasticLoadBalancingDescribeLoadBalancersRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingDescribeLoadBalancersRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancersRequest *)describeLoadBalancersRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDescribeLoadBalancersRequest *)describeLoadBalancersRequest;
 
 
 @end

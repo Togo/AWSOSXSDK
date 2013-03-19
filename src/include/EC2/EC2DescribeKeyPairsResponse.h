@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Key Pairs Response
  */
 
-@interface EC2DescribeKeyPairsResponse:EC2Response
-
-{
+@interface EC2DescribeKeyPairsResponse : EC2Response {
     NSMutableArray *keyPairs;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The list of described key pairs.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *keyPairs;
 
 
-
 /**
  * Returns a value from the keyPairs array for the specified index
  */
--(EC2KeyPairInfo *)keyPairsObjectAtIndex:(int)index;
+- (EC2KeyPairInfo *)keyPairsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

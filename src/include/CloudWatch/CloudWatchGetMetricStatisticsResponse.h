@@ -27,23 +27,20 @@
  * Get Metric Statistics Result
  */
 
-@interface CloudWatchGetMetricStatisticsResponse:CloudWatchResponse
-
-{
-    NSString       *label;
+@interface CloudWatchGetMetricStatisticsResponse : CloudWatchResponse {
+    NSString *label;
     NSMutableArray *datapoints;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A label describing the specified metric.
@@ -56,11 +53,10 @@
 @property (nonatomic, strong) NSMutableArray *datapoints;
 
 
-
 /**
  * Returns a value from the datapoints array for the specified index
  */
--(CloudWatchDatapoint *)datapointsObjectAtIndex:(int)index;
+- (CloudWatchDatapoint *)datapointsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

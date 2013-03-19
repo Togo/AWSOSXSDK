@@ -23,8 +23,7 @@
 @implementation DynamoDBBatchResponseUnmarshaller
 
 
-+(DynamoDBBatchResponse *)unmarshall:(NSDictionary *)jsonObject
-{
++ (DynamoDBBatchResponse *)unmarshall:(NSDictionary *)jsonObject {
     DynamoDBBatchResponse *batchResponse = [[DynamoDBBatchResponse alloc] init];
 
 

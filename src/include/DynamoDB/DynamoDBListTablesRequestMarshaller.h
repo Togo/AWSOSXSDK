@@ -23,11 +23,11 @@
 /**
  * List Tables Request Marshaller
  */
-@interface DynamoDBListTablesRequestMarshaller:NSObject {
+@interface DynamoDBListTablesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBListTablesRequest *)listTablesRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBListTablesRequest *)listTablesRequest;
 
 
 @end

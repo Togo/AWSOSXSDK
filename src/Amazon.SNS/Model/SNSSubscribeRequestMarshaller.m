@@ -17,12 +17,11 @@
 
 @implementation SNSSubscribeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SNSSubscribeRequest *)subscribeRequest
-{
++ (AmazonServiceRequest *)createRequest:(SNSSubscribeRequest *)subscribeRequest {
     AmazonServiceRequest *request = [[SNSRequest alloc] init];
 
-    [request setParameterValue:@"Subscribe"           forKey:@"Action"];
-    [request setParameterValue:@"2010-03-31"   forKey:@"Version"];
+    [request setParameterValue:@"Subscribe" forKey:@"Action"];
+    [request setParameterValue:@"2010-03-31" forKey:@"Version"];
 
     [request setDelegate:[subscribeRequest delegate]];
     [request setCredentials:[subscribeRequest credentials]];

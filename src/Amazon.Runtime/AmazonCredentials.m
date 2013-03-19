@@ -21,8 +21,7 @@
 @synthesize secretKey = _secretKey;
 @synthesize securityToken = _securityToken;
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey {
     if (self = [self init]) {
         self.accessKey = theAccessKey;
         self.secretKey = theSecretKey;
@@ -30,18 +29,16 @@
     return self;
 }
 
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken
-{
+- (id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken {
     if (self = [self init]) {
-        self.accessKey     = theAccessKey;
-        self.secretKey     = theSecretKey;
+        self.accessKey = theAccessKey;
+        self.secretKey = theSecretKey;
         self.securityToken = theSecurityToken;
     }
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone {
     AmazonCredentials *o = [[[self class] allocWithZone:zone] init];
     o.accessKey = [self.accessKey copy];
     o.secretKey = [self.secretKey copy];

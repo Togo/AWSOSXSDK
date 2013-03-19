@@ -23,11 +23,10 @@
 @synthesize importManifestUrl;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        format            = nil;
-        bytes             = nil;
+        format = nil;
+        bytes = nil;
         importManifestUrl = nil;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -49,9 +46,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

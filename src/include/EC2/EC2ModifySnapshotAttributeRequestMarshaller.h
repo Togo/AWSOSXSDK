@@ -27,11 +27,11 @@
 /**
  * Modify Snapshot Attribute Request Marshaller
  */
-@interface EC2ModifySnapshotAttributeRequestMarshaller:NSObject {
+@interface EC2ModifySnapshotAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ModifySnapshotAttributeRequest *)modifySnapshotAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ModifySnapshotAttributeRequest *)modifySnapshotAttributeRequest;
 
 
 @end

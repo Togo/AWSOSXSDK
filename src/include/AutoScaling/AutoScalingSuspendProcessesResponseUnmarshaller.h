@@ -16,17 +16,17 @@
 #import "AutoScalingSuspendProcessesResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingSuspendProcessesResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingSuspendProcessesResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingSuspendProcessesResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingSuspendProcessesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingSuspendProcessesResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingSuspendProcessesResponse *)response;
 
 @end

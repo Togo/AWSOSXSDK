@@ -17,12 +17,11 @@
 
 @implementation EC2ImportVolumeRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportVolumeRequest *)importVolumeRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ImportVolumeRequest *)importVolumeRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ImportVolume"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ImportVolume" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[importVolumeRequest delegate]];
     [request setCredentials:[importVolumeRequest credentials]];

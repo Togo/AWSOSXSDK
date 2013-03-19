@@ -17,12 +17,11 @@
 
 @implementation SQSListQueuesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSListQueuesRequest *)listQueuesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSListQueuesRequest *)listQueuesRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"ListQueues"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"ListQueues" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[listQueuesRequest delegate]];
     [request setCredentials:[listQueuesRequest credentials]];

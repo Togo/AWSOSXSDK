@@ -17,12 +17,11 @@
 
 @implementation EC2CreateInstanceExportTaskRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateInstanceExportTaskRequest *)createInstanceExportTaskRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2CreateInstanceExportTaskRequest *)createInstanceExportTaskRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"CreateInstanceExportTask"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"CreateInstanceExportTask" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[createInstanceExportTaskRequest delegate]];
     [request setCredentials:[createInstanceExportTaskRequest credentials]];

@@ -20,8 +20,7 @@
 
 @implementation DynamoDBBatchWriteItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBBatchWriteItemRequest *)batchWriteItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[batchWriteItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.BatchWriteItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -39,8 +38,8 @@
         NSMutableDictionary *requestItemsJson = [[NSMutableDictionary alloc] init];
         [json setValue:requestItemsJson forKey:@"RequestItems"];
         for (NSString *requestItemsListValue in batchWriteItemRequest.requestItems) {
-            NSArray        *requestItemsListValueValue = [batchWriteItemRequest.requestItems valueForKey:requestItemsListValue];
-            NSMutableArray *requestItemsListValueJson  = [[NSMutableArray alloc] init];
+            NSArray *requestItemsListValueValue = [batchWriteItemRequest.requestItems valueForKey:requestItemsListValue];
+            NSMutableArray *requestItemsListValueJson = [[NSMutableArray alloc] init];
             [requestItemsJson setValue:requestItemsListValueJson forKey:requestItemsListValue];
 
             if (requestItemsListValueValue != nil && [requestItemsListValueValue count] > 0) {
@@ -57,7 +56,7 @@
                                 NSMutableDictionary *itemJson = [[NSMutableDictionary alloc] init];
                                 [putRequestJson setValue:itemJson forKey:@"Item"];
                                 for (NSString *itemListValue in putRequest.item) {
-                                    NSMutableDictionary    *itemListValueJson = [[NSMutableDictionary alloc] init];
+                                    NSMutableDictionary *itemListValueJson = [[NSMutableDictionary alloc] init];
                                     [itemJson setValue:itemListValueJson forKey:itemListValue];
                                     DynamoDBAttributeValue *itemListValueValue = [putRequest.item valueForKey:itemListValue];
 
@@ -246,9 +245,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

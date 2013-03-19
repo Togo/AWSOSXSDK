@@ -18,31 +18,26 @@
 #import "EC2BlockDeviceMapping.h"
 
 
-
 /**
  * Image Attribute
  */
 
-@interface EC2ImageAttribute:NSObject
-
-{
-    NSString       *imageId;
+@interface EC2ImageAttribute : NSObject {
+    NSString *imageId;
     NSMutableArray *launchPermissions;
     NSMutableArray *productCodes;
-    NSString       *kernelId;
-    NSString       *ramdiskId;
-    NSString       *descriptionValue;
+    NSString *kernelId;
+    NSString *ramdiskId;
+    NSString *descriptionValue;
     NSMutableArray *blockDeviceMappings;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The ID of the associated AMI.
@@ -83,19 +78,19 @@
  * Adds a single object to launchPermissions.
  * This function will alloc and init launchPermissions if not already done.
  */
--(void)addLaunchPermission:(EC2LaunchPermission *)launchPermissionObject;
+- (void)addLaunchPermission:(EC2LaunchPermission *)launchPermissionObject;
 
 /**
  * Adds a single object to productCodes.
  * This function will alloc and init productCodes if not already done.
  */
--(void)addProductCode:(EC2ProductCode *)productCodeObject;
+- (void)addProductCode:(EC2ProductCode *)productCodeObject;
 
 /**
  * Adds a single object to blockDeviceMappings.
  * This function will alloc and init blockDeviceMappings if not already done.
  */
--(void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
+- (void)addBlockDeviceMapping:(EC2BlockDeviceMapping *)blockDeviceMappingObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -103,7 +98,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

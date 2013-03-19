@@ -22,11 +22,11 @@
 /** Class with code common to Put* requests. Do not instantiate directly
  *
  */
-@interface S3AbstractPutRequest:S3Request {
-    S3CannedACL         *cannedACL;
+@interface S3AbstractPutRequest : S3Request {
+    S3CannedACL *cannedACL;
     S3AccessControlList *fullACL;
-    NSString            *storageClass;
-    NSString            *serverSideEncryption;
+    NSString *storageClass;
+    NSString *serverSideEncryption;
 
     NSMutableDictionary *metadata;
 }
@@ -53,13 +53,13 @@
 /** Add a key-value metadata pair to the request.
  *  These will be prefixed with x-amz-meta- and added to the request header.
  */
--(void)addMetadataWithValue:(NSString *)value forKey:(NSString *)aKey;
+- (void)addMetadataWithValue:(NSString *)value forKey:(NSString *)aKey;
 
 /** Get the metadata dictionary of key-value pairs.
  *
  *  @returns the metadata dictionary.
  */
--(NSMutableDictionary *)metadata;
+- (NSMutableDictionary *)metadata;
 
 
 @end

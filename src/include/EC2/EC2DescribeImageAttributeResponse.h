@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Image Attribute Response
  */
 
-@interface EC2DescribeImageAttributeResponse:EC2Response
-
-{
+@interface EC2DescribeImageAttributeResponse : EC2Response {
     EC2ImageAttribute *imageAttribute;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The described image attribute of the associated AMI.
@@ -51,7 +47,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

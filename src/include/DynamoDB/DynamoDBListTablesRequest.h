@@ -17,26 +17,21 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * List Tables Request
  */
 
-@interface DynamoDBListTablesRequest:AmazonServiceRequestConfig
-
-{
+@interface DynamoDBListTablesRequest : AmazonServiceRequestConfig {
     NSString *exclusiveStartTableName;
     NSNumber *limit;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the table that starts the list. If you already ran a
@@ -64,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2DeleteKeyPairRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeleteKeyPairRequest *)deleteKeyPairRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeleteKeyPair"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteKeyPair" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deleteKeyPairRequest delegate]];
     [request setCredentials:[deleteKeyPairRequest credentials]];

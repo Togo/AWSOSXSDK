@@ -25,11 +25,11 @@
 /**
  * Describe Addresses Request Marshaller
  */
-@interface EC2DescribeAddressesRequestMarshaller:NSObject {
+@interface EC2DescribeAddressesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAddressesRequest *)describeAddressesRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAddressesRequest *)describeAddressesRequest;
 
 
 @end

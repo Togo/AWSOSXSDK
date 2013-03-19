@@ -18,27 +18,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Send Raw Email Request
  */
 
-@interface SESSendRawEmailRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *source;
+@interface SESSendRawEmailRequest : AmazonServiceRequestConfig {
+    NSString *source;
     NSMutableArray *destinations;
-    SESRawMessage  *rawMessage;
+    SESRawMessage *rawMessage;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identity's email address. <note>If you specify the
@@ -71,7 +66,7 @@
  * Adds a single object to destinations.
  * This function will alloc and init destinations if not already done.
  */
--(void)addDestination:(NSString *)destinationObject;
+- (void)addDestination:(NSString *)destinationObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +74,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

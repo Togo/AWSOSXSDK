@@ -17,36 +17,31 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Update Auto Scaling Group Request
  */
 
-@interface AutoScalingUpdateAutoScalingGroupRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *autoScalingGroupName;
-    NSString       *launchConfigurationName;
-    NSNumber       *minSize;
-    NSNumber       *maxSize;
-    NSNumber       *desiredCapacity;
-    NSNumber       *defaultCooldown;
+@interface AutoScalingUpdateAutoScalingGroupRequest : AmazonServiceRequestConfig {
+    NSString *autoScalingGroupName;
+    NSString *launchConfigurationName;
+    NSNumber *minSize;
+    NSNumber *maxSize;
+    NSNumber *desiredCapacity;
+    NSNumber *defaultCooldown;
     NSMutableArray *availabilityZones;
-    NSString       *healthCheckType;
-    NSNumber       *healthCheckGracePeriod;
-    NSString       *placementGroup;
-    NSString       *vPCZoneIdentifier;
+    NSString *healthCheckType;
+    NSNumber *healthCheckGracePeriod;
+    NSString *placementGroup;
+    NSString *vPCZoneIdentifier;
     NSMutableArray *terminationPolicies;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group.
@@ -152,13 +147,13 @@
  * Adds a single object to availabilityZones.
  * This function will alloc and init availabilityZones if not already done.
  */
--(void)addAvailabilityZone:(NSString *)availabilityZoneObject;
+- (void)addAvailabilityZone:(NSString *)availabilityZoneObject;
 
 /**
  * Adds a single object to terminationPolicies.
  * This function will alloc and init terminationPolicies if not already done.
  */
--(void)addTerminationPolicy:(NSString *)terminationPolicyObject;
+- (void)addTerminationPolicy:(NSString *)terminationPolicyObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -166,7 +161,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

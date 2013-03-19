@@ -21,10 +21,10 @@
 /**
  * Key Unmarshaller
  */
-@interface DynamoDBKeyUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBKeyUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBKey *response;
 }
 
-+(DynamoDBKey *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBKey *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

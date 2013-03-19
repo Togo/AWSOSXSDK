@@ -17,12 +17,11 @@
 
 @implementation SimpleDBCreateDomainRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBCreateDomainRequest *)createDomainRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBCreateDomainRequest *)createDomainRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"CreateDomain"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"CreateDomain" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[createDomainRequest delegate]];
     [request setCredentials:[createDomainRequest credentials]];

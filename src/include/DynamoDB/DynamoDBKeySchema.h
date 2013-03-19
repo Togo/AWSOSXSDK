@@ -17,18 +17,14 @@
 #import "DynamoDBKeySchemaElement.h"
 
 
-
 /**
  * Key Schema
  */
 
-@interface DynamoDBKeySchema:NSObject
-
-{
+@interface DynamoDBKeySchema : NSObject {
     DynamoDBKeySchemaElement *hashKeyElement;
     DynamoDBKeySchemaElement *rangeKeyElement;
 }
-
 
 
 /**
@@ -53,7 +49,7 @@
  * Default constructor for a new KeySchema object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new KeySchema object.
@@ -64,7 +60,7 @@
  * have one index value. The value can be <code>String</code>,
  * <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>.
  */
--(id)initWithHashKeyElement:(DynamoDBKeySchemaElement *)theHashKeyElement;
+- (id)initWithHashKeyElement:(DynamoDBKeySchemaElement *)theHashKeyElement;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +68,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

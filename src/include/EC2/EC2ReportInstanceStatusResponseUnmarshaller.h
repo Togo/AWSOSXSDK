@@ -16,17 +16,17 @@
 #import "EC2ReportInstanceStatusResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2ReportInstanceStatusResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2ReportInstanceStatusResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2ReportInstanceStatusResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2ReportInstanceStatusResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2ReportInstanceStatusResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2ReportInstanceStatusResponse *)response;
 
 @end

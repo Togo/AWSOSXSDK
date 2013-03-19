@@ -31,28 +31,26 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        subnetId                 = nil;
-        state                    = nil;
-        vpcId                    = nil;
-        cidrBlock                = nil;
-        availableIpAddressCount  = nil;
-        availabilityZone         = nil;
-        defaultForAz             = NO;
-        defaultForAzIsSet        = NO;
-        mapPublicIpOnLaunch      = NO;
+        subnetId = nil;
+        state = nil;
+        vpcId = nil;
+        cidrBlock = nil;
+        availableIpAddressCount = nil;
+        availabilityZone = nil;
+        defaultForAz = NO;
+        defaultForAzIsSet = NO;
+        mapPublicIpOnLaunch = NO;
         mapPublicIpOnLaunchIsSet = NO;
-        tags                     = [[NSMutableArray alloc] initWithCapacity:1];
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -61,8 +59,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -82,19 +79,15 @@
 }
 
 
--(void)setDefaultForAz:(bool)theValue
-{
-    defaultForAz      = theValue;
+- (void)setDefaultForAz:(bool)theValue {
+    defaultForAz = theValue;
     defaultForAzIsSet = YES;
 }
 
--(void)setMapPublicIpOnLaunch:(bool)theValue
-{
-    mapPublicIpOnLaunch      = theValue;
+- (void)setMapPublicIpOnLaunch:(bool)theValue {
+    mapPublicIpOnLaunch = theValue;
     mapPublicIpOnLaunchIsSet = YES;
 }
-
-
 
 
 @end

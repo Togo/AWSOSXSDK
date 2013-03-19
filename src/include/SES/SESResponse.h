@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface SESResponse:AmazonServiceResponse {
+@interface SESResponse : AmazonServiceResponse {
 }
 
 @end

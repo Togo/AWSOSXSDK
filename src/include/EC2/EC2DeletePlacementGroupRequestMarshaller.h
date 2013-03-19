@@ -22,11 +22,11 @@
 /**
  * Delete Placement Group Request Marshaller
  */
-@interface EC2DeletePlacementGroupRequestMarshaller:NSObject {
+@interface EC2DeletePlacementGroupRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DeletePlacementGroupRequest *)deletePlacementGroupRequest;
 
 
 @end

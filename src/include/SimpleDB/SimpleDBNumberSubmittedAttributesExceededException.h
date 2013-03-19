@@ -16,15 +16,12 @@
 #import "../AmazonServiceException.h"
 
 
-
-
 /**
  * <p>
  * Too many attributes exist in a single call.
  * </p>
  */
-@interface SimpleDBNumberSubmittedAttributesExceededException:AmazonServiceException
-{
+@interface SimpleDBNumberSubmittedAttributesExceededException : AmazonServiceException {
     NSNumber *boxUsage;
 }
 
@@ -35,11 +32,7 @@
 @property (nonatomic, strong) NSNumber *boxUsage;
 
 
-
-
-
-
--(id)initWithMessage:(NSString *)message;
+- (id)initWithMessage:(NSString *)message;
 
 
 /**
@@ -48,7 +41,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

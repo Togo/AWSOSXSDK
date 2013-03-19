@@ -16,34 +16,29 @@
 #import "EC2PrivateIpAddressSpecification.h"
 
 
-
 /**
  * Instance Network Interface Specification
  */
 
-@interface EC2InstanceNetworkInterfaceSpecification:NSObject
-
-{
-    NSString       *networkInterfaceId;
-    NSNumber       *deviceIndex;
-    NSString       *subnetId;
-    NSString       *descriptionValue;
-    NSString       *privateIpAddress;
+@interface EC2InstanceNetworkInterfaceSpecification : NSObject {
+    NSString *networkInterfaceId;
+    NSNumber *deviceIndex;
+    NSString *subnetId;
+    NSString *descriptionValue;
+    NSString *privateIpAddress;
     NSMutableArray *groups;
-    bool           deleteOnTermination;
-    bool           deleteOnTerminationIsSet;
+    bool deleteOnTermination;
+    bool deleteOnTerminationIsSet;
     NSMutableArray *privateIpAddresses;
-    NSNumber       *secondaryPrivateIpAddressCount;
+    NSNumber *secondaryPrivateIpAddressCount;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the NetworkInterfaceId property for this object.
@@ -78,7 +73,7 @@
 /**
  * The value of the DeleteOnTermination property for this object.
  */
-@property (nonatomic) bool           deleteOnTermination;
+@property (nonatomic) bool deleteOnTermination;
 
 @property (nonatomic, readonly) bool deleteOnTerminationIsSet;
 
@@ -96,13 +91,13 @@
  * Adds a single object to groups.
  * This function will alloc and init groups if not already done.
  */
--(void)addGroup:(NSString *)groupObject;
+- (void)addGroup:(NSString *)groupObject;
 
 /**
  * Adds a single object to privateIpAddresses.
  * This function will alloc and init privateIpAddresses if not already done.
  */
--(void)addPrivateIpAddresse:(EC2PrivateIpAddressSpecification *)privateIpAddresseObject;
+- (void)addPrivateIpAddresse:(EC2PrivateIpAddressSpecification *)privateIpAddresseObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -110,7 +105,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

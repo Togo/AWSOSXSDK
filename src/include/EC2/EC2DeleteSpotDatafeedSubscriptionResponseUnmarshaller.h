@@ -16,17 +16,17 @@
 #import "EC2DeleteSpotDatafeedSubscriptionResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2DeleteSpotDatafeedSubscriptionResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2DeleteSpotDatafeedSubscriptionResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2DeleteSpotDatafeedSubscriptionResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2DeleteSpotDatafeedSubscriptionResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2DeleteSpotDatafeedSubscriptionResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2DeleteSpotDatafeedSubscriptionResponse *)response;
 
 @end

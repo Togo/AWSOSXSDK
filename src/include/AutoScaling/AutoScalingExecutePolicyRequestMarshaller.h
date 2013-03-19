@@ -22,11 +22,11 @@
 /**
  * Execute Policy Request Marshaller
  */
-@interface AutoScalingExecutePolicyRequestMarshaller:NSObject {
+@interface AutoScalingExecutePolicyRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingExecutePolicyRequest *)executePolicyRequest;
++ (AmazonServiceRequest *)createRequest:(AutoScalingExecutePolicyRequest *)executePolicyRequest;
 
 
 @end

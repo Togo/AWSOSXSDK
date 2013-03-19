@@ -18,8 +18,7 @@
 
 @implementation S3GetBucketVersioningConfigurationRequest
 
--(NSURLRequest *)configureURLRequest
-{
+- (NSURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceVersioning];
 
     [super configureURLRequest];

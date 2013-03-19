@@ -23,20 +23,18 @@
 @synthesize offeringType;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         reservedInstancesIds = [[NSMutableArray alloc] initWithCapacity:1];
-        filters              = [[NSMutableArray alloc] initWithCapacity:1];
-        offeringType         = nil;
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
+        offeringType = nil;
     }
 
     return self;
 }
 
 
--(void)addReservedInstancesId:(NSString *)reservedInstancesIdObject
-{
+- (void)addReservedInstancesId:(NSString *)reservedInstancesIdObject {
     if (reservedInstancesIds == nil) {
         reservedInstancesIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -44,8 +42,7 @@
     [reservedInstancesIds addObject:reservedInstancesIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -54,8 +51,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -67,9 +63,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

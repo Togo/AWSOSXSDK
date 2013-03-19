@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Detach Volume Response
  */
 
-@interface EC2DetachVolumeResponse:EC2Response
-
-{
+@interface EC2DetachVolumeResponse : EC2Response {
     EC2VolumeAttachment *attachment;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The updated EBS volume attachment information after trying to detach
@@ -52,7 +48,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

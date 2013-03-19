@@ -20,8 +20,7 @@
 /**
  * Report Instance Status
  */
-@interface EC2ReportInstanceStatusResponse:EC2Response
-{
+@interface EC2ReportInstanceStatusResponse : EC2Response {
 }
 
 @end

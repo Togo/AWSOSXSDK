@@ -22,20 +22,17 @@
 @synthesize verificationToken;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         verificationStatus = nil;
-        verificationToken  = nil;
+        verificationToken = nil;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -46,9 +43,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

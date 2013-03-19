@@ -24,15 +24,15 @@
 /** Contains the parameters common to Amazon S3 operations.
  *
  */
-@interface S3Request:AmazonServiceRequest {
-    NSString  *authorization;
-    int64_t   contentLength;
-    NSString  *contentType;
-    NSDate    *date;
-    NSString  *securityToken;
-    NSString  *bucket;
-    NSString  *key;
-    NSString  *subResource;
+@interface S3Request : AmazonServiceRequest {
+    NSString *authorization;
+    int64_t contentLength;
+    NSString *contentType;
+    NSDate *date;
+    NSString *securityToken;
+    NSString *bucket;
+    NSString *key;
+    NSString *subResource;
 }
 
 #pragma mark Properties
@@ -77,15 +77,15 @@
 #pragma mark methods
 
 /** Add appropriate headers to the URL Request object */
--(AmazonURLRequest *)configureURLRequest;
+- (AmazonURLRequest *)configureURLRequest;
 
 /** The current date and time in a format which can be supplied in Amazon S3 requests. */
--(NSString *)timestamp;
+- (NSString *)timestamp;
 
 /** Returns the protocol portion of the endpoint, either 'http' or 'https' */
--(NSString *)protocol;
+- (NSString *)protocol;
 
 /** Returns the host portion of the endpoint. */
--(NSString *)endpointHost __attribute__((deprecated)); 
+- (NSString *)endpointHost __attribute__((deprecated));
 
 @end

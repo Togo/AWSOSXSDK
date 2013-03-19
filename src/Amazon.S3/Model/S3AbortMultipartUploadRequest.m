@@ -19,20 +19,17 @@
 
 @implementation S3AbortMultipartUploadRequest
 
--(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload
-{
-    if(self = [super init])
-    {
-        self.bucket   = multipartUpload.bucket;
-        self.key      = multipartUpload.key;
+- (id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload {
+    if (self = [super init]) {
+        self.bucket = multipartUpload.bucket;
+        self.key = multipartUpload.key;
         self.uploadId = multipartUpload.uploadId;
     }
 
     return self;
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:[NSString stringWithFormat:@"%@=%@", kS3SubResourceUploadId, self.uploadId]];
 
     [super configureURLRequest];

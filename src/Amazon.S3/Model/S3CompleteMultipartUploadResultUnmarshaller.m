@@ -20,11 +20,10 @@
 
 #pragma mark NSXMLParserDelegate implementation
 
--(void) parser:(NSXMLParser *)parser
-didEndElement:(NSString *)elementName
-namespaceURI:(NSString *)namespaceURI
-qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser
+        didEndElement:(NSString *)elementName
+        namespaceURI:(NSString *)namespaceURI
+        qualifiedName:(NSString *)qName {
     [super parser:parser didEndElement:elementName namespaceURI:namespaceURI qualifiedName:qName];
 
     if ([elementName isEqualToString:@"Key"]) {
@@ -55,10 +54,8 @@ qualifiedName:(NSString *)qName
 
 #pragma mark Unmarshalled object property
 
--(S3CompleteMultipartUploadResult *)completeMultipartUploadResult
-{
-    if (nil == completeMultipartUploadResult)
-    {
+- (S3CompleteMultipartUploadResult *)completeMultipartUploadResult {
+    if (nil == completeMultipartUploadResult) {
         completeMultipartUploadResult = [[S3CompleteMultipartUploadResult alloc] init];
     }
     return completeMultipartUploadResult;

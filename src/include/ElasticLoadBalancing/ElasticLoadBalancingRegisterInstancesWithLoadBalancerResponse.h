@@ -25,22 +25,19 @@
  * Register Instances With Load Balancer Result
  */
 
-@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse : ElasticLoadBalancingResponse {
     NSMutableArray *instances;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * An updated list of instances for the LoadBalancer.
@@ -48,11 +45,10 @@
 @property (nonatomic, strong) NSMutableArray *instances;
 
 
-
 /**
  * Returns a value from the instances array for the specified index
  */
--(ElasticLoadBalancingInstance *)instancesObjectAtIndex:(int)index;
+- (ElasticLoadBalancingInstance *)instancesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -60,7 +56,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

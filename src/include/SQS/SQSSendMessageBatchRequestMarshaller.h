@@ -23,11 +23,11 @@
 /**
  * Send Message Batch Request Marshaller
  */
-@interface SQSSendMessageBatchRequestMarshaller:NSObject {
+@interface SQSSendMessageBatchRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SQSSendMessageBatchRequest *)sendMessageBatchRequest;
++ (AmazonServiceRequest *)createRequest:(SQSSendMessageBatchRequest *)sendMessageBatchRequest;
 
 
 @end

@@ -23,23 +23,20 @@
  * List Tables Result
  */
 
-@interface DynamoDBListTablesResponse:DynamoDBResponse
-
-{
+@interface DynamoDBListTablesResponse : DynamoDBResponse {
     NSMutableArray *tableNames;
-    NSString       *lastEvaluatedTableName;
+    NSString *lastEvaluatedTableName;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the TableNames property for this object.
@@ -59,11 +56,10 @@
 @property (nonatomic, strong) NSString *lastEvaluatedTableName;
 
 
-
 /**
  * Returns a value from the tableNames array for the specified index
  */
--(NSString *)tableNamesObjectAtIndex:(int)index;
+- (NSString *)tableNamesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,19 +22,17 @@
 @synthesize metrics;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         autoScalingGroupName = nil;
-        metrics              = [[NSMutableArray alloc] initWithCapacity:1];
+        metrics = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addMetric:(NSString *)metricObject
-{
+- (void)addMetric:(NSString *)metricObject {
     if (metrics == nil) {
         metrics = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

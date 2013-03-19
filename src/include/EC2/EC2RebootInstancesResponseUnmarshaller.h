@@ -16,17 +16,17 @@
 #import "EC2RebootInstancesResponse.h"
 #import "EC2ResponseUnmarshaller.h"
 
-@interface EC2RebootInstancesResponseUnmarshaller:EC2ResponseUnmarshaller
-{
+@interface EC2RebootInstancesResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2RebootInstancesResponse *response;
 }
 
 @property (weak, nonatomic, readonly) EC2RebootInstancesResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(EC2RebootInstancesResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (EC2RebootInstancesResponse *)response;
 
 @end

@@ -26,11 +26,11 @@
 /**
  * Get Item Request Marshaller
  */
-@interface DynamoDBGetItemRequestMarshaller:NSObject {
+@interface DynamoDBGetItemRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBGetItemRequest *)getItemRequest;
++ (AmazonServiceRequest *)createRequest:(DynamoDBGetItemRequest *)getItemRequest;
 
 
 @end

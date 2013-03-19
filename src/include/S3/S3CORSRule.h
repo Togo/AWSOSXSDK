@@ -18,7 +18,7 @@
 /**
  * Container for rules of cross origin configuration.
  */
-@interface S3CORSRule:NSObject {
+@interface S3CORSRule : NSObject {
 }
 
 /** The Id of this rule. */
@@ -39,6 +39,6 @@
 /** The list of allowed headers */
 @property (nonatomic, strong) NSArray *allowedHeaders;
 
--(NSString *)toXml;
+- (NSString *)toXml;
 
 @end

@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Set Identity Feedback Forwarding Enabled Request
  */
 
-@interface SESSetIdentityFeedbackForwardingEnabledRequest:AmazonServiceRequestConfig
-
-{
+@interface SESSetIdentityFeedbackForwardingEnabledRequest : AmazonServiceRequestConfig {
     NSString *identity;
-    bool     forwardingEnabled;
-    bool     forwardingEnabledIsSet;
+    bool forwardingEnabled;
+    bool forwardingEnabledIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The identity for which to set feedback notification forwarding.
@@ -54,7 +49,7 @@
  * only be set to <code>false</code> when topics are specified for both
  * <code>Bounce</code> and <code>Complaint</code> topic types.
  */
-@property (nonatomic) bool           forwardingEnabled;
+@property (nonatomic) bool forwardingEnabled;
 
 @property (nonatomic, readonly) bool forwardingEnabledIsSet;
 
@@ -64,7 +59,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

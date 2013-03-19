@@ -17,12 +17,11 @@
 
 @implementation EC2DeregisterImageRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DeregisterImageRequest *)deregisterImageRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DeregisterImageRequest *)deregisterImageRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DeregisterImage"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DeregisterImage" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[deregisterImageRequest delegate]];
     [request setCredentials:[deregisterImageRequest credentials]];

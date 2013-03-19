@@ -18,18 +18,14 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Batch Put Attributes Request
  */
 
-@interface SimpleDBBatchPutAttributesRequest:AmazonServiceRequestConfig
-
-{
-    NSString       *domainName;
+@interface SimpleDBBatchPutAttributesRequest : AmazonServiceRequestConfig {
+    NSString *domainName;
     NSMutableArray *items;
 }
-
 
 
 /**
@@ -47,7 +43,7 @@
  * Default constructor for a new BatchPutAttributesRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new BatchPutAttributesRequest object.
@@ -57,13 +53,13 @@
  * are being stored.
  * @param theItems A list of items on which to perform the operation.
  */
--(id)initWithDomainName:(NSString *)theDomainName andItems:(NSMutableArray *)theItems;
+- (id)initWithDomainName:(NSString *)theDomainName andItems:(NSMutableArray *)theItems;
 
 /**
  * Adds a single object to items.
  * This function will alloc and init items if not already done.
  */
--(void)addItem:(SimpleDBReplaceableItem *)itemObject;
+- (void)addItem:(SimpleDBReplaceableItem *)itemObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -71,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeAccountAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeAccountAttributesRequest *)describeAccountAttributesRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeAccountAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAccountAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeAccountAttributesRequest delegate]];
     [request setCredentials:[describeAccountAttributesRequest credentials]];

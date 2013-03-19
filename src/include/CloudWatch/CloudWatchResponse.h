@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface CloudWatchResponse:AmazonServiceResponse {
+@interface CloudWatchResponse : AmazonServiceResponse {
 }
 
 @end

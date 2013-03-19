@@ -20,10 +20,10 @@
 /** Contains the parameters used for the listBuckets operation.
  *
  */
-@interface S3ListBucketsRequest:S3Request {
+@interface S3ListBucketsRequest : S3Request {
 }
 
--(id)init;
+- (id)init;
 
 @end
 

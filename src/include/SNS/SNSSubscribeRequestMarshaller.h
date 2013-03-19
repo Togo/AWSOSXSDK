@@ -22,11 +22,11 @@
 /**
  * Subscribe Request Marshaller
  */
-@interface SNSSubscribeRequestMarshaller:NSObject {
+@interface SNSSubscribeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SNSSubscribeRequest *)subscribeRequest;
++ (AmazonServiceRequest *)createRequest:(SNSSubscribeRequest *)subscribeRequest;
 
 
 @end

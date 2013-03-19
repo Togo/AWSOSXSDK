@@ -18,9 +18,9 @@
 /** a container for elements related to a particular part of a multipart upload.
  *
  */
-@interface S3Part:NSObject {
-    NSString  *etag;
-    NSDate    *lastModified;
+@interface S3Part : NSObject {
+    NSString *etag;
+    NSDate *lastModified;
     NSInteger partNumber;
     long long size;
 }

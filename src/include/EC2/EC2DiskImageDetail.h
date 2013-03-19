@@ -20,22 +20,18 @@
  * Disk Image Detail
  */
 
-@interface EC2DiskImageDetail:NSObject
-
-{
+@interface EC2DiskImageDetail : NSObject {
     NSString *format;
     NSNumber *bytes;
     NSString *importManifestUrl;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Format property for this object.
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

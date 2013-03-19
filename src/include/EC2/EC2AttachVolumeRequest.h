@@ -17,19 +17,15 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Attach Volume Request
  */
 
-@interface EC2AttachVolumeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2AttachVolumeRequest : AmazonServiceRequestConfig {
     NSString *volumeId;
     NSString *instanceId;
     NSString *device;
 }
-
 
 
 /**
@@ -56,7 +52,7 @@
  * Default constructor for a new AttachVolumeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AttachVolumeRequest object.
@@ -71,7 +67,7 @@
  * @param theDevice Specifies how the device is exposed to the instance
  * (e.g., <code>/dev/sdh</code>).
  */
--(id)initWithVolumeId:(NSString *)theVolumeId andInstanceId:(NSString *)theInstanceId andDevice:(NSString *)theDevice;
+- (id)initWithVolumeId:(NSString *)theVolumeId andInstanceId:(NSString *)theInstanceId andDevice:(NSString *)theDevice;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -79,7 +75,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -29,7 +29,7 @@
 /**
  * Image Attribute Unmarshaller
  */
-@interface EC2ImageAttributeUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2ImageAttributeUnmarshaller : EC2ResponseUnmarshaller {
     EC2ImageAttribute *response;
 }
 
@@ -37,8 +37,9 @@
 @property (weak, nonatomic, readonly) EC2ImageAttribute *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

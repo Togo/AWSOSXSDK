@@ -23,11 +23,10 @@
 @synthesize forwardingEnabledIsSet;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        identity               = nil;
-        forwardingEnabled      = NO;
+        identity = nil;
+        forwardingEnabled = NO;
         forwardingEnabledIsSet = NO;
     }
 
@@ -35,9 +34,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -50,13 +47,10 @@
 }
 
 
--(void)setForwardingEnabled:(bool)theValue
-{
-    forwardingEnabled      = theValue;
+- (void)setForwardingEnabled:(bool)theValue {
+    forwardingEnabled = theValue;
     forwardingEnabledIsSet = YES;
 }
-
-
 
 
 @end

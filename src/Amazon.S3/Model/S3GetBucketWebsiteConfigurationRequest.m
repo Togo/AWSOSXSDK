@@ -17,24 +17,20 @@
 
 @implementation S3GetBucketWebsiteConfigurationRequest
 
--(id)initWithBucketName:(NSString *)theBucketName
-{
+- (id)initWithBucketName:(NSString *)theBucketName {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.bucket = theBucketName;
     }
 
     return self;
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName
-{
++ (id)requestWithBucketName:(NSString *)theBucketName {
     return [[S3GetBucketWebsiteConfigurationRequest alloc] initWithBucketName:theBucketName];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceWebsite];
 
     [super configureURLRequest];

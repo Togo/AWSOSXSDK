@@ -22,30 +22,26 @@
 @synthesize label;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         queueUrl = nil;
-        label    = nil;
+        label = nil;
     }
 
     return self;
 }
 
--(id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel
-{
+- (id)initWithQueueUrl:(NSString *)theQueueUrl andLabel:(NSString *)theLabel {
     if (self = [self init]) {
         self.queueUrl = theQueueUrl;
-        self.label    = theLabel;
+        self.label = theLabel;
     }
 
     return self;
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -56,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

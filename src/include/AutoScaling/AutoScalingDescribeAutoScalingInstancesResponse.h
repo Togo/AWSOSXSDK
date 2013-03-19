@@ -24,23 +24,20 @@
  * Describe Auto Scaling Instances Result
  */
 
-@interface AutoScalingDescribeAutoScalingInstancesResponse:AutoScalingResponse
-
-{
+@interface AutoScalingDescribeAutoScalingInstancesResponse : AutoScalingResponse {
     NSMutableArray *autoScalingInstances;
-    NSString       *nextToken;
+    NSString *nextToken;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of Auto Scaling instances.
@@ -56,11 +53,10 @@
 @property (nonatomic, strong) NSString *nextToken;
 
 
-
 /**
  * Returns a value from the autoScalingInstances array for the specified index
  */
--(AutoScalingAutoScalingInstanceDetails *)autoScalingInstancesObjectAtIndex:(int)index;
+- (AutoScalingAutoScalingInstanceDetails *)autoScalingInstancesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -68,7 +64,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

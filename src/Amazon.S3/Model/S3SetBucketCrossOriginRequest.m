@@ -20,51 +20,45 @@
 
 @synthesize configuration;
 
--(id)initWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketCrossOriginConfiguration *)theConfiguration
-{
+- (id)initWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketCrossOriginConfiguration *)theConfiguration {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.bucket = theBucketName;
         self.configuration = theConfiguration;
     }
-    
+
     return self;
 }
 
--(id)initWithBucketName:(NSString *)theBucketName
-{
+- (id)initWithBucketName:(NSString *)theBucketName {
     return [self initWithBucketName:theBucketName withConfiguration:nil];
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketCrossOriginConfiguration *)theConfiguration
-{
++ (id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketCrossOriginConfiguration *)theConfiguration {
     return [[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration];
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName
-{
++ (id)requestWithBucketName:(NSString *)theBucketName {
     return [[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:nil];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceCrossOrigin];
-    
+
     [super configureURLRequest];
-    
+
     [self.urlRequest setHTTPMethod:kHttpMethodPut];
-    
+
     NSData *data = [[self.configuration toXml] dataUsingEncoding:NSUTF8StringEncoding];
-    
+
     // lifecycle requests must include MD5 signature
     NSString *contentMD5 = [AmazonMD5Util base64md5FromData:data];
     [self.urlRequest setValue:contentMD5 forHTTPHeaderField:kHttpHdrContentMD5];
-    
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
+
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long) [data length]] forHTTPHeaderField:kHttpHdrContentLength];
     [self.urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
     [self.urlRequest setHTTPBody:data];
-    
+
     return urlRequest;
 }
 

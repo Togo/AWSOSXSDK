@@ -17,12 +17,11 @@
 
 @implementation SQSSetQueueAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SQSSetQueueAttributesRequest *)setQueueAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SQSSetQueueAttributesRequest *)setQueueAttributesRequest {
     AmazonServiceRequest *request = [[SQSRequest alloc] init];
 
-    [request setParameterValue:@"SetQueueAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2012-11-05"   forKey:@"Version"];
+    [request setParameterValue:@"SetQueueAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2012-11-05" forKey:@"Version"];
 
     [request setDelegate:[setQueueAttributesRequest delegate]];
     [request setCredentials:[setQueueAttributesRequest credentials]];
@@ -46,8 +45,6 @@
                 if (attributesListKeyValue != nil) {
                     [request setParameterValue:[NSString stringWithFormat:@"%@", attributesListKeyValue] forKey:[NSString stringWithFormat:@"%@.%d.%@", @"Attribute", attributesListIndex, @"Value"]];
                 }
-
-
 
 
                 ++attributesListIndex;

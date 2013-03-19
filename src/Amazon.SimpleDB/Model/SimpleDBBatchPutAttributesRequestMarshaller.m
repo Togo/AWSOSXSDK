@@ -17,12 +17,11 @@
 
 @implementation SimpleDBBatchPutAttributesRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest
-{
++ (AmazonServiceRequest *)createRequest:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest {
     AmazonServiceRequest *request = [[SimpleDBRequest alloc] init];
 
-    [request setParameterValue:@"BatchPutAttributes"           forKey:@"Action"];
-    [request setParameterValue:@"2009-04-15"   forKey:@"Version"];
+    [request setParameterValue:@"BatchPutAttributes" forKey:@"Action"];
+    [request setParameterValue:@"2009-04-15" forKey:@"Version"];
 
     [request setDelegate:[batchPutAttributesRequest delegate]];
     [request setCredentials:[batchPutAttributesRequest credentials]];
@@ -59,7 +58,7 @@
                     }
                     if (attributesListValue != nil) {
                         if (attributesListValue.replaceIsSet) {
-                            [request setParameterValue:(attributesListValue.replace ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%d.%@", @"Item", itemsListIndex, @"Attribute", attributesListIndex, @"Replace"]];
+                            [request setParameterValue:(attributesListValue.replace ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%d.%@.%d.%@", @"Item", itemsListIndex, @"Attribute", attributesListIndex, @"Replace"]];
                         }
                     }
 

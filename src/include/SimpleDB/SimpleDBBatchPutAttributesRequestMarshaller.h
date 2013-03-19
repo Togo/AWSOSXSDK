@@ -24,11 +24,11 @@
 /**
  * Batch Put Attributes Request Marshaller
  */
-@interface SimpleDBBatchPutAttributesRequestMarshaller:NSObject {
+@interface SimpleDBBatchPutAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBBatchPutAttributesRequest *)batchPutAttributesRequest;
 
 
 @end

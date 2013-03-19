@@ -20,8 +20,7 @@
 /**
  * Deactivate License
  */
-@interface EC2DeactivateLicenseResponse:EC2Response
-{
+@interface EC2DeactivateLicenseResponse : EC2Response {
 }
 
 @end

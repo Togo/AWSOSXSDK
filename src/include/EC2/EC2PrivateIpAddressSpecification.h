@@ -20,22 +20,18 @@
  * Private Ip Address Specification
  */
 
-@interface EC2PrivateIpAddressSpecification:NSObject
-
-{
+@interface EC2PrivateIpAddressSpecification : NSObject {
     NSString *privateIpAddress;
-    bool     primary;
-    bool     primaryIsSet;
+    bool primary;
+    bool primaryIsSet;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the PrivateIpAddress property for this object.
@@ -45,7 +41,7 @@
 /**
  * The value of the Primary property for this object.
  */
-@property (nonatomic) bool           primary;
+@property (nonatomic) bool primary;
 
 @property (nonatomic, readonly) bool primaryIsSet;
 
@@ -55,7 +51,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2ImportInstanceRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2ImportInstanceRequest *)importInstanceRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2ImportInstanceRequest *)importInstanceRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"ImportInstance"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"ImportInstance" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[importInstanceRequest delegate]];
     [request setCredentials:[importInstanceRequest credentials]];
@@ -113,7 +112,7 @@
                     }
                     if (ebs != nil) {
                         if (ebs.deleteOnTerminationIsSet) {
-                            [request setParameterValue:(ebs.deleteOnTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@.%d.%@.%@", @"LaunchSpecification", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
+                            [request setParameterValue:(ebs.deleteOnTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@.%d.%@.%@", @"LaunchSpecification", @"BlockDeviceMapping", blockDeviceMappingsListIndex, @"Ebs", @"DeleteOnTermination"]];
                         }
                     }
                     if (ebs != nil) {
@@ -138,7 +137,7 @@
         }
         if (launchSpecification != nil) {
             if (launchSpecification.monitoringIsSet) {
-                [request setParameterValue:(launchSpecification.monitoring ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@", @"LaunchSpecification", @"Monitoring"]];
+                [request setParameterValue:(launchSpecification.monitoring ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@", @"LaunchSpecification", @"Monitoring"]];
             }
         }
         if (launchSpecification != nil) {
@@ -148,7 +147,7 @@
         }
         if (launchSpecification != nil) {
             if (launchSpecification.disableApiTerminationIsSet) {
-                [request setParameterValue:(launchSpecification.disableApiTermination ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@.%@", @"LaunchSpecification", @"DisableApiTermination"]];
+                [request setParameterValue:(launchSpecification.disableApiTermination ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@.%@", @"LaunchSpecification", @"DisableApiTermination"]];
             }
         }
         if (launchSpecification != nil) {

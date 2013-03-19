@@ -17,12 +17,11 @@
 
 @implementation EC2EnableVolumeIORequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2EnableVolumeIORequest *)enableVolumeIORequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2EnableVolumeIORequest *)enableVolumeIORequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"EnableVolumeIO"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"EnableVolumeIO" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[enableVolumeIORequest delegate]];
     [request setCredentials:[enableVolumeIORequest credentials]];

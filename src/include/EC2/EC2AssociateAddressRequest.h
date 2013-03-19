@@ -17,23 +17,19 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Associate Address Request
  */
 
-@interface EC2AssociateAddressRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2AssociateAddressRequest : AmazonServiceRequestConfig {
     NSString *instanceId;
     NSString *publicIp;
     NSString *allocationId;
     NSString *networkInterfaceId;
     NSString *privateIpAddress;
-    bool     allowReassociation;
-    bool     allowReassociationIsSet;
+    bool allowReassociation;
+    bool allowReassociationIsSet;
 }
-
 
 
 /**
@@ -65,7 +61,7 @@
 /**
  * The value of the AllowReassociation property for this object.
  */
-@property (nonatomic) bool           allowReassociation;
+@property (nonatomic) bool allowReassociation;
 
 @property (nonatomic, readonly) bool allowReassociationIsSet;
 
@@ -74,7 +70,7 @@
  * Default constructor for a new AssociateAddressRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new AssociateAddressRequest object.
@@ -83,7 +79,7 @@
  * @param theInstanceId The instance to associate with the IP address.
  * @param thePublicIp IP address that you are assigning to the instance.
  */
--(id)initWithInstanceId:(NSString *)theInstanceId andPublicIp:(NSString *)thePublicIp;
+- (id)initWithInstanceId:(NSString *)theInstanceId andPublicIp:(NSString *)thePublicIp;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -91,7 +87,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

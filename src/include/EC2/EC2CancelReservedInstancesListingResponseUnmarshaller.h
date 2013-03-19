@@ -25,7 +25,7 @@
 /**
  * Cancel Reserved Instances Listing Response Unmarshaller
  */
-@interface EC2CancelReservedInstancesListingResponseUnmarshaller:EC2ResponseUnmarshaller {
+@interface EC2CancelReservedInstancesListingResponseUnmarshaller : EC2ResponseUnmarshaller {
     EC2CancelReservedInstancesListingResponse *response;
 }
 
@@ -33,8 +33,9 @@
 @property (weak, nonatomic, readonly) EC2CancelReservedInstancesListingResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

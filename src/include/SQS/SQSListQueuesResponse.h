@@ -17,27 +17,23 @@
 #import "SQSResponse.h"
 
 
-
 /**
  * List Queues Result
  */
 
-@interface SQSListQueuesResponse:SQSResponse
-
-{
+@interface SQSListQueuesResponse : SQSResponse {
     NSMutableArray *queueUrls;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of queue URLs, up to 1000 entries.
@@ -45,11 +41,10 @@
 @property (nonatomic, strong) NSMutableArray *queueUrls;
 
 
-
 /**
  * Returns a value from the queueUrls array for the specified index
  */
--(NSString *)queueUrlsObjectAtIndex:(int)index;
+- (NSString *)queueUrlsObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -57,7 +52,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

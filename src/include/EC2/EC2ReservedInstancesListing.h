@@ -18,34 +18,29 @@
 #import "EC2Tag.h"
 
 
-
 /**
  * Reserved Instances Listing
  */
 
-@interface EC2ReservedInstancesListing:NSObject
-
-{
-    NSString       *reservedInstancesListingId;
-    NSString       *reservedInstancesId;
-    NSDate         *createDate;
-    NSDate         *updateDate;
-    NSString       *status;
-    NSString       *statusMessage;
+@interface EC2ReservedInstancesListing : NSObject {
+    NSString *reservedInstancesListingId;
+    NSString *reservedInstancesId;
+    NSDate *createDate;
+    NSDate *updateDate;
+    NSString *status;
+    NSString *statusMessage;
     NSMutableArray *instanceCounts;
     NSMutableArray *priceSchedules;
     NSMutableArray *tags;
-    NSString       *clientToken;
+    NSString *clientToken;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the ReservedInstancesListingId property for this object.
@@ -101,19 +96,19 @@
  * Adds a single object to instanceCounts.
  * This function will alloc and init instanceCounts if not already done.
  */
--(void)addInstanceCount:(EC2InstanceCount *)instanceCountObject;
+- (void)addInstanceCount:(EC2InstanceCount *)instanceCountObject;
 
 /**
  * Adds a single object to priceSchedules.
  * This function will alloc and init priceSchedules if not already done.
  */
--(void)addPriceSchedule:(EC2PriceSchedule *)priceScheduleObject;
+- (void)addPriceSchedule:(EC2PriceSchedule *)priceScheduleObject;
 
 /**
  * Adds a single object to tags.
  * This function will alloc and init tags if not already done.
  */
--(void)addTag:(EC2Tag *)tagObject;
+- (void)addTag:(EC2Tag *)tagObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -121,7 +116,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -22,11 +22,11 @@
 /**
  * Apply Security Groups To Load Balancer Request Marshaller
  */
-@interface ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequestMarshaller:NSObject {
+@interface ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequest *)applySecurityGroupsToLoadBalancerRequest;
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingApplySecurityGroupsToLoadBalancerRequest *)applySecurityGroupsToLoadBalancerRequest;
 
 
 @end

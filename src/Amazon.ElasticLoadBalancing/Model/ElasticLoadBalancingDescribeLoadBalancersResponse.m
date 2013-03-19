@@ -22,19 +22,17 @@
 @synthesize nextMarker;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         loadBalancerDescriptions = [[NSMutableArray alloc] initWithCapacity:1];
-        nextMarker               = nil;
+        nextMarker = nil;
     }
 
     return self;
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"LoadBalancerNotFound"]) {
@@ -51,15 +49,12 @@
 }
 
 
-
--(ElasticLoadBalancingLoadBalancerDescription *)loadBalancerDescriptionsObjectAtIndex:(int)index
-{
-    return (ElasticLoadBalancingLoadBalancerDescription *)[loadBalancerDescriptions objectAtIndex:index];
+- (ElasticLoadBalancingLoadBalancerDescription *)loadBalancerDescriptionsObjectAtIndex:(int)index {
+    return (ElasticLoadBalancingLoadBalancerDescription *) [loadBalancerDescriptions objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -70,9 +65,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

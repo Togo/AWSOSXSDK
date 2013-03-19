@@ -21,11 +21,11 @@
  * This object doesn't contain the version's full metadata or any of its contents.
  *
  */
-@interface S3VersionSummary:S3ObjectSummary {
+@interface S3VersionSummary : S3ObjectSummary {
     NSString *versionId;
     NSString *displayName;
-    bool     isLatest;
-    bool     isDeleteMarker;
+    bool isLatest;
+    bool isDeleteMarker;
 }
 
 
@@ -41,7 +41,7 @@
 @property (nonatomic) bool isDeleteMarker;
 
 /** The string representation of the S3VersionSummary */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation CloudWatchListMetricsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchListMetricsRequest *)listMetricsRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchListMetricsRequest *)listMetricsRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"ListMetrics"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"ListMetrics" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[listMetricsRequest delegate]];
     [request setCredentials:[listMetricsRequest credentials]];

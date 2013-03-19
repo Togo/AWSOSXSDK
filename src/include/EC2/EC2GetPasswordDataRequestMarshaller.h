@@ -22,11 +22,11 @@
 /**
  * Get Password Data Request Marshaller
  */
-@interface EC2GetPasswordDataRequestMarshaller:NSObject {
+@interface EC2GetPasswordDataRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2GetPasswordDataRequest *)getPasswordDataRequest;
++ (AmazonServiceRequest *)createRequest:(EC2GetPasswordDataRequest *)getPasswordDataRequest;
 
 
 @end

@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeRegionsRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeRegionsRequest *)describeRegionsRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeRegionsRequest *)describeRegionsRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeRegions"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeRegions" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeRegionsRequest delegate]];
     [request setCredentials:[describeRegionsRequest credentials]];

@@ -24,7 +24,7 @@
 /**
  * Health Check Unmarshaller
  */
-@interface ElasticLoadBalancingHealthCheckUnmarshaller:ElasticLoadBalancingResponseUnmarshaller {
+@interface ElasticLoadBalancingHealthCheckUnmarshaller : ElasticLoadBalancingResponseUnmarshaller {
     ElasticLoadBalancingHealthCheck *response;
 }
 
@@ -32,8 +32,9 @@
 @property (weak, nonatomic, readonly) ElasticLoadBalancingHealthCheck *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 
 
 @end

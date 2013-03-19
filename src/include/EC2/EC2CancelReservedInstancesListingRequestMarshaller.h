@@ -22,11 +22,11 @@
 /**
  * Cancel Reserved Instances Listing Request Marshaller
  */
-@interface EC2CancelReservedInstancesListingRequestMarshaller:NSObject {
+@interface EC2CancelReservedInstancesListingRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CancelReservedInstancesListingRequest *)cancelReservedInstancesListingRequest;
 
 
 @end

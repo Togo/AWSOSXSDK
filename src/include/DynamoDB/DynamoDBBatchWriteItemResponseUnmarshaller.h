@@ -21,10 +21,10 @@
 /**
  * Batch Write Item Result Unmarshaller
  */
-@interface DynamoDBBatchWriteItemResponseUnmarshaller:DynamoDBResponseUnmarshaller {
+@interface DynamoDBBatchWriteItemResponseUnmarshaller : DynamoDBResponseUnmarshaller {
     DynamoDBBatchWriteItemResponse *response;
 }
 
-+(DynamoDBBatchWriteItemResponse *)unmarshall:(NSDictionary *)jsonObject;
++ (DynamoDBBatchWriteItemResponse *)unmarshall:(NSDictionary *)jsonObject;
 
 @end

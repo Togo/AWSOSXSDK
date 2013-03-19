@@ -22,19 +22,17 @@
 @synthesize filters;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         spotInstanceRequestIds = [[NSMutableArray alloc] initWithCapacity:1];
-        filters                = [[NSMutableArray alloc] initWithCapacity:1];
+        filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject
-{
+- (void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject {
     if (spotInstanceRequestIds == nil) {
         spotInstanceRequestIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -42,8 +40,7 @@
     [spotInstanceRequestIds addObject:spotInstanceRequestIdObject];
 }
 
--(void)addFilter:(EC2Filter *)filterObject
-{
+- (void)addFilter:(EC2Filter *)filterObject {
     if (filters == nil) {
         filters = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -52,8 +49,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -64,9 +60,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

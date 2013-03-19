@@ -20,15 +20,13 @@
  * Scheduled Update Group Action
  */
 
-@interface AutoScalingScheduledUpdateGroupAction:NSObject
-
-{
+@interface AutoScalingScheduledUpdateGroupAction : NSObject {
     NSString *autoScalingGroupName;
     NSString *scheduledActionName;
     NSString *scheduledActionARN;
-    NSDate   *time;
-    NSDate   *startTime;
-    NSDate   *endTime;
+    NSDate *time;
+    NSDate *startTime;
+    NSDate *endTime;
     NSString *recurrence;
     NSNumber *minSize;
     NSNumber *maxSize;
@@ -36,13 +34,11 @@
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The name of the Auto Scaling group to be updated.
@@ -123,7 +119,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

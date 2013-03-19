@@ -22,11 +22,11 @@
 /**
  * Create Security Group Request Marshaller
  */
-@interface EC2CreateSecurityGroupRequestMarshaller:NSObject {
+@interface EC2CreateSecurityGroupRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2CreateSecurityGroupRequest *)createSecurityGroupRequest;
++ (AmazonServiceRequest *)createRequest:(EC2CreateSecurityGroupRequest *)createSecurityGroupRequest;
 
 
 @end

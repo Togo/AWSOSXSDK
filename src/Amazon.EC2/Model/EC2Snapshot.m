@@ -30,27 +30,25 @@
 @synthesize tags;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        snapshotId       = nil;
-        volumeId         = nil;
-        state            = nil;
-        startTime        = nil;
-        progress         = nil;
-        ownerId          = nil;
+        snapshotId = nil;
+        volumeId = nil;
+        state = nil;
+        startTime = nil;
+        progress = nil;
+        ownerId = nil;
         descriptionValue = nil;
-        volumeSize       = nil;
-        ownerAlias       = nil;
-        tags             = [[NSMutableArray alloc] initWithCapacity:1];
+        volumeSize = nil;
+        ownerAlias = nil;
+        tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addTag:(EC2Tag *)tagObject
-{
+- (void)addTag:(EC2Tag *)tagObject {
     if (tags == nil) {
         tags = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -59,8 +57,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -79,9 +76,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -19,7 +19,7 @@
 /**
  *
  */
-@interface AutoScalingResponse:AmazonServiceResponse {
+@interface AutoScalingResponse : AmazonServiceResponse {
 }
 
 @end

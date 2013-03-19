@@ -22,11 +22,11 @@
 /**
  * Activate License Request Marshaller
  */
-@interface EC2ActivateLicenseRequestMarshaller:NSObject {
+@interface EC2ActivateLicenseRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ActivateLicenseRequest *)activateLicenseRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ActivateLicenseRequest *)activateLicenseRequest;
 
 
 @end

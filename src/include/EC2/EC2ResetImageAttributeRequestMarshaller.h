@@ -22,11 +22,11 @@
 /**
  * Reset Image Attribute Request Marshaller
  */
-@interface EC2ResetImageAttributeRequestMarshaller:NSObject {
+@interface EC2ResetImageAttributeRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest;
++ (AmazonServiceRequest *)createRequest:(EC2ResetImageAttributeRequest *)resetImageAttributeRequest;
 
 
 @end

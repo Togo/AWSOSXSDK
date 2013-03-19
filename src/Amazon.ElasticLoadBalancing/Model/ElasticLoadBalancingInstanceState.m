@@ -24,12 +24,11 @@
 @synthesize descriptionValue;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        instanceId       = nil;
-        state            = nil;
-        reasonCode       = nil;
+        instanceId = nil;
+        state = nil;
+        reasonCode = nil;
         descriptionValue = nil;
     }
 
@@ -37,9 +36,7 @@
 }
 
 
-
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -52,9 +49,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

@@ -21,7 +21,7 @@
 /** Request object for DeleteObject.
  *
  */
-@interface S3DeleteObjectRequest:S3Request {
+@interface S3DeleteObjectRequest : S3Request {
     NSString *mfaAuth;
 }
 

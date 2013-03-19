@@ -16,17 +16,17 @@
 #import "AutoScalingCreateOrUpdateTagsResponse.h"
 #import "AutoScalingResponseUnmarshaller.h"
 
-@interface AutoScalingCreateOrUpdateTagsResponseUnmarshaller:AutoScalingResponseUnmarshaller
-{
+@interface AutoScalingCreateOrUpdateTagsResponseUnmarshaller : AutoScalingResponseUnmarshaller {
     AutoScalingCreateOrUpdateTagsResponse *response;
 }
 
 @property (weak, nonatomic, readonly) AutoScalingCreateOrUpdateTagsResponse *response;
 
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
--(AutoScalingCreateOrUpdateTagsResponse *)response;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+- (AutoScalingCreateOrUpdateTagsResponse *)response;
 
 @end

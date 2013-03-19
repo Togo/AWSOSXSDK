@@ -21,7 +21,7 @@
 /**
  *
  */
-@interface EC2Request:AmazonServiceRequest {
+@interface EC2Request : AmazonServiceRequest {
 }
 
 @end

@@ -19,28 +19,23 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Import Instance Request
  */
 
-@interface EC2ImportInstanceRequest:AmazonServiceRequestConfig
-
-{
-    NSString                             *descriptionValue;
+@interface EC2ImportInstanceRequest : AmazonServiceRequestConfig {
+    NSString *descriptionValue;
     EC2ImportInstanceLaunchSpecification *launchSpecification;
-    NSMutableArray                       *diskImages;
-    NSString                             *platform;
+    NSMutableArray *diskImages;
+    NSString *platform;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the Description property for this object.
@@ -66,7 +61,7 @@
  * Adds a single object to diskImages.
  * This function will alloc and init diskImages if not already done.
  */
--(void)addDiskImage:(EC2DiskImage *)diskImageObject;
+- (void)addDiskImage:(EC2DiskImage *)diskImageObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -74,7 +69,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

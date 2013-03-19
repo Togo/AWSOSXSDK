@@ -18,27 +18,23 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Describe Account Attributes Response
  */
 
-@interface EC2DescribeAccountAttributesResponse:EC2Response
-
-{
+@interface EC2DescribeAccountAttributesResponse : EC2Response {
     NSMutableArray *accountAttributes;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The value of the AccountAttributes property for this object.
@@ -46,11 +42,10 @@
 @property (nonatomic, strong) NSMutableArray *accountAttributes;
 
 
-
 /**
  * Returns a value from the accountAttributes array for the specified index
  */
--(EC2AccountAttribute *)accountAttributesObjectAtIndex:(int)index;
+- (EC2AccountAttribute *)accountAttributesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

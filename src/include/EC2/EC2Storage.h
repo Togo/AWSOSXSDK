@@ -16,25 +16,20 @@
 #import "EC2S3Storage.h"
 
 
-
 /**
  * Storage
  */
 
-@interface EC2Storage:NSObject
-
-{
+@interface EC2Storage : NSObject {
     EC2S3Storage *s3;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The details of S3 storage for bundling a Windows instance.
@@ -47,7 +42,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

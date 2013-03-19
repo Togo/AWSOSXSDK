@@ -23,22 +23,19 @@
  * Enable Availability Zones For Load Balancer Result
  */
 
-@interface ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse:ElasticLoadBalancingResponse
-
-{
+@interface ElasticLoadBalancingEnableAvailabilityZonesForLoadBalancerResponse : ElasticLoadBalancingResponse {
     NSMutableArray *availabilityZones;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * An updated list of Availability Zones for the LoadBalancer.
@@ -46,11 +43,10 @@
 @property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 
-
 /**
  * Returns a value from the availabilityZones array for the specified index
  */
--(NSString *)availabilityZonesObjectAtIndex:(int)index;
+- (NSString *)availabilityZonesObjectAtIndex:(int)index;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -58,7 +54,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

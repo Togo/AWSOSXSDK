@@ -95,8 +95,7 @@
  * </summary>
  *
  */
-@interface AmazonCloudWatchClient:AmazonWebServiceClient
-{
+@interface AmazonCloudWatchClient : AmazonWebServiceClient {
 }
 
 
@@ -127,7 +126,7 @@
  * @see CloudWatchPutMetricAlarmRequest
  * @see CloudWatchPutMetricAlarmResponse
  */
--(CloudWatchPutMetricAlarmResponse *)putMetricAlarm:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest;
+- (CloudWatchPutMetricAlarmResponse *)putMetricAlarm:(CloudWatchPutMetricAlarmRequest *)putMetricAlarmRequest;
 
 
 /**
@@ -167,7 +166,7 @@
  * @see CloudWatchPutMetricDataRequest
  * @see CloudWatchPutMetricDataResponse
  */
--(CloudWatchPutMetricDataResponse *)putMetricData:(CloudWatchPutMetricDataRequest *)putMetricDataRequest;
+- (CloudWatchPutMetricDataResponse *)putMetricData:(CloudWatchPutMetricDataRequest *)putMetricDataRequest;
 
 
 /**
@@ -202,7 +201,7 @@
  * @see CloudWatchListMetricsRequest
  * @see CloudWatchListMetricsResponse
  */
--(CloudWatchListMetricsResponse *)listMetrics:(CloudWatchListMetricsRequest *)listMetricsRequest;
+- (CloudWatchListMetricsResponse *)listMetrics:(CloudWatchListMetricsRequest *)listMetricsRequest;
 
 
 /**
@@ -259,7 +258,7 @@
  * @see CloudWatchGetMetricStatisticsRequest
  * @see CloudWatchGetMetricStatisticsResponse
  */
--(CloudWatchGetMetricStatisticsResponse *)getMetricStatistics:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest;
+- (CloudWatchGetMetricStatisticsResponse *)getMetricStatistics:(CloudWatchGetMetricStatisticsRequest *)getMetricStatisticsRequest;
 
 
 /**
@@ -281,7 +280,7 @@
  * @see CloudWatchDisableAlarmActionsRequest
  * @see CloudWatchDisableAlarmActionsResponse
  */
--(CloudWatchDisableAlarmActionsResponse *)disableAlarmActions:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest;
+- (CloudWatchDisableAlarmActionsResponse *)disableAlarmActions:(CloudWatchDisableAlarmActionsRequest *)disableAlarmActionsRequest;
 
 
 /**
@@ -306,7 +305,7 @@
  * @see CloudWatchDescribeAlarmsRequest
  * @see CloudWatchDescribeAlarmsResponse
  */
--(CloudWatchDescribeAlarmsResponse *)describeAlarms:(CloudWatchDescribeAlarmsRequest *)describeAlarmsRequest;
+- (CloudWatchDescribeAlarmsResponse *)describeAlarms:(CloudWatchDescribeAlarmsRequest *)describeAlarmsRequest;
 
 
 /**
@@ -329,7 +328,7 @@
  * @see CloudWatchDescribeAlarmsForMetricRequest
  * @see CloudWatchDescribeAlarmsForMetricResponse
  */
--(CloudWatchDescribeAlarmsForMetricResponse *)describeAlarmsForMetric:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest;
+- (CloudWatchDescribeAlarmsForMetricResponse *)describeAlarmsForMetric:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest;
 
 
 /**
@@ -357,7 +356,7 @@
  * @see CloudWatchDescribeAlarmHistoryRequest
  * @see CloudWatchDescribeAlarmHistoryResponse
  */
--(CloudWatchDescribeAlarmHistoryResponse *)describeAlarmHistory:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest;
+- (CloudWatchDescribeAlarmHistoryResponse *)describeAlarmHistory:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest;
 
 
 /**
@@ -378,7 +377,7 @@
  * @see CloudWatchEnableAlarmActionsRequest
  * @see CloudWatchEnableAlarmActionsResponse
  */
--(CloudWatchEnableAlarmActionsResponse *)enableAlarmActions:(CloudWatchEnableAlarmActionsRequest *)enableAlarmActionsRequest;
+- (CloudWatchEnableAlarmActionsResponse *)enableAlarmActions:(CloudWatchEnableAlarmActionsRequest *)enableAlarmActionsRequest;
 
 
 /**
@@ -400,7 +399,7 @@
  * @see CloudWatchDeleteAlarmsRequest
  * @see CloudWatchDeleteAlarmsResponse
  */
--(CloudWatchDeleteAlarmsResponse *)deleteAlarms:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest;
+- (CloudWatchDeleteAlarmsResponse *)deleteAlarms:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest;
 
 
 /**
@@ -425,8 +424,7 @@
  * @see CloudWatchSetAlarmStateRequest
  * @see CloudWatchSetAlarmStateResponse
  */
--(CloudWatchSetAlarmStateResponse *)setAlarmState:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest;
-
+- (CloudWatchSetAlarmStateResponse *)setAlarmState:(CloudWatchSetAlarmStateRequest *)setAlarmStateRequest;
 
 
 @end

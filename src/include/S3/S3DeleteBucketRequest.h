@@ -20,9 +20,9 @@
 /** Request Object for Deleting the specified buckets.
  *
  */
-@interface S3DeleteBucketRequest:S3Request {
+@interface S3DeleteBucketRequest : S3Request {
 }
 
--(id)initWithName:(NSString *)theBucketName;
+- (id)initWithName:(NSString *)theBucketName;
 
 @end

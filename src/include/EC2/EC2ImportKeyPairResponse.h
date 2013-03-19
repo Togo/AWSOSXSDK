@@ -17,28 +17,24 @@
 #import "EC2Response.h"
 
 
-
 /**
  * Import Key Pair Response
  */
 
-@interface EC2ImportKeyPairResponse:EC2Response
-
-{
+@interface EC2ImportKeyPairResponse : EC2Response {
     NSString *keyName;
     NSString *keyFingerprint;
 }
 
 
-
--(void)setException:(AmazonServiceException *)theException;
+- (void)setException:(AmazonServiceException *)theException;
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The specified unique key pair name.
@@ -57,7 +53,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

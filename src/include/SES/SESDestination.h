@@ -20,22 +20,18 @@
  * Destination
  */
 
-@interface SESDestination:NSObject
-
-{
+@interface SESDestination : NSObject {
     NSMutableArray *toAddresses;
     NSMutableArray *ccAddresses;
     NSMutableArray *bccAddresses;
 }
 
 
-
-
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * The To: field(s) of the message.
@@ -56,19 +52,19 @@
  * Adds a single object to toAddresses.
  * This function will alloc and init toAddresses if not already done.
  */
--(void)addToAddresse:(NSString *)toAddresseObject;
+- (void)addToAddresse:(NSString *)toAddresseObject;
 
 /**
  * Adds a single object to ccAddresses.
  * This function will alloc and init ccAddresses if not already done.
  */
--(void)addCcAddresse:(NSString *)ccAddresseObject;
+- (void)addCcAddresse:(NSString *)ccAddresseObject;
 
 /**
  * Adds a single object to bccAddresses.
  * This function will alloc and init bccAddresses if not already done.
  */
--(void)addBccAddresse:(NSString *)bccAddresseObject;
+- (void)addBccAddresse:(NSString *)bccAddresseObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -76,7 +72,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

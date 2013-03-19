@@ -17,17 +17,13 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Topic Request
  */
 
-@interface SNSCreateTopicRequest:AmazonServiceRequestConfig
-
-{
+@interface SNSCreateTopicRequest : AmazonServiceRequestConfig {
     NSString *name;
 }
-
 
 
 /**
@@ -43,7 +39,7 @@
  * Default constructor for a new CreateTopicRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateTopicRequest object.
@@ -54,7 +50,7 @@
  * lowercase ASCII letters, numbers, underscores, and hyphens, and must
  * be between 1 and 256 characters long.
  */
--(id)initWithName:(NSString *)theName;
+- (id)initWithName:(NSString *)theName;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -62,7 +58,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

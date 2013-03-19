@@ -24,11 +24,11 @@
 /**
  * Delete Attributes Request Marshaller
  */
-@interface SimpleDBDeleteAttributesRequestMarshaller:NSObject {
+@interface SimpleDBDeleteAttributesRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest;
++ (AmazonServiceRequest *)createRequest:(SimpleDBDeleteAttributesRequest *)deleteAttributesRequest;
 
 
 @end

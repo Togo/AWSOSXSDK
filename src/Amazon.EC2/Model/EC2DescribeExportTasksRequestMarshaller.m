@@ -17,12 +17,11 @@
 
 @implementation EC2DescribeExportTasksRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribeExportTasksRequest *)describeExportTasksRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2DescribeExportTasksRequest *)describeExportTasksRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"DescribeExportTasks"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeExportTasks" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[describeExportTasksRequest delegate]];
     [request setCredentials:[describeExportTasksRequest credentials]];

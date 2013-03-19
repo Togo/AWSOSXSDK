@@ -21,8 +21,7 @@
 @synthesize spotInstanceRequestIds;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         spotInstanceRequestIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -30,8 +29,7 @@
     return self;
 }
 
--(id)initWithSpotInstanceRequestIds:(NSMutableArray *)theSpotInstanceRequestIds
-{
+- (id)initWithSpotInstanceRequestIds:(NSMutableArray *)theSpotInstanceRequestIds {
     if (self = [self init]) {
         self.spotInstanceRequestIds = theSpotInstanceRequestIds;
     }
@@ -40,8 +38,7 @@
 }
 
 
--(void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject
-{
+- (void)addSpotInstanceRequestId:(NSString *)spotInstanceRequestIdObject {
     if (spotInstanceRequestIds == nil) {
         spotInstanceRequestIds = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -50,8 +47,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -61,9 +57,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

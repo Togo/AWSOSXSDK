@@ -17,25 +17,20 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Get Identity Dkim Attributes Request
  */
 
-@interface SESGetIdentityDkimAttributesRequest:AmazonServiceRequestConfig
-
-{
+@interface SESGetIdentityDkimAttributesRequest : AmazonServiceRequestConfig {
     NSMutableArray *identities;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of one or more verified identities - email addresses, domains,
@@ -47,7 +42,7 @@
  * Adds a single object to identities.
  * This function will alloc and init identities if not already done.
  */
--(void)addIdentity:(NSString *)identityObject;
+- (void)addIdentity:(NSString *)identityObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -55,7 +50,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

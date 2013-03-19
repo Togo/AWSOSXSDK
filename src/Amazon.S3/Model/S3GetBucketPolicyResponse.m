@@ -21,8 +21,7 @@
 @synthesize policy;
 
 
--(void)processBody
-{
+- (void)processBody {
     NSString *policyText = nil;
 
     if (self.body != nil) {

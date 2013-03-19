@@ -17,24 +17,20 @@
 
 @implementation S3DeleteBucketCrossOriginRequest
 
--(id)initWithBucketName:(NSString *)theBucketName
-{
+- (id)initWithBucketName:(NSString *)theBucketName {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.bucket = theBucketName;
     }
 
     return self;
 }
 
-+(id)requestWithBucketName:(NSString *)theBucketName
-{
++ (id)requestWithBucketName:(NSString *)theBucketName {
     return [[S3DeleteBucketCrossOriginRequest alloc] initWithBucketName:theBucketName];
 }
 
--(NSMutableURLRequest *)configureURLRequest
-{
+- (NSMutableURLRequest *)configureURLRequest {
     [self setSubResource:kS3SubResourceCrossOrigin];
 
     [super configureURLRequest];

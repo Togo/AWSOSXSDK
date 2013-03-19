@@ -24,21 +24,19 @@
 @synthesize dkimTokens;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        dkimEnabled            = NO;
-        dkimEnabledIsSet       = NO;
+        dkimEnabled = NO;
+        dkimEnabledIsSet = NO;
         dkimVerificationStatus = nil;
-        dkimTokens             = [[NSMutableArray alloc] initWithCapacity:1];
+        dkimTokens = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
     return self;
 }
 
 
--(void)addDkimToken:(NSString *)dkimTokenObject
-{
+- (void)addDkimToken:(NSString *)dkimTokenObject {
     if (dkimTokens == nil) {
         dkimTokens = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -47,8 +45,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -62,13 +59,10 @@
 }
 
 
--(void)setDkimEnabled:(bool)theValue
-{
-    dkimEnabled      = theValue;
+- (void)setDkimEnabled:(bool)theValue {
+    dkimEnabled = theValue;
     dkimEnabledIsSet = YES;
 }
-
-
 
 
 @end

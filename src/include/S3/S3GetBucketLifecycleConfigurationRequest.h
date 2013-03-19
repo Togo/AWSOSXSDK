@@ -20,11 +20,11 @@
  * Contains the parameters used for the getBucketLifecycleConfiguration operation.
  *
  */
-@interface S3GetBucketLifecycleConfigurationRequest:S3Request
-{
+@interface S3GetBucketLifecycleConfigurationRequest : S3Request {
 }
 
--(id)initWithBucketName:(NSString *)theBucketName;
-+(id)requestWithBucketName:(NSString *)theBucketName;
+- (id)initWithBucketName:(NSString *)theBucketName;
+
++ (id)requestWithBucketName:(NSString *)theBucketName;
 
 @end

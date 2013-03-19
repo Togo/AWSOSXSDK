@@ -24,11 +24,11 @@
 /**
  * Describe Placement Groups Request Marshaller
  */
-@interface EC2DescribePlacementGroupsRequestMarshaller:NSObject {
+@interface EC2DescribePlacementGroupsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest;
++ (AmazonServiceRequest *)createRequest:(EC2DescribePlacementGroupsRequest *)describePlacementGroupsRequest;
 
 
 @end

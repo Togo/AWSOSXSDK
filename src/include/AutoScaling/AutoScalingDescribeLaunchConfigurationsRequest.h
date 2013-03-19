@@ -17,27 +17,22 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Describe Launch Configurations Request
  */
 
-@interface AutoScalingDescribeLaunchConfigurationsRequest:AmazonServiceRequestConfig
-
-{
+@interface AutoScalingDescribeLaunchConfigurationsRequest : AmazonServiceRequestConfig {
     NSMutableArray *launchConfigurationNames;
-    NSString       *nextToken;
-    NSNumber       *maxRecords;
+    NSString *nextToken;
+    NSNumber *maxRecords;
 }
-
-
 
 
 /**
  * Default constructor for a new  object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * A list of launch configuration names.
@@ -64,7 +59,7 @@
  * Adds a single object to launchConfigurationNames.
  * This function will alloc and init launchConfigurationNames if not already done.
  */
--(void)addLaunchConfigurationName:(NSString *)launchConfigurationNameObject;
+- (void)addLaunchConfigurationName:(NSString *)launchConfigurationNameObject;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -72,7 +67,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

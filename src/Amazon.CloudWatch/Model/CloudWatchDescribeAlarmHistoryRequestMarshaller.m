@@ -17,12 +17,11 @@
 
 @implementation CloudWatchDescribeAlarmHistoryRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmHistoryRequest *)describeAlarmHistoryRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"DescribeAlarmHistory"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAlarmHistory" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[describeAlarmHistoryRequest delegate]];
     [request setCredentials:[describeAlarmHistoryRequest credentials]];

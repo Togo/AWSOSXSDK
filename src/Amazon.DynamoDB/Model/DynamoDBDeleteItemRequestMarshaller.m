@@ -20,8 +20,7 @@
 
 @implementation DynamoDBDeleteItemRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(DynamoDBDeleteItemRequest *)deleteItemRequest
-{
++ (AmazonServiceRequest *)createRequest:(DynamoDBDeleteItemRequest *)deleteItemRequest {
     DynamoDBRequest *request = [[DynamoDBRequest alloc] init];
 
     [request setDelegate:[deleteItemRequest delegate]];
@@ -31,7 +30,7 @@
 
 
     [request addValue:@"DynamoDB_20111205.DeleteItem" forHeader:@"X-Amz-Target"];
-    [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
+    [request addValue:@"application/x-amz-json-1.0" forHeader:@"Content-Type"];
 
 
     NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
@@ -163,7 +162,7 @@
         NSMutableDictionary *expectedJson = [[NSMutableDictionary alloc] init];
         [json setValue:expectedJson forKey:@"Expected"];
         for (NSString *expectedListValue in deleteItemRequest.expected) {
-            NSMutableDictionary            *expectedListValueJson = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *expectedListValueJson = [[NSMutableDictionary alloc] init];
             [expectedJson setValue:expectedListValueJson forKey:expectedListValue];
             DynamoDBExpectedAttributeValue *expectedListValueValue = [deleteItemRequest.expected valueForKey:expectedListValue];
             if (expectedListValueValue != nil) {
@@ -224,7 +223,7 @@
             }
 
             if (expectedListValueValue.existsIsSet) {
-                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true":@"false") forKey:@"Exists"];
+                [expectedListValueJson setValue:(expectedListValueValue.exists ? @"true" : @"false") forKey:@"Exists"];
             }
         }
     }
@@ -234,9 +233,8 @@
     }
 
 
-
     request.content = [AmazonJSON JSONRepresentation:json];
-    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
+    [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long) [[request.content dataUsingEncoding:NSUTF8StringEncoding] length]] forHeader:@"Content-Length"];
 
     return request;
 }

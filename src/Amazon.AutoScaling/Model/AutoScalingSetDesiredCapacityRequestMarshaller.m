@@ -17,12 +17,11 @@
 
 @implementation AutoScalingSetDesiredCapacityRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest
-{
++ (AmazonServiceRequest *)createRequest:(AutoScalingSetDesiredCapacityRequest *)setDesiredCapacityRequest {
     AmazonServiceRequest *request = [[AutoScalingRequest alloc] init];
 
-    [request setParameterValue:@"SetDesiredCapacity"           forKey:@"Action"];
-    [request setParameterValue:@"2011-01-01"   forKey:@"Version"];
+    [request setParameterValue:@"SetDesiredCapacity" forKey:@"Action"];
+    [request setParameterValue:@"2011-01-01" forKey:@"Version"];
 
     [request setDelegate:[setDesiredCapacityRequest delegate]];
     [request setCredentials:[setDesiredCapacityRequest credentials]];
@@ -41,7 +40,7 @@
     }
     if (setDesiredCapacityRequest != nil) {
         if (setDesiredCapacityRequest.honorCooldownIsSet) {
-            [request setParameterValue:(setDesiredCapacityRequest.honorCooldown ? @"true":@"false") forKey:[NSString stringWithFormat:@"%@", @"HonorCooldown"]];
+            [request setParameterValue:(setDesiredCapacityRequest.honorCooldown ? @"true" : @"false") forKey:[NSString stringWithFormat:@"%@", @"HonorCooldown"]];
         }
     }
 

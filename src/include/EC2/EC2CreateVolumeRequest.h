@@ -17,21 +17,17 @@
 #import "../AmazonServiceRequestConfig.h"
 
 
-
 /**
  * Create Volume Request
  */
 
-@interface EC2CreateVolumeRequest:AmazonServiceRequestConfig
-
-{
+@interface EC2CreateVolumeRequest : AmazonServiceRequestConfig {
     NSNumber *size;
     NSString *snapshotId;
     NSString *availabilityZone;
     NSString *volumeType;
     NSNumber *iops;
 }
-
 
 
 /**
@@ -68,7 +64,7 @@
  * Default constructor for a new CreateVolumeRequest object.  Callers should use the
  * property methods to initialize this object after creating it.
  */
--(id)init;
+- (id)init;
 
 /**
  * Constructs a new CreateVolumeRequest object.
@@ -79,7 +75,7 @@
  * @param theAvailabilityZone The Availability Zone in which to create
  * the new volume.
  */
--(id)initWithSize:(NSNumber *)theSize andAvailabilityZone:(NSString *)theAvailabilityZone;
+- (id)initWithSize:(NSNumber *)theSize andAvailabilityZone:(NSString *)theAvailabilityZone;
 
 /**
  * Constructs a new CreateVolumeRequest object.
@@ -90,7 +86,7 @@
  * @param theAvailabilityZone The Availability Zone in which to create
  * the new volume.
  */
--(id)initWithSnapshotId:(NSString *)theSnapshotId andAvailabilityZone:(NSString *)theAvailabilityZone;
+- (id)initWithSnapshotId:(NSString *)theSnapshotId andAvailabilityZone:(NSString *)theAvailabilityZone;
 
 /**
  * Returns a string representation of this object; useful for testing and
@@ -98,7 +94,7 @@
  *
  * @return A string representation of this object.
  */
--(NSString *)description;
+- (NSString *)description;
 
 
 @end

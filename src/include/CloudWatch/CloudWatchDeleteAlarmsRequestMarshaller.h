@@ -22,11 +22,11 @@
 /**
  * Delete Alarms Request Marshaller
  */
-@interface CloudWatchDeleteAlarmsRequestMarshaller:NSObject {
+@interface CloudWatchDeleteAlarmsRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest;
++ (AmazonServiceRequest *)createRequest:(CloudWatchDeleteAlarmsRequest *)deleteAlarmsRequest;
 
 
 @end

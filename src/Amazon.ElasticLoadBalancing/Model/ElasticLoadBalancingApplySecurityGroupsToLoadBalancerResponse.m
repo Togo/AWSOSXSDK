@@ -21,8 +21,7 @@
 @synthesize securityGroups;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         securityGroups = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"LoadBalancerNotFound"]) {
@@ -57,15 +55,12 @@
 }
 
 
-
--(NSString *)securityGroupsObjectAtIndex:(int)index
-{
-    return (NSString *)[securityGroups objectAtIndex:index];
+- (NSString *)securityGroupsObjectAtIndex:(int)index {
+    return (NSString *) [securityGroups objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -75,9 +70,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

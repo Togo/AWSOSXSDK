@@ -17,12 +17,11 @@
 
 @implementation ElasticLoadBalancingDeleteLoadBalancerPolicyRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeleteLoadBalancerPolicyRequest *)deleteLoadBalancerPolicyRequest
-{
++ (AmazonServiceRequest *)createRequest:(ElasticLoadBalancingDeleteLoadBalancerPolicyRequest *)deleteLoadBalancerPolicyRequest {
     AmazonServiceRequest *request = [[ElasticLoadBalancingRequest alloc] init];
 
-    [request setParameterValue:@"DeleteLoadBalancerPolicy"           forKey:@"Action"];
-    [request setParameterValue:@"2011-11-15"   forKey:@"Version"];
+    [request setParameterValue:@"DeleteLoadBalancerPolicy" forKey:@"Action"];
+    [request setParameterValue:@"2011-11-15" forKey:@"Version"];
 
     [request setDelegate:[deleteLoadBalancerPolicyRequest delegate]];
     [request setCredentials:[deleteLoadBalancerPolicyRequest credentials]];

@@ -22,11 +22,11 @@
 /**
  * Delete Identity Request Marshaller
  */
-@interface SESDeleteIdentityRequestMarshaller:NSObject {
+@interface SESDeleteIdentityRequestMarshaller : NSObject {
 }
 
 
-+(AmazonServiceRequest *)createRequest:(SESDeleteIdentityRequest *)deleteIdentityRequest;
++ (AmazonServiceRequest *)createRequest:(SESDeleteIdentityRequest *)deleteIdentityRequest;
 
 
 @end

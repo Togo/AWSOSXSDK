@@ -17,12 +17,11 @@
 
 @implementation CloudWatchDescribeAlarmsForMetricRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest
-{
++ (AmazonServiceRequest *)createRequest:(CloudWatchDescribeAlarmsForMetricRequest *)describeAlarmsForMetricRequest {
     AmazonServiceRequest *request = [[CloudWatchRequest alloc] init];
 
-    [request setParameterValue:@"DescribeAlarmsForMetric"           forKey:@"Action"];
-    [request setParameterValue:@"2010-08-01"   forKey:@"Version"];
+    [request setParameterValue:@"DescribeAlarmsForMetric" forKey:@"Action"];
+    [request setParameterValue:@"2010-08-01" forKey:@"Version"];
 
     [request setDelegate:[describeAlarmsForMetricRequest delegate]];
     [request setCredentials:[describeAlarmsForMetricRequest credentials]];

@@ -17,12 +17,11 @@
 
 @implementation EC2BundleInstanceRequestMarshaller
 
-+(AmazonServiceRequest *)createRequest:(EC2BundleInstanceRequest *)bundleInstanceRequest
-{
++ (AmazonServiceRequest *)createRequest:(EC2BundleInstanceRequest *)bundleInstanceRequest {
     AmazonServiceRequest *request = [[EC2Request alloc] init];
 
-    [request setParameterValue:@"BundleInstance"           forKey:@"Action"];
-    [request setParameterValue:@"2013-02-01"   forKey:@"Version"];
+    [request setParameterValue:@"BundleInstance" forKey:@"Action"];
+    [request setParameterValue:@"2013-02-01" forKey:@"Version"];
 
     [request setDelegate:[bundleInstanceRequest delegate]];
     [request setCredentials:[bundleInstanceRequest credentials]];

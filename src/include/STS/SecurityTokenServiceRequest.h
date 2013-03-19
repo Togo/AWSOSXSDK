@@ -19,11 +19,10 @@
 /**
  *
  */
-@interface SecurityTokenServiceRequest:AmazonServiceRequest
-{
+@interface SecurityTokenServiceRequest : AmazonServiceRequest {
 }
 
 // override super (for V4)
--(void)sign;
+- (void)sign;
 
 @end

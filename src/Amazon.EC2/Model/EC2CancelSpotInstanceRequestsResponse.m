@@ -21,8 +21,7 @@
 @synthesize cancelledSpotInstanceRequests;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
         cancelledSpotInstanceRequests = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -31,8 +30,7 @@
 }
 
 
--(void)setException:(AmazonServiceException *)theException
-{
+- (void)setException:(AmazonServiceException *)theException {
     AmazonServiceException *newException = nil;
 
     if (newException != nil) {
@@ -45,15 +43,12 @@
 }
 
 
-
--(EC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestsObjectAtIndex:(int)index
-{
-    return (EC2CancelledSpotInstanceRequest *)[cancelledSpotInstanceRequests objectAtIndex:index];
+- (EC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestsObjectAtIndex:(int)index {
+    return (EC2CancelledSpotInstanceRequest *) [cancelledSpotInstanceRequests objectAtIndex:index];
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -63,9 +58,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end

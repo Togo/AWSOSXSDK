@@ -22,10 +22,9 @@
 @synthesize values;
 
 
--(id)init
-{
+- (id)init {
     if (self = [super init]) {
-        name   = nil;
+        name = nil;
         values = [[NSMutableArray alloc] initWithCapacity:1];
     }
 
@@ -33,8 +32,7 @@
 }
 
 
--(void)addValue:(NSString *)valueObject
-{
+- (void)addValue:(NSString *)valueObject {
     if (values == nil) {
         values = [[NSMutableArray alloc] initWithCapacity:1];
     }
@@ -43,8 +41,7 @@
 }
 
 
--(NSString *)description
-{
+- (NSString *)description {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
@@ -55,9 +52,6 @@
 
     return buffer;
 }
-
-
-
 
 
 @end
