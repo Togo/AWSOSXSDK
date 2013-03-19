@@ -36,13 +36,13 @@
  * One or more IDs of resources to tag. This could be the ID of an AMI,
  * an instance, an EBS volume, or snapshot, etc.
  */
-@property (nonatomic, retain) NSMutableArray *resources;
+@property (nonatomic, strong) NSMutableArray *resources;
 
 /**
  * The tags to add or overwrite for the specified resources. Each tag
  * item consists of a key-value pair.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 
 /**

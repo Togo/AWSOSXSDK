@@ -33,7 +33,7 @@
 /**
  * The ID of the AMI to deregister.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 
 /**

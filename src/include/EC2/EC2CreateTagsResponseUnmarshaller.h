@@ -21,7 +21,7 @@
     EC2CreateTagsResponse *response;
 }
 
-@property (nonatomic, readonly) EC2CreateTagsResponse *response;
+@property (weak, nonatomic, readonly) EC2CreateTagsResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

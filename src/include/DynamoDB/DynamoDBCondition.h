@@ -37,7 +37,7 @@
  * AttributeValueList contains two attribute values and the comparison
  * operator.
  */
-@property (nonatomic, retain) NSMutableArray *attributeValueList;
+@property (nonatomic, strong) NSMutableArray *attributeValueList;
 
 /**
  * A comparison operator is an enumeration of several operations: <ul>
@@ -60,7 +60,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
  */
-@property (nonatomic, retain) NSString *comparisonOperator;
+@property (nonatomic, strong) NSString *comparisonOperator;
 
 
 /**

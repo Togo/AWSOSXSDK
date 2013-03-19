@@ -34,7 +34,7 @@
 /**
  * The name of the <code>PlacementGroup</code>.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * The <code>PlacementGroup</code> strategy.
@@ -42,7 +42,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>cluster
  */
-@property (nonatomic, retain) NSString *strategy;
+@property (nonatomic, strong) NSString *strategy;
 
 
 /**

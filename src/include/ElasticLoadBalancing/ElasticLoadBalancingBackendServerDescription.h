@@ -42,12 +42,12 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 65535<br/>
  */
-@property (nonatomic, retain) NSNumber *instancePort;
+@property (nonatomic, strong) NSNumber *instancePort;
 
 /**
  * Provides a list of policy names enabled for the back-end server.
  */
-@property (nonatomic, retain) NSMutableArray *policyNames;
+@property (nonatomic, strong) NSMutableArray *policyNames;
 
 /**
  * Adds a single object to policyNames.

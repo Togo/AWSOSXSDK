@@ -28,7 +28,7 @@
     S3MultiFactorAuthentication     *mfa;
 }
 
-@property (nonatomic, retain) S3BucketVersioningConfiguration *versioningConfiguration;
-@property (nonatomic, retain) S3MultiFactorAuthentication     *mfa;
+@property (nonatomic, strong) S3BucketVersioningConfiguration *versioningConfiguration;
+@property (nonatomic, strong) S3MultiFactorAuthentication     *mfa;
 
 @end

@@ -45,12 +45,12 @@
 /**
  * A list of alarm histories in JSON format.
  */
-@property (nonatomic, retain) NSMutableArray *alarmHistoryItems;
+@property (nonatomic, strong) NSMutableArray *alarmHistoryItems;
 
 /**
  * A string that marks the start of the next batch of returned results.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

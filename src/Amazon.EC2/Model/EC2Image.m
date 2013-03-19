@@ -106,31 +106,31 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageLocation: %@,", imageLocation] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Public: %d,", publicValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageType: %@,", imageType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Platform: %@,", platform] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StateReason: %@,", stateReason] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageOwnerAlias: %@,", imageOwnerAlias] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Name: %@,", name] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RootDeviceType: %@,", rootDeviceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RootDeviceName: %@,", rootDeviceName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VirtualizationType: %@,", virtualizationType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Hypervisor: %@,", hypervisor] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageLocation: %@,", imageLocation]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Public: %d,", publicValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageType: %@,", imageType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Platform: %@,", platform]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StateReason: %@,", stateReason]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageOwnerAlias: %@,", imageOwnerAlias]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Name: %@,", name]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RootDeviceType: %@,", rootDeviceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RootDeviceName: %@,", rootDeviceName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VirtualizationType: %@,", virtualizationType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Hypervisor: %@,", hypervisor]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -141,31 +141,6 @@
 }
 
 
--(void)dealloc
-{
-    [imageId release];
-    [imageLocation release];
-    [state release];
-    [ownerId release];
-    [productCodes release];
-    [architecture release];
-    [imageType release];
-    [kernelId release];
-    [ramdiskId release];
-    [platform release];
-    [stateReason release];
-    [imageOwnerAlias release];
-    [name release];
-    [descriptionValue release];
-    [rootDeviceType release];
-    [rootDeviceName release];
-    [blockDeviceMappings release];
-    [virtualizationType release];
-    [tags release];
-    [hypervisor release];
-
-    [super dealloc];
-}
 
 
 @end

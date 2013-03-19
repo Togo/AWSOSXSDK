@@ -33,7 +33,7 @@
 /**
  * The name of the Amazon EC2 key pair to delete.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 
 /**

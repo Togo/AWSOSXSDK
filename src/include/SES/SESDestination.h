@@ -40,17 +40,17 @@
 /**
  * The To: field(s) of the message.
  */
-@property (nonatomic, retain) NSMutableArray *toAddresses;
+@property (nonatomic, strong) NSMutableArray *toAddresses;
 
 /**
  * The CC: field(s) of the message.
  */
-@property (nonatomic, retain) NSMutableArray *ccAddresses;
+@property (nonatomic, strong) NSMutableArray *ccAddresses;
 
 /**
  * The BCC: field(s) of the message.
  */
-@property (nonatomic, retain) NSMutableArray *bccAddresses;
+@property (nonatomic, strong) NSMutableArray *bccAddresses;
 
 /**
  * Adds a single object to toAddresses.

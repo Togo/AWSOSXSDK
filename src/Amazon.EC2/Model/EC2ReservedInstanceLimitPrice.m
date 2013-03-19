@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Amount: %@,", amount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CurrencyCode: %@,", currencyCode] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Amount: %@,", amount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CurrencyCode: %@,", currencyCode]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [amount release];
-    [currencyCode release];
-
-    [super dealloc];
-}
 
 
 @end

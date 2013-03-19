@@ -37,7 +37,7 @@
 
 +(id)inputStreamWithData:(NSData *)data
 {
-	S3UploadInputStream *uploadStream = [[S3UploadInputStream new] autorelease];
+	S3UploadInputStream *uploadStream = [S3UploadInputStream new];
     if(data)
     {
         [uploadStream setStream:[NSInputStream inputStreamWithData:data]];
@@ -47,14 +47,14 @@
 
 +(id)inputStreamWithFileAtPath:(NSString *)path
 {
-	S3UploadInputStream *uploadStream = [[[S3UploadInputStream alloc] init] autorelease];
+	S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
 	[uploadStream setStream:[NSInputStream inputStreamWithFileAtPath:path]];
 	return uploadStream;
 }
 
 +(id)inputStreamWithStream:(NSInputStream *)aStream
 {
-	S3UploadInputStream *uploadStream = [[[S3UploadInputStream alloc] init] autorelease];
+	S3UploadInputStream *uploadStream = [[S3UploadInputStream alloc] init];
 	[uploadStream setStream:aStream];
 	return uploadStream;
 }
@@ -142,12 +142,6 @@
 	[anInvocation invokeWithTarget:stream];
 }
 
--(void)dealloc
-{
-	[stream release];
-	
-	[super dealloc];
-}
 #pragma clang diagnostic pop
 
 @end

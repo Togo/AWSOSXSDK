@@ -45,12 +45,12 @@
  * Collection of instance statuses describing the state of the requested
  * instances.
  */
-@property (nonatomic, retain) NSMutableArray *instanceStatuses;
+@property (nonatomic, strong) NSMutableArray *instanceStatuses;
 
 /**
  * A string specifying the next paginated set of results to return.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

@@ -40,7 +40,7 @@
 /**
  * The value of the ReasonCode property for this object.
  */
-@property (nonatomic, retain) NSString *reasonCode;
+@property (nonatomic, strong) NSString *reasonCode;
 
 /**
  * Returns a string representation of this object; useful for testing and

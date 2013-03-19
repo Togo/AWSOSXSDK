@@ -41,18 +41,18 @@
 /**
  * The name of the policy type.
  */
-@property (nonatomic, retain) NSString *policyTypeName;
+@property (nonatomic, strong) NSString *policyTypeName;
 
 /**
  * A human-readable description of the policy type.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The description of the policy attributes associated with the
  * LoadBalancer policies defined by the Elastic Load Balancing service.
  */
-@property (nonatomic, retain) NSMutableArray *policyAttributeTypeDescriptions;
+@property (nonatomic, strong) NSMutableArray *policyAttributeTypeDescriptions;
 
 /**
  * Adds a single object to policyAttributeTypeDescriptions.

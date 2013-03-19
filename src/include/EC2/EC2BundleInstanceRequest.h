@@ -35,12 +35,12 @@
 /**
  * The ID of the instance to bundle.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  *
  */
-@property (nonatomic, retain) EC2Storage *storage;
+@property (nonatomic, strong) EC2Storage *storage;
 
 
 /**

@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeliveryAttempts: %@,", deliveryAttempts] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Bounces: %@,", bounces] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Complaints: %@,", complaints] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Rejects: %@,", rejects] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeliveryAttempts: %@,", deliveryAttempts]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Bounces: %@,", bounces]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Complaints: %@,", complaints]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Rejects: %@,", rejects]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [timestamp release];
-    [deliveryAttempts release];
-    [bounces release];
-    [complaints release];
-    [rejects release];
-
-    [super dealloc];
-}
 
 
 @end

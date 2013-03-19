@@ -35,11 +35,5 @@
     return self.urlRequest;
 }
 
--(void)dealloc
-{
-    [acl release];
-
-    [super dealloc];
-}
 
 @end

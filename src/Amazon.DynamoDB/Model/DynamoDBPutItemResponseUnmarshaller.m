@@ -25,7 +25,7 @@
 
 +(DynamoDBPutItemResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBPutItemResponse *putItemResult = [[[DynamoDBPutItemResponse alloc] init] autorelease];
+    DynamoDBPutItemResponse *putItemResult = [[DynamoDBPutItemResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

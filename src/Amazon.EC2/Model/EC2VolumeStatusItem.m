@@ -63,29 +63,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeStatus: %@,", volumeStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Events: %@,", events] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Actions: %@,", actions] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeStatus: %@,", volumeStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Events: %@,", events]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Actions: %@,", actions]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [volumeId release];
-    [availabilityZone release];
-    [volumeStatus release];
-    [events release];
-    [actions release];
-
-    [super dealloc];
-}
 
 
 @end

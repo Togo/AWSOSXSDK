@@ -36,33 +36,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ResourceInUseException"]) {
-        [newException release];
         newException = [[DynamoDBResourceInUseException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"LimitExceededException"]) {
-        [newException release];
         newException = [[DynamoDBLimitExceededException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalServerError"]) {
-        [newException release];
         newException = [[DynamoDBInternalServerErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"ResourceNotFoundException"]) {
-        [newException release];
         newException = [[DynamoDBResourceNotFoundException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -73,21 +67,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableDescription: %@,", tableDescription] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableDescription: %@,", tableDescription]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [tableDescription release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -51,7 +51,7 @@
  * of attribute name-value pairs (essentially, the deleted item).
  * Otherwise, the response contains an empty set.
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
  * The number of Capacity Units of the provisioned throughput of the
@@ -62,7 +62,7 @@
  * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
  * consume <code>WriteCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSNumber *consumedCapacityUnits;
+@property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 /**
  * Returns a value from the attributes dictionary for the specified key.

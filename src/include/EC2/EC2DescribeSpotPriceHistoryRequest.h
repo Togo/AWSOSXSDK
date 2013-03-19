@@ -48,22 +48,22 @@
 /**
  * The start date and time of the Spot Instance price history data.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The end date and time of the Spot Instance price history data.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * Specifies the instance type to return.
  */
-@property (nonatomic, retain) NSMutableArray *instanceTypes;
+@property (nonatomic, strong) NSMutableArray *instanceTypes;
 
 /**
  * The description of the AMI.
  */
-@property (nonatomic, retain) NSMutableArray *productDescriptions;
+@property (nonatomic, strong) NSMutableArray *productDescriptions;
 
 /**
  * A list of filters used to match properties for SpotPriceHistory. For a
@@ -72,22 +72,22 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Filters the results by availability zone (ex: 'us-east-1a').
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * Specifies the number of rows to return.
  */
-@property (nonatomic, retain) NSNumber *maxResults;
+@property (nonatomic, strong) NSNumber *maxResults;
 
 /**
  * Specifies the next set of rows to return.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Adds a single object to instanceTypes.

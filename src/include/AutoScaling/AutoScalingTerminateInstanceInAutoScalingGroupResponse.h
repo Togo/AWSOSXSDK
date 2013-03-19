@@ -44,7 +44,7 @@
 /**
  * A scaling Activity.
  */
-@property (nonatomic, retain) AutoScalingActivity *activity;
+@property (nonatomic, strong) AutoScalingActivity *activity;
 
 /**
  * Returns a string representation of this object; useful for testing and

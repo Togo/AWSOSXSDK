@@ -36,19 +36,19 @@
  * 'authenticated-read', 'log-delivery-write', 'bucket-owner-read',
  * 'bucket-owner-full-control'.
  */
-@property (nonatomic, retain) S3CannedACL *cannedACL;
+@property (nonatomic, strong) S3CannedACL *cannedACL;
 
 /** A full access control list to apply to the bucket */
-@property (nonatomic, retain) S3AccessControlList *fullACL;
+@property (nonatomic, strong) S3AccessControlList *fullACL;
 
 /** The storage class for the object.
  * Valid values are 'STANDARD', 'REDUCED_REDUNDANCY'
  */
-@property (nonatomic, retain) NSString *storageClass; // TODO: make an enum
+@property (nonatomic, strong) NSString *storageClass; // TODO: make an enum
 
 /** Optional server side encryption algorithm.
  */
-@property (nonatomic, retain) NSString *serverSideEncryption;
+@property (nonatomic, strong) NSString *serverSideEncryption;
 
 /** Add a key-value metadata pair to the request.
  *  These will be prefixed with x-amz-meta- and added to the request header.

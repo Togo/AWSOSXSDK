@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"Activity"]) {
-        AutoScalingActivityUnmarshaller *unmarshaller = [[[AutoScalingActivityUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setActivity:)] autorelease];
+        AutoScalingActivityUnmarshaller *unmarshaller = [[AutoScalingActivityUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setActivity:)];
         unmarshaller.endElementTagName = @"Activity";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -64,10 +64,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

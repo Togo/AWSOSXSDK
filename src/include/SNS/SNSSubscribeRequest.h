@@ -35,7 +35,7 @@
 /**
  * The ARN of topic you want to subscribe to.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * The protocol you want to use. Supported protocols include: <ul>
@@ -47,7 +47,7 @@
  * SMS</li> <li><code>sqs</code> -- delivery of JSON-encoded message to
  * an Amazon SQS queue</li> </ul>
  */
-@property (nonatomic, retain) NSString *protocol;
+@property (nonatomic, strong) NSString *protocol;
 
 /**
  * The endpoint that you want to receive notifications. Endpoints vary by
@@ -61,7 +61,7 @@
  * <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
  * queue</li> </ul>
  */
-@property (nonatomic, retain) NSString *endpoint;
+@property (nonatomic, strong) NSString *endpoint;
 
 
 /**

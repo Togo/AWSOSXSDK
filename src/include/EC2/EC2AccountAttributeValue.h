@@ -38,7 +38,7 @@
 /**
  * The value of the AttributeValue property for this object.
  */
-@property (nonatomic, retain) NSString *attributeValue;
+@property (nonatomic, strong) NSString *attributeValue;
 
 /**
  * Returns a string representation of this object; useful for testing and

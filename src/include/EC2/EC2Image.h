@@ -63,12 +63,12 @@
 /**
  * The unique ID of the AMI.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The location of the AMI.
  */
-@property (nonatomic, retain) NSString *imageLocation;
+@property (nonatomic, strong) NSString *imageLocation;
 
 /**
  * Current state of the AMI. If the operation returns available, the
@@ -79,12 +79,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>available, deregistered
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * AWS Access Key ID of the image owner.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * True if this image has public launch permissions. False if it only has
@@ -97,71 +97,71 @@
 /**
  * Product codes of the AMI.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 /**
  * The architecture of the image.
  */
-@property (nonatomic, retain) NSString *architecture;
+@property (nonatomic, strong) NSString *architecture;
 
 /**
  * The type of image (machine, kernel, or ramdisk).
  */
-@property (nonatomic, retain) NSString *imageType;
+@property (nonatomic, strong) NSString *imageType;
 
 /**
  * The kernel associated with the image, if any. Only applicable for
  * machine images.
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * The RAM disk associated with the image, if any. Only applicable for
  * machine images.
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * The operating platform of the AMI.
  */
-@property (nonatomic, retain) NSString *platform;
+@property (nonatomic, strong) NSString *platform;
 
 /**
  * The reason for the state change.
  */
-@property (nonatomic, retain) EC2StateReason *stateReason;
+@property (nonatomic, strong) EC2StateReason *stateReason;
 
 /**
  * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
  * account ID that owns the AMI.
  */
-@property (nonatomic, retain) NSString *imageOwnerAlias;
+@property (nonatomic, strong) NSString *imageOwnerAlias;
 
 /**
  * The name of the AMI that was provided during image creation.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The description of the AMI that was provided during image creation.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The root device type used by the AMI. The AMI can use an Amazon EBS or
  * instance store root device.
  */
-@property (nonatomic, retain) NSString *rootDeviceType;
+@property (nonatomic, strong) NSString *rootDeviceType;
 
 /**
  * The root device name (e.g., <code>/dev/sda1</code>).
  */
-@property (nonatomic, retain) NSString *rootDeviceName;
+@property (nonatomic, strong) NSString *rootDeviceName;
 
 /**
  * Specifies how block devices are exposed to the instance.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * The value of the VirtualizationType property for this object.
@@ -169,12 +169,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>hvm, paravirtual
  */
-@property (nonatomic, retain) NSString *virtualizationType;
+@property (nonatomic, strong) NSString *virtualizationType;
 
 /**
  * A list of tags for the Image.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The value of the Hypervisor property for this object.
@@ -182,7 +182,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ovm, xen
  */
-@property (nonatomic, retain) NSString *hypervisor;
+@property (nonatomic, strong) NSString *hypervisor;
 
 /**
  * Adds a single object to productCodes.

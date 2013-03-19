@@ -44,12 +44,12 @@
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the InstanceId property for this object.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The value of the TargetEnvironment property for this object.
@@ -57,12 +57,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>citrix, vmware
  */
-@property (nonatomic, retain) NSString *targetEnvironment;
+@property (nonatomic, strong) NSString *targetEnvironment;
 
 /**
  * The value of the ExportToS3Task property for this object.
  */
-@property (nonatomic, retain) EC2ExportToS3TaskSpecification *exportToS3Task;
+@property (nonatomic, strong) EC2ExportToS3TaskSpecification *exportToS3Task;
 
 /**
  * Returns a string representation of this object; useful for testing and

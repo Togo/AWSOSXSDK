@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"monitoring"]) {
-        EC2MonitoringUnmarshaller *unmarshaller = [[[EC2MonitoringUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setMonitoring:)] autorelease];
+        EC2MonitoringUnmarshaller *unmarshaller = [[EC2MonitoringUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setMonitoring:)];
         unmarshaller.endElementTagName = @"monitoring";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -75,10 +75,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

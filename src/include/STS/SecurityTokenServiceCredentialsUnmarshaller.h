@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) SecurityTokenServiceCredentials *response;
+@property (weak, nonatomic, readonly) SecurityTokenServiceCredentials *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

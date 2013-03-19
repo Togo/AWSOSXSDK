@@ -48,7 +48,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 100<br/>
  */
-@property (nonatomic, retain) NSMutableArray *alarmNames;
+@property (nonatomic, strong) NSMutableArray *alarmNames;
 
 /**
  * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
@@ -57,7 +57,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmNamePrefix;
+@property (nonatomic, strong) NSString *alarmNamePrefix;
 
 /**
  * The state value to be used in matching alarms.
@@ -65,7 +65,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
  */
-@property (nonatomic, retain) NSString *stateValue;
+@property (nonatomic, strong) NSString *stateValue;
 
 /**
  * The action name prefix.
@@ -73,7 +73,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 1024<br/>
  */
-@property (nonatomic, retain) NSString *actionPrefix;
+@property (nonatomic, strong) NSString *actionPrefix;
 
 /**
  * The maximum number of alarm descriptions to retrieve.
@@ -81,13 +81,13 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * The token returned by a previous call to indicate that there is more
  * data available.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Adds a single object to alarmNames.

@@ -36,7 +36,7 @@
  * The name associated with the LoadBalancer. The name must be unique
  * within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A list of instance IDs that should be registered with the
@@ -48,7 +48,7 @@
  * your instances from load balancer, use
  * <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
  */
-@property (nonatomic, retain) NSMutableArray *instances;
+@property (nonatomic, strong) NSMutableArray *instances;
 
 
 /**

@@ -38,7 +38,7 @@
 /**
  * The value of the Size property for this object.
  */
-@property (nonatomic, retain) NSNumber *size;
+@property (nonatomic, strong) NSNumber *size;
 
 /**
  * Returns a string representation of this object; useful for testing and

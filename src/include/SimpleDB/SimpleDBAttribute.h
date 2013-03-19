@@ -34,22 +34,22 @@
 /**
  * The name of the attribute.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *alternateNameEncoding;
+@property (nonatomic, strong) NSString *alternateNameEncoding;
 
 /**
  * The value of the attribute.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *alternateValueEncoding;
+@property (nonatomic, strong) NSString *alternateValueEncoding;
 
 
 /**

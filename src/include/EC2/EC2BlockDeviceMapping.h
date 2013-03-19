@@ -42,23 +42,23 @@
 /**
  * Specifies the virtual device name.
  */
-@property (nonatomic, retain) NSString *virtualName;
+@property (nonatomic, strong) NSString *virtualName;
 
 /**
  * Specifies the device name (e.g., <code>/dev/sdh</code>).
  */
-@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, strong) NSString *deviceName;
 
 /**
  * Specifies parameters used to automatically setup Amazon EBS volumes
  * when the instance is launched.
  */
-@property (nonatomic, retain) EC2EbsBlockDevice *ebs;
+@property (nonatomic, strong) EC2EbsBlockDevice *ebs;
 
 /**
  * Specifies the device name to suppress during instance launch.
  */
-@property (nonatomic, retain) NSString *noDevice;
+@property (nonatomic, strong) NSString *noDevice;
 
 /**
  * Returns a string representation of this object; useful for testing and

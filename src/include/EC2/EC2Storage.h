@@ -39,7 +39,7 @@
 /**
  * The details of S3 storage for bundling a Windows instance.
  */
-@property (nonatomic, retain) EC2S3Storage *s3;
+@property (nonatomic, strong) EC2S3Storage *s3;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -25,6 +25,6 @@
     S3ListPartsResult *listPartsResult;
 }
 
-@property (nonatomic, retain) S3ListPartsResult *listPartsResult;
+@property (nonatomic, strong) S3ListPartsResult *listPartsResult;
 
 @end

@@ -37,21 +37,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AdjustmentType: %@,", adjustmentType] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AdjustmentType: %@,", adjustmentType]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [adjustmentType release];
-
-    [super dealloc];
-}
 
 
 @end

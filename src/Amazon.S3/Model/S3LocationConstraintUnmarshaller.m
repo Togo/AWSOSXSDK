@@ -39,10 +39,5 @@ qualifiedName:(NSString *)qName
     }
 }
 
--(void)dealloc
-{
-    [location release];
-    [super dealloc];
-}
 
 @end

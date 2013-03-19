@@ -73,19 +73,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeviceIndex: %@,", deviceIndex] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Groups: %@,", groups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeleteOnTermination: %d,", deleteOnTermination] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddresses: %@,", privateIpAddresses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecondaryPrivateIpAddressCount: %@,", secondaryPrivateIpAddressCount] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeviceIndex: %@,", deviceIndex]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Groups: %@,", groups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeleteOnTermination: %d,", deleteOnTermination]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddresses: %@,", privateIpAddresses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecondaryPrivateIpAddressCount: %@,", secondaryPrivateIpAddressCount]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -96,19 +96,6 @@
 }
 
 
--(void)dealloc
-{
-    [networkInterfaceId release];
-    [deviceIndex release];
-    [subnetId release];
-    [descriptionValue release];
-    [privateIpAddress release];
-    [groups release];
-    [privateIpAddresses release];
-    [secondaryPrivateIpAddressCount release];
-
-    [super dealloc];
-}
 
 
 @end

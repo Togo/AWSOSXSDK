@@ -38,18 +38,15 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InternalServerError"]) {
-        [newException release];
         newException = [[DynamoDBInternalServerErrorException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -66,23 +63,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableNames: %@,", tableNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LastEvaluatedTableName: %@,", lastEvaluatedTableName] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableNames: %@,", tableNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LastEvaluatedTableName: %@,", lastEvaluatedTableName]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [tableNames release];
-    [lastEvaluatedTableName release];
-
-    [super dealloc];
-}
 
 
 @end

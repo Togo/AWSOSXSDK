@@ -24,6 +24,6 @@
 }
 
 /** The S3BucketTaggingConfiguration represented by the XML */
-@property (nonatomic, readonly) S3BucketTaggingConfiguration *configuration;
+@property (weak, nonatomic, readonly) S3BucketTaggingConfiguration *configuration;
 
 @end

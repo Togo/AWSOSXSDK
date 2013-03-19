@@ -23,14 +23,5 @@
 @synthesize key;
 @synthesize etag;
 
--(void)dealloc
-{
-    [location release];
-    [bucket release];
-    [key release];
-    [etag release];
-
-    [super dealloc];
-}
 
 @end

@@ -38,17 +38,17 @@
 /**
  * The name of the domain in which to perform the operation.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 /**
  * The name of the item.
  */
-@property (nonatomic, retain) NSString *itemName;
+@property (nonatomic, strong) NSString *itemName;
 
 /**
  * The list of attributes.
  */
-@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic, strong) NSMutableArray *attributes;
 
 /**
  * The update condition which, if specified, determines whether the
@@ -56,7 +56,7 @@
  * be satisfied in order for this request to be processed and the
  * attributes to be updated.
  */
-@property (nonatomic, retain) SimpleDBUpdateCondition *expected;
+@property (nonatomic, strong) SimpleDBUpdateCondition *expected;
 
 
 /**

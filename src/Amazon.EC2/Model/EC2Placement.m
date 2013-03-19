@@ -50,25 +50,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tenancy: %@,", tenancy] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tenancy: %@,", tenancy]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [availabilityZone release];
-    [groupName release];
-    [tenancy release];
-
-    [super dealloc];
-}
 
 
 @end

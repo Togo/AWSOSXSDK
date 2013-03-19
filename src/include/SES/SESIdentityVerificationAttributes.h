@@ -43,13 +43,13 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Pending, Success, Failed, TemporaryFailure
  */
-@property (nonatomic, retain) NSString *verificationStatus;
+@property (nonatomic, strong) NSString *verificationStatus;
 
 /**
  * The verification token for a domain identity. Null for email address
  * identities.
  */
-@property (nonatomic, retain) NSString *verificationToken;
+@property (nonatomic, strong) NSString *verificationToken;
 
 /**
  * Returns a string representation of this object; useful for testing and

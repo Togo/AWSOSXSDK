@@ -58,23 +58,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attributes: %@,", attributes] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attributes: %@,", attributes]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [queueUrl release];
-    [attributes release];
-
-    [super dealloc];
-}
 
 
 @end

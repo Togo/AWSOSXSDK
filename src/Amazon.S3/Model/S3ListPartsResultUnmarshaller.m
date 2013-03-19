@@ -29,13 +29,13 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Part"]) {
-        [parser setDelegate:[[[S3PartUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult.parts withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3PartUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult.parts withSetter:@selector(addObject:)]];
     }
     if ([elementName isEqualToString:@"Owner"]) {
-        [parser setDelegate:[[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult withSetter:@selector(setOwner:)] autorelease]];
+        [parser setDelegate:[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult withSetter:@selector(setOwner:)]];
     }
     if ([elementName isEqualToString:@"Initator"]) {
-        [parser setDelegate:[[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult withSetter:@selector(setInitiator:) withAlias:@"Iniatiator"] autorelease]];
+        [parser setDelegate:[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listPartsResult withSetter:@selector(setInitiator:) withAlias:@"Iniatiator"]];
     }
 }
 
@@ -93,11 +93,5 @@ qualifiedName:(NSString *)qName
     return listPartsResult;
 }
 
--(void)dealloc
-{
-    [listPartsResult release];
-
-    [super dealloc];
-}
 
 @end

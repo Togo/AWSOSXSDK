@@ -43,13 +43,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthStatus: %@,", healthStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ShouldRespectGracePeriod: %d,", shouldRespectGracePeriod] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthStatus: %@,", healthStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ShouldRespectGracePeriod: %d,", shouldRespectGracePeriod]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -60,13 +60,6 @@
 }
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [healthStatus release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -34,7 +34,7 @@
  * The ID of the instance for which you want the Windows administrator
  * password.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 
 /**

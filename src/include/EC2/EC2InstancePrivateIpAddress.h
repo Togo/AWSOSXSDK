@@ -43,12 +43,12 @@
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * The value of the PrivateDnsName property for this object.
  */
-@property (nonatomic, retain) NSString *privateDnsName;
+@property (nonatomic, strong) NSString *privateDnsName;
 
 /**
  * The value of the Primary property for this object.
@@ -60,7 +60,7 @@
 /**
  * The value of the Association property for this object.
  */
-@property (nonatomic, retain) EC2InstanceNetworkInterfaceAssociation *association;
+@property (nonatomic, strong) EC2InstanceNetworkInterfaceAssociation *association;
 
 /**
  * Returns a string representation of this object; useful for testing and

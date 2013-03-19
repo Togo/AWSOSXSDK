@@ -39,12 +39,12 @@
 /**
  * The value of the Arn property for this object.
  */
-@property (nonatomic, retain) NSString *arn;
+@property (nonatomic, strong) NSString *arn;
 
 /**
  * The value of the Id property for this object.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * Returns a string representation of this object; useful for testing and

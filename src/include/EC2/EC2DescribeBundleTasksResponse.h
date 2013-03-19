@@ -43,7 +43,7 @@
 /**
  * The list of described bundle tasks.
  */
-@property (nonatomic, retain) NSMutableArray *bundleTasks;
+@property (nonatomic, strong) NSMutableArray *bundleTasks;
 
 
 

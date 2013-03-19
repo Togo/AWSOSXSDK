@@ -45,7 +45,7 @@
  * requested instances cannot contain more than 50 items. If unknown
  * instances are requested, they are ignored with no error.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 /**
  * The maximum number of Auto Scaling instances to be described with each
@@ -54,7 +54,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 50<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * The token returned by a previous call to indicate that there is more
@@ -63,7 +63,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Adds a single object to instanceIds.

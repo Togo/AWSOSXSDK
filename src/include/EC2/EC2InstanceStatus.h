@@ -47,32 +47,32 @@
 /**
  * The ID of the Amazon EC2 instance.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The Amazon EC2 instance's availability zone.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * Events that affect the status of the associated Amazon EC2 instance.
  */
-@property (nonatomic, retain) NSMutableArray *events;
+@property (nonatomic, strong) NSMutableArray *events;
 
 /**
  * Represents the state of an Amazon EC2 instance.
  */
-@property (nonatomic, retain) EC2InstanceState *instanceState;
+@property (nonatomic, strong) EC2InstanceState *instanceState;
 
 /**
  * The value of the SystemStatus property for this object.
  */
-@property (nonatomic, retain) EC2InstanceStatusSummary *systemStatus;
+@property (nonatomic, strong) EC2InstanceStatusSummary *systemStatus;
 
 /**
  * The value of the InstanceStatus property for this object.
  */
-@property (nonatomic, retain) EC2InstanceStatusSummary *instanceStatus;
+@property (nonatomic, strong) EC2InstanceStatusSummary *instanceStatus;
 
 /**
  * Adds a single object to events.

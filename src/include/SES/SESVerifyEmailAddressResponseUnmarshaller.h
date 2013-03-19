@@ -21,7 +21,7 @@
     SESVerifyEmailAddressResponse *response;
 }
 
-@property (nonatomic, readonly) SESVerifyEmailAddressResponse *response;
+@property (weak, nonatomic, readonly) SESVerifyEmailAddressResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

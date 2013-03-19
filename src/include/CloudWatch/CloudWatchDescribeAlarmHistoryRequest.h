@@ -48,7 +48,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmName;
+@property (nonatomic, strong) NSString *alarmName;
 
 /**
  * The type of alarm histories to retrieve.
@@ -56,17 +56,17 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
  */
-@property (nonatomic, retain) NSString *historyItemType;
+@property (nonatomic, strong) NSString *historyItemType;
 
 /**
  * The starting date to retrieve alarm history.
  */
-@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, strong) NSDate *startDate;
 
 /**
  * The ending date to retrieve alarm history.
  */
-@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, strong) NSDate *endDate;
 
 /**
  * The maximum number of alarm history records to retrieve.
@@ -74,13 +74,13 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * The token returned by a previous call to indicate that there is more
  * data available.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Returns a string representation of this object; useful for testing and

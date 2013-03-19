@@ -33,7 +33,7 @@
 /**
  * The ARN of the subscription to be deleted.
  */
-@property (nonatomic, retain) NSString *subscriptionArn;
+@property (nonatomic, strong) NSString *subscriptionArn;
 
 
 /**

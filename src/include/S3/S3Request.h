@@ -38,41 +38,41 @@
 #pragma mark Properties
 
 /** The information required for request authentication. */
-@property (nonatomic, retain) NSString *authorization;
+@property (nonatomic, strong) NSString *authorization;
 
 /** Length of the message (without the headers) according to RFC 2616. */
 @property (nonatomic) int64_t contentLength;
 
 /** The content type of the resource.
 * Example: <code>text/plain</code> */
-@property (nonatomic, retain) NSString *contentType;
+@property (nonatomic, strong) NSString *contentType;
 
 /** The current date and time according to the requester.
  * Example: <code>Wed, 01 Mar 2009 12:00:00 GMT</code>
  */
-@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, strong) NSDate *date;
 
 /** For path-style requests, the value is s3.amazonaws.com.
  * For virtual-style requests, the value is BucketName.s3.amazonaws.com.
  */
-@property (nonatomic, readonly) NSString *host;
+@property (weak, nonatomic, readonly) NSString *host;
 
 /** The security tokens for operations that use Amazon DevPay. */
-@property (nonatomic, retain) NSString *securityToken;
+@property (nonatomic, strong) NSString *securityToken;
 
 /** The name of the bucket */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /** The name of the S3 object */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** The sub-resource (i.e. acl, versioning, torrent) for the request */
-@property (nonatomic, retain) NSString *subResource;
+@property (nonatomic, strong) NSString *subResource;
 
 /** The URL for the resource.
  * This property is read-only.
  */
-@property (nonatomic, readonly) NSURL *url;
+@property (weak, nonatomic, readonly) NSURL *url;
 
 #pragma mark methods
 

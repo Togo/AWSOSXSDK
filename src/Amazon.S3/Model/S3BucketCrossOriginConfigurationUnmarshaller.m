@@ -26,7 +26,7 @@
     
     if ([elementName isEqualToString:@"CORSRule"])
     {
-        [parser setDelegate:[[[S3CORSRuleUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].rules withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3CORSRuleUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].rules withSetter:@selector(addObject:)]];
     }
 }
 
@@ -42,10 +42,5 @@
     return configuration;
 }
 
--(void)dealloc
-{
-    [configuration release];
-    [super dealloc];
-}
 
 @end

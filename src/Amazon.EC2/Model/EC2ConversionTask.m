@@ -58,33 +58,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConversionTaskId: %@,", conversionTaskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExpirationTime: %@,", expirationTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImportInstance: %@,", importInstance] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImportVolume: %@,", importVolume] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConversionTaskId: %@,", conversionTaskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExpirationTime: %@,", expirationTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImportInstance: %@,", importInstance]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImportVolume: %@,", importVolume]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [conversionTaskId release];
-    [expirationTime release];
-    [importInstance release];
-    [importVolume release];
-    [state release];
-    [statusMessage release];
-    [tags release];
-
-    [super dealloc];
-}
 
 
 @end

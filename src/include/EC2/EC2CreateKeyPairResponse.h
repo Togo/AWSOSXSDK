@@ -43,7 +43,7 @@
 /**
  * The newly created EC2 key pair.
  */
-@property (nonatomic, retain) EC2KeyPair *keyPair;
+@property (nonatomic, strong) EC2KeyPair *keyPair;
 
 /**
  * Returns a string representation of this object; useful for testing and

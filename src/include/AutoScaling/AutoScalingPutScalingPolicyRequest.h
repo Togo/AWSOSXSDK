@@ -49,7 +49,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The name of the policy you want to create or update.
@@ -58,7 +58,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 /**
  * The number of instances by which to scale. <code>AdjustmentType</code>
@@ -67,7 +67,7 @@
  * positive increment adds to the current capacity and a negative value
  * removes from the current capacity.
  */
-@property (nonatomic, retain) NSNumber *scalingAdjustment;
+@property (nonatomic, strong) NSNumber *scalingAdjustment;
 
 /**
  * Specifies whether the <code>ScalingAdjustment</code> is an absolute
@@ -79,13 +79,13 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *adjustmentType;
+@property (nonatomic, strong) NSString *adjustmentType;
 
 /**
  * The amount of time, in seconds, after a scaling activity completes
  * before any further trigger-related scaling activities can start.
  */
-@property (nonatomic, retain) NSNumber *cooldown;
+@property (nonatomic, strong) NSNumber *cooldown;
 
 /**
  * Used with <code>AdjustmentType</code> with the value
@@ -96,7 +96,7 @@
  * on a policy with an <code>AdjustmentType</code> other than
  * <code>PercentChangeInCapacity</code>.
  */
-@property (nonatomic, retain) NSNumber *minAdjustmentStep;
+@property (nonatomic, strong) NSNumber *minAdjustmentStep;
 
 /**
  * Returns a string representation of this object; useful for testing and

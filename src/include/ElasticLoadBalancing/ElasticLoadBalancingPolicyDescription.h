@@ -41,17 +41,17 @@
 /**
  * The name mof the policy associated with the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 /**
  * The name of the policy type associated with the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *policyTypeName;
+@property (nonatomic, strong) NSString *policyTypeName;
 
 /**
  * A list of policy attribute description structures.
  */
-@property (nonatomic, retain) NSMutableArray *policyAttributeDescriptions;
+@property (nonatomic, strong) NSMutableArray *policyAttributeDescriptions;
 
 /**
  * Adds a single object to policyAttributeDescriptions.

@@ -62,21 +62,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Summaries: %@,", versionSummaries] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Common Prefixes: %@,", commonPrefixes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Name: %@,", name] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Key Marker: %@,", keyMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Next Key Marker: %@,", nextKeyMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Version Id Marker: %@,", versionIdMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Next Version Id Marker: %@,", nextVersionIdMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Summaries: %@,", versionSummaries]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Common Prefixes: %@,", commonPrefixes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Name: %@,", name]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Key Marker: %@,", keyMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Next Key Marker: %@,", nextKeyMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Version Id Marker: %@,", versionIdMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Next Version Id Marker: %@,", nextVersionIdMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 -(void)addDeleteMarker:(S3VersionSummary *)deleteMarker
@@ -85,20 +85,6 @@
     [self.versionSummaries addObject:deleteMarker];
 }
 
--(void)dealloc
-{
-    [versionSummaries release];
-    [name release];
-    [prefix release];
-    [keyMarker release];
-    [nextKeyMarker release];
-    [versionIdMarker release];
-    [nextVersionIdMarker release];
-    [delimiter release];
-    [commonPrefixes release];
-
-    [super dealloc];
-}
 
 
 @end

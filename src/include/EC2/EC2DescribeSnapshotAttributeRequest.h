@@ -34,7 +34,7 @@
 /**
  * The ID of the EBS snapshot whose attribute is being described.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The name of the EBS attribute to describe. <p> Available attribute
@@ -43,7 +43,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>productCodes, createVolumePermission
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 
 /**

@@ -39,7 +39,7 @@
  * The state of monitoring on an Amazon EC2 instance (ex: enabled,
  * disabled).
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Returns a string representation of this object; useful for testing and

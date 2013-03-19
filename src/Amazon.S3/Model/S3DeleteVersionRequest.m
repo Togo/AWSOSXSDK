@@ -40,11 +40,5 @@
 }
 
 
--(void)dealloc
-{
-    [versionId release];
-    [mfa release];
-    [super dealloc];
-}
 
 @end

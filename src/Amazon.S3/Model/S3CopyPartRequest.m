@@ -77,11 +77,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [uploadId release];
-
-    [super dealloc];
-}
 
 @end

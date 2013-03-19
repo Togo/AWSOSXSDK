@@ -48,11 +48,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [configuration release];
-
-    [super dealloc];
-}
 
 @end

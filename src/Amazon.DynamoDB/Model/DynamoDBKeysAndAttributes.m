@@ -61,13 +61,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Keys: %@,", keys] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Keys: %@,", keys]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -78,13 +78,6 @@
 }
 
 
--(void)dealloc
-{
-    [keys release];
-    [attributesToGet release];
-
-    [super dealloc];
-}
 
 
 @end

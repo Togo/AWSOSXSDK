@@ -45,22 +45,22 @@
 /**
  *
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * The value of the AllocationId property for this object.
  */
-@property (nonatomic, retain) NSString *allocationId;
+@property (nonatomic, strong) NSString *allocationId;
 
 /**
  * The value of the AssociationId property for this object.
  */
-@property (nonatomic, retain) NSString *associationId;
+@property (nonatomic, strong) NSString *associationId;
 
 /**
  * The value of the Domain property for this object.
@@ -68,22 +68,22 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>vpc, standard
  */
-@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, strong) NSString *domain;
 
 /**
  * The value of the NetworkInterfaceId property for this object.
  */
-@property (nonatomic, retain) NSString *networkInterfaceId;
+@property (nonatomic, strong) NSString *networkInterfaceId;
 
 /**
  * The value of the NetworkInterfaceOwnerId property for this object.
  */
-@property (nonatomic, retain) NSString *networkInterfaceOwnerId;
+@property (nonatomic, strong) NSString *networkInterfaceOwnerId;
 
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * Returns a string representation of this object; useful for testing and

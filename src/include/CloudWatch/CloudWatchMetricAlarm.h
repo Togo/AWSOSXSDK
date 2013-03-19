@@ -63,7 +63,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmName;
+@property (nonatomic, strong) NSString *alarmName;
 
 /**
  * The Amazon Resource Name (ARN) of the alarm.
@@ -71,7 +71,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 1600<br/>
  */
-@property (nonatomic, retain) NSString *alarmArn;
+@property (nonatomic, strong) NSString *alarmArn;
 
 /**
  * The description for the alarm.
@@ -79,12 +79,12 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmDescription;
+@property (nonatomic, strong) NSString *alarmDescription;
 
 /**
  * The time stamp of the last update to the alarm configuration.
  */
-@property (nonatomic, retain) NSDate *alarmConfigurationUpdatedTimestamp;
+@property (nonatomic, strong) NSDate *alarmConfigurationUpdatedTimestamp;
 
 /**
  * Indicates whether actions should be executed during any changes to the
@@ -104,7 +104,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *oKActions;
+@property (nonatomic, strong) NSMutableArray *oKActions;
 
 /**
  * The list of actions to execute when this alarm transitions into an
@@ -116,7 +116,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *alarmActions;
+@property (nonatomic, strong) NSMutableArray *alarmActions;
 
 /**
  * The list of actions to execute when this alarm transitions into an
@@ -129,7 +129,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *insufficientDataActions;
+@property (nonatomic, strong) NSMutableArray *insufficientDataActions;
 
 /**
  * The state value for the alarm.
@@ -137,7 +137,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
  */
-@property (nonatomic, retain) NSString *stateValue;
+@property (nonatomic, strong) NSString *stateValue;
 
 /**
  * A human-readable explanation for the alarm's state.
@@ -145,7 +145,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 1023<br/>
  */
-@property (nonatomic, retain) NSString *stateReason;
+@property (nonatomic, strong) NSString *stateReason;
 
 /**
  * An explanation for the alarm's state in machine-readable JSON format
@@ -153,12 +153,12 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 4000<br/>
  */
-@property (nonatomic, retain) NSString *stateReasonData;
+@property (nonatomic, strong) NSString *stateReasonData;
 
 /**
  * The time stamp of the last update to the alarm's state.
  */
-@property (nonatomic, retain) NSDate *stateUpdatedTimestamp;
+@property (nonatomic, strong) NSDate *stateUpdatedTimestamp;
 
 /**
  * The name of the alarm's metric.
@@ -166,7 +166,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * The namespace of alarm's associated metric.
@@ -175,7 +175,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * The statistic to apply to the alarm's associated metric.
@@ -183,7 +183,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
  */
-@property (nonatomic, retain) NSString *statistic;
+@property (nonatomic, strong) NSString *statistic;
 
 /**
  * The list of dimensions associated with the alarm's associated metric.
@@ -191,7 +191,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The period in seconds over which the statistic is applied.
@@ -199,7 +199,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>60 - <br/>
  */
-@property (nonatomic, retain) NSNumber *period;
+@property (nonatomic, strong) NSNumber *period;
 
 /**
  * The unit of the alarm's associated metric.
@@ -207,7 +207,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * The number of periods over which data is compared to the specified
@@ -216,12 +216,12 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *evaluationPeriods;
+@property (nonatomic, strong) NSNumber *evaluationPeriods;
 
 /**
  * The value against which the specified statistic is compared.
  */
-@property (nonatomic, retain) NSNumber *threshold;
+@property (nonatomic, strong) NSNumber *threshold;
 
 /**
  * The arithmetic operation to use when comparing the specified
@@ -231,7 +231,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
  */
-@property (nonatomic, retain) NSString *comparisonOperator;
+@property (nonatomic, strong) NSString *comparisonOperator;
 
 /**
  * Adds a single object to oKActions.

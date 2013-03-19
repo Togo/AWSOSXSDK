@@ -39,12 +39,12 @@
 /**
  * The value of the Code property for this object.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * The value of the Message property for this object.
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /**
  * Returns a string representation of this object; useful for testing and

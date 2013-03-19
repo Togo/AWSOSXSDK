@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"ebs"]) {
-        EC2EbsBlockDeviceUnmarshaller *unmarshaller = [[[EC2EbsBlockDeviceUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setEbs:)] autorelease];
+        EC2EbsBlockDeviceUnmarshaller *unmarshaller = [[EC2EbsBlockDeviceUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setEbs:)];
         unmarshaller.endElementTagName = @"ebs";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -85,10 +85,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

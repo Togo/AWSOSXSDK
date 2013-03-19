@@ -21,7 +21,7 @@
     AutoScalingSetDesiredCapacityResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingSetDesiredCapacityResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingSetDesiredCapacityResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

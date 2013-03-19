@@ -32,6 +32,6 @@
 +(id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new cost allocation tagging configuration for the specified bucket. */
-@property (nonatomic, retain) S3BucketTaggingConfiguration *configuration;
+@property (nonatomic, strong) S3BucketTaggingConfiguration *configuration;
 
 @end

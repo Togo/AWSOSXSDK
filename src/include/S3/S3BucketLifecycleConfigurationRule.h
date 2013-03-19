@@ -33,13 +33,13 @@
 }
 
 /** The id for this rule **/
-@property (nonatomic, retain) NSString *ruleId;
+@property (nonatomic, strong) NSString *ruleId;
 
 /** The status for this rule **/
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /** The object key prefix for this rule **/
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** The expiration time for this rule in days **/
 @property (nonatomic, assign) NSInteger expirationInDays;
@@ -49,13 +49,13 @@
  * If expirationInDays is non-zero, this property will be
  * ignored.
  **/
-@property (nonatomic, retain) NSDate *expirationDate;
+@property (nonatomic, strong) NSDate *expirationDate;
 
 /** 
  * The list of storage class transitions.
  * Currently only one transition is supported.
  **/
-@property (nonatomic, retain) NSArray *transitions;
+@property (nonatomic, strong) NSArray *transitions;
 
 -(NSString *)toXml;
 

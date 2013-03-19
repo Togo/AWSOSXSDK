@@ -33,7 +33,7 @@
 /**
  * The name of the domain to delete.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 
 /**

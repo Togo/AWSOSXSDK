@@ -46,7 +46,7 @@
 /**
  * The Amazon Resource Name (ARN) assigned to the created topic.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * Returns a string representation of this object; useful for testing and

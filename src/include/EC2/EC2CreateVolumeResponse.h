@@ -43,7 +43,7 @@
 /**
  * The newly created EBS volume.
  */
-@property (nonatomic, retain) EC2Volume *volume;
+@property (nonatomic, strong) EC2Volume *volume;
 
 /**
  * Returns a string representation of this object; useful for testing and

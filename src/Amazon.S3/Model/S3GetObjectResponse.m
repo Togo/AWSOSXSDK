@@ -78,13 +78,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Metadata: %@,", metadata] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Last-Modified: %@,", lastModified] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Content-Type: %@,", contentType] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Metadata: %@,", metadata]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Last-Modified: %@,", lastModified]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Content-Type: %@,", contentType]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 #pragma mark NSURLConnection delegate methods
@@ -106,14 +106,5 @@
     }
 }
 
--(void)dealloc
-{
-    [metadata release];
-    [lastModified release];
-    [contentType release];
-    [redirectLocation release];
-
-    [super dealloc];
-}
 
 @end

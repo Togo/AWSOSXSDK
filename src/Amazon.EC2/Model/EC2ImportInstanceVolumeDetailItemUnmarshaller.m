@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"image"]) {
-        EC2DiskImageDescriptionUnmarshaller *unmarshaller = [[[EC2DiskImageDescriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImage:)] autorelease];
+        EC2DiskImageDescriptionUnmarshaller *unmarshaller = [[EC2DiskImageDescriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImage:)];
         unmarshaller.endElementTagName = @"image";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"volume"]) {
-        EC2DiskImageVolumeDescriptionUnmarshaller *unmarshaller = [[[EC2DiskImageVolumeDescriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setVolume:)] autorelease];
+        EC2DiskImageVolumeDescriptionUnmarshaller *unmarshaller = [[EC2DiskImageVolumeDescriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setVolume:)];
         unmarshaller.endElementTagName = @"volume";
         [parser setDelegate:unmarshaller];
     }
@@ -39,7 +39,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -101,10 +101,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

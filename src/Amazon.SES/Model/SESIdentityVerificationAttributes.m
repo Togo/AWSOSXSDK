@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VerificationStatus: %@,", verificationStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VerificationToken: %@,", verificationToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VerificationStatus: %@,", verificationStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VerificationToken: %@,", verificationToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [verificationStatus release];
-    [verificationToken release];
-
-    [super dealloc];
-}
 
 
 @end

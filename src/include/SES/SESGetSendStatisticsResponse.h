@@ -44,7 +44,7 @@
  * A list of data points, each of which represents 15 minutes of
  * activity.
  */
-@property (nonatomic, retain) NSMutableArray *sendDataPoints;
+@property (nonatomic, strong) NSMutableArray *sendDataPoints;
 
 
 

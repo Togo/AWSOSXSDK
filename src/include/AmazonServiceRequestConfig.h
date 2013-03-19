@@ -28,7 +28,7 @@
 }
 
 /** Request specific credentials. */
-@property (nonatomic, retain) AmazonCredentials *credentials;
+@property (nonatomic, strong) AmazonCredentials *credentials;
 
 
 /** Request specific endpoint.  This value will override the setting
@@ -36,17 +36,17 @@
  *  Inspect the 'endpoint' property in the AmazonXXXClient class to
  *  see the default endpoint.
  */
-@property (nonatomic, retain) NSString *requestEndpoint;
+@property (nonatomic, strong) NSString *requestEndpoint;
 
 /**
  * The connection object used to make the request.
  */
-@property (nonatomic, retain) NSURLConnection *urlConnection;
+@property (nonatomic, strong) NSURLConnection *urlConnection;
 
 /**
  * Open property that enables user to distinquish various requests.
  */
-@property (nonatomic, retain) NSString *requestTag;
+@property (nonatomic, strong) NSString *requestTag;
 
 
 -(void)setDelegate:(id<AmazonServiceRequestDelegate> )delegate;

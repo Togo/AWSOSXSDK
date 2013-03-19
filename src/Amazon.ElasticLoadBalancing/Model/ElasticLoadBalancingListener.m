@@ -56,29 +56,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerPort: %@,", loadBalancerPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceProtocol: %@,", instanceProtocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstancePort: %@,", instancePort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SSLCertificateId: %@,", sSLCertificateId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerPort: %@,", loadBalancerPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceProtocol: %@,", instanceProtocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstancePort: %@,", instancePort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SSLCertificateId: %@,", sSLCertificateId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [protocol release];
-    [loadBalancerPort release];
-    [instanceProtocol release];
-    [instancePort release];
-    [sSLCertificateId release];
-
-    [super dealloc];
-}
 
 
 @end

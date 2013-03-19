@@ -25,7 +25,7 @@
 }
 
 /** The uploadId of the multipart upload to list */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** The maximum number of parts to return.
  *

@@ -32,7 +32,7 @@
     NSString                  *ifMatch;
     NSString                  *ifNoneMatch;
     NSString                  *versionId;
-    NSOutputStream            *outputStream;
+    NSOutputStream            *__weak outputStream;
     S3ResponseHeaderOverrides *responseHeaderOverrides;
 }
 
@@ -43,19 +43,19 @@
 @property (nonatomic, readonly) int64_t rangeEnd;
 
 /** Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified). */
-@property (nonatomic, retain) NSDate *ifModifiedSince;
+@property (nonatomic, strong) NSDate *ifModifiedSince;
 
 /** Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed). */
-@property (nonatomic, retain) NSDate *ifUnmodifiedSince;
+@property (nonatomic, strong) NSDate *ifUnmodifiedSince;
 
 /** Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed). */
-@property (nonatomic, retain) NSString *ifMatch;
+@property (nonatomic, strong) NSString *ifMatch;
 
 /** Specifies the (optional) version to retrieve **/
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /** Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified). */
-@property (nonatomic, retain) NSString *ifNoneMatch;
+@property (nonatomic, strong) NSString *ifNoneMatch;
 
 /** Gets and Sets the output stream for the response data.
  * <p>
@@ -66,10 +66,10 @@
  * The stream must be opened and scheduled in the desired runloop.
  * The SDK will not close the stream.
  */
-@property (nonatomic, assign) NSOutputStream *outputStream;
+@property (nonatomic, weak) NSOutputStream *outputStream;
 
 /** Specify one or more overrides to headers in the response to this request */
-@property (nonatomic, retain) S3ResponseHeaderOverrides *responseHeaderOverrides;
+@property (nonatomic, strong) S3ResponseHeaderOverrides *responseHeaderOverrides;
 
 /** Initialize the request setting the key and bucketName properties. */
 -(S3GetObjectRequest *)initWithKey:(NSString *)key withBucket:(NSString *)bucket;

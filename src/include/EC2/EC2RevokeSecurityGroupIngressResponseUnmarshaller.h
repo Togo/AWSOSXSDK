@@ -21,7 +21,7 @@
     EC2RevokeSecurityGroupIngressResponse *response;
 }
 
-@property (nonatomic, readonly) EC2RevokeSecurityGroupIngressResponse *response;
+@property (weak, nonatomic, readonly) EC2RevokeSecurityGroupIngressResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

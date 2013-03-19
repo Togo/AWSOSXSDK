@@ -43,13 +43,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BounceTopic: %@,", bounceTopic] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ComplaintTopic: %@,", complaintTopic] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ForwardingEnabled: %d,", forwardingEnabled] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BounceTopic: %@,", bounceTopic]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ComplaintTopic: %@,", complaintTopic]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ForwardingEnabled: %d,", forwardingEnabled]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -60,13 +60,6 @@
 }
 
 
--(void)dealloc
-{
-    [bounceTopic release];
-    [complaintTopic release];
-
-    [super dealloc];
-}
 
 
 @end

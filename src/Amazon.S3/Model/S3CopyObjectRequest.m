@@ -103,18 +103,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [sourceKey release];
-    [sourceBucket release];
-    [metadataDirective release];
-    [ifMatch release];
-    [ifNoneMatch release];
-    [ifModifiedSince release];
-    [ifUnmodifiedSince release];
-    [redirectLocation release];
-
-    [super dealloc];
-}
 
 @end

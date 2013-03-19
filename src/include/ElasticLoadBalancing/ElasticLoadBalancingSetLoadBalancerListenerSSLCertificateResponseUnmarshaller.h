@@ -21,7 +21,7 @@
     ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *response;
 }
 
-@property (nonatomic, readonly) ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *response;
+@property (weak, nonatomic, readonly) ElasticLoadBalancingSetLoadBalancerListenerSSLCertificateResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

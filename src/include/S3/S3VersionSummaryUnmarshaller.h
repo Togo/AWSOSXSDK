@@ -26,6 +26,6 @@
 }
 
 /** The S3VersionSummary represented by the XML */
-@property (nonatomic, readonly) S3VersionSummary *summary;
+@property (weak, nonatomic, readonly) S3VersionSummary *summary;
 
 @end

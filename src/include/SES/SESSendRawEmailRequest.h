@@ -47,12 +47,12 @@
  * over any <i>Return-Path</i> header that you might include in the raw
  * text of the message. </note>
  */
-@property (nonatomic, retain) NSString *source;
+@property (nonatomic, strong) NSString *source;
 
 /**
  * A list of destinations for the message.
  */
-@property (nonatomic, retain) NSMutableArray *destinations;
+@property (nonatomic, strong) NSMutableArray *destinations;
 
 /**
  * The raw text of the message. The client is responsible for ensuring
@@ -65,7 +65,7 @@
  * SES Developer Guide</a> for more details. </li> <li>Content must be
  * base64-encoded, if MIME requires it.</li> </ul>
  */
-@property (nonatomic, retain) SESRawMessage *rawMessage;
+@property (nonatomic, strong) SESRawMessage *rawMessage;
 
 /**
  * Adds a single object to destinations.

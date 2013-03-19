@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PutRequest: %@,", putRequest] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeleteRequest: %@,", deleteRequest] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PutRequest: %@,", putRequest]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeleteRequest: %@,", deleteRequest]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [putRequest release];
-    [deleteRequest release];
-
-    [super dealloc];
-}
 
 
 @end

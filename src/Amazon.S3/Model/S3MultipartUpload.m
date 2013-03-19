@@ -25,17 +25,5 @@
 @synthesize storageClass;
 @synthesize initiated;
 
--(void)dealloc
-{
-    [key release];
-    [bucket release];
-    [uploadId release];
-    [initiator release];
-    [owner release];
-    [initiated release];
-    [storageClass release];
-
-    [super dealloc];
-}
 
 @end

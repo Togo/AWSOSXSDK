@@ -50,12 +50,12 @@
 /**
  * The value of the Items property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 /**
  * Number of items in the response.
  */
-@property (nonatomic, retain) NSNumber *count;
+@property (nonatomic, strong) NSNumber *count;
 
 /**
  * Number of items in the complete scan before any filters are applied. A
@@ -63,7 +63,7 @@
  * <code>Count</code> results indicates an inefficient <code>Scan</code>
  * operation.
  */
-@property (nonatomic, retain) NSNumber *scannedCount;
+@property (nonatomic, strong) NSNumber *scannedCount;
 
 /**
  * Primary key of the item where the scan operation stopped. Provide this
@@ -72,7 +72,7 @@
  * scan result set is complete (i.e. the operation processed the "last
  * page").
  */
-@property (nonatomic, retain) DynamoDBKey *lastEvaluatedKey;
+@property (nonatomic, strong) DynamoDBKey *lastEvaluatedKey;
 
 /**
  * The number of Capacity Units of the provisioned throughput of the
@@ -83,7 +83,7 @@
  * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
  * consume <code>WriteCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSNumber *consumedCapacityUnits;
+@property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 
 

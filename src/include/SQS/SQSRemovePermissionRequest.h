@@ -34,13 +34,13 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * The identification of the permission to remove. This is the label
  * added with the <a>AddPermission</a> operation.
  */
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, strong) NSString *label;
 
 
 /**

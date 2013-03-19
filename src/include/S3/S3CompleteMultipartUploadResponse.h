@@ -24,6 +24,6 @@
     S3CompleteMultipartUploadResult *completeMultipartUploadResult;
 }
 
-@property (nonatomic, readonly) S3CompleteMultipartUploadResult *completeMultipartUploadResult;
+@property (weak, nonatomic, readonly) S3CompleteMultipartUploadResult *completeMultipartUploadResult;
 
 @end

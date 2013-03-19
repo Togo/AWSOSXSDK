@@ -39,17 +39,17 @@
 /**
  * The ID of the instance from which to create the new image.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The name for the new AMI being created.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The description for the new AMI being created.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * By default this property is set to <code>false</code>, which means
@@ -66,7 +66,7 @@
 /**
  * The value of the BlockDeviceMappings property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 
 /**

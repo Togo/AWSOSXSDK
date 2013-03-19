@@ -45,14 +45,14 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * A map of the attributes for the item, and must include the primary key
  * values that define the item. Other attribute name-value pairs can be
  * provided for the item.
  */
-@property (nonatomic, retain) NSMutableDictionary *item;
+@property (nonatomic, strong) NSMutableDictionary *item;
 
 /**
  * Designates an attribute for a conditional modification. The
@@ -60,7 +60,7 @@
  * name, and whether or not Amazon DynamoDB should check to see if the
  * attribute has a particular value before modifying it.
  */
-@property (nonatomic, retain) NSMutableDictionary *expected;
+@property (nonatomic, strong) NSMutableDictionary *expected;
 
 /**
  * Use this parameter if you want to get the attribute name-value pairs
@@ -82,7 +82,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
  */
-@property (nonatomic, retain) NSString *returnValues;
+@property (nonatomic, strong) NSString *returnValues;
 
 
 /**

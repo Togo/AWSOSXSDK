@@ -65,13 +65,5 @@
 }
 
 
--(void)dealloc
-{
-    [prefix release];
-    [keyMarker release];
-    [versionIdMarker release];
-    [delimiter release];
-    [super dealloc];
-}
 
 @end

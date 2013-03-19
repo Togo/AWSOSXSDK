@@ -45,28 +45,28 @@
  * behalf. <p> If you specify a bucket that belongs to someone else,
  * Amazon EC2 returns an error.
  */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /**
  * The prefix to use when storing the AMI in S3.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /**
  * The Access Key ID of the owner of the Amazon S3 bucket.
  */
-@property (nonatomic, retain) NSString *aWSAccessKeyId;
+@property (nonatomic, strong) NSString *aWSAccessKeyId;
 
 /**
  * A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
  * permission to upload items into Amazon S3 on the user's behalf.
  */
-@property (nonatomic, retain) NSString *uploadPolicy;
+@property (nonatomic, strong) NSString *uploadPolicy;
 
 /**
  * The signature of the Base64 encoded JSON document.
  */
-@property (nonatomic, retain) NSString *uploadPolicySignature;
+@property (nonatomic, strong) NSString *uploadPolicySignature;
 
 /**
  * Returns a string representation of this object; useful for testing and

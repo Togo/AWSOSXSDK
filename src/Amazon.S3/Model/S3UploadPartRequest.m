@@ -61,14 +61,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [contentMD5 release];
-    [uploadId release];
-    [data release];
-    [stream release];
-
-    [super dealloc];
-}
 
 @end

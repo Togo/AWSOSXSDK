@@ -43,7 +43,7 @@
 /**
  * Contains a set of one or more <a>Subnet</a> instances.
  */
-@property (nonatomic, retain) NSMutableArray *subnets;
+@property (nonatomic, strong) NSMutableArray *subnets;
 
 
 

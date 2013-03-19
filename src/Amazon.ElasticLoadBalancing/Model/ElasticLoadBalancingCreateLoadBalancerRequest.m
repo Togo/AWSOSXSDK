@@ -101,29 +101,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Listeners: %@,", listeners] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Listeners: %@,", listeners]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [loadBalancerName release];
-    [listeners release];
-    [availabilityZones release];
-    [subnets release];
-    [securityGroups release];
-
-    [super dealloc];
-}
 
 
 @end

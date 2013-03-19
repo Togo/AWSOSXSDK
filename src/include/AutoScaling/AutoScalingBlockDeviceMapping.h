@@ -45,7 +45,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *virtualName;
+@property (nonatomic, strong) NSString *virtualName;
 
 /**
  * The name of the device within Amazon EC2.
@@ -54,12 +54,12 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, strong) NSString *deviceName;
 
 /**
  * The Elastic Block Storage volume information.
  */
-@property (nonatomic, retain) AutoScalingEbs *ebs;
+@property (nonatomic, strong) AutoScalingEbs *ebs;
 
 /**
  * Returns a string representation of this object; useful for testing and

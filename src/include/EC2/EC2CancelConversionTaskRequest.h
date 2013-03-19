@@ -41,12 +41,12 @@
 /**
  * The value of the ConversionTaskId property for this object.
  */
-@property (nonatomic, retain) NSString *conversionTaskId;
+@property (nonatomic, strong) NSString *conversionTaskId;
 
 /**
  * The value of the ReasonMessage property for this object.
  */
-@property (nonatomic, retain) NSString *reasonMessage;
+@property (nonatomic, strong) NSString *reasonMessage;
 
 /**
  * Returns a string representation of this object; useful for testing and

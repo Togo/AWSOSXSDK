@@ -28,7 +28,7 @@
                                                                     userInfo:nil];
     e.message = theMessage;
     
-    return [e autorelease];
+    return e;
 }
 
 +(id)exceptionWithStatusCode:(NSInteger)theStatusCode
@@ -38,7 +38,7 @@
                                                                     userInfo:nil];
     e.statusCode = theStatusCode;
     
-    return [e autorelease];
+    return e;
 }
 
 +(id)exceptionWithMessage:(NSString *)theMessage withErrorCode:(NSString *)theErrorCode withStatusCode:(NSInteger)theStatusCode withRequestId:(NSString *)theRequestId
@@ -50,7 +50,7 @@
     e.statusCode = theStatusCode;
     e.requestId  = theRequestId;
     
-    return [e autorelease];
+    return e;
 }
 
 - (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo
@@ -78,7 +78,7 @@
 
 -(NSString *)description
 {
-    return [[[NSString alloc] initWithFormat:@"%@ { RequestId:%@, ErrorCode:%@, Message:%@ }", NSStringFromClass([self class]), requestId, errorCode, message] autorelease];
+    return [[NSString alloc] initWithFormat:@"%@ { RequestId:%@, ErrorCode:%@, Message:%@ }", NSStringFromClass([self class]), requestId, errorCode, message];
 }
 
 -(NSMutableDictionary *)additionalFields
@@ -89,15 +89,6 @@
     return additionalFields;
 }
 
--(void)dealloc
-{
-    [requestId release];
-    [errorCode release];
-    [serviceName release];
-    [additionalFields release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -59,7 +59,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
@@ -71,7 +71,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The name of the Amazon EC2 key pair.
@@ -80,7 +80,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * The names of the security groups with which to associate Amazon EC2 or
@@ -95,7 +95,7 @@
  * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
  * Security Groups</a> in the Amazon VPC product documentation.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * The user data available to the launched Amazon EC2 instances. For more
@@ -107,7 +107,7 @@
  * <b>Length: </b>0 - 21847<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *userData;
+@property (nonatomic, strong) NSString *userData;
 
 /**
  * The instance type of the Amazon EC2 instance. For more information
@@ -119,7 +119,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The ID of the kernel associated with the Amazon EC2 AMI.
@@ -128,7 +128,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * The ID of the RAM disk associated with the Amazon EC2 AMI.
@@ -137,7 +137,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * A list of mappings that specify how block devices are exposed to the
@@ -148,7 +148,7 @@
  * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
  * Block Device Mapping</a> in the Amazon EC2 product documentation.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * Enables detailed monitoring, which is enabled by default. <p> When
@@ -159,7 +159,7 @@
  * see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
  * CloudWatch</a> product page.
  */
-@property (nonatomic, retain) AutoScalingInstanceMonitoring *instanceMonitoring;
+@property (nonatomic, strong) AutoScalingInstanceMonitoring *instanceMonitoring;
 
 /**
  * The maximum hourly price to be paid for any Spot Instance launched to
@@ -173,7 +173,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *spotPrice;
+@property (nonatomic, strong) NSString *spotPrice;
 
 /**
  * The name or the Amazon Resource Name (ARN) of the instance profile
@@ -187,7 +187,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *iamInstanceProfile;
+@property (nonatomic, strong) NSString *iamInstanceProfile;
 
 /**
  * The value of the EbsOptimized property for this object.

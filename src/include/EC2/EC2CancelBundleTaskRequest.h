@@ -33,7 +33,7 @@
 /**
  * The ID of the bundle task to cancel.
  */
-@property (nonatomic, retain) NSString *bundleId;
+@property (nonatomic, strong) NSString *bundleId;
 
 
 /**

@@ -45,7 +45,7 @@
 /**
  * The value of the SpotInstanceRequests property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *spotInstanceRequests;
+@property (nonatomic, strong) NSMutableArray *spotInstanceRequests;
 
 
 

@@ -61,14 +61,14 @@ static NSTimeInterval _clockskew = 0.0;
 
 +(NSString *)urlEncode:(NSString *)input
 {
-    NSString *encoded = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)input, NULL, (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ", kCFStringEncodingUTF8);
+    NSString *encoded = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)input, NULL, (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ", kCFStringEncodingUTF8));
 
-    return [encoded autorelease];
+    return encoded;
 }
 
 +(NSData *)hexDecode:(NSString *)hexString
 {
-    NSMutableData *stringData = [[[NSMutableData alloc] init] autorelease];
+    NSMutableData *stringData = [[NSMutableData alloc] init];
     unsigned char whole_byte;
     char          byte_chars[3] = { '\0', '\0', '\0' };
     NSInteger     i;
@@ -98,7 +98,7 @@ static NSTimeInterval _clockskew = 0.0;
     }
     free(chars);
 
-    return [hexString autorelease];
+    return hexString;
 }
 
 +(NSString *)hexEncodeData:(NSData *)data
@@ -114,7 +114,7 @@ static NSTimeInterval _clockskew = 0.0;
         [hexString appendString:[NSString stringWithFormat:@"%x", chars[i]]];
     }
 
-    return [hexString autorelease];
+    return hexString;
 }
 
 +(NSString *)MIMETypeForExtension:(NSString *)extension
@@ -295,7 +295,7 @@ static NSTimeInterval _clockskew = 0.0;
 
 +(NSNumber *)convertStringToNumber:(NSString *)string
 {
-    NSNumberFormatter *formatter = [[[NSNumberFormatter alloc] init] autorelease];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setLocale:[AmazonSDKUtil timestampLocale]];
@@ -337,7 +337,6 @@ static NSTimeInterval _clockskew = 0.0;
 
     NSDate *localDate = [parsed dateByAddingTimeInterval:_clockskew];
     
-    [dateFormatter release];
     
     return localDate;
 }
@@ -354,7 +353,6 @@ static NSTimeInterval _clockskew = 0.0;
     
     NSString *formatted = [dateFormatter stringFromDate:realDate];
     
-    [dateFormatter release];
     
     return formatted;
 }
@@ -605,7 +603,7 @@ static NSTimeInterval _clockskew = 0.0;
         }
     }
 
-    NSData *objData = [[[NSData alloc] initWithBytes:buffer length:outputIdx] autorelease];
+    NSData *objData = [[NSData alloc] initWithBytes:buffer length:outputIdx];
     free(buffer);
     return objData;
 }

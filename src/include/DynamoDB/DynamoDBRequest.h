@@ -26,7 +26,7 @@
 }
 
 
-@property (nonatomic, retain) NSString *content;
+@property (nonatomic, strong) NSString *content;
 
 
 -(void)addValue:(NSString *)theValue forHeader:(NSString *)theHeader;

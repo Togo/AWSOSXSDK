@@ -27,12 +27,12 @@
 }
 
 /** Inner text of the current XML node */
-@property (nonatomic, readonly) NSString *currentText;
+@property (weak, nonatomic, readonly) NSString *currentText;
 /** The tag name of the current XML node */
-@property (nonatomic, retain) NSString   *currentTag;
+@property (nonatomic, strong) NSString   *currentTag;
 
 /** If an alias has been set, this is the expected container tag for the unmarshaller. */
-@property (nonatomic, retain) NSString *endElementTagName;
+@property (nonatomic, strong) NSString *endElementTagName;
 
 /** Set up this unmarshaller at the bottom of a call chain.
  * When parsing nested tags, control is handed to another delegate.

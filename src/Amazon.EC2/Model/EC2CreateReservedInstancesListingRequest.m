@@ -52,27 +52,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PriceSchedules: %@,", priceSchedules] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PriceSchedules: %@,", priceSchedules]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reservedInstancesId release];
-    [instanceCount release];
-    [priceSchedules release];
-    [clientToken release];
-
-    [super dealloc];
-}
 
 
 @end

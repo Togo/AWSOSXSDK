@@ -36,14 +36,14 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * The unique identification of the permission you're setting (e.g.,
  * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
  * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
  */
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, strong) NSString *label;
 
 /**
  * The AWS account number of the <a
@@ -51,12 +51,12 @@
  * who will be given permission. The principal must have an AWS account,
  * but does not need to be signed up for Amazon SQS.
  */
-@property (nonatomic, retain) NSMutableArray *aWSAccountIds;
+@property (nonatomic, strong) NSMutableArray *aWSAccountIds;
 
 /**
  * The action the client wants to allow for the specified principal.
  */
-@property (nonatomic, retain) NSMutableArray *actions;
+@property (nonatomic, strong) NSMutableArray *actions;
 
 
 /**

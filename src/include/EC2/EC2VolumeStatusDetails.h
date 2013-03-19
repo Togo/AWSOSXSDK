@@ -39,12 +39,12 @@
 /**
  * The value of the Name property for this object.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * Returns a string representation of this object; useful for testing and

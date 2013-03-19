@@ -37,15 +37,9 @@
 
 
     NSString *retval = [NSString stringWithString:xml];
-    [xml release];
 
     return retval;
 }
 
--(void)dealloc
-{
-    [tags release];
-    [super dealloc];
-}
 
 @end

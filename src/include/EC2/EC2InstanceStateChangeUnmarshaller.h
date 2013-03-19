@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2InstanceStateChange *response;
+@property (weak, nonatomic, readonly) EC2InstanceStateChange *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

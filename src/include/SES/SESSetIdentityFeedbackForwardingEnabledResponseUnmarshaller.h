@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) SESSetIdentityFeedbackForwardingEnabledResponse *response;
+@property (weak, nonatomic, readonly) SESSetIdentityFeedbackForwardingEnabledResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

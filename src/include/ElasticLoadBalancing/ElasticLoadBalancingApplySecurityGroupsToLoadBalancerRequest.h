@@ -42,14 +42,14 @@
  * The name associated with the LoadBalancer. The name must be unique
  * within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A list of security group IDs to associate with your LoadBalancer in
  * VPC. The security group IDs must be provided as the ID and not the
  * security group name (For example, sg-1234).
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * Adds a single object to securityGroups.

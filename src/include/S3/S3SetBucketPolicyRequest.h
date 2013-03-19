@@ -40,6 +40,6 @@
 
 
 /** The bucket policy */
-@property (nonatomic, retain) S3BucketPolicy *policy;
+@property (nonatomic, strong) S3BucketPolicy *policy;
 
 @end

@@ -32,7 +32,7 @@
 }
 
 
-@property (nonatomic, readonly) SQSChangeMessageVisibilityBatchResponse *response;
+@property (weak, nonatomic, readonly) SQSChangeMessageVisibilityBatchResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

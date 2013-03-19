@@ -34,13 +34,13 @@
 /**
  * The elastic IP address that you are disassociating from the instance.
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * Association ID corresponding to the VPC elastic IP address you want to
  * disassociate.
  */
-@property (nonatomic, retain) NSString *associationId;
+@property (nonatomic, strong) NSString *associationId;
 
 
 /**

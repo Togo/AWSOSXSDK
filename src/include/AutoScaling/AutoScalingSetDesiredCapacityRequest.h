@@ -47,12 +47,12 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The new capacity setting for the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * By default, <code>SetDesiredCapacity</code> overrides any cooldown

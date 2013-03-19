@@ -38,7 +38,7 @@
  *
  * These rolled-up keys are not returned elsewhere in the response.
  */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /** Gets and sets the keyMarker property.
  *
@@ -53,12 +53,12 @@
  * uploads have upload IDs lexicographically greater than the specified
  * UploadIdMarker.
  */
-@property (nonatomic, retain) NSString *keyMarker;
+@property (nonatomic, strong) NSString *keyMarker;
 
 /** Gets and sets the Prefix property.
  *  All keys matched will have this prefix.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** Gets and sets the uploadIdMarker property.
  *
@@ -68,7 +68,7 @@
  * uploads for a key equal to the KeyMarker may be included in the list
  * only if they have an upload ID lexicographically greater than the specified
  */
-@property (nonatomic, retain) NSString *uploadIdMarker;
+@property (nonatomic, strong) NSString *uploadIdMarker;
 
 /** Gets and sets the maximum number of multipart uploads to return in the response. */
 @property (nonatomic) NSInteger maxUploads;

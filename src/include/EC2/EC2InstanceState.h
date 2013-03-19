@@ -41,7 +41,7 @@
  * and should be ignored. The low byte is set based on the state
  * represented.
  */
-@property (nonatomic, retain) NSNumber *code;
+@property (nonatomic, strong) NSNumber *code;
 
 /**
  * The current state of the instance.
@@ -49,7 +49,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * Returns a string representation of this object; useful for testing and

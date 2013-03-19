@@ -28,7 +28,7 @@
     
     if ([elementName isEqualToString:@"Transition"])
     {
-        [parser setDelegate:[[[S3BucketLifecycleConfigurationTransitionUnmarshaller alloc] initWithCaller:self withParentObject:[self rule].transitions withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3BucketLifecycleConfigurationTransitionUnmarshaller alloc] initWithCaller:self withParentObject:[self rule].transitions withSetter:@selector(addObject:)]];
     }
 }
 
@@ -85,11 +85,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [rule release];
-    
-    [super dealloc];
-}
 
 @end

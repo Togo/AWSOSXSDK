@@ -45,7 +45,7 @@
 /**
  * An updated list of instances for the LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *instances;
+@property (nonatomic, strong) NSMutableArray *instances;
 
 
 

@@ -63,29 +63,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IpProtocol: %@,", ipProtocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"FromPort: %@,", fromPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ToPort: %@,", toPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserIdGroupPairs: %@,", userIdGroupPairs] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IpRanges: %@,", ipRanges] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IpProtocol: %@,", ipProtocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"FromPort: %@,", fromPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ToPort: %@,", toPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserIdGroupPairs: %@,", userIdGroupPairs]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IpRanges: %@,", ipRanges]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [ipProtocol release];
-    [fromPort release];
-    [toPort release];
-    [userIdGroupPairs release];
-    [ipRanges release];
-
-    [super dealloc];
-}
 
 
 @end

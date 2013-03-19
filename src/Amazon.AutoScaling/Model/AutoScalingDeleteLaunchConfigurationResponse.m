@@ -28,18 +28,15 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ResourceInUse"]) {
-        [newException release];
         newException = [[AutoScalingResourceInUseException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -51,12 +48,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

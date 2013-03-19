@@ -25,7 +25,7 @@
 
 +(DynamoDBTableDescription *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBTableDescription *tableDescription = [[[DynamoDBTableDescription alloc] init] autorelease];
+    DynamoDBTableDescription *tableDescription = [[DynamoDBTableDescription alloc] init];
 
 
 

@@ -34,13 +34,13 @@
 /**
  * The elastic IP address that you are releasing from your account.
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * The allocation ID that AWS provided when you allocated the address for
  * use with Amazon VPC.
  */
-@property (nonatomic, retain) NSString *allocationId;
+@property (nonatomic, strong) NSString *allocationId;
 
 
 /**

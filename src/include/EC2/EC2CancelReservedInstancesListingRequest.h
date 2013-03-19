@@ -40,7 +40,7 @@
 /**
  * The value of the ReservedInstancesListingId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesListingId;
+@property (nonatomic, strong) NSString *reservedInstancesListingId;
 
 /**
  * Returns a string representation of this object; useful for testing and

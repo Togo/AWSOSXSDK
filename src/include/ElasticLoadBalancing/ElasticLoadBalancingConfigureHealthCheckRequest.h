@@ -36,13 +36,13 @@
  * The mnemonic name associated with the LoadBalancer. This name must be
  * unique within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A structure containing the configuration information for the new
  * healthcheck.
  */
-@property (nonatomic, retain) ElasticLoadBalancingHealthCheck *healthCheck;
+@property (nonatomic, strong) ElasticLoadBalancingHealthCheck *healthCheck;
 
 
 /**

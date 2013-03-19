@@ -56,31 +56,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Value: %@,", value] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatisticValues: %@,", statisticValues] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Unit: %@,", unit] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Value: %@,", value]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatisticValues: %@,", statisticValues]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Unit: %@,", unit]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [metricName release];
-    [dimensions release];
-    [timestamp release];
-    [value release];
-    [statisticValues release];
-    [unit release];
-
-    [super dealloc];
-}
 
 
 @end

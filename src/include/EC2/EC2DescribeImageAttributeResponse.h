@@ -43,7 +43,7 @@
 /**
  * The described image attribute of the associated AMI.
  */
-@property (nonatomic, retain) EC2ImageAttribute *imageAttribute;
+@property (nonatomic, strong) EC2ImageAttribute *imageAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and

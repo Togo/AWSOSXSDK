@@ -25,63 +25,63 @@
 
 
     if ([elementName isEqualToString:@"instanceType"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceType:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceType:)];
         unmarshaller.endElementTagName   = @"instanceType";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"kernel"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setKernelId:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setKernelId:)];
         unmarshaller.endElementTagName   = @"kernel";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"ramdisk"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setRamdiskId:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setRamdiskId:)];
         unmarshaller.endElementTagName   = @"ramdisk";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"userData"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setUserData:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setUserData:)];
         unmarshaller.endElementTagName   = @"userData";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"disableApiTermination"]) {
-        AmazonBoolValueUnmarshaller *unmarshaller = [[[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setDisableApiTermination:)] autorelease];
+        AmazonBoolValueUnmarshaller *unmarshaller = [[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setDisableApiTermination:)];
         unmarshaller.endElementTagName   = @"disableApiTermination";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"instanceInitiatedShutdownBehavior"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceInitiatedShutdownBehavior:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceInitiatedShutdownBehavior:)];
         unmarshaller.endElementTagName   = @"instanceInitiatedShutdownBehavior";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"rootDeviceName"]) {
-        AmazonValueUnmarshaller *unmarshaller = [[[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setRootDeviceName:)] autorelease];
+        AmazonValueUnmarshaller *unmarshaller = [[AmazonValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setRootDeviceName:)];
         unmarshaller.endElementTagName   = @"rootDeviceName";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"ebsOptimized"]) {
-        AmazonBoolValueUnmarshaller *unmarshaller = [[[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setEbsOptimized:)] autorelease];
+        AmazonBoolValueUnmarshaller *unmarshaller = [[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setEbsOptimized:)];
         unmarshaller.endElementTagName   = @"ebsOptimized";
         unmarshaller.internalElementName = @"value";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"blockDeviceMapping"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"blockDeviceMapping";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2InstanceBlockDeviceMappingUnmarshaller class];
@@ -90,7 +90,7 @@
     }
 
     if ([elementName isEqualToString:@"productCodes"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.productCodes withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.productCodes withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"productCodes";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2ProductCodeUnmarshaller class];
@@ -101,7 +101,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -143,10 +143,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

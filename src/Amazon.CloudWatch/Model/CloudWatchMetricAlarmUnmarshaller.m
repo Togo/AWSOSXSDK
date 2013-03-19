@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"OKActions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.oKActions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.oKActions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"OKActions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"AlarmActions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.alarmActions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.alarmActions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"AlarmActions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -43,7 +43,7 @@
     }
 
     if ([elementName isEqualToString:@"InsufficientDataActions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.insufficientDataActions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.insufficientDataActions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"InsufficientDataActions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -52,7 +52,7 @@
     }
 
     if ([elementName isEqualToString:@"Dimensions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.dimensions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.dimensions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Dimensions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [CloudWatchDimensionUnmarshaller class];
@@ -63,7 +63,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -179,10 +179,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

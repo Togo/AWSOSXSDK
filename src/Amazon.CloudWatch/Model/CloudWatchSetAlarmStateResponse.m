@@ -28,23 +28,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ResourceNotFound"]) {
-        [newException release];
         newException = [[CloudWatchResourceNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidFormat"]) {
-        [newException release];
         newException = [[CloudWatchInvalidFormatException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -56,12 +52,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

@@ -23,7 +23,7 @@
 
 +(DynamoDBBatchWriteResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBBatchWriteResponse *batchWriteResponse = [[[DynamoDBBatchWriteResponse alloc] init] autorelease];
+    DynamoDBBatchWriteResponse *batchWriteResponse = [[DynamoDBBatchWriteResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

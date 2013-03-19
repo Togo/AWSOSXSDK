@@ -18,6 +18,6 @@
     S3Part *part;
 }
 
-@property (nonatomic, readonly) S3Part *part;
+@property (weak, nonatomic, readonly) S3Part *part;
 
 @end

@@ -43,7 +43,7 @@
 /**
  * Contains information about the specified <code>PlacementGroups</code>.
  */
-@property (nonatomic, retain) NSMutableArray *placementGroups;
+@property (nonatomic, strong) NSMutableArray *placementGroups;
 
 
 

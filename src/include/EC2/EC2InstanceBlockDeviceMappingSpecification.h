@@ -43,24 +43,24 @@
  * The device name (e.g., <code>/dev/sdh</code>) at which the block
  * device is exposed on the instance.
  */
-@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, strong) NSString *deviceName;
 
 /**
  * The EBS instance block device specification describing the EBS block
  * device to map to the specified device name on a running instance.
  */
-@property (nonatomic, retain) EC2EbsInstanceBlockDeviceSpecification *ebs;
+@property (nonatomic, strong) EC2EbsInstanceBlockDeviceSpecification *ebs;
 
 /**
  * The virtual device name.
  */
-@property (nonatomic, retain) NSString *virtualName;
+@property (nonatomic, strong) NSString *virtualName;
 
 /**
  * When set to the empty string, specifies that the device name in this
  * object should not be mapped to any real device.
  */
-@property (nonatomic, retain) NSString *noDevice;
+@property (nonatomic, strong) NSString *noDevice;
 
 /**
  * Returns a string representation of this object; useful for testing and

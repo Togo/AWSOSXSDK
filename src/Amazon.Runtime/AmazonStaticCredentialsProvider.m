@@ -42,15 +42,10 @@
     self = [super init];
     if (self)
     {
-        staticCredentials = [theCredentials retain];
+        staticCredentials = theCredentials;
     }
     return self;
 }
 
--(void)dealloc
-{
-    [staticCredentials release];
-    [super dealloc];
-}
 
 @end

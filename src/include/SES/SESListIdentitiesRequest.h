@@ -47,18 +47,18 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>EmailAddress, Domain
  */
-@property (nonatomic, retain) NSString *identityType;
+@property (nonatomic, strong) NSString *identityType;
 
 /**
  * The token to use for pagination.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The maximum number of identities per page. Possible values are 1-100
  * inclusive.
  */
-@property (nonatomic, retain) NSNumber *maxItems;
+@property (nonatomic, strong) NSNumber *maxItems;
 
 /**
  * Returns a string representation of this object; useful for testing and

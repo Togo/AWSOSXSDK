@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Text: %@,", text] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Html: %@,", html] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Text: %@,", text]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Html: %@,", html]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [text release];
-    [html release];
-
-    [super dealloc];
-}
 
 
 @end

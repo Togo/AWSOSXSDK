@@ -23,12 +23,12 @@
 {
 }
 
-@property (nonatomic, assign) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
 
-@property (nonatomic, retain) AmazonS3Client *s3;
-@property (nonatomic, retain) S3PutObjectRequest *request;
-@property (nonatomic, retain) AmazonServiceResponse *response;
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) NSException *exception;
+@property (nonatomic, strong) AmazonS3Client *s3;
+@property (nonatomic, strong) S3PutObjectRequest *request;
+@property (nonatomic, strong) AmazonServiceResponse *response;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSException *exception;
 
 @end

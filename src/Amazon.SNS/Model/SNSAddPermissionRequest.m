@@ -73,27 +73,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Label: %@,", label] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AWSAccountIds: %@,", aWSAccountIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ActionNames: %@,", actionNames] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Label: %@,", label]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AWSAccountIds: %@,", aWSAccountIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ActionNames: %@,", actionNames]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [topicArn release];
-    [label release];
-    [aWSAccountIds release];
-    [actionNames release];
-
-    [super dealloc];
-}
 
 
 @end

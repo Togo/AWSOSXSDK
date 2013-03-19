@@ -25,6 +25,6 @@
     S3AccessControlList *accessControlList;
 }
 
-@property (nonatomic, readonly) S3AccessControlList *accessControlList;
+@property (weak, nonatomic, readonly) S3AccessControlList *accessControlList;
 
 @end

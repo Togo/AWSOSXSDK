@@ -31,14 +31,7 @@
 
     self.versioningConfiguration = unmarshaller.versioningConfiguration;
 
-    [unmarshaller release];
-    [parser release];
 }
 
--(void) dealloc
-{
-    [versioningConfiguration release];
-    [super dealloc];
-}
 
 @end

@@ -21,7 +21,7 @@
     AutoScalingCreateOrUpdateTagsResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingCreateOrUpdateTagsResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingCreateOrUpdateTagsResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

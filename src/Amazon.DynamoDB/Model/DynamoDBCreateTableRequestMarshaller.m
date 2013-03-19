@@ -34,7 +34,7 @@
     [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
 
 
-    NSMutableDictionary *json = [[[NSMutableDictionary alloc] init] autorelease];
+    NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
 
     if (createTableRequest.tableName != nil) {
         [json setValue:createTableRequest.tableName forKey:@"TableName"];
@@ -42,13 +42,13 @@
     if (createTableRequest != nil) {
         DynamoDBKeySchema *keySchema = createTableRequest.keySchema;
         if (keySchema != nil) {
-            NSMutableDictionary *keySchemaJson = [[[NSMutableDictionary alloc] init] autorelease];
+            NSMutableDictionary *keySchemaJson = [[NSMutableDictionary alloc] init];
             [json setValue:keySchemaJson forKey:@"KeySchema"];
 
             if (keySchema != nil) {
                 DynamoDBKeySchemaElement *hashKeyElement = keySchema.hashKeyElement;
                 if (hashKeyElement != nil) {
-                    NSMutableDictionary *hashKeyElementJson = [[[NSMutableDictionary alloc] init] autorelease];
+                    NSMutableDictionary *hashKeyElementJson = [[NSMutableDictionary alloc] init];
                     [keySchemaJson setValue:hashKeyElementJson forKey:@"HashKeyElement"];
 
 
@@ -64,7 +64,7 @@
             if (keySchema != nil) {
                 DynamoDBKeySchemaElement *rangeKeyElement = keySchema.rangeKeyElement;
                 if (rangeKeyElement != nil) {
-                    NSMutableDictionary *rangeKeyElementJson = [[[NSMutableDictionary alloc] init] autorelease];
+                    NSMutableDictionary *rangeKeyElementJson = [[NSMutableDictionary alloc] init];
                     [keySchemaJson setValue:rangeKeyElementJson forKey:@"RangeKeyElement"];
 
 
@@ -82,7 +82,7 @@
     if (createTableRequest != nil) {
         DynamoDBProvisionedThroughput *provisionedThroughput = createTableRequest.provisionedThroughput;
         if (provisionedThroughput != nil) {
-            NSMutableDictionary *provisionedThroughputJson = [[[NSMutableDictionary alloc] init] autorelease];
+            NSMutableDictionary *provisionedThroughputJson = [[NSMutableDictionary alloc] init];
             [json setValue:provisionedThroughputJson forKey:@"ProvisionedThroughput"];
 
 
@@ -101,7 +101,7 @@
     request.content = [AmazonJSON JSONRepresentation:json];
     [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
 
-    return [request autorelease];
+    return request;
 }
 
 @end

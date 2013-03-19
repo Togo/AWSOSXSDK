@@ -41,22 +41,22 @@
 /**
  * The number of samples used for the statistic set.
  */
-@property (nonatomic, retain) NSNumber *sampleCount;
+@property (nonatomic, strong) NSNumber *sampleCount;
 
 /**
  * The sum of values for the sample set.
  */
-@property (nonatomic, retain) NSNumber *sum;
+@property (nonatomic, strong) NSNumber *sum;
 
 /**
  * The minimum value of the sample set.
  */
-@property (nonatomic, retain) NSNumber *minimum;
+@property (nonatomic, strong) NSNumber *minimum;
 
 /**
  * The maximum value of the sample set.
  */
-@property (nonatomic, retain) NSNumber *maximum;
+@property (nonatomic, strong) NSNumber *maximum;
 
 /**
  * Returns a string representation of this object; useful for testing and

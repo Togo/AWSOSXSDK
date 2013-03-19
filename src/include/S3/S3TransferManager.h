@@ -33,7 +33,7 @@
  *
  * Asynchronous operations use this delegate for AmazonServiceRequestDelegate callbacks. Once assigned, it is not recommended to reassigned this property. You can overwrite this default by specifying the delegate property of a S3PutObject request.
  */
-@property (nonatomic, assign) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
 
 /*
  * The AmazonS3Client object used internally.
@@ -65,7 +65,7 @@
  *
  * All upload requests are queued in this NSOperationQueue before dispatched. You can update properties of this queue to adjust the queueing and dispatching behaviors, but it is not recommended to call action methods on this queue. Do not manually enqueue any operations; doing so may cause unpredicted behaviors. The default value of maxConcurrentOperationCount is 3. Do not set maxConcurrentOperationCount too high; in our test, setting it above the default may result in unreliable progress feedback on iOS 5 and above.
  */
-@property (nonatomic, readonly, assign) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly, weak) NSOperationQueue *operationQueue;
 
 #pragma mark - Synchronous upload methods
 /** Synchronously uploads data to Amazon S3 using either put object request or multipart uploads.

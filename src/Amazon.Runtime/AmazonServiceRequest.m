@@ -106,7 +106,7 @@
         }
     }
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 -(NSString *)hostName
@@ -224,25 +224,13 @@
 
 -(AmazonServiceResponse*)constructResponse
 {
-    return [[AmazonServiceResponse new] autorelease];
+    return [AmazonServiceResponse new];
 }
 
 -(void)dealloc
 {
     delegate = nil;
-    [credentials release];
-    [endpoint release];
-    [urlRequest release];
-    [parameters release];
-    [userAgent release];
-    [urlConnection release];
-    [responseTimer release];
-    [requestTag release];
-    [serviceName release];
-    [regionName release];
-    [hostName release];
 
-    [super dealloc];
 }
 
 @end

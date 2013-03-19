@@ -35,7 +35,7 @@
 /**
  * The optional list of EBS volumes to describe.
  */
-@property (nonatomic, retain) NSMutableArray *volumeIds;
+@property (nonatomic, strong) NSMutableArray *volumeIds;
 
 /**
  * A list of filters used to match properties for Volumes. For a complete
@@ -43,7 +43,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 
 /**

@@ -38,18 +38,15 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidMessageContents"]) {
-        [newException release];
         newException = [[SQSInvalidMessageContentsException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -60,23 +57,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MD5OfMessageBody: %@,", mD5OfMessageBody] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MD5OfMessageBody: %@,", mD5OfMessageBody]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [mD5OfMessageBody release];
-    [messageId release];
-
-    [super dealloc];
-}
 
 
 @end

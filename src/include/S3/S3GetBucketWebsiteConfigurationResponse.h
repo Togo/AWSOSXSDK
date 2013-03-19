@@ -26,6 +26,6 @@
 }
 
 /** The BucketWebsiteConfiguration represented by the XML */
-@property (nonatomic, retain) BucketWebsiteConfiguration *configuration;
+@property (nonatomic, strong) BucketWebsiteConfiguration *configuration;
 
 @end

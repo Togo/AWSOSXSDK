@@ -38,33 +38,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
-        [newException release];
         newException = [[CloudWatchInvalidParameterValueException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalServiceError"]) {
-        [newException release];
         newException = [[CloudWatchInternalServiceException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterCombination"]) {
-        [newException release];
         newException = [[CloudWatchInvalidParameterCombinationException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"MissingParameter"]) {
-        [newException release];
         newException = [[CloudWatchMissingRequiredParameterException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -81,23 +75,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Label: %@,", label] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Datapoints: %@,", datapoints] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Label: %@,", label]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Datapoints: %@,", datapoints]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [label release];
-    [datapoints release];
-
-    [super dealloc];
-}
 
 
 @end

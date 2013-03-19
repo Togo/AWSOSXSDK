@@ -42,12 +42,12 @@
  * The subject of the message: A short summary of the content, which will
  * appear in the recipient's inbox.
  */
-@property (nonatomic, retain) SESContent *subject;
+@property (nonatomic, strong) SESContent *subject;
 
 /**
  * The message body.
  */
-@property (nonatomic, retain) SESBody *body;
+@property (nonatomic, strong) SESBody *body;
 
 /**
  * Returns a string representation of this object; useful for testing and

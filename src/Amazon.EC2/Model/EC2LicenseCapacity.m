@@ -43,27 +43,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Capacity: %@,", capacity] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCapacity: %@,", instanceCapacity] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EarliestAllowedDeactivationTime: %@,", earliestAllowedDeactivationTime] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Capacity: %@,", capacity]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCapacity: %@,", instanceCapacity]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EarliestAllowedDeactivationTime: %@,", earliestAllowedDeactivationTime]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [capacity release];
-    [instanceCapacity release];
-    [state release];
-    [earliestAllowedDeactivationTime release];
-
-    [super dealloc];
-}
 
 
 @end

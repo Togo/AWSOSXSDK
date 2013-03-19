@@ -41,12 +41,10 @@
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -57,25 +55,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Domain: %@,", domain] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Domain: %@,", domain]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [publicIp release];
-    [domain release];
-    [allocationId release];
-
-    [super dealloc];
-}
 
 
 @end

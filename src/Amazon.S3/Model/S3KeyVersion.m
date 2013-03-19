@@ -38,12 +38,12 @@
 
 +(id)keyVersionWithKey:(NSString *)theKey withVersion:(NSString *)theVersion
 {
-    return [[[S3KeyVersion alloc] initWithKey:theKey withVersion:theVersion] autorelease];
+    return [[S3KeyVersion alloc] initWithKey:theKey withVersion:theVersion];
 }
 
 +(id)keyVersionWithKey:(NSString *)theKey
 {
-    return [[[S3KeyVersion alloc] initWithKey:theKey] autorelease];
+    return [[S3KeyVersion alloc] initWithKey:theKey];
 }
 
 -(NSString *)toXml
@@ -58,12 +58,5 @@
     return [NSString stringWithFormat:@"<Object>%@</Object>", innerXml];
 }
 
--(void)dealloc
-{
-    [key release];
-    [version release];
-
-    [super dealloc];
-}
 
 @end

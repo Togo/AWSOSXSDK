@@ -49,22 +49,22 @@
 /**
  * The unique ID of this volume.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The size of this volume, in gigabytes.
  */
-@property (nonatomic, retain) NSNumber *size;
+@property (nonatomic, strong) NSNumber *size;
 
 /**
  * Optional snapshot from which this volume was created.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * Availability zone in which this volume was created.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * State of this volume (e.g., creating, available).
@@ -72,22 +72,22 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>creating, available, in-use, deleting, error
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Timestamp when volume creation was initiated.
  */
-@property (nonatomic, retain) NSDate *createTime;
+@property (nonatomic, strong) NSDate *createTime;
 
 /**
  * Information on what this volume is attached to.
  */
-@property (nonatomic, retain) NSMutableArray *attachments;
+@property (nonatomic, strong) NSMutableArray *attachments;
 
 /**
  * A list of tags for the Volume.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The value of the VolumeType property for this object.
@@ -95,12 +95,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>standard, io1
  */
-@property (nonatomic, retain) NSString *volumeType;
+@property (nonatomic, strong) NSString *volumeType;
 
 /**
  * The value of the Iops property for this object.
  */
-@property (nonatomic, retain) NSNumber *iops;
+@property (nonatomic, strong) NSNumber *iops;
 
 /**
  * Adds a single object to attachments.

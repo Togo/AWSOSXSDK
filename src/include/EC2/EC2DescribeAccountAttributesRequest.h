@@ -40,7 +40,7 @@
 /**
  * The value of the AttributeNames property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *attributeNames;
+@property (nonatomic, strong) NSMutableArray *attributeNames;
 
 /**
  * Adds a single object to attributeNames.

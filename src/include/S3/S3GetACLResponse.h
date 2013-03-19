@@ -25,6 +25,6 @@
 }
 
 /** Gets the access control list */
-@property (nonatomic, readonly) S3AccessControlList *acl;
+@property (weak, nonatomic, readonly) S3AccessControlList *acl;
 
 @end

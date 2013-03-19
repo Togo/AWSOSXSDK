@@ -45,7 +45,7 @@
 /**
  * The list of tags.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * A string used to mark the start of the next batch of returned results.
@@ -53,7 +53,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

@@ -51,25 +51,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Id: %@,", idValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MessageBody: %@,", messageBody] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DelaySeconds: %@,", delaySeconds] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Id: %@,", idValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MessageBody: %@,", messageBody]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DelaySeconds: %@,", delaySeconds]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [idValue release];
-    [messageBody release];
-    [delaySeconds release];
-
-    [super dealloc];
-}
 
 
 @end

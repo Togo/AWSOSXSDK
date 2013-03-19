@@ -19,14 +19,5 @@
 
 @synthesize key, versionId, code, message;
 
--(void)dealloc
-{
-    [key release];
-    [versionId release];
-    [code release];
-    [message release];
-
-    [super dealloc];
-}
 
 @end

@@ -60,11 +60,6 @@ qualifiedName:(NSString *)qName
     return owner;
 }
 
--(void)dealloc
-{
-    [owner release];
-    [super dealloc];
-}
 
 @end
 

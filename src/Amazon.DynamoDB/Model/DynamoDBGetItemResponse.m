@@ -38,28 +38,23 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ProvisionedThroughputExceededException"]) {
-        [newException release];
         newException = [[DynamoDBProvisionedThroughputExceededException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalServerError"]) {
-        [newException release];
         newException = [[DynamoDBInternalServerErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"ResourceNotFoundException"]) {
-        [newException release];
         newException = [[DynamoDBResourceNotFoundException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -75,23 +70,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Item: %@,", item] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConsumedCapacityUnits: %@,", consumedCapacityUnits] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Item: %@,", item]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConsumedCapacityUnits: %@,", consumedCapacityUnits]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [item release];
-    [consumedCapacityUnits release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -36,13 +36,13 @@
 /**
  * The expression used to query the domain.
  */
-@property (nonatomic, retain) NSString *selectExpression;
+@property (nonatomic, strong) NSString *selectExpression;
 
 /**
  * A string informing Amazon SimpleDB where to start the next list of
  * <code>ItemNames</code>.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Determines whether or not strong consistency should be enforced when

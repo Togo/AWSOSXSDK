@@ -34,14 +34,14 @@
 /**
  * The ID of the AMI whose attribute is to be described.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The name of the attribute to describe. <p> Available attribute names:
  * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
  * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 
 /**

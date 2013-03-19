@@ -36,9 +36,9 @@
 -(NSString *)toXml;
 
 /** Gets and sets the key property. */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** Gets and sets the version property. */
-@property (nonatomic, retain) NSString *version;
+@property (nonatomic, strong) NSString *version;
 
 @end

@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"S3"]) {
-        EC2S3StorageUnmarshaller *unmarshaller = [[[EC2S3StorageUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setS3:)] autorelease];
+        EC2S3StorageUnmarshaller *unmarshaller = [[EC2S3StorageUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setS3:)];
         unmarshaller.endElementTagName = @"S3";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -70,10 +70,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

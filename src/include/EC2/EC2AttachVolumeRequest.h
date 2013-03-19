@@ -36,20 +36,20 @@
  * The ID of the Amazon EBS volume. The volume and instance must be
  * within the same Availability Zone and the instance must be running.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The ID of the instance to which the volume attaches. The volume and
  * instance must be within the same Availability Zone and the instance
  * must be running.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Specifies how the device is exposed to the instance (e.g.,
  * <code>/dev/sdh</code>).
  */
-@property (nonatomic, retain) NSString *device;
+@property (nonatomic, strong) NSString *device;
 
 
 /**

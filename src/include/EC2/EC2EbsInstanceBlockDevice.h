@@ -42,18 +42,18 @@
 /**
  * The ID of the EBS volume.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The status of the EBS volume.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The time at which the EBS volume was attached to the associated
  * instance.
  */
-@property (nonatomic, retain) NSDate *attachTime;
+@property (nonatomic, strong) NSDate *attachTime;
 
 /**
  * Specifies whether the Amazon EBS volume is deleted on instance

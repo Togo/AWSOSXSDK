@@ -49,12 +49,12 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * A list of data describing the metric.
  */
-@property (nonatomic, retain) NSMutableArray *metricDatas;
+@property (nonatomic, strong) NSMutableArray *metricDatas;
 
 /**
  * Adds a single object to metricDatas.

@@ -39,12 +39,12 @@
 /**
  * The name of the key pair.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * The SHA-1 digest of the DER encoded private key.
  */
-@property (nonatomic, retain) NSString *keyFingerprint;
+@property (nonatomic, strong) NSString *keyFingerprint;
 
 /**
  * Returns a string representation of this object; useful for testing and

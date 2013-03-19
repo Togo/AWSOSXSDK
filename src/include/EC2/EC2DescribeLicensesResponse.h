@@ -44,7 +44,7 @@
  * Specifies active licenses in use and attached to an Amazon EC2
  * instance.
  */
-@property (nonatomic, retain) NSMutableArray *licenses;
+@property (nonatomic, strong) NSMutableArray *licenses;
 
 
 

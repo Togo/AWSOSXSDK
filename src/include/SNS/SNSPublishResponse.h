@@ -47,7 +47,7 @@
  * Unique identifier assigned to the published message. <p>Length
  * Constraint: Maximum 100 characters
  */
-@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, strong) NSString *messageId;
 
 /**
  * Returns a string representation of this object; useful for testing and

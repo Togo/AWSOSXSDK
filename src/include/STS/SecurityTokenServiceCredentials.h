@@ -38,23 +38,23 @@
  * <b>Length: </b>16 - 32<br/>
  * <b>Pattern: </b>[\w]*<br/>
  */
-@property (nonatomic, retain) NSString *accessKeyId;
+@property (nonatomic, strong) NSString *accessKeyId;
 
 /**
  * The Secret Access Key to sign requests.
  */
-@property (nonatomic, retain) NSString *secretAccessKey;
+@property (nonatomic, strong) NSString *secretAccessKey;
 
 /**
  * The security token that users must pass to the service API to use the
  * temporary credentials.
  */
-@property (nonatomic, retain) NSString *sessionToken;
+@property (nonatomic, strong) NSString *sessionToken;
 
 /**
  * The date on which these credentials expire.
  */
-@property (nonatomic, retain) NSDate *expiration;
+@property (nonatomic, strong) NSDate *expiration;
 
 
 /**

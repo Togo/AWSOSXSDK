@@ -24,7 +24,7 @@
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
     if ([elementName isEqualToString:entryElementName]) {
-        id delegate = [[[delegateClass alloc] initWithCaller:self withParentObject:self.list withSetter:@selector(addObject:)] autorelease];
+        id delegate = [[delegateClass alloc] initWithCaller:self withParentObject:self.list withSetter:@selector(addObject:)];
         [delegate setEndElementTagName:entryElementName];
 
         [parser setDelegate:delegate];
@@ -56,13 +56,5 @@
     return list;
 }
 
--(void)dealloc
-{
-    [list release];
-    [entryElementName release];
-    [endListElementName release];
-    [delegateClass release];
-    [super dealloc];
-}
 
 @end

@@ -64,10 +64,5 @@ qualifiedName:(NSString *)qName
     return part;
 }
 
--(void)dealloc
-{
-    [part release];
-    [super dealloc];
-}
 
 @end

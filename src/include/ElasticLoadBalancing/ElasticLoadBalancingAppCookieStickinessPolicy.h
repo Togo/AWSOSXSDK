@@ -33,12 +33,12 @@
  * The mnemonic name for the policy being created. The name must be
  * unique within a set of policies for this LoadBalancer.
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 /**
  * The name of the application cookie used for stickiness.
  */
-@property (nonatomic, retain) NSString *cookieName;
+@property (nonatomic, strong) NSString *cookieName;
 
 
 /**

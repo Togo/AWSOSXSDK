@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"AvailabilityZones"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.availabilityZones withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.availabilityZones withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"AvailabilityZones";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"LoadBalancerNames"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.loadBalancerNames withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.loadBalancerNames withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"LoadBalancerNames";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -43,7 +43,7 @@
     }
 
     if ([elementName isEqualToString:@"TerminationPolicies"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.terminationPolicies withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.terminationPolicies withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"TerminationPolicies";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -52,7 +52,7 @@
     }
 
     if ([elementName isEqualToString:@"Instances"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.instances withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.instances withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Instances";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingInstanceUnmarshaller class];
@@ -61,7 +61,7 @@
     }
 
     if ([elementName isEqualToString:@"SuspendedProcesses"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.suspendedProcesses withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.suspendedProcesses withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"SuspendedProcesses";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingSuspendedProcessUnmarshaller class];
@@ -70,7 +70,7 @@
     }
 
     if ([elementName isEqualToString:@"EnabledMetrics"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.enabledMetrics withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.enabledMetrics withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"EnabledMetrics";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingEnabledMetricUnmarshaller class];
@@ -79,7 +79,7 @@
     }
 
     if ([elementName isEqualToString:@"Tags"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Tags";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingTagDescriptionUnmarshaller class];
@@ -90,7 +90,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -186,10 +186,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

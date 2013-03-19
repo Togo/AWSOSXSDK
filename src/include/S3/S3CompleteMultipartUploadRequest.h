@@ -25,7 +25,7 @@
     NSString            *uploadId;
 }
 
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** Initialize the instance with the bucket, key, and uploadId from an S3MultipartUpload instance. */
 -(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;

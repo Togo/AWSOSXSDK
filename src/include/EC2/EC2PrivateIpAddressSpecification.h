@@ -40,7 +40,7 @@
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * The value of the Primary property for this object.

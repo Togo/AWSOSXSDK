@@ -35,18 +35,18 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * The receipt handle associated with the message whose visibility
  * timeout should be changed.
  */
-@property (nonatomic, retain) NSString *receiptHandle;
+@property (nonatomic, strong) NSString *receiptHandle;
 
 /**
  * The new value (in seconds) for the message's visibility timeout.
  */
-@property (nonatomic, retain) NSNumber *visibilityTimeout;
+@property (nonatomic, strong) NSNumber *visibilityTimeout;
 
 
 /**

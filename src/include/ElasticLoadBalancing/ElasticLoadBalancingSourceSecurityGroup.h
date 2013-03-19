@@ -42,7 +42,7 @@
  * <code>ec2-authorize</code> command in the Amazon EC2 command line
  * tool.
  */
-@property (nonatomic, retain) NSString *ownerAlias;
+@property (nonatomic, strong) NSString *ownerAlias;
 
 /**
  * Name of the source security group. Use this value for the
@@ -50,7 +50,7 @@
  * <code>ec2-authorize</code> command in the Amazon EC2 command line
  * tool.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * Returns a string representation of this object; useful for testing and

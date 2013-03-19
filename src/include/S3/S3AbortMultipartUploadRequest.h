@@ -27,7 +27,7 @@
 }
 
 /** The id of the upload to abort. */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** Initializes the instance with the bucket, key, and uploadId from an S3MultipartUpload instance returned in an S3MultipartUploadResponse. */
 -(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;

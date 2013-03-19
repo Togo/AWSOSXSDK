@@ -21,7 +21,7 @@
     EC2DisassociateAddressResponse *response;
 }
 
-@property (nonatomic, readonly) EC2DisassociateAddressResponse *response;
+@property (weak, nonatomic, readonly) EC2DisassociateAddressResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

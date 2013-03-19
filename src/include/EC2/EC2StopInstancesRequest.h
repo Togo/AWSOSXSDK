@@ -35,7 +35,7 @@
 /**
  * The list of Amazon EC2 instances to stop.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 /**
  * Forces the instance to stop. The instance will not have an opportunity

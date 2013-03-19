@@ -43,7 +43,7 @@
  * The identity for which to set feedback notification forwarding.
  * Examples: <code>user@example.com</code>, <code>example.com</code>.
  */
-@property (nonatomic, retain) NSString *identity;
+@property (nonatomic, strong) NSString *identity;
 
 /**
  * Sets whether Amazon SES will forward feedback notifications as email.

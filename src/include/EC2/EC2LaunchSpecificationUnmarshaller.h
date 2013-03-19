@@ -37,7 +37,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2LaunchSpecification *response;
+@property (weak, nonatomic, readonly) EC2LaunchSpecification *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

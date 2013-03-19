@@ -35,7 +35,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
@@ -44,7 +44,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>S, N, B
  */
-@property (nonatomic, retain) NSString *attributeType;
+@property (nonatomic, strong) NSString *attributeType;
 
 
 /**

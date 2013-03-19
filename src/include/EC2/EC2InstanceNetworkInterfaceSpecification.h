@@ -48,32 +48,32 @@
 /**
  * The value of the NetworkInterfaceId property for this object.
  */
-@property (nonatomic, retain) NSString *networkInterfaceId;
+@property (nonatomic, strong) NSString *networkInterfaceId;
 
 /**
  * The value of the DeviceIndex property for this object.
  */
-@property (nonatomic, retain) NSNumber *deviceIndex;
+@property (nonatomic, strong) NSNumber *deviceIndex;
 
 /**
  * The value of the SubnetId property for this object.
  */
-@property (nonatomic, retain) NSString *subnetId;
+@property (nonatomic, strong) NSString *subnetId;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * The value of the Groups property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, strong) NSMutableArray *groups;
 
 /**
  * The value of the DeleteOnTermination property for this object.
@@ -85,12 +85,12 @@
 /**
  * The value of the PrivateIpAddresses property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *privateIpAddresses;
+@property (nonatomic, strong) NSMutableArray *privateIpAddresses;
 
 /**
  * The value of the SecondaryPrivateIpAddressCount property for this object.
  */
-@property (nonatomic, retain) NSNumber *secondaryPrivateIpAddressCount;
+@property (nonatomic, strong) NSNumber *secondaryPrivateIpAddressCount;
 
 /**
  * Adds a single object to groups.

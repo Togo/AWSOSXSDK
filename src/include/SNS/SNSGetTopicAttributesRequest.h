@@ -33,7 +33,7 @@
 /**
  * The ARN of the topic whose properties you want to get.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 
 /**

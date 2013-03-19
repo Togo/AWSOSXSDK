@@ -49,7 +49,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * A list of scheduled actions to be described. If this list is omitted,
@@ -58,19 +58,19 @@
  * name is provided, the results are limited to that group. If unknown
  * scheduled actions are requested, they are ignored with no error.
  */
-@property (nonatomic, retain) NSMutableArray *scheduledActionNames;
+@property (nonatomic, strong) NSMutableArray *scheduledActionNames;
 
 /**
  * The earliest scheduled start time to return. If scheduled action names
  * are provided, this field will be ignored.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The latest scheduled start time to return. If scheduled action names
  * are provided, this field is ignored.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * A string that marks the start of the next batch of returned results.
@@ -78,7 +78,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The maximum number of scheduled actions to return.
@@ -86,7 +86,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 50<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * Adds a single object to scheduledActionNames.

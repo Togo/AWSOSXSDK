@@ -39,12 +39,12 @@
 /**
  * The frequency of the recurring charge.
  */
-@property (nonatomic, retain) NSString *frequency;
+@property (nonatomic, strong) NSString *frequency;
 
 /**
  * The amount of the recurring charge.
  */
-@property (nonatomic, retain) NSNumber *amount;
+@property (nonatomic, strong) NSNumber *amount;
 
 /**
  * Returns a string representation of this object; useful for testing and

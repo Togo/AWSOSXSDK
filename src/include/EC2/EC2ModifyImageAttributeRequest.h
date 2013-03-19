@@ -42,26 +42,26 @@
 /**
  * The ID of the AMI whose attribute you want to modify.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The name of the AMI attribute you want to modify. <p> Available
  * attributes: <code>launchPermission</code>, <code>productCodes</code>
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 /**
  * The type of operation being requested. <p> Available operation types:
  * <code>add</code>, <code>remove</code>
  */
-@property (nonatomic, retain) NSString *operationType;
+@property (nonatomic, strong) NSString *operationType;
 
 /**
  * The AWS user ID being added to or removed from the list of users with
  * launch permissions for this AMI. Only valid when the launchPermission
  * attribute is being modified.
  */
-@property (nonatomic, retain) NSMutableArray *userIds;
+@property (nonatomic, strong) NSMutableArray *userIds;
 
 /**
  * The user group being added to or removed from the list of user groups
@@ -69,29 +69,29 @@
  * launchPermission attribute is being modified. <p> Available user
  * groups: <code>all</code>
  */
-@property (nonatomic, retain) NSMutableArray *userGroups;
+@property (nonatomic, strong) NSMutableArray *userGroups;
 
 /**
  * The list of product codes being added to or removed from the specified
  * AMI. Only valid when the productCodes attribute is being modified.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 /**
  * The value of the attribute being modified. Only valid when the
  * description attribute is being modified.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * The value of the LaunchPermission property for this object.
  */
-@property (nonatomic, retain) EC2LaunchPermissionModifications *launchPermission;
+@property (nonatomic, strong) EC2LaunchPermissionModifications *launchPermission;
 
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 
 /**

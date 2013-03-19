@@ -35,10 +35,5 @@
     return self.urlRequest;
 }
 
--(void)dealloc
-{
-    [policy release];
-    [super dealloc];
-}
 
 @end

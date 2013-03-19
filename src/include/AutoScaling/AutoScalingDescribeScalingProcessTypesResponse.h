@@ -43,7 +43,7 @@
 /**
  * A list of <a>ProcessType</a> names.
  */
-@property (nonatomic, retain) NSMutableArray *processes;
+@property (nonatomic, strong) NSMutableArray *processes;
 
 
 

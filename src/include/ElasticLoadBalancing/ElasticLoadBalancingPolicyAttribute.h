@@ -32,12 +32,12 @@
 /**
  * The name of the attribute associated with the policy.
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The value of the attribute associated with the policy.
  */
-@property (nonatomic, retain) NSString *attributeValue;
+@property (nonatomic, strong) NSString *attributeValue;
 
 
 /**

@@ -21,6 +21,6 @@
     NSString *location;
 }
 
-@property (nonatomic, retain) NSString *location;
+@property (nonatomic, strong) NSString *location;
 
 @end

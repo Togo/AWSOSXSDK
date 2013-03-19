@@ -60,17 +60,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CidrBlock: %@,", cidrBlock] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DhcpOptionsId: %@,", dhcpOptionsId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceTenancy: %@,", instanceTenancy] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IsDefault: %d,", isDefault] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CidrBlock: %@,", cidrBlock]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DhcpOptionsId: %@,", dhcpOptionsId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceTenancy: %@,", instanceTenancy]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IsDefault: %d,", isDefault]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -81,17 +81,6 @@
 }
 
 
--(void)dealloc
-{
-    [vpcId release];
-    [state release];
-    [cidrBlock release];
-    [dhcpOptionsId release];
-    [tags release];
-    [instanceTenancy release];
-
-    [super dealloc];
-}
 
 
 @end

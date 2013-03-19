@@ -51,7 +51,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The name of this scheduled action.
@@ -60,7 +60,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *scheduledActionName;
+@property (nonatomic, strong) NSString *scheduledActionName;
 
 /**
  * The Amazon Resource Name (ARN) of this scheduled action.
@@ -69,14 +69,14 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *scheduledActionARN;
+@property (nonatomic, strong) NSString *scheduledActionARN;
 
 /**
  * <code>Time</code> is deprecated. <p>The time that the action is
  * scheduled to begin. <code>Time</code> is an alias for
  * <code>StartTime</code>.
  */
-@property (nonatomic, retain) NSDate *time;
+@property (nonatomic, strong) NSDate *time;
 
 /**
  * The time that the action is scheduled to begin. This value can be up
@@ -84,13 +84,13 @@
  * <code>EndTime</code> are specified with <code>Recurrence</code>, they
  * form the boundaries of when the recurring action will start and stop.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The time that the action is scheduled to end. This value can be up to
  * one month in the future.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * The regular schedule that an action occurs.
@@ -99,23 +99,23 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *recurrence;
+@property (nonatomic, strong) NSString *recurrence;
 
 /**
  * The minimum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *minSize;
+@property (nonatomic, strong) NSNumber *minSize;
 
 /**
  * The maximum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *maxSize;
+@property (nonatomic, strong) NSNumber *maxSize;
 
 /**
  * The number of instances you prefer to maintain in your Auto Scaling
  * group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * Returns a string representation of this object; useful for testing and

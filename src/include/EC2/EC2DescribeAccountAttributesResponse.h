@@ -43,7 +43,7 @@
 /**
  * The value of the AccountAttributes property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *accountAttributes;
+@property (nonatomic, strong) NSMutableArray *accountAttributes;
 
 
 

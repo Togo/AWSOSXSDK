@@ -43,7 +43,7 @@
 /**
  * The list of described Reserved Instances.
  */
-@property (nonatomic, retain) NSMutableArray *reservedInstances;
+@property (nonatomic, strong) NSMutableArray *reservedInstances;
 
 
 

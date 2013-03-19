@@ -21,12 +21,5 @@
 @synthesize name;
 @synthesize creationDate;
 
--(void)dealloc
-{
-    [name release];
-    [creationDate release];
-
-    [super dealloc];
-}
 
 @end

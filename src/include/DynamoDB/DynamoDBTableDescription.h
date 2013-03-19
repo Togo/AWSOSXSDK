@@ -43,7 +43,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * The KeySchema identifies the primary key as a one attribute primary
@@ -53,7 +53,7 @@
  * contains two attribute values: a <code>HashKeyElement</code> and a
  * <code>RangeKeyElement</code>.
  */
-@property (nonatomic, retain) DynamoDBKeySchema *keySchema;
+@property (nonatomic, strong) DynamoDBKeySchema *keySchema;
 
 /**
  * The value of the TableStatus property for this object.
@@ -61,27 +61,27 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
  */
-@property (nonatomic, retain) NSString *tableStatus;
+@property (nonatomic, strong) NSString *tableStatus;
 
 /**
  * The value of the CreationDateTime property for this object.
  */
-@property (nonatomic, retain) NSDate *creationDateTime;
+@property (nonatomic, strong) NSDate *creationDateTime;
 
 /**
  * The value of the ProvisionedThroughput property for this object.
  */
-@property (nonatomic, retain) DynamoDBProvisionedThroughputDescription *provisionedThroughput;
+@property (nonatomic, strong) DynamoDBProvisionedThroughputDescription *provisionedThroughput;
 
 /**
  * The value of the TableSizeBytes property for this object.
  */
-@property (nonatomic, retain) NSNumber *tableSizeBytes;
+@property (nonatomic, strong) NSNumber *tableSizeBytes;
 
 /**
  * The value of the ItemCount property for this object.
  */
-@property (nonatomic, retain) NSNumber *itemCount;
+@property (nonatomic, strong) NSNumber *itemCount;
 
 
 /**

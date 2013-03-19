@@ -40,12 +40,12 @@
 /**
  * Instance ID.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Monitoring state for the associated instance.
  */
-@property (nonatomic, retain) EC2Monitoring *monitoring;
+@property (nonatomic, strong) EC2Monitoring *monitoring;
 
 /**
  * Returns a string representation of this object; useful for testing and

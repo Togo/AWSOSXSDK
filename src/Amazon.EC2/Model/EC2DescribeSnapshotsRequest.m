@@ -79,27 +79,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnapshotIds: %@,", snapshotIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerIds: %@,", ownerIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RestorableByUserIds: %@,", restorableByUserIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Filters: %@,", filters] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnapshotIds: %@,", snapshotIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerIds: %@,", ownerIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RestorableByUserIds: %@,", restorableByUserIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Filters: %@,", filters]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [snapshotIds release];
-    [ownerIds release];
-    [restorableByUserIds release];
-    [filters release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -31,24 +31,24 @@
 
 
 /** The key of the Amazon S3 object. */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** The ETag of the Amazon S3 object. */
-@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, strong) NSString *etag;
 
 /** The size of the Amazon S3 object, in bytes. */
 @property (nonatomic) NSInteger size;
 
 /** The date this object was last modified. */
-@property (nonatomic, retain) NSString *lastModified;
+@property (nonatomic, strong) NSString *lastModified;
 
 /** The class of storage used by this object. */
-@property (nonatomic, retain) NSString *storageClass;
+@property (nonatomic, strong) NSString *storageClass;
 
 /** The owner of this object. Can be nil if the requester
  * doesn't have permission to view ownership.
  */
-@property (nonatomic, retain) S3Owner *owner;
+@property (nonatomic, strong) S3Owner *owner;
 
 /** The string representation of the S3ObjectSummary */
 -(NSString *)description;

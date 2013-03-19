@@ -42,7 +42,7 @@
 /**
  * A list of email addresses that have been verified.
  */
-@property (nonatomic, retain) NSMutableArray *verifiedEmailAddresses;
+@property (nonatomic, strong) NSMutableArray *verifiedEmailAddresses;
 
 
 

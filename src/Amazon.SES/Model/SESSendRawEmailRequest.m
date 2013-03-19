@@ -50,25 +50,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Source: %@,", source] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Destinations: %@,", destinations] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RawMessage: %@,", rawMessage] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Source: %@,", source]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Destinations: %@,", destinations]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RawMessage: %@,", rawMessage]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [source release];
-    [destinations release];
-    [rawMessage release];
-
-    [super dealloc];
-}
 
 
 @end

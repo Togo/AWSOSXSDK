@@ -47,37 +47,37 @@
 /**
  * The value of the ConversionTaskId property for this object.
  */
-@property (nonatomic, retain) NSString *conversionTaskId;
+@property (nonatomic, strong) NSString *conversionTaskId;
 
 /**
  * The value of the ExpirationTime property for this object.
  */
-@property (nonatomic, retain) NSString *expirationTime;
+@property (nonatomic, strong) NSString *expirationTime;
 
 /**
  * The value of the ImportInstance property for this object.
  */
-@property (nonatomic, retain) EC2ImportInstanceTaskDetails *importInstance;
+@property (nonatomic, strong) EC2ImportInstanceTaskDetails *importInstance;
 
 /**
  * The value of the ImportVolume property for this object.
  */
-@property (nonatomic, retain) EC2ImportVolumeTaskDetails *importVolume;
+@property (nonatomic, strong) EC2ImportVolumeTaskDetails *importVolume;
 
 /**
  * The value of the State property for this object.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The value of the StatusMessage property for this object.
  */
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *statusMessage;
 
 /**
  * The value of the Tags property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to tags.

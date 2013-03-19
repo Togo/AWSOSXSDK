@@ -21,7 +21,7 @@
     AutoScalingResumeProcessesResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingResumeProcessesResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingResumeProcessesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

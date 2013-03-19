@@ -37,7 +37,7 @@
  * <b>Length: </b>2 - 96<br/>
  * <b>Pattern: </b>[\w+=,.@\:-]*<br/>
  */
-@property (nonatomic, retain) NSString *federatedUserId;
+@property (nonatomic, strong) NSString *federatedUserId;
 
 /**
  * The ARN specifying the federated user associated with the credentials.
@@ -49,7 +49,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>20 - 2048<br/>
  */
-@property (nonatomic, retain) NSString *arn;
+@property (nonatomic, strong) NSString *arn;
 
 
 /**

@@ -35,7 +35,7 @@
  * Specify whether or not a value already exists and has a specific
  * content for the attribute name-value pair.
  */
-@property (nonatomic, retain) DynamoDBAttributeValue *value;
+@property (nonatomic, strong) DynamoDBAttributeValue *value;
 
 /**
  * Specify whether or not a value already exists for the attribute

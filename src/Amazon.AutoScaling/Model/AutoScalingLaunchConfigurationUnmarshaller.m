@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"SecurityGroups"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"SecurityGroups";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"BlockDeviceMappings"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"BlockDeviceMappings";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingBlockDeviceMappingUnmarshaller class];
@@ -43,7 +43,7 @@
     }
 
     if ([elementName isEqualToString:@"InstanceMonitoring"]) {
-        AutoScalingInstanceMonitoringUnmarshaller *unmarshaller = [[[AutoScalingInstanceMonitoringUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceMonitoring:)] autorelease];
+        AutoScalingInstanceMonitoringUnmarshaller *unmarshaller = [[AutoScalingInstanceMonitoringUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceMonitoring:)];
         unmarshaller.endElementTagName = @"InstanceMonitoring";
         [parser setDelegate:unmarshaller];
     }
@@ -51,7 +51,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -142,10 +142,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

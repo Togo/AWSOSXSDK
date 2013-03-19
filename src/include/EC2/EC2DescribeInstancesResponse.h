@@ -43,7 +43,7 @@
 /**
  * The list of reservations containing the describes instances.
  */
-@property (nonatomic, retain) NSMutableArray *reservations;
+@property (nonatomic, strong) NSMutableArray *reservations;
 
 
 

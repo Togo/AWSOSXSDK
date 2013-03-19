@@ -42,12 +42,12 @@
 /**
  * The value of the Filters property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * The value of the ConversionTaskIds property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *conversionTaskIds;
+@property (nonatomic, strong) NSMutableArray *conversionTaskIds;
 
 /**
  * Adds a single object to filters.

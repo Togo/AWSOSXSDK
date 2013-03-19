@@ -33,7 +33,7 @@
 /**
  * The ARN of the subscription whose properties you want to get.
  */
-@property (nonatomic, retain) NSString *subscriptionArn;
+@property (nonatomic, strong) NSString *subscriptionArn;
 
 
 /**

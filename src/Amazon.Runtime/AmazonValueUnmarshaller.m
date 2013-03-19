@@ -48,11 +48,5 @@
     return value;
 }
 
--(void)dealloc
-{
-    [value release];
-    [internalElementName release];
-    [super dealloc];
-}
 
 @end

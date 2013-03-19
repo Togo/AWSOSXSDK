@@ -48,7 +48,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * The name of the metric to filter against.
@@ -56,7 +56,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * A list of dimensions to filter against.
@@ -64,13 +64,13 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The token returned by a previous call to indicate that there is more
  * data available.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Adds a single object to dimensions.

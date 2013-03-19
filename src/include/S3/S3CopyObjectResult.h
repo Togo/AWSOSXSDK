@@ -24,9 +24,9 @@
 }
 
 /** Gets and sets the lastModified property */
-@property (nonatomic, retain) NSString *lastModified;
+@property (nonatomic, strong) NSString *lastModified;
 
 /** Gets and sets the etag property */
-@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, strong) NSString *etag;
 
 @end

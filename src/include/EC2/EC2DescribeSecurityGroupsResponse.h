@@ -43,7 +43,7 @@
 /**
  * The list of described Amazon EC2 security groups.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 
 

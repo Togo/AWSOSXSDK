@@ -28,9 +28,9 @@
 }
 
 /** The owner of the buckets */
-@property (nonatomic, retain) S3Owner *owner;
+@property (nonatomic, strong) S3Owner *owner;
 
 /** The list of buckets */
-@property (nonatomic, readonly) NSMutableArray *buckets;
+@property (weak, nonatomic, readonly) NSMutableArray *buckets;
 
 @end

@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Bucket: %@,", bucket] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Fault: %@,", fault] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Bucket: %@,", bucket]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Fault: %@,", fault]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [ownerId release];
-    [bucket release];
-    [prefix release];
-    [state release];
-    [fault release];
-
-    [super dealloc];
-}
 
 
 @end

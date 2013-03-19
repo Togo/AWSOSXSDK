@@ -43,27 +43,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TargetEnvironment: %@,", targetEnvironment] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExportToS3Task: %@,", exportToS3Task] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TargetEnvironment: %@,", targetEnvironment]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExportToS3Task: %@,", exportToS3Task]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [descriptionValue release];
-    [instanceId release];
-    [targetEnvironment release];
-    [exportToS3Task release];
-
-    [super dealloc];
-}
 
 
 @end

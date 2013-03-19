@@ -21,7 +21,7 @@
     CloudWatchDeleteAlarmsResponse *response;
 }
 
-@property (nonatomic, readonly) CloudWatchDeleteAlarmsResponse *response;
+@property (weak, nonatomic, readonly) CloudWatchDeleteAlarmsResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

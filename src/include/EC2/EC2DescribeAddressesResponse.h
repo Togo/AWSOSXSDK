@@ -43,7 +43,7 @@
 /**
  * The list of Elastic IPs.
  */
-@property (nonatomic, retain) NSMutableArray *addresses;
+@property (nonatomic, strong) NSMutableArray *addresses;
 
 
 

@@ -34,12 +34,12 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * A list of attributes to retrieve information for.
  */
-@property (nonatomic, retain) NSMutableArray *attributeNames;
+@property (nonatomic, strong) NSMutableArray *attributeNames;
 
 
 /**

@@ -43,18 +43,18 @@
  * The mnemonic name associated with the LoadBalancer. This name must be
  * unique within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The port number associated with the back-end server.
  */
-@property (nonatomic, retain) NSNumber *instancePort;
+@property (nonatomic, strong) NSNumber *instancePort;
 
 /**
  * List of policy names to be set. If the list is empty, then all current
  * polices are removed from the back-end server.
  */
-@property (nonatomic, retain) NSMutableArray *policyNames;
+@property (nonatomic, strong) NSMutableArray *policyNames;
 
 /**
  * Adds a single object to policyNames.

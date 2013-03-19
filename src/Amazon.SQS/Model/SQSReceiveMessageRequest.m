@@ -63,29 +63,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeNames: %@,", attributeNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxNumberOfMessages: %@,", maxNumberOfMessages] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VisibilityTimeout: %@,", visibilityTimeout] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"WaitTimeSeconds: %@,", waitTimeSeconds] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeNames: %@,", attributeNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxNumberOfMessages: %@,", maxNumberOfMessages]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VisibilityTimeout: %@,", visibilityTimeout]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"WaitTimeSeconds: %@,", waitTimeSeconds]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [queueUrl release];
-    [attributeNames release];
-    [maxNumberOfMessages release];
-    [visibilityTimeout release];
-    [waitTimeSeconds release];
-
-    [super dealloc];
-}
 
 
 @end

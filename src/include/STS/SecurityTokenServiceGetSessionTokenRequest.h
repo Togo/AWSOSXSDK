@@ -43,7 +43,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>900 - 129600<br/>
  */
-@property (nonatomic, retain) NSNumber *durationSeconds;
+@property (nonatomic, strong) NSNumber *durationSeconds;
 
 /**
  * The identification number of the MFA device for the user. If the IAM
@@ -65,7 +65,7 @@
  * <b>Length: </b>9 - 256<br/>
  * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
  */
-@property (nonatomic, retain) NSString *serialNumber;
+@property (nonatomic, strong) NSString *serialNumber;
 
 /**
  * The value provided by the MFA device. If the user has an access policy
@@ -84,7 +84,7 @@
  * <b>Length: </b>6 - 6<br/>
  * <b>Pattern: </b>[\d]*<br/>
  */
-@property (nonatomic, retain) NSString *tokenCode;
+@property (nonatomic, strong) NSString *tokenCode;
 
 
 /**

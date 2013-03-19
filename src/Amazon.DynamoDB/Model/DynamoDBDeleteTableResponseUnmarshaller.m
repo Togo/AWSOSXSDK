@@ -24,7 +24,7 @@
 
 +(DynamoDBDeleteTableResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBDeleteTableResponse *deleteTableResult = [[[DynamoDBDeleteTableResponse alloc] init] autorelease];
+    DynamoDBDeleteTableResponse *deleteTableResult = [[DynamoDBDeleteTableResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

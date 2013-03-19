@@ -48,23 +48,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeValueList: %@,", attributeValueList] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ComparisonOperator: %@,", comparisonOperator] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeValueList: %@,", attributeValueList]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ComparisonOperator: %@,", comparisonOperator]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [attributeValueList release];
-    [comparisonOperator release];
-
-    [super dealloc];
-}
 
 
 @end

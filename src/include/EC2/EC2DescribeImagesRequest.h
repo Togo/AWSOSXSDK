@@ -45,7 +45,7 @@
  * An optional list of the AMI IDs to describe. If not specified, all
  * AMIs will be described.
  */
-@property (nonatomic, retain) NSMutableArray *imageIds;
+@property (nonatomic, strong) NSMutableArray *imageIds;
 
 /**
  * The optional list of owners for the described AMIs. The IDs amazon,
@@ -53,7 +53,7 @@
  * owned by the user, and AMIs for which the user has explicit launch
  * permissions, respectively.
  */
-@property (nonatomic, retain) NSMutableArray *owners;
+@property (nonatomic, strong) NSMutableArray *owners;
 
 /**
  * The optional list of users with explicit launch permissions for the
@@ -61,7 +61,7 @@
  * return AMIs for which the sender of the request has explicit launch
  * permissions, or 'all' to return AMIs with public launch permissions.
  */
-@property (nonatomic, retain) NSMutableArray *executableUsers;
+@property (nonatomic, strong) NSMutableArray *executableUsers;
 
 /**
  * A list of filters used to match properties for Images. For a complete
@@ -69,7 +69,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to imageIds.

@@ -51,12 +51,12 @@
 /**
  * Specifies the name associated with the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * Specifies the external DNS name associated with the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *dNSName;
+@property (nonatomic, strong) NSString *dNSName;
 
 /**
  * Provides the name of the Amazon Route 53 hosted zone that is
@@ -66,7 +66,7 @@
  * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
  * Balancing Developer Guide</i>.
  */
-@property (nonatomic, retain) NSString *canonicalHostedZoneName;
+@property (nonatomic, strong) NSString *canonicalHostedZoneName;
 
 /**
  * Provides the ID of the Amazon Route 53 hosted zone name that is
@@ -76,50 +76,50 @@
  * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
  * Balancing Developer Guide</i>.
  */
-@property (nonatomic, retain) NSString *canonicalHostedZoneNameID;
+@property (nonatomic, strong) NSString *canonicalHostedZoneNameID;
 
 /**
  * LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and
  * PolicyNames are returned in a list of tuples in the
  * ListenerDescriptions element.
  */
-@property (nonatomic, retain) NSMutableArray *listenerDescriptions;
+@property (nonatomic, strong) NSMutableArray *listenerDescriptions;
 
 /**
  * Provides a list of policies defined for the LoadBalancer.
  */
-@property (nonatomic, retain) ElasticLoadBalancingPolicies *policies;
+@property (nonatomic, strong) ElasticLoadBalancingPolicies *policies;
 
 /**
  * Contains a list of back-end server descriptions.
  */
-@property (nonatomic, retain) NSMutableArray *backendServerDescriptions;
+@property (nonatomic, strong) NSMutableArray *backendServerDescriptions;
 
 /**
  * Specifies a list of Availability Zones.
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 /**
  * Provides a list of VPC subnet IDs for the LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *subnets;
+@property (nonatomic, strong) NSMutableArray *subnets;
 
 /**
  * Provides the ID of the VPC attached to the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *vPCId;
+@property (nonatomic, strong) NSString *vPCId;
 
 /**
  * Provides a list of EC2 instance IDs for the LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *instances;
+@property (nonatomic, strong) NSMutableArray *instances;
 
 /**
  * Specifies information regarding the various health probes conducted on
  * the LoadBalancer.
  */
-@property (nonatomic, retain) ElasticLoadBalancingHealthCheck *healthCheck;
+@property (nonatomic, strong) ElasticLoadBalancingHealthCheck *healthCheck;
 
 /**
  * The security group that you can use as part of your inbound rules for
@@ -128,17 +128,17 @@
  * back end instance that specifies this source security group as the
  * inbound source.
  */
-@property (nonatomic, retain) ElasticLoadBalancingSourceSecurityGroup *sourceSecurityGroup;
+@property (nonatomic, strong) ElasticLoadBalancingSourceSecurityGroup *sourceSecurityGroup;
 
 /**
  * The security groups the LoadBalancer is a member of (VPC only).
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * Provides the date and time the LoadBalancer was created.
  */
-@property (nonatomic, retain) NSDate *createdTime;
+@property (nonatomic, strong) NSDate *createdTime;
 
 
 /**

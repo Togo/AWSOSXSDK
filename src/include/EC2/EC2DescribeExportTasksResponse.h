@@ -43,7 +43,7 @@
 /**
  * The value of the ExportTasks property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *exportTasks;
+@property (nonatomic, strong) NSMutableArray *exportTasks;
 
 
 

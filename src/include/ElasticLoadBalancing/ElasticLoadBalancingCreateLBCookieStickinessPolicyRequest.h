@@ -36,20 +36,20 @@
  * The name associated with the LoadBalancer. The name must be unique
  * within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The name of the policy being created. The name must be unique within
  * the set of policies for this LoadBalancer.
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 /**
  * The time period in seconds after which the cookie should be considered
  * stale. Not specifying this parameter indicates that the sticky session
  * will last for the duration of the browser session.
  */
-@property (nonatomic, retain) NSNumber *cookieExpirationPeriod;
+@property (nonatomic, strong) NSNumber *cookieExpirationPeriod;
 
 
 /**

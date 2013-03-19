@@ -41,7 +41,7 @@
 /**
  * The resource ID for the tag.
  */
-@property (nonatomic, retain) NSString *resourceId;
+@property (nonatomic, strong) NSString *resourceId;
 
 /**
  * The type of resource identified by the associated resource ID (ex:
@@ -50,17 +50,17 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, snapshot, spot-instances-request, subnet, volume, vpc, vpn-connection, vpn-gateway
  */
-@property (nonatomic, retain) NSString *resourceType;
+@property (nonatomic, strong) NSString *resourceType;
 
 /**
  * The tag's key.
  */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /**
  * The tag's value.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * Returns a string representation of this object; useful for testing and

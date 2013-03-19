@@ -42,7 +42,7 @@
 /**
  * A list of queue URLs, up to 1000 entries.
  */
-@property (nonatomic, retain) NSMutableArray *queueUrls;
+@property (nonatomic, strong) NSMutableArray *queueUrls;
 
 
 

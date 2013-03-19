@@ -43,7 +43,7 @@
 /**
  * The list of described Amazon EC2 availability zones.
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 
 

@@ -43,7 +43,7 @@
 /**
  * The new snapshot.
  */
-@property (nonatomic, retain) EC2Snapshot *snapshot;
+@property (nonatomic, strong) EC2Snapshot *snapshot;
 
 /**
  * Returns a string representation of this object; useful for testing and

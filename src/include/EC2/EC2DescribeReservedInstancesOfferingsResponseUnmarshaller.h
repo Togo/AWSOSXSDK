@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2DescribeReservedInstancesOfferingsResponse *response;
+@property (weak, nonatomic, readonly) EC2DescribeReservedInstancesOfferingsResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

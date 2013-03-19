@@ -43,21 +43,13 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     AmazonCredentials *o = [[[self class] allocWithZone:zone] init];
-    o.accessKey = [[self.accessKey copy] autorelease];
-    o.secretKey = [[self.secretKey copy] autorelease];
-    o.securityToken = [[self.securityToken copy] autorelease];
+    o.accessKey = [self.accessKey copy];
+    o.secretKey = [self.secretKey copy];
+    o.securityToken = [self.securityToken copy];
 
     return o;
 }
 
--(void)dealloc
-{
-    [_accessKey release];
-    [_secretKey release];
-    [_securityToken release];
-    
-    [super dealloc];
-}
 
 @end
 

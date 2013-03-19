@@ -36,7 +36,7 @@
  * numbers, underscores, and hyphens, and must be between 1 and 256
  * characters long.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 
 /**

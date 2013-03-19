@@ -24,6 +24,6 @@
 }
 
 /** The result object represented by the XML */
-@property (nonatomic, readonly) S3ListObjectsResult *objectListing;
+@property (weak, nonatomic, readonly) S3ListObjectsResult *objectListing;
 
 @end

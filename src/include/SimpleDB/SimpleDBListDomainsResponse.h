@@ -45,13 +45,13 @@
 /**
  * A list of domain names that match the expression.
  */
-@property (nonatomic, retain) NSMutableArray *domainNames;
+@property (nonatomic, strong) NSMutableArray *domainNames;
 
 /**
  * An opaque token indicating that there are more domains than the
  * specified <code>MaxNumberOfDomains</code> still available.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

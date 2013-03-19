@@ -35,19 +35,19 @@
 /**
  * The ARN of the topic to modify.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * The name of the attribute you want to set. Only a subset of the
  * topic's attributes are mutable. <p>Valid values: <code>Policy</code> |
  * <code>DisplayName</code> | <code>DeliveryPolicy</code>
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The new value for the attribute.
  */
-@property (nonatomic, retain) NSString *attributeValue;
+@property (nonatomic, strong) NSString *attributeValue;
 
 
 /**

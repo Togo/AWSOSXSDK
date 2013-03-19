@@ -42,12 +42,12 @@
  * Specifies the maximum hourly price for any Spot Instance launched to
  * fulfill the request.
  */
-@property (nonatomic, retain) NSString *spotPrice;
+@property (nonatomic, strong) NSString *spotPrice;
 
 /**
  * Specifies the maximum number of Spot Instances to launch.
  */
-@property (nonatomic, retain) NSNumber *instanceCount;
+@property (nonatomic, strong) NSNumber *instanceCount;
 
 /**
  * Specifies the Spot Instance type.
@@ -55,7 +55,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>one-time, persistent
  */
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic, strong) NSString *type;
 
 /**
  * Defines the start date of the request. <p> If this is a one-time
@@ -65,7 +65,7 @@
  * at this date and time and remains active until it expires or is
  * canceled.
  */
-@property (nonatomic, retain) NSDate *validFrom;
+@property (nonatomic, strong) NSDate *validFrom;
 
 /**
  * End date of the request. <p> If this is a one-time request, the
@@ -73,25 +73,25 @@
  * canceled, or this date is reached. If the request is persistent, it
  * remains active until it is canceled or this date and time is reached.
  */
-@property (nonatomic, retain) NSDate *validUntil;
+@property (nonatomic, strong) NSDate *validUntil;
 
 /**
  * Specifies the instance launch group. Launch groups are Spot Instances
  * that launch and terminate together.
  */
-@property (nonatomic, retain) NSString *launchGroup;
+@property (nonatomic, strong) NSString *launchGroup;
 
 /**
  * Specifies the Availability Zone group. <p> When specifying the same
  * Availability Zone group for all Spot Instance requests, all Spot
  * Instances are launched in the same Availability Zone.
  */
-@property (nonatomic, retain) NSString *availabilityZoneGroup;
+@property (nonatomic, strong) NSString *availabilityZoneGroup;
 
 /**
  * Specifies additional launch instance information.
  */
-@property (nonatomic, retain) EC2LaunchSpecification *launchSpecification;
+@property (nonatomic, strong) EC2LaunchSpecification *launchSpecification;
 
 
 /**

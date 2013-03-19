@@ -50,25 +50,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [namespace release];
-    [metricName release];
-    [dimensions release];
-
-    [super dealloc];
-}
 
 
 @end

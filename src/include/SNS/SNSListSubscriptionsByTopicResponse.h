@@ -48,14 +48,14 @@
 /**
  * A list of subscriptions.
  */
-@property (nonatomic, retain) NSMutableArray *subscriptions;
+@property (nonatomic, strong) NSMutableArray *subscriptions;
 
 /**
  * Token to pass along to the next <code>ListSubscriptionsByTopic</code>
  * request. This element is returned if there are more subscriptions to
  * retrieve.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

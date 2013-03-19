@@ -39,12 +39,12 @@
 /**
  * The value of the State property for this object.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The value of the InstanceCount property for this object.
  */
-@property (nonatomic, retain) NSNumber *instanceCount;
+@property (nonatomic, strong) NSNumber *instanceCount;
 
 /**
  * Returns a string representation of this object; useful for testing and

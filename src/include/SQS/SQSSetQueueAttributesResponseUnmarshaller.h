@@ -21,7 +21,7 @@
     SQSSetQueueAttributesResponse *response;
 }
 
-@property (nonatomic, readonly) SQSSetQueueAttributesResponse *response;
+@property (weak, nonatomic, readonly) SQSSetQueueAttributesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

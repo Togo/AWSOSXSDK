@@ -65,29 +65,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %@,", size] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeType: %@,", volumeType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Iops: %@,", iops] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %@,", size]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeType: %@,", volumeType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Iops: %@,", iops]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [size release];
-    [snapshotId release];
-    [availabilityZone release];
-    [volumeType release];
-    [iops release];
-
-    [super dealloc];
-}
 
 
 @end

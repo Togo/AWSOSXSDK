@@ -73,14 +73,5 @@
     return maxUploads;
 }
 
--(void) dealloc
-{
-    [delimiter release];
-    [keyMarker release];
-    [prefix release];
-    [uploadIdMarker release];
-
-    [super dealloc];
-}
 
 @end

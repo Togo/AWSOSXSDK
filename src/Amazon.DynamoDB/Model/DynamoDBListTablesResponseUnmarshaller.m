@@ -23,7 +23,7 @@
 
 +(DynamoDBListTablesResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBListTablesResponse *listTablesResult = [[[DynamoDBListTablesResponse alloc] init] autorelease];
+    DynamoDBListTablesResponse *listTablesResult = [[DynamoDBListTablesResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

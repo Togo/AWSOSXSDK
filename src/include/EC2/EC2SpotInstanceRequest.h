@@ -59,12 +59,12 @@
 /**
  * The value of the SpotInstanceRequestId property for this object.
  */
-@property (nonatomic, retain) NSString *spotInstanceRequestId;
+@property (nonatomic, strong) NSString *spotInstanceRequestId;
 
 /**
  * The value of the SpotPrice property for this object.
  */
-@property (nonatomic, retain) NSString *spotPrice;
+@property (nonatomic, strong) NSString *spotPrice;
 
 /**
  * The value of the Type property for this object.
@@ -72,72 +72,72 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>one-time, persistent
  */
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic, strong) NSString *type;
 
 /**
  * The value of the State property for this object.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The value of the Fault property for this object.
  */
-@property (nonatomic, retain) EC2SpotInstanceStateFault *fault;
+@property (nonatomic, strong) EC2SpotInstanceStateFault *fault;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) EC2SpotInstanceStatus *status;
+@property (nonatomic, strong) EC2SpotInstanceStatus *status;
 
 /**
  * The value of the ValidFrom property for this object.
  */
-@property (nonatomic, retain) NSDate *validFrom;
+@property (nonatomic, strong) NSDate *validFrom;
 
 /**
  * The value of the ValidUntil property for this object.
  */
-@property (nonatomic, retain) NSDate *validUntil;
+@property (nonatomic, strong) NSDate *validUntil;
 
 /**
  * The value of the LaunchGroup property for this object.
  */
-@property (nonatomic, retain) NSString *launchGroup;
+@property (nonatomic, strong) NSString *launchGroup;
 
 /**
  * The value of the AvailabilityZoneGroup property for this object.
  */
-@property (nonatomic, retain) NSString *availabilityZoneGroup;
+@property (nonatomic, strong) NSString *availabilityZoneGroup;
 
 /**
  * The LaunchSpecificationType data type.
  */
-@property (nonatomic, retain) EC2LaunchSpecification *launchSpecification;
+@property (nonatomic, strong) EC2LaunchSpecification *launchSpecification;
 
 /**
  * The value of the InstanceId property for this object.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The value of the CreateTime property for this object.
  */
-@property (nonatomic, retain) NSDate *createTime;
+@property (nonatomic, strong) NSDate *createTime;
 
 /**
  * The value of the ProductDescription property for this object.
  */
-@property (nonatomic, retain) NSString *productDescription;
+@property (nonatomic, strong) NSString *productDescription;
 
 /**
  * A list of tags for this spot instance request.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The Availability Zone in which the bid is launched.
  */
-@property (nonatomic, retain) NSString *launchedAvailabilityZone;
+@property (nonatomic, strong) NSString *launchedAvailabilityZone;
 
 /**
  * Adds a single object to tags.

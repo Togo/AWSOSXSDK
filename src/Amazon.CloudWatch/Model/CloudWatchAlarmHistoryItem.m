@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HistoryItemType: %@,", historyItemType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HistorySummary: %@,", historySummary] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HistoryData: %@,", historyData] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HistoryItemType: %@,", historyItemType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HistorySummary: %@,", historySummary]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HistoryData: %@,", historyData]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [alarmName release];
-    [timestamp release];
-    [historyItemType release];
-    [historySummary release];
-    [historyData release];
-
-    [super dealloc];
-}
 
 
 @end

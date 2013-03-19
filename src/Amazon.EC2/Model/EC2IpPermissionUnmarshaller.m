@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"ipRanges"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ipRanges";
         listUnmarshaller.entryElementName   = @"cidrIp";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"ipRanges"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.ipRanges withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ipRanges";
         listUnmarshaller.entryElementName   = @"cidrIp";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -43,7 +43,7 @@
     }
 
     if ([elementName isEqualToString:@"groups"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.userIdGroupPairs withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.userIdGroupPairs withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groups";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2UserIdGroupPairUnmarshaller class];
@@ -54,7 +54,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -110,10 +110,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

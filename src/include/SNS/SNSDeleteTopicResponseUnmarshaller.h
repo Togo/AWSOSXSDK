@@ -21,7 +21,7 @@
     SNSDeleteTopicResponse *response;
 }
 
-@property (nonatomic, readonly) SNSDeleteTopicResponse *response;
+@property (weak, nonatomic, readonly) SNSDeleteTopicResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

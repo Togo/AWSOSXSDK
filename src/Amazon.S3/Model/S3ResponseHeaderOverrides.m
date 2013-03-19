@@ -60,20 +60,9 @@
 
     NSString *retVal = [NSString stringWithString:queryString];
 
-    [queryString release];
 
     return retVal;
 }
 
--(void)dealloc
-{
-    [contentType release];
-    [contentLanguage release];
-    [expires release];
-    [cacheControl release];
-    [contentEncoding release];
-
-    [super dealloc];
-}
 
 @end

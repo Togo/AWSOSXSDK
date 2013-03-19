@@ -52,25 +52,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubscriptionArn: %@,", subscriptionArn] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeName: %@,", attributeName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeValue: %@,", attributeValue] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubscriptionArn: %@,", subscriptionArn]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeName: %@,", attributeName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeValue: %@,", attributeValue]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [subscriptionArn release];
-    [attributeName release];
-    [attributeValue release];
-
-    [super dealloc];
-}
 
 
 @end

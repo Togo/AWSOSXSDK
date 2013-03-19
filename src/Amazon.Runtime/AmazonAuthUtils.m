@@ -70,7 +70,7 @@
     
     NSString *credentialsAuthorizationHeader   = [NSString stringWithFormat:@"Credential=%@", signingCredentials];
     NSString *signedHeadersAuthorizationHeader = [NSString stringWithFormat:@"SignedHeaders=%@", [AmazonAuthUtils getSignedHeadersString:headers]];
-    NSString *signatureAuthorizationHeader     = [NSString stringWithFormat:@"Signature=%@", [AmazonSDKUtil hexEncode:[[[NSString alloc] initWithData:signature encoding:NSASCIIStringEncoding] autorelease]]];
+    NSString *signatureAuthorizationHeader     = [NSString stringWithFormat:@"Signature=%@", [AmazonSDKUtil hexEncode:[[NSString alloc] initWithData:signature encoding:NSASCIIStringEncoding]]];
     
     NSString *authorization = [NSString stringWithFormat:@"%@ %@, %@, %@", SIGV4_ALGORITHM, credentialsAuthorizationHeader, signedHeadersAuthorizationHeader, signatureAuthorizationHeader];
     [serviceRequest.urlRequest setValue:authorization     forHTTPHeaderField:@"Authorization"];
@@ -97,7 +97,7 @@
 +(NSString *)nonce
 {
     CFUUIDRef uuid   = CFUUIDCreate(kCFAllocatorDefault);
-    NSString  *nonce = [(NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid) autorelease];
+    NSString  *nonce = (NSString *)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, uuid));
 
     CFRelease(uuid);
 
@@ -184,7 +184,7 @@
 
 +(NSString *)hashString:(NSString *)stringToHash
 {
-    return [[[NSString alloc] initWithData:[AmazonAuthUtils hash:[stringToHash dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSASCIIStringEncoding] autorelease];
+    return [[NSString alloc] initWithData:[AmazonAuthUtils hash:[stringToHash dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSASCIIStringEncoding];
 }
 
 +(NSData *)hash:(NSData *)dataToHash
@@ -194,7 +194,7 @@
 
     CC_SHA256(cStr, [dataToHash length], result);
 
-    return [[[NSData alloc] initWithBytes:result length:CC_SHA256_DIGEST_LENGTH] autorelease];
+    return [[NSData alloc] initWithBytes:result length:CC_SHA256_DIGEST_LENGTH];
 }
 
 +(NSData *)getV4DerivedKey:(NSString *)secret date:(NSString *)dateStamp region:(NSString *)regionName service:(NSString *)serviceName
@@ -213,7 +213,7 @@
 
 +(NSString *)getCanonicalizedRequest:(NSString *)method path:(NSString *)path query:(NSString *)query headers:(NSMutableDictionary *)headers payload:(NSString *)payload
 {
-    NSMutableString *canonicalRequest = [[NSMutableString new] autorelease];
+    NSMutableString *canonicalRequest = [NSMutableString new];
     [canonicalRequest appendString:method];
     [canonicalRequest appendString:@"\n"];
     [canonicalRequest appendString:path]; // Canonicalized resource path
@@ -240,11 +240,11 @@
 
 +(NSString *)getCanonicalizedHeaderString:(NSMutableDictionary *)theHeaders
 {
-    NSMutableArray *sortedHeaders = [[[NSMutableArray alloc] initWithArray:[theHeaders allKeys]] autorelease];
+    NSMutableArray *sortedHeaders = [[NSMutableArray alloc] initWithArray:[theHeaders allKeys]];
     
     [sortedHeaders sortUsingSelector:@selector(caseInsensitiveCompare:)];
     
-    NSMutableString *headerString = [[[NSMutableString alloc] init] autorelease];
+    NSMutableString *headerString = [[NSMutableString alloc] init];
     for (NSString *header in sortedHeaders) {
         [headerString appendString:[header lowercaseString]];
         [headerString appendString:@":"];
@@ -263,11 +263,11 @@
 
 +(NSString *)getSignedHeadersString:(NSMutableDictionary *)theHeaders
 {
-    NSMutableArray *sortedHeaders = [[[NSMutableArray alloc] initWithArray:[theHeaders allKeys]] autorelease];
+    NSMutableArray *sortedHeaders = [[NSMutableArray alloc] initWithArray:[theHeaders allKeys]];
     
     [sortedHeaders sortUsingSelector:@selector(caseInsensitiveCompare:)];
     
-    NSMutableString *headerString = [[[NSMutableString alloc] init] autorelease];
+    NSMutableString *headerString = [[NSMutableString alloc] init];
     for (NSString *header in sortedHeaders) {
         if ( [headerString length] > 0) {
             [headerString appendString:@";"];

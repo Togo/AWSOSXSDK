@@ -42,17 +42,17 @@
 /**
  * The ID of the instance whose state changed.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The current state of the specified instance.
  */
-@property (nonatomic, retain) EC2InstanceState *currentState;
+@property (nonatomic, strong) EC2InstanceState *currentState;
 
 /**
  * The previous state of the specified instance.
  */
-@property (nonatomic, retain) EC2InstanceState *previousState;
+@property (nonatomic, strong) EC2InstanceState *previousState;
 
 /**
  * Returns a string representation of this object; useful for testing and

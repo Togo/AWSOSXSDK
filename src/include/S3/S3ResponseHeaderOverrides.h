@@ -39,24 +39,24 @@
 }
 
 /** The Content-Type header to be included on the response. */
-@property (nonatomic, retain) NSString *contentType;
+@property (nonatomic, strong) NSString *contentType;
 
 /** The Content-Language header to be included on the response. */
-@property (nonatomic, retain) NSString *contentLanguage;
+@property (nonatomic, strong) NSString *contentLanguage;
 
 /** The Expires header to be included on the response. */
-@property (nonatomic, retain) NSString *expires;
+@property (nonatomic, strong) NSString *expires;
 
 /** The Cache-Control header to be included on the response */
-@property (nonatomic, retain) NSString *cacheControl;
+@property (nonatomic, strong) NSString *cacheControl;
 
 /** The Content-Disposition header to be included on the response. */
-@property (nonatomic, retain) NSString *contentDisposition;
+@property (nonatomic, strong) NSString *contentDisposition;
 
 /** The Content-Encoding header to be included on the response. */
-@property (nonatomic, retain) NSString *contentEncoding;
+@property (nonatomic, strong) NSString *contentEncoding;
 
 /** The partial querystring for the request */
-@property (nonatomic, readonly) NSString *queryString;
+@property (weak, nonatomic, readonly) NSString *queryString;
 
 @end

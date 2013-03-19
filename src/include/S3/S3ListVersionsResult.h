@@ -37,37 +37,37 @@
 }
 
 /** A list of summary information describing the versions stored in the bucket */
-@property (nonatomic, retain) NSMutableArray *versionSummaries;
+@property (nonatomic, strong) NSMutableArray *versionSummaries;
 
 /** The name of the Amazon S3 bucket containing the listed versions */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /** The prefix parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** The key marker parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *keyMarker;
+@property (nonatomic, strong) NSString *keyMarker;
 
 /** When the number of responses exceeds the value of MaxKeys, NextKeyMarker specifies
  * the first key not returned that satisfies the search criteria. Use this value for
  * the key-marker request parameter in a subsequent request.
  */
-@property (nonatomic, retain) NSString *nextKeyMarker;
+@property (nonatomic, strong) NSString *nextKeyMarker;
 
 /** The version id marker parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *versionIdMarker;
+@property (nonatomic, strong) NSString *versionIdMarker;
 
 /** When the number of responses exceeds the value of MaxKeys, NextVersionIdMarker
  * specifies the first object version not returned that satisfies the search criteria.
  * Use this value for the version-id-marker request parameter in a subsequent request.
  */
-@property (nonatomic, retain) NSString *nextVersionIdMarker;
+@property (nonatomic, strong) NSString *nextVersionIdMarker;
 
 /** The maxKeys parameter originally specified by the caller. */
 @property (nonatomic) NSInteger maxKeys;
 
 /** The delimiter parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /** Indicates if this is  a complete listing or if caller needs
  * to make additional requests.
@@ -77,7 +77,7 @@
 /** A list of common prefixes.  Will only be specified for requests
  * that include a delimiter.
  */
-@property (nonatomic, retain) NSMutableArray *commonPrefixes;
+@property (nonatomic, strong) NSMutableArray *commonPrefixes;
 
 
 -(void)addDeleteMarker:(S3VersionSummary *)deleteMarker;

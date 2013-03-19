@@ -45,7 +45,7 @@
 /**
  * The value of the Table property for this object.
  */
-@property (nonatomic, retain) DynamoDBTableDescription *table;
+@property (nonatomic, strong) DynamoDBTableDescription *table;
 
 /**
  * Returns a string representation of this object; useful for testing and

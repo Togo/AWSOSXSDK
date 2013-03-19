@@ -53,22 +53,22 @@
 /**
  * The value of the Architecture property for this object.
  */
-@property (nonatomic, retain) NSString *architecture;
+@property (nonatomic, strong) NSString *architecture;
 
 /**
  * The value of the SecurityGroups property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * The value of the AdditionalInfo property for this object.
  */
-@property (nonatomic, retain) NSString *additionalInfo;
+@property (nonatomic, strong) NSString *additionalInfo;
 
 /**
  * The value of the UserData property for this object.
  */
-@property (nonatomic, retain) NSString *userData;
+@property (nonatomic, strong) NSString *userData;
 
 /**
  * The value of the InstanceType property for this object.
@@ -76,18 +76,18 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * Describes where an Amazon EC2 instance is running within an Amazon EC2
  * region.
  */
-@property (nonatomic, retain) EC2Placement *placement;
+@property (nonatomic, strong) EC2Placement *placement;
 
 /**
  * The value of the BlockDeviceMappings property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * The value of the Monitoring property for this object.
@@ -99,7 +99,7 @@
 /**
  * The value of the SubnetId property for this object.
  */
-@property (nonatomic, retain) NSString *subnetId;
+@property (nonatomic, strong) NSString *subnetId;
 
 /**
  * The value of the DisableApiTermination property for this object.
@@ -111,12 +111,12 @@
 /**
  * The value of the InstanceInitiatedShutdownBehavior property for this object.
  */
-@property (nonatomic, retain) NSString *instanceInitiatedShutdownBehavior;
+@property (nonatomic, strong) NSString *instanceInitiatedShutdownBehavior;
 
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * Adds a single object to securityGroups.

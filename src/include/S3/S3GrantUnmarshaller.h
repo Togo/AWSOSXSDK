@@ -27,6 +27,6 @@
     S3Grant *grant;
 }
 
-@property (nonatomic, readonly) S3Grant *grant;
+@property (weak, nonatomic, readonly) S3Grant *grant;
 
 @end

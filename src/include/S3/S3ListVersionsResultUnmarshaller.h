@@ -26,6 +26,6 @@
 }
 
 /** The S3ListVersionsResult represented by the XML */
-@property (nonatomic, readonly) S3ListVersionsResult *listVersionsResult;
+@property (weak, nonatomic, readonly) S3ListVersionsResult *listVersionsResult;
 
 @end

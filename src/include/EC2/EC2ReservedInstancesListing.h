@@ -50,52 +50,52 @@
 /**
  * The value of the ReservedInstancesListingId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesListingId;
+@property (nonatomic, strong) NSString *reservedInstancesListingId;
 
 /**
  * The value of the ReservedInstancesId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesId;
+@property (nonatomic, strong) NSString *reservedInstancesId;
 
 /**
  * The value of the CreateDate property for this object.
  */
-@property (nonatomic, retain) NSDate *createDate;
+@property (nonatomic, strong) NSDate *createDate;
 
 /**
  * The value of the UpdateDate property for this object.
  */
-@property (nonatomic, retain) NSDate *updateDate;
+@property (nonatomic, strong) NSDate *updateDate;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The value of the StatusMessage property for this object.
  */
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *statusMessage;
 
 /**
  * The value of the InstanceCounts property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *instanceCounts;
+@property (nonatomic, strong) NSMutableArray *instanceCounts;
 
 /**
  * The value of the PriceSchedules property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *priceSchedules;
+@property (nonatomic, strong) NSMutableArray *priceSchedules;
 
 /**
  * The value of the Tags property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The value of the ClientToken property for this object.
  */
-@property (nonatomic, retain) NSString *clientToken;
+@property (nonatomic, strong) NSString *clientToken;
 
 /**
  * Adds a single object to instanceCounts.

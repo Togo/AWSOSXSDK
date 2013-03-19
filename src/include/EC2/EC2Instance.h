@@ -87,54 +87,54 @@
 /**
  * Unique ID of the instance launched.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Image ID of the AMI used to launch the instance.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The current state of the instance.
  */
-@property (nonatomic, retain) EC2InstanceState *state;
+@property (nonatomic, strong) EC2InstanceState *state;
 
 /**
  * The private DNS name assigned to the instance. This DNS name can only
  * be used inside the Amazon EC2 network. This element remains empty
  * until the instance enters a running state.
  */
-@property (nonatomic, retain) NSString *privateDnsName;
+@property (nonatomic, strong) NSString *privateDnsName;
 
 /**
  * The public DNS name assigned to the instance. This DNS name is
  * contactable from outside the Amazon EC2 network. This element remains
  * empty until the instance enters a running state.
  */
-@property (nonatomic, retain) NSString *publicDnsName;
+@property (nonatomic, strong) NSString *publicDnsName;
 
 /**
  * Reason for the most recent state transition. This might be an empty
  * string.
  */
-@property (nonatomic, retain) NSString *stateTransitionReason;
+@property (nonatomic, strong) NSString *stateTransitionReason;
 
 /**
  * If this instance was launched with an associated key pair, this
  * displays the key pair name.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * The AMI launch index, which can be used to find this instance within
  * the launch group.
  */
-@property (nonatomic, retain) NSNumber *amiLaunchIndex;
+@property (nonatomic, strong) NSNumber *amiLaunchIndex;
 
 /**
  * Product codes attached to this instance.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 /**
  * The instance type. For more information on instance types, please see
@@ -145,84 +145,84 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The time this instance launched.
  */
-@property (nonatomic, retain) NSDate *launchTime;
+@property (nonatomic, strong) NSDate *launchTime;
 
 /**
  * The location where this instance launched.
  */
-@property (nonatomic, retain) EC2Placement *placement;
+@property (nonatomic, strong) EC2Placement *placement;
 
 /**
  * Kernel associated with this instance.
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * RAM disk associated with this instance.
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * Platform of the instance (e.g., Windows).
  */
-@property (nonatomic, retain) NSString *platform;
+@property (nonatomic, strong) NSString *platform;
 
 /**
  * Monitoring status for this instance.
  */
-@property (nonatomic, retain) EC2Monitoring *monitoring;
+@property (nonatomic, strong) EC2Monitoring *monitoring;
 
 /**
  * Specifies the Amazon VPC subnet ID in which the instance is running.
  */
-@property (nonatomic, retain) NSString *subnetId;
+@property (nonatomic, strong) NSString *subnetId;
 
 /**
  * Specifies the Amazon VPC in which the instance is running.
  */
-@property (nonatomic, retain) NSString *vpcId;
+@property (nonatomic, strong) NSString *vpcId;
 
 /**
  * Specifies the private IP address that is assigned to the instance
  * (Amazon VPC).
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * Specifies the IP address of the instance.
  */
-@property (nonatomic, retain) NSString *publicIpAddress;
+@property (nonatomic, strong) NSString *publicIpAddress;
 
 /**
  * The reason for the state change.
  */
-@property (nonatomic, retain) EC2StateReason *stateReason;
+@property (nonatomic, strong) EC2StateReason *stateReason;
 
 /**
  * The architecture of this instance.
  */
-@property (nonatomic, retain) NSString *architecture;
+@property (nonatomic, strong) NSString *architecture;
 
 /**
  * The root device type used by the AMI. The AMI can use an Amazon EBS or
  * instance store root device.
  */
-@property (nonatomic, retain) NSString *rootDeviceType;
+@property (nonatomic, strong) NSString *rootDeviceType;
 
 /**
  * The root device name (e.g., <code>/dev/sda1</code>).
  */
-@property (nonatomic, retain) NSString *rootDeviceName;
+@property (nonatomic, strong) NSString *rootDeviceName;
 
 /**
  * Block device mapping set.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * The value of the VirtualizationType property for this object.
@@ -230,38 +230,38 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>hvm, paravirtual
  */
-@property (nonatomic, retain) NSString *virtualizationType;
+@property (nonatomic, strong) NSString *virtualizationType;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *instanceLifecycle;
+@property (nonatomic, strong) NSString *instanceLifecycle;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *spotInstanceRequestId;
+@property (nonatomic, strong) NSString *spotInstanceRequestId;
 
 /**
  * Represents an active license in use and attached to an Amazon EC2
  * instance.
  */
-@property (nonatomic, retain) EC2InstanceLicense *license;
+@property (nonatomic, strong) EC2InstanceLicense *license;
 
 /**
  * The value of the ClientToken property for this object.
  */
-@property (nonatomic, retain) NSString *clientToken;
+@property (nonatomic, strong) NSString *clientToken;
 
 /**
  * A list of tags for the Instance.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The value of the SecurityGroups property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * The value of the SourceDestCheck property for this object.
@@ -276,17 +276,17 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ovm, xen
  */
-@property (nonatomic, retain) NSString *hypervisor;
+@property (nonatomic, strong) NSString *hypervisor;
 
 /**
  * The value of the NetworkInterfaces property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *networkInterfaces;
+@property (nonatomic, strong) NSMutableArray *networkInterfaces;
 
 /**
  * The value of the IamInstanceProfile property for this object.
  */
-@property (nonatomic, retain) EC2IamInstanceProfile *iamInstanceProfile;
+@property (nonatomic, strong) EC2IamInstanceProfile *iamInstanceProfile;
 
 /**
  * The value of the EbsOptimized property for this object.

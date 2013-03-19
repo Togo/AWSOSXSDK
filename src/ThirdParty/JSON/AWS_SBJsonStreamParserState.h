@@ -38,9 +38,9 @@
 @interface AWS_SBJsonStreamParserState : NSObject
 + (id)sharedInstance;
 
-- (BOOL)parser:(AWS_SBJsonStreamParser*)parser shouldAcceptToken:(sbjson_token_t)token;
+- (BOOL)parser:(AWS_SBJsonStreamParser*)parser shouldAcceptToken:(AWS_SBJson_token_t)token;
 - (AWS_SBJsonStreamParserStatus)parserShouldReturn:(AWS_SBJsonStreamParser*)parser;
-- (void)parser:(AWS_SBJsonStreamParser*)parser shouldTransitionTo:(sbjson_token_t)tok;
+- (void)parser:(AWS_SBJsonStreamParser*)parser shouldTransitionTo:(AWS_SBJson_token_t)tok;
 - (BOOL)needKey;
 - (BOOL)isError;
 

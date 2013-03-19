@@ -29,7 +29,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2Storage *response;
+@property (weak, nonatomic, readonly) EC2Storage *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

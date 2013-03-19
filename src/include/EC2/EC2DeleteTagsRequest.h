@@ -36,14 +36,14 @@
  * A list of one or more resource IDs. This could be the ID of an AMI, an
  * instance, an EBS volume, or snapshot, etc.
  */
-@property (nonatomic, retain) NSMutableArray *resources;
+@property (nonatomic, strong) NSMutableArray *resources;
 
 /**
  * The tags to delete from the specified resources. Each tag item
  * consists of a key-value pair. <p> If a tag is specified without a
  * value, the tag and all of its values are deleted.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 
 /**

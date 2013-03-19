@@ -38,28 +38,23 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"AuthorizationError"]) {
-        [newException release];
         newException = [[SNSAuthorizationErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalError"]) {
-        [newException release];
         newException = [[SNSInternalErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameter"]) {
-        [newException release];
         newException = [[SNSInvalidParameterException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -76,23 +71,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Topics: %@,", topics] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Topics: %@,", topics]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [topics release];
-    [nextToken release];
-
-    [super dealloc];
-}
 
 
 @end

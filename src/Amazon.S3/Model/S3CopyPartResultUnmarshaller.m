@@ -62,10 +62,5 @@ qualifiedName:(NSString *)qName
     return partCopyResult;
 }
 
--(void)dealloc
-{
-    [partCopyResult release];
-    [super dealloc];
-}
 
 @end

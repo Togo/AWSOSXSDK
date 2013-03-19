@@ -26,16 +26,16 @@
 }
 
 /** The URI that identifies the newly created object. */
-@property (nonatomic, retain) NSString *location;
+@property (nonatomic, strong) NSString *location;
 
 /** The name of the bucket that contains the newly created object. */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /** The object key of the newly created object. */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** Entity tag that identifies the newly created object's data. */
-@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, strong) NSString *etag;
 
 
 @end

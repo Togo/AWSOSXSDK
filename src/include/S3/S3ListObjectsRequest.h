@@ -31,18 +31,18 @@
 /** Limits the response to keys that begin with the specified prefix.
  *  You can use prefixes to separate a bucket into different groupings of keys.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** Specifies the key to start with when listing objects in a bucket. Amazon
  *  S3 lists objects in alphabetical order.
  */
-@property (nonatomic, retain) NSString *marker;
+@property (nonatomic, strong) NSString *marker;
 
 /**  A delimiter is a character you use to group keys. All keys that contain
  *   the same string between the prefix and the first occurrence of the
  *   delimiter are grouped under a single result element.
  */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /** Sets the maximum number of keys returned in the response body. The
  *  response might contain fewer keys but will never contain more.

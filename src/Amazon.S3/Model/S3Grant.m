@@ -25,15 +25,15 @@
 {
     self = [self init];
     if (self) {
-        grantee    = [theGrantee retain];
-        permission = [thePermission retain];
+        grantee    = theGrantee;
+        permission = thePermission;
     }
     return self;
 }
 
 +(id)grantWithGrantee:(S3Grantee *)theGrantee withPermission:(S3Permission *)thePermission
 {
-    return [[[S3Grant alloc] initWithGrantee:theGrantee withPermission:thePermission] autorelease];
+    return [[S3Grant alloc] initWithGrantee:theGrantee withPermission:thePermission];
 }
 
 -(NSString *)toXml
@@ -42,12 +42,5 @@
             [self.grantee toXml], [self.permission description]];
 }
 
--(void)dealloc
-{
-    [grantee release];
-    [permission release];
-
-    [super dealloc];
-}
 
 @end

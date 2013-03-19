@@ -31,14 +31,7 @@
     self.etag         = unmarshaller.objectCopyResult.etag;
     self.lastModified = [NSDate dateWithISO8061Format:unmarshaller.objectCopyResult.lastModified];
 
-    [unmarshaller release];
-    [parser release];
 }
 
--(void)dealloc
-{
-    [lastModified release];
-    [super dealloc];
-}
 
 @end

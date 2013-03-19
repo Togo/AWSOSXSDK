@@ -31,7 +31,7 @@ __attribute__ ((deprecated))
 /**
  * The stream of data to upload.
  */
-@property (nonatomic, retain) NSInputStream *stream;
+@property (nonatomic, strong) NSInputStream *stream;
 
 /**
  * The number of K blocks to upload in each packet.

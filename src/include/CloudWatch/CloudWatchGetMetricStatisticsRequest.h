@@ -52,7 +52,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * The name of the metric, with or without spaces.
@@ -60,7 +60,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * A list of dimensions describing qualities of the metric.
@@ -68,7 +68,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The time stamp to use for determining the first datapoint to return.
@@ -81,14 +81,14 @@
  * the past may take in excess of 48 hours to become available from
  * submission time using <code>GetMetricStatistics</code>. </note>
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The time stamp to use for determining the last datapoint to return.
  * The value specified is exclusive; results will include datapoints up
  * to the time stamp specified.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * The granularity, in seconds, of the returned datapoints.
@@ -98,7 +98,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>60 - <br/>
  */
-@property (nonatomic, retain) NSNumber *period;
+@property (nonatomic, strong) NSNumber *period;
 
 /**
  * The metric statistics to return. For information about specific
@@ -110,7 +110,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *statistics;
+@property (nonatomic, strong) NSMutableArray *statistics;
 
 /**
  * The unit for the metric.
@@ -118,7 +118,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * Adds a single object to dimensions.

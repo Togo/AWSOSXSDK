@@ -21,7 +21,7 @@
     AutoScalingUpdateAutoScalingGroupResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingUpdateAutoScalingGroupResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingUpdateAutoScalingGroupResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

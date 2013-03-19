@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RoleArn: %@,", roleArn] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RoleSessionName: %@,", roleSessionName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Policy: %@,", policy] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DurationSeconds: %@,", durationSeconds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExternalId: %@,", externalId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RoleArn: %@,", roleArn]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RoleSessionName: %@,", roleSessionName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Policy: %@,", policy]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DurationSeconds: %@,", durationSeconds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExternalId: %@,", externalId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [roleArn release];
-    [roleSessionName release];
-    [policy release];
-    [durationSeconds release];
-    [externalId release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -21,7 +21,7 @@
     AmazonServiceException *exception;
 }
 
-@property (nonatomic, readonly) AmazonServiceException *exception;
+@property (weak, nonatomic, readonly) AmazonServiceException *exception;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

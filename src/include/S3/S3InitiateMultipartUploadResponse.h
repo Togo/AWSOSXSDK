@@ -25,6 +25,6 @@
 }
 
 /** An object representing the multipart upload. */
-@property (nonatomic, readonly) S3MultipartUpload *multipartUpload;
+@property (weak, nonatomic, readonly) S3MultipartUpload *multipartUpload;
 
 @end

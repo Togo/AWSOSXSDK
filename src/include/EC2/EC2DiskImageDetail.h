@@ -40,17 +40,17 @@
 /**
  * The value of the Format property for this object.
  */
-@property (nonatomic, retain) NSString *format;
+@property (nonatomic, strong) NSString *format;
 
 /**
  * The value of the Bytes property for this object.
  */
-@property (nonatomic, retain) NSNumber *bytes;
+@property (nonatomic, strong) NSNumber *bytes;
 
 /**
  * The value of the ImportManifestUrl property for this object.
  */
-@property (nonatomic, retain) NSString *importManifestUrl;
+@property (nonatomic, strong) NSString *importManifestUrl;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -62,10 +62,5 @@ qualifiedName:(NSString *)qName
     return objectCopyResult;
 }
 
--(void)dealloc
-{
-    [objectCopyResult release];
-    [super dealloc];
-}
 
 @end

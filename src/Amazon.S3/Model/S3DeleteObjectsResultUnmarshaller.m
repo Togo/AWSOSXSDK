@@ -31,11 +31,11 @@
 
     if ([elementName isEqualToString:@"Deleted"])
     {
-        [parser setDelegate:[[[S3DeletedObjectUnmarshaller alloc] initWithCaller:self withParentObject:self.deletedObjects withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3DeletedObjectUnmarshaller alloc] initWithCaller:self withParentObject:self.deletedObjects withSetter:@selector(addObject:)]];
     }
     else if ([elementName isEqualToString:@"Error"])
     {
-        [parser setDelegate:[[[S3DeleteErrorUnmarshaller alloc] initWithCaller:self withParentObject:self.deleteErrors withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3DeleteErrorUnmarshaller alloc] initWithCaller:self withParentObject:self.deleteErrors withSetter:@selector(addObject:)]];
     }
 }
 
@@ -63,12 +63,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [deletedObjects release];
-    [deleteErrors release];
-
-    [super dealloc];
-}
 
 @end

@@ -40,23 +40,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"PackedPolicyTooLarge"]) {
-        [newException release];
         newException = [[SecurityTokenServicePackedPolicyTooLargeException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"MalformedPolicyDocument"]) {
-        [newException release];
         newException = [[SecurityTokenServiceMalformedPolicyDocumentException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -67,25 +63,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Credentials: %@,", credentials] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AssumedRoleUser: %@,", assumedRoleUser] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PackedPolicySize: %@,", packedPolicySize] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Credentials: %@,", credentials]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AssumedRoleUser: %@,", assumedRoleUser]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PackedPolicySize: %@,", packedPolicySize]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [credentials release];
-    [assumedRoleUser release];
-    [packedPolicySize release];
-
-    [super dealloc];
-}
 
 
 @end

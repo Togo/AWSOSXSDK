@@ -44,13 +44,13 @@
 /**
  * The value of the SpotPriceHistory property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *spotPriceHistory;
+@property (nonatomic, strong) NSMutableArray *spotPriceHistory;
 
 /**
  * The string marking the next set of results returned. Displays empty if
  * there are no more results to be returned.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

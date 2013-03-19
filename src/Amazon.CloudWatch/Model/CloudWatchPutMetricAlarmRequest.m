@@ -103,25 +103,25 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmDescription: %@,", alarmDescription] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ActionsEnabled: %d,", actionsEnabled] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OKActions: %@,", oKActions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmActions: %@,", alarmActions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InsufficientDataActions: %@,", insufficientDataActions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Statistic: %@,", statistic] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Period: %@,", period] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Unit: %@,", unit] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EvaluationPeriods: %@,", evaluationPeriods] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Threshold: %@,", threshold] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ComparisonOperator: %@,", comparisonOperator] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmDescription: %@,", alarmDescription]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ActionsEnabled: %d,", actionsEnabled]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OKActions: %@,", oKActions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmActions: %@,", alarmActions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InsufficientDataActions: %@,", insufficientDataActions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Statistic: %@,", statistic]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Period: %@,", period]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Unit: %@,", unit]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EvaluationPeriods: %@,", evaluationPeriods]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Threshold: %@,", threshold]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ComparisonOperator: %@,", comparisonOperator]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -132,25 +132,6 @@
 }
 
 
--(void)dealloc
-{
-    [alarmName release];
-    [alarmDescription release];
-    [oKActions release];
-    [alarmActions release];
-    [insufficientDataActions release];
-    [metricName release];
-    [namespace release];
-    [statistic release];
-    [dimensions release];
-    [period release];
-    [unit release];
-    [evaluationPeriods release];
-    [threshold release];
-    [comparisonOperator release];
-
-    [super dealloc];
-}
 
 
 @end

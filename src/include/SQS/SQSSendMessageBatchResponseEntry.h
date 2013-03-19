@@ -44,12 +44,12 @@
 /**
  * An identifier for the message in this batch.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * An identifier for the message.
  */
-@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, strong) NSString *messageId;
 
 /**
  * An MD5 digest of the non-URL-encoded message body string. This can be
@@ -58,7 +58,7 @@
  * about MD5, go to <a
  * p://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
  */
-@property (nonatomic, retain) NSString *mD5OfMessageBody;
+@property (nonatomic, strong) NSString *mD5OfMessageBody;
 
 /**
  * Returns a string representation of this object; useful for testing and

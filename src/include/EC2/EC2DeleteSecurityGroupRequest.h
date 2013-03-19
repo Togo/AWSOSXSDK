@@ -34,12 +34,12 @@
 /**
  * The name of the Amazon EC2 security group to delete.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * The ID of the Amazon EC2 security group to delete.
  */
-@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, strong) NSString *groupId;
 
 
 /**

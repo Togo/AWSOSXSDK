@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceRegion: %@,", sourceRegion] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceImageId: %@,", sourceImageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Name: %@,", name] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceRegion: %@,", sourceRegion]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceImageId: %@,", sourceImageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Name: %@,", name]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [sourceRegion release];
-    [sourceImageId release];
-    [name release];
-    [descriptionValue release];
-    [clientToken release];
-
-    [super dealloc];
-}
 
 
 @end

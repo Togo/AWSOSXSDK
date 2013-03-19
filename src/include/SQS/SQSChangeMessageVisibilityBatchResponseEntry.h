@@ -43,7 +43,7 @@
  * Represents a message whose visibility timeout has been changed
  * successfully.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * Returns a string representation of this object; useful for testing and

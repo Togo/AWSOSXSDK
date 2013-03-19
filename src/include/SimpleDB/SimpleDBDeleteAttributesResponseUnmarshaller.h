@@ -21,7 +21,7 @@
     SimpleDBDeleteAttributesResponse *response;
 }
 
-@property (nonatomic, readonly) SimpleDBDeleteAttributesResponse *response;
+@property (weak, nonatomic, readonly) SimpleDBDeleteAttributesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

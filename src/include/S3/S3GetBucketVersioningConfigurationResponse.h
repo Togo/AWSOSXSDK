@@ -25,6 +25,6 @@
 }
 
 /** The Bucket Versioning Configuration */
-@property (nonatomic, retain) S3BucketVersioningConfiguration *versioningConfiguration;
+@property (nonatomic, strong) S3BucketVersioningConfiguration *versioningConfiguration;
 
 @end

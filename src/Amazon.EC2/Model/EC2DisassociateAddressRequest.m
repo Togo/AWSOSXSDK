@@ -48,23 +48,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AssociationId: %@,", associationId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AssociationId: %@,", associationId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [publicIp release];
-    [associationId release];
-
-    [super dealloc];
-}
 
 
 @end

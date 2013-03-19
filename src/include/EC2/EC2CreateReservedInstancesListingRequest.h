@@ -44,22 +44,22 @@
 /**
  * The value of the ReservedInstancesId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesId;
+@property (nonatomic, strong) NSString *reservedInstancesId;
 
 /**
  * The value of the InstanceCount property for this object.
  */
-@property (nonatomic, retain) NSNumber *instanceCount;
+@property (nonatomic, strong) NSNumber *instanceCount;
 
 /**
  * The value of the PriceSchedules property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *priceSchedules;
+@property (nonatomic, strong) NSMutableArray *priceSchedules;
 
 /**
  * The value of the ClientToken property for this object.
  */
-@property (nonatomic, retain) NSString *clientToken;
+@property (nonatomic, strong) NSString *clientToken;
 
 /**
  * Adds a single object to priceSchedules.

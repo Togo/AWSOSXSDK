@@ -61,25 +61,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerPort: %@,", loadBalancerPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyNames: %@,", policyNames] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerPort: %@,", loadBalancerPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyNames: %@,", policyNames]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [loadBalancerName release];
-    [loadBalancerPort release];
-    [policyNames release];
-
-    [super dealloc];
-}
 
 
 @end

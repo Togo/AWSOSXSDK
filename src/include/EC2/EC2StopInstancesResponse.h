@@ -44,7 +44,7 @@
  * The list of the stopping instances and details on how their state has
  * changed.
  */
-@property (nonatomic, retain) NSMutableArray *stoppingInstances;
+@property (nonatomic, strong) NSMutableArray *stoppingInstances;
 
 
 

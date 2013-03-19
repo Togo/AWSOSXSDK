@@ -39,13 +39,13 @@
  * The name associated with the LoadBalancer. The name must be unique
  * within your set of LoadBalancers.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A list of the following tuples: LoadBalancerPort, InstancePort, and
  * Protocol.
  */
-@property (nonatomic, retain) NSMutableArray *listeners;
+@property (nonatomic, strong) NSMutableArray *listeners;
 
 /**
  * A list of Availability Zones. <p> At least one Availability Zone must
@@ -54,17 +54,17 @@
  * all zones. <p> This list can be modified after the creation of the
  * LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 /**
  * A list of subnet IDs in your VPC to attach to your LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *subnets;
+@property (nonatomic, strong) NSMutableArray *subnets;
 
 /**
  * The security groups assigned to your LoadBalancer within your VPC.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 
 /**

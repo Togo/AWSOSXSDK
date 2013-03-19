@@ -37,17 +37,17 @@
  * communicate the result. Note that the <code>Id</code>s of a batch
  * request need to be unique within the request.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * A receipt handle.
  */
-@property (nonatomic, retain) NSString *receiptHandle;
+@property (nonatomic, strong) NSString *receiptHandle;
 
 /**
  * The new value (in seconds) for the message's visibility timeout.
  */
-@property (nonatomic, retain) NSNumber *visibilityTimeout;
+@property (nonatomic, strong) NSNumber *visibilityTimeout;
 
 
 /**

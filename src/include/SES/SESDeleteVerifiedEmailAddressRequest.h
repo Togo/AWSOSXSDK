@@ -40,7 +40,7 @@
 /**
  * An email address to be removed from the list of verified addresses.
  */
-@property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, strong) NSString *emailAddress;
 
 /**
  * Returns a string representation of this object; useful for testing and

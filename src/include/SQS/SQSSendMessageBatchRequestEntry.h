@@ -37,17 +37,17 @@
  * communicate the result. Note that the the <code>Id</code>s of a batch
  * request need to be unique within the request.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * Body of the message.
  */
-@property (nonatomic, retain) NSString *messageBody;
+@property (nonatomic, strong) NSString *messageBody;
 
 /**
  * The number of seconds for which the message has to be delayed.
  */
-@property (nonatomic, retain) NSNumber *delaySeconds;
+@property (nonatomic, strong) NSNumber *delaySeconds;
 
 
 /**

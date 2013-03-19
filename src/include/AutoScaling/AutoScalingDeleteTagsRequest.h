@@ -45,7 +45,7 @@
  * key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
  * <i>false</i>.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to tags.

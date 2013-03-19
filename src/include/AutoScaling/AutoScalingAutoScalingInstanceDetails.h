@@ -47,7 +47,7 @@
  * <b>Length: </b>1 - 16<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The name of the Auto Scaling group associated with this instance.
@@ -56,7 +56,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The Availability Zone in which this instance resides.
@@ -65,7 +65,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The life cycle state of this instance.
@@ -74,7 +74,7 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *lifecycleState;
+@property (nonatomic, strong) NSString *lifecycleState;
 
 /**
  * The health status of this instance. "Healthy" means that the instance
@@ -85,7 +85,7 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthStatus;
+@property (nonatomic, strong) NSString *healthStatus;
 
 /**
  * The launch configuration associated with this instance.
@@ -94,7 +94,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * Returns a string representation of this object; useful for testing and

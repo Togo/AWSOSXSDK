@@ -34,12 +34,12 @@
 /**
  * The Amazon S3 bucket in which to store the Spot Instance datafeed.
  */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /**
  * The prefix that is prepended to datafeed files.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 
 /**

@@ -40,17 +40,17 @@
 /**
  * The value of the Term property for this object.
  */
-@property (nonatomic, retain) NSNumber *term;
+@property (nonatomic, strong) NSNumber *term;
 
 /**
  * The value of the Price property for this object.
  */
-@property (nonatomic, retain) NSNumber *price;
+@property (nonatomic, strong) NSNumber *price;
 
 /**
  * The value of the CurrencyCode property for this object.
  */
-@property (nonatomic, retain) NSString *currencyCode;
+@property (nonatomic, strong) NSString *currencyCode;
 
 /**
  * Returns a string representation of this object; useful for testing and

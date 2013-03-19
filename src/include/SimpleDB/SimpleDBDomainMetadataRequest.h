@@ -33,7 +33,7 @@
 /**
  * The name of the domain for which to display the metadata of.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 
 /**

@@ -46,12 +46,12 @@
 /**
  * A list of metrics used to generate statistics for an AWS account.
  */
-@property (nonatomic, retain) NSMutableArray *metrics;
+@property (nonatomic, strong) NSMutableArray *metrics;
 
 /**
  * A string that marks the start of the next batch of returned results.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

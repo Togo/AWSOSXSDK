@@ -82,39 +82,24 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservedInstancesListingId: %@,", reservedInstancesListingId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreateDate: %@,", createDate] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UpdateDate: %@,", updateDate] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCounts: %@,", instanceCounts] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PriceSchedules: %@,", priceSchedules] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservedInstancesListingId: %@,", reservedInstancesListingId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreateDate: %@,", createDate]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UpdateDate: %@,", updateDate]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCounts: %@,", instanceCounts]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PriceSchedules: %@,", priceSchedules]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reservedInstancesListingId release];
-    [reservedInstancesId release];
-    [createDate release];
-    [updateDate release];
-    [status release];
-    [statusMessage release];
-    [instanceCounts release];
-    [priceSchedules release];
-    [tags release];
-    [clientToken release];
-
-    [super dealloc];
-}
 
 
 @end

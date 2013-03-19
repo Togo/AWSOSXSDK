@@ -81,22 +81,22 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AdditionalInfo: %@,", additionalInfo] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserData: %@,", userData] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Placement: %@,", placement] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Monitoring: %d,", monitoring] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DisableApiTermination: %d,", disableApiTermination] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceInitiatedShutdownBehavior: %@,", instanceInitiatedShutdownBehavior] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AdditionalInfo: %@,", additionalInfo]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserData: %@,", userData]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Placement: %@,", placement]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Monitoring: %d,", monitoring]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DisableApiTermination: %d,", disableApiTermination]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceInitiatedShutdownBehavior: %@,", instanceInitiatedShutdownBehavior]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -113,21 +113,6 @@
 }
 
 
--(void)dealloc
-{
-    [architecture release];
-    [securityGroups release];
-    [additionalInfo release];
-    [userData release];
-    [instanceType release];
-    [placement release];
-    [blockDeviceMappings release];
-    [subnetId release];
-    [instanceInitiatedShutdownBehavior release];
-    [privateIpAddress release];
-
-    [super dealloc];
-}
 
 
 @end

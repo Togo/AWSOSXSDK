@@ -49,7 +49,7 @@
  * subscription immediately (without requiring endpoint owner
  * confirmation).
  */
-@property (nonatomic, retain) NSString *subscriptionArn;
+@property (nonatomic, strong) NSString *subscriptionArn;
 
 /**
  * Returns a string representation of this object; useful for testing and

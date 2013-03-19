@@ -38,38 +38,31 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.BatchEntryIdsNotDistinct"]) {
-        [newException release];
         newException = [[SQSBatchEntryIdsNotDistinctException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.TooManyEntriesInBatchRequest"]) {
-        [newException release];
         newException = [[SQSTooManyEntriesInBatchRequestException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.BatchRequestTooLong"]) {
-        [newException release];
         newException = [[SQSBatchRequestTooLongException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.InvalidBatchEntryId"]) {
-        [newException release];
         newException = [[SQSInvalidBatchEntryIdException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.EmptyBatchRequest"]) {
-        [newException release];
         newException = [[SQSEmptyBatchRequestException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -92,23 +85,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Successful: %@,", successful] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Failed: %@,", failed] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Successful: %@,", successful]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Failed: %@,", failed]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [successful release];
-    [failed release];
-
-    [super dealloc];
-}
 
 
 @end

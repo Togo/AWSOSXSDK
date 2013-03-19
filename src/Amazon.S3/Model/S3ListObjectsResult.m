@@ -59,31 +59,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Summaries: %@,", objectSummaries] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Common Prefixes: %@,", commonPrefixes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Name: %@,", bucketName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Marker: %@,", marker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Summaries: %@,", objectSummaries]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Common Prefixes: %@,", commonPrefixes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Name: %@,", bucketName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Marker: %@,", marker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [objectSummaries release];
-    [bucketName release];
-    [prefix release];
-    [marker release];
-    [delimiter release];
-    [commonPrefixes release];
-
-    [super dealloc];
-}
 
 
 @end

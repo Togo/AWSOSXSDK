@@ -43,12 +43,12 @@
 /**
  * The optional list of Amazon EC2 security groups to describe.
  */
-@property (nonatomic, retain) NSMutableArray *groupNames;
+@property (nonatomic, strong) NSMutableArray *groupNames;
 
 /**
  * The value of the GroupIds property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *groupIds;
+@property (nonatomic, strong) NSMutableArray *groupIds;
 
 /**
  * A list of filters used to match properties for SecurityGroups. For a
@@ -57,7 +57,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to groupNames.

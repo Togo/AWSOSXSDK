@@ -52,25 +52,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Endpoint: %@,", endpoint] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Endpoint: %@,", endpoint]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [topicArn release];
-    [protocol release];
-    [endpoint release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -21,7 +21,7 @@
     AutoScalingDeleteScheduledActionResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingDeleteScheduledActionResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingDeleteScheduledActionResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

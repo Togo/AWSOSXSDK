@@ -38,20 +38,20 @@
 /**
  * The name of the domain in which to perform the operation.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 /**
  * The name of the item. Similar to rows on a spreadsheet, items
  * represent individual objects that contain one or more value-attribute
  * pairs.
  */
-@property (nonatomic, retain) NSString *itemName;
+@property (nonatomic, strong) NSString *itemName;
 
 /**
  * A list of Attributes. Similar to columns on a spreadsheet, attributes
  * represent categories of data that can be assigned to items.
  */
-@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic, strong) NSMutableArray *attributes;
 
 /**
  * The update condition which, if specified, determines whether the
@@ -59,7 +59,7 @@
  * be satisfied in order for this request to be processed and the
  * attributes to be deleted.
  */
-@property (nonatomic, retain) SimpleDBUpdateCondition *expected;
+@property (nonatomic, strong) SimpleDBUpdateCondition *expected;
 
 
 /**

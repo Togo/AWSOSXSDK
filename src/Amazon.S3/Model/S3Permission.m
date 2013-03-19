@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        xmlValue = [code retain];
+        xmlValue = code;
     }
     return self;
 }
@@ -101,11 +101,6 @@
     return xmlValue;
 }
 
--(void)dealloc
-{
-    [xmlValue release];
-    [super dealloc];
-}
 
 
 

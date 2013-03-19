@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"Attributes"]) {
-        AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.attributes withSetter:@selector(addEntriesFromDictionary:)] autorelease];
+        AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.attributes withSetter:@selector(addEntriesFromDictionary:)];
         dictionaryUnmarshaller.keyXpathElement      = @"key";
         dictionaryUnmarshaller.valueXpathElement    = @"value";
         dictionaryUnmarshaller.dictionaryEndElement = @"Attributes";
@@ -37,7 +37,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -68,10 +68,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

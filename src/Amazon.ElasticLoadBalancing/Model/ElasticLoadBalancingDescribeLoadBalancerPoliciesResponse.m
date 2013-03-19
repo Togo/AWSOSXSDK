@@ -36,23 +36,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"PolicyNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingPolicyNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"LoadBalancerNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingLoadBalancerNotFoundException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -69,21 +65,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyDescriptions: %@,", policyDescriptions] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyDescriptions: %@,", policyDescriptions]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [policyDescriptions release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -81,23 +81,23 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateDnsName: %@,", privateDnsName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceDestCheck: %d,", sourceDestCheck] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Groups: %@,", groups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attachment: %@,", attachment] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Association: %@,", association] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddresses: %@,", privateIpAddresses] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateDnsName: %@,", privateDnsName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceDestCheck: %d,", sourceDestCheck]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Groups: %@,", groups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attachment: %@,", attachment]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Association: %@,", association]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddresses: %@,", privateIpAddresses]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -108,23 +108,6 @@
 }
 
 
--(void)dealloc
-{
-    [networkInterfaceId release];
-    [subnetId release];
-    [vpcId release];
-    [descriptionValue release];
-    [ownerId release];
-    [status release];
-    [privateIpAddress release];
-    [privateDnsName release];
-    [groups release];
-    [attachment release];
-    [association release];
-    [privateIpAddresses release];
-
-    [super dealloc];
-}
 
 
 @end

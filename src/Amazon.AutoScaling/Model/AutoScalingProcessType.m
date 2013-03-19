@@ -37,21 +37,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProcessName: %@,", processName] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProcessName: %@,", processName]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [processName release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -36,18 +36,18 @@
  * A list of the <a>AppCookieStickinessPolicy</a> objects created with
  * <a>CreateAppCookieStickinessPolicy</a>.
  */
-@property (nonatomic, retain) NSMutableArray *appCookieStickinessPolicies;
+@property (nonatomic, strong) NSMutableArray *appCookieStickinessPolicies;
 
 /**
  * A list of <a>LBCookieStickinessPolicy</a> objects created with
  * <a>CreateAppCookieStickinessPolicy</a>.
  */
-@property (nonatomic, retain) NSMutableArray *lBCookieStickinessPolicies;
+@property (nonatomic, strong) NSMutableArray *lBCookieStickinessPolicies;
 
 /**
  * A list of policy names other than the stickiness policies.
  */
-@property (nonatomic, retain) NSMutableArray *otherPolicies;
+@property (nonatomic, strong) NSMutableArray *otherPolicies;
 
 
 /**

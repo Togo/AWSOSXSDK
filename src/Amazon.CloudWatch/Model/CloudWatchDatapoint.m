@@ -49,33 +49,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SampleCount: %@,", sampleCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Average: %@,", average] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Sum: %@,", sum] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Minimum: %@,", minimum] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Maximum: %@,", maximum] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Unit: %@,", unit] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SampleCount: %@,", sampleCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Average: %@,", average]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Sum: %@,", sum]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Minimum: %@,", minimum]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Maximum: %@,", maximum]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Unit: %@,", unit]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [timestamp release];
-    [sampleCount release];
-    [average release];
-    [sum release];
-    [minimum release];
-    [maximum release];
-    [unit release];
-
-    [super dealloc];
-}
 
 
 @end

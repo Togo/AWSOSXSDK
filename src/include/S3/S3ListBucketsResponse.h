@@ -26,6 +26,6 @@
 }
 
 /** The result of the listBuckets operations. Contains the list of buckets. */
-@property (nonatomic, retain) S3ListBucketsResult *listBucketsResult;
+@property (nonatomic, strong) S3ListBucketsResult *listBucketsResult;
 
 @end

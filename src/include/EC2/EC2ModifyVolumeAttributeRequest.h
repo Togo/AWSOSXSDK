@@ -42,7 +42,7 @@
 /**
  * The value of the VolumeId property for this object.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The value of the AutoEnableIO property for this object.

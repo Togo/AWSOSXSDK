@@ -44,7 +44,7 @@
 /**
  * A list of messages.
  */
-@property (nonatomic, retain) NSMutableArray *messages;
+@property (nonatomic, strong) NSMutableArray *messages;
 
 
 

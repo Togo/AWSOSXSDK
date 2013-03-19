@@ -40,7 +40,7 @@
 /**
  * The value of the ExportTaskIds property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *exportTaskIds;
+@property (nonatomic, strong) NSMutableArray *exportTaskIds;
 
 /**
  * Adds a single object to exportTaskIds.

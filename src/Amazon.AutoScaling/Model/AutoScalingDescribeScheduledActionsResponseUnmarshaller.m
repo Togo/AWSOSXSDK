@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"ScheduledUpdateGroupActions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.scheduledUpdateGroupActions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.scheduledUpdateGroupActions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"ScheduledUpdateGroupActions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingScheduledUpdateGroupActionUnmarshaller class];
@@ -36,7 +36,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -72,10 +72,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

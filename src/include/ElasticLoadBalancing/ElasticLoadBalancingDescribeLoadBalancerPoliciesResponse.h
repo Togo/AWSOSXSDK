@@ -45,7 +45,7 @@
 /**
  * A list of policy description structures.
  */
-@property (nonatomic, retain) NSMutableArray *policyDescriptions;
+@property (nonatomic, strong) NSMutableArray *policyDescriptions;
 
 
 

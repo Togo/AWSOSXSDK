@@ -43,7 +43,7 @@
 /**
  * The described instance attribute.
  */
-@property (nonatomic, retain) EC2InstanceAttribute *instanceAttribute;
+@property (nonatomic, strong) EC2InstanceAttribute *instanceAttribute;
 
 /**
  * Returns a string representation of this object; useful for testing and

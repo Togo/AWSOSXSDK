@@ -46,35 +46,35 @@
 /**
  * Specifies the ID of the VPC.
  */
-@property (nonatomic, retain) NSString *vpcId;
+@property (nonatomic, strong) NSString *vpcId;
 
 /**
  * Describes the current state of the VPC. The state of the subnet may be
  * either <code>pending</code> or <code>available</code>.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Specifies the CIDR block the VPC covers.
  */
-@property (nonatomic, retain) NSString *cidrBlock;
+@property (nonatomic, strong) NSString *cidrBlock;
 
 /**
  * Specifies the ID of the set of DHCP options associated with the VPC.
  * Contains a value of <code>default</code> if the default options are
  * associated with the VPC.
  */
-@property (nonatomic, retain) NSString *dhcpOptionsId;
+@property (nonatomic, strong) NSString *dhcpOptionsId;
 
 /**
  * A list of tags for the VPC.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * The allowed tenancy of instances launched into the VPC.
  */
-@property (nonatomic, retain) NSString *instanceTenancy;
+@property (nonatomic, strong) NSString *instanceTenancy;
 
 /**
  *

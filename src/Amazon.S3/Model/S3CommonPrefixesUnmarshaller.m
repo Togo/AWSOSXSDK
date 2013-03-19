@@ -57,11 +57,6 @@ qualifiedName:(NSString *)qName
     return commonPrefixes;
 }
 
--(void)dealloc
-{
-    [commonPrefixes release];
-    [super dealloc];
-}
 
 @end
 

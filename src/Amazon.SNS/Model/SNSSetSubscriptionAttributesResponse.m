@@ -28,33 +28,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"NotFound"]) {
-        [newException release];
         newException = [[SNSNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AuthorizationError"]) {
-        [newException release];
         newException = [[SNSAuthorizationErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalError"]) {
-        [newException release];
         newException = [[SNSInternalErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameter"]) {
-        [newException release];
         newException = [[SNSInvalidParameterException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -66,12 +60,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

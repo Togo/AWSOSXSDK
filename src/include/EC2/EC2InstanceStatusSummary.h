@@ -40,12 +40,12 @@
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The value of the Details property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *details;
+@property (nonatomic, strong) NSMutableArray *details;
 
 /**
  * Adds a single object to details.

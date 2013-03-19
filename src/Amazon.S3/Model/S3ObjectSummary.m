@@ -31,15 +31,5 @@
     return self.key;
 }
 
--(void)dealloc
-{
-    [key release];
-    [etag release];
-    [lastModified release];
-    [storageClass release];
-    [owner release];
-
-    [super dealloc];
-}
 
 @end

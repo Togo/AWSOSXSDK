@@ -44,12 +44,12 @@
 /**
  * The list of described Reserved Instance offerings.
  */
-@property (nonatomic, retain) NSMutableArray *reservedInstancesOfferings;
+@property (nonatomic, strong) NSMutableArray *reservedInstancesOfferings;
 
 /**
  * The value of the NextToken property for this object.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

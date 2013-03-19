@@ -59,16 +59,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AllowReassociation: %d,", allowReassociation] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AllowReassociation: %d,", allowReassociation]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -79,16 +79,6 @@
 }
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [publicIp release];
-    [allocationId release];
-    [networkInterfaceId release];
-    [privateIpAddress release];
-
-    [super dealloc];
-}
 
 
 @end

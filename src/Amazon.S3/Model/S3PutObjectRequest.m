@@ -73,7 +73,6 @@
                 self.contentMD5 = [AmazonMD5Util base64md5FromStream:inputStream];
 
                 [inputStream close];
-                [inputStream release];
             }
         }
     }
@@ -156,7 +155,6 @@
                 @try {
                     NSInputStream *inputStream = [[NSInputStream alloc] initWithFileAtPath:self.filename];
                     self.stream = inputStream;
-                    [inputStream release];
                 }
                 @catch (NSException *e) {
 
@@ -177,18 +175,5 @@
 }
 #endif
 
--(void)dealloc
-{
-    [expect release];
-    [contentMD5 release];
-    [cacheControl release];
-    [contentEncoding release];
-    [contentDisposition release];
-    [filename release];
-    [stream release];
-    [data release];
-    
-    [super dealloc];
-}
 
 @end

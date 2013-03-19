@@ -42,7 +42,7 @@
 /**
  * The ID of the request.
  */
-@property (nonatomic, retain) NSMutableArray *spotInstanceRequestIds;
+@property (nonatomic, strong) NSMutableArray *spotInstanceRequestIds;
 
 /**
  * A list of filters used to match properties for SpotInstances. For a
@@ -51,7 +51,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to spotInstanceRequestIds.

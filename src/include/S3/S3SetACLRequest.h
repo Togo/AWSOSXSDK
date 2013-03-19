@@ -31,6 +31,6 @@
 }
 
 /** Gets and sets the access control list (ACL) to set on the bucket or object */
-@property (nonatomic, retain) S3AccessControlList *acl;
+@property (nonatomic, strong) S3AccessControlList *acl;
 
 @end

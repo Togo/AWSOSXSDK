@@ -44,12 +44,12 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The value of the filter.
  */
-@property (nonatomic, retain) NSMutableArray *values;
+@property (nonatomic, strong) NSMutableArray *values;
 
 /**
  * Adds a single object to values.

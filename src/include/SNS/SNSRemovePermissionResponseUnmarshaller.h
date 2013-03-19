@@ -21,7 +21,7 @@
     SNSRemovePermissionResponse *response;
 }
 
-@property (nonatomic, readonly) SNSRemovePermissionResponse *response;
+@property (weak, nonatomic, readonly) SNSRemovePermissionResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

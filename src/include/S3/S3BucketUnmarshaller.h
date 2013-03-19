@@ -25,6 +25,6 @@
 }
 
 /** The S3Bucket represented by the XML */
-@property (nonatomic, retain, readonly) S3Bucket *bucket;
+@property (nonatomic, strong, readonly) S3Bucket *bucket;
 
 @end

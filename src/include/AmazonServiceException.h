@@ -29,19 +29,19 @@
 #pragma mark Properties
 
 /** The requestId as assigned by the service. */
-@property (nonatomic, retain) NSString *requestId;
+@property (nonatomic, strong) NSString *requestId;
 
 /** The error code returned by the service */
-@property (nonatomic, retain) NSString *errorCode;
+@property (nonatomic, strong) NSString *errorCode;
 
 /**  */
-@property (nonatomic, retain) NSString *serviceName;
+@property (nonatomic, strong) NSString *serviceName;
 
 /** The HTTP status code returned by the service */
 @property (nonatomic) NSInteger statusCode;
 
 /** Other fields in the error response from the service */
-@property (nonatomic, readonly) NSMutableDictionary *additionalFields;
+@property (weak, nonatomic, readonly) NSMutableDictionary *additionalFields;
 
 /** Return an exception with the given message
  *

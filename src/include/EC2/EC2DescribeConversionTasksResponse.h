@@ -43,7 +43,7 @@
 /**
  * The value of the ConversionTasks property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *conversionTasks;
+@property (nonatomic, strong) NSMutableArray *conversionTasks;
 
 
 

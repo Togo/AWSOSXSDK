@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"association"]) {
-        EC2InstanceNetworkInterfaceAssociationUnmarshaller *unmarshaller = [[[EC2InstanceNetworkInterfaceAssociationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAssociation:)] autorelease];
+        EC2InstanceNetworkInterfaceAssociationUnmarshaller *unmarshaller = [[EC2InstanceNetworkInterfaceAssociationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAssociation:)];
         unmarshaller.endElementTagName = @"association";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -85,10 +85,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

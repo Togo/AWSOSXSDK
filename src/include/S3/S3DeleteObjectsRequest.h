@@ -34,12 +34,12 @@
  *
  * Required to permanently delete a versioned object if versioning is configured with MFA Delete enabled.
  */
-@property (nonatomic, retain) NSString *mfaAuth;
+@property (nonatomic, strong) NSString *mfaAuth;
 
 /** The list of objects to be deleted.
  * All objects in the array must be an instance of S3KeyVersion.
  */
-@property (nonatomic, retain) NSMutableArray *objects;
+@property (nonatomic, strong) NSMutableArray *objects;
 
 /** The list of objects to be deleted.
  * All objects in the array must be an instance of S3KeyVersion.

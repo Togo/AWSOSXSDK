@@ -30,7 +30,7 @@
 
 +(id)requestWithBucketName:(NSString *)theBucketName
 {
-    return [[[S3GetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName] autorelease];
+    return [[S3GetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName];
 }
 
 -(NSMutableURLRequest *)configureURLRequest

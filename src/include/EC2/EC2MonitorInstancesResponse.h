@@ -44,7 +44,7 @@
  * A list of updated monitoring information for the instances specified
  * in the request.
  */
-@property (nonatomic, retain) NSMutableArray *instanceMonitorings;
+@property (nonatomic, strong) NSMutableArray *instanceMonitorings;
 
 
 

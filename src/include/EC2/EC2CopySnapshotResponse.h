@@ -42,7 +42,7 @@
 /**
  * The value of the SnapshotId property for this object.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * Returns a string representation of this object; useful for testing and

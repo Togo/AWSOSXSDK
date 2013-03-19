@@ -69,11 +69,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [deleteError release];
-
-    [super dealloc];
-}
 
 @end

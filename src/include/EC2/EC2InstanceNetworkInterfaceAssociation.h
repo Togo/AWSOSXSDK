@@ -40,17 +40,17 @@
 /**
  * The value of the PublicIp property for this object.
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * The value of the PublicDnsName property for this object.
  */
-@property (nonatomic, retain) NSString *publicDnsName;
+@property (nonatomic, strong) NSString *publicDnsName;
 
 /**
  * The value of the IpOwnerId property for this object.
  */
-@property (nonatomic, retain) NSString *ipOwnerId;
+@property (nonatomic, strong) NSString *ipOwnerId;
 
 /**
  * Returns a string representation of this object; useful for testing and

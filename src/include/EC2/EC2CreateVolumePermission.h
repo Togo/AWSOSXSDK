@@ -39,13 +39,13 @@
 /**
  * The user ID of the user that can create volumes from the snapshot.
  */
-@property (nonatomic, retain) NSString *userId;
+@property (nonatomic, strong) NSString *userId;
 
 /**
  * The group that is allowed to create volumes from the snapshot
  * (currently supports "all").
  */
-@property (nonatomic, retain) NSString *group;
+@property (nonatomic, strong) NSString *group;
 
 /**
  * Returns a string representation of this object; useful for testing and

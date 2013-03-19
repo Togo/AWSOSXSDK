@@ -39,34 +39,34 @@
  * limited by the size of the primary key (1024 bytes as a range part of
  * a key or 2048 bytes as a single part hash key) or the item size (64k).
  */
-@property (nonatomic, retain) NSString *s;
+@property (nonatomic, strong) NSString *s;
 
 /**
  * Numbers are positive or negative exact-value decimals and integers. A
  * number can have up to 38 digits precision and can be between 10^-128
  * to 10^+126.
  */
-@property (nonatomic, retain) NSString *n;
+@property (nonatomic, strong) NSString *n;
 
 /**
  * Binary attributes are sequences of unsigned bytes.
  */
-@property (nonatomic, retain) NSData *b;
+@property (nonatomic, strong) NSData *b;
 
 /**
  * A set of strings.
  */
-@property (nonatomic, retain) NSMutableArray *sS;
+@property (nonatomic, strong) NSMutableArray *sS;
 
 /**
  * A set of numbers.
  */
-@property (nonatomic, retain) NSMutableArray *nS;
+@property (nonatomic, strong) NSMutableArray *nS;
 
 /**
  * A set of binary attributes.
  */
-@property (nonatomic, retain) NSMutableArray *bS;
+@property (nonatomic, strong) NSMutableArray *bS;
 
 
 /**

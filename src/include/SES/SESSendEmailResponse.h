@@ -44,7 +44,7 @@
  * The unique message identifier returned from the <code>SendEmail</code>
  * action.
  */
-@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, strong) NSString *messageId;
 
 /**
  * Returns a string representation of this object; useful for testing and

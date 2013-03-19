@@ -93,7 +93,7 @@
 -(NSDate *)date
 {
     if (date == nil) {
-        date = [[NSDate date] retain];
+        date = [NSDate date];
     }
     return date;
 }
@@ -120,16 +120,7 @@
 {
     delegate = nil;
 
-    [authorization release];
-    [contentType release];
-    [date release];
-    [securityToken release];
-    [httpMethod release];
-    [subResource release];
-    [key release];
-    [bucket release];
 
-    [super dealloc];
 }
 
 @end

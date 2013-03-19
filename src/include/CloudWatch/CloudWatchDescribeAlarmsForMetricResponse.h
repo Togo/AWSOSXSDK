@@ -43,7 +43,7 @@
 /**
  * A list of information for each alarm with the specified metric.
  */
-@property (nonatomic, retain) NSMutableArray *metricAlarms;
+@property (nonatomic, strong) NSMutableArray *metricAlarms;
 
 
 

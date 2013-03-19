@@ -47,7 +47,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * A list of policy names or policy ARNs to be described. If this list is
@@ -56,7 +56,7 @@
  * requested policy names cannot contain more than 50 items. If unknown
  * policy names are requested, they are ignored with no error.
  */
-@property (nonatomic, retain) NSMutableArray *policyNames;
+@property (nonatomic, strong) NSMutableArray *policyNames;
 
 /**
  * A string that is used to mark the start of the next batch of returned
@@ -65,7 +65,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The maximum number of policies that will be described with each call.
@@ -73,7 +73,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 50<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * Adds a single object to policyNames.

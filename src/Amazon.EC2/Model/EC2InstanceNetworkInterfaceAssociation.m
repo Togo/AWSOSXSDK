@@ -41,25 +41,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicDnsName: %@,", publicDnsName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IpOwnerId: %@,", ipOwnerId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicDnsName: %@,", publicDnsName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IpOwnerId: %@,", ipOwnerId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [publicIp release];
-    [publicDnsName release];
-    [ipOwnerId release];
-
-    [super dealloc];
-}
 
 
 @end

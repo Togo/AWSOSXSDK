@@ -56,31 +56,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmNames: %@,", alarmNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmNamePrefix: %@,", alarmNamePrefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StateValue: %@,", stateValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ActionPrefix: %@,", actionPrefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxRecords: %@,", maxRecords] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmNames: %@,", alarmNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmNamePrefix: %@,", alarmNamePrefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StateValue: %@,", stateValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ActionPrefix: %@,", actionPrefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxRecords: %@,", maxRecords]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [alarmNames release];
-    [alarmNamePrefix release];
-    [stateValue release];
-    [actionPrefix release];
-    [maxRecords release];
-    [nextToken release];
-
-    [super dealloc];
-}
 
 
 @end

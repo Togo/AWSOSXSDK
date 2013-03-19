@@ -35,17 +35,17 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * The message to send.
  */
-@property (nonatomic, retain) NSString *messageBody;
+@property (nonatomic, strong) NSString *messageBody;
 
 /**
  * The number of seconds the message has to be delayed.
  */
-@property (nonatomic, retain) NSNumber *delaySeconds;
+@property (nonatomic, strong) NSNumber *delaySeconds;
 
 
 /**

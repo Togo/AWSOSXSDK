@@ -50,7 +50,7 @@
  * An optional list of the unique IDs of the Reserved Instance offerings
  * to describe.
  */
-@property (nonatomic, retain) NSMutableArray *reservedInstancesOfferingIds;
+@property (nonatomic, strong) NSMutableArray *reservedInstancesOfferingIds;
 
 /**
  * The instance type on which the Reserved Instance can be used.
@@ -58,17 +58,17 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The Availability Zone in which the Reserved Instance can be used.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The Reserved Instance product description.
  */
-@property (nonatomic, retain) NSString *productDescription;
+@property (nonatomic, strong) NSString *productDescription;
 
 /**
  * A list of filters used to match properties for
@@ -77,29 +77,29 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * The tenancy of the Reserved Instance offering. A Reserved Instance
  * with tenancy of dedicated will run on single-tenant hardware and can
  * only be launched within a VPC.
  */
-@property (nonatomic, retain) NSString *instanceTenancy;
+@property (nonatomic, strong) NSString *instanceTenancy;
 
 /**
  * The Reserved Instance offering type.
  */
-@property (nonatomic, retain) NSString *offeringType;
+@property (nonatomic, strong) NSString *offeringType;
 
 /**
  * The value of the NextToken property for this object.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The value of the MaxResults property for this object.
  */
-@property (nonatomic, retain) NSNumber *maxResults;
+@property (nonatomic, strong) NSNumber *maxResults;
 
 /**
  * Adds a single object to reservedInstancesOfferingIds.

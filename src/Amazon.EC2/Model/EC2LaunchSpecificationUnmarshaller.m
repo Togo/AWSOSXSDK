@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"groupSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
         listUnmarshaller.entryElementName   = @"groupName";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,14 +34,14 @@
     }
 
     if ([elementName isEqualToString:@"monitoring"]) {
-        AmazonBoolValueUnmarshaller *unmarshaller = [[[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setMonitoringEnabled:)] autorelease];
+        AmazonBoolValueUnmarshaller *unmarshaller = [[AmazonBoolValueUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setMonitoringEnabled:)];
         unmarshaller.endElementTagName   = @"monitoring";
         unmarshaller.internalElementName = @"enabled";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"groupSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.securityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
         listUnmarshaller.entryElementName   = @"groupName";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -50,7 +50,7 @@
     }
 
     if ([elementName isEqualToString:@"groupSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.allSecurityGroups withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.allSecurityGroups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2GroupIdentifierUnmarshaller class];
@@ -59,13 +59,13 @@
     }
 
     if ([elementName isEqualToString:@"placement"]) {
-        EC2SpotPlacementUnmarshaller *unmarshaller = [[[EC2SpotPlacementUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setPlacement:)] autorelease];
+        EC2SpotPlacementUnmarshaller *unmarshaller = [[EC2SpotPlacementUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setPlacement:)];
         unmarshaller.endElementTagName = @"placement";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"blockDeviceMapping"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.blockDeviceMappings withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"blockDeviceMapping";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2BlockDeviceMappingUnmarshaller class];
@@ -74,7 +74,7 @@
     }
 
     if ([elementName isEqualToString:@"networkInterfaceSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.networkInterfaces withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.networkInterfaces withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"networkInterfaceSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2InstanceNetworkInterfaceSpecificationUnmarshaller class];
@@ -83,7 +83,7 @@
     }
 
     if ([elementName isEqualToString:@"iamInstanceProfile"]) {
-        EC2IamInstanceProfileSpecificationUnmarshaller *unmarshaller = [[[EC2IamInstanceProfileSpecificationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setIamInstanceProfile:)] autorelease];
+        EC2IamInstanceProfileSpecificationUnmarshaller *unmarshaller = [[EC2IamInstanceProfileSpecificationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setIamInstanceProfile:)];
         unmarshaller.endElementTagName = @"iamInstanceProfile";
         [parser setDelegate:unmarshaller];
     }
@@ -91,7 +91,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -177,10 +177,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

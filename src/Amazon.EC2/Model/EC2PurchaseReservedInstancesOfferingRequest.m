@@ -51,25 +51,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservedInstancesOfferingId: %@,", reservedInstancesOfferingId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LimitPrice: %@,", limitPrice] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservedInstancesOfferingId: %@,", reservedInstancesOfferingId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LimitPrice: %@,", limitPrice]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reservedInstancesOfferingId release];
-    [instanceCount release];
-    [limitPrice release];
-
-    [super dealloc];
-}
 
 
 @end

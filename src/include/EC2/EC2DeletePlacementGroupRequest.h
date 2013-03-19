@@ -33,7 +33,7 @@
 /**
  * The name of the <code>PlacementGroup</code> to delete.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 
 /**

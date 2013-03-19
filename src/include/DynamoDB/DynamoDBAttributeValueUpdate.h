@@ -35,7 +35,7 @@
  * <code>Binary</code>, <code>StringSet</code>, <code>NumberSet</code>,
  * <code>BinarySet</code>.
  */
-@property (nonatomic, retain) DynamoDBAttributeValue *value;
+@property (nonatomic, strong) DynamoDBAttributeValue *value;
 
 /**
  * The type of action for an item update operation. Only use the add
@@ -50,7 +50,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ADD, PUT, DELETE
  */
-@property (nonatomic, retain) NSString *action;
+@property (nonatomic, strong) NSString *action;
 
 
 /**

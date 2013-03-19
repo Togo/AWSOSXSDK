@@ -41,7 +41,7 @@
 /**
  * The item's key to be delete
  */
-@property (nonatomic, retain) DynamoDBKey *key;
+@property (nonatomic, strong) DynamoDBKey *key;
 
 /**
  * Returns a string representation of this object; useful for testing and

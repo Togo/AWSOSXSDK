@@ -45,7 +45,7 @@
 /**
  * The value of the CancelledSpotInstanceRequests property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *cancelledSpotInstanceRequests;
+@property (nonatomic, strong) NSMutableArray *cancelledSpotInstanceRequests;
 
 
 

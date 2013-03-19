@@ -41,12 +41,12 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Primary: %d,", primary] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Primary: %d,", primary]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -57,12 +57,6 @@
 }
 
 
--(void)dealloc
-{
-    [privateIpAddress release];
-
-    [super dealloc];
-}
 
 
 @end

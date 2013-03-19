@@ -55,39 +55,24 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ScheduledActionName: %@,", scheduledActionName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ScheduledActionARN: %@,", scheduledActionARN] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Time: %@,", time] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Recurrence: %@,", recurrence] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MinSize: %@,", minSize] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxSize: %@,", maxSize] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ScheduledActionName: %@,", scheduledActionName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ScheduledActionARN: %@,", scheduledActionARN]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Time: %@,", time]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Recurrence: %@,", recurrence]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MinSize: %@,", minSize]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxSize: %@,", maxSize]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [autoScalingGroupName release];
-    [scheduledActionName release];
-    [scheduledActionARN release];
-    [time release];
-    [startTime release];
-    [endTime release];
-    [recurrence release];
-    [minSize release];
-    [maxSize release];
-    [desiredCapacity release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -44,7 +44,7 @@
  * The updated EBS volume attachment information after trying to detach
  * the volume from the specified instance.
  */
-@property (nonatomic, retain) EC2VolumeAttachment *attachment;
+@property (nonatomic, strong) EC2VolumeAttachment *attachment;
 
 /**
  * Returns a string representation of this object; useful for testing and

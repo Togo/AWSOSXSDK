@@ -42,7 +42,7 @@
 /**
  * The optional list of regions to describe.
  */
-@property (nonatomic, retain) NSMutableArray *regionNames;
+@property (nonatomic, strong) NSMutableArray *regionNames;
 
 /**
  * A list of filters used to match properties for Regions. For a complete
@@ -50,7 +50,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to regionNames.

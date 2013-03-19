@@ -43,7 +43,7 @@
 /**
  * The list of described EBS snapshots.
  */
-@property (nonatomic, retain) NSMutableArray *snapshots;
+@property (nonatomic, strong) NSMutableArray *snapshots;
 
 
 

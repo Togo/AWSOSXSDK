@@ -29,11 +29,11 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Owner"]) {
-        [parser setDelegate:[[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.accessControlList withSetter:@selector(setOwner:)] autorelease]];
+        [parser setDelegate:[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.accessControlList withSetter:@selector(setOwner:)]];
     }
 
     if ([elementName isEqualToString:@"Grant"]) {
-        [parser setDelegate:[[[S3GrantUnmarshaller alloc] initWithCaller:self withParentObject:self.accessControlList withSetter:@selector(addGrant:)] autorelease]];
+        [parser setDelegate:[[S3GrantUnmarshaller alloc] initWithCaller:self withParentObject:self.accessControlList withSetter:@selector(addGrant:)]];
     }
 }
 
@@ -68,10 +68,5 @@ qualifiedName:(NSString *)qName
     return accessControlList;
 }
 
--(void)dealloc
-{
-    [accessControlList release];
-    [super dealloc];
-}
 
 @end

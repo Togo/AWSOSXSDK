@@ -26,11 +26,11 @@
 }
 
 /** Gets and sets the BucketName property. */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /** Gets and sets the CreationDate property.
  * The date conforms to the ISO8601 date format.
  */
-@property (nonatomic, retain) NSString *creationDate;
+@property (nonatomic, strong) NSString *creationDate;
 
 @end

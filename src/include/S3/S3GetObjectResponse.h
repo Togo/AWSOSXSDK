@@ -29,16 +29,16 @@
  * date and time at which Amazon S3 last recorded a
  * modification to the associated object.
  */
-@property (nonatomic, retain) NSDate *lastModified;
+@property (nonatomic, strong) NSDate *lastModified;
 
 /**
  * The Content-Type HTTP header, which indicates the type
  * of content stored in the associated object. The value
  * of this header is a standard MIME type.
  */
-@property (nonatomic, retain) NSString *contentType;
+@property (nonatomic, strong) NSString *contentType;
 
-@property (nonatomic, retain) NSString *redirectLocation;
+@property (nonatomic, strong) NSString *redirectLocation;
 
 /** Get the value for a user-defined metadata key.
  * @param aKey The key of the metadata.

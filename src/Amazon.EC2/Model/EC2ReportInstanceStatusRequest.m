@@ -65,31 +65,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Instances: %@,", instances] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReasonCodes: %@,", reasonCodes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Instances: %@,", instances]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReasonCodes: %@,", reasonCodes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instances release];
-    [status release];
-    [startTime release];
-    [endTime release];
-    [reasonCodes release];
-    [descriptionValue release];
-
-    [super dealloc];
-}
 
 
 @end

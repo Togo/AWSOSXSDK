@@ -43,7 +43,7 @@
 /**
  * A map of attributes to the respective values.
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
  * Returns a value from the attributes dictionary for the specified key.

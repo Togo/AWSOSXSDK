@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"spotDatafeedSubscription"]) {
-        EC2SpotDatafeedSubscriptionUnmarshaller *unmarshaller = [[[EC2SpotDatafeedSubscriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSpotDatafeedSubscription:)] autorelease];
+        EC2SpotDatafeedSubscriptionUnmarshaller *unmarshaller = [[EC2SpotDatafeedSubscriptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSpotDatafeedSubscription:)];
         unmarshaller.endElementTagName = @"spotDatafeedSubscription";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -70,10 +70,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

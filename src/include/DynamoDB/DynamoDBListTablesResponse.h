@@ -44,7 +44,7 @@
 /**
  * The value of the TableNames property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *tableNames;
+@property (nonatomic, strong) NSMutableArray *tableNames;
 
 /**
  * The name of the last table in the current list. Use this value as the
@@ -56,7 +56,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *lastEvaluatedTableName;
+@property (nonatomic, strong) NSString *lastEvaluatedTableName;
 
 
 

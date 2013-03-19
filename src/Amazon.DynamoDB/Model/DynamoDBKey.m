@@ -58,23 +58,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HashKeyElement: %@,", hashKeyElement] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RangeKeyElement: %@,", rangeKeyElement] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HashKeyElement: %@,", hashKeyElement]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RangeKeyElement: %@,", rangeKeyElement]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [hashKeyElement release];
-    [rangeKeyElement release];
-
-    [super dealloc];
-}
 
 
 @end

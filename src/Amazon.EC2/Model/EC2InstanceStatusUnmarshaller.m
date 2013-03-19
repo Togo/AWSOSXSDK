@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"eventsSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.events withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.events withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"eventsSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2InstanceStatusEventUnmarshaller class];
@@ -34,19 +34,19 @@
     }
 
     if ([elementName isEqualToString:@"instanceState"]) {
-        EC2InstanceStateUnmarshaller *unmarshaller = [[[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceState:)] autorelease];
+        EC2InstanceStateUnmarshaller *unmarshaller = [[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceState:)];
         unmarshaller.endElementTagName = @"instanceState";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"systemStatus"]) {
-        EC2InstanceStatusSummaryUnmarshaller *unmarshaller = [[[EC2InstanceStatusSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSystemStatus:)] autorelease];
+        EC2InstanceStatusSummaryUnmarshaller *unmarshaller = [[EC2InstanceStatusSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSystemStatus:)];
         unmarshaller.endElementTagName = @"systemStatus";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"instanceStatus"]) {
-        EC2InstanceStatusSummaryUnmarshaller *unmarshaller = [[[EC2InstanceStatusSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceStatus:)] autorelease];
+        EC2InstanceStatusSummaryUnmarshaller *unmarshaller = [[EC2InstanceStatusSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceStatus:)];
         unmarshaller.endElementTagName = @"instanceStatus";
         [parser setDelegate:unmarshaller];
     }
@@ -54,7 +54,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -101,10 +101,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

@@ -49,7 +49,7 @@
 /**
  * The ID of the instance whose attribute is being modified.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The name of the attribute being modified. <p> Available attribute
@@ -62,7 +62,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 /**
  * The new value of the instance attribute being modified. <p> Only valid
@@ -71,14 +71,14 @@
  * <code>instanceInitiateShutdownBehavior</code> is specified as the
  * attribute being modified.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * The new block device mappings for the instance whose attributes are
  * being modified. <p> Only valid when blockDeviceMapping is specified as
  * the attribute being modified.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * Boolean value
@@ -97,32 +97,32 @@
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *kernel;
+@property (nonatomic, strong) NSString *kernel;
 
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *ramdisk;
+@property (nonatomic, strong) NSString *ramdisk;
 
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *userData;
+@property (nonatomic, strong) NSString *userData;
 
 /**
  * String value
  */
-@property (nonatomic, retain) NSString *instanceInitiatedShutdownBehavior;
+@property (nonatomic, strong) NSString *instanceInitiatedShutdownBehavior;
 
 /**
  * The value of the Groups property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, strong) NSMutableArray *groups;
 
 /**
  * Boolean value

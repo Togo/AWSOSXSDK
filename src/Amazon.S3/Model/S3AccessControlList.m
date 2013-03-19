@@ -61,7 +61,6 @@
 
     NSString *retval = [NSString stringWithString:xml];
 
-    [xml release];
 
     return retval;
 }
@@ -149,12 +148,5 @@
     return dict;
 }
 
--(void)dealloc
-{
-    [owner release];
-    [grantList release];
-
-    [super dealloc];
-}
 
 @end

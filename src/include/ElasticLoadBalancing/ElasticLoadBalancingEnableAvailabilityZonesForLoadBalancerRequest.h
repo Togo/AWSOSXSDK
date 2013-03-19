@@ -35,13 +35,13 @@
  * The name associated with the LoadBalancer. The name must be unique
  * within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A list of new Availability Zones for the LoadBalancer. Each
  * Availability Zone must be in the same Region as the LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 
 /**

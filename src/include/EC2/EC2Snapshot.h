@@ -48,12 +48,12 @@
 /**
  * The unique ID of this snapshot.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The ID of the volume from which this snapshot was created.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * Snapshot state (e.g., pending, completed, or error).
@@ -61,43 +61,43 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>pending, completed, error
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Time stamp when the snapshot was initiated.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The progress of the snapshot, in percentage.
  */
-@property (nonatomic, retain) NSString *progress;
+@property (nonatomic, strong) NSString *progress;
 
 /**
  * AWS Access Key ID of the user who owns the snapshot.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * Description of the snapshot.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The size of the volume, in gigabytes.
  */
-@property (nonatomic, retain) NSNumber *volumeSize;
+@property (nonatomic, strong) NSNumber *volumeSize;
 
 /**
  * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
  * account ID that owns the AMI.
  */
-@property (nonatomic, retain) NSString *ownerAlias;
+@property (nonatomic, strong) NSString *ownerAlias;
 
 /**
  * A list of tags for the Snapshot.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to tags.

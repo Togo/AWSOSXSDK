@@ -21,7 +21,7 @@
     SQSChangeMessageVisibilityResponse *response;
 }
 
-@property (nonatomic, readonly) SQSChangeMessageVisibilityResponse *response;
+@property (weak, nonatomic, readonly) SQSChangeMessageVisibilityResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

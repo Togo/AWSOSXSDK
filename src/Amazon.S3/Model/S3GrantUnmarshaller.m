@@ -77,10 +77,5 @@ qualifiedName:(NSString *)qName
     return grant;
 }
 
--(void)dealloc
-{
-    [grant release];
-    [super dealloc];
-}
 
 @end

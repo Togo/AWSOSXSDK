@@ -28,33 +28,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
-        [newException release];
         newException = [[CloudWatchInvalidParameterValueException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalServiceError"]) {
-        [newException release];
         newException = [[CloudWatchInternalServiceException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterCombination"]) {
-        [newException release];
         newException = [[CloudWatchInvalidParameterCombinationException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"MissingParameter"]) {
-        [newException release];
         newException = [[CloudWatchMissingRequiredParameterException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -66,12 +60,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

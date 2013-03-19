@@ -68,7 +68,7 @@
         [self.request.urlConnection cancel];
         self.request.responseTimer = nil;
 
-        exception  = [[AmazonClientException exceptionWithMessage:@"Request timed out."] retain];
+        exception  = [AmazonClientException exceptionWithMessage:@"Request timed out."];
         
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
         
@@ -111,7 +111,7 @@
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     if (nil == body) {
-        body = [[NSMutableData data] retain];
+        body = [NSMutableData data];
     }
 
     [body appendData:data];
@@ -132,29 +132,24 @@
     NSString *tmpStr = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
 
     AMZLogDebug(@"Response Body:\n%@", tmpStr);
-    [tmpStr release];
     NSXMLParser                       *parser         = [[NSXMLParser alloc] initWithData:body];
     AmazonServiceResponseUnmarshaller *parserDelegate = [[unmarshallerDelegate alloc] init];
     [parser setDelegate:parserDelegate];
     [parser parse];
 
-    AmazonServiceResponse *response = [[parserDelegate response] retain];
+    AmazonServiceResponse *response = [parserDelegate response];
 
-    [parser release];
-    [parserDelegate release];
 
     if(response.error)
     {
-        NSError *errorFound = [[response.error copy] autorelease];
-        [response release];
+        NSError *errorFound = [response.error copy];
         
         if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
             [request.delegate request:request didFailWithError:errorFound];
         }
     }
     else if (response.exception) {
-        NSException *exceptionFound = [[response.exception copy] autorelease];
-        [response release];
+        NSException *exceptionFound = [response.exception copy];
         
         BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
         
@@ -182,7 +177,6 @@
             [request.delegate request:request didCompleteWithResponse:response];
         }
         
-        [response release];
     }
 }
 
@@ -195,7 +189,7 @@
     {
         AMZLogDebug(@"UserInfo.%@ = %@", [key description], [[info valueForKey:key] description]);
     }
-    exception = [[AmazonServiceException exceptionWithMessage:[theError description] andError:theError] retain];
+    exception = [AmazonServiceException exceptionWithMessage:[theError description] andError:theError];
     AMZLogDebug(@"An error occured in the request: %@", [theError description]);
     
     if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
@@ -239,26 +233,16 @@
 
 #pragma mark memory management
 
--(void)dealloc
-{
-    [requestId release];
-    [body release];
-    [exception release];
-    [request release];
-    [error release];
-
-    [super dealloc];
-}
 
 -(NSString *)description
 {
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"requestId: %@", requestId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"requestId: %@", requestId]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 @end

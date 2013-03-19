@@ -33,7 +33,7 @@
 /**
  * The unique name for the new key pair.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 
 /**

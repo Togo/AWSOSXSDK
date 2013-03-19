@@ -50,7 +50,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *activityId;
+@property (nonatomic, strong) NSString *activityId;
 
 /**
  * The name of the Auto Scaling group.
@@ -59,7 +59,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * Contains a friendly, more verbose description of the scaling activity.
@@ -67,7 +67,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * Contains the reason the activity was begun.
@@ -76,17 +76,17 @@
  * <b>Length: </b>1 - 1023<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *cause;
+@property (nonatomic, strong) NSString *cause;
 
 /**
  * Provides the start time of this activity.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * Provides the end time of this activity.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * Contains the current status of the activity.
@@ -94,7 +94,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
  */
-@property (nonatomic, retain) NSString *statusCode;
+@property (nonatomic, strong) NSString *statusCode;
 
 /**
  * Contains a friendly, more verbose description of the activity status.
@@ -103,13 +103,13 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *statusMessage;
 
 /**
  * Specifies a value between 0 and 100 that indicates the progress of the
  * activity.
  */
-@property (nonatomic, retain) NSNumber *progress;
+@property (nonatomic, strong) NSNumber *progress;
 
 /**
  * Contains details of the scaling activity.
@@ -117,7 +117,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *details;
+@property (nonatomic, strong) NSString *details;
 
 /**
  * Returns a string representation of this object; useful for testing and

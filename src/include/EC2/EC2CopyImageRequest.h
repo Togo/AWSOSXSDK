@@ -44,27 +44,27 @@
 /**
  * The value of the SourceRegion property for this object.
  */
-@property (nonatomic, retain) NSString *sourceRegion;
+@property (nonatomic, strong) NSString *sourceRegion;
 
 /**
  * The value of the SourceImageId property for this object.
  */
-@property (nonatomic, retain) NSString *sourceImageId;
+@property (nonatomic, strong) NSString *sourceImageId;
 
 /**
  * The value of the Name property for this object.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the ClientToken property for this object.
  */
-@property (nonatomic, retain) NSString *clientToken;
+@property (nonatomic, strong) NSString *clientToken;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -27,7 +27,7 @@
 
 +(DynamoDBBatchGetItemResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBBatchGetItemResponse *batchGetItemResult = [[[DynamoDBBatchGetItemResponse alloc] init] autorelease];
+    DynamoDBBatchGetItemResponse *batchGetItemResult = [[DynamoDBBatchGetItemResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

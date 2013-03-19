@@ -29,7 +29,7 @@
 }
 
 
-@property (nonatomic, readonly) SQSMessage *response;
+@property (weak, nonatomic, readonly) SQSMessage *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

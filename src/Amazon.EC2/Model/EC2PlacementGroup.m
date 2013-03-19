@@ -50,25 +50,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Strategy: %@,", strategy] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Strategy: %@,", strategy]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [groupName release];
-    [strategy release];
-    [state release];
-
-    [super dealloc];
-}
 
 
 @end

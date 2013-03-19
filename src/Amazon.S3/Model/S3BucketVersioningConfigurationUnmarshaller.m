@@ -60,10 +60,5 @@ qualifiedName:(NSString *)qName
     return versioningConfiguration;
 }
 
--(void)dealloc
-{
-    [versioningConfiguration release];
-    [super dealloc];
-}
 
 @end

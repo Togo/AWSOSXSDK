@@ -24,22 +24,22 @@
 }
 
 /** The name of the bucket to which the multipart upload was initiated. */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /** Tthe object key for which the multipart upload was initiated. */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** The upload ID identifying the multipart upload whose parts are being listed. */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** The class of storage used to store the uploaded object. */
-@property (nonatomic, retain) NSString *storageClass;
+@property (nonatomic, strong) NSString *storageClass;
 
 /** The owner of the object that will be created from the parts */
-@property (nonatomic, retain) S3Owner *owner;
+@property (nonatomic, strong) S3Owner *owner;
 
 /** The initiator of the multipart upload */
-@property (nonatomic, retain) S3Owner *initiator;
+@property (nonatomic, strong) S3Owner *initiator;
 
 /** The part number after which listing begins. */
 @property (nonatomic) int partNumberMarker;
@@ -60,6 +60,6 @@
 @property (nonatomic) bool isTruncated;
 
 /** The list of S3Part objects representing the parts */
-@property (nonatomic, readonly) NSMutableArray *parts;
+@property (weak, nonatomic, readonly) NSMutableArray *parts;
 
 @end

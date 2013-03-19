@@ -37,7 +37,7 @@
  * value can be <code>String</code>, <code>Number</code>,
  * <code>StringSet</code>, <code>NumberSet</code>.
  */
-@property (nonatomic, retain) DynamoDBKeySchemaElement *hashKeyElement;
+@property (nonatomic, strong) DynamoDBKeySchemaElement *hashKeyElement;
 
 /**
  * A range key element is treated as a secondary key (used in conjunction
@@ -46,7 +46,7 @@
  * <code>String</code>, <code>Number</code>, <code>StringSet</code>,
  * <code>NumberSet</code>.
  */
-@property (nonatomic, retain) DynamoDBKeySchemaElement *rangeKeyElement;
+@property (nonatomic, strong) DynamoDBKeySchemaElement *rangeKeyElement;
 
 
 /**

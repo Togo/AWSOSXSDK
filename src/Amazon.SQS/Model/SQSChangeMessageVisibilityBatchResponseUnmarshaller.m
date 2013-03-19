@@ -25,17 +25,17 @@
 
 
     if ([elementName isEqualToString:@"ChangeMessageVisibilityBatchResultEntry"]) {
-        [parser setDelegate:[[[SQSChangeMessageVisibilityBatchResponseEntryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.successful withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[SQSChangeMessageVisibilityBatchResponseEntryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.successful withSetter:@selector(addObject:)]];
     }
 
     if ([elementName isEqualToString:@"BatchResultErrorEntry"]) {
-        [parser setDelegate:[[[SQSBatchResponseErrorEntryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.failed withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[SQSBatchResponseErrorEntryUnmarshaller alloc] initWithCaller:self withParentObject:self.response.failed withSetter:@selector(addObject:)]];
     }
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -66,10 +66,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

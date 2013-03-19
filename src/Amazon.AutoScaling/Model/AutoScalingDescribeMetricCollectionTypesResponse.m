@@ -39,12 +39,10 @@
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -67,23 +65,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Metrics: %@,", metrics] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Granularities: %@,", granularities] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Metrics: %@,", metrics]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Granularities: %@,", granularities]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [metrics release];
-    [granularities release];
-
-    [super dealloc];
-}
 
 
 @end

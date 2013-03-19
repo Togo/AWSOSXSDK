@@ -83,49 +83,29 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Start: %@,", start] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Duration: %@,", duration] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UsagePrice: %@,", usagePrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"FixedPrice: %@,", fixedPrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceTenancy: %@,", instanceTenancy] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CurrencyCode: %@,", currencyCode] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OfferingType: %@,", offeringType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RecurringCharges: %@,", recurringCharges] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservedInstancesId: %@,", reservedInstancesId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Start: %@,", start]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Duration: %@,", duration]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UsagePrice: %@,", usagePrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"FixedPrice: %@,", fixedPrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceTenancy: %@,", instanceTenancy]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CurrencyCode: %@,", currencyCode]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OfferingType: %@,", offeringType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RecurringCharges: %@,", recurringCharges]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reservedInstancesId release];
-    [instanceType release];
-    [availabilityZone release];
-    [start release];
-    [duration release];
-    [usagePrice release];
-    [fixedPrice release];
-    [instanceCount release];
-    [productDescription release];
-    [state release];
-    [tags release];
-    [instanceTenancy release];
-    [currencyCode release];
-    [offeringType release];
-    [recurringCharges release];
-
-    [super dealloc];
-}
 
 
 @end

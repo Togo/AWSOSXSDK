@@ -46,7 +46,7 @@
 /**
  * The list of attributes returned by the operation.
  */
-@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic, strong) NSMutableArray *attributes;
 
 
 

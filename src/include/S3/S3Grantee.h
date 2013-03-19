@@ -39,10 +39,10 @@
 }
 
 /** Gets and sets the URI property for group grantees */
-@property (nonatomic, retain) NSString *URI;
+@property (nonatomic, strong) NSString *URI;
 
 /** Gets and sets the emailAddress property for user grantees */
-@property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, strong) NSString *emailAddress;
 
 /** Returns an initialized S3Grantee object representing a CanonicalUser with the specified ID and displayName.
  * @param theID The ID of the user.

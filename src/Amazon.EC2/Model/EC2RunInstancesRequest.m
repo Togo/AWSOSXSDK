@@ -134,33 +134,33 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MinCount: %@,", minCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxCount: %@,", maxCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroupIds: %@,", securityGroupIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserData: %@,", userData] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Placement: %@,", placement] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Monitoring: %d,", monitoring] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DisableApiTermination: %d,", disableApiTermination] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceInitiatedShutdownBehavior: %@,", instanceInitiatedShutdownBehavior] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"License: %@,", license] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AdditionalInfo: %@,", additionalInfo] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MinCount: %@,", minCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxCount: %@,", maxCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroupIds: %@,", securityGroupIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserData: %@,", userData]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Placement: %@,", placement]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Monitoring: %d,", monitoring]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DisableApiTermination: %d,", disableApiTermination]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceInitiatedShutdownBehavior: %@,", instanceInitiatedShutdownBehavior]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"License: %@,", license]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AdditionalInfo: %@,", additionalInfo]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -183,31 +183,6 @@
 }
 
 
--(void)dealloc
-{
-    [imageId release];
-    [minCount release];
-    [maxCount release];
-    [keyName release];
-    [securityGroups release];
-    [securityGroupIds release];
-    [userData release];
-    [instanceType release];
-    [placement release];
-    [kernelId release];
-    [ramdiskId release];
-    [blockDeviceMappings release];
-    [subnetId release];
-    [instanceInitiatedShutdownBehavior release];
-    [license release];
-    [privateIpAddress release];
-    [clientToken release];
-    [additionalInfo release];
-    [networkInterfaces release];
-    [iamInstanceProfile release];
-
-    [super dealloc];
-}
 
 
 @end

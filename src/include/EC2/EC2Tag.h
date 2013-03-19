@@ -32,12 +32,12 @@
 /**
  * The tag's key.
  */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /**
  * The tag's value.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 
 /**

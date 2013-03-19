@@ -31,17 +31,17 @@
     NSMutableDictionary *dictionary;
 }
 
-@property (nonatomic, retain) NSString            *key;
-@property (nonatomic, retain) NSString            *value;
+@property (nonatomic, strong) NSString            *key;
+@property (nonatomic, strong) NSString            *value;
 
-@property (nonatomic, retain) NSMutableDictionary *dictionary;
+@property (nonatomic, strong) NSMutableDictionary *dictionary;
 
-@property (nonatomic, retain) id                  delegateClass;
+@property (nonatomic, strong) id                  delegateClass;
 
-@property (nonatomic, retain) NSString            *keyXpathElement;
-@property (nonatomic, retain) NSString            *valueXpathElement;
-@property (nonatomic, retain) NSString            *entryEndElement;
-@property (nonatomic, retain) NSString            *dictionaryEndElement;
+@property (nonatomic, strong) NSString            *keyXpathElement;
+@property (nonatomic, strong) NSString            *valueXpathElement;
+@property (nonatomic, strong) NSString            *entryEndElement;
+@property (nonatomic, strong) NSString            *dictionaryEndElement;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

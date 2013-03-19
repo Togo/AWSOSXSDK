@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"storage"]) {
-        EC2StorageUnmarshaller *unmarshaller = [[[EC2StorageUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setStorage:)] autorelease];
+        EC2StorageUnmarshaller *unmarshaller = [[EC2StorageUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setStorage:)];
         unmarshaller.endElementTagName = @"storage";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"error"]) {
-        EC2BundleTaskErrorUnmarshaller *unmarshaller = [[[EC2BundleTaskErrorUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setBundleTaskError:)] autorelease];
+        EC2BundleTaskErrorUnmarshaller *unmarshaller = [[EC2BundleTaskErrorUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setBundleTaskError:)];
         unmarshaller.endElementTagName = @"error";
         [parser setDelegate:unmarshaller];
     }
@@ -39,7 +39,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -106,10 +106,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

@@ -41,12 +41,12 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ShouldDecrementDesiredCapacity: %d,", shouldDecrementDesiredCapacity] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ShouldDecrementDesiredCapacity: %d,", shouldDecrementDesiredCapacity]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -57,12 +57,6 @@
 }
 
 
--(void)dealloc
-{
-    [instanceId release];
-
-    [super dealloc];
-}
 
 
 @end

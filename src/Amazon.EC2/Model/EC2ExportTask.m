@@ -47,31 +47,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExportTaskId: %@,", exportTaskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceExportDetails: %@,", instanceExportDetails] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExportToS3Task: %@,", exportToS3Task] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExportTaskId: %@,", exportTaskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceExportDetails: %@,", instanceExportDetails]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExportToS3Task: %@,", exportToS3Task]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [exportTaskId release];
-    [descriptionValue release];
-    [state release];
-    [statusMessage release];
-    [instanceExportDetails release];
-    [exportToS3Task release];
-
-    [super dealloc];
-}
 
 
 @end

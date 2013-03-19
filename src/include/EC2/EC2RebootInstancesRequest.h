@@ -33,7 +33,7 @@
 /**
  * The list of instances to terminate.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 
 /**

@@ -48,23 +48,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Listener: %@,", listener] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyNames: %@,", policyNames] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Listener: %@,", listener]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyNames: %@,", policyNames]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [listener release];
-    [policyNames release];
-
-    [super dealloc];
-}
 
 
 @end

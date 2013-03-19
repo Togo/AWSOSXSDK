@@ -27,14 +27,9 @@
     [parser setDelegate:unmarshaller];
     [parser parse];
 
-    if (multipartUpload != nil) {
-        [multipartUpload release];
-    }
 
-    multipartUpload = [unmarshaller.multipartUpload retain];
+    multipartUpload = unmarshaller.multipartUpload;
 
-    [unmarshaller release];
-    [parser release];
 }
 
 -(S3MultipartUpload *)multipartUpload
@@ -45,11 +40,5 @@
     return multipartUpload;
 }
 
--(void)dealloc
-{
-    [multipartUpload release];
-
-    [super dealloc];
-}
 
 @end

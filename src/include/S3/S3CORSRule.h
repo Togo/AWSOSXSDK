@@ -22,22 +22,22 @@
 }
 
 /** The Id of this rule. */
-@property (nonatomic, retain) NSString *ruleId;
+@property (nonatomic, strong) NSString *ruleId;
 
 /** The list of allowed methods (GET, PUT, DELETE, HEAD) */
-@property (nonatomic, retain) NSArray *allowedMethods;
+@property (nonatomic, strong) NSArray *allowedMethods;
 
 /** The list of allowed origins */
-@property (nonatomic, retain) NSArray *allowedOrigins;
+@property (nonatomic, strong) NSArray *allowedOrigins;
 
 /** Maximum age for this rule */
 @property (nonatomic, assign) NSInteger maxAgeSeconds;
 
 /** The list of exposed headers */
-@property (nonatomic, retain) NSArray *exposeHeaders;
+@property (nonatomic, strong) NSArray *exposeHeaders;
 
 /** The list of allowed headers */
-@property (nonatomic, retain) NSArray *allowedHeaders;
+@property (nonatomic, strong) NSArray *allowedHeaders;
 
 -(NSString *)toXml;
 

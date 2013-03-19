@@ -35,12 +35,12 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * A list of receipt handles for the messages to be deleted.
  */
-@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 
 
 /**

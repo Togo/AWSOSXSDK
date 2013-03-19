@@ -128,31 +128,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"S: %@,", s] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"N: %@,", n] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"B: %@,", b] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SS: %@,", sS] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NS: %@,", nS] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BS: %@,", bS] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"S: %@,", s]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"N: %@,", n]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"B: %@,", b]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SS: %@,", sS]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NS: %@,", nS]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BS: %@,", bS]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [s release];
-    [n release];
-    [b release];
-    [sS release];
-    [nS release];
-    [bS release];
-
-    [super dealloc];
-}
 
 
 @end

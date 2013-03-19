@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"Dimensions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.dimensions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.dimensions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Dimensions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [CloudWatchDimensionUnmarshaller class];
@@ -36,7 +36,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -77,10 +77,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

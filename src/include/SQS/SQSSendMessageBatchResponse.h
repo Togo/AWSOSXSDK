@@ -50,13 +50,13 @@
 /**
  * A list of <a>SendMessageBatchResultEntry</a>s.
  */
-@property (nonatomic, retain) NSMutableArray *successful;
+@property (nonatomic, strong) NSMutableArray *successful;
 
 /**
  * A list of <a>BatchResultErrorEntry</a>s with the error detail about
  * each message that could not be enqueued.
  */
-@property (nonatomic, retain) NSMutableArray *failed;
+@property (nonatomic, strong) NSMutableArray *failed;
 
 
 

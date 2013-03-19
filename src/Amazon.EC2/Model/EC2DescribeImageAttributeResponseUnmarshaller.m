@@ -23,14 +23,14 @@
 {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
-    EC2ImageAttributeUnmarshaller *unmarshaller = [[[EC2ImageAttributeUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImageAttribute:)] autorelease];
+    EC2ImageAttributeUnmarshaller *unmarshaller = [[EC2ImageAttributeUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImageAttribute:)];
     unmarshaller.endElementTagName = @"DescribeImageAttributeResponse";
     [parser setDelegate:unmarshaller];
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -67,10 +67,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

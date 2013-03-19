@@ -43,27 +43,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Format: %@,", format] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %@,", size] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImportManifestUrl: %@,", importManifestUrl] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Checksum: %@,", checksum] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Format: %@,", format]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %@,", size]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImportManifestUrl: %@,", importManifestUrl]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Checksum: %@,", checksum]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [format release];
-    [size release];
-    [importManifestUrl release];
-    [checksum release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -35,12 +35,12 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * A list of <a>SendMessageBatchRequestEntry</a>s.
  */
-@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 
 
 /**

@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2StartInstancesResponse *response;
+@property (weak, nonatomic, readonly) EC2StartInstancesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

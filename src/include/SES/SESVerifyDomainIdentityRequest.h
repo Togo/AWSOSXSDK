@@ -40,7 +40,7 @@
 /**
  * The domain to be verified.
  */
-@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, strong) NSString *domain;
 
 /**
  * Returns a string representation of this object; useful for testing and

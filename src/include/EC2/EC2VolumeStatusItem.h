@@ -45,27 +45,27 @@
 /**
  * The value of the VolumeId property for this object.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The value of the AvailabilityZone property for this object.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The value of the VolumeStatus property for this object.
  */
-@property (nonatomic, retain) EC2VolumeStatusInfo *volumeStatus;
+@property (nonatomic, strong) EC2VolumeStatusInfo *volumeStatus;
 
 /**
  * The value of the Events property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *events;
+@property (nonatomic, strong) NSMutableArray *events;
 
 /**
  * The value of the Actions property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *actions;
+@property (nonatomic, strong) NSMutableArray *actions;
 
 /**
  * Adds a single object to events.

@@ -23,14 +23,14 @@
 {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
-    EC2ReservationUnmarshaller *unmarshaller = [[[EC2ReservationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setReservation:)] autorelease];
+    EC2ReservationUnmarshaller *unmarshaller = [[EC2ReservationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setReservation:)];
     unmarshaller.endElementTagName = @"RunInstancesResponse";
     [parser setDelegate:unmarshaller];
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -67,10 +67,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

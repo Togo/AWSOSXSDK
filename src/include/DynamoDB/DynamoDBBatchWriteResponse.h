@@ -48,7 +48,7 @@
  * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
  * consume <code>WriteCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSNumber *consumedCapacityUnits;
+@property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -41,26 +41,26 @@
 /**
  * The number of licenses available.
  */
-@property (nonatomic, retain) NSNumber *capacity;
+@property (nonatomic, strong) NSNumber *capacity;
 
 /**
  * The number of Amazon EC2 instances that can be supported with the
  * license's capacity.
  */
-@property (nonatomic, retain) NSNumber *instanceCapacity;
+@property (nonatomic, strong) NSNumber *instanceCapacity;
 
 /**
  * The state of this license capacity, indicating whether the license is
  * actively being used or not.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The earliest allowed time at which a license can be deactivated. Some
  * licenses have time restrictions on when they can be activated and
  * reactivated.
  */
-@property (nonatomic, retain) NSDate *earliestAllowedDeactivationTime;
+@property (nonatomic, strong) NSDate *earliestAllowedDeactivationTime;
 
 /**
  * Returns a string representation of this object; useful for testing and

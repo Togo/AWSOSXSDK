@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"PolicyAttributeTypeDescriptions"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.policyAttributeTypeDescriptions withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.policyAttributeTypeDescriptions withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"PolicyAttributeTypeDescriptions";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [ElasticLoadBalancingPolicyAttributeTypeDescriptionUnmarshaller class];
@@ -36,7 +36,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -77,10 +77,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

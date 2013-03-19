@@ -35,31 +35,31 @@
 
 
 /** The name of the bucket to list uploads. */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /** The key at or after which the listing began. */
-@property (nonatomic, retain) NSString *keyMarker;
+@property (nonatomic, strong) NSString *keyMarker;
 
 /** Upload ID after which listing began. */
-@property (nonatomic, retain) NSString *uploadIdMarker;
+@property (nonatomic, strong) NSString *uploadIdMarker;
 
 /** Specifies the value that should be used for the key-marker request parameter in a subsequent request. */
-@property (nonatomic, retain) NSString *nextKeyMarker;
+@property (nonatomic, strong) NSString *nextKeyMarker;
 
 /** Specifies the value that should be used for the upload-id-marker request parameter in a subsequent request. */
-@property (nonatomic, retain) NSString *nextUploadIdMarker;
+@property (nonatomic, strong) NSString *nextUploadIdMarker;
 
 /** Contains the delimiter that was specified in the request. */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /** Contains the prefix that was specified in the request. */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter.*/
-@property (nonatomic, readonly) NSMutableArray *commonPrefixes;
+@property (weak, nonatomic, readonly) NSMutableArray *commonPrefixes;
 
 /** The list of S3MultipartUPload instance returned in the response. */
-@property (nonatomic, readonly) NSMutableArray *uploads;
+@property (weak, nonatomic, readonly) NSMutableArray *uploads;
 
 /** The maxUploads that was specified in the request. */
 @property (nonatomic) NSInteger maxUploads;

@@ -40,19 +40,19 @@
 /**
  * The AWS user ID of an account.
  */
-@property (nonatomic, retain) NSString *userId;
+@property (nonatomic, strong) NSString *userId;
 
 /**
  * Name of the security group in the specified AWS account. Cannot be
  * used when specifying a CIDR IP address range.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * ID of the security group in the specified AWS account. Cannot be used
  * when specifying a CIDR IP address range.
  */
-@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, strong) NSString *groupId;
 
 /**
  * Returns a string representation of this object; useful for testing and

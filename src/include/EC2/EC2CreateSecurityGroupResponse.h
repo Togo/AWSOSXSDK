@@ -42,7 +42,7 @@
 /**
  * The value of the GroupId property for this object.
  */
-@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, strong) NSString *groupId;
 
 /**
  * Returns a string representation of this object; useful for testing and

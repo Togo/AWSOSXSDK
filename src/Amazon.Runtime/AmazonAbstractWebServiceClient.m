@@ -34,7 +34,7 @@
         _timeout = 240;
         _connectionTimeout = 0;
         _delay = 0.2;
-        _userAgent = [[AmazonSDKUtil userAgentString] retain];
+        _userAgent = [AmazonSDKUtil userAgentString];
     }
 
     return self;
@@ -44,8 +44,7 @@
 {
     if (self = [self init]) {
         AmazonStaticCredentialsProvider *provider = [[AmazonStaticCredentialsProvider alloc] initWithCredentials:credentials];
-        [self initWithCredentialsProvider:provider];
-        [provider release];
+        if (!(self = [self initWithCredentialsProvider:provider])) return nil;
     }
     
     return self;
@@ -54,7 +53,7 @@
 -(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider>)provider
 {
     if (self = [self init]) {
-        _provider = [provider retain];
+        _provider = provider;
     }
     
     return self;
@@ -65,7 +64,7 @@
     NSString *requestClassName  = NSStringFromClass([request class]);
     NSString *responseClassName = [[requestClassName substringToIndex:[requestClassName length] - 7] stringByAppendingFormat:@"Response"];
 
-    id response = [[NSClassFromString(responseClassName) new] autorelease];
+    id response = [NSClassFromString(responseClassName) new];
 
     if (nil == response) {
         response = [request constructResponse];
@@ -217,8 +216,7 @@
 
 -(void)setUserAgent:(NSString *)newUserAgent
 {
-    [_userAgent autorelease];
-    _userAgent = [[NSString stringWithFormat:@"%@, %@", newUserAgent, [AmazonSDKUtil userAgentString]] retain];
+    _userAgent = [NSString stringWithFormat:@"%@, %@", newUserAgent, [AmazonSDKUtil userAgentString]];
 }
 
 -(NSString *)userAgent
@@ -238,19 +236,19 @@
 {
     AmazonAbstractWebServiceClient *o = [[[self class] allocWithZone:zone] init];
     o.provider = self.provider;
-    o.endpoint = [[self.endpoint copy] autorelease];
+    o.endpoint = [self.endpoint copy];
     o.maxRetries = self.maxRetries;
     o.timeout = self.timeout;
     o.connectionTimeout = self.connectionTimeout;
     o.delay = self.delay;
-    o.userAgent = [[self.userAgent copy] autorelease];
+    o.userAgent = [self.userAgent copy];
 
     return o;
 }
 
 -(AmazonServiceResponse *)nilRequestResponse
 {
-    AmazonServiceResponse *response = [[[AmazonServiceResponse alloc] init] autorelease];
+    AmazonServiceResponse *response = [[AmazonServiceResponse alloc] init];
     response.error = [AmazonErrorHandler errorFromExceptionWithThrowsExceptionOption:[AmazonClientException
                                                                                     exceptionWithMessage:@"Request cannot be nil."]];
     
@@ -264,7 +262,6 @@
         AMZLogDebug(@"Request body: ");
         NSString *rBody = [[NSString alloc] initWithData:[urlRequest HTTPBody] encoding:NSUTF8StringEncoding];
         AMZLogDebug(@"%@", rBody);
-        [rBody release];
     }    
 }
 
@@ -322,9 +319,9 @@
 
 -(void)startAsyncRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest
 {
-    NSURLConnection *urlConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest
+    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest
                                                                       delegate:response
-                                                              startImmediately:NO] autorelease];
+                                                              startImmediately:NO];
     originalRequest.urlConnection = urlConnection;
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.timeout
@@ -338,11 +335,11 @@
 
 -(void)startSyncRequest:(AmazonServiceRequest *)generatedRequest forRequest:(NSMutableURLRequest *)urlRequest response:(AmazonServiceResponse *)response originalRequest:(AmazonServiceRequestConfig *)originalRequest
 {
-    generatedRequest.delegate = [[[AmazonRequestDelegate alloc] init] autorelease];
+    generatedRequest.delegate = [[AmazonRequestDelegate alloc] init];
     
-    NSURLConnection *urlConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest
+    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest
                                                                       delegate:response
-                                                              startImmediately:NO] autorelease];
+                                                              startImmediately:NO];
     [urlConnection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:AWSDefaultRunLoopMode];
     originalRequest.urlConnection = urlConnection;
     [urlConnection start];
@@ -386,13 +383,5 @@
 
 }
 
--(void)dealloc
-{
-    [_provider release];
-    [_endpoint release];
-    [_userAgent release];
-
-    [super dealloc];
-}
 
 @end

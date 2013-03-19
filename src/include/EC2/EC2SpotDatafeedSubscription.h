@@ -43,28 +43,28 @@
 /**
  * Specifies the AWS account ID of the account.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * Specifies the Amazon S3 bucket where the Spot Instance data feed is
  * located.
  */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /**
  * Contains the prefix that is prepended to data feed files.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /**
  * Specifies the state of the Spot Instance request.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Specifies a fault code for the Spot Instance request, if present.
  */
-@property (nonatomic, retain) EC2SpotInstanceStateFault *fault;
+@property (nonatomic, strong) EC2SpotInstanceStateFault *fault;
 
 /**
  * Returns a string representation of this object; useful for testing and

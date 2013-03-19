@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse *response;
+@property (weak, nonatomic, readonly) ElasticLoadBalancingRegisterInstancesWithLoadBalancerResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

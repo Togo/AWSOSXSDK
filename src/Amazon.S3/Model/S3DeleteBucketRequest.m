@@ -50,10 +50,6 @@
     return clientException;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end
 

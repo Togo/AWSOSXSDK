@@ -107,26 +107,26 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AllSecurityGroups: %@,", allSecurityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserData: %@,", userData] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AddressingType: %@,", addressingType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Placement: %@,", placement] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MonitoringEnabled: %d,", monitoringEnabled] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AllSecurityGroups: %@,", allSecurityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserData: %@,", userData]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AddressingType: %@,", addressingType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Placement: %@,", placement]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MonitoringEnabled: %d,", monitoringEnabled]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -143,25 +143,6 @@
 }
 
 
--(void)dealloc
-{
-    [imageId release];
-    [keyName release];
-    [allSecurityGroups release];
-    [securityGroups release];
-    [userData release];
-    [addressingType release];
-    [instanceType release];
-    [placement release];
-    [kernelId release];
-    [ramdiskId release];
-    [blockDeviceMappings release];
-    [subnetId release];
-    [networkInterfaces release];
-    [iamInstanceProfile release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -124,16 +124,5 @@
     return clientException;
 }
 
--(void) dealloc
-{
-    [ifModifiedSince release];
-    [ifUnmodifiedSince release];
-    [ifMatch release];
-    [ifNoneMatch release];
-    [responseHeaderOverrides release];
-    [versionId release];
-
-    [super dealloc];
-}
 
 @end

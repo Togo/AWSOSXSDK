@@ -39,12 +39,12 @@
 
 +(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketLifecycleConfiguration *)theConfiguration
 {
-    return [[[S3SetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration] autorelease];
+    return [[S3SetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration];
 }
 
 +(id)requestWithBucketName:(NSString *)theBucketName
 {
-    return [[[S3SetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:nil] autorelease];
+    return [[S3SetBucketLifecycleConfigurationRequest alloc] initWithBucketName:theBucketName withConfiguration:nil];
 }
 
 -(NSMutableURLRequest *)configureURLRequest
@@ -68,11 +68,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [configuration release];
-    
-    [super dealloc];
-}
 
 @end

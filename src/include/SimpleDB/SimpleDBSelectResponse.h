@@ -53,14 +53,14 @@
 /**
  * A list of items that match the select expression.
  */
-@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 /**
  * An opaque token indicating that more items than
  * <code>MaxNumberOfItems</code> were matched, the response size exceeded
  * 1 megabyte, or the execution time exceeded 5 seconds.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

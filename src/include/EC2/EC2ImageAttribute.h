@@ -47,37 +47,37 @@
 /**
  * The ID of the associated AMI.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * Launch permissions for the associated AMI.
  */
-@property (nonatomic, retain) NSMutableArray *launchPermissions;
+@property (nonatomic, strong) NSMutableArray *launchPermissions;
 
 /**
  * Product codes for the associated AMI.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 /**
  * Kernel ID of the associated AMI.
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * Ramdisk ID of the associated AMI.
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * User-created description of the associated AMI.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * Block device mappings for the associated AMI.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * Adds a single object to launchPermissions.

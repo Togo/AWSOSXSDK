@@ -35,12 +35,12 @@
 /**
  * The name of the the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The port that uses the specified SSL certificate.
  */
-@property (nonatomic, retain) NSNumber *loadBalancerPort;
+@property (nonatomic, strong) NSNumber *loadBalancerPort;
 
 /**
  * The ID of the SSL certificate chain to use. For more information on
@@ -49,7 +49,7 @@
  * Managing Server Certificates </a> in the AWS Identity and Access
  * Management documentation.
  */
-@property (nonatomic, retain) NSString *sSLCertificateId;
+@property (nonatomic, strong) NSString *sSLCertificateId;
 
 
 /**

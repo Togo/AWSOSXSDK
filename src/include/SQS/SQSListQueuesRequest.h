@@ -34,7 +34,7 @@
  * A string to use for filtering the list results. Only those queues
  * whose name begins with the specified string are returned.
  */
-@property (nonatomic, retain) NSString *queueNamePrefix;
+@property (nonatomic, strong) NSString *queueNamePrefix;
 
 
 /**

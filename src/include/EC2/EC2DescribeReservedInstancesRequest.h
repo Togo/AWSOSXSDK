@@ -43,7 +43,7 @@
 /**
  * The optional list of Reserved Instance IDs to describe.
  */
-@property (nonatomic, retain) NSMutableArray *reservedInstancesIds;
+@property (nonatomic, strong) NSMutableArray *reservedInstancesIds;
 
 /**
  * A list of filters used to match properties for ReservedInstances. For
@@ -52,12 +52,12 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * The Reserved Instance offering type.
  */
-@property (nonatomic, retain) NSString *offeringType;
+@property (nonatomic, strong) NSString *offeringType;
 
 /**
  * Adds a single object to reservedInstancesIds.

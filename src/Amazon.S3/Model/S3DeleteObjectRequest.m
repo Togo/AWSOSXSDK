@@ -31,10 +31,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [mfaAuth release];
-    [super dealloc];
-}
 
 @end

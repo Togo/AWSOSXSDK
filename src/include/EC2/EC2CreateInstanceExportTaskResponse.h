@@ -43,7 +43,7 @@
 /**
  * The value of the ExportTask property for this object.
  */
-@property (nonatomic, retain) EC2ExportTask *exportTask;
+@property (nonatomic, strong) EC2ExportTask *exportTask;
 
 /**
  * Returns a string representation of this object; useful for testing and

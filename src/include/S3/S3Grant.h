@@ -31,10 +31,10 @@
 }
 
 /** Gets and sets the grantee for the grant */
-@property (nonatomic, retain) S3Grantee *grantee;
+@property (nonatomic, strong) S3Grantee *grantee;
 
 /** Gets and sets the permission for the grant */
-@property (nonatomic, retain) S3Permission *permission;
+@property (nonatomic, strong) S3Permission *permission;
 
 /** Initializes the object with the specified grantee and permission.
  * @param theGrantee The grantee for the grant.

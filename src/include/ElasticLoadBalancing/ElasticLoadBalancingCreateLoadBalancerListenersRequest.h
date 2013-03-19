@@ -36,13 +36,13 @@
  * The name of the new LoadBalancer. The name must be unique within your
  * AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
  * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
  */
-@property (nonatomic, retain) NSMutableArray *listeners;
+@property (nonatomic, strong) NSMutableArray *listeners;
 
 
 /**

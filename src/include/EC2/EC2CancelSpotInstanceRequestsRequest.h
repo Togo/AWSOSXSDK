@@ -33,7 +33,7 @@
 /**
  * Specifies the ID of the Spot Instance request.
  */
-@property (nonatomic, retain) NSMutableArray *spotInstanceRequestIds;
+@property (nonatomic, strong) NSMutableArray *spotInstanceRequestIds;
 
 
 /**

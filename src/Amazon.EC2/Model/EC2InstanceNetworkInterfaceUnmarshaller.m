@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"groupSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groups withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.groups withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"groupSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2GroupIdentifierUnmarshaller class];
@@ -34,19 +34,19 @@
     }
 
     if ([elementName isEqualToString:@"attachment"]) {
-        EC2InstanceNetworkInterfaceAttachmentUnmarshaller *unmarshaller = [[[EC2InstanceNetworkInterfaceAttachmentUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAttachment:)] autorelease];
+        EC2InstanceNetworkInterfaceAttachmentUnmarshaller *unmarshaller = [[EC2InstanceNetworkInterfaceAttachmentUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAttachment:)];
         unmarshaller.endElementTagName = @"attachment";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"association"]) {
-        EC2InstanceNetworkInterfaceAssociationUnmarshaller *unmarshaller = [[[EC2InstanceNetworkInterfaceAssociationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAssociation:)] autorelease];
+        EC2InstanceNetworkInterfaceAssociationUnmarshaller *unmarshaller = [[EC2InstanceNetworkInterfaceAssociationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setAssociation:)];
         unmarshaller.endElementTagName = @"association";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"privateIpAddressesSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.privateIpAddresses withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.privateIpAddresses withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"privateIpAddressesSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2InstancePrivateIpAddressUnmarshaller class];
@@ -57,7 +57,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -139,10 +139,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

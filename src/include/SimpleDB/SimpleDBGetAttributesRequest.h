@@ -37,17 +37,17 @@
 /**
  * The name of the domain in which to perform the operation.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 /**
  * The name of the item.
  */
-@property (nonatomic, retain) NSString *itemName;
+@property (nonatomic, strong) NSString *itemName;
 
 /**
  * The names of the attributes.
  */
-@property (nonatomic, retain) NSMutableArray *attributeNames;
+@property (nonatomic, strong) NSMutableArray *attributeNames;
 
 /**
  * Determines whether or not strong consistency should be enforced when

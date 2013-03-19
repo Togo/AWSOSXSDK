@@ -51,35 +51,22 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AssociationId: %@,", associationId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Domain: %@,", domain] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaceOwnerId: %@,", networkInterfaceOwnerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIp: %@,", publicIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AllocationId: %@,", allocationId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AssociationId: %@,", associationId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Domain: %@,", domain]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaceId: %@,", networkInterfaceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaceOwnerId: %@,", networkInterfaceOwnerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [publicIp release];
-    [allocationId release];
-    [associationId release];
-    [domain release];
-    [networkInterfaceId release];
-    [networkInterfaceOwnerId release];
-    [privateIpAddress release];
-
-    [super dealloc];
-}
 
 
 @end

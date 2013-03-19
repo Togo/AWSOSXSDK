@@ -28,33 +28,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"CertificateNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingCertificateNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"DuplicateListener"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingDuplicateListenerException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"LoadBalancerNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingLoadBalancerNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidConfigurationRequest"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidConfigurationRequestException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -66,12 +60,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

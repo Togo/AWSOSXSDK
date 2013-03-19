@@ -32,7 +32,7 @@
 /**
  * The value of the BoxUsage property for this object.
  */
-@property (nonatomic, retain) NSNumber *boxUsage;
+@property (nonatomic, strong) NSNumber *boxUsage;
 
 
 

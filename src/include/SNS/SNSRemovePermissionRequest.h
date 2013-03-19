@@ -34,12 +34,12 @@
 /**
  * The ARN of the topic whose access control policy you wish to modify.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * The unique label of the statement you want to remove.
  */
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, strong) NSString *label;
 
 
 /**

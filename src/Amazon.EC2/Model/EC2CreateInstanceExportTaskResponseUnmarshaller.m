@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"exportTask"]) {
-        EC2ExportTaskUnmarshaller *unmarshaller = [[[EC2ExportTaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setExportTask:)] autorelease];
+        EC2ExportTaskUnmarshaller *unmarshaller = [[EC2ExportTaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setExportTask:)];
         unmarshaller.endElementTagName = @"exportTask";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -70,10 +70,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

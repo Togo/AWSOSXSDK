@@ -65,11 +65,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [transition release];
-    
-    [super dealloc];
-}
 
 @end

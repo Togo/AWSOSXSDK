@@ -22,7 +22,7 @@
 {
     self = [super init];
     if (self) {
-        stringValue = [value retain];
+        stringValue = value;
     }
     return self;
 }

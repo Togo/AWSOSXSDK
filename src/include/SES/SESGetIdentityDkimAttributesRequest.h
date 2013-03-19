@@ -41,7 +41,7 @@
  * A list of one or more verified identities - email addresses, domains,
  * or both.
  */
-@property (nonatomic, retain) NSMutableArray *identities;
+@property (nonatomic, strong) NSMutableArray *identities;
 
 /**
  * Adds a single object to identities.

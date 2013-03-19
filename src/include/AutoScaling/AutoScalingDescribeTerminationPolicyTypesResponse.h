@@ -45,7 +45,7 @@
  * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
  * <code>Default</code>
  */
-@property (nonatomic, retain) NSMutableArray *terminationPolicyTypes;
+@property (nonatomic, strong) NSMutableArray *terminationPolicyTypes;
 
 
 

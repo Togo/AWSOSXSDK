@@ -38,23 +38,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InternalServiceError"]) {
-        [newException release];
         newException = [[CloudWatchInternalServiceException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidParameterValue"]) {
-        [newException release];
         newException = [[CloudWatchInvalidParameterValueException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -71,23 +67,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Metrics: %@,", metrics] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Metrics: %@,", metrics]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [metrics release];
-    [nextToken release];
-
-    [super dealloc];
-}
 
 
 @end

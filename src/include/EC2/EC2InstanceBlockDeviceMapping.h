@@ -41,12 +41,12 @@
  * The device name (e.g., <code>/dev/sdh</code>) at which the block
  * device is exposed on the instance.
  */
-@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, strong) NSString *deviceName;
 
 /**
  * The optional EBS device mapped to the specified device name.
  */
-@property (nonatomic, retain) EC2EbsInstanceBlockDevice *ebs;
+@property (nonatomic, strong) EC2EbsInstanceBlockDevice *ebs;
 
 /**
  * Returns a string representation of this object; useful for testing and

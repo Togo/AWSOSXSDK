@@ -43,7 +43,7 @@
 /**
  * The value of the ConversionTask property for this object.
  */
-@property (nonatomic, retain) EC2ConversionTask *conversionTask;
+@property (nonatomic, strong) EC2ConversionTask *conversionTask;
 
 /**
  * Returns a string representation of this object; useful for testing and

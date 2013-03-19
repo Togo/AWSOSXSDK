@@ -60,35 +60,22 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Type: %@,", type] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ValidFrom: %@,", validFrom] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ValidUntil: %@,", validUntil] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchGroup: %@,", launchGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZoneGroup: %@,", availabilityZoneGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchSpecification: %@,", launchSpecification] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceCount: %@,", instanceCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Type: %@,", type]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ValidFrom: %@,", validFrom]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ValidUntil: %@,", validUntil]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchGroup: %@,", launchGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZoneGroup: %@,", availabilityZoneGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchSpecification: %@,", launchSpecification]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [spotPrice release];
-    [instanceCount release];
-    [type release];
-    [validFrom release];
-    [validUntil release];
-    [launchGroup release];
-    [availabilityZoneGroup release];
-    [launchSpecification release];
-
-    [super dealloc];
-}
 
 
 @end

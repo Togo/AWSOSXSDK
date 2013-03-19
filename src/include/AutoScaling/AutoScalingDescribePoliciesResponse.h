@@ -45,7 +45,7 @@
 /**
  * A list of scaling policies.
  */
-@property (nonatomic, retain) NSMutableArray *scalingPolicies;
+@property (nonatomic, strong) NSMutableArray *scalingPolicies;
 
 /**
  * A string that marks the start of the next batch of returned results.
@@ -53,7 +53,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

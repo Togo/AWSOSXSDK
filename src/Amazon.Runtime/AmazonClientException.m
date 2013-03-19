@@ -28,7 +28,7 @@
     e.error = nil;
     e.message = theMessage;
     
-    return [e autorelease];
+    return e;
 }
 
 +(id)exceptionWithMessage:(NSString *)theMessage andError:(NSError *)theError
@@ -39,7 +39,7 @@
     e.error   = theError;
     e.message = theMessage;
     
-    return [e autorelease];
+    return e;
 }
 
 - (id)initWithName:(NSString *)name reason:(NSString *)reason userInfo:(NSDictionary *)userInfo
@@ -65,12 +65,5 @@
     return self;
 }
 
--(void)dealloc
-{
-    [message release];
-    [error release];
-
-    [super dealloc];
-}
 
 @end

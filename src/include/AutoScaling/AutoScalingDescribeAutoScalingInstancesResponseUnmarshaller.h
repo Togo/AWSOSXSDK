@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) AutoScalingDescribeAutoScalingInstancesResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingDescribeAutoScalingInstancesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

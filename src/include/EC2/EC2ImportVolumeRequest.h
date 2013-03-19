@@ -45,22 +45,22 @@
 /**
  * The value of the AvailabilityZone property for this object.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The value of the Image property for this object.
  */
-@property (nonatomic, retain) EC2DiskImageDetail *image;
+@property (nonatomic, strong) EC2DiskImageDetail *image;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the Volume property for this object.
  */
-@property (nonatomic, retain) EC2VolumeDetail *volume;
+@property (nonatomic, strong) EC2VolumeDetail *volume;
 
 /**
  * Returns a string representation of this object; useful for testing and

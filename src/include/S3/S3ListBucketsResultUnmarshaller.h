@@ -25,6 +25,6 @@
 }
 
 /** The result object represented by the XML */
-@property (nonatomic, readonly) S3ListBucketsResult *listBucketsResult;
+@property (weak, nonatomic, readonly) S3ListBucketsResult *listBucketsResult;
 
 @end

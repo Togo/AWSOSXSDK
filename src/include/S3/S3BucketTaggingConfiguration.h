@@ -25,7 +25,7 @@
 }
 
 /** The list of tagsets (currently only one tag set is allowed) */
-@property (nonatomic, retain) NSArray *tagsets;
+@property (nonatomic, strong) NSArray *tagsets;
 
 -(NSString *)toXml;
 

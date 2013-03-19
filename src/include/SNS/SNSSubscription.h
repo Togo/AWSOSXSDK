@@ -35,27 +35,27 @@
 /**
  * The subscription's ARN.
  */
-@property (nonatomic, retain) NSString *subscriptionArn;
+@property (nonatomic, strong) NSString *subscriptionArn;
 
 /**
  * The subscription's owner.
  */
-@property (nonatomic, retain) NSString *owner;
+@property (nonatomic, strong) NSString *owner;
 
 /**
  * The subscription's protocol.
  */
-@property (nonatomic, retain) NSString *protocol;
+@property (nonatomic, strong) NSString *protocol;
 
 /**
  * The subscription's endpoint (format depends on the protocol).
  */
-@property (nonatomic, retain) NSString *endpoint;
+@property (nonatomic, strong) NSString *endpoint;
 
 /**
  * The ARN of the subscription's topic.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 
 /**

@@ -26,10 +26,10 @@
 }
 
 /** The entity tag returned when the part was uploaded. */
-@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, strong) NSString *etag;
 
 /** The date and time at which the part was uploaded. */
-@property (nonatomic, retain) NSDate *lastModified;
+@property (nonatomic, strong) NSDate *lastModified;
 
 /** The unique part number identifying the part. */
 @property (nonatomic) NSInteger partNumber;

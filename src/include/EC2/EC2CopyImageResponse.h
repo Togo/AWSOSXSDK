@@ -42,7 +42,7 @@
 /**
  * The value of the ImageId property for this object.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * Returns a string representation of this object; useful for testing and

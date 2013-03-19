@@ -31,11 +31,5 @@
     return self;
 }
 
--(void)dealloc
-{
-    [deviceSerialNumber release];
-    [token release];
-    [super dealloc];
-}
 
 @end

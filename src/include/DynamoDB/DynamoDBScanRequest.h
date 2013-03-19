@@ -48,7 +48,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * List of <code>Attribute</code> names. If attribute names are not
@@ -58,7 +58,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *attributesToGet;
+@property (nonatomic, strong) NSMutableArray *attributesToGet;
 
 /**
  * The maximum number of items to return. If Amazon DynamoDB hits this
@@ -73,7 +73,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *limit;
+@property (nonatomic, strong) NSNumber *limit;
 
 /**
  * If set to <code>true</code>, Amazon DynamoDB returns a total number of
@@ -90,7 +90,7 @@
 /**
  * Evaluates the scan results and returns only the desired values.
  */
-@property (nonatomic, retain) NSMutableDictionary *scanFilter;
+@property (nonatomic, strong) NSMutableDictionary *scanFilter;
 
 /**
  * Primary key of the item from which to continue an earlier scan. An
@@ -100,7 +100,7 @@
  * <code>LastEvaluatedKey</code> can be passed back in a new scan request
  * to continue the operation from that point.
  */
-@property (nonatomic, retain) DynamoDBKey *exclusiveStartKey;
+@property (nonatomic, strong) DynamoDBKey *exclusiveStartKey;
 
 
 /**

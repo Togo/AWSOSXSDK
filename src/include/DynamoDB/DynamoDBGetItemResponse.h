@@ -47,7 +47,7 @@
 /**
  * Contains the requested attributes.
  */
-@property (nonatomic, retain) NSMutableDictionary *item;
+@property (nonatomic, strong) NSMutableDictionary *item;
 
 /**
  * The number of Capacity Units of the provisioned throughput of the
@@ -58,7 +58,7 @@
  * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
  * consume <code>WriteCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSNumber *consumedCapacityUnits;
+@property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 /**
  * Returns a value from the item dictionary for the specified key.

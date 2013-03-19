@@ -44,18 +44,18 @@
 /**
  * The optional list of EBS snapshot IDs to describe.
  */
-@property (nonatomic, retain) NSMutableArray *snapshotIds;
+@property (nonatomic, strong) NSMutableArray *snapshotIds;
 
 /**
  * The optional list of EBS snapshot owners.
  */
-@property (nonatomic, retain) NSMutableArray *ownerIds;
+@property (nonatomic, strong) NSMutableArray *ownerIds;
 
 /**
  * The optional list of users who have permission to create volumes from
  * the described EBS snapshots.
  */
-@property (nonatomic, retain) NSMutableArray *restorableByUserIds;
+@property (nonatomic, strong) NSMutableArray *restorableByUserIds;
 
 /**
  * A list of filters used to match properties for Snapshots. For a
@@ -64,7 +64,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to snapshotIds.

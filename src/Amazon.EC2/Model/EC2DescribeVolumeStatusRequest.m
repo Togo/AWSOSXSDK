@@ -61,27 +61,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeIds: %@,", volumeIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Filters: %@,", filters] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxResults: %@,", maxResults] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeIds: %@,", volumeIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Filters: %@,", filters]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxResults: %@,", maxResults]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [volumeIds release];
-    [filters release];
-    [nextToken release];
-    [maxResults release];
-
-    [super dealloc];
-}
 
 
 @end

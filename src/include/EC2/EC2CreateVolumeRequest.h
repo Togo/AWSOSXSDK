@@ -38,17 +38,17 @@
  * The size of the volume, in gigabytes. Required if you are not creating
  * a volume from a snapshot.
  */
-@property (nonatomic, retain) NSNumber *size;
+@property (nonatomic, strong) NSNumber *size;
 
 /**
  * The ID of the snapshot from which to create the new volume.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The Availability Zone in which to create the new volume.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The value of the VolumeType property for this object.
@@ -56,12 +56,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>standard, io1
  */
-@property (nonatomic, retain) NSString *volumeType;
+@property (nonatomic, strong) NSString *volumeType;
 
 /**
  * The value of the Iops property for this object.
  */
-@property (nonatomic, retain) NSNumber *iops;
+@property (nonatomic, strong) NSNumber *iops;
 
 
 /**

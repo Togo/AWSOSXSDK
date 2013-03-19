@@ -34,7 +34,7 @@
 /**
  * The ID of the snapshot whose attribute is being reset.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The name of the attribute being reset. <p> Available attribute names:
@@ -43,7 +43,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>productCodes, createVolumePermission
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 
 /**

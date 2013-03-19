@@ -72,37 +72,23 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupId: %@,", groupId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceSecurityGroupName: %@,", sourceSecurityGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceSecurityGroupOwnerId: %@,", sourceSecurityGroupOwnerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IpProtocol: %@,", ipProtocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"FromPort: %@,", fromPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ToPort: %@,", toPort] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CidrIp: %@,", cidrIp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IpPermissions: %@,", ipPermissions] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupName: %@,", groupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupId: %@,", groupId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceSecurityGroupName: %@,", sourceSecurityGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceSecurityGroupOwnerId: %@,", sourceSecurityGroupOwnerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IpProtocol: %@,", ipProtocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"FromPort: %@,", fromPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ToPort: %@,", toPort]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CidrIp: %@,", cidrIp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IpPermissions: %@,", ipPermissions]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [groupName release];
-    [groupId release];
-    [sourceSecurityGroupName release];
-    [sourceSecurityGroupOwnerId release];
-    [ipProtocol release];
-    [fromPort release];
-    [toPort release];
-    [cidrIp release];
-    [ipPermissions release];
-
-    [super dealloc];
-}
 
 
 @end

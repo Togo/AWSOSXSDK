@@ -43,7 +43,7 @@
  * Specifies the license registration for which details are to be
  * returned.
  */
-@property (nonatomic, retain) NSMutableArray *licenseIds;
+@property (nonatomic, strong) NSMutableArray *licenseIds;
 
 /**
  * A list of filters used to match properties for Licenses. For a
@@ -52,7 +52,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to licenseIds.

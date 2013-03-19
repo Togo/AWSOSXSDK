@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxNumberOfDomains: %@,", maxNumberOfDomains] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxNumberOfDomains: %@,", maxNumberOfDomains]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [maxNumberOfDomains release];
-    [nextToken release];
-
-    [super dealloc];
-}
 
 
 @end

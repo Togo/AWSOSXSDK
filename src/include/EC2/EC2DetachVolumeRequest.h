@@ -37,18 +37,18 @@
 /**
  * The ID of the volume to detach.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The ID of the instance from which to detach the the specified volume.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The device name to which the volume is attached on the specified
  * instance.
  */
-@property (nonatomic, retain) NSString *device;
+@property (nonatomic, strong) NSString *device;
 
 /**
  * Forces detachment if the previous detachment attempt did not occur

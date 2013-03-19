@@ -44,13 +44,13 @@
  * sample policies pre-defined by Elastic Load Balancing or the specified
  * sample polices.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The names of LoadBalancer policies you've created or Elastic Load
  * Balancing sample policy names.
  */
-@property (nonatomic, retain) NSMutableArray *policyNames;
+@property (nonatomic, strong) NSMutableArray *policyNames;
 
 /**
  * Adds a single object to policyNames.

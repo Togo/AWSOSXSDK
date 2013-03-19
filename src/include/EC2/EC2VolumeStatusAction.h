@@ -41,22 +41,22 @@
 /**
  * The value of the Code property for this object.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the EventType property for this object.
  */
-@property (nonatomic, retain) NSString *eventType;
+@property (nonatomic, strong) NSString *eventType;
 
 /**
  * The value of the EventId property for this object.
  */
-@property (nonatomic, retain) NSString *eventId;
+@property (nonatomic, strong) NSString *eventId;
 
 /**
  * Returns a string representation of this object; useful for testing and

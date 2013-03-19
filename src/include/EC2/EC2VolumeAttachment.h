@@ -44,18 +44,18 @@
 /**
  *
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * How the device is exposed to the instance (e.g.,
  * <code>/dev/sdh</code>).
  */
-@property (nonatomic, retain) NSString *device;
+@property (nonatomic, strong) NSString *device;
 
 /**
  *
@@ -63,12 +63,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>attaching, attached, detaching, detached
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Timestamp when this attachment initiated.
  */
-@property (nonatomic, retain) NSDate *attachTime;
+@property (nonatomic, strong) NSDate *attachTime;
 
 /**
  * ` <p> Whether this volume will be deleted or not when the associated

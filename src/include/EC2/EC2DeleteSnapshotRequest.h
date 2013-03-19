@@ -33,7 +33,7 @@
 /**
  * The ID of the snapshot to delete.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 
 /**

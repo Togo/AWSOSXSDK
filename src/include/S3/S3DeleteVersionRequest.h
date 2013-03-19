@@ -44,7 +44,7 @@
  * The version ID uniquely identifying which version of the object to
  * delete.
  */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /**
  * The optional Multi-Factor Authentication information to include with this
@@ -52,6 +52,6 @@
  * from a bucket that has enabled MFA Delete in its bucket versioning
  * configuration.
  */
-@property (nonatomic, retain) S3MultiFactorAuthentication *mfa;
+@property (nonatomic, strong) S3MultiFactorAuthentication *mfa;
 
 @end

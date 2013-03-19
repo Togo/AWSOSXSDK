@@ -34,7 +34,7 @@
 /**
  * The ID of the instance whose instance attribute is being described.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The name of the attribute to describe. <p> Available attribute names:
@@ -46,7 +46,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 
 /**

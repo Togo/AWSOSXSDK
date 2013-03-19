@@ -42,7 +42,7 @@
 /**
  * A set of one or more subnet IDs.
  */
-@property (nonatomic, retain) NSMutableArray *subnetIds;
+@property (nonatomic, strong) NSMutableArray *subnetIds;
 
 /**
  * A list of filters used to match properties for Subnets. For a complete
@@ -50,7 +50,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to subnetIds.

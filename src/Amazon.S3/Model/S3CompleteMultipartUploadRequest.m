@@ -75,12 +75,5 @@
     return [xml dataUsingEncoding:NSUTF8StringEncoding];
 }
 
--(void)dealloc
-{
-    [uploadId release];
-    [parts release];
-
-    [super dealloc];
-}
 
 @end

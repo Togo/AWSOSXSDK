@@ -25,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        stringValue = [value retain];
+        stringValue = value;
     }
     return self;
 }
@@ -151,7 +151,7 @@
     }
     
     AMZLog(@"Unknown S3 region name: '%@'.", regionName);
-    return [[[S3Region alloc] initWithStringValue:regionName] autorelease];
+    return [[S3Region alloc] initWithStringValue:regionName];
 }
 
 -(BOOL)isEqual:(id)object
@@ -169,9 +169,4 @@
     return stringValue;
 }
 
--(void)dealloc
-{
-    [stringValue release];
-    [super dealloc];
-}
 @end

@@ -23,6 +23,6 @@
     NSDate *lastModified;
 }
 
-@property (nonatomic, retain) NSDate *lastModified;
+@property (nonatomic, strong) NSDate *lastModified;
 
 @end

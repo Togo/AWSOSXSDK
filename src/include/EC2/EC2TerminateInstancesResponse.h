@@ -44,7 +44,7 @@
  * The list of the terminating instances and details on how their state
  * has changed.
  */
-@property (nonatomic, retain) NSMutableArray *terminatingInstances;
+@property (nonatomic, strong) NSMutableArray *terminatingInstances;
 
 
 

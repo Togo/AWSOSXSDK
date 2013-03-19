@@ -33,7 +33,7 @@
 /**
  * Token returned by the previous <code>ListTopics</code> request.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 /**

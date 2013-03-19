@@ -45,7 +45,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSMutableArray *keys;
+@property (nonatomic, strong) NSMutableArray *keys;
 
 /**
  * List of <code>Attribute</code> names. If attribute names are not
@@ -55,7 +55,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *attributesToGet;
+@property (nonatomic, strong) NSMutableArray *attributesToGet;
 
 /**
  * If set to <code>true</code>, then a consistent read is issued.

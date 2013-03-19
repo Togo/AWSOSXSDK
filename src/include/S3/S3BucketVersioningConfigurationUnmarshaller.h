@@ -24,6 +24,6 @@
 }
 
 /** The S3BucketVersioningConfiguration represented by the XML */
-@property (nonatomic, readonly) S3BucketVersioningConfiguration *versioningConfiguration;
+@property (weak, nonatomic, readonly) S3BucketVersioningConfiguration *versioningConfiguration;
 
 @end

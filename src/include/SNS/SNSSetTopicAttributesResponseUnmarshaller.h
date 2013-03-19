@@ -21,7 +21,7 @@
     SNSSetTopicAttributesResponse *response;
 }
 
-@property (nonatomic, readonly) SNSSetTopicAttributesResponse *response;
+@property (weak, nonatomic, readonly) SNSSetTopicAttributesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

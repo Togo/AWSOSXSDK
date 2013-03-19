@@ -43,7 +43,7 @@
 /**
  * The value of the Items property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 /**
  * The number of Capacity Units of the provisioned throughput of the
@@ -54,7 +54,7 @@
  * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
  * consume <code>WriteCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSNumber *consumedCapacityUnits;
+@property (nonatomic, strong) NSNumber *consumedCapacityUnits;
 
 
 

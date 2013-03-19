@@ -47,21 +47,21 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * The primary key that uniquely identifies each item in a table. A
  * primary key can be a one attribute (hash) primary key or a two
  * attribute (hash-and-range) primary key.
  */
-@property (nonatomic, retain) DynamoDBKey *key;
+@property (nonatomic, strong) DynamoDBKey *key;
 
 /**
  * Map of attribute name to the new value and action for the update. The
  * attribute names specify the attributes to modify, and cannot contain
  * any primary key attributes.
  */
-@property (nonatomic, retain) NSMutableDictionary *attributeUpdates;
+@property (nonatomic, strong) NSMutableDictionary *attributeUpdates;
 
 /**
  * Designates an attribute for a conditional modification. The
@@ -69,7 +69,7 @@
  * name, and whether or not Amazon DynamoDB should check to see if the
  * attribute has a particular value before modifying it.
  */
-@property (nonatomic, retain) NSMutableDictionary *expected;
+@property (nonatomic, strong) NSMutableDictionary *expected;
 
 /**
  * Use this parameter if you want to get the attribute name-value pairs
@@ -91,7 +91,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
  */
-@property (nonatomic, retain) NSString *returnValues;
+@property (nonatomic, strong) NSString *returnValues;
 
 
 /**

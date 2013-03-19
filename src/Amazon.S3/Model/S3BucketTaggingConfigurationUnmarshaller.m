@@ -26,7 +26,7 @@
     
     if ([elementName isEqualToString:@"TagSet"])
     {
-        [parser setDelegate:[[[S3BucketTagSetUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].tagsets withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3BucketTagSetUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].tagsets withSetter:@selector(addObject:)]];
     }
 }
 
@@ -42,10 +42,5 @@
     return configuration;
 }
 
--(void)dealloc
-{
-    [configuration release];
-    [super dealloc];
-}
 
 @end

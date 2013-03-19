@@ -112,16 +112,5 @@
     return clientException;
 }
 
--(void)dealloc
-{
-    [expires release];
-    [protocol release];
-    [httpVerb release];
-    [accessKey release];
-    [versionId release];
-    [responseHeaderOverrides release];
-
-    [super dealloc];
-}
 
 @end

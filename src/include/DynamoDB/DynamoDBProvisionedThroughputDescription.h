@@ -42,12 +42,12 @@
 /**
  * The value of the LastIncreaseDateTime property for this object.
  */
-@property (nonatomic, retain) NSDate *lastIncreaseDateTime;
+@property (nonatomic, strong) NSDate *lastIncreaseDateTime;
 
 /**
  * The value of the LastDecreaseDateTime property for this object.
  */
-@property (nonatomic, retain) NSDate *lastDecreaseDateTime;
+@property (nonatomic, strong) NSDate *lastDecreaseDateTime;
 
 /**
  * The value of the NumberOfDecreasesToday property for this object.
@@ -55,7 +55,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *numberOfDecreasesToday;
+@property (nonatomic, strong) NSNumber *numberOfDecreasesToday;
 
 /**
  * The value of the ReadCapacityUnits property for this object.
@@ -63,7 +63,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *readCapacityUnits;
+@property (nonatomic, strong) NSNumber *readCapacityUnits;
 
 /**
  * The value of the WriteCapacityUnits property for this object.
@@ -71,7 +71,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *writeCapacityUnits;
+@property (nonatomic, strong) NSNumber *writeCapacityUnits;
 
 /**
  * Returns a string representation of this object; useful for testing and

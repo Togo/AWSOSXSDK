@@ -45,32 +45,32 @@
 /**
  * The value of the ExportTaskId property for this object.
  */
-@property (nonatomic, retain) NSString *exportTaskId;
+@property (nonatomic, strong) NSString *exportTaskId;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the State property for this object.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The value of the StatusMessage property for this object.
  */
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *statusMessage;
 
 /**
  * The value of the InstanceExportDetails property for this object.
  */
-@property (nonatomic, retain) EC2InstanceExportDetails *instanceExportDetails;
+@property (nonatomic, strong) EC2InstanceExportDetails *instanceExportDetails;
 
 /**
  * The value of the ExportToS3Task property for this object.
  */
-@property (nonatomic, retain) EC2ExportToS3Task *exportToS3Task;
+@property (nonatomic, strong) EC2ExportToS3Task *exportToS3Task;
 
 /**
  * Returns a string representation of this object; useful for testing and

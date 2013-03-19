@@ -29,28 +29,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Key: %@,", key] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ETag: %@,", etag] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %ld,", (long)size] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Last Modified: %@,", lastModified] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Storage Class: %@,", storageClass] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Owner: %@,", owner] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Display Name: %@,", displayName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Is Latest: %d,", isLatest] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Is DeleteMarker: %d,", isDeleteMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Version Id: %@,", versionId] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Key: %@,", key]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ETag: %@,", etag]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %ld,", (long)size]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Last Modified: %@,", lastModified]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Storage Class: %@,", storageClass]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Owner: %@,", owner]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Display Name: %@,", displayName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Is Latest: %d,", isLatest]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Is DeleteMarker: %d,", isDeleteMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Version Id: %@,", versionId]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [versionId release];
-    [displayName release];
-
-    [super dealloc];
-}
 
 @end

@@ -29,7 +29,7 @@
 }
 
 
-@property (nonatomic, readonly) SNSGetSubscriptionAttributesResponse *response;
+@property (weak, nonatomic, readonly) SNSGetSubscriptionAttributesResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

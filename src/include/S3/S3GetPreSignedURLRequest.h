@@ -35,35 +35,35 @@
 /** Gets and sets the expires property for this request.
  * The time when the signature expires, specified as an NSDate object.
  */
-@property (nonatomic, retain) NSDate *expires;
+@property (nonatomic, strong) NSDate *expires;
 
 /** Gets and sets the protocol property for this request.
  * Specifies whether the pre signed URL will use
  * http or https. Defaults to https unless otherwise
  * set.
  */
-@property (nonatomic, retain) NSString *protocol;
+@property (nonatomic, strong) NSString *protocol;
 
 /** Gets and sets the verb property.
  * Specifies the verb used in the pre-signed URL.
  * Accepted verbs are GET, PUT and HEAD.
  * Default is GET.
  */
-@property (nonatomic, retain) NSString *httpVerb;
+@property (nonatomic, strong) NSString *httpVerb;
 
 /** Sets the access key used in the pre signed URL.
  * This will be set automatically with the value used to
  * create the AmazonS3Client.
  */
-@property (nonatomic, retain) NSString *accessKey;
+@property (nonatomic, strong) NSString *accessKey;
 
 /** Sets the (optional) versionId used in the pre signed URL.
  */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /** Specify one or more overrides to headers in the response to this request */
-@property (nonatomic, retain) S3ResponseHeaderOverrides *responseHeaderOverrides;
+@property (nonatomic, strong) S3ResponseHeaderOverrides *responseHeaderOverrides;
 
-@property (nonatomic, readonly) NSString                *queryString;
+@property (weak, nonatomic, readonly) NSString                *queryString;
 
 @end

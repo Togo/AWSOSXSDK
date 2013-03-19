@@ -42,22 +42,22 @@
 /**
  * The value of the Volumes property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *volumes;
+@property (nonatomic, strong) NSMutableArray *volumes;
 
 /**
  * The value of the InstanceId property for this object.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The value of the Platform property for this object.
  */
-@property (nonatomic, retain) NSString *platform;
+@property (nonatomic, strong) NSString *platform;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * Adds a single object to volumes.

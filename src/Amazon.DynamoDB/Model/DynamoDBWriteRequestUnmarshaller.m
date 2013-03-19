@@ -25,7 +25,7 @@
 
 +(DynamoDBWriteRequest *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBWriteRequest *writeRequest = [[[DynamoDBWriteRequest alloc] init] autorelease];
+    DynamoDBWriteRequest *writeRequest = [[DynamoDBWriteRequest alloc] init];
 
 
 

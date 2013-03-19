@@ -54,29 +54,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Source: %@,", source] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Destination: %@,", destination] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Message: %@,", message] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReplyToAddresses: %@,", replyToAddresses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReturnPath: %@,", returnPath] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Source: %@,", source]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Destination: %@,", destination]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Message: %@,", message]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReplyToAddresses: %@,", replyToAddresses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReturnPath: %@,", returnPath]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [source release];
-    [destination release];
-    [message release];
-    [replyToAddresses release];
-    [returnPath release];
-
-    [super dealloc];
-}
 
 
 @end

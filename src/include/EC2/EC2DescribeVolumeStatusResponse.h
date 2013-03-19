@@ -44,12 +44,12 @@
 /**
  * The value of the VolumeStatuses property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *volumeStatuses;
+@property (nonatomic, strong) NSMutableArray *volumeStatuses;
 
 /**
  * The value of the NextToken property for this object.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

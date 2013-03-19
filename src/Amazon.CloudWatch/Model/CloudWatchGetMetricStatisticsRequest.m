@@ -69,35 +69,22 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Period: %@,", period] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Statistics: %@,", statistics] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Unit: %@,", unit] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Namespace: %@,", namespace]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MetricName: %@,", metricName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Dimensions: %@,", dimensions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Period: %@,", period]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Statistics: %@,", statistics]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Unit: %@,", unit]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [namespace release];
-    [metricName release];
-    [dimensions release];
-    [startTime release];
-    [endTime release];
-    [period release];
-    [statistics release];
-    [unit release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -26,7 +26,7 @@
 
 +(DynamoDBScanResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBScanResponse *scanResult = [[[DynamoDBScanResponse alloc] init] autorelease];
+    DynamoDBScanResponse *scanResult = [[DynamoDBScanResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {
@@ -35,7 +35,7 @@
     else {
         NSArray *itemsArray = [jsonObject valueForKey:@"Items"];
         for (NSDictionary *mapObject in itemsArray) {
-            NSMutableDictionary *member = [[[NSMutableDictionary alloc] init] autorelease];
+            NSMutableDictionary *member = [[NSMutableDictionary alloc] init];
             for (NSString *key in [mapObject allKeys]) {
                 NSDictionary *value = [mapObject valueForKey:key];
                 [member setValue:[DynamoDBAttributeValueUnmarshaller unmarshall:value] forKey:key];

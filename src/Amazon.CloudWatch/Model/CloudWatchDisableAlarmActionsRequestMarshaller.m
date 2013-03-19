@@ -42,7 +42,7 @@
     }
 
 
-    return [request autorelease];
+    return request;
 }
 
 @end

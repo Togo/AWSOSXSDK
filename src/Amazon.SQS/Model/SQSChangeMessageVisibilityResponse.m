@@ -28,23 +28,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ReceiptHandleIsInvalid"]) {
-        [newException release];
         newException = [[SQSReceiptHandleIsInvalidException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"AWS.SimpleQueueService.MessageNotInflight"]) {
-        [newException release];
         newException = [[SQSMessageNotInflightException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -56,12 +52,8 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

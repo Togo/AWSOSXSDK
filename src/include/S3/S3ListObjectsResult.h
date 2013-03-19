@@ -27,22 +27,22 @@
 }
 
 /** The list of buckets */
-@property (nonatomic, retain) NSMutableArray *objectSummaries;
+@property (nonatomic, strong) NSMutableArray *objectSummaries;
 
 /** The bucket name */
-@property (nonatomic, retain) NSString *bucketName;
+@property (nonatomic, strong) NSString *bucketName;
 
 /** The prefix parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /** The marker parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *marker;
+@property (nonatomic, strong) NSString *marker;
 
 /** The maxKeys parameter originally specified by the caller. */
 @property (nonatomic) NSInteger maxKeys;
 
 /** The delimiter parameter originally specified by the caller. */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /** Indicates if this is  a complete listing or if caller needs
  * to make additional requests.
@@ -52,6 +52,6 @@
 /** A list of common prefixes.  Will only be specified for requests
  * that include a delimiter.
  */
-@property (nonatomic, retain) NSMutableArray *commonPrefixes;
+@property (nonatomic, strong) NSMutableArray *commonPrefixes;
 
 @end

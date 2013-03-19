@@ -59,19 +59,9 @@
 
 
     NSString *retval = [NSString stringWithString:xml];
-    [xml release];
 
     return retval;
 }
 
--(void)dealloc
-{
-    self.ruleId = nil;
-    self.allowedMethods = nil;
-    self.allowedOrigins = nil;
-    self.exposeHeaders = nil;
-    self.allowedHeaders = nil;
-    [super dealloc];
-}
 
 @end

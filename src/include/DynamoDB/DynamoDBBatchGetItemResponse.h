@@ -48,7 +48,7 @@
 /**
  * Table names and the respective item attributes from the tables.
  */
-@property (nonatomic, retain) NSMutableDictionary *responses;
+@property (nonatomic, strong) NSMutableDictionary *responses;
 
 /**
  * Contains a map of tables and their respective keys that were not
@@ -62,7 +62,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSMutableDictionary *unprocessedKeys;
+@property (nonatomic, strong) NSMutableDictionary *unprocessedKeys;
 
 /**
  * Returns a value from the responses dictionary for the specified key.

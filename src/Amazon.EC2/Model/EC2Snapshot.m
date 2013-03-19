@@ -64,39 +64,24 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Progress: %@,", progress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeSize: %@,", volumeSize] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerAlias: %@,", ownerAlias] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Progress: %@,", progress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeSize: %@,", volumeSize]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerAlias: %@,", ownerAlias]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [snapshotId release];
-    [volumeId release];
-    [state release];
-    [startTime release];
-    [progress release];
-    [ownerId release];
-    [descriptionValue release];
-    [volumeSize release];
-    [ownerAlias release];
-    [tags release];
-
-    [super dealloc];
-}
 
 
 @end

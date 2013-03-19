@@ -41,25 +41,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DurationSeconds: %@,", durationSeconds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SerialNumber: %@,", serialNumber] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TokenCode: %@,", tokenCode] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DurationSeconds: %@,", durationSeconds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SerialNumber: %@,", serialNumber]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TokenCode: %@,", tokenCode]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [durationSeconds release];
-    [serialNumber release];
-    [tokenCode release];
-
-    [super dealloc];
-}
 
 
 @end

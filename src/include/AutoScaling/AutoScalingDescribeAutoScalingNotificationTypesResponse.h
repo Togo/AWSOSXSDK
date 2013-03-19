@@ -47,7 +47,7 @@
  * autoscaling:EC2_INSTANCE_TERMINATE_ERROR,
  * autoscaling:TEST_NOTIFICATION
  */
-@property (nonatomic, retain) NSMutableArray *autoScalingNotificationTypes;
+@property (nonatomic, strong) NSMutableArray *autoScalingNotificationTypes;
 
 
 

@@ -31,7 +31,7 @@
 /**
  * The topic's ARN.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 
 /**

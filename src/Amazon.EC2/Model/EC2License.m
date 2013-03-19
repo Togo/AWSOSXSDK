@@ -63,29 +63,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LicenseId: %@,", licenseId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Type: %@,", type] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Pool: %@,", pool] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Capacities: %@,", capacities] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LicenseId: %@,", licenseId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Type: %@,", type]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Pool: %@,", pool]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Capacities: %@,", capacities]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [licenseId release];
-    [type release];
-    [pool release];
-    [capacities release];
-    [tags release];
-
-    [super dealloc];
-}
 
 
 @end

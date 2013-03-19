@@ -41,25 +41,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Identity: %@,", identity] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NotificationType: %@,", notificationType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnsTopic: %@,", snsTopic] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Identity: %@,", identity]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NotificationType: %@,", notificationType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnsTopic: %@,", snsTopic]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [identity release];
-    [notificationType release];
-    [snsTopic release];
-
-    [super dealloc];
-}
 
 
 @end

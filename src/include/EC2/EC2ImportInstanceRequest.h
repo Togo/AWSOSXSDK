@@ -45,22 +45,22 @@
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the LaunchSpecification property for this object.
  */
-@property (nonatomic, retain) EC2ImportInstanceLaunchSpecification *launchSpecification;
+@property (nonatomic, strong) EC2ImportInstanceLaunchSpecification *launchSpecification;
 
 /**
  * The value of the DiskImages property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *diskImages;
+@property (nonatomic, strong) NSMutableArray *diskImages;
 
 /**
  * The value of the Platform property for this object.
  */
-@property (nonatomic, retain) NSString *platform;
+@property (nonatomic, strong) NSString *platform;
 
 /**
  * Adds a single object to diskImages.

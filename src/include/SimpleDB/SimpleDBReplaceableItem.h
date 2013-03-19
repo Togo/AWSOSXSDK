@@ -33,12 +33,12 @@
 /**
  * The name of the replaceable item.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The list of attributes for a replaceable item.
  */
-@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic, strong) NSMutableArray *attributes;
 
 
 /**

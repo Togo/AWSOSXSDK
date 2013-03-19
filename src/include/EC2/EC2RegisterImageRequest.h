@@ -41,7 +41,7 @@
 /**
  * The full path to your AMI manifest in Amazon S3 storage.
  */
-@property (nonatomic, retain) NSString *imageLocation;
+@property (nonatomic, strong) NSString *imageLocation;
 
 /**
  * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
@@ -49,23 +49,23 @@
  * (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
  * or underscores(<code>_</code>)
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The description describing the new AMI.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The architecture of the image. <p> Valid Values: <code>i386</code>,
  * <code>x86_64</code>
  */
-@property (nonatomic, retain) NSString *architecture;
+@property (nonatomic, strong) NSString *architecture;
 
 /**
  * The optional ID of a specific kernel to register with the new AMI.
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * The optional ID of a specific ramdisk to register with the new AMI.
@@ -73,19 +73,19 @@
  * kernel requirements for information on whether you need to specify a
  * RAM disk.
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * The root device name (e.g., <code>/dev/sda1</code>).
  */
-@property (nonatomic, retain) NSString *rootDeviceName;
+@property (nonatomic, strong) NSString *rootDeviceName;
 
 /**
  * The block device mappings for the new AMI, which specify how different
  * block devices (ex: EBS volumes and ephemeral drives) will be exposed
  * on instances launched from the new image.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 
 /**

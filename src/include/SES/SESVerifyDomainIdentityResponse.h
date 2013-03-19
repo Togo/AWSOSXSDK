@@ -43,7 +43,7 @@
  * A TXT record that must be placed in the DNS settings for the domain,
  * in order to complete domain verification.
  */
-@property (nonatomic, retain) NSString *verificationToken;
+@property (nonatomic, strong) NSString *verificationToken;
 
 /**
  * Returns a string representation of this object; useful for testing and

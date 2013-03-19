@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instanceType release];
-    [productDescription release];
-    [spotPrice release];
-    [timestamp release];
-    [availabilityZone release];
-
-    [super dealloc];
-}
 
 
 @end

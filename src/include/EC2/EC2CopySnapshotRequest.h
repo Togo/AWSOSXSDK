@@ -42,17 +42,17 @@
 /**
  * The value of the SourceRegion property for this object.
  */
-@property (nonatomic, retain) NSString *sourceRegion;
+@property (nonatomic, strong) NSString *sourceRegion;
 
 /**
  * The value of the SourceSnapshotId property for this object.
  */
-@property (nonatomic, retain) NSString *sourceSnapshotId;
+@property (nonatomic, strong) NSString *sourceSnapshotId;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * Returns a string representation of this object; useful for testing and

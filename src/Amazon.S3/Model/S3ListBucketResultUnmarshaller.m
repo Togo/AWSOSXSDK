@@ -31,11 +31,11 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Contents"]) {
-        [parser setDelegate:[[[S3ObjectSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.objectListing.objectSummaries withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3ObjectSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.objectListing.objectSummaries withSetter:@selector(addObject:)]];
     }
 
     if ([elementName isEqualToString:@"CommonPrefixes"]) {
-        [parser setDelegate:[[[S3CommonPrefixesUnmarshaller alloc] initWithCaller:self withParentObject:self.objectListing.commonPrefixes withSetter:@selector(addObjectsFromArray:)] autorelease]];
+        [parser setDelegate:[[S3CommonPrefixesUnmarshaller alloc] initWithCaller:self withParentObject:self.objectListing.commonPrefixes withSetter:@selector(addObjectsFromArray:)]];
     }
 }
 
@@ -106,11 +106,6 @@ qualifiedName:(NSString *)qName
     return objectListing;
 }
 
--(void)dealloc
-{
-    [objectListing release];
-    [super dealloc];
-}
 
 @end
 

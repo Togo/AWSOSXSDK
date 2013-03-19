@@ -44,7 +44,7 @@
  * The list of the starting instances and details on how their state has
  * changed.
  */
-@property (nonatomic, retain) NSMutableArray *startingInstances;
+@property (nonatomic, strong) NSMutableArray *startingInstances;
 
 
 

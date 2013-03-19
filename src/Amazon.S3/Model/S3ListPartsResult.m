@@ -27,18 +27,6 @@
     return _parts;
 }
 
--(void)dealloc
-{
-    [_bucket release];
-    [_key release];
-    [_uploadId release];
-    [_storageClass release];
-    [_owner release];
-    [_initiator release];
-    [_parts release];
-
-    [super dealloc];
-}
 
 
 @end

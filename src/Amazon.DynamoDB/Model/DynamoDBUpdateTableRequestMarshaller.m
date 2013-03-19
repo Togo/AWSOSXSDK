@@ -34,7 +34,7 @@
     [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
 
 
-    NSMutableDictionary *json = [[[NSMutableDictionary alloc] init] autorelease];
+    NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
 
     if (updateTableRequest.tableName != nil) {
         [json setValue:updateTableRequest.tableName forKey:@"TableName"];
@@ -42,7 +42,7 @@
     if (updateTableRequest != nil) {
         DynamoDBProvisionedThroughput *provisionedThroughput = updateTableRequest.provisionedThroughput;
         if (provisionedThroughput != nil) {
-            NSMutableDictionary *provisionedThroughputJson = [[[NSMutableDictionary alloc] init] autorelease];
+            NSMutableDictionary *provisionedThroughputJson = [[NSMutableDictionary alloc] init];
             [json setValue:provisionedThroughputJson forKey:@"ProvisionedThroughput"];
 
 
@@ -61,7 +61,7 @@
     request.content = [AmazonJSON JSONRepresentation:json];
     [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
 
-    return [request autorelease];
+    return request;
 }
 
 @end

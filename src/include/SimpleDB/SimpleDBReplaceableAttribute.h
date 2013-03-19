@@ -34,12 +34,12 @@
 /**
  * The name of the replaceable attribute.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The value of the replaceable attribute.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * A flag specifying whether or not to replace the attribute/value pair

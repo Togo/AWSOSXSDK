@@ -35,13 +35,13 @@
 /**
  * The ARN of the topic for which you wish to confirm a subscription.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * Short-lived token sent to an endpoint during the
  * <code>Subscribe</code> action.
  */
-@property (nonatomic, retain) NSString *token;
+@property (nonatomic, strong) NSString *token;
 
 /**
  * Disallows unauthenticated unsubscribes of the subscription. If the
@@ -50,7 +50,7 @@
  * can unsubscribe the endpoint. The unsubscribe action will require AWS
  * authentication.
  */
-@property (nonatomic, retain) NSString *authenticateOnUnsubscribe;
+@property (nonatomic, strong) NSString *authenticateOnUnsubscribe;
 
 
 /**

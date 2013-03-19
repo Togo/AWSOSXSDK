@@ -90,37 +90,23 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attribute: %@,", attribute] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OperationType: %@,", operationType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserIds: %@,", userIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserGroups: %@,", userGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Value: %@,", value] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchPermission: %@,", launchPermission] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attribute: %@,", attribute]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OperationType: %@,", operationType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserIds: %@,", userIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserGroups: %@,", userGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Value: %@,", value]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchPermission: %@,", launchPermission]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [imageId release];
-    [attribute release];
-    [operationType release];
-    [userIds release];
-    [userGroups release];
-    [productCodes release];
-    [value release];
-    [launchPermission release];
-    [descriptionValue release];
-
-    [super dealloc];
-}
 
 
 @end

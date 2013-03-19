@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2GetPasswordDataResponse *response;
+@property (weak, nonatomic, readonly) EC2GetPasswordDataResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

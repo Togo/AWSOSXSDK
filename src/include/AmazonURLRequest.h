@@ -19,12 +19,12 @@
 @interface AmazonURLRequest:NSMutableURLRequest {
     NSString          *endpointHost;
     Class             requestClass;
-    AmazonCredentials *credentials;
+    AmazonCredentials *__weak credentials;
 }
 
-@property (nonatomic, retain) NSString          *endpointHost;
+@property (nonatomic, strong) NSString          *endpointHost;
 @property (nonatomic, assign) Class             requestClass;
-@property (nonatomic, assign) AmazonCredentials *credentials;
+@property (nonatomic, weak) AmazonCredentials *credentials;
 
 @end
 

@@ -42,22 +42,22 @@
 /**
  * The name of the attribute associated with the policy type.
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The type of attribute. For example, Boolean, Integer, etc.
  */
-@property (nonatomic, retain) NSString *attributeType;
+@property (nonatomic, strong) NSString *attributeType;
 
 /**
  * A human-readable description of the attribute.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The default value of the attribute, if applicable.
  */
-@property (nonatomic, retain) NSString *defaultValue;
+@property (nonatomic, strong) NSString *defaultValue;
 
 /**
  * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
@@ -66,7 +66,7 @@
  * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
  * are allowed</li> </ul>
  */
-@property (nonatomic, retain) NSString *cardinality;
+@property (nonatomic, strong) NSString *cardinality;
 
 /**
  * Returns a string representation of this object; useful for testing and

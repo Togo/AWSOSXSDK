@@ -43,7 +43,7 @@
 /**
  * A map of Identity to IdentityNotificationAttributes.
  */
-@property (nonatomic, retain) NSMutableDictionary *notificationAttributes;
+@property (nonatomic, strong) NSMutableDictionary *notificationAttributes;
 
 /**
  * Returns a value from the notificationAttributes dictionary for the specified key.

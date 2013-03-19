@@ -35,13 +35,13 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * A list of receipt handles of the messages for which the visibility
  * timeout must be changed.
  */
-@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 
 
 /**

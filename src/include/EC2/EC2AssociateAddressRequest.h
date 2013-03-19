@@ -39,28 +39,28 @@
 /**
  * The instance to associate with the IP address.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * IP address that you are assigning to the instance.
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * The allocation ID that AWS returned when you allocated the elastic IP
  * address for use with Amazon VPC.
  */
-@property (nonatomic, retain) NSString *allocationId;
+@property (nonatomic, strong) NSString *allocationId;
 
 /**
  * The value of the NetworkInterfaceId property for this object.
  */
-@property (nonatomic, retain) NSString *networkInterfaceId;
+@property (nonatomic, strong) NSString *networkInterfaceId;
 
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * The value of the AllowReassociation property for this object.

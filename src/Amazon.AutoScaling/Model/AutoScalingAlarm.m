@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmARN: %@,", alarmARN] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmARN: %@,", alarmARN]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [alarmName release];
-    [alarmARN release];
-
-    [super dealloc];
-}
 
 
 @end

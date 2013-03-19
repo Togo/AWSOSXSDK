@@ -34,16 +34,16 @@
 }
 
 /** Region where the bucket should be created. */
-@property (nonatomic, retain) S3Region *region;
+@property (nonatomic, strong) S3Region *region;
 
 /** The body of the request if there is a region specified */
-@property (nonatomic, readonly) NSData *createBucketConfiguration;
+@property (weak, nonatomic, readonly) NSData *createBucketConfiguration;
 
 /** The canned access control list to apply to the bucket */
-@property (nonatomic, retain) S3CannedACL *cannedACL;
+@property (nonatomic, strong) S3CannedACL *cannedACL;
 
 /** A full access control list to apply to the bucket */
-@property (nonatomic, retain) S3AccessControlList *fullACL;
+@property (nonatomic, strong) S3AccessControlList *fullACL;
 
 /** Initializes the request with a bucket name.
  *

@@ -43,7 +43,7 @@
 /**
  * A list of specific policy adjustment types.
  */
-@property (nonatomic, retain) NSMutableArray *adjustmentTypes;
+@property (nonatomic, strong) NSMutableArray *adjustmentTypes;
 
 
 

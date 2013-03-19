@@ -45,17 +45,17 @@
  * The maximum number of emails the user is allowed to send in a 24-hour
  * interval.
  */
-@property (nonatomic, retain) NSNumber *max24HourSend;
+@property (nonatomic, strong) NSNumber *max24HourSend;
 
 /**
  * The maximum number of emails the user is allowed to send per second.
  */
-@property (nonatomic, retain) NSNumber *maxSendRate;
+@property (nonatomic, strong) NSNumber *maxSendRate;
 
 /**
  * The number of emails sent during the previous 24 hours.
  */
-@property (nonatomic, retain) NSNumber *sentLast24Hours;
+@property (nonatomic, strong) NSNumber *sentLast24Hours;
 
 /**
  * Returns a string representation of this object; useful for testing and

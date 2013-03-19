@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"Attribute"]) {
-        [parser setDelegate:[[[SimpleDBAttributeUnmarshaller alloc] initWithCaller:self withParentObject:self.response.attributes withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[SimpleDBAttributeUnmarshaller alloc] initWithCaller:self withParentObject:self.response.attributes withSetter:@selector(addObject:)]];
     }
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -62,10 +62,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

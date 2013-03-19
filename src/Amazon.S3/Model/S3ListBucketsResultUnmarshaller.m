@@ -31,11 +31,11 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Owner"]) {
-        [parser setDelegate:[[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listBucketsResult withSetter:@selector(setOwner:)] autorelease]];
+        [parser setDelegate:[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.listBucketsResult withSetter:@selector(setOwner:)]];
     }
 
     if ([elementName isEqualToString:@"Bucket"]) {
-        [parser setDelegate:[[[S3BucketUnmarshaller alloc] initWithCaller:self withParentObject:self.listBucketsResult.buckets withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3BucketUnmarshaller alloc] initWithCaller:self withParentObject:self.listBucketsResult.buckets withSetter:@selector(addObject:)]];
     }
 }
 
@@ -71,11 +71,6 @@ qualifiedName:(NSString *)qName
     return listBucketsResult;
 }
 
--(void)dealloc
-{
-    [listBucketsResult release];
-    [super dealloc];
-}
 
 @end
 

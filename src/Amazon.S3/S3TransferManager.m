@@ -52,12 +52,6 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     return self;
 }
 
-- (void)dealloc
-{
-    [_s3 release];
-
-    [super dealloc];
-}
 
 #pragma mark - Synchronous Upload Methods
 
@@ -72,7 +66,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         AmazonServiceResponse *response = [AmazonServiceResponse new];
         response.error = error;
 
-        return [response autorelease];
+        return response;
     }
 
     [putObjectRequest validate];
@@ -87,7 +81,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         multipartUploadOperation.delegate = self.delegate;
 
         [self.operationQueue addOperations:[NSArray arrayWithObject:multipartUploadOperation] waitUntilFinished:YES];
-        [multipartUploadOperation autorelease];
+        //[multipartUploadOperation autorelease];
 
         if(multipartUploadOperation.response)
         {
@@ -95,7 +89,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         }
         else if(multipartUploadOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
         {
-            AmazonServiceResponse *response = [[AmazonServiceResponse new] autorelease];
+            AmazonServiceResponse *response = [AmazonServiceResponse new];
             response.error = multipartUploadOperation.error;
 
             return response;
@@ -114,7 +108,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         putObjectOperation.delegate = self.delegate;
 
         [self.operationQueue addOperations:[NSArray arrayWithObject:putObjectOperation] waitUntilFinished:YES];
-        [putObjectOperation autorelease];
+        //[putObjectOperation autorelease];
 
         if(putObjectOperation.response)
         {
@@ -122,7 +116,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         }
         else if(putObjectOperation.error) // Check error before exception. When an error occurs, an exception object will be generated tool
         {
-            S3PutObjectResponse *response = [[S3PutObjectResponse new] autorelease];
+            S3PutObjectResponse *response = [S3PutObjectResponse new];
             response.error = putObjectOperation.error;
 
             return response;
@@ -138,7 +132,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 - (AmazonServiceResponse *)synchronouslyUploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.data = data;
     putObjectRequest.bucket = bucket;
     putObjectRequest.key = key;
@@ -148,7 +142,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 - (AmazonServiceResponse *)synchronouslyUploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.filename = filename;
     putObjectRequest.bucket = bucket;
     putObjectRequest.key = key;
@@ -158,7 +152,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 - (AmazonServiceResponse *)synchronouslyUploadStream:(NSInputStream *)stream contentLength:(int64_t)contentLength bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.stream = stream;
     putObjectRequest.contentLength = contentLength;
     putObjectRequest.bucket = bucket;
@@ -191,7 +185,6 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         }
 
         [self.operationQueue addOperation:multipartUploadOperation];
-        [multipartUploadOperation release];
     }
     else
     {
@@ -206,13 +199,12 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         }
 
         [self.operationQueue addOperation:putObjectOperation];
-        [putObjectOperation release];
     }
 }
 
 - (void)uploadData:(NSData *)data bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.data = data;
     putObjectRequest.bucket = bucket;
     putObjectRequest.key = key;
@@ -222,7 +214,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 - (void)uploadFile:(NSString *)filename bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.filename = filename;
     putObjectRequest.bucket = bucket;
     putObjectRequest.key = key;
@@ -232,7 +224,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 
 - (void)uploadStream:(NSInputStream *)stream contentLength:(long)contentLength bucket:(NSString *)bucket key:(NSString *)key
 {
-    S3PutObjectRequest *putObjectRequest = [[S3PutObjectRequest new] autorelease];
+    S3PutObjectRequest *putObjectRequest = [S3PutObjectRequest new];
     putObjectRequest.stream = stream;
     putObjectRequest.contentLength = contentLength;
     putObjectRequest.bucket = bucket;
@@ -252,7 +244,6 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     abortMultiplartUploadsOperation.date = date;
 
     [self.operationQueue addOperation:abortMultiplartUploadsOperation];
-    [abortMultiplartUploadsOperation release];
 }
 
 - (void)abortMultipartUploads:(NSString *)bucket forKey:(NSString *)key
@@ -264,7 +255,6 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
     abortMultiplartUploadsOperation.key = key;
 
     [self.operationQueue addOperation:abortMultiplartUploadsOperation];
-    [abortMultiplartUploadsOperation release];
 }
 
 #pragma mark - Helper Methods
@@ -340,7 +330,6 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
 {
     @synchronized(self)
     {
-        [_s3 release];
 
         _s3 = [s3 copy];
 

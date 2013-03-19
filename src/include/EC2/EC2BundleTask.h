@@ -47,42 +47,42 @@
 /**
  * Instance associated with this bundle task.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Unique identifier for this task.
  */
-@property (nonatomic, retain) NSString *bundleId;
+@property (nonatomic, strong) NSString *bundleId;
 
 /**
  * The state of this task.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * The time this task started.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The time of the most recent update for the task.
  */
-@property (nonatomic, retain) NSDate *updateTime;
+@property (nonatomic, strong) NSDate *updateTime;
 
 /**
  * Amazon S3 storage locations.
  */
-@property (nonatomic, retain) EC2Storage *storage;
+@property (nonatomic, strong) EC2Storage *storage;
 
 /**
  * The level of task completion, in percent (e.g., 20%).
  */
-@property (nonatomic, retain) NSString *progress;
+@property (nonatomic, strong) NSString *progress;
 
 /**
  * If the task fails, a description of the error.
  */
-@property (nonatomic, retain) EC2BundleTaskError *bundleTaskError;
+@property (nonatomic, strong) EC2BundleTaskError *bundleTaskError;
 
 /**
  * Returns a string representation of this object; useful for testing and

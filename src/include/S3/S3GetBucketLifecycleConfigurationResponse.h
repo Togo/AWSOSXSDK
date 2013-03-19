@@ -26,6 +26,6 @@
 }
 
 /** The BucketLifecycleConfiguration represented by the XML */
-@property (nonatomic, retain) S3BucketLifecycleConfiguration *configuration;
+@property (nonatomic, strong) S3BucketLifecycleConfiguration *configuration;
 
 @end

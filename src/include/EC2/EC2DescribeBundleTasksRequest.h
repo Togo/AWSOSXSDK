@@ -42,7 +42,7 @@
 /**
  * The list of bundle task IDs to describe.
  */
-@property (nonatomic, retain) NSMutableArray *bundleIds;
+@property (nonatomic, strong) NSMutableArray *bundleIds;
 
 /**
  * A list of filters used to match properties for BundleTasks. For a
@@ -51,7 +51,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to bundleIds.

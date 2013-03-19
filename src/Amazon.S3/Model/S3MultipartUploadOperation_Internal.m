@@ -29,11 +29,11 @@ typedef void (^AbortMultipartUploadBlock)();
 @property (nonatomic, assign) NSInteger numberOfParts;
 @property (nonatomic, assign) NSInteger retryCount;
 @property (nonatomic, copy) AbortMultipartUploadBlock abortMultipartUpload;
-@property (nonatomic, retain) S3InitiateMultipartUploadRequest *initRequest;
-@property (nonatomic, retain) S3InitiateMultipartUploadResponse *initResponse;
-@property (nonatomic, retain) S3MultipartUpload *multipartUpload;
-@property (nonatomic, retain) S3CompleteMultipartUploadRequest *completeRequest;
-@property (nonatomic, retain) NSData *dataForPart;
+@property (nonatomic, strong) S3InitiateMultipartUploadRequest *x_initRequest;
+@property (nonatomic, strong) S3InitiateMultipartUploadResponse *x_initResponse;
+@property (nonatomic, strong) S3MultipartUpload *multipartUpload;
+@property (nonatomic, strong) S3CompleteMultipartUploadRequest *completeRequest;
+@property (nonatomic, strong) NSData *dataForPart;
 
 @end
 
@@ -47,8 +47,8 @@ typedef void (^AbortMultipartUploadBlock)();
 @synthesize numberOfParts = _numberOfParts;
 @synthesize retryCount = _retryCount;
 @synthesize abortMultipartUpload = _abortMultipartUpload;
-@synthesize initRequest = _initRequest;
-@synthesize initResponse = _initResponse;
+@synthesize x_initRequest = _initRequest;
+@synthesize x_initResponse = _initResponse;
 @synthesize multipartUpload = _multipartUpload;
 @synthesize completeRequest = _completeRequest;
 @synthesize dataForPart = _dataForPart;
@@ -71,24 +71,6 @@ typedef void (^AbortMultipartUploadBlock)();
     return self;
 }
 
-- (void)dealloc
-{
-    [_s3 release];
-    [_request release];
-    [_response release];
-
-    [_error release];
-    [_exception release];
-
-    [_abortMultipartUpload release];
-    [_initRequest release];
-    [_initResponse release];
-    [_multipartUpload release];
-    [_completeRequest release];
-    [_dataForPart release];
-
-    [super dealloc];
-}
 
 #pragma mark - Overwriding NSOperation Methods
 
@@ -120,36 +102,36 @@ typedef void (^AbortMultipartUploadBlock)();
 
 - (void)initiateUpload
 {
-    self.initRequest =
-    [[[S3InitiateMultipartUploadRequest alloc] initWithKey:self.request.key
-                                                  inBucket:self.request.bucket] autorelease];
-    self.initRequest.cannedACL = self.request.cannedACL;
-    self.initRequest.storageClass = self.request.storageClass;
-    self.initRequest.serverSideEncryption = self.request.serverSideEncryption;
-    self.initRequest.fullACL = self.request.fullACL;
-    self.initRequest.authorization = self.request.authorization;
-    self.initRequest.contentType = self.request.contentType;
-    self.initRequest.securityToken = self.request.securityToken;
-    self.initRequest.subResource = self.request.subResource;
+    self.x_initRequest =
+    [[S3InitiateMultipartUploadRequest alloc] initWithKey:self.request.key
+                                                  inBucket:self.request.bucket];
+    self.x_initRequest.cannedACL = self.request.cannedACL;
+    self.x_initRequest.storageClass = self.request.storageClass;
+    self.x_initRequest.serverSideEncryption = self.request.serverSideEncryption;
+    self.x_initRequest.fullACL = self.request.fullACL;
+    self.x_initRequest.authorization = self.request.authorization;
+    self.x_initRequest.contentType = self.request.contentType;
+    self.x_initRequest.securityToken = self.request.securityToken;
+    self.x_initRequest.subResource = self.request.subResource;
 
-    self.initRequest.cacheControl = self.request.cacheControl;
-    self.initRequest.contentDisposition = self.request.contentDisposition;
-    self.initRequest.contentEncoding = self.request.contentEncoding;
-    self.initRequest.redirectLocation = self.request.redirectLocation;
+    self.x_initRequest.cacheControl = self.request.cacheControl;
+    self.x_initRequest.contentDisposition = self.request.contentDisposition;
+    self.x_initRequest.contentEncoding = self.request.contentEncoding;
+    self.x_initRequest.redirectLocation = self.request.redirectLocation;
 
-    self.initRequest.delegate = self;
+    self.x_initRequest.delegate = self;
 
     self.retryCount = 0;
     self.response = nil;
 
     dispatch_sync(dispatch_get_main_queue(), ^{
-        [self.s3 initiateMultipartUpload:self.initRequest];
+        [self.s3 initiateMultipartUpload:self.x_initRequest];
     });
 }
 
 - (void)startUploadingParts
 {
-    self.completeRequest = [[[S3CompleteMultipartUploadRequest alloc] initWithMultipartUpload:self.multipartUpload] autorelease];
+    self.completeRequest = [[S3CompleteMultipartUploadRequest alloc] initWithMultipartUpload:self.multipartUpload];
     self.completeRequest.delegate = self;
 
     self.abortMultipartUpload = ^{
@@ -216,7 +198,6 @@ typedef void (^AbortMultipartUploadBlock)();
 
             self.dataForPart = dataForPart;
 
-            [dataForPart release];
         }
     }
 
@@ -230,7 +211,6 @@ typedef void (^AbortMultipartUploadBlock)();
         [self.s3 uploadPart:uploadRequest];
     });
 
-    [uploadRequest release];
 }
 
 #pragma mark - AmazonServiceRequestDelegate Implementations
@@ -243,8 +223,8 @@ typedef void (^AbortMultipartUploadBlock)();
 
         if([response isKindOfClass:[S3InitiateMultipartUploadResponse class]])
         {
-            self.initResponse = (S3InitiateMultipartUploadResponse *)self.response;
-            self.multipartUpload = self.initResponse.multipartUpload;
+            self.x_initResponse = (S3InitiateMultipartUploadResponse *)self.response;
+            self.multipartUpload = self.x_initResponse.multipartUpload;
 
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             dispatch_async(queue, ^{
@@ -339,7 +319,7 @@ typedef void (^AbortMultipartUploadBlock)();
 
             if([request isKindOfClass:[S3InitiateMultipartUploadRequest class]])
             {
-                [self.s3 initiateMultipartUpload:self.initRequest];
+                [self.s3 initiateMultipartUpload:self.x_initRequest];
             }
             else if([request isKindOfClass:[S3UploadPartRequest class]])
             {
@@ -391,7 +371,7 @@ typedef void (^AbortMultipartUploadBlock)();
 
             if([request isKindOfClass:[S3InitiateMultipartUploadRequest class]])
             {
-                [self.s3 initiateMultipartUpload:self.initRequest];
+                [self.s3 initiateMultipartUpload:self.x_initRequest];
             }
             else if([request isKindOfClass:[S3UploadPartRequest class]])
             {

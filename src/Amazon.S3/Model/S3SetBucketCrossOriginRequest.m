@@ -39,12 +39,12 @@
 
 +(id)requestWithBucketName:(NSString *)theBucketName withConfiguration:(S3BucketCrossOriginConfiguration *)theConfiguration
 {
-    return [[[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration] autorelease];
+    return [[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:theConfiguration];
 }
 
 +(id)requestWithBucketName:(NSString *)theBucketName
 {
-    return [[[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:nil] autorelease];
+    return [[S3SetBucketCrossOriginRequest alloc] initWithBucketName:theBucketName withConfiguration:nil];
 }
 
 -(NSMutableURLRequest *)configureURLRequest
@@ -68,11 +68,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [configuration release];
-    
-    [super dealloc];
-}
 
 @end

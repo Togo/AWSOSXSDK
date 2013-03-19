@@ -47,31 +47,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyName: %@,", policyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ScalingAdjustment: %@,", scalingAdjustment] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AdjustmentType: %@,", adjustmentType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Cooldown: %@,", cooldown] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MinAdjustmentStep: %@,", minAdjustmentStep] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyName: %@,", policyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ScalingAdjustment: %@,", scalingAdjustment]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AdjustmentType: %@,", adjustmentType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Cooldown: %@,", cooldown]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MinAdjustmentStep: %@,", minAdjustmentStep]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [autoScalingGroupName release];
-    [policyName release];
-    [scalingAdjustment release];
-    [adjustmentType release];
-    [cooldown release];
-    [minAdjustmentStep release];
-
-    [super dealloc];
-}
 
 
 @end

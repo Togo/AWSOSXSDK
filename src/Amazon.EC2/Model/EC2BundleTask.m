@@ -51,35 +51,22 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BundleId: %@,", bundleId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UpdateTime: %@,", updateTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Storage: %@,", storage] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Progress: %@,", progress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BundleTaskError: %@,", bundleTaskError] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BundleId: %@,", bundleId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UpdateTime: %@,", updateTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Storage: %@,", storage]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Progress: %@,", progress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BundleTaskError: %@,", bundleTaskError]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [bundleId release];
-    [state release];
-    [startTime release];
-    [updateTime release];
-    [storage release];
-    [progress release];
-    [bundleTaskError release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -21,7 +21,7 @@
     AutoScalingEnableMetricsCollectionResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingEnableMetricsCollectionResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingEnableMetricsCollectionResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

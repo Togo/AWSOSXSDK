@@ -43,7 +43,7 @@
 /**
  * The DKIM attributes for an email address or a domain.
  */
-@property (nonatomic, retain) NSMutableDictionary *dkimAttributes;
+@property (nonatomic, strong) NSMutableDictionary *dkimAttributes;
 
 /**
  * Returns a value from the dkimAttributes dictionary for the specified key.

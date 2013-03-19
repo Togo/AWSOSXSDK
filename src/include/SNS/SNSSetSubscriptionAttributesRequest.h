@@ -35,19 +35,19 @@
 /**
  * The ARN of the subscription to modify.
  */
-@property (nonatomic, retain) NSString *subscriptionArn;
+@property (nonatomic, strong) NSString *subscriptionArn;
 
 /**
  * The name of the attribute you want to set. Only a subset of the
  * subscriptions attributes are mutable. <p>Valid values:
  * <code>DeliveryPolicy</code>
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The new value for the attribute in JSON format.
  */
-@property (nonatomic, retain) NSString *attributeValue;
+@property (nonatomic, strong) NSString *attributeValue;
 
 
 /**

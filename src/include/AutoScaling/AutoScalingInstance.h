@@ -46,7 +46,7 @@
  * <b>Length: </b>1 - 16<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Availability Zones associated with this instance.
@@ -55,7 +55,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * Contains a description of the current <i>lifecycle</i> state.
@@ -63,7 +63,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
  */
-@property (nonatomic, retain) NSString *lifecycleState;
+@property (nonatomic, strong) NSString *lifecycleState;
 
 /**
  * The instance's health status.
@@ -72,7 +72,7 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthStatus;
+@property (nonatomic, strong) NSString *healthStatus;
 
 /**
  * The launch configuration associated with this instance.
@@ -81,7 +81,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -46,7 +46,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSMutableDictionary *requestItems;
+@property (nonatomic, strong) NSMutableDictionary *requestItems;
 
 
 /**

@@ -39,13 +39,13 @@
 /**
  * The AWS user ID of the user involved in this launch permission.
  */
-@property (nonatomic, retain) NSString *userId;
+@property (nonatomic, strong) NSString *userId;
 
 /**
  * The AWS group of the user involved in this launch permission. <p>
  * Available groups: <code>all</code>
  */
-@property (nonatomic, retain) NSString *group;
+@property (nonatomic, strong) NSString *group;
 
 /**
  * Returns a string representation of this object; useful for testing and

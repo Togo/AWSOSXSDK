@@ -35,12 +35,12 @@
  * The mnemonic name associated with the LoadBalancer. The name must be
  * unique within your AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The mnemonic name for the policy being deleted.
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 
 /**

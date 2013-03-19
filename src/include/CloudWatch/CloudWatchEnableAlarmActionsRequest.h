@@ -43,7 +43,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 100<br/>
  */
-@property (nonatomic, retain) NSMutableArray *alarmNames;
+@property (nonatomic, strong) NSMutableArray *alarmNames;
 
 /**
  * Adds a single object to alarmNames.

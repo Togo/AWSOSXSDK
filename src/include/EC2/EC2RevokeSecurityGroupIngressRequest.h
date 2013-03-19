@@ -44,44 +44,44 @@
  * belong to your account. Can be used instead of GroupID for standard
  * (EC2) security groups.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * ID of the standard (EC2) or VPC security group to modify. The group
  * must belong to your account. Required for VPC security groups; can be
  * used instead of GroupName for standard (EC2) security groups.
  */
-@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, strong) NSString *groupId;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSString *sourceSecurityGroupName;
+@property (nonatomic, strong) NSString *sourceSecurityGroupName;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSString *sourceSecurityGroupOwnerId;
+@property (nonatomic, strong) NSString *sourceSecurityGroupOwnerId;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSString *ipProtocol;
+@property (nonatomic, strong) NSString *ipProtocol;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSNumber *fromPort;
+@property (nonatomic, strong) NSNumber *fromPort;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSNumber *toPort;
+@property (nonatomic, strong) NSNumber *toPort;
 
 /**
  * Deprecated
  */
-@property (nonatomic, retain) NSString *cidrIp;
+@property (nonatomic, strong) NSString *cidrIp;
 
 /**
  * List of IP permissions to revoke on the specified security group. For
@@ -90,7 +90,7 @@
  * IP permissions is the preferred way of revoking permissions since it
  * offers more flexibility and control.
  */
-@property (nonatomic, retain) NSMutableArray *ipPermissions;
+@property (nonatomic, strong) NSMutableArray *ipPermissions;
 
 
 /**

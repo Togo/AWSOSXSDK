@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) EC2DescribeSecurityGroupsResponse *response;
+@property (weak, nonatomic, readonly) EC2DescribeSecurityGroupsResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

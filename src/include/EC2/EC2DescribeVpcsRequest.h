@@ -42,7 +42,7 @@
 /**
  * The ID of a VPC you want information about.
  */
-@property (nonatomic, retain) NSMutableArray *vpcIds;
+@property (nonatomic, strong) NSMutableArray *vpcIds;
 
 /**
  * A list of filters used to match properties for VPCs. For a complete
@@ -50,7 +50,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to vpcIds.

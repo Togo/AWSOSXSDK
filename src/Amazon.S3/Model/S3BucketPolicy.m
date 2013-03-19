@@ -29,10 +29,5 @@
     return self;
 }
 
--(void)dealloc
-{
-    [policyText release];
-    [super dealloc];
-}
 
 @end

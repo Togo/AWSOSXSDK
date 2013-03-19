@@ -39,12 +39,12 @@
 /**
  * The textual data of the content.
  */
-@property (nonatomic, retain) NSString *data;
+@property (nonatomic, strong) NSString *data;
 
 /**
  * The character set of the content.
  */
-@property (nonatomic, retain) NSString *charset;
+@property (nonatomic, strong) NSString *charset;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -39,12 +39,12 @@
 /**
  * The value of the Price property for this object.
  */
-@property (nonatomic, retain) NSNumber *price;
+@property (nonatomic, strong) NSNumber *price;
 
 /**
  * The value of the Count property for this object.
  */
-@property (nonatomic, retain) NSNumber *count;
+@property (nonatomic, strong) NSNumber *count;
 
 /**
  * Returns a string representation of this object; useful for testing and

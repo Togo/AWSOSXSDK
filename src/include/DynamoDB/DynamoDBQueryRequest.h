@@ -54,7 +54,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * List of <code>Attribute</code> names. If attribute names are not
@@ -64,7 +64,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *attributesToGet;
+@property (nonatomic, strong) NSMutableArray *attributesToGet;
 
 /**
  * The maximum number of items to return. If Amazon DynamoDB hits this
@@ -79,7 +79,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *limit;
+@property (nonatomic, strong) NSNumber *limit;
 
 /**
  * If set to <code>true</code>, then a consistent read is issued.
@@ -104,13 +104,13 @@
 /**
  * Attribute value of the hash component of the composite primary key.
  */
-@property (nonatomic, retain) DynamoDBAttributeValue *hashKeyValue;
+@property (nonatomic, strong) DynamoDBAttributeValue *hashKeyValue;
 
 /**
  * A container for the attribute values and comparison operators to use
  * for the query.
  */
-@property (nonatomic, retain) DynamoDBCondition *rangeKeyCondition;
+@property (nonatomic, strong) DynamoDBCondition *rangeKeyCondition;
 
 /**
  * Specifies forward or backward traversal of the index. Amazon DynamoDB
@@ -130,7 +130,7 @@
  * can be passed back in a new query request to continue the operation
  * from that point.
  */
-@property (nonatomic, retain) DynamoDBKey *exclusiveStartKey;
+@property (nonatomic, strong) DynamoDBKey *exclusiveStartKey;
 
 
 /**

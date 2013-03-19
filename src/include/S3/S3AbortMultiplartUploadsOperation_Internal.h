@@ -21,11 +21,11 @@
 {
 }
 
-@property (nonatomic, assign) id<AmazonServiceRequestDelegate> delegate;
-@property (nonatomic, retain) AmazonS3Client *s3;
-@property (nonatomic, retain) NSString *bucket;
-@property (nonatomic, retain) NSDate *date;
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, strong) AmazonS3Client *s3;
+@property (nonatomic, strong) NSString *bucket;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) NSString *key;
 
 
 @end

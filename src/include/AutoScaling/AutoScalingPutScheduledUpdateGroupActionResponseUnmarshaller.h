@@ -21,7 +21,7 @@
     AutoScalingPutScheduledUpdateGroupActionResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingPutScheduledUpdateGroupActionResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingPutScheduledUpdateGroupActionResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

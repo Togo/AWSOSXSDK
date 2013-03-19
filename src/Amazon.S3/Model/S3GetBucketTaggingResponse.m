@@ -30,8 +30,6 @@
 
     self.configuration = unmarshaller.configuration;
 
-    [parser release];
-    [unmarshaller release];
 }
 
 @end

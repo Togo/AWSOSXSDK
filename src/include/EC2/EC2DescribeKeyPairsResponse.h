@@ -43,7 +43,7 @@
 /**
  * The list of described key pairs.
  */
-@property (nonatomic, retain) NSMutableArray *keyPairs;
+@property (nonatomic, strong) NSMutableArray *keyPairs;
 
 
 

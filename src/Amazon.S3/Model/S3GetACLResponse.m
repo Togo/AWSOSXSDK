@@ -28,14 +28,11 @@
     [parser parse];
 
     if (nil != acl) {
-        [acl release];
         acl = nil;
     }
 
-    acl = [unmarshaller.accessControlList retain];
+    acl = unmarshaller.accessControlList;
 
-    [unmarshaller release];
-    [parser release];
 }
 
 -(S3AccessControlList *)acl
@@ -43,10 +40,5 @@
     return acl;
 }
 
--(void) dealloc
-{
-    [acl release];
-    [super dealloc];
-}
 
 @end

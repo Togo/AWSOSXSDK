@@ -34,12 +34,12 @@
 /**
  * The name of the queue whose URL must be fetched.
  */
-@property (nonatomic, retain) NSString *queueName;
+@property (nonatomic, strong) NSString *queueName;
 
 /**
  * The AWS account number of the queue's owner.
  */
-@property (nonatomic, retain) NSString *queueOwnerAWSAccountId;
+@property (nonatomic, strong) NSString *queueOwnerAWSAccountId;
 
 
 /**

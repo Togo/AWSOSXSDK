@@ -21,7 +21,7 @@
     SimpleDBCreateDomainResponse *response;
 }
 
-@property (nonatomic, readonly) SimpleDBCreateDomainResponse *response;
+@property (weak, nonatomic, readonly) SimpleDBCreateDomainResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

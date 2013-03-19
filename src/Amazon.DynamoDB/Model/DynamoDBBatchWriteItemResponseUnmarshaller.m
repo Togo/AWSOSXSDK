@@ -28,7 +28,7 @@
 
 +(DynamoDBBatchWriteItemResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBBatchWriteItemResponse *batchWriteItemResult = [[[DynamoDBBatchWriteItemResponse alloc] init] autorelease];
+    DynamoDBBatchWriteItemResponse *batchWriteItemResult = [[DynamoDBBatchWriteItemResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {
@@ -44,7 +44,7 @@
 
         NSDictionary *unprocessedItemsObject = [jsonObject valueForKey:@"UnprocessedItems"];
         for (NSString *key in [unprocessedItemsObject allKeys]) {
-            NSMutableArray *arrayObject = [[[NSMutableArray alloc] init] autorelease];
+            NSMutableArray *arrayObject = [[NSMutableArray alloc] init];
             [batchWriteItemResult.unprocessedItems setValue:arrayObject forKey:key];
 
 

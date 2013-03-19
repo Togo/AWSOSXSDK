@@ -44,7 +44,7 @@
  * </ResponseMetadata> </DeleteTopicResponse> </queryresponse>
  * </examples>
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 
 /**

@@ -48,42 +48,42 @@
 /**
  * The AWS Access Key ID of the owner of the security group.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * The name of this security group.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * The value of the GroupId property for this object.
  */
-@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, strong) NSString *groupId;
 
 /**
  * The description of this security group.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The permissions enabled for this security group.
  */
-@property (nonatomic, retain) NSMutableArray *ipPermissions;
+@property (nonatomic, strong) NSMutableArray *ipPermissions;
 
 /**
  * The value of the IpPermissionsEgress property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *ipPermissionsEgress;
+@property (nonatomic, strong) NSMutableArray *ipPermissionsEgress;
 
 /**
  * The value of the VpcId property for this object.
  */
-@property (nonatomic, retain) NSString *vpcId;
+@property (nonatomic, strong) NSString *vpcId;
 
 /**
  * The value of the Tags property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to ipPermissions.

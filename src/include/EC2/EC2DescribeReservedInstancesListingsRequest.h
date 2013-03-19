@@ -43,17 +43,17 @@
 /**
  * The value of the ReservedInstancesId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesId;
+@property (nonatomic, strong) NSString *reservedInstancesId;
 
 /**
  * The value of the ReservedInstancesListingId property for this object.
  */
-@property (nonatomic, retain) NSString *reservedInstancesListingId;
+@property (nonatomic, strong) NSString *reservedInstancesListingId;
 
 /**
  * The value of the Filters property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to filters.

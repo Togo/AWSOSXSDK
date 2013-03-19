@@ -21,7 +21,7 @@
     AutoScalingDeleteLaunchConfigurationResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingDeleteLaunchConfigurationResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingDeleteLaunchConfigurationResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

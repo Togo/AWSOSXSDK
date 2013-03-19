@@ -23,7 +23,7 @@
 
 +(DynamoDBAttributeValue *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBAttributeValue *attributeValue = [[[DynamoDBAttributeValue alloc] init] autorelease];
+    DynamoDBAttributeValue *attributeValue = [[DynamoDBAttributeValue alloc] init];
 
 
 

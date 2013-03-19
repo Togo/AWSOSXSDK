@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"currentState"]) {
-        EC2InstanceStateUnmarshaller *unmarshaller = [[[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setCurrentState:)] autorelease];
+        EC2InstanceStateUnmarshaller *unmarshaller = [[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setCurrentState:)];
         unmarshaller.endElementTagName = @"currentState";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"previousState"]) {
-        EC2InstanceStateUnmarshaller *unmarshaller = [[[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setPreviousState:)] autorelease];
+        EC2InstanceStateUnmarshaller *unmarshaller = [[EC2InstanceStateUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setPreviousState:)];
         unmarshaller.endElementTagName = @"previousState";
         [parser setDelegate:unmarshaller];
     }
@@ -39,7 +39,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -81,10 +81,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

@@ -58,10 +58,5 @@
 }
 
 
--(void)dealloc
-{
-    [endElementTagName release];
-    [super dealloc];
-}
 
 @end

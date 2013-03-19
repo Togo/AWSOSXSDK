@@ -49,7 +49,7 @@
  * The temporary security credentials, which includes an Access Key ID, a
  * Secret Access Key, and a security token.
  */
-@property (nonatomic, retain) SecurityTokenServiceCredentials *credentials;
+@property (nonatomic, strong) SecurityTokenServiceCredentials *credentials;
 
 /**
  * The Amazon Resource Name (ARN) and the assumed role ID for the
@@ -60,7 +60,7 @@
  * you would specify the <code>AssumedRoleUser</code> ARN or role ID in
  * that policy.
  */
-@property (nonatomic, retain) SecurityTokenServiceAssumedRoleUser *assumedRoleUser;
+@property (nonatomic, strong) SecurityTokenServiceAssumedRoleUser *assumedRoleUser;
 
 /**
  * A percentage value that indicates the size of the policy in packed
@@ -70,7 +70,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>0 - <br/>
  */
-@property (nonatomic, retain) NSNumber *packedPolicySize;
+@property (nonatomic, strong) NSNumber *packedPolicySize;
 
 /**
  * Returns a string representation of this object; useful for testing and

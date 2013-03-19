@@ -39,7 +39,7 @@
  * The license pool from which to take a license when starting Amazon EC2
  * instances in the associated <code>RunInstances</code> request.
  */
-@property (nonatomic, retain) NSString *pool;
+@property (nonatomic, strong) NSString *pool;
 
 /**
  * Returns a string representation of this object; useful for testing and

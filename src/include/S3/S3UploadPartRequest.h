@@ -35,17 +35,17 @@
  * This header can be used as a message integrity check to verify
  * that the part data is the same data that was originally sent.
  */
-@property (nonatomic, retain) NSString *contentMD5;
+@property (nonatomic, strong) NSString *contentMD5;
 
 /** The uploadId of the multipart upload that this part is for. */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** The data for the part.
  * <p>
  * Use one of <code>data</code>, <code>stream</code>.
  * </p>
  */
-@property (nonatomic, retain) NSData *data;
+@property (nonatomic, strong) NSData *data;
 
 /** The stream from which to read the data for the part.
  * <b>To use the stream you must explicitly set the content length.<b/>
@@ -53,7 +53,7 @@
  * Use one of <code>data</code> or <code>stream</code>.
  * </p>
  */
-@property (nonatomic, retain) NSInputStream *stream;
+@property (nonatomic, strong) NSInputStream *stream;
 
 /** Initializes the instance with the bucket, key, and uploadId from an S3MultipartUpload instance returned in an S3MultipartUploadResponse. */
 -(id)initWithMultipartUpload:(S3MultipartUpload *)multipartUpload;

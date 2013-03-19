@@ -46,7 +46,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *resourceId;
+@property (nonatomic, strong) NSString *resourceId;
 
 /**
  * The kind of resource to which the tag is applied. Currently, Auto
@@ -55,7 +55,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *resourceType;
+@property (nonatomic, strong) NSString *resourceType;
 
 /**
  * The key of the tag.
@@ -64,7 +64,7 @@
  * <b>Length: </b>1 - 128<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /**
  * The value of the tag.
@@ -73,7 +73,7 @@
  * <b>Length: </b>0 - 256<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * Specifies whether the new tag will be applied to instances launched

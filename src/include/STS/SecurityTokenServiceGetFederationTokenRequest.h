@@ -42,7 +42,7 @@
  * <b>Length: </b>2 - 32<br/>
  * <b>Pattern: </b>[\w+=,.@-]*<br/>
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * A policy specifying the permissions to associate with the credentials.
@@ -58,7 +58,7 @@
  * <b>Length: </b>1 - 2048<br/>
  * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
  */
-@property (nonatomic, retain) NSString *policy;
+@property (nonatomic, strong) NSString *policy;
 
 /**
  * The duration, in seconds, that the session should last. Acceptable
@@ -71,7 +71,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>900 - 129600<br/>
  */
-@property (nonatomic, retain) NSNumber *durationSeconds;
+@property (nonatomic, strong) NSNumber *durationSeconds;
 
 
 /**

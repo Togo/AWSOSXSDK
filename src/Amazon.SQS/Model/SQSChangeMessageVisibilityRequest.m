@@ -52,25 +52,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReceiptHandle: %@,", receiptHandle] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VisibilityTimeout: %@,", visibilityTimeout] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"QueueUrl: %@,", queueUrl]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReceiptHandle: %@,", receiptHandle]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VisibilityTimeout: %@,", visibilityTimeout]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [queueUrl release];
-    [receiptHandle release];
-    [visibilityTimeout release];
-
-    [super dealloc];
-}
 
 
 @end

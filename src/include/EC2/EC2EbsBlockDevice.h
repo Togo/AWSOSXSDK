@@ -43,12 +43,12 @@
 /**
  * The ID of the snapshot from which the volume will be created.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The size of the volume, in gigabytes.
  */
-@property (nonatomic, retain) NSNumber *volumeSize;
+@property (nonatomic, strong) NSNumber *volumeSize;
 
 /**
  * Specifies whether the Amazon EBS volume is deleted on instance
@@ -64,12 +64,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>standard, io1
  */
-@property (nonatomic, retain) NSString *volumeType;
+@property (nonatomic, strong) NSString *volumeType;
 
 /**
  * The value of the Iops property for this object.
  */
-@property (nonatomic, retain) NSNumber *iops;
+@property (nonatomic, strong) NSNumber *iops;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -46,7 +46,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *readCapacityUnits;
+@property (nonatomic, strong) NSNumber *readCapacityUnits;
 
 /**
  * <code>WriteCapacityUnits</code> are in terms of strictly consistent
@@ -56,7 +56,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *writeCapacityUnits;
+@property (nonatomic, strong) NSNumber *writeCapacityUnits;
 
 /**
  * Returns a string representation of this object; useful for testing and

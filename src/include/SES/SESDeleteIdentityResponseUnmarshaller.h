@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) SESDeleteIdentityResponse *response;
+@property (weak, nonatomic, readonly) SESDeleteIdentityResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

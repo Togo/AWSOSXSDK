@@ -36,33 +36,27 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidSubnet"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidSubnetException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"SubnetNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingSubnetNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"LoadBalancerNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingLoadBalancerNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidConfigurationRequest"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidConfigurationRequestException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -79,21 +73,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [subnets release];
-
-    [super dealloc];
-}
 
 
 @end

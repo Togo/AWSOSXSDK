@@ -45,27 +45,27 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The value of the ProductDescription property for this object.
  */
-@property (nonatomic, retain) NSString *productDescription;
+@property (nonatomic, strong) NSString *productDescription;
 
 /**
  * The value of the SpotPrice property for this object.
  */
-@property (nonatomic, retain) NSString *spotPrice;
+@property (nonatomic, strong) NSString *spotPrice;
 
 /**
  * The value of the Timestamp property for this object.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The value of the AvailabilityZone property for this object.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * Returns a string representation of this object; useful for testing and

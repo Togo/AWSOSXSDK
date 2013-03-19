@@ -58,7 +58,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The name of the launch configuration to use with the Auto Scaling
@@ -68,29 +68,29 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * The minimum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *minSize;
+@property (nonatomic, strong) NSNumber *minSize;
 
 /**
  * The maximum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *maxSize;
+@property (nonatomic, strong) NSNumber *maxSize;
 
 /**
  * The number of Amazon EC2 instances that should be running in the
  * group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * The amount of time, in seconds, after a scaling activity completes
  * before any further trigger-related scaling activities can start.
  */
-@property (nonatomic, retain) NSNumber *defaultCooldown;
+@property (nonatomic, strong) NSNumber *defaultCooldown;
 
 /**
  * A list of Availability Zones for the Auto Scaling group.
@@ -98,12 +98,12 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 /**
  * A list of load balancers to use.
  */
-@property (nonatomic, retain) NSMutableArray *loadBalancerNames;
+@property (nonatomic, strong) NSMutableArray *loadBalancerNames;
 
 /**
  * The service you want the health status from, Amazon EC2 or Elastic
@@ -113,13 +113,13 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthCheckType;
+@property (nonatomic, strong) NSString *healthCheckType;
 
 /**
  * Length of time in seconds after a new Amazon EC2 instance comes into
  * service that Auto Scaling starts checking its health.
  */
-@property (nonatomic, retain) NSNumber *healthCheckGracePeriod;
+@property (nonatomic, strong) NSNumber *healthCheckGracePeriod;
 
 /**
  * Physical location of your cluster placement group created in Amazon
@@ -131,7 +131,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *placementGroup;
+@property (nonatomic, strong) NSString *placementGroup;
 
 /**
  * A comma-separated list of subnet identifiers of Amazon Virtual Private
@@ -143,7 +143,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *vPCZoneIdentifier;
+@property (nonatomic, strong) NSString *vPCZoneIdentifier;
 
 /**
  * A standalone termination policy or a list of termination policies used
@@ -154,7 +154,7 @@
  * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
  * Scaling Developer Guide</i>.
  */
-@property (nonatomic, retain) NSMutableArray *terminationPolicies;
+@property (nonatomic, strong) NSMutableArray *terminationPolicies;
 
 /**
  * The tag to be created or updated. Each tag should be defined by its
@@ -162,7 +162,7 @@
  * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
  * <i>false</i>. Value and propagate are optional parameters.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to availabilityZones.

@@ -56,31 +56,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Events: %@,", events] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceState: %@,", instanceState] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SystemStatus: %@,", systemStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceStatus: %@,", instanceStatus] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Events: %@,", events]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceState: %@,", instanceState]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SystemStatus: %@,", systemStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceStatus: %@,", instanceStatus]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [availabilityZone release];
-    [events release];
-    [instanceState release];
-    [systemStatus release];
-    [instanceStatus release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -31,7 +31,7 @@
 
     CC_MD5(cStr, [data length], result);
 
-    NSData *md5 = [[[NSData alloc] initWithBytes:result length:CC_MD5_DIGEST_LENGTH] autorelease];
+    NSData *md5 = [[NSData alloc] initWithBytes:result length:CC_MD5_DIGEST_LENGTH];
     return [md5 base64EncodedString];
 }
 
@@ -56,7 +56,7 @@
         unsigned char digest[CC_MD5_DIGEST_LENGTH];
         CC_MD5_Final(digest, &hashObject);
 
-        NSData *md5 = [[[NSData alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH] autorelease];
+        NSData *md5 = [[NSData alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
         return [md5 base64EncodedString];
     }
 

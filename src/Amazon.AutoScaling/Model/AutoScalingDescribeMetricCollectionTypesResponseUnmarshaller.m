@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"Metrics"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.metrics withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.metrics withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Metrics";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingMetricCollectionTypeUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"Granularities"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.granularities withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.granularities withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"Granularities";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AutoScalingMetricGranularityTypeUnmarshaller class];
@@ -45,7 +45,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -76,10 +76,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

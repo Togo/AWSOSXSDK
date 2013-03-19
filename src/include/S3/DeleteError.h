@@ -29,21 +29,21 @@
 /**
  * Returns the key of the object that couldn't be deleted.
  */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /**
  * Returns the versionId of the object that couldn't be deleted.
  */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /**
  * Returns the status code for the failed delete.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * Returns a description of the failure.
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 @end

@@ -34,12 +34,12 @@
 /**
  * The ID of the volume from which to create the snapshot.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The description for the new snapshot.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 
 /**

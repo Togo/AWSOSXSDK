@@ -30,7 +30,7 @@
 @property (readonly) BOOL ongoingRestore;
 
 /** If defined, the expiration date for the restored copy of the object */
-@property (readonly) NSDate *restoreExpiry;
+@property (weak, readonly) NSDate *restoreExpiry;
 
 /** Sets a value in the response for the given HTTP header. */
 -(void)setValue:(id)value forHTTPHeaderField:(NSString *)header;

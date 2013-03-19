@@ -55,27 +55,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AccessKeyId: %@,", accessKeyId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecretAccessKey: %@,", secretAccessKey] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SessionToken: %@,", sessionToken] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Expiration: %@,", expiration] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AccessKeyId: %@,", accessKeyId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecretAccessKey: %@,", secretAccessKey]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SessionToken: %@,", sessionToken]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Expiration: %@,", expiration]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [accessKeyId release];
-    [secretAccessKey release];
-    [sessionToken release];
-    [expiration release];
-
-    [super dealloc];
-}
 
 
 @end

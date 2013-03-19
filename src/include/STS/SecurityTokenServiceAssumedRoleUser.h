@@ -45,7 +45,7 @@
  * <b>Length: </b>2 - 96<br/>
  * <b>Pattern: </b>[\w+=,.@:-]*<br/>
  */
-@property (nonatomic, retain) NSString *assumedRoleId;
+@property (nonatomic, strong) NSString *assumedRoleId;
 
 /**
  * The ARN of the temporary security credentials that are returned from
@@ -57,7 +57,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>20 - 2048<br/>
  */
-@property (nonatomic, retain) NSString *arn;
+@property (nonatomic, strong) NSString *arn;
 
 /**
  * Returns a string representation of this object; useful for testing and

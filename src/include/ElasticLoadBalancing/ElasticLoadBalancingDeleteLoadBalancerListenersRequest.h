@@ -34,13 +34,13 @@
 /**
  * The mnemonic name associated with the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The client port number(s) of the LoadBalancerListener(s) to be
  * removed.
  */
-@property (nonatomic, retain) NSMutableArray *loadBalancerPorts;
+@property (nonatomic, strong) NSMutableArray *loadBalancerPorts;
 
 
 /**

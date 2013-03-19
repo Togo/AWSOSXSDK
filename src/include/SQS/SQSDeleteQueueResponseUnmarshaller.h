@@ -21,7 +21,7 @@
     SQSDeleteQueueResponse *response;
 }
 
-@property (nonatomic, readonly) SQSDeleteQueueResponse *response;
+@property (weak, nonatomic, readonly) SQSDeleteQueueResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

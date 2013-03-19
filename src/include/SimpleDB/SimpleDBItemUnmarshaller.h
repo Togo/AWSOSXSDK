@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) SimpleDBItem *response;
+@property (weak, nonatomic, readonly) SimpleDBItem *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

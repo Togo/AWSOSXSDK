@@ -85,25 +85,25 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchConfigurationARN: %@,", launchConfigurationARN] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserData: %@,", userData] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceMonitoring: %@,", instanceMonitoring] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchConfigurationARN: %@,", launchConfigurationARN]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserData: %@,", userData]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceMonitoring: %@,", instanceMonitoring]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -114,25 +114,6 @@
 }
 
 
--(void)dealloc
-{
-    [launchConfigurationName release];
-    [launchConfigurationARN release];
-    [imageId release];
-    [keyName release];
-    [securityGroups release];
-    [userData release];
-    [instanceType release];
-    [kernelId release];
-    [ramdiskId release];
-    [blockDeviceMappings release];
-    [instanceMonitoring release];
-    [spotPrice release];
-    [iamInstanceProfile release];
-    [createdTime release];
-
-    [super dealloc];
-}
 
 
 @end

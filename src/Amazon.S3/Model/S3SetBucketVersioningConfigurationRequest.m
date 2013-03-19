@@ -47,11 +47,5 @@
     return self.urlRequest;
 }
 
--(void)dealloc
-{
-    [mfa release];
-    [versioningConfiguration release];
-    [super dealloc];
-}
 
 @end

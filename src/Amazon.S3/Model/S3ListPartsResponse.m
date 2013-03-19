@@ -31,15 +31,7 @@
 
     self.listPartsResult = unmarshaller.listPartsResult;
 
-    [parser release];
-    [unmarshaller release];
 }
 
--(void)dealloc
-{
-    [listPartsResult release];
-
-    [super dealloc];
-}
 
 @end

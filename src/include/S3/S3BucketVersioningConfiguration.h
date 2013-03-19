@@ -57,7 +57,7 @@
 }
 
 /** The current status of versioning */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 
 /**

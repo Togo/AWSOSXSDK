@@ -23,7 +23,7 @@
 }
 
 /** The list of rules */
-@property (nonatomic, retain) NSDictionary *tags;
+@property (nonatomic, strong) NSDictionary *tags;
 
 -(NSString *)toXml;
 

@@ -59,7 +59,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * The launch configuration's Amazon Resource Name (ARN).
@@ -68,7 +68,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationARN;
+@property (nonatomic, strong) NSString *launchConfigurationARN;
 
 /**
  * Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
@@ -78,7 +78,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * Provides the name of the Amazon EC2 key pair.
@@ -87,13 +87,13 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * A description of the security groups to associate with the Amazon EC2
  * instances.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 /**
  * The user data available to the launched Amazon EC2 instances.
@@ -102,7 +102,7 @@
  * <b>Length: </b>0 - 21847<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *userData;
+@property (nonatomic, strong) NSString *userData;
 
 /**
  * Specifies the instance type of the Amazon EC2 instance.
@@ -111,7 +111,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * Provides the ID of the kernel associated with the Amazon EC2 AMI.
@@ -120,7 +120,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
@@ -129,19 +129,19 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * Specifies how block devices are exposed to the instance. Each mapping
  * is made up of a <i>virtualName</i> and a <i>deviceName</i>.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * Controls whether instances in this group are launched with detailed
  * monitoring or not.
  */
-@property (nonatomic, retain) AutoScalingInstanceMonitoring *instanceMonitoring;
+@property (nonatomic, strong) AutoScalingInstanceMonitoring *instanceMonitoring;
 
 /**
  * Specifies the price to bid when launching Spot Instances.
@@ -149,7 +149,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *spotPrice;
+@property (nonatomic, strong) NSString *spotPrice;
 
 /**
  * Provides the name or the Amazon Resource Name (ARN) of the instance
@@ -160,12 +160,12 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *iamInstanceProfile;
+@property (nonatomic, strong) NSString *iamInstanceProfile;
 
 /**
  * Provides the creation date and time for this launch configuration.
  */
-@property (nonatomic, retain) NSDate *createdTime;
+@property (nonatomic, strong) NSDate *createdTime;
 
 /**
  * The value of the EbsOptimized property for this object.

@@ -52,13 +52,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DkimEnabled: %d,", dkimEnabled] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DkimVerificationStatus: %@,", dkimVerificationStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DkimTokens: %@,", dkimTokens] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DkimEnabled: %d,", dkimEnabled]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DkimVerificationStatus: %@,", dkimVerificationStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DkimTokens: %@,", dkimTokens]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -69,13 +69,6 @@
 }
 
 
--(void)dealloc
-{
-    [dkimVerificationStatus release];
-    [dkimTokens release];
-
-    [super dealloc];
-}
 
 
 @end

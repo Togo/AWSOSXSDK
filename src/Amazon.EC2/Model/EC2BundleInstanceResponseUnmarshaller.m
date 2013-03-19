@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"bundleInstanceTask"]) {
-        EC2BundleTaskUnmarshaller *unmarshaller = [[[EC2BundleTaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setBundleTask:)] autorelease];
+        EC2BundleTaskUnmarshaller *unmarshaller = [[EC2BundleTaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setBundleTask:)];
         unmarshaller.endElementTagName = @"bundleInstanceTask";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -70,10 +70,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

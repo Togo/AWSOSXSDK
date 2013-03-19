@@ -39,7 +39,6 @@
     [xml appendString:@"</RestoreRequest>"];
     
     NSString *retval = [NSString stringWithString:xml];
-    [xml release];
     
     return retval;
 }
@@ -64,9 +63,5 @@
     return urlRequest;
 }
 
--(void) dealloc
-{
-    [super dealloc];
-}
 
 @end

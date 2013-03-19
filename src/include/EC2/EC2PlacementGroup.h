@@ -33,7 +33,7 @@
 /**
  * The name of this <code>PlacementGroup</code>.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * The strategy to use when allocating Amazon EC2 instances for the
@@ -42,7 +42,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>cluster
  */
-@property (nonatomic, retain) NSString *strategy;
+@property (nonatomic, strong) NSString *strategy;
 
 /**
  * The state of this <code>PlacementGroup</code>.
@@ -50,7 +50,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>pending, available, deleting, deleted
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 
 /**

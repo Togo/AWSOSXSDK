@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeName: %@,", attributeName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeType: %@,", attributeType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DefaultValue: %@,", defaultValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Cardinality: %@,", cardinality] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeName: %@,", attributeName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeType: %@,", attributeType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DefaultValue: %@,", defaultValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Cardinality: %@,", cardinality]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [attributeName release];
-    [attributeType release];
-    [descriptionValue release];
-    [defaultValue release];
-    [cardinality release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -32,6 +32,6 @@
 +(id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new CORS configuration for the specified bucket. */
-@property (nonatomic, retain) S3BucketCrossOriginConfiguration *configuration;
+@property (nonatomic, strong) S3BucketCrossOriginConfiguration *configuration;
 
 @end

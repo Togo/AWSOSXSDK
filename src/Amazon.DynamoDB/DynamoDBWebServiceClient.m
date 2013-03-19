@@ -21,7 +21,7 @@
 -(id)initWithCredentials:(AmazonCredentials *)theCredentials
 {
     if (self = [self init]) {
-        [super initWithCredentials:theCredentials];
+        if (!(self = [super initWithCredentials:theCredentials])) return nil;
         // override values for DynamoDB
         self.maxRetries  = 11;
         self.timeout     = 30;

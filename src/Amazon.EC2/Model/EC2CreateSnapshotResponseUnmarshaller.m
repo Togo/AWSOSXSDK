@@ -23,14 +23,14 @@
 {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
-    EC2SnapshotUnmarshaller *unmarshaller = [[[EC2SnapshotUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSnapshot:)] autorelease];
+    EC2SnapshotUnmarshaller *unmarshaller = [[EC2SnapshotUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setSnapshot:)];
     unmarshaller.endElementTagName = @"CreateSnapshotResponse";
     [parser setDelegate:unmarshaller];
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -67,10 +67,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

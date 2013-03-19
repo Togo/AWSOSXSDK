@@ -25,6 +25,6 @@
 }
 
 /** The S3Owner represented by the XML */
-@property (nonatomic, readonly) S3Owner *owner;
+@property (weak, nonatomic, readonly) S3Owner *owner;
 
 @end

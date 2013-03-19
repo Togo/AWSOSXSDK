@@ -48,7 +48,7 @@
  * than 50 items. If unknown activities are requested, they are ignored
  * with no error.
  */
-@property (nonatomic, retain) NSMutableArray *activityIds;
+@property (nonatomic, strong) NSMutableArray *activityIds;
 
 /**
  * The name of the <a>AutoScalingGroup</a>.
@@ -57,7 +57,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The maximum number of scaling activities to return.
@@ -65,7 +65,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 50<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * A string that marks the start of the next batch of returned results
@@ -74,7 +74,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * Adds a single object to activityIds.

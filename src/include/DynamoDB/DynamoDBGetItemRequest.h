@@ -45,14 +45,14 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * The primary key that uniquely identifies each item in a table. A
  * primary key can be a one attribute (hash) primary key or a two
  * attribute (hash-and-range) primary key.
  */
-@property (nonatomic, retain) DynamoDBKey *key;
+@property (nonatomic, strong) DynamoDBKey *key;
 
 /**
  * List of <code>Attribute</code> names. If attribute names are not
@@ -62,7 +62,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *attributesToGet;
+@property (nonatomic, strong) NSMutableArray *attributesToGet;
 
 /**
  * If set to <code>true</code>, then a consistent read is issued.

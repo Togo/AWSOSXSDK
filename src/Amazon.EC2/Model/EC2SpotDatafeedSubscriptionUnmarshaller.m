@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"fault"]) {
-        EC2SpotInstanceStateFaultUnmarshaller *unmarshaller = [[[EC2SpotInstanceStateFaultUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFault:)] autorelease];
+        EC2SpotInstanceStateFaultUnmarshaller *unmarshaller = [[EC2SpotInstanceStateFaultUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFault:)];
         unmarshaller.endElementTagName = @"fault";
         [parser setDelegate:unmarshaller];
     }
@@ -33,7 +33,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -90,10 +90,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

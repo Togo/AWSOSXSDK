@@ -31,7 +31,7 @@
 /**
  * Provides an EC2 instance ID.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 
 /**

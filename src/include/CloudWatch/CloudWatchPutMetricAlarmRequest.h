@@ -60,7 +60,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmName;
+@property (nonatomic, strong) NSString *alarmName;
 
 /**
  * The description for the alarm.
@@ -68,7 +68,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmDescription;
+@property (nonatomic, strong) NSString *alarmDescription;
 
 /**
  * Indicates whether or not actions should be executed during any changes
@@ -88,7 +88,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *oKActions;
+@property (nonatomic, strong) NSMutableArray *oKActions;
 
 /**
  * The list of actions to execute when this alarm transitions into an
@@ -100,7 +100,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *alarmActions;
+@property (nonatomic, strong) NSMutableArray *alarmActions;
 
 /**
  * The list of actions to execute when this alarm transitions into an
@@ -112,7 +112,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 5<br/>
  */
-@property (nonatomic, retain) NSMutableArray *insufficientDataActions;
+@property (nonatomic, strong) NSMutableArray *insufficientDataActions;
 
 /**
  * The name for the alarm's associated metric.
@@ -120,7 +120,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * The namespace for the alarm's associated metric.
@@ -129,7 +129,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * The statistic to apply to the alarm's associated metric.
@@ -137,7 +137,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
  */
-@property (nonatomic, retain) NSString *statistic;
+@property (nonatomic, strong) NSString *statistic;
 
 /**
  * The dimensions for the alarm's associated metric.
@@ -145,7 +145,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The period in seconds over which the specified statistic is applied.
@@ -153,7 +153,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>60 - <br/>
  */
-@property (nonatomic, retain) NSNumber *period;
+@property (nonatomic, strong) NSNumber *period;
 
 /**
  * The unit for the alarm's associated metric.
@@ -161,7 +161,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * The number of periods over which data is compared to the specified
@@ -170,12 +170,12 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSNumber *evaluationPeriods;
+@property (nonatomic, strong) NSNumber *evaluationPeriods;
 
 /**
  * The value against which the specified statistic is compared.
  */
-@property (nonatomic, retain) NSNumber *threshold;
+@property (nonatomic, strong) NSNumber *threshold;
 
 /**
  * The arithmetic operation to use when comparing the specified
@@ -185,7 +185,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
  */
-@property (nonatomic, retain) NSString *comparisonOperator;
+@property (nonatomic, strong) NSString *comparisonOperator;
 
 /**
  * Adds a single object to oKActions.

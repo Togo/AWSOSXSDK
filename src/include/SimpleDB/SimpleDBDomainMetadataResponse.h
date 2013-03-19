@@ -50,38 +50,38 @@
 /**
  * The number of all items in the domain.
  */
-@property (nonatomic, retain) NSNumber *itemCount;
+@property (nonatomic, strong) NSNumber *itemCount;
 
 /**
  * The total size of all item names in the domain, in bytes.
  */
-@property (nonatomic, retain) NSNumber *itemNamesSizeBytes;
+@property (nonatomic, strong) NSNumber *itemNamesSizeBytes;
 
 /**
  * The number of unique attribute names in the domain.
  */
-@property (nonatomic, retain) NSNumber *attributeNameCount;
+@property (nonatomic, strong) NSNumber *attributeNameCount;
 
 /**
  * The total size of all unique attribute names in the domain, in bytes.
  */
-@property (nonatomic, retain) NSNumber *attributeNamesSizeBytes;
+@property (nonatomic, strong) NSNumber *attributeNamesSizeBytes;
 
 /**
  * The number of all attribute name/value pairs in the domain.
  */
-@property (nonatomic, retain) NSNumber *attributeValueCount;
+@property (nonatomic, strong) NSNumber *attributeValueCount;
 
 /**
  * The total size of all attribute values in the domain, in bytes.
  */
-@property (nonatomic, retain) NSNumber *attributeValuesSizeBytes;
+@property (nonatomic, strong) NSNumber *attributeValuesSizeBytes;
 
 /**
  * The data and time when metadata was calculated, in Epoch (UNIX)
  * seconds.
  */
-@property (nonatomic, retain) NSNumber *timestamp;
+@property (nonatomic, strong) NSNumber *timestamp;
 
 /**
  * Returns a string representation of this object; useful for testing and

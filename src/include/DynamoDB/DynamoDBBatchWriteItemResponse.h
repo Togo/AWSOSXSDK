@@ -50,7 +50,7 @@
  * This is essentially a map of table name to
  * <code>ConsumedCapacityUnits</code>.
  */
-@property (nonatomic, retain) NSMutableDictionary *responses;
+@property (nonatomic, strong) NSMutableDictionary *responses;
 
 /**
  * The Items which we could not successfully process in a
@@ -60,7 +60,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 25<br/>
  */
-@property (nonatomic, retain) NSMutableDictionary *unprocessedItems;
+@property (nonatomic, strong) NSMutableDictionary *unprocessedItems;
 
 /**
  * Returns a value from the responses dictionary for the specified key.

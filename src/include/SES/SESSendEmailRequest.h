@@ -46,23 +46,23 @@
 /**
  * The identity's email address.
  */
-@property (nonatomic, retain) NSString *source;
+@property (nonatomic, strong) NSString *source;
 
 /**
  * The destination for this email, composed of To:, CC:, and BCC: fields.
  */
-@property (nonatomic, retain) SESDestination *destination;
+@property (nonatomic, strong) SESDestination *destination;
 
 /**
  * The message to be sent.
  */
-@property (nonatomic, retain) SESMessage *message;
+@property (nonatomic, strong) SESMessage *message;
 
 /**
  * The reply-to email address(es) for the message. If the recipient
  * replies to the message, each reply-to address will receive the reply.
  */
-@property (nonatomic, retain) NSMutableArray *replyToAddresses;
+@property (nonatomic, strong) NSMutableArray *replyToAddresses;
 
 /**
  * The email address to which bounce notifications are to be forwarded.
@@ -71,7 +71,7 @@
  * then be forwarded to the email address specified by the
  * <code>ReturnPath</code> parameter.
  */
-@property (nonatomic, retain) NSString *returnPath;
+@property (nonatomic, strong) NSString *returnPath;
 
 /**
  * Adds a single object to replyToAddresses.

@@ -43,7 +43,7 @@
 /**
  * A map of Identities to IdentityVerificationAttributes objects.
  */
-@property (nonatomic, retain) NSMutableDictionary *verificationAttributes;
+@property (nonatomic, strong) NSMutableDictionary *verificationAttributes;
 
 /**
  * Returns a value from the verificationAttributes dictionary for the specified key.

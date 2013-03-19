@@ -26,10 +26,10 @@
 }
 
 /** Description of the exception */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /** The error that caused the exception. */
-@property (nonatomic, retain) NSError *error;
+@property (nonatomic, strong) NSError *error;
 
 /** Initialize the exception with a message.
  *

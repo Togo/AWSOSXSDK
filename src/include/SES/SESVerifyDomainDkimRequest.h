@@ -40,7 +40,7 @@
 /**
  * The name of the domain to be verified for Easy DKIM signing.
  */
-@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, strong) NSString *domain;
 
 /**
  * Returns a string representation of this object; useful for testing and

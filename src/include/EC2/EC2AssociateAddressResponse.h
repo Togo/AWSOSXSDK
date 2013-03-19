@@ -42,7 +42,7 @@
 /**
  * The value of the AssociationId property for this object.
  */
-@property (nonatomic, retain) NSString *associationId;
+@property (nonatomic, strong) NSString *associationId;
 
 /**
  * Returns a string representation of this object; useful for testing and

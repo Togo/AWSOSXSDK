@@ -26,7 +26,7 @@
     
     // Found the Value Element for the Dictionary Entry. Start Unmarshaller for complex type
     if (delegateClass != nil && [elementName isEqualToString:valueXpathElement]) {
-        id delegate = [[[delegateClass alloc] initWithCaller:self withParentObject:self withSetter:@selector(setValue:)] autorelease];
+        id delegate = [[delegateClass alloc] initWithCaller:self withParentObject:self withSetter:@selector(setValue:)];
         [delegate setEndElementTagName:entryEndElement];
         
         [parser setDelegate:delegate];
@@ -77,17 +77,5 @@
     return dictionary;
 }
 
--(void)dealloc
-{
-    [dictionary release];
-    [key release];
-    [value release];
-    [keyXpathElement release];
-    [valueXpathElement release];
-    [entryEndElement release];
-    [delegateClass release];
-
-    [super dealloc];
-}
 
 @end

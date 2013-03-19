@@ -69,11 +69,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [deletedObject release];
-
-    [super dealloc];
-}
 
 @end

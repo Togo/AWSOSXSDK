@@ -44,7 +44,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>vpc, standard
  */
-@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, strong) NSString *domain;
 
 /**
  * Returns a string representation of this object; useful for testing and

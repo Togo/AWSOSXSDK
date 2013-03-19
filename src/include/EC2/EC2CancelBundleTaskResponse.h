@@ -43,7 +43,7 @@
 /**
  * The canceled bundle task.
  */
-@property (nonatomic, retain) EC2BundleTask *bundleTask;
+@property (nonatomic, strong) EC2BundleTask *bundleTask;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -52,28 +52,28 @@
 /**
  * The ID of the associated instance.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The instance type (e.g., <code>m1.small</code>,
  * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The kernel ID of the associated instance.
  */
-@property (nonatomic, retain) NSString *kernelId;
+@property (nonatomic, strong) NSString *kernelId;
 
 /**
  * The ramdisk ID of the associated instance.
  */
-@property (nonatomic, retain) NSString *ramdiskId;
+@property (nonatomic, strong) NSString *ramdiskId;
 
 /**
  * MIME, Base64-encoded user data.
  */
-@property (nonatomic, retain) NSString *userData;
+@property (nonatomic, strong) NSString *userData;
 
 /**
  * Whether this instance can be terminated. You must modify this
@@ -87,23 +87,23 @@
  * Whether this instance's Amazon EBS volumes are deleted when the
  * instance is shut down.
  */
-@property (nonatomic, retain) NSString *instanceInitiatedShutdownBehavior;
+@property (nonatomic, strong) NSString *instanceInitiatedShutdownBehavior;
 
 /**
  * The root device name (e.g., <code>/dev/sda1</code>).
  */
-@property (nonatomic, retain) NSString *rootDeviceName;
+@property (nonatomic, strong) NSString *rootDeviceName;
 
 /**
  * How block devices are exposed to this instance. Each mapping is made
  * up of a virtualName and a deviceName.
  */
-@property (nonatomic, retain) NSMutableArray *blockDeviceMappings;
+@property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 
 /**
  * The value of the ProductCodes property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 /**
  * Boolean value

@@ -58,29 +58,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Target: %@,", target] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Interval: %@,", interval] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timeout: %@,", timeout] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UnhealthyThreshold: %@,", unhealthyThreshold] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthyThreshold: %@,", healthyThreshold] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Target: %@,", target]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Interval: %@,", interval]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timeout: %@,", timeout]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UnhealthyThreshold: %@,", unhealthyThreshold]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthyThreshold: %@,", healthyThreshold]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [target release];
-    [interval release];
-    [timeout release];
-    [unhealthyThreshold release];
-    [healthyThreshold release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -158,47 +158,47 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateDnsName: %@,", privateDnsName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicDnsName: %@,", publicDnsName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StateTransitionReason: %@,", stateTransitionReason] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AmiLaunchIndex: %@,", amiLaunchIndex] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchTime: %@,", launchTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Placement: %@,", placement] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Platform: %@,", platform] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Monitoring: %@,", monitoring] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PublicIpAddress: %@,", publicIpAddress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StateReason: %@,", stateReason] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RootDeviceType: %@,", rootDeviceType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RootDeviceName: %@,", rootDeviceName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VirtualizationType: %@,", virtualizationType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceLifecycle: %@,", instanceLifecycle] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotInstanceRequestId: %@,", spotInstanceRequestId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"License: %@,", license] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceDestCheck: %d,", sourceDestCheck] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Hypervisor: %@,", hypervisor] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ImageId: %@,", imageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateDnsName: %@,", privateDnsName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicDnsName: %@,", publicDnsName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StateTransitionReason: %@,", stateTransitionReason]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AmiLaunchIndex: %@,", amiLaunchIndex]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductCodes: %@,", productCodes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceType: %@,", instanceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchTime: %@,", launchTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Placement: %@,", placement]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KernelId: %@,", kernelId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RamdiskId: %@,", ramdiskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Platform: %@,", platform]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Monitoring: %@,", monitoring]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PrivateIpAddress: %@,", privateIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PublicIpAddress: %@,", publicIpAddress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StateReason: %@,", stateReason]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Architecture: %@,", architecture]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RootDeviceType: %@,", rootDeviceType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RootDeviceName: %@,", rootDeviceName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BlockDeviceMappings: %@,", blockDeviceMappings]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VirtualizationType: %@,", virtualizationType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceLifecycle: %@,", instanceLifecycle]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotInstanceRequestId: %@,", spotInstanceRequestId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"License: %@,", license]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ClientToken: %@,", clientToken]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceDestCheck: %d,", sourceDestCheck]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Hypervisor: %@,", hypervisor]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NetworkInterfaces: %@,", networkInterfaces]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IamInstanceProfile: %@,", iamInstanceProfile]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EbsOptimized: %d,", ebsOptimized]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -215,46 +215,6 @@
 }
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [imageId release];
-    [state release];
-    [privateDnsName release];
-    [publicDnsName release];
-    [stateTransitionReason release];
-    [keyName release];
-    [amiLaunchIndex release];
-    [productCodes release];
-    [instanceType release];
-    [launchTime release];
-    [placement release];
-    [kernelId release];
-    [ramdiskId release];
-    [platform release];
-    [monitoring release];
-    [subnetId release];
-    [vpcId release];
-    [privateIpAddress release];
-    [publicIpAddress release];
-    [stateReason release];
-    [architecture release];
-    [rootDeviceType release];
-    [rootDeviceName release];
-    [blockDeviceMappings release];
-    [virtualizationType release];
-    [instanceLifecycle release];
-    [spotInstanceRequestId release];
-    [license release];
-    [clientToken release];
-    [tags release];
-    [securityGroups release];
-    [hypervisor release];
-    [networkInterfaces release];
-    [iamInstanceProfile release];
-
-    [super dealloc];
-}
 
 
 @end

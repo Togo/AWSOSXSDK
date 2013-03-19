@@ -17,9 +17,9 @@
 
 @interface AmazonSTSCredentialsProvider ()
 
-@property (nonatomic, retain) AmazonSecurityTokenServiceClient *sts;
-@property (nonatomic, retain) AmazonCredentials                *stsCredentials;
-@property (nonatomic, retain) NSDate                           *expiration;
+@property (nonatomic, strong) AmazonSecurityTokenServiceClient *sts;
+@property (nonatomic, strong) AmazonCredentials                *stsCredentials;
+@property (nonatomic, strong) NSDate                           *expiration;
 
 @end
 
@@ -50,11 +50,10 @@
             request.durationSeconds = [NSNumber numberWithInteger:self.sessionLength];
             SecurityTokenServiceGetSessionTokenResponse *response = [self.sts getSessionToken:request];
             
-            [request release];
             
-            self.stsCredentials = [[[AmazonCredentials alloc] initWithAccessKey:response.credentials.accessKeyId
+            self.stsCredentials = [[AmazonCredentials alloc] initWithAccessKey:response.credentials.accessKeyId
                                                             withSecretKey:response.credentials.secretAccessKey
-                                                        withSecurityToken:response.credentials.sessionToken] autorelease];
+                                                        withSecurityToken:response.credentials.sessionToken];
             
             self.expiration = response.credentials.expiration;
         }
@@ -82,8 +81,8 @@
     self = [super init];
     if (self)
     {
-        AmazonCredentials *credentials = [[[AmazonCredentials alloc] initWithAccessKey:accessKey withSecretKey:secretKey] autorelease];
-        [self initWithCredentials:credentials];
+        AmazonCredentials *credentials = [[AmazonCredentials alloc] initWithAccessKey:accessKey withSecretKey:secretKey];
+        if (!(self = [self initWithCredentials:credentials])) return nil;
     }
     return self;
 }
@@ -94,8 +93,7 @@
     if (self)
     {
         AmazonSecurityTokenServiceClient *client = [[AmazonSecurityTokenServiceClient alloc] initWithCredentials:theCredentials];
-        [self initWithClient:client];
-        [client release];
+        if (!(self = [self initWithClient:client])) return nil;
     }
     return self;
 }
@@ -112,12 +110,5 @@
     return self;
 }
 
--(void)dealloc
-{
-    self.expiration = nil;
-    self.sts = nil;
-    self.stsCredentials = nil;
-    [super dealloc];
-}
 
 @end

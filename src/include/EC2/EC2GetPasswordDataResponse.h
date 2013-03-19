@@ -45,17 +45,17 @@
  * The ID of the instance whose Windows administrator password was
  * requested.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The time the data was last updated.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The Windows administrator password of the specified instance.
  */
-@property (nonatomic, retain) NSString *passwordData;
+@property (nonatomic, strong) NSString *passwordData;
 
 /**
  * Returns a string representation of this object; useful for testing and

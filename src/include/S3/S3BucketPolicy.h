@@ -30,7 +30,7 @@
 }
 
 /** The raw, policy JSON text, as returned by Amazon S3 */
-@property (nonatomic, retain) NSString *policyText;
+@property (nonatomic, strong) NSString *policyText;
 
 
 /** Initialize the object with a policy */

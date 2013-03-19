@@ -44,17 +44,17 @@
 /**
  * The ID of the instance whose console output was requested.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The time the output was last updated.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The console output, Base64 encoded.
  */
-@property (nonatomic, retain) NSString *output;
+@property (nonatomic, strong) NSString *output;
 
 /**
  * Returns a string representation of this object; useful for testing and

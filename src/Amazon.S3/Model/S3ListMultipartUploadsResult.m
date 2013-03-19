@@ -45,19 +45,5 @@
     return commonPrefixes;
 }
 
--(void)dealloc
-{
-    [bucket release];
-    [prefix release];
-    [uploads release];
-    [keyMarker release];
-    [delimiter release];
-    [nextKeyMarker release];
-    [commonPrefixes release];
-    [uploadIdMarker release];
-    [nextUploadIdMarker release];
-
-    [super dealloc];
-}
 
 @end

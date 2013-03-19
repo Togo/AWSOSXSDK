@@ -43,7 +43,7 @@
 /**
  * A list of the tags for the specified resources.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 
 

@@ -43,7 +43,7 @@
  * The instance owner's account ID. Only present if the product code is
  * attached to the instance.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * Returns a string representation of this object; useful for testing and

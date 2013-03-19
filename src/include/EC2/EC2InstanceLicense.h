@@ -39,7 +39,7 @@
  * The license pool from which this license was used (ex:
  * <code>'windows'</code>).
  */
-@property (nonatomic, retain) NSString *pool;
+@property (nonatomic, strong) NSString *pool;
 
 /**
  * Returns a string representation of this object; useful for testing and

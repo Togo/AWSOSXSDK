@@ -45,22 +45,22 @@
 @property (nonatomic) int partNumber;
 
 /** The uploadId of the multipart upload that this part is for. */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
-@property (nonatomic, retain) NSString *sourceBucketName;
-@property (nonatomic, retain) NSString *sourceKey;
-@property (nonatomic, retain) NSString *sourceVersionId;
+@property (nonatomic, strong) NSString *sourceBucketName;
+@property (nonatomic, strong) NSString *sourceKey;
+@property (nonatomic, strong) NSString *sourceVersionId;
 
-@property (nonatomic, retain) NSString *destinationBucketName;
-@property (nonatomic, retain) NSString *destinationKey;
+@property (nonatomic, strong) NSString *destinationBucketName;
+@property (nonatomic, strong) NSString *destinationKey;
 
-@property (nonatomic, retain) NSString *ifMatch;
-@property (nonatomic, retain) NSString *ifNoneMatch;
+@property (nonatomic, strong) NSString *ifMatch;
+@property (nonatomic, strong) NSString *ifNoneMatch;
 
-@property (nonatomic, retain) NSDate   *ifModifiedSince;
-@property (nonatomic, retain) NSDate   *ifUnmodifiedSince;
+@property (nonatomic, strong) NSDate   *ifModifiedSince;
+@property (nonatomic, strong) NSDate   *ifUnmodifiedSince;
 
-@property (nonatomic, retain) NSNumber *firstByte;
-@property (nonatomic, retain) NSNumber *lastByte;
+@property (nonatomic, strong) NSNumber *firstByte;
+@property (nonatomic, strong) NSNumber *lastByte;
 
 @end

@@ -49,12 +49,12 @@
 /**
  * A list of <a>DeleteMessageBatchResultEntry</a>s.
  */
-@property (nonatomic, retain) NSMutableArray *successful;
+@property (nonatomic, strong) NSMutableArray *successful;
 
 /**
  * A list of <a>BatchResultErrorEntry</a>s.
  */
-@property (nonatomic, retain) NSMutableArray *failed;
+@property (nonatomic, strong) NSMutableArray *failed;
 
 
 

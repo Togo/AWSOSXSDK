@@ -56,7 +56,7 @@ static BOOL isVerboseLoggingEnabled = NO;
     {
         va_list args;
         va_start(args, fmt);
-        NSLog(@"%@", [[[NSString alloc] initWithFormat:fmt arguments:args] autorelease]);
+        NSLog(@"%@", [[NSString alloc] initWithFormat:fmt arguments:args]);
         va_end(args);
     }
 }
@@ -67,7 +67,7 @@ static BOOL isVerboseLoggingEnabled = NO;
     {
         va_list args;
         va_start(args, fmt);
-        NSLog(@"%@", [[[NSString alloc] initWithFormat:fmt arguments:args] autorelease]);
+        NSLog(@"%@", [[NSString alloc] initWithFormat:fmt arguments:args]);
         va_end(args);
     }
 }

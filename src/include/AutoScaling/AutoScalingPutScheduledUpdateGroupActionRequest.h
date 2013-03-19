@@ -52,7 +52,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The name of this scaling action.
@@ -61,7 +61,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *scheduledActionName;
+@property (nonatomic, strong) NSString *scheduledActionName;
 
 /**
  * <code>Time</code> is deprecated. <p>The time for this action to start.
@@ -71,7 +71,7 @@
  * values should be identical. Otherwise,
  * <code>PutScheduledUpdateGroupAction</code> will return an error.
  */
-@property (nonatomic, retain) NSDate *time;
+@property (nonatomic, strong) NSDate *time;
 
 /**
  * The time for this action to start, as in <code>--start-time
@@ -79,12 +79,12 @@
  * <code>EndTime</code> are specified with <code>Recurrence</code>, they
  * form the boundaries of when the recurring action will start and stop.
  */
-@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic, strong) NSDate *startTime;
 
 /**
  * The time for this action to end.
  */
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 /**
  * The time when recurring future actions will start. Start time is
@@ -99,23 +99,23 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *recurrence;
+@property (nonatomic, strong) NSString *recurrence;
 
 /**
  * The minimum size for the new Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *minSize;
+@property (nonatomic, strong) NSNumber *minSize;
 
 /**
  * The maximum size for the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *maxSize;
+@property (nonatomic, strong) NSNumber *maxSize;
 
 /**
  * The number of Amazon EC2 instances that should be running in the
  * group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * Returns a string representation of this object; useful for testing and

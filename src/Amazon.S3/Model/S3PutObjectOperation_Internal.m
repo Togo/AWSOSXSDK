@@ -49,17 +49,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_s3 release];
-    [_request release];
-    [_response release];
-    
-    [_error release];
-    [_exception release];
-
-    [super dealloc];
-}
 
 #pragma mark - Overwriding NSOperation Methods
 

@@ -44,22 +44,22 @@
 /**
  * The value of the VolumeIds property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *volumeIds;
+@property (nonatomic, strong) NSMutableArray *volumeIds;
 
 /**
  * The value of the Filters property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * The value of the NextToken property for this object.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The value of the MaxResults property for this object.
  */
-@property (nonatomic, retain) NSNumber *maxResults;
+@property (nonatomic, strong) NSNumber *maxResults;
 
 /**
  * Adds a single object to volumeIds.

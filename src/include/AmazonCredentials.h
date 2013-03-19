@@ -35,13 +35,13 @@
 -(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken;
 
 /** The AWS Access Key */
-@property (nonatomic, retain) NSString *accessKey;
+@property (nonatomic, strong) NSString *accessKey;
 
 /** The AWS Secret Key */
-@property (nonatomic, retain) NSString *secretKey;
+@property (nonatomic, strong) NSString *secretKey;
 
 /** The AWS Security Token, used inconjunction with Session Based Credentials. */
-@property (nonatomic, retain) NSString *securityToken;
+@property (nonatomic, strong) NSString *securityToken;
 
 @end
 

@@ -37,21 +37,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [launchConfigurationName release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -32,12 +32,12 @@
 /**
  * Specifies the name of the filter.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * Contains one or more values for the filter.
  */
-@property (nonatomic, retain) NSMutableArray *values;
+@property (nonatomic, strong) NSMutableArray *values;
 
 
 /**

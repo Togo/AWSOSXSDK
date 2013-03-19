@@ -24,6 +24,6 @@
 }
 
 /** The S3BucketLifecycleConfiguration represented by the XML */
-@property (nonatomic, readonly) S3BucketLifecycleConfiguration *configuration;
+@property (weak, nonatomic, readonly) S3BucketLifecycleConfiguration *configuration;
 
 @end

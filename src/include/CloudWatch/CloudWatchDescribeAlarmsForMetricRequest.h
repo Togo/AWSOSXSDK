@@ -49,7 +49,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * The namespace of the metric.
@@ -58,7 +58,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[^:].*<br/>
  */
-@property (nonatomic, retain) NSString *namespace;
+@property (nonatomic, strong) NSString *namespace;
 
 /**
  * The statistic for the metric.
@@ -66,7 +66,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
  */
-@property (nonatomic, retain) NSString *statistic;
+@property (nonatomic, strong) NSString *statistic;
 
 /**
  * The list of dimensions associated with the metric.
@@ -74,7 +74,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The period in seconds over which the statistic is applied.
@@ -82,7 +82,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>60 - <br/>
  */
-@property (nonatomic, retain) NSNumber *period;
+@property (nonatomic, strong) NSNumber *period;
 
 /**
  * The unit for the metric.
@@ -90,7 +90,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * Adds a single object to dimensions.

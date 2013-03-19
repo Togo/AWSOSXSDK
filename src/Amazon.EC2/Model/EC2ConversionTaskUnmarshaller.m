@@ -25,19 +25,19 @@
 
 
     if ([elementName isEqualToString:@"importInstance"]) {
-        EC2ImportInstanceTaskDetailsUnmarshaller *unmarshaller = [[[EC2ImportInstanceTaskDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImportInstance:)] autorelease];
+        EC2ImportInstanceTaskDetailsUnmarshaller *unmarshaller = [[EC2ImportInstanceTaskDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImportInstance:)];
         unmarshaller.endElementTagName = @"importInstance";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"importVolume"]) {
-        EC2ImportVolumeTaskDetailsUnmarshaller *unmarshaller = [[[EC2ImportVolumeTaskDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImportVolume:)] autorelease];
+        EC2ImportVolumeTaskDetailsUnmarshaller *unmarshaller = [[EC2ImportVolumeTaskDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setImportVolume:)];
         unmarshaller.endElementTagName = @"importVolume";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"tagSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"tagSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2TagUnmarshaller class];
@@ -48,7 +48,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -105,10 +105,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

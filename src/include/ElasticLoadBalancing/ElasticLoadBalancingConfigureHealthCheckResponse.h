@@ -44,7 +44,7 @@
 /**
  * The updated healthcheck for the instances.
  */
-@property (nonatomic, retain) ElasticLoadBalancingHealthCheck *healthCheck;
+@property (nonatomic, strong) ElasticLoadBalancingHealthCheck *healthCheck;
 
 /**
  * Returns a string representation of this object; useful for testing and

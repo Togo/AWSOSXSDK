@@ -22,6 +22,6 @@
 }
 
 /** The Common Prefixes represented by the XML */
-@property (nonatomic, readonly) NSMutableArray *commonPrefixes;
+@property (weak, nonatomic, readonly) NSMutableArray *commonPrefixes;
 
 @end

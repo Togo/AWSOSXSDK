@@ -24,6 +24,6 @@
     S3ObjectSummary *summary;
 }
 
-@property (nonatomic, readonly) S3ObjectSummary *summary;
+@property (weak, nonatomic, readonly) S3ObjectSummary *summary;
 
 @end

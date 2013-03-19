@@ -42,7 +42,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *granularity;
+@property (nonatomic, strong) NSString *granularity;
 
 /**
  * Returns a string representation of this object; useful for testing and

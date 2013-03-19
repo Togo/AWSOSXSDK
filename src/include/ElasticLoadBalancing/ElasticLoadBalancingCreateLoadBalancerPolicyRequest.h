@@ -45,25 +45,25 @@
  * The name associated with the LoadBalancer for which the policy is
  * being created. This name must be unique within the client AWS account.
  */
-@property (nonatomic, retain) NSString *loadBalancerName;
+@property (nonatomic, strong) NSString *loadBalancerName;
 
 /**
  * The name of the LoadBalancer policy being created. The name must be
  * unique within the set of policies for this LoadBalancer.
  */
-@property (nonatomic, retain) NSString *policyName;
+@property (nonatomic, strong) NSString *policyName;
 
 /**
  * The name of the base policy type being used to create this policy. To
  * get the list of policy types, use the
  * <a>DescribeLoadBalancerPolicyTypes</a> action.
  */
-@property (nonatomic, retain) NSString *policyTypeName;
+@property (nonatomic, strong) NSString *policyTypeName;
 
 /**
  * A list of attributes associated with the policy being created.
  */
-@property (nonatomic, retain) NSMutableArray *policyAttributes;
+@property (nonatomic, strong) NSMutableArray *policyAttributes;
 
 /**
  * Adds a single object to policyAttributes.

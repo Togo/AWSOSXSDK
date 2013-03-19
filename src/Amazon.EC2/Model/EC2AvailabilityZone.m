@@ -52,27 +52,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ZoneName: %@,", zoneName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RegionName: %@,", regionName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Messages: %@,", messages] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ZoneName: %@,", zoneName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RegionName: %@,", regionName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Messages: %@,", messages]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [zoneName release];
-    [state release];
-    [regionName release];
-    [messages release];
-
-    [super dealloc];
-}
 
 
 @end

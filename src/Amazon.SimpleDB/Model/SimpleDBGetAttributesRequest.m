@@ -64,14 +64,14 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DomainName: %@,", domainName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ItemName: %@,", itemName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeNames: %@,", attributeNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DomainName: %@,", domainName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ItemName: %@,", itemName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeNames: %@,", attributeNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -82,14 +82,6 @@
 }
 
 
--(void)dealloc
-{
-    [domainName release];
-    [itemName release];
-    [attributeNames release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -42,22 +42,22 @@
  * The associated code of the event. Valid values: instance-reboot,
  * system-reboot, instance-retirement
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * A description of the event.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The earliest scheduled start time for the event.
  */
-@property (nonatomic, retain) NSDate *notBefore;
+@property (nonatomic, strong) NSDate *notBefore;
 
 /**
  * The latest scheduled end time for the event.
  */
-@property (nonatomic, retain) NSDate *notAfter;
+@property (nonatomic, strong) NSDate *notAfter;
 
 /**
  * Returns a string representation of this object; useful for testing and

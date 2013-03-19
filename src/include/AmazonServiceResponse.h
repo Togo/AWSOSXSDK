@@ -34,7 +34,7 @@
 }
 
 /** The body of the html response. */
-@property (nonatomic, readonly) NSData *body;
+@property (weak, nonatomic, readonly) NSData *body;
 
 /** The HTTP status code of the response from the service. */
 @property (nonatomic) NSInteger httpStatusCode;
@@ -47,16 +47,16 @@
 
 /** If an exception was thrown, and the SDK is configured not to throw exceptions,
  this will return the error object generated from the exception object. */
-@property (nonatomic, retain) NSError *error;
+@property (nonatomic, strong) NSError *error;
 
 /** If an exception was thrown, this will return the exception. */
 @property (nonatomic, readonly) NSException *exception;
 
 /** The request for which this is the response */
-@property (nonatomic, retain) AmazonServiceRequest *request;
+@property (nonatomic, strong) AmazonServiceRequest *request;
 
 /** The requestId assigned by the service */
-@property (nonatomic, retain) NSString       *requestId;
+@property (nonatomic, strong) NSString       *requestId;
 
 @property (nonatomic, assign) Class          unmarshallerDelegate;
 @property (nonatomic, assign) NSTimeInterval processingTime;

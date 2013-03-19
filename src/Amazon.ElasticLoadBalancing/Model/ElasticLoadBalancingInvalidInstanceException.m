@@ -45,13 +45,9 @@
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

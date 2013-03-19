@@ -41,22 +41,22 @@
 /**
  * The value of the Format property for this object.
  */
-@property (nonatomic, retain) NSString *format;
+@property (nonatomic, strong) NSString *format;
 
 /**
  * The value of the Size property for this object.
  */
-@property (nonatomic, retain) NSNumber *size;
+@property (nonatomic, strong) NSNumber *size;
 
 /**
  * The value of the ImportManifestUrl property for this object.
  */
-@property (nonatomic, retain) NSString *importManifestUrl;
+@property (nonatomic, strong) NSString *importManifestUrl;
 
 /**
  * The value of the Checksum property for this object.
  */
-@property (nonatomic, retain) NSString *checksum;
+@property (nonatomic, strong) NSString *checksum;
 
 /**
  * Returns a string representation of this object; useful for testing and

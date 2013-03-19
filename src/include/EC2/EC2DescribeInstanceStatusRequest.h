@@ -47,22 +47,22 @@
  * The list of instance IDs. If not specified, all instances are
  * described.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 /**
  * The list of filters to limit returned results.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * A string specifying the next paginated set of results to return.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The maximum number of paginated instance items per response.
  */
-@property (nonatomic, retain) NSNumber *maxResults;
+@property (nonatomic, strong) NSNumber *maxResults;
 
 /**
  * The value of the IncludeAllInstances property for this object.

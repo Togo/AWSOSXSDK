@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) ElasticLoadBalancingLBCookieStickinessPolicy *response;
+@property (weak, nonatomic, readonly) ElasticLoadBalancingLBCookieStickinessPolicy *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

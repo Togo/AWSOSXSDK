@@ -46,7 +46,7 @@
 /**
  * The value of the VolumeId property for this object.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * Boolean value
@@ -58,7 +58,7 @@
 /**
  * The value of the ProductCodes property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 
 

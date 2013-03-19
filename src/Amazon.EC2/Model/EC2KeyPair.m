@@ -41,25 +41,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyFingerprint: %@,", keyFingerprint] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeyMaterial: %@,", keyMaterial] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyName: %@,", keyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyFingerprint: %@,", keyFingerprint]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeyMaterial: %@,", keyMaterial]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [keyName release];
-    [keyFingerprint release];
-    [keyMaterial release];
-
-    [super dealloc];
-}
 
 
 @end

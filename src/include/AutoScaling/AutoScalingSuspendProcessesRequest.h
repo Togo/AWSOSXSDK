@@ -45,7 +45,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The processes that you want to suspend or resume, which can include
@@ -55,7 +55,7 @@
  * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
  * omit this parameter.
  */
-@property (nonatomic, retain) NSMutableArray *scalingProcesses;
+@property (nonatomic, strong) NSMutableArray *scalingProcesses;
 
 /**
  * Adds a single object to scalingProcesses.

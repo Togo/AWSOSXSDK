@@ -25,25 +25,25 @@
 
 
     if ([elementName isEqualToString:@"fault"]) {
-        EC2SpotInstanceStateFaultUnmarshaller *unmarshaller = [[[EC2SpotInstanceStateFaultUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFault:)] autorelease];
+        EC2SpotInstanceStateFaultUnmarshaller *unmarshaller = [[EC2SpotInstanceStateFaultUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFault:)];
         unmarshaller.endElementTagName = @"fault";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"status"]) {
-        EC2SpotInstanceStatusUnmarshaller *unmarshaller = [[[EC2SpotInstanceStatusUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setStatus:)] autorelease];
+        EC2SpotInstanceStatusUnmarshaller *unmarshaller = [[EC2SpotInstanceStatusUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setStatus:)];
         unmarshaller.endElementTagName = @"status";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"launchSpecification"]) {
-        EC2LaunchSpecificationUnmarshaller *unmarshaller = [[[EC2LaunchSpecificationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setLaunchSpecification:)] autorelease];
+        EC2LaunchSpecificationUnmarshaller *unmarshaller = [[EC2LaunchSpecificationUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setLaunchSpecification:)];
         unmarshaller.endElementTagName = @"launchSpecification";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"tagSet"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.tags withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"tagSet";
         listUnmarshaller.entryElementName   = @"item";
         listUnmarshaller.delegateClass      = [EC2TagUnmarshaller class];
@@ -54,7 +54,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -151,10 +151,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

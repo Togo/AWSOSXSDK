@@ -33,13 +33,13 @@
 /**
  * The Listener data type.
  */
-@property (nonatomic, retain) ElasticLoadBalancingListener *listener;
+@property (nonatomic, strong) ElasticLoadBalancingListener *listener;
 
 /**
  * A list of policies enabled for this listener. An empty list indicates
  * that no policies are enabled.
  */
-@property (nonatomic, retain) NSMutableArray *policyNames;
+@property (nonatomic, strong) NSMutableArray *policyNames;
 
 
 /**

@@ -82,14 +82,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [_rule release];
-    [allowedOrigins release];
-    [allowedHeaders release];
-    [allowedMethods release];
-    [exposeHeaders release];
-    [super dealloc];
-}
 
 @end

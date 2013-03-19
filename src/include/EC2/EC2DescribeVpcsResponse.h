@@ -43,7 +43,7 @@
 /**
  *
  */
-@property (nonatomic, retain) NSMutableArray *vpcs;
+@property (nonatomic, strong) NSMutableArray *vpcs;
 
 
 

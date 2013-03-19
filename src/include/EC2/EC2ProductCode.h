@@ -39,12 +39,12 @@
 /**
  * The unique ID of an AWS DevPay product code.
  */
-@property (nonatomic, retain) NSString *productCodeId;
+@property (nonatomic, strong) NSString *productCodeId;
 
 /**
  * The value of the ProductCodeType property for this object.
  */
-@property (nonatomic, retain) NSString *productCodeType;
+@property (nonatomic, strong) NSString *productCodeType;
 
 /**
  * Returns a string representation of this object; useful for testing and

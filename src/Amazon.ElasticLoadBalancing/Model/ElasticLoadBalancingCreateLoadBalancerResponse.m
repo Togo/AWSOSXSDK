@@ -36,48 +36,39 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"InvalidSubnet"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidSubnetException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"CertificateNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingCertificateNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"SubnetNotFound"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingSubnetNotFoundException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"TooManyLoadBalancers"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingTooManyLoadBalancersException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"DuplicateLoadBalancerName"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingDuplicateLoadBalancerNameException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidConfigurationRequest"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidConfigurationRequestException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InvalidSecurityGroup"]) {
-        [newException release];
         newException = [[ElasticLoadBalancingInvalidSecurityGroupException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -88,21 +79,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DNSName: %@,", dNSName] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DNSName: %@,", dNSName]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [dNSName release];
-
-    [super dealloc];
-}
 
 
 @end

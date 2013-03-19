@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"instanceExport"]) {
-        EC2InstanceExportDetailsUnmarshaller *unmarshaller = [[[EC2InstanceExportDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceExportDetails:)] autorelease];
+        EC2InstanceExportDetailsUnmarshaller *unmarshaller = [[EC2InstanceExportDetailsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setInstanceExportDetails:)];
         unmarshaller.endElementTagName = @"instanceExport";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"exportToS3"]) {
-        EC2ExportToS3TaskUnmarshaller *unmarshaller = [[[EC2ExportToS3TaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setExportToS3Task:)] autorelease];
+        EC2ExportToS3TaskUnmarshaller *unmarshaller = [[EC2ExportToS3TaskUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setExportToS3Task:)];
         unmarshaller.endElementTagName = @"exportToS3";
         [parser setDelegate:unmarshaller];
     }
@@ -39,7 +39,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -96,10 +96,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

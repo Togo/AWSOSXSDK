@@ -34,12 +34,12 @@
 /**
  * The product code to confirm.
  */
-@property (nonatomic, retain) NSString *productCode;
+@property (nonatomic, strong) NSString *productCode;
 
 /**
  * The ID of the instance to confirm.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 
 /**

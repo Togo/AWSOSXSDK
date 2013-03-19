@@ -45,12 +45,12 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmName;
+@property (nonatomic, strong) NSString *alarmName;
 
 /**
  * The time stamp for the alarm history item.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The type of alarm history item.
@@ -58,7 +58,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
  */
-@property (nonatomic, retain) NSString *historyItemType;
+@property (nonatomic, strong) NSString *historyItemType;
 
 /**
  * A human-readable summary of the alarm history.
@@ -66,7 +66,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *historySummary;
+@property (nonatomic, strong) NSString *historySummary;
 
 /**
  * Machine-readable data about the alarm in JSON format.
@@ -74,7 +74,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 4095<br/>
  */
-@property (nonatomic, retain) NSString *historyData;
+@property (nonatomic, strong) NSString *historyData;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -32,6 +32,6 @@
 +(id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new website configuration for the specified bucket. */
-@property (nonatomic, retain) BucketWebsiteConfiguration *configuration;
+@property (nonatomic, strong) BucketWebsiteConfiguration *configuration;
 
 @end

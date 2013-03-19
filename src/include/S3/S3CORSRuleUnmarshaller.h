@@ -28,6 +28,6 @@
 }
 
 /** The S3CORSRule represented by the XML */
-@property (nonatomic, readonly) S3CORSRule *rule;
+@property (weak, nonatomic, readonly) S3CORSRule *rule;
 
 @end

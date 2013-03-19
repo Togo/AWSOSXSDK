@@ -34,12 +34,12 @@
 /**
  * The unique name for the key pair.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * The public key portion of the key pair being imported.
  */
-@property (nonatomic, retain) NSString *publicKeyMaterial;
+@property (nonatomic, strong) NSString *publicKeyMaterial;
 
 
 /**

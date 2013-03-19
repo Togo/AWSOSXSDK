@@ -72,13 +72,5 @@
     return self;
 }
 
--(void)dealloc
-{
-    [prefix release];
-    [marker release];
-    [delimiter release];
-
-    [super dealloc];
-}
 
 @end

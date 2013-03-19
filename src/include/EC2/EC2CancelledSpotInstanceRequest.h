@@ -41,12 +41,12 @@
 /**
  * The value of the SpotInstanceRequestId property for this object.
  */
-@property (nonatomic, retain) NSString *spotInstanceRequestId;
+@property (nonatomic, strong) NSString *spotInstanceRequestId;
 
 /**
  * The value of the State property for this object.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Returns a string representation of this object; useful for testing and

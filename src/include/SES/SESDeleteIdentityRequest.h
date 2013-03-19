@@ -41,7 +41,7 @@
  * The identity to be removed from the list of identities for the AWS
  * Account.
  */
-@property (nonatomic, retain) NSString *identity;
+@property (nonatomic, strong) NSString *identity;
 
 /**
  * Returns a string representation of this object; useful for testing and

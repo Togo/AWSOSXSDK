@@ -61,16 +61,6 @@
     [[self metadata] setValue:value forKey:aKey];
 }
 
--(void)dealloc
-{
-    [cannedACL release];
-    [storageClass release];
-    [metadata release];
-    [serverSideEncryption release];
-    [fullACL release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -53,7 +53,7 @@
 /**
  * The unique ID of this Reserved Instances offering.
  */
-@property (nonatomic, retain) NSString *reservedInstancesOfferingId;
+@property (nonatomic, strong) NSString *reservedInstancesOfferingId;
 
 /**
  * The instance type on which the Reserved Instances can be used.
@@ -61,53 +61,53 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
  */
-@property (nonatomic, retain) NSString *instanceType;
+@property (nonatomic, strong) NSString *instanceType;
 
 /**
  * The Availability Zone in which the Reserved Instances can be used.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The duration of the Reserved Instance, in seconds.
  */
-@property (nonatomic, retain) NSNumber *duration;
+@property (nonatomic, strong) NSNumber *duration;
 
 /**
  * The usage price of the Reserved Instance, per hour.
  */
-@property (nonatomic, retain) NSNumber *usagePrice;
+@property (nonatomic, strong) NSNumber *usagePrice;
 
 /**
  * The purchase price of the Reserved Instance.
  */
-@property (nonatomic, retain) NSNumber *fixedPrice;
+@property (nonatomic, strong) NSNumber *fixedPrice;
 
 /**
  * The Reserved Instances description (ex: Windows or Unix/Linux).
  */
-@property (nonatomic, retain) NSString *productDescription;
+@property (nonatomic, strong) NSString *productDescription;
 
 /**
  * The tenancy of the reserved instance (ex: default or dedicated).
  */
-@property (nonatomic, retain) NSString *instanceTenancy;
+@property (nonatomic, strong) NSString *instanceTenancy;
 
 /**
  * The currency of the reserved instance. Specified using ISO 4217
  * standard (e.g., USD, JPY).
  */
-@property (nonatomic, retain) NSString *currencyCode;
+@property (nonatomic, strong) NSString *currencyCode;
 
 /**
  * The Reserved Instance offering type.
  */
-@property (nonatomic, retain) NSString *offeringType;
+@property (nonatomic, strong) NSString *offeringType;
 
 /**
  * The recurring charge tag assigned to the resource.
  */
-@property (nonatomic, retain) NSMutableArray *recurringCharges;
+@property (nonatomic, strong) NSMutableArray *recurringCharges;
 
 /**
  * The value of the Marketplace property for this object.
@@ -119,7 +119,7 @@
 /**
  * The value of the PricingDetails property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *pricingDetails;
+@property (nonatomic, strong) NSMutableArray *pricingDetails;
 
 /**
  * Adds a single object to recurringCharges.

@@ -119,49 +119,29 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DNSName: %@,", dNSName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CanonicalHostedZoneName: %@,", canonicalHostedZoneName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CanonicalHostedZoneNameID: %@,", canonicalHostedZoneNameID] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ListenerDescriptions: %@,", listenerDescriptions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Policies: %@,", policies] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BackendServerDescriptions: %@,", backendServerDescriptions] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VPCId: %@,", vPCId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Instances: %@,", instances] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthCheck: %@,", healthCheck] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SourceSecurityGroup: %@,", sourceSecurityGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerName: %@,", loadBalancerName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DNSName: %@,", dNSName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CanonicalHostedZoneName: %@,", canonicalHostedZoneName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CanonicalHostedZoneNameID: %@,", canonicalHostedZoneNameID]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ListenerDescriptions: %@,", listenerDescriptions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Policies: %@,", policies]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BackendServerDescriptions: %@,", backendServerDescriptions]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Subnets: %@,", subnets]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VPCId: %@,", vPCId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Instances: %@,", instances]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthCheck: %@,", healthCheck]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SourceSecurityGroup: %@,", sourceSecurityGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SecurityGroups: %@,", securityGroups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [loadBalancerName release];
-    [dNSName release];
-    [canonicalHostedZoneName release];
-    [canonicalHostedZoneNameID release];
-    [listenerDescriptions release];
-    [policies release];
-    [backendServerDescriptions release];
-    [availabilityZones release];
-    [subnets release];
-    [vPCId release];
-    [instances release];
-    [healthCheck release];
-    [sourceSecurityGroup release];
-    [securityGroups release];
-    [createdTime release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -32,7 +32,7 @@
 }
 
 
-@property (nonatomic, readonly) SQSSendMessageBatchResponse *response;
+@property (weak, nonatomic, readonly) SQSSendMessageBatchResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

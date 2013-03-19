@@ -41,25 +41,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"IdentityType: %@,", identityType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxItems: %@,", maxItems] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"IdentityType: %@,", identityType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxItems: %@,", maxItems]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [identityType release];
-    [nextToken release];
-    [maxItems release];
-
-    [super dealloc];
-}
 
 
 @end

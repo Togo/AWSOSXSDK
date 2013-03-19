@@ -34,12 +34,12 @@
 /**
  * The name for the queue to be created.
  */
-@property (nonatomic, retain) NSString *queueName;
+@property (nonatomic, strong) NSString *queueName;
 
 /**
  * A map of attributes with their corresponding values.
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 
 /**

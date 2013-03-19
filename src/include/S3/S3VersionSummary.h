@@ -30,9 +30,9 @@
 
 
 /** The version ID uniquely identifying this version of an object */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
-@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, strong) NSString *displayName;
 
 /** True if this is the latest version of the associated object */
 @property (nonatomic) bool isLatest;

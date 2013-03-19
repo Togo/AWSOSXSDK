@@ -38,9 +38,5 @@
     return self.urlRequest;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

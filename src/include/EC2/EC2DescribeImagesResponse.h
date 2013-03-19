@@ -43,7 +43,7 @@
 /**
  * The list of the described AMIs.
  */
-@property (nonatomic, retain) NSMutableArray *images;
+@property (nonatomic, strong) NSMutableArray *images;
 
 
 

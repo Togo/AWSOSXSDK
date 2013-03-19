@@ -21,12 +21,6 @@
 @synthesize requestClass;
 @synthesize credentials;
 
--(void)dealloc
-{
-    [endpointHost release];
-
-    [super dealloc];
-}
 
 @end
 

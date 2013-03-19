@@ -43,7 +43,7 @@
 /**
  * The optional list of Elastic IP addresses to describe.
  */
-@property (nonatomic, retain) NSMutableArray *publicIps;
+@property (nonatomic, strong) NSMutableArray *publicIps;
 
 /**
  * A list of filters used to match properties for Addresses. For a
@@ -52,12 +52,12 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * The value of the AllocationIds property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *allocationIds;
+@property (nonatomic, strong) NSMutableArray *allocationIds;
 
 /**
  * Adds a single object to publicIps.

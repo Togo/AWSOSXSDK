@@ -43,14 +43,14 @@
  * Service (SNS) topic where Amazon SES will publish bounce
  * notifications.
  */
-@property (nonatomic, retain) NSString *bounceTopic;
+@property (nonatomic, strong) NSString *bounceTopic;
 
 /**
  * The Amazon Resource Name (ARN) of the Amazon Simple Notification
  * Service (SNS) topic where Amazon SES will publish complaint
  * notifications.
  */
-@property (nonatomic, retain) NSString *complaintTopic;
+@property (nonatomic, strong) NSString *complaintTopic;
 
 /**
  * Describes whether Amazon SES will forward feedback as email.

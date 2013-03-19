@@ -43,7 +43,7 @@
 /**
  * The value of the ReservedInstancesListings property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *reservedInstancesListings;
+@property (nonatomic, strong) NSMutableArray *reservedInstancesListings;
 
 
 

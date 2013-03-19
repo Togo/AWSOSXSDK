@@ -42,7 +42,7 @@
  * different sets of keys in a way similar to how a file system uses
  * folders.
  */
-@property (nonatomic, retain) NSString *prefix;
+@property (nonatomic, strong) NSString *prefix;
 
 /**
  * Optional parameter indicating where in the sorted list of all versions in
@@ -53,7 +53,7 @@
  * When a keyMarker is used with a versionIdMarker, results begin
  * immediately after the version with the specified key and version ID.
  */
-@property (nonatomic, retain) NSString *keyMarker;
+@property (nonatomic, strong) NSString *keyMarker;
 
 /**
  * Optional parameter indicating where in the sorted list of all versions in
@@ -63,7 +63,7 @@
  * when specifying a versionIdMarker. Results begin immediately after the
  * version with the specified key and version ID.
  */
-@property (nonatomic, retain) NSString *versionIdMarker;
+@property (nonatomic, strong) NSString *versionIdMarker;
 
 /**
  * Optional parameter that causes keys that contain the same string between
@@ -73,7 +73,7 @@
  * delimiter is "/", which simulates a hierarchical organization similar to
  * a file system directory structure.
  */
-@property (nonatomic, retain) NSString *delimiter;
+@property (nonatomic, strong) NSString *delimiter;
 
 /**
  * Optional parameter indicating the maximum number of results to include in

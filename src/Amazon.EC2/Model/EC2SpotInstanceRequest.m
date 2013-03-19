@@ -76,51 +76,30 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotInstanceRequestId: %@,", spotInstanceRequestId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Type: %@,", type] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Fault: %@,", fault] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ValidFrom: %@,", validFrom] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ValidUntil: %@,", validUntil] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchGroup: %@,", launchGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZoneGroup: %@,", availabilityZoneGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchSpecification: %@,", launchSpecification] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreateTime: %@,", createTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchedAvailabilityZone: %@,", launchedAvailabilityZone] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotInstanceRequestId: %@,", spotInstanceRequestId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SpotPrice: %@,", spotPrice]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Type: %@,", type]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Fault: %@,", fault]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ValidFrom: %@,", validFrom]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ValidUntil: %@,", validUntil]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchGroup: %@,", launchGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZoneGroup: %@,", availabilityZoneGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchSpecification: %@,", launchSpecification]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreateTime: %@,", createTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductDescription: %@,", productDescription]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchedAvailabilityZone: %@,", launchedAvailabilityZone]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [spotInstanceRequestId release];
-    [spotPrice release];
-    [type release];
-    [state release];
-    [fault release];
-    [status release];
-    [validFrom release];
-    [validUntil release];
-    [launchGroup release];
-    [availabilityZoneGroup release];
-    [launchSpecification release];
-    [instanceId release];
-    [createTime release];
-    [productDescription release];
-    [tags release];
-    [launchedAvailabilityZone release];
-
-    [super dealloc];
-}
 
 
 @end

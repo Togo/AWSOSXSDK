@@ -19,9 +19,5 @@
 
 @implementation DynamoDBResponseUnmarshaller
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

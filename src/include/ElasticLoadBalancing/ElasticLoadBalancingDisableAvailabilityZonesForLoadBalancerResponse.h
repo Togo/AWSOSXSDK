@@ -44,7 +44,7 @@
 /**
  * A list of updated Availability Zones for the LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 
 

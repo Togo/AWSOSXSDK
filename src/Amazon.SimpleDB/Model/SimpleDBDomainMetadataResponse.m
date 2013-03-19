@@ -48,23 +48,19 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"NoSuchDomain"]) {
-        [newException release];
         newException = [[SimpleDBNoSuchDomainException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"MissingParameter"]) {
-        [newException release];
         newException = [[SimpleDBMissingParameterException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -75,33 +71,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ItemCount: %@,", itemCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ItemNamesSizeBytes: %@,", itemNamesSizeBytes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeNameCount: %@,", attributeNameCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeNamesSizeBytes: %@,", attributeNamesSizeBytes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeValueCount: %@,", attributeValueCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributeValuesSizeBytes: %@,", attributeValuesSizeBytes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ItemCount: %@,", itemCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ItemNamesSizeBytes: %@,", itemNamesSizeBytes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeNameCount: %@,", attributeNameCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeNamesSizeBytes: %@,", attributeNamesSizeBytes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeValueCount: %@,", attributeValueCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributeValuesSizeBytes: %@,", attributeValuesSizeBytes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Timestamp: %@,", timestamp]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [itemCount release];
-    [itemNamesSizeBytes release];
-    [attributeNameCount release];
-    [attributeNamesSizeBytes release];
-    [attributeValueCount release];
-    [attributeValuesSizeBytes release];
-    [timestamp release];
-
-    [super dealloc];
-}
 
 
 @end

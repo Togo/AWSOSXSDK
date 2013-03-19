@@ -42,7 +42,7 @@
 /**
  * The identity for which DKIM signing should be enabled or disabled.
  */
-@property (nonatomic, retain) NSString *identity;
+@property (nonatomic, strong) NSString *identity;
 
 /**
  * Sets whether DKIM signing is enabled for an identity. Set to

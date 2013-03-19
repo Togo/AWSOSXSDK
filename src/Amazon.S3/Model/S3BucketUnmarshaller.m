@@ -61,11 +61,6 @@ qualifiedName:(NSString *)qName
     return bucket;
 }
 
--(void)dealloc
-{
-    [bucket release];
-    [super dealloc];
-}
 
 @end
 

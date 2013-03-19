@@ -29,12 +29,12 @@
 /**
  * Returns the key that was successfully deleted.
  */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /**
  * Returns the version deleted, or null for unversioned objects.
  */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /**
  * Returns whether the object deleted was a delete marker.
@@ -45,6 +45,6 @@
  * Returns the versionId for the delete marker that was created when
  * doing a non-versioned delete in a versioned bucket.
  */
-@property (nonatomic, retain) NSString *deleteMarkerVersionId;
+@property (nonatomic, strong) NSString *deleteMarkerVersionId;
 
 @end

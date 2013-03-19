@@ -41,12 +41,12 @@
 /**
  * The value of the Add property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *add;
+@property (nonatomic, strong) NSMutableArray *add;
 
 /**
  * The value of the Remove property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *remove;
+@property (nonatomic, strong) NSMutableArray *remove;
 
 /**
  * Adds a single object to add.

@@ -34,12 +34,12 @@
 /**
  * A list of names associated with the LoadBalancers at creation time.
  */
-@property (nonatomic, retain) NSMutableArray *loadBalancerNames;
+@property (nonatomic, strong) NSMutableArray *loadBalancerNames;
 
 /**
  * An optional parameter reserved for future use.
  */
-@property (nonatomic, retain) NSString *marker;
+@property (nonatomic, strong) NSString *marker;
 
 
 /**

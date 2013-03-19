@@ -33,7 +33,7 @@
 /**
  * The ID of the EBS volume to delete.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 
 /**

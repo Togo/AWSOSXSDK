@@ -43,13 +43,13 @@
 /**
  * The specified unique key pair name.
  */
-@property (nonatomic, retain) NSString *keyName;
+@property (nonatomic, strong) NSString *keyName;
 
 /**
  * The MD5 public key fingerprint as specified in section 4 of <a
  * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
  */
-@property (nonatomic, retain) NSString *keyFingerprint;
+@property (nonatomic, strong) NSString *keyFingerprint;
 
 /**
  * Returns a string representation of this object; useful for testing and

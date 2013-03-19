@@ -37,15 +37,7 @@
 
     self.listBucketsResult = unmarshaller.listBucketsResult;
 
-    [unmarshaller release];
-    [parser release];
 }
 
--(void)dealloc
-{
-    [listBucketsResult release];
-
-    [super dealloc];
-}
 
 @end

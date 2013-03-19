@@ -21,7 +21,7 @@
     AutoScalingExecutePolicyResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingExecutePolicyResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingExecutePolicyResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

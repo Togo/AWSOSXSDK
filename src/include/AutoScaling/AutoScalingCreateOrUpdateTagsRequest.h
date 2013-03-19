@@ -56,7 +56,7 @@
  * tag of the same name already exists, the operation overwrites the
  * previous tag definition, but you will not get an error message.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to tags.

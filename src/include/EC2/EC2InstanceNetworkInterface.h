@@ -55,42 +55,42 @@
 /**
  * The value of the NetworkInterfaceId property for this object.
  */
-@property (nonatomic, retain) NSString *networkInterfaceId;
+@property (nonatomic, strong) NSString *networkInterfaceId;
 
 /**
  * The value of the SubnetId property for this object.
  */
-@property (nonatomic, retain) NSString *subnetId;
+@property (nonatomic, strong) NSString *subnetId;
 
 /**
  * The value of the VpcId property for this object.
  */
-@property (nonatomic, retain) NSString *vpcId;
+@property (nonatomic, strong) NSString *vpcId;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * The value of the OwnerId property for this object.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The value of the PrivateIpAddress property for this object.
  */
-@property (nonatomic, retain) NSString *privateIpAddress;
+@property (nonatomic, strong) NSString *privateIpAddress;
 
 /**
  * The value of the PrivateDnsName property for this object.
  */
-@property (nonatomic, retain) NSString *privateDnsName;
+@property (nonatomic, strong) NSString *privateDnsName;
 
 /**
  * The value of the SourceDestCheck property for this object.
@@ -102,22 +102,22 @@
 /**
  * The value of the Groups property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, strong) NSMutableArray *groups;
 
 /**
  * The value of the Attachment property for this object.
  */
-@property (nonatomic, retain) EC2InstanceNetworkInterfaceAttachment *attachment;
+@property (nonatomic, strong) EC2InstanceNetworkInterfaceAttachment *attachment;
 
 /**
  * The value of the Association property for this object.
  */
-@property (nonatomic, retain) EC2InstanceNetworkInterfaceAssociation *association;
+@property (nonatomic, strong) EC2InstanceNetworkInterfaceAssociation *association;
 
 /**
  * The value of the PrivateIpAddresses property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *privateIpAddresses;
+@property (nonatomic, strong) NSMutableArray *privateIpAddresses;
 
 /**
  * Adds a single object to groups.

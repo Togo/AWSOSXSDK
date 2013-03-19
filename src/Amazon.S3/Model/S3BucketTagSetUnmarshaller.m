@@ -28,7 +28,7 @@
     
     
     if ([elementName isEqualToString:@"Tag"]) {
-        AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.tagset.tags withSetter:@selector(addEntriesFromDictionary:)] autorelease];
+        AmazonDictionaryUnmarshaller *dictionaryUnmarshaller = [[AmazonDictionaryUnmarshaller alloc] initWithCaller:self withParentObject:self.tagset.tags withSetter:@selector(addEntriesFromDictionary:)];
         dictionaryUnmarshaller.keyXpathElement      = @"Key";
         dictionaryUnmarshaller.valueXpathElement    = @"Value";
         dictionaryUnmarshaller.dictionaryEndElement = @"Tag";
@@ -61,7 +61,7 @@
     if (tagset == nil)
     {
         tagset = [[S3BucketTagSet alloc] init];
-        tagset.tags = [[[NSMutableDictionary alloc] init] autorelease];
+        tagset.tags = [[NSMutableDictionary alloc] init];
     }
     
     return tagset;
@@ -69,11 +69,5 @@
 
 #pragma mark -
 
--(void)dealloc
-{
-    [tagset release];
-    
-    [super dealloc];
-}
 
 @end

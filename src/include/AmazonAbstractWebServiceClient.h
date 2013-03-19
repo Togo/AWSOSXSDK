@@ -33,10 +33,10 @@
 {
 }
 
-@property (atomic, retain) id<AmazonCredentialsProvider> provider;
+@property (atomic, strong) id<AmazonCredentialsProvider> provider;
 
 /** The service endpoint to which requests should be sent. */
-@property (nonatomic, retain) NSString *endpoint;
+@property (nonatomic, strong) NSString *endpoint;
 
 /** The maximum number of retry attempts for failed retryable requests
  * (ex: 5xx error responses from a service).
@@ -68,7 +68,7 @@
 @property (nonatomic, assign) NSTimeInterval delay;
 
 /** The HTTP user agent header to send with all requests. */
-@property (nonatomic, retain) NSString *userAgent;
+@property (nonatomic, strong) NSString *userAgent;
 
 /** Inits the client with the given credentials. */
 -(id)initWithCredentials:(AmazonCredentials *)credentials;

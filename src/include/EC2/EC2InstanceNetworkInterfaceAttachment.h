@@ -43,22 +43,22 @@
 /**
  * The value of the AttachmentId property for this object.
  */
-@property (nonatomic, retain) NSString *attachmentId;
+@property (nonatomic, strong) NSString *attachmentId;
 
 /**
  * The value of the DeviceIndex property for this object.
  */
-@property (nonatomic, retain) NSNumber *deviceIndex;
+@property (nonatomic, strong) NSNumber *deviceIndex;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The value of the AttachTime property for this object.
  */
-@property (nonatomic, retain) NSDate *attachTime;
+@property (nonatomic, strong) NSDate *attachTime;
 
 /**
  * The value of the DeleteOnTermination property for this object.

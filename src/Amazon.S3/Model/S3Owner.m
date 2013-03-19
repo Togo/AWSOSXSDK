@@ -32,15 +32,8 @@
 
 +(id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName
 {
-    return [[[S3Owner alloc] initWithID:theID withDisplayName:theDisplayName] autorelease];
+    return [[S3Owner alloc] initWithID:theID withDisplayName:theDisplayName];
 }
 
--(void)dealloc
-{
-    [ID release];
-    [displayName release];
-
-    [super dealloc];
-}
 
 @end

@@ -26,9 +26,9 @@
 }
 
 /** The list of DeletedObjects represented by the XML */
-@property (nonatomic, retain) NSArray *deletedObjects;
+@property (nonatomic, strong) NSArray *deletedObjects;
 
 /** The list of DeleteErrors represented by the XML */
-@property (nonatomic, retain) NSArray *deleteErrors;
+@property (nonatomic, strong) NSArray *deleteErrors;
 
 @end

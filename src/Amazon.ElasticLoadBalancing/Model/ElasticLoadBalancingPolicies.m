@@ -68,25 +68,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AppCookieStickinessPolicies: %@,", appCookieStickinessPolicies] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LBCookieStickinessPolicies: %@,", lBCookieStickinessPolicies] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OtherPolicies: %@,", otherPolicies] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AppCookieStickinessPolicies: %@,", appCookieStickinessPolicies]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LBCookieStickinessPolicies: %@,", lBCookieStickinessPolicies]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OtherPolicies: %@,", otherPolicies]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [appCookieStickinessPolicies release];
-    [lBCookieStickinessPolicies release];
-    [otherPolicies release];
-
-    [super dealloc];
-}
 
 
 @end

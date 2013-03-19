@@ -45,12 +45,12 @@
 /**
  * A list of information for the specified alarms.
  */
-@property (nonatomic, retain) NSMutableArray *metricAlarms;
+@property (nonatomic, strong) NSMutableArray *metricAlarms;
 
 /**
  * A string that marks the start of the next batch of returned results.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

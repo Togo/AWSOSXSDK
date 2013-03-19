@@ -32,7 +32,7 @@
 }
 
 
-@property (nonatomic, readonly) AutoScalingLaunchConfiguration *response;
+@property (weak, nonatomic, readonly) AutoScalingLaunchConfiguration *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

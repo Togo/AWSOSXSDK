@@ -40,7 +40,7 @@
 /**
  * The value of the VolumeId property for this object.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * Returns a string representation of this object; useful for testing and

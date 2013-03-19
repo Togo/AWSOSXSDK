@@ -45,7 +45,7 @@
  * published in order for DKIM signing to succeed. The tokens are CNAME
  * DNS records pointing to DKIM public keys hosted by Amazon SES.
  */
-@property (nonatomic, retain) NSMutableArray *dkimTokens;
+@property (nonatomic, strong) NSMutableArray *dkimTokens;
 
 
 

@@ -73,39 +73,24 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %@,", size] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreateTime: %@,", createTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attachments: %@,", attachments] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeType: %@,", volumeType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Iops: %@,", iops] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Size: %@,", size]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreateTime: %@,", createTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attachments: %@,", attachments]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeType: %@,", volumeType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Iops: %@,", iops]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [volumeId release];
-    [size release];
-    [snapshotId release];
-    [availabilityZone release];
-    [state release];
-    [createTime release];
-    [attachments release];
-    [tags release];
-    [volumeType release];
-    [iops release];
-
-    [super dealloc];
-}
 
 
 @end

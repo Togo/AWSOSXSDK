@@ -48,13 +48,13 @@
 /**
  * Credentials for the service API authentication.
  */
-@property (nonatomic, retain) SecurityTokenServiceCredentials *credentials;
+@property (nonatomic, strong) SecurityTokenServiceCredentials *credentials;
 
 /**
  * Identifiers for the federated user associated with the credentials.
  * You can use the federated user's ARN in your resource policies.
  */
-@property (nonatomic, retain) SecurityTokenServiceFederatedUser *federatedUser;
+@property (nonatomic, strong) SecurityTokenServiceFederatedUser *federatedUser;
 
 /**
  * A percentage value indicating the size of the policy in packed form.
@@ -64,7 +64,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>0 - <br/>
  */
-@property (nonatomic, retain) NSNumber *packedPolicySize;
+@property (nonatomic, strong) NSNumber *packedPolicySize;
 
 /**
  * Returns a string representation of this object; useful for testing and

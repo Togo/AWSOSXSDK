@@ -41,7 +41,7 @@
 /**
  * The value of the VolumeId property for this object.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * The value of the Attribute property for this object.
@@ -49,7 +49,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>autoEnableIO, productCodes
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 /**
  * Returns a string representation of this object; useful for testing and

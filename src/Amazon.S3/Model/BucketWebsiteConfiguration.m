@@ -38,12 +38,12 @@
 
 +(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix withErrorDocument:(NSString *)theErrorDocument
 {
-    return [[[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix withErrorDocument:theErrorDocument] autorelease];
+    return [[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix withErrorDocument:theErrorDocument];
 }
 
 +(id)configurationWithIndexDocumentSuffix:(NSString *)theIndexDocumentSuffix
 {
-    return [[[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix] autorelease];
+    return [[BucketWebsiteConfiguration alloc] initWithIndexDocumentSuffix:theIndexDocumentSuffix];
 }
 
 -(NSString *)toXml

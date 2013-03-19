@@ -34,13 +34,13 @@
 /**
  * The name of the attribute involved in the condition.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  * The value of an attribute. This value can only be specified when the
  * <code>Exists</code> parameter is equal to <code>true</code>.
  */
-@property (nonatomic, retain) NSString *value;
+@property (nonatomic, strong) NSString *value;
 
 /**
  * A value specifying whether or not the specified attribute must exist

@@ -47,7 +47,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *alarmName;
+@property (nonatomic, strong) NSString *alarmName;
 
 /**
  * The value of the state.
@@ -55,7 +55,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
  */
-@property (nonatomic, retain) NSString *stateValue;
+@property (nonatomic, strong) NSString *stateValue;
 
 /**
  * The reason that this alarm is set to this specific state (in
@@ -64,7 +64,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 1023<br/>
  */
-@property (nonatomic, retain) NSString *stateReason;
+@property (nonatomic, strong) NSString *stateReason;
 
 /**
  * The reason that this alarm is set to this specific state (in
@@ -73,7 +73,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 4000<br/>
  */
-@property (nonatomic, retain) NSString *stateReasonData;
+@property (nonatomic, strong) NSString *stateReasonData;
 
 /**
  * Returns a string representation of this object; useful for testing and

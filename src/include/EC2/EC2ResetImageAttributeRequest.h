@@ -34,13 +34,13 @@
 /**
  * The ID of the AMI whose attribute is being reset.
  */
-@property (nonatomic, retain) NSString *imageId;
+@property (nonatomic, strong) NSString *imageId;
 
 /**
  * The name of the attribute being reset. <p> Available attribute names:
  * <code>launchPermission</code>
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 
 /**

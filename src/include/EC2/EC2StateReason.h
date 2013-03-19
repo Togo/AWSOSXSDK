@@ -39,12 +39,12 @@
 /**
  * Reason code for the state change.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * Descriptive message for the state change.
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /**
  * Returns a string representation of this object; useful for testing and

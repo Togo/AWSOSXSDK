@@ -41,7 +41,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * Provisioned throughput reserves the required read and write resources
@@ -54,7 +54,7 @@
  * Eventually-consistent reads consume half the resources of strictly
  * consistent reads.
  */
-@property (nonatomic, retain) DynamoDBProvisionedThroughput *provisionedThroughput;
+@property (nonatomic, strong) DynamoDBProvisionedThroughput *provisionedThroughput;
 
 
 /**

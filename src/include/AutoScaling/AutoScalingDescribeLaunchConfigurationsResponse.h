@@ -45,7 +45,7 @@
 /**
  * A list of launch configurations.
  */
-@property (nonatomic, retain) NSMutableArray *launchConfigurations;
+@property (nonatomic, strong) NSMutableArray *launchConfigurations;
 
 /**
  * A string that marks the start of the next batch of returned results.
@@ -53,7 +53,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

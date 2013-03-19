@@ -26,6 +26,6 @@
 }
 
 /** The CORS configuration represented by the XML */
-@property (nonatomic, retain) S3BucketCrossOriginConfiguration *configuration;
+@property (nonatomic, strong) S3BucketCrossOriginConfiguration *configuration;
 
 @end

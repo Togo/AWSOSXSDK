@@ -43,7 +43,7 @@
  * The identity for which the topic will be set. Examples:
  * <code>user@example.com</code>, <code>example.com</code>.
  */
-@property (nonatomic, retain) NSString *identity;
+@property (nonatomic, strong) NSString *identity;
 
 /**
  * The type of feedback notifications that will be published to the
@@ -52,7 +52,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Bounce, Complaint
  */
-@property (nonatomic, retain) NSString *notificationType;
+@property (nonatomic, strong) NSString *notificationType;
 
 /**
  * The Amazon Resource Name (ARN) of the Amazon Simple Notification
@@ -60,7 +60,7 @@
  * request or a null value is passed, the topic is cleared and publishing
  * is disabled.
  */
-@property (nonatomic, retain) NSString *snsTopic;
+@property (nonatomic, strong) NSString *snsTopic;
 
 /**
  * Returns a string representation of this object; useful for testing and

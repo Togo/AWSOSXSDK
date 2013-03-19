@@ -61,7 +61,7 @@
 -(AmazonServiceException *)exception;
 {
     if (exception == nil) {
-        exception = [[AmazonServiceException exceptionWithMessage:@""] retain];
+        exception = [AmazonServiceException exceptionWithMessage:@""];
     }
 
     return exception;
@@ -72,10 +72,5 @@
     return @"";
 }
 
--(void)dealloc
-{
-    [exception release];
-    [super dealloc];
-}
 
 @end

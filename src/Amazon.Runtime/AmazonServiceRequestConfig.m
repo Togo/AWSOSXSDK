@@ -36,11 +36,6 @@
 -(void)dealloc
 {
     delegate = nil;
-    [credentials release];
-    [requestEndpoint release];
-    [urlConnection release];
-    [requestTag release];
-    [super dealloc];
 }
 
 @end

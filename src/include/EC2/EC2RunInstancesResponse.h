@@ -43,7 +43,7 @@
 /**
  * The newly created reservation, containing the new instances.
  */
-@property (nonatomic, retain) EC2Reservation *reservation;
+@property (nonatomic, strong) EC2Reservation *reservation;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -35,12 +35,12 @@
 /**
  * The name of the domain in which the attributes are being deleted.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 /**
  * A list of items on which to perform the operation.
  */
-@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 
 /**

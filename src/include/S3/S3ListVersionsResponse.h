@@ -24,7 +24,7 @@
     S3ListVersionsResult *listVersionsResult;
 }
 
-@property (nonatomic, retain) S3ListVersionsResult *listVersionsResult;
+@property (nonatomic, strong) S3ListVersionsResult *listVersionsResult;
 
 
 @end

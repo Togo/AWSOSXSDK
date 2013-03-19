@@ -49,35 +49,35 @@
 /**
  * Specifies the ID of the subnet.
  */
-@property (nonatomic, retain) NSString *subnetId;
+@property (nonatomic, strong) NSString *subnetId;
 
 /**
  * Describes the current state of the subnet. The state of the subnet may
  * be either <code>pending</code> or <code>available</code>.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Contains the ID of the VPC the subnet is in.
  */
-@property (nonatomic, retain) NSString *vpcId;
+@property (nonatomic, strong) NSString *vpcId;
 
 /**
  * Specifies the CIDR block assigned to the subnet.
  */
-@property (nonatomic, retain) NSString *cidrBlock;
+@property (nonatomic, strong) NSString *cidrBlock;
 
 /**
  * Specifies the number of unused IP addresses in the subnet. <note> <p>
  * The IP addresses for any stopped instances are considered unavailable.
  * </note>
  */
-@property (nonatomic, retain) NSNumber *availableIpAddressCount;
+@property (nonatomic, strong) NSNumber *availableIpAddressCount;
 
 /**
  * Specifies the Availability Zone the subnet is in.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The value of the DefaultForAz property for this object.
@@ -96,7 +96,7 @@
 /**
  * A list of tags for the Subnet.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to tags.

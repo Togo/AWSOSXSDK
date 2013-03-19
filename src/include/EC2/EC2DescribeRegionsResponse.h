@@ -43,7 +43,7 @@
 /**
  * The list of described Amazon EC2 regions.
  */
-@property (nonatomic, retain) NSMutableArray *regions;
+@property (nonatomic, strong) NSMutableArray *regions;
 
 
 

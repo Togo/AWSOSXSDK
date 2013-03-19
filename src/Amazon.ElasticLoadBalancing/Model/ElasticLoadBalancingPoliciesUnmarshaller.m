@@ -25,7 +25,7 @@
 
 
     if ([elementName isEqualToString:@"OtherPolicies"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.otherPolicies withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.otherPolicies withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"OtherPolicies";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [AmazonValueUnmarshaller class];
@@ -34,7 +34,7 @@
     }
 
     if ([elementName isEqualToString:@"AppCookieStickinessPolicies"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.appCookieStickinessPolicies withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.appCookieStickinessPolicies withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"AppCookieStickinessPolicies";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [ElasticLoadBalancingAppCookieStickinessPolicyUnmarshaller class];
@@ -43,7 +43,7 @@
     }
 
     if ([elementName isEqualToString:@"LBCookieStickinessPolicies"]) {
-        AmazonListUnmarshaller *listUnmarshaller = [[[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.lBCookieStickinessPolicies withSetter:@selector(addObjectsFromArray:)] autorelease];
+        AmazonListUnmarshaller *listUnmarshaller = [[AmazonListUnmarshaller alloc] initWithCaller:self withParentObject:self.response.lBCookieStickinessPolicies withSetter:@selector(addObjectsFromArray:)];
         listUnmarshaller.endListElementName = @"LBCookieStickinessPolicies";
         listUnmarshaller.entryElementName   = @"member";
         listUnmarshaller.delegateClass      = [ElasticLoadBalancingLBCookieStickinessPolicyUnmarshaller class];
@@ -54,7 +54,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -85,10 +85,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

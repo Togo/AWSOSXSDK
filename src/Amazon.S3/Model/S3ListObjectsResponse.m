@@ -28,7 +28,6 @@
     NSData   *xmlData   = [[xmlString stringByReplacingOccurrencesOfString:@"&#x13;" withString:@""]
                            dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
 
-    [xmlString release];
 
     NSXMLParser                    *parser       = [[NSXMLParser alloc] initWithData:xmlData];
     S3ListBucketResultUnmarshaller *unmarshaller = [[S3ListBucketResultUnmarshaller alloc] init];
@@ -41,8 +40,6 @@
 
     self.listObjectsResult = unmarshaller.objectListing;
 
-    [parser release];
-    [unmarshaller release];
 
     if (errDescription != nil) {
         if(exception == nil) {
@@ -51,10 +48,5 @@
     }
 }
 
--(void)dealloc
-{
-    [listObjectsResult release];
-    [super dealloc];
-}
 
 @end

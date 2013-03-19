@@ -24,6 +24,6 @@
     S3ListPartsResult *listPartsResult;
 }
 
-@property (nonatomic, readonly) S3ListPartsResult *listPartsResult;
+@property (weak, nonatomic, readonly) S3ListPartsResult *listPartsResult;
 
 @end

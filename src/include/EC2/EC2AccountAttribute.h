@@ -40,12 +40,12 @@
 /**
  * The value of the AttributeName property for this object.
  */
-@property (nonatomic, retain) NSString *attributeName;
+@property (nonatomic, strong) NSString *attributeName;
 
 /**
  * The value of the AttributeValues property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *attributeValues;
+@property (nonatomic, strong) NSMutableArray *attributeValues;
 
 /**
  * Adds a single object to attributeValues.

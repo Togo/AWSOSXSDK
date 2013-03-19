@@ -47,7 +47,7 @@
  * <b>Length: </b>1 - 16<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * The health status of the instance. "Healthy" means that the instance
@@ -58,7 +58,7 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthStatus;
+@property (nonatomic, strong) NSString *healthStatus;
 
 /**
  * If True, this call should respect the grace period associated with the

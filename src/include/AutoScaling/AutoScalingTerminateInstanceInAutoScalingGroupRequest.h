@@ -46,7 +46,7 @@
  * <b>Length: </b>1 - 16<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this

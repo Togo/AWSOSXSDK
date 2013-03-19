@@ -36,18 +36,15 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"LimitExceeded"]) {
-        [newException release];
         newException = [[AutoScalingLimitExceededException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -58,21 +55,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyARN: %@,", policyARN] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyARN: %@,", policyARN]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [policyARN release];
-
-    [super dealloc];
-}
 
 
 @end

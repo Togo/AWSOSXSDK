@@ -74,31 +74,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReservationId: %@,", reservationId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RequesterId: %@,", requesterId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Groups: %@,", groups] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupNames: %@,", groupNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Instances: %@,", instances] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReservationId: %@,", reservationId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OwnerId: %@,", ownerId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RequesterId: %@,", requesterId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Groups: %@,", groups]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupNames: %@,", groupNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Instances: %@,", instances]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reservationId release];
-    [ownerId release];
-    [requesterId release];
-    [groups release];
-    [groupNames release];
-    [instances release];
-
-    [super dealloc];
-}
 
 
 @end

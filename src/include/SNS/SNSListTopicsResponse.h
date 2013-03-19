@@ -47,13 +47,13 @@
 /**
  * A list of topic ARNs.
  */
-@property (nonatomic, retain) NSMutableArray *topics;
+@property (nonatomic, strong) NSMutableArray *topics;
 
 /**
  * Token to pass along to the next <code>ListTopics</code> request. This
  * element is returned if there are additional topics to retrieve.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

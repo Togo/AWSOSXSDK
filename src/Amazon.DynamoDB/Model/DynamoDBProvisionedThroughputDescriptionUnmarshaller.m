@@ -23,7 +23,7 @@
 
 +(DynamoDBProvisionedThroughputDescription *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBProvisionedThroughputDescription *provisionedThroughputDescription = [[[DynamoDBProvisionedThroughputDescription alloc] init] autorelease];
+    DynamoDBProvisionedThroughputDescription *provisionedThroughputDescription = [[DynamoDBProvisionedThroughputDescription alloc] init];
 
 
 

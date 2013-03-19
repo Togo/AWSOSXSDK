@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) SNSPublishResponse *response;
+@property (weak, nonatomic, readonly) SNSPublishResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

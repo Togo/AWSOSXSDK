@@ -45,7 +45,6 @@
     
     
     NSString *retval = [NSString stringWithString:xml];
-    [xml release];
     
     return retval;
 
@@ -89,14 +88,6 @@
 }
 
 
--(void)dealloc
-{
-    self.ruleId = nil;
-    self.status = nil;
-    self.prefix = nil;
-    self.expirationDate = nil;
-    [super dealloc];
-}
 
 
 @end

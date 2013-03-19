@@ -54,29 +54,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReceiptHandle: %@,", receiptHandle] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MD5OfBody: %@,", mD5OfBody] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Body: %@,", body] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attributes: %@,", attributes] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReceiptHandle: %@,", receiptHandle]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MD5OfBody: %@,", mD5OfBody]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Body: %@,", body]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attributes: %@,", attributes]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [messageId release];
-    [receiptHandle release];
-    [mD5OfBody release];
-    [body release];
-    [attributes release];
-
-    [super dealloc];
-}
 
 
 @end

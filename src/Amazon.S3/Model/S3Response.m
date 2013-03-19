@@ -125,20 +125,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Headers: %@,", headers] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Content-Length: %lld,", contentLength] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Connection-State: %@,", connectionState] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Date:: %@,", date] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ETag: %@,", etag] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Server: %@,", server] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Delete-Marker: %d,", deleteMarker] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Id2: %@,", id2] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VersionId: %@,", versionId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Server Side Encryption: %@,", serverSideEncryption] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Headers: %@,", headers]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Content-Length: %lld,", contentLength]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Connection-State: %@,", connectionState]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Date:: %@,", date]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ETag: %@,", etag]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Server: %@,", server]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Delete-Marker: %d,", deleteMarker]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Id2: %@,", id2]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VersionId: %@,", versionId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Server Side Encryption: %@,", serverSideEncryption]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 #pragma mark NSURLConnection delegate methods
@@ -165,7 +165,7 @@
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     if (nil == body) {
-        body = [[NSMutableData data] retain];
+        body = [NSMutableData data];
     }
 
     [body appendData:data];
@@ -185,7 +185,6 @@
         NSString *tmp       = [[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding];
         
         AMZLogDebug(@"Response:\n%@", tmp);
-        [tmp release];
     }
 
     // S3 treats 301's as an error and passes back an Error Response, so parse it
@@ -210,8 +209,6 @@
             [self.request.delegate request:self.request didFailWithError:[AmazonErrorHandler errorFromException:exception]];
         }
 
-        [parser release];
-        [errorHandler release];
     }
     else {
         [self processBody];
@@ -235,7 +232,7 @@
     {
         AMZLog(@"UserInfo.%@ = %@", [key description], [[info valueForKey:key] description]);
     }
-    exception = [[AmazonServiceException exceptionWithMessage:[theError description] andError:theError] retain];
+    exception = [AmazonServiceException exceptionWithMessage:[theError description] andError:theError];
     AMZLog(@"An error occured in the request: %@", [theError description]);
 
     if ([(NSObject *)self.request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
@@ -265,7 +262,7 @@
 
         NSMutableURLRequest *newRequest = [self.request.urlRequest mutableCopy];
         [newRequest setURL:[proposedRequest URL]];
-        return [newRequest autorelease];
+        return newRequest;
     }
 
     return proposedRequest;
@@ -278,18 +275,5 @@
 
 #pragma mark memory managament
 
--(void)dealloc
-{
-    [connectionState release];
-    [date release];
-    [etag release];
-    [server release];
-    [id2 release];
-    [versionId release];
-    [serverSideEncryption release];
-    [headers release];
-
-    [super dealloc];
-}
 
 @end

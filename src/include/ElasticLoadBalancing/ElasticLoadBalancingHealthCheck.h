@@ -49,7 +49,7 @@
  * The total length of the HTTP ping target needs to be 1024 16-bit
  * Unicode characters or less. </note>
  */
-@property (nonatomic, retain) NSString *target;
+@property (nonatomic, strong) NSString *target;
 
 /**
  * Specifies the approximate interval, in seconds, between health checks
@@ -58,7 +58,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 300<br/>
  */
-@property (nonatomic, retain) NSNumber *interval;
+@property (nonatomic, strong) NSNumber *interval;
 
 /**
  * Specifies the amount of time, in seconds, during which no response
@@ -68,7 +68,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 300<br/>
  */
-@property (nonatomic, retain) NSNumber *timeout;
+@property (nonatomic, strong) NSNumber *timeout;
 
 /**
  * Specifies the number of consecutive health probe failures required
@@ -77,7 +77,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>2 - 10<br/>
  */
-@property (nonatomic, retain) NSNumber *unhealthyThreshold;
+@property (nonatomic, strong) NSNumber *unhealthyThreshold;
 
 /**
  * Specifies the number of consecutive health probe successes required
@@ -86,7 +86,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>2 - 10<br/>
  */
-@property (nonatomic, retain) NSNumber *healthyThreshold;
+@property (nonatomic, strong) NSNumber *healthyThreshold;
 
 
 /**

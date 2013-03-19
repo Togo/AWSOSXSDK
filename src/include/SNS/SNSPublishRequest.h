@@ -36,7 +36,7 @@
 /**
  * The topic you want to publish to.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * The message you want to send to the topic. <p>If you want to send the
@@ -63,7 +63,7 @@
  * <code>Publish</code> call to return an error (no partial
  * delivery).</li> </ul>
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /**
  * Optional parameter to be used as the "Subject" line of when the
@@ -74,7 +74,7 @@
  * breaks or control characters; and must be less than 100 characters
  * long.
  */
-@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, strong) NSString *subject;
 
 /**
  * Set <code>MessageStructure</code> to <code>json</code> if you want to
@@ -94,7 +94,7 @@
  * Notification Service Getting Started Guide</i>. <p>Valid value:
  * <code>json</code>
  */
-@property (nonatomic, retain) NSString *messageStructure;
+@property (nonatomic, strong) NSString *messageStructure;
 
 
 /**

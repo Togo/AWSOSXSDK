@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) CloudWatchDescribeAlarmHistoryResponse *response;
+@property (weak, nonatomic, readonly) CloudWatchDescribeAlarmHistoryResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

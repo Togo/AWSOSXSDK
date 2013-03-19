@@ -30,9 +30,5 @@
     return exception;
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

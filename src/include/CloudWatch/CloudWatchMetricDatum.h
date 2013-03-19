@@ -48,7 +48,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - 255<br/>
  */
-@property (nonatomic, retain) NSString *metricName;
+@property (nonatomic, strong) NSString *metricName;
 
 /**
  * A list of dimensions associated with the metric. Note, when using the
@@ -58,13 +58,13 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>0 - 10<br/>
  */
-@property (nonatomic, retain) NSMutableArray *dimensions;
+@property (nonatomic, strong) NSMutableArray *dimensions;
 
 /**
  * The time stamp used for the metric. If not specified, the default
  * value is set to the time the metric data was received.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The value for the metric. <important>Although the <code>Value</code>
@@ -74,12 +74,12 @@
  * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g.,
  * NaN, +Infinity, -Infinity) are not supported. </important>
  */
-@property (nonatomic, retain) NSNumber *value;
+@property (nonatomic, strong) NSNumber *value;
 
 /**
  * A set of statistical values describing the metric.
  */
-@property (nonatomic, retain) CloudWatchStatisticSet *statisticValues;
+@property (nonatomic, strong) CloudWatchStatisticSet *statisticValues;
 
 /**
  * The unit of the metric.
@@ -87,7 +87,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * Adds a single object to dimensions.

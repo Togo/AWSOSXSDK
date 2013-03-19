@@ -34,17 +34,17 @@
 /**
  * The name of the item.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *alternateNameEncoding;
+@property (nonatomic, strong) NSString *alternateNameEncoding;
 
 /**
  * A list of attributes.
  */
-@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic, strong) NSMutableArray *attributes;
 
 
 /**

@@ -50,12 +50,12 @@
  * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
  * </ul>
  */
-@property (nonatomic, retain) NSMutableArray *metrics;
+@property (nonatomic, strong) NSMutableArray *metrics;
 
 /**
  * A list of granularities for the listed Metrics.
  */
-@property (nonatomic, retain) NSMutableArray *granularities;
+@property (nonatomic, strong) NSMutableArray *granularities;
 
 
 

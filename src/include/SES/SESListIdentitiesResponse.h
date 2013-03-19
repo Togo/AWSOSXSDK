@@ -43,12 +43,12 @@
 /**
  * A list of identities.
  */
-@property (nonatomic, retain) NSMutableArray *identities;
+@property (nonatomic, strong) NSMutableArray *identities;
 
 /**
  * The token used for pagination.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 

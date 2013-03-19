@@ -33,7 +33,7 @@
 /**
  * The list of Amazon EC2 instances on which to disable monitoring.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 
 /**

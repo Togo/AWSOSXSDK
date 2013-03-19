@@ -34,13 +34,13 @@
 /**
  * The ARN of the topic for which you wish to find subscriptions.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * Token returned by the previous <code>ListSubscriptionsByTopic</code>
  * request.
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 
 /**

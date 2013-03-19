@@ -34,12 +34,12 @@
 /**
  * Specifies the ID for the specific license to deactivate against.
  */
-@property (nonatomic, retain) NSString *licenseId;
+@property (nonatomic, strong) NSString *licenseId;
 
 /**
  * Specifies the amount of capacity to deactivate against the license.
  */
-@property (nonatomic, retain) NSNumber *capacity;
+@property (nonatomic, strong) NSNumber *capacity;
 
 
 /**

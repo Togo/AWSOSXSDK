@@ -55,39 +55,24 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ActivityId: %@,", activityId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Cause: %@,", cause] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatusCode: %@,", statusCode] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Progress: %@,", progress] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Details: %@,", details] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ActivityId: %@,", activityId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Description: %@,", descriptionValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Cause: %@,", cause]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartTime: %@,", startTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EndTime: %@,", endTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatusCode: %@,", statusCode]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StatusMessage: %@,", statusMessage]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Progress: %@,", progress]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Details: %@,", details]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [activityId release];
-    [autoScalingGroupName release];
-    [descriptionValue release];
-    [cause release];
-    [startTime release];
-    [endTime release];
-    [statusCode release];
-    [statusMessage release];
-    [progress release];
-    [details release];
-
-    [super dealloc];
-}
 
 
 @end

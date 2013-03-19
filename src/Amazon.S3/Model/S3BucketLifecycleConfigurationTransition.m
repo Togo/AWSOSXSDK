@@ -38,7 +38,6 @@
     
     
     NSString *retval = [NSString stringWithString:xml];
-    [xml release];
     
     return retval;
 
@@ -76,12 +75,6 @@
 }
     
 
--(void)dealloc
-{
-    self.storageClass = nil;
-    self.transitionDate = nil;
-    [super dealloc];
-}
 
 
 @end

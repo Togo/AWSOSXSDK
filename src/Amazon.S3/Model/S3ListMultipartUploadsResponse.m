@@ -31,15 +31,7 @@
 
     self.listMultipartUploadsResult = unmarshaller.listMultipartUploadsResult;
 
-    [parser release];
-    [unmarshaller release];
 }
 
--(void)dealloc
-{
-    [listMultipartUploadsResult release];
-
-    [super dealloc];
-}
 
 @end

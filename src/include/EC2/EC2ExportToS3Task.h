@@ -44,7 +44,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>vmdk, vhd
  */
-@property (nonatomic, retain) NSString *diskImageFormat;
+@property (nonatomic, strong) NSString *diskImageFormat;
 
 /**
  * The value of the ContainerFormat property for this object.
@@ -52,17 +52,17 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>ova
  */
-@property (nonatomic, retain) NSString *containerFormat;
+@property (nonatomic, strong) NSString *containerFormat;
 
 /**
  * The value of the S3Bucket property for this object.
  */
-@property (nonatomic, retain) NSString *s3Bucket;
+@property (nonatomic, strong) NSString *s3Bucket;
 
 /**
  * The value of the S3Key property for this object.
  */
-@property (nonatomic, retain) NSString *s3Key;
+@property (nonatomic, strong) NSString *s3Key;
 
 /**
  * Returns a string representation of this object; useful for testing and

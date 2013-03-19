@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductCodeId: %@,", productCodeId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProductCodeType: %@,", productCodeType] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductCodeId: %@,", productCodeId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProductCodeType: %@,", productCodeType]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [productCodeId release];
-    [productCodeType release];
-
-    [super dealloc];
-}
 
 
 @end

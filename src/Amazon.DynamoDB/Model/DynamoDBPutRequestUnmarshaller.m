@@ -25,7 +25,7 @@
 
 +(DynamoDBPutRequest *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBPutRequest *putRequest = [[[DynamoDBPutRequest alloc] init] autorelease];
+    DynamoDBPutRequest *putRequest = [[DynamoDBPutRequest alloc] init];
 
 
 

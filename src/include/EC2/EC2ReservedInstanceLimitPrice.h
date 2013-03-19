@@ -39,12 +39,12 @@
 /**
  * The value of the Amount property for this object.
  */
-@property (nonatomic, retain) NSNumber *amount;
+@property (nonatomic, strong) NSNumber *amount;
 
 /**
  * The value of the CurrencyCode property for this object.
  */
-@property (nonatomic, retain) NSString *currencyCode;
+@property (nonatomic, strong) NSString *currencyCode;
 
 /**
  * Returns a string representation of this object; useful for testing and

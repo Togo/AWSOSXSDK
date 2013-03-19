@@ -42,7 +42,7 @@
 /**
  * The unique ID of the Reserved Instances purchased for your account.
  */
-@property (nonatomic, retain) NSString *reservedInstancesId;
+@property (nonatomic, strong) NSString *reservedInstancesId;
 
 /**
  * Returns a string representation of this object; useful for testing and

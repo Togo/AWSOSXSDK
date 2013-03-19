@@ -39,12 +39,12 @@
 /**
  * Error code.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * Error message.
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /**
  * Returns a string representation of this object; useful for testing and

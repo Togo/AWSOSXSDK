@@ -42,7 +42,7 @@
 /**
  * A list of the availability zone names to describe.
  */
-@property (nonatomic, retain) NSMutableArray *zoneNames;
+@property (nonatomic, strong) NSMutableArray *zoneNames;
 
 /**
  * A list of filters used to match properties for AvailabilityZones. For
@@ -51,7 +51,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to zoneNames.

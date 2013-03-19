@@ -23,12 +23,5 @@
 @synthesize partNumber;
 @synthesize size;
 
--(void)dealloc
-{
-    [etag release];
-    [lastModified release];
-
-    [super dealloc];
-}
 
 @end

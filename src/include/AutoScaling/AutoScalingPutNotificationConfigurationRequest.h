@@ -46,7 +46,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The Amazon Resource Name (ARN) of the Amazon Simple Notification
@@ -56,13 +56,13 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *topicARN;
+@property (nonatomic, strong) NSString *topicARN;
 
 /**
  * The type of events that will trigger the notification. For more
  * information, go to <a>DescribeAutoScalingNotificationTypes</a>.
  */
-@property (nonatomic, retain) NSMutableArray *notificationTypes;
+@property (nonatomic, strong) NSMutableArray *notificationTypes;
 
 /**
  * Adds a single object to notificationTypes.

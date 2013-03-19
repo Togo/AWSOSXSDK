@@ -23,6 +23,6 @@
     S3ListMultipartUploadsResult *listMultipartUploadsResult;
 }
 
-@property (nonatomic, readonly) S3ListMultipartUploadsResult *listMultipartUploadsResult;
+@property (weak, nonatomic, readonly) S3ListMultipartUploadsResult *listMultipartUploadsResult;
 
 @end

@@ -49,33 +49,21 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableName: %@,", tableName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"KeySchema: %@,", keySchema] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableStatus: %@,", tableStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreationDateTime: %@,", creationDateTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ProvisionedThroughput: %@,", provisionedThroughput] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableSizeBytes: %@,", tableSizeBytes] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ItemCount: %@,", itemCount] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableName: %@,", tableName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"KeySchema: %@,", keySchema]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableStatus: %@,", tableStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreationDateTime: %@,", creationDateTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ProvisionedThroughput: %@,", provisionedThroughput]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableSizeBytes: %@,", tableSizeBytes]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ItemCount: %@,", itemCount]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [tableName release];
-    [keySchema release];
-    [tableStatus release];
-    [creationDateTime release];
-    [provisionedThroughput release];
-    [tableSizeBytes release];
-    [itemCount release];
-
-    [super dealloc];
-}
 
 
 @end

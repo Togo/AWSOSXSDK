@@ -39,7 +39,7 @@
 /**
  * The ID of the EBS snapshot whose attributes are being modified.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The name of the attribute being modified. <p> Available attribute
@@ -48,13 +48,13 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>productCodes, createVolumePermission
  */
-@property (nonatomic, retain) NSString *attribute;
+@property (nonatomic, strong) NSString *attribute;
 
 /**
  * The operation to perform on the attribute. <p> Available operation
  * names: <code>add</code>, <code>remove</code>
  */
-@property (nonatomic, retain) NSString *operationType;
+@property (nonatomic, strong) NSString *operationType;
 
 /**
  * The AWS user IDs to add to or remove from the list of users that have
@@ -63,7 +63,7 @@
  * <code>createVolumePermission</code> attribute is being modified.
  * </note>
  */
-@property (nonatomic, retain) NSMutableArray *userIds;
+@property (nonatomic, strong) NSMutableArray *userIds;
 
 /**
  * The AWS group names to add to or remove from the list of groups that
@@ -72,12 +72,12 @@
  * <code>createVolumePermission</code> attribute is being modified.
  * </note>
  */
-@property (nonatomic, retain) NSMutableArray *groupNames;
+@property (nonatomic, strong) NSMutableArray *groupNames;
 
 /**
  * The value of the CreateVolumePermission property for this object.
  */
-@property (nonatomic, retain) EC2CreateVolumePermissionModifications *createVolumePermission;
+@property (nonatomic, strong) EC2CreateVolumePermissionModifications *createVolumePermission;
 
 
 /**

@@ -45,35 +45,35 @@
 /**
  * The unique ID of this reservation.
  */
-@property (nonatomic, retain) NSString *reservationId;
+@property (nonatomic, strong) NSString *reservationId;
 
 /**
  * The AWS Access Key ID of the user who owns the reservation.
  */
-@property (nonatomic, retain) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerId;
 
 /**
  * The unique ID of the user who requested the instances in this
  * reservation.
  */
-@property (nonatomic, retain) NSString *requesterId;
+@property (nonatomic, strong) NSString *requesterId;
 
 /**
  * The list of security groups requested for the instances in this
  * reservation.
  */
-@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, strong) NSMutableArray *groups;
 
 /**
  * The list of security groups requested for the instances in this
  * reservation.
  */
-@property (nonatomic, retain) NSMutableArray *groupNames;
+@property (nonatomic, strong) NSMutableArray *groupNames;
 
 /**
  * The list of Amazon EC2 instances included in this reservation.
  */
-@property (nonatomic, retain) NSMutableArray *instances;
+@property (nonatomic, strong) NSMutableArray *instances;
 
 /**
  * Adds a single object to groups.

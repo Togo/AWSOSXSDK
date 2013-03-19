@@ -37,21 +37,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReasonCode: %@,", reasonCode] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReasonCode: %@,", reasonCode]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [reasonCode release];
-
-    [super dealloc];
-}
 
 
 @end

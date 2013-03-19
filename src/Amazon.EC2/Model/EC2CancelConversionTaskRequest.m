@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConversionTaskId: %@,", conversionTaskId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ReasonMessage: %@,", reasonMessage] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConversionTaskId: %@,", conversionTaskId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ReasonMessage: %@,", reasonMessage]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [conversionTaskId release];
-    [reasonMessage release];
-
-    [super dealloc];
-}
 
 
 @end

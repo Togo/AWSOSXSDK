@@ -24,6 +24,6 @@
     S3ListMultipartUploadsResult *listMultipartUploadsResult;
 }
 
-@property (nonatomic, retain) S3ListMultipartUploadsResult *listMultipartUploadsResult;
+@property (nonatomic, strong) S3ListMultipartUploadsResult *listMultipartUploadsResult;
 
 @end

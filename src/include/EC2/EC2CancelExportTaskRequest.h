@@ -40,7 +40,7 @@
 /**
  * The value of the ExportTaskId property for this object.
  */
-@property (nonatomic, retain) NSString *exportTaskId;
+@property (nonatomic, strong) NSString *exportTaskId;
 
 /**
  * Returns a string representation of this object; useful for testing and

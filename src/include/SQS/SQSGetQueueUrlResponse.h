@@ -43,7 +43,7 @@
 /**
  * The URL for the queue.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -78,19 +78,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableName: %@,", tableName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Limit: %@,", limit] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Count: %d,", count] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HashKeyValue: %@,", hashKeyValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"RangeKeyCondition: %@,", rangeKeyCondition] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ScanIndexForward: %d,", scanIndexForward] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExclusiveStartKey: %@,", exclusiveStartKey] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableName: %@,", tableName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Limit: %@,", limit]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ConsistentRead: %d,", consistentRead]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Count: %d,", count]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HashKeyValue: %@,", hashKeyValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"RangeKeyCondition: %@,", rangeKeyCondition]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ScanIndexForward: %d,", scanIndexForward]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExclusiveStartKey: %@,", exclusiveStartKey]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -113,17 +113,6 @@
 }
 
 
--(void)dealloc
-{
-    [tableName release];
-    [attributesToGet release];
-    [limit release];
-    [hashKeyValue release];
-    [rangeKeyCondition release];
-    [exclusiveStartKey release];
-
-    [super dealloc];
-}
 
 
 @end

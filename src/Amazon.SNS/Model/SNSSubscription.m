@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubscriptionArn: %@,", subscriptionArn] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Owner: %@,", owner] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Endpoint: %@,", endpoint] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubscriptionArn: %@,", subscriptionArn]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Owner: %@,", owner]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Protocol: %@,", protocol]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Endpoint: %@,", endpoint]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TopicArn: %@,", topicArn]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [subscriptionArn release];
-    [owner release];
-    [protocol release];
-    [endpoint release];
-    [topicArn release];
-
-    [super dealloc];
-}
 
 
 @end

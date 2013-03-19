@@ -31,16 +31,7 @@
     self.deletedObjects = [NSArray arrayWithArray:unmarshaller.deletedObjects];
     self.deleteErrors   = [NSArray arrayWithArray:unmarshaller.deleteErrors];
 
-    [parser release];
-    [unmarshaller release];
 }
 
--(void)dealloc
-{
-    [deletedObjects release];
-    [deleteErrors release];
-
-    [super dealloc];
-}
 
 @end

@@ -76,16 +76,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TableName: %@,", tableName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Limit: %@,", limit] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Count: %d,", count] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ScanFilter: %@,", scanFilter] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ExclusiveStartKey: %@,", exclusiveStartKey] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TableName: %@,", tableName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttributesToGet: %@,", attributesToGet]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Limit: %@,", limit]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Count: %d,", count]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ScanFilter: %@,", scanFilter]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ExclusiveStartKey: %@,", exclusiveStartKey]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -96,16 +96,6 @@
 }
 
 
--(void)dealloc
-{
-    [tableName release];
-    [attributesToGet release];
-    [limit release];
-    [scanFilter release];
-    [exclusiveStartKey release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -34,7 +34,7 @@
 /**
  * A list of filters used to match properties for tags.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 
 /**

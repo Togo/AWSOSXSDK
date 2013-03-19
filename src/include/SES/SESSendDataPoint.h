@@ -42,27 +42,27 @@
 /**
  * Time of the data point.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * Number of emails that have been enqueued for sending.
  */
-@property (nonatomic, retain) NSNumber *deliveryAttempts;
+@property (nonatomic, strong) NSNumber *deliveryAttempts;
 
 /**
  * Number of emails that have bounced.
  */
-@property (nonatomic, retain) NSNumber *bounces;
+@property (nonatomic, strong) NSNumber *bounces;
 
 /**
  * Number of unwanted emails that were rejected by recipients.
  */
-@property (nonatomic, retain) NSNumber *complaints;
+@property (nonatomic, strong) NSNumber *complaints;
 
 /**
  * Number of emails rejected by Amazon SES.
  */
-@property (nonatomic, retain) NSNumber *rejects;
+@property (nonatomic, strong) NSNumber *rejects;
 
 /**
  * Returns a string representation of this object; useful for testing and

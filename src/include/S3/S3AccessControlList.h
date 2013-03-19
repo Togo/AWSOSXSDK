@@ -45,10 +45,10 @@
 }
 
 /** Gets and sets the owner */
-@property (nonatomic, retain) S3Owner *owner;
+@property (nonatomic, strong) S3Owner *owner;
 
 /** Returns the current grant list */
-@property (nonatomic, readonly) NSArray *grantList;
+@property (weak, nonatomic, readonly) NSArray *grantList;
 
 /** Initialize the object with an owner */
 -(id)initWithOwner:(S3Owner *)theOwner;

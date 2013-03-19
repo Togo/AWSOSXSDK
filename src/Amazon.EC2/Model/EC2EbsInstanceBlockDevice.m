@@ -45,14 +45,14 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AttachTime: %@,", attachTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeleteOnTermination: %d,", deleteOnTermination] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VolumeId: %@,", volumeId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AttachTime: %@,", attachTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeleteOnTermination: %d,", deleteOnTermination]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -63,14 +63,6 @@
 }
 
 
--(void)dealloc
-{
-    [volumeId release];
-    [status release];
-    [attachTime release];
-
-    [super dealloc];
-}
 
 
 @end

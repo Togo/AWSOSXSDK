@@ -30,7 +30,7 @@
 }
 
 
-@property (nonatomic, readonly) CloudWatchMetric *response;
+@property (weak, nonatomic, readonly) CloudWatchMetric *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

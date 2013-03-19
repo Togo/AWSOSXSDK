@@ -43,13 +43,13 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HonorCooldown: %d,", honorCooldown] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HonorCooldown: %d,", honorCooldown]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -60,13 +60,6 @@
 }
 
 
--(void)dealloc
-{
-    [autoScalingGroupName release];
-    [desiredCapacity release];
-
-    [super dealloc];
-}
 
 
 @end

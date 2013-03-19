@@ -38,32 +38,32 @@
 }
 
 /** Specfies whether the connection to the server is open or closed. */
-@property (nonatomic, retain) NSString *connectionState;
+@property (nonatomic, strong) NSString *connectionState;
 
 /** The entity tag is an MD5 hash of the object that you can use to do conditional
 * <code>GET</code> operations using the <code>If-Modified</code> request tag with the <code>GET</code> request operation.
 * Amazon S3 checks the object against the provided MD5 value. If they do not match, Amazon S3 returns an error.
 * The ETag only reflects changes to the contents of an object, not its metadata.*/
-@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, strong) NSString *etag;
 
 /** The name of the server that created the response. */
-@property (nonatomic, retain) NSString *server;
+@property (nonatomic, strong) NSString *server;
 
 /** A special token that helps AWS troubleshoot problems. */
-@property (nonatomic, retain) NSString *id2;
+@property (nonatomic, strong) NSString *id2;
 
 /** The version of the object.
  * When you enable versioning, Amazon S3 generates a random number for objects added to a bucket.
  * The value is UTF-8 encoded and URL ready.
  * When you PUT an object in a bucket where versioning has been suspended, the version ID is always <code>null</code>. */
-@property (nonatomic, retain) NSString *versionId;
+@property (nonatomic, strong) NSString *versionId;
 
 /**
  * Algorithm used for optional server side encryption. */
-@property (nonatomic, retain) NSString *serverSideEncryption;
+@property (nonatomic, strong) NSString *serverSideEncryption;
 
 /** The date and time Amazon S3 responded. */
-@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, strong) NSDate *date;
 
 /** Specifies whether the object returned was (<code>true</code>) or was not (<code>false</code>) a Delete Marker. */
 @property (nonatomic) bool deleteMarker;

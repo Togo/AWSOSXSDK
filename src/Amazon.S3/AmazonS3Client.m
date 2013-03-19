@@ -47,7 +47,6 @@
     S3CreateBucketRequest  *createBucketRequest  = [[S3CreateBucketRequest alloc] initWithName:bucketName];
     S3CreateBucketResponse *createBucketResponse = [self createBucket:createBucketRequest];
 
-    [createBucketRequest release];
 
     return createBucketResponse;
 }
@@ -62,7 +61,6 @@
     S3DeleteBucketRequest  *deleteBucketRequest  = [[S3DeleteBucketRequest alloc] initWithName:bucketName];
     S3DeleteBucketResponse *deleteBucketResponse = [self deleteBucket:deleteBucketRequest];
 
-    [deleteBucketRequest release];
 
     return deleteBucketResponse;
 }
@@ -83,16 +81,13 @@
 
     NSString *location = locUnmarshaller.location;
 
-    [req release];
-    [parser release];
-    [locUnmarshaller release];
 
     return [S3Region regionWithString:location];
 }
 
 -(NSArray *)listBuckets
 {
-    S3ListBucketsRequest  *req      = [[[S3ListBucketsRequest alloc] init] autorelease];
+    S3ListBucketsRequest  *req      = [[S3ListBucketsRequest alloc] init];
     S3ListBucketsResponse *response = [self listBuckets:req];
 
     if (response.error == nil && response.listBucketsResult != nil && response.listBucketsResult.buckets != nil) {
@@ -117,7 +112,6 @@
     S3ListObjectsRequest  *req = [[S3ListObjectsRequest alloc] initWithName:bucketName];
     S3ListObjectsResponse *res = [self listObjects:req];
 
-    [req release];
 
     if (res.listObjectsResult != nil && res.listObjectsResult.objectSummaries != nil) {
         return [NSArray arrayWithArray:res.listObjectsResult.objectSummaries];
@@ -159,7 +153,6 @@
 
     S3DeleteObjectResponse *response = (S3DeleteObjectResponse *)[self invoke:request];
 
-    [request release];
 
     return response;
 }
@@ -193,8 +186,8 @@
     }
     @catch (AmazonServiceException *exception) {
         if ( [exception.errorCode isEqualToString:@"NoSuchBucketPolicy"]) {
-            response        = [[[S3GetBucketPolicyResponse alloc] init] autorelease];
-            response.policy = [[[S3BucketPolicy alloc] init] autorelease];
+            response        = [[S3GetBucketPolicyResponse alloc] init];
+            response.policy = [[S3BucketPolicy alloc] init];
         }
     }
 
@@ -362,7 +355,7 @@
 
 -(S3MultipartUpload *)initiateMultipartUploadWithKey:(NSString *)theKey withBucket:(NSString *)theBucket
 {
-    S3InitiateMultipartUploadRequest *request = [[[S3InitiateMultipartUploadRequest alloc] init] autorelease];
+    S3InitiateMultipartUploadRequest *request = [[S3InitiateMultipartUploadRequest alloc] init];
 
     request.key    = theKey;
     request.bucket = theBucket;
@@ -408,7 +401,7 @@
 {
     if (nil == request) {
 
-        S3Response *response = [[S3Response new] autorelease];
+        S3Response *response = [S3Response new];
         response.error = [AmazonErrorHandler errorFromExceptionWithThrowsExceptionOption:
                           [AmazonClientException exceptionWithMessage:@"Request cannot be nil."]];
         return response;
@@ -417,7 +410,7 @@
     AmazonClientException *clientException = [request validate];
     if(clientException != nil)
     {
-        S3Response *response = [[S3Response new] autorelease];
+        S3Response *response = [S3Response new];
         response.error = [AmazonErrorHandler errorFromExceptionWithThrowsExceptionOption:clientException];
         return response;
     }
@@ -467,7 +460,6 @@
             AMZLogDebug(@"Request body: ");
             NSString *rBody = [[NSString alloc] initWithData:[urlRequest HTTPBody] encoding:NSUTF8StringEncoding];
             AMZLogDebug(@"%@", rBody);
-            [rBody release];
         }
 
         response = [AmazonS3Client constructResponseFromRequest:request];
@@ -478,7 +470,6 @@
                                                                              delegate:response
                                                                      startImmediately:NO];
             request.urlConnection = urlConnection;
-            [urlConnection release];
 
             NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.timeout
                                                               target:response
@@ -496,7 +487,6 @@
                                                                  startImmediately:NO];
         [urlConnection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:AWSDefaultRunLoopMode];
         request.urlConnection = urlConnection;
-        [urlConnection release];
         [urlConnection start];
 
         NSTimer *timeoutTimer = [NSTimer timerWithTimeInterval:self.timeout
@@ -574,7 +564,7 @@
         [(S3GetObjectResponse *) response setOutputStream:((S3GetObjectRequest *)request).outputStream];
     }
 
-    return [response autorelease];
+    return response;
 }
 
 -(NSMutableURLRequest *)signS3Request:(S3Request *)request
@@ -664,10 +654,6 @@
 
 #pragma mark memory management
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 +(void)initializeResponseObjects
 {

@@ -44,7 +44,7 @@
 /**
  * IP address for use with your account.
  */
-@property (nonatomic, retain) NSString *publicIp;
+@property (nonatomic, strong) NSString *publicIp;
 
 /**
  * The value of the Domain property for this object.
@@ -52,12 +52,12 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>vpc, standard
  */
-@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, strong) NSString *domain;
 
 /**
  * The value of the AllocationId property for this object.
  */
-@property (nonatomic, retain) NSString *allocationId;
+@property (nonatomic, strong) NSString *allocationId;
 
 /**
  * Returns a string representation of this object; useful for testing and

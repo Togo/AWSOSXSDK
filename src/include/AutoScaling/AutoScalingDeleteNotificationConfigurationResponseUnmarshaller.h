@@ -21,7 +21,7 @@
     AutoScalingDeleteNotificationConfigurationResponse *response;
 }
 
-@property (nonatomic, readonly) AutoScalingDeleteNotificationConfigurationResponse *response;
+@property (weak, nonatomic, readonly) AutoScalingDeleteNotificationConfigurationResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

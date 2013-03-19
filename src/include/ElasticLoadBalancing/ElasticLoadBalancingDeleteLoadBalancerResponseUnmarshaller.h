@@ -21,7 +21,7 @@
     ElasticLoadBalancingDeleteLoadBalancerResponse *response;
 }
 
-@property (nonatomic, readonly) ElasticLoadBalancingDeleteLoadBalancerResponse *response;
+@property (weak, nonatomic, readonly) ElasticLoadBalancingDeleteLoadBalancerResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

@@ -41,7 +41,7 @@
 /**
  * The item to put
  */
-@property (nonatomic, retain) NSMutableDictionary *item;
+@property (nonatomic, strong) NSMutableDictionary *item;
 
 
 /**

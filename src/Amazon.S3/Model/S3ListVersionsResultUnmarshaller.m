@@ -28,15 +28,15 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Version"]) {
-        [parser setDelegate:[[[S3VersionSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult.versionSummaries withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3VersionSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult.versionSummaries withSetter:@selector(addObject:)]];
     }
 
     if ([elementName isEqualToString:@"DeleteMarker"]) {
-        [parser setDelegate:[[[S3VersionSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult withSetter:@selector(addDeleteMarker:)] autorelease]];
+        [parser setDelegate:[[S3VersionSummaryUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult withSetter:@selector(addDeleteMarker:)]];
     }
 
     if ([elementName isEqualToString:@"CommonPrefixes"]) {
-        [parser setDelegate:[[[S3CommonPrefixesUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult.commonPrefixes withSetter:@selector(addObjectsFromArray:)] autorelease]];
+        [parser setDelegate:[[S3CommonPrefixesUnmarshaller alloc] initWithCaller:self withParentObject:self.listVersionsResult.commonPrefixes withSetter:@selector(addObjectsFromArray:)]];
     }
 }
 
@@ -117,10 +117,5 @@ qualifiedName:(NSString *)qName
     return listVersionsResult;
 }
 
--(void)dealloc
-{
-    [listVersionsResult release];
-    [super dealloc];
-}
 
 @end

@@ -43,12 +43,12 @@
 /**
  * A container for a Put BatchWrite request
  */
-@property (nonatomic, retain) DynamoDBPutRequest *putRequest;
+@property (nonatomic, strong) DynamoDBPutRequest *putRequest;
 
 /**
  * A container for a Delete BatchWrite request
  */
-@property (nonatomic, retain) DynamoDBDeleteRequest *deleteRequest;
+@property (nonatomic, strong) DynamoDBDeleteRequest *deleteRequest;
 
 /**
  * Returns a string representation of this object; useful for testing and

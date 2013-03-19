@@ -24,7 +24,7 @@
 
 +(DynamoDBCreateTableResponse *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBCreateTableResponse *createTableResult = [[[DynamoDBCreateTableResponse alloc] init] autorelease];
+    DynamoDBCreateTableResponse *createTableResult = [[DynamoDBCreateTableResponse alloc] init];
 
 
     if ([jsonObject valueForKey:@"__type"] != nil) {

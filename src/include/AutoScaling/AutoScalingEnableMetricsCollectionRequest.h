@@ -46,7 +46,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The list of metrics to collect. If no metrics are specified, all
@@ -57,7 +57,7 @@
  * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
  * </ul>
  */
-@property (nonatomic, retain) NSMutableArray *metrics;
+@property (nonatomic, strong) NSMutableArray *metrics;
 
 /**
  * The granularity to associate with the metrics to collect. Currently,
@@ -67,7 +67,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *granularity;
+@property (nonatomic, strong) NSString *granularity;
 
 /**
  * Adds a single object to metrics.

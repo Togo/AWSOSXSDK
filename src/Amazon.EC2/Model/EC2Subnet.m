@@ -66,19 +66,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"State: %@,", state] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CidrBlock: %@,", cidrBlock] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailableIpAddressCount: %@,", availableIpAddressCount] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DefaultForAz: %d,", defaultForAz] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MapPublicIpOnLaunch: %d,", mapPublicIpOnLaunch] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SubnetId: %@,", subnetId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"State: %@,", state]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VpcId: %@,", vpcId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CidrBlock: %@,", cidrBlock]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailableIpAddressCount: %@,", availableIpAddressCount]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DefaultForAz: %d,", defaultForAz]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MapPublicIpOnLaunch: %d,", mapPublicIpOnLaunch]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
@@ -95,18 +95,6 @@
 }
 
 
--(void)dealloc
-{
-    [subnetId release];
-    [state release];
-    [vpcId release];
-    [cidrBlock release];
-    [availableIpAddressCount release];
-    [availabilityZone release];
-    [tags release];
-
-    [super dealloc];
-}
 
 
 @end

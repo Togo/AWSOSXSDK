@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) AutoScalingSuspendedProcess *response;
+@property (weak, nonatomic, readonly) AutoScalingSuspendedProcess *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

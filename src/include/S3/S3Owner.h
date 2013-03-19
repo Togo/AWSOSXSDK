@@ -24,10 +24,10 @@
 }
 
 /** Gets and sets the owner ID */
-@property (nonatomic, retain) NSString *ID;
+@property (nonatomic, strong) NSString *ID;
 
 /** Gets and sets the owner display name */
-@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, strong) NSString *displayName;
 
 -(id)initWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;
 +(id)ownerWithID:(NSString *)theID withDisplayName:(NSString *)theDisplayName;

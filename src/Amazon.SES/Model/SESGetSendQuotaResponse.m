@@ -41,12 +41,10 @@
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -57,25 +55,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max24HourSend: %@,", max24HourSend] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxSendRate: %@,", maxSendRate] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SentLast24Hours: %@,", sentLast24Hours] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Max24HourSend: %@,", max24HourSend]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxSendRate: %@,", maxSendRate]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SentLast24Hours: %@,", sentLast24Hours]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [max24HourSend release];
-    [maxSendRate release];
-    [sentLast24Hours release];
-
-    [super dealloc];
-}
 
 
 @end

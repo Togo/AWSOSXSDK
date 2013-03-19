@@ -21,7 +21,7 @@
     SESDeleteVerifiedEmailAddressResponse *response;
 }
 
-@property (nonatomic, readonly) SESDeleteVerifiedEmailAddressResponse *response;
+@property (weak, nonatomic, readonly) SESDeleteVerifiedEmailAddressResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

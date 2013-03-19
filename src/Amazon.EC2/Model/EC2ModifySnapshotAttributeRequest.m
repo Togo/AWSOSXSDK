@@ -76,31 +76,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Attribute: %@,", attribute] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"OperationType: %@,", operationType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UserIds: %@,", userIds] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"GroupNames: %@,", groupNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreateVolumePermission: %@,", createVolumePermission] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SnapshotId: %@,", snapshotId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Attribute: %@,", attribute]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"OperationType: %@,", operationType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UserIds: %@,", userIds]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"GroupNames: %@,", groupNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreateVolumePermission: %@,", createVolumePermission]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [snapshotId release];
-    [attribute release];
-    [operationType release];
-    [userIds release];
-    [groupNames release];
-    [createVolumePermission release];
-
-    [super dealloc];
-}
 
 
 @end

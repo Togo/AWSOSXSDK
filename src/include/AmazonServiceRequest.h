@@ -36,45 +36,45 @@
     NSString                         *serviceName;
     NSString                         *regionName;
     NSString                         *hostName;
-    id<AmazonServiceRequestDelegate> delegate;
+    id<AmazonServiceRequestDelegate> __unsafe_unretained delegate;
 }
 
 /** Request specific credentials. */
-@property (nonatomic, retain) AmazonCredentials *credentials;
+@property (nonatomic, strong) AmazonCredentials *credentials;
 
 /** The urlRequest object which represents this request.
  * Use configureURLRequest to make sure all fields have
  */
-@property (nonatomic, retain) AmazonURLRequest *urlRequest;
+@property (nonatomic, strong) AmazonURLRequest *urlRequest;
 
 /** The connection object used to make the request.
  */
-@property (nonatomic, retain) NSURLConnection *urlConnection;
+@property (nonatomic, strong) NSURLConnection *urlConnection;
 
-@property (nonatomic, retain) NSTimer *responseTimer;
+@property (nonatomic, strong) NSTimer *responseTimer;
 
 /** The HTTP Method (GET, PUT, POST, DELETE) used for the request. */
-@property (nonatomic, retain) NSString *httpMethod;
+@property (nonatomic, strong) NSString *httpMethod;
 
 /** The URL for the resource.
  * This property is read-only.
  */
-@property (nonatomic, readonly) NSURL             *url;
+@property (weak, nonatomic, readonly) NSURL             *url;
 
-@property (nonatomic, retain) NSMutableDictionary *parameters;
-@property (nonatomic, retain) NSString            *endpoint;
-@property (nonatomic, retain) NSString            *serviceName;
-@property (nonatomic, retain) NSString            *regionName;
-@property (nonatomic, retain) NSString            *hostName;
-@property (nonatomic, retain) NSString            *userAgent;
+@property (nonatomic, strong) NSMutableDictionary *parameters;
+@property (nonatomic, strong) NSString            *endpoint;
+@property (nonatomic, strong) NSString            *serviceName;
+@property (nonatomic, strong) NSString            *regionName;
+@property (nonatomic, strong) NSString            *hostName;
+@property (nonatomic, strong) NSString            *userAgent;
 
-@property (nonatomic, assign) id<AmazonServiceRequestDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<AmazonServiceRequestDelegate> delegate;
 
 /**
  * Open property that enables user to distinquish various requests.
  */
 
-@property (nonatomic, retain) NSString *requestTag;
+@property (nonatomic, strong) NSString *requestTag;
 
 -(AmazonURLRequest *)configureURLRequest;
 

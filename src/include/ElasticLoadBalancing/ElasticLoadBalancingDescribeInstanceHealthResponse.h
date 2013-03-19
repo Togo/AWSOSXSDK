@@ -45,7 +45,7 @@
 /**
  * A list containing health information for the specified instances.
  */
-@property (nonatomic, retain) NSMutableArray *instanceStates;
+@property (nonatomic, strong) NSMutableArray *instanceStates;
 
 
 

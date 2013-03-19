@@ -27,9 +27,9 @@
 
 @property (nonatomic, readonly) NSMutableArray *list;
 
-@property (nonatomic, retain) id               delegateClass;
-@property (nonatomic, retain) NSString         *entryElementName;
-@property (nonatomic, retain) NSString         *endListElementName;
+@property (nonatomic, strong) id               delegateClass;
+@property (nonatomic, strong) NSString         *entryElementName;
+@property (nonatomic, strong) NSString         *endListElementName;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

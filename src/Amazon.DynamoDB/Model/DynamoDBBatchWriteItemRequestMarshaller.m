@@ -34,30 +34,30 @@
     [request addValue:@"application/x-amz-json-1.0"     forHeader:@"Content-Type"];
 
 
-    NSMutableDictionary *json = [[[NSMutableDictionary alloc] init] autorelease];
+    NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
     if (batchWriteItemRequest.requestItems != nil) {
-        NSMutableDictionary *requestItemsJson = [[[NSMutableDictionary alloc] init] autorelease];
+        NSMutableDictionary *requestItemsJson = [[NSMutableDictionary alloc] init];
         [json setValue:requestItemsJson forKey:@"RequestItems"];
         for (NSString *requestItemsListValue in batchWriteItemRequest.requestItems) {
             NSArray        *requestItemsListValueValue = [batchWriteItemRequest.requestItems valueForKey:requestItemsListValue];
-            NSMutableArray *requestItemsListValueJson  = [[[NSMutableArray alloc] init] autorelease];
+            NSMutableArray *requestItemsListValueJson  = [[NSMutableArray alloc] init];
             [requestItemsJson setValue:requestItemsListValueJson forKey:requestItemsListValue];
 
             if (requestItemsListValueValue != nil && [requestItemsListValueValue count] > 0) {
                 for (DynamoDBWriteRequest *valueValue in requestItemsListValueValue) {
-                    NSMutableDictionary *valueArrayObject = [[[NSMutableDictionary alloc] init] autorelease];
+                    NSMutableDictionary *valueArrayObject = [[NSMutableDictionary alloc] init];
                     [requestItemsListValueJson addObject:valueArrayObject];
                     if (valueValue != nil) {
                         DynamoDBPutRequest *putRequest = valueValue.putRequest;
                         if (putRequest != nil) {
-                            NSMutableDictionary *putRequestJson = [[[NSMutableDictionary alloc] init] autorelease];
+                            NSMutableDictionary *putRequestJson = [[NSMutableDictionary alloc] init];
                             [valueArrayObject setValue:putRequestJson forKey:@"PutRequest"];
 
                             if (putRequest.item != nil) {
-                                NSMutableDictionary *itemJson = [[[NSMutableDictionary alloc] init] autorelease];
+                                NSMutableDictionary *itemJson = [[NSMutableDictionary alloc] init];
                                 [putRequestJson setValue:itemJson forKey:@"Item"];
                                 for (NSString *itemListValue in putRequest.item) {
-                                    NSMutableDictionary    *itemListValueJson = [[[NSMutableDictionary alloc] init] autorelease];
+                                    NSMutableDictionary    *itemListValueJson = [[NSMutableDictionary alloc] init];
                                     [itemJson setValue:itemListValueJson forKey:itemListValue];
                                     DynamoDBAttributeValue *itemListValueValue = [putRequest.item valueForKey:itemListValue];
 
@@ -75,7 +75,7 @@
                                     if (itemListValueValue != nil) {
                                         NSArray *sSList = itemListValueValue.sS;
                                         if (sSList != nil && [sSList count] > 0) {
-                                            NSMutableArray *sSArray = [[[NSMutableArray alloc] init] autorelease];
+                                            NSMutableArray *sSArray = [[NSMutableArray alloc] init];
                                             [itemListValueJson setValue:sSArray forKey:@"SS"];
                                             for (NSString *sSListValue in sSList) {
                                                 if (sSListValue != nil) {
@@ -87,7 +87,7 @@
                                     if (itemListValueValue != nil) {
                                         NSArray *nSList = itemListValueValue.nS;
                                         if (nSList != nil && [nSList count] > 0) {
-                                            NSMutableArray *nSArray = [[[NSMutableArray alloc] init] autorelease];
+                                            NSMutableArray *nSArray = [[NSMutableArray alloc] init];
                                             [itemListValueJson setValue:nSArray forKey:@"NS"];
                                             for (NSString *nSListValue in nSList) {
                                                 if (nSListValue != nil) {
@@ -99,7 +99,7 @@
                                     if (itemListValueValue != nil) {
                                         NSArray *bSList = itemListValueValue.bS;
                                         if (bSList != nil && [bSList count] > 0) {
-                                            NSMutableArray *bSArray = [[[NSMutableArray alloc] init] autorelease];
+                                            NSMutableArray *bSArray = [[NSMutableArray alloc] init];
                                             [itemListValueJson setValue:bSArray forKey:@"BS"];
                                             for (NSData *bSListValue in bSList) {
                                                 if (bSListValue != nil) {
@@ -115,19 +115,19 @@
                     if (valueValue != nil) {
                         DynamoDBDeleteRequest *deleteRequest = valueValue.deleteRequest;
                         if (deleteRequest != nil) {
-                            NSMutableDictionary *deleteRequestJson = [[[NSMutableDictionary alloc] init] autorelease];
+                            NSMutableDictionary *deleteRequestJson = [[NSMutableDictionary alloc] init];
                             [valueArrayObject setValue:deleteRequestJson forKey:@"DeleteRequest"];
 
                             if (deleteRequest != nil) {
                                 DynamoDBKey *key = deleteRequest.key;
                                 if (key != nil) {
-                                    NSMutableDictionary *keyJson = [[[NSMutableDictionary alloc] init] autorelease];
+                                    NSMutableDictionary *keyJson = [[NSMutableDictionary alloc] init];
                                     [deleteRequestJson setValue:keyJson forKey:@"Key"];
 
                                     if (key != nil) {
                                         DynamoDBAttributeValue *hashKeyElement = key.hashKeyElement;
                                         if (hashKeyElement != nil) {
-                                            NSMutableDictionary *hashKeyElementJson = [[[NSMutableDictionary alloc] init] autorelease];
+                                            NSMutableDictionary *hashKeyElementJson = [[NSMutableDictionary alloc] init];
                                             [keyJson setValue:hashKeyElementJson forKey:@"HashKeyElement"];
 
 
@@ -145,7 +145,7 @@
                                             if (hashKeyElement != nil) {
                                                 NSArray *sSList = hashKeyElement.sS;
                                                 if (sSList != nil && [sSList count] > 0) {
-                                                    NSMutableArray *sSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *sSArray = [[NSMutableArray alloc] init];
                                                     [hashKeyElementJson setValue:sSArray forKey:@"SS"];
                                                     for (NSString *sSListValue in sSList) {
                                                         if (sSListValue != nil) {
@@ -157,7 +157,7 @@
                                             if (hashKeyElement != nil) {
                                                 NSArray *nSList = hashKeyElement.nS;
                                                 if (nSList != nil && [nSList count] > 0) {
-                                                    NSMutableArray *nSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *nSArray = [[NSMutableArray alloc] init];
                                                     [hashKeyElementJson setValue:nSArray forKey:@"NS"];
                                                     for (NSString *nSListValue in nSList) {
                                                         if (nSListValue != nil) {
@@ -169,7 +169,7 @@
                                             if (hashKeyElement != nil) {
                                                 NSArray *bSList = hashKeyElement.bS;
                                                 if (bSList != nil && [bSList count] > 0) {
-                                                    NSMutableArray *bSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *bSArray = [[NSMutableArray alloc] init];
                                                     [hashKeyElementJson setValue:bSArray forKey:@"BS"];
                                                     for (NSData *bSListValue in bSList) {
                                                         if (bSListValue != nil) {
@@ -183,7 +183,7 @@
                                     if (key != nil) {
                                         DynamoDBAttributeValue *rangeKeyElement = key.rangeKeyElement;
                                         if (rangeKeyElement != nil) {
-                                            NSMutableDictionary *rangeKeyElementJson = [[[NSMutableDictionary alloc] init] autorelease];
+                                            NSMutableDictionary *rangeKeyElementJson = [[NSMutableDictionary alloc] init];
                                             [keyJson setValue:rangeKeyElementJson forKey:@"RangeKeyElement"];
 
 
@@ -201,7 +201,7 @@
                                             if (rangeKeyElement != nil) {
                                                 NSArray *sSList = rangeKeyElement.sS;
                                                 if (sSList != nil && [sSList count] > 0) {
-                                                    NSMutableArray *sSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *sSArray = [[NSMutableArray alloc] init];
                                                     [rangeKeyElementJson setValue:sSArray forKey:@"SS"];
                                                     for (NSString *sSListValue in sSList) {
                                                         if (sSListValue != nil) {
@@ -213,7 +213,7 @@
                                             if (rangeKeyElement != nil) {
                                                 NSArray *nSList = rangeKeyElement.nS;
                                                 if (nSList != nil && [nSList count] > 0) {
-                                                    NSMutableArray *nSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *nSArray = [[NSMutableArray alloc] init];
                                                     [rangeKeyElementJson setValue:nSArray forKey:@"NS"];
                                                     for (NSString *nSListValue in nSList) {
                                                         if (nSListValue != nil) {
@@ -225,7 +225,7 @@
                                             if (rangeKeyElement != nil) {
                                                 NSArray *bSList = rangeKeyElement.bS;
                                                 if (bSList != nil && [bSList count] > 0) {
-                                                    NSMutableArray *bSArray = [[[NSMutableArray alloc] init] autorelease];
+                                                    NSMutableArray *bSArray = [[NSMutableArray alloc] init];
                                                     [rangeKeyElementJson setValue:bSArray forKey:@"BS"];
                                                     for (NSData *bSListValue in bSList) {
                                                         if (bSListValue != nil) {
@@ -250,7 +250,7 @@
     request.content = [AmazonJSON JSONRepresentation:json];
     [request addValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[request.content dataUsingEncoding:NSUTF8StringEncoding] length]]    forHeader:@"Content-Length"];
 
-    return [request autorelease];
+    return request;
 }
 
 @end

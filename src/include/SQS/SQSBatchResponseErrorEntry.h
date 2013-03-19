@@ -46,7 +46,7 @@
 /**
  * The id of an entry in a batch request.
  */
-@property (nonatomic, retain) NSString *idValue;
+@property (nonatomic, strong) NSString *idValue;
 
 /**
  * Whether the error happened due to the sender's fault.
@@ -58,12 +58,12 @@
 /**
  * An error code representing why the operation failed on this entry.
  */
-@property (nonatomic, retain) NSString *code;
+@property (nonatomic, strong) NSString *code;
 
 /**
  * A message explaining why the operation failed on this entry.
  */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) NSString *message;
 
 /**
  * Returns a string representation of this object; useful for testing and

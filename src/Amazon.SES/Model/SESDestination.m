@@ -68,25 +68,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ToAddresses: %@,", toAddresses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CcAddresses: %@,", ccAddresses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"BccAddresses: %@,", bccAddresses] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ToAddresses: %@,", toAddresses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CcAddresses: %@,", ccAddresses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"BccAddresses: %@,", bccAddresses]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [toAddresses release];
-    [ccAddresses release];
-    [bccAddresses release];
-
-    [super dealloc];
-}
 
 
 @end

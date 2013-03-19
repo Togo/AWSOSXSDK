@@ -41,7 +41,7 @@
  * The ID of the EBS volume that should be mounted as a block device on
  * an Amazon EC2 instance.
  */
-@property (nonatomic, retain) NSString *volumeId;
+@property (nonatomic, strong) NSString *volumeId;
 
 /**
  * Specifies whether the Amazon EBS volume is deleted on instance

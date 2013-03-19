@@ -48,12 +48,12 @@
  * about MD5, go to <a
  * p://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
  */
-@property (nonatomic, retain) NSString *mD5OfMessageBody;
+@property (nonatomic, strong) NSString *mD5OfMessageBody;
 
 /**
  * The message ID of the message added to the queue.
  */
-@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, strong) NSString *messageId;
 
 /**
  * Returns a string representation of this object; useful for testing and

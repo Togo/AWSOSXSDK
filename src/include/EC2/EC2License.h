@@ -44,29 +44,29 @@
 /**
  * The unique ID identifying the license.
  */
-@property (nonatomic, retain) NSString *licenseId;
+@property (nonatomic, strong) NSString *licenseId;
 
 /**
  * The license type (ex. "Microsoft/Windows/Standard").
  */
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic, strong) NSString *type;
 
 /**
  * The name of the pool in which the license is kept.
  */
-@property (nonatomic, retain) NSString *pool;
+@property (nonatomic, strong) NSString *pool;
 
 /**
  * The capacities available for this license, indicating how many
  * licenses are in use, how many are available, how many Amazon EC2
  * instances can be supported, etc.
  */
-@property (nonatomic, retain) NSMutableArray *capacities;
+@property (nonatomic, strong) NSMutableArray *capacities;
 
 /**
  * A list of tags for the License.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * Adds a single object to capacities.

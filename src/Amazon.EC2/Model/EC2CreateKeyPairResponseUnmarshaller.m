@@ -23,14 +23,14 @@
 {
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qName attributes:attributeDict];
 
-    EC2KeyPairUnmarshaller *unmarshaller = [[[EC2KeyPairUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setKeyPair:)] autorelease];
+    EC2KeyPairUnmarshaller *unmarshaller = [[EC2KeyPairUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setKeyPair:)];
     unmarshaller.endElementTagName = @"CreateKeyPairResponse";
     [parser setDelegate:unmarshaller];
 
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -67,10 +67,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

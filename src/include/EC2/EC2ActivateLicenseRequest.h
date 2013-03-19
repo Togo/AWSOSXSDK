@@ -34,12 +34,12 @@
 /**
  * Specifies the ID for the specific license to activate against.
  */
-@property (nonatomic, retain) NSString *licenseId;
+@property (nonatomic, strong) NSString *licenseId;
 
 /**
  * Specifies the additional number of licenses to activate.
  */
-@property (nonatomic, retain) NSNumber *capacity;
+@property (nonatomic, strong) NSNumber *capacity;
 
 
 /**

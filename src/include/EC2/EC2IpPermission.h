@@ -44,31 +44,31 @@
  * The IP protocol of this permission. <p> Valid protocol values:
  * <code>tcp</code>, <code>udp</code>, <code>icmp</code>
  */
-@property (nonatomic, retain) NSString *ipProtocol;
+@property (nonatomic, strong) NSString *ipProtocol;
 
 /**
  * Start of port range for the TCP and UDP protocols, or an ICMP type
  * number. An ICMP type number of <code>-1</code> indicates a wildcard
  * (i.e., any ICMP type number).
  */
-@property (nonatomic, retain) NSNumber *fromPort;
+@property (nonatomic, strong) NSNumber *fromPort;
 
 /**
  * End of port range for the TCP and UDP protocols, or an ICMP code. An
  * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
  * code).
  */
-@property (nonatomic, retain) NSNumber *toPort;
+@property (nonatomic, strong) NSNumber *toPort;
 
 /**
  * The list of AWS user IDs and groups included in this permission.
  */
-@property (nonatomic, retain) NSMutableArray *userIdGroupPairs;
+@property (nonatomic, strong) NSMutableArray *userIdGroupPairs;
 
 /**
  * The list of CIDR IP ranges included in this permission.
  */
-@property (nonatomic, retain) NSMutableArray *ipRanges;
+@property (nonatomic, strong) NSMutableArray *ipRanges;
 
 /**
  * Adds a single object to userIdGroupPairs.

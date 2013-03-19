@@ -65,7 +65,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The Amazon Resource Name (ARN) of the Auto Scaling group.
@@ -74,7 +74,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupARN;
+@property (nonatomic, strong) NSString *autoScalingGroupARN;
 
 /**
  * Specifies the name of the associated <a>LaunchConfiguration</a>.
@@ -83,28 +83,28 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * Contains the minimum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *minSize;
+@property (nonatomic, strong) NSNumber *minSize;
 
 /**
  * Contains the maximum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *maxSize;
+@property (nonatomic, strong) NSNumber *maxSize;
 
 /**
  * Specifies the desired capacity for the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * The number of seconds after a scaling activity completes before any
  * further scaling activities can start.
  */
-@property (nonatomic, retain) NSNumber *defaultCooldown;
+@property (nonatomic, strong) NSNumber *defaultCooldown;
 
 /**
  * Contains a list of Availability Zones for the group.
@@ -112,12 +112,12 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 /**
  * A list of load balancers associated with this Auto Scaling group.
  */
-@property (nonatomic, retain) NSMutableArray *loadBalancerNames;
+@property (nonatomic, strong) NSMutableArray *loadBalancerNames;
 
 /**
  * The service of interest for the health status check, either "EC2" for
@@ -127,29 +127,29 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthCheckType;
+@property (nonatomic, strong) NSString *healthCheckType;
 
 /**
  * The length of time that Auto Scaling waits before checking an
  * instance's health status. The grace period begins when an instance
  * comes into service.
  */
-@property (nonatomic, retain) NSNumber *healthCheckGracePeriod;
+@property (nonatomic, strong) NSNumber *healthCheckGracePeriod;
 
 /**
  * Provides a summary list of Amazon EC2 instances.
  */
-@property (nonatomic, retain) NSMutableArray *instances;
+@property (nonatomic, strong) NSMutableArray *instances;
 
 /**
  * Specifies the date and time the Auto Scaling group was created.
  */
-@property (nonatomic, retain) NSDate *createdTime;
+@property (nonatomic, strong) NSDate *createdTime;
 
 /**
  * Suspended processes associated with this Auto Scaling group.
  */
-@property (nonatomic, retain) NSMutableArray *suspendedProcesses;
+@property (nonatomic, strong) NSMutableArray *suspendedProcesses;
 
 /**
  * The name of the cluster placement group, if applicable. For more
@@ -161,7 +161,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *placementGroup;
+@property (nonatomic, strong) NSString *placementGroup;
 
 /**
  * The subnet identifier for the Amazon VPC connection, if applicable.
@@ -174,12 +174,12 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *vPCZoneIdentifier;
+@property (nonatomic, strong) NSString *vPCZoneIdentifier;
 
 /**
  * A list of metrics enabled for this Auto Scaling group.
  */
-@property (nonatomic, retain) NSMutableArray *enabledMetrics;
+@property (nonatomic, strong) NSMutableArray *enabledMetrics;
 
 /**
  * A list of status conditions for the Auto Scaling group.
@@ -188,18 +188,18 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * A list of tags for the Auto Scaling group.
  */
-@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 /**
  * A standalone termination policy or a list of termination policies for
  * this Auto Scaling group.
  */
-@property (nonatomic, retain) NSMutableArray *terminationPolicies;
+@property (nonatomic, strong) NSMutableArray *terminationPolicies;
 
 /**
  * Adds a single object to availabilityZones.

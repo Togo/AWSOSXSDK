@@ -45,12 +45,12 @@
 /**
  * A list of LoadBalancer description structures.
  */
-@property (nonatomic, retain) NSMutableArray *loadBalancerDescriptions;
+@property (nonatomic, strong) NSMutableArray *loadBalancerDescriptions;
 
 /**
  * An optional parameter reserved for future use.
  */
-@property (nonatomic, retain) NSString *nextMarker;
+@property (nonatomic, strong) NSString *nextMarker;
 
 
 

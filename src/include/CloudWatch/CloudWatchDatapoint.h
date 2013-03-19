@@ -44,33 +44,33 @@
 /**
  * The time stamp used for the datapoint.
  */
-@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * The number of metric values that contributed to the aggregate value of
  * this datapoint.
  */
-@property (nonatomic, retain) NSNumber *sampleCount;
+@property (nonatomic, strong) NSNumber *sampleCount;
 
 /**
  * The average of metric values that correspond to the datapoint.
  */
-@property (nonatomic, retain) NSNumber *average;
+@property (nonatomic, strong) NSNumber *average;
 
 /**
  * The sum of metric values used for the datapoint.
  */
-@property (nonatomic, retain) NSNumber *sum;
+@property (nonatomic, strong) NSNumber *sum;
 
 /**
  * The minimum metric value used for the datapoint.
  */
-@property (nonatomic, retain) NSNumber *minimum;
+@property (nonatomic, strong) NSNumber *minimum;
 
 /**
  * The maximum of the metric value used for the datapoint.
  */
-@property (nonatomic, retain) NSNumber *maximum;
+@property (nonatomic, strong) NSNumber *maximum;
 
 /**
  * The standard unit used for the datapoint.
@@ -78,7 +78,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
  */
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, strong) NSString *unit;
 
 /**
  * Returns a string representation of this object; useful for testing and

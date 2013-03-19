@@ -36,12 +36,12 @@
 /**
  * The ARN of the topic whose access control policy you wish to modify.
  */
-@property (nonatomic, retain) NSString *topicArn;
+@property (nonatomic, strong) NSString *topicArn;
 
 /**
  * A unique identifier for the new policy statement.
  */
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, strong) NSString *label;
 
 /**
  * The AWS account IDs of the users (principals) who will be given access
@@ -51,13 +51,13 @@
  * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
  * AWS Identifiers</aulink> in the &service; Developer Guide.-->
  */
-@property (nonatomic, retain) NSMutableArray *aWSAccountIds;
+@property (nonatomic, strong) NSMutableArray *aWSAccountIds;
 
 /**
  * The action you want to allow for the specified principal(s). <p>Valid
  * values: any Amazon SNS action name.
  */
-@property (nonatomic, retain) NSMutableArray *actionNames;
+@property (nonatomic, strong) NSMutableArray *actionNames;
 
 
 /**

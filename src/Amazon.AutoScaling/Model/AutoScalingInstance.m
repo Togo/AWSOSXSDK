@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LifecycleState: %@,", lifecycleState] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthStatus: %@,", healthStatus] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"InstanceId: %@,", instanceId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZone: %@,", availabilityZone]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LifecycleState: %@,", lifecycleState]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthStatus: %@,", healthStatus]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [instanceId release];
-    [availabilityZone release];
-    [lifecycleState release];
-    [healthStatus release];
-    [launchConfigurationName release];
-
-    [super dealloc];
-}
 
 
 @end

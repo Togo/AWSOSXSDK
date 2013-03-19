@@ -41,15 +41,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_s3 release];
-    [_bucket release];
-    [_date release];
-    [_key release];
-
-    [super dealloc];
-}
 
 #pragma mark - Overwriding NSOperation Methods
 
@@ -70,7 +61,6 @@
         listMultipartUploadsRequest.uploadIdMarker = nextUploadIdMarker;
 
         S3ListMultipartUploadsResponse *listMultipartUploadsResponse = [self.s3 listMultipartUploads:listMultipartUploadsRequest];
-        [listMultipartUploadsRequest release];
         S3ListMultipartUploadsResult *listMultipartUploadsResult = listMultipartUploadsResponse.listMultipartUploadsResult;
 
         isTruncated = listMultipartUploadsResult.isTruncated;
@@ -92,7 +82,6 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.s3 abortMultipartUpload:abortMultipartUploadRequest];
                 });
-                [abortMultipartUploadRequest release];
             }
         }
 

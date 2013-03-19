@@ -55,7 +55,7 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *autoScalingGroupName;
+@property (nonatomic, strong) NSString *autoScalingGroupName;
 
 /**
  * The name of the launch configuration.
@@ -64,28 +64,28 @@
  * <b>Length: </b>1 - 1600<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *launchConfigurationName;
+@property (nonatomic, strong) NSString *launchConfigurationName;
 
 /**
  * The minimum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *minSize;
+@property (nonatomic, strong) NSNumber *minSize;
 
 /**
  * The maximum size of the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *maxSize;
+@property (nonatomic, strong) NSNumber *maxSize;
 
 /**
  * The desired capacity for the Auto Scaling group.
  */
-@property (nonatomic, retain) NSNumber *desiredCapacity;
+@property (nonatomic, strong) NSNumber *desiredCapacity;
 
 /**
  * The amount of time, in seconds, after a scaling activity completes
  * before any further trigger-related scaling activities can start.
  */
-@property (nonatomic, retain) NSNumber *defaultCooldown;
+@property (nonatomic, strong) NSNumber *defaultCooldown;
 
 /**
  * Availability Zones for the group.
@@ -93,7 +93,7 @@
  * <b>Constraints:</b><br/>
  * <b>Length: </b>1 - <br/>
  */
-@property (nonatomic, retain) NSMutableArray *availabilityZones;
+@property (nonatomic, strong) NSMutableArray *availabilityZones;
 
 /**
  * The service of interest for the health status check, either "EC2" for
@@ -103,14 +103,14 @@
  * <b>Length: </b>1 - 32<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *healthCheckType;
+@property (nonatomic, strong) NSString *healthCheckType;
 
 /**
  * The length of time that Auto Scaling waits before checking an
  * instance's health status. The grace period begins when an instance
  * comes into service.
  */
-@property (nonatomic, retain) NSNumber *healthCheckGracePeriod;
+@property (nonatomic, strong) NSNumber *healthCheckGracePeriod;
 
 /**
  * The name of the cluster placement group, if applicable. For more
@@ -122,7 +122,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *placementGroup;
+@property (nonatomic, strong) NSString *placementGroup;
 
 /**
  * The subnet identifier for the Amazon VPC connection, if applicable.
@@ -135,7 +135,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *vPCZoneIdentifier;
+@property (nonatomic, strong) NSString *vPCZoneIdentifier;
 
 /**
  * A standalone termination policy or a list of termination policies used
@@ -146,7 +146,7 @@
  * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
  * Scaling Developer Guide</i>.
  */
-@property (nonatomic, retain) NSMutableArray *terminationPolicies;
+@property (nonatomic, strong) NSMutableArray *terminationPolicies;
 
 /**
  * Adds a single object to availabilityZones.

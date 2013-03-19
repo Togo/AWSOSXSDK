@@ -45,29 +45,19 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Bucket: %@,", bucket] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AWSAccessKeyId: %@,", aWSAccessKeyId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UploadPolicy: %@,", uploadPolicy] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UploadPolicySignature: %@,", uploadPolicySignature] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Bucket: %@,", bucket]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AWSAccessKeyId: %@,", aWSAccessKeyId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UploadPolicy: %@,", uploadPolicy]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UploadPolicySignature: %@,", uploadPolicySignature]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [bucket release];
-    [prefix release];
-    [aWSAccessKeyId release];
-    [uploadPolicy release];
-    [uploadPolicySignature release];
-
-    [super dealloc];
-}
 
 
 @end

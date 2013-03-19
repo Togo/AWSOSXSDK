@@ -44,11 +44,5 @@
 
 @synthesize uploadId;
 
--(void)dealloc
-{
-    [uploadId release];
-
-    [super dealloc];
-}
 
 @end

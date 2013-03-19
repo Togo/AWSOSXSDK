@@ -45,7 +45,7 @@
 /**
  * A list of security group IDs associated with your LoadBalancer.
  */
-@property (nonatomic, retain) NSMutableArray *securityGroups;
+@property (nonatomic, strong) NSMutableArray *securityGroups;
 
 
 

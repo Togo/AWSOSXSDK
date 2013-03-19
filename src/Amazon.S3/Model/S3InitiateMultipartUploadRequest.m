@@ -89,14 +89,5 @@
     return urlRequest;
 }
 
--(void)dealloc
-{
-    [cacheControl release];
-    [contentEncoding release];
-    [contentDisposition release];
-    [redirectLocation release];
-
-    [super dealloc];
-}
 
 @end

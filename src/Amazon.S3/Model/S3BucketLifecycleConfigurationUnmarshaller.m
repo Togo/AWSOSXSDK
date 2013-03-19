@@ -26,7 +26,7 @@
     
     if ([elementName isEqualToString:@"Rule"])
     {
-        [parser setDelegate:[[[S3BucketLifecycleConfigurationRuleUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].rules withSetter:@selector(addObject:)] autorelease]];
+        [parser setDelegate:[[S3BucketLifecycleConfigurationRuleUnmarshaller alloc] initWithCaller:self withParentObject:[self configuration].rules withSetter:@selector(addObject:)]];
     }
 }
 
@@ -42,10 +42,5 @@
     return configuration;
 }
 
--(void)dealloc
-{
-    [configuration release];
-    [super dealloc];
-}
 
 @end

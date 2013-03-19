@@ -39,12 +39,12 @@
 /**
  * Name of the region.
  */
-@property (nonatomic, retain) NSString *regionName;
+@property (nonatomic, strong) NSString *regionName;
 
 /**
  * Region service endpoint.
  */
-@property (nonatomic, retain) NSString *endpoint;
+@property (nonatomic, strong) NSString *endpoint;
 
 /**
  * Returns a string representation of this object; useful for testing and

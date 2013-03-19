@@ -25,7 +25,7 @@
 
 +(DynamoDBKey *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBKey *key = [[[DynamoDBKey alloc] init] autorelease];
+    DynamoDBKey *key = [[DynamoDBKey alloc] init];
 
 
 

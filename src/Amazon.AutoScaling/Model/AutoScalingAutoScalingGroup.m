@@ -138,59 +138,34 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AutoScalingGroupARN: %@,", autoScalingGroupARN] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MinSize: %@,", minSize] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxSize: %@,", maxSize] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DefaultCooldown: %@,", defaultCooldown] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"LoadBalancerNames: %@,", loadBalancerNames] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthCheckType: %@,", healthCheckType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HealthCheckGracePeriod: %@,", healthCheckGracePeriod] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Instances: %@,", instances] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"SuspendedProcesses: %@,", suspendedProcesses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PlacementGroup: %@,", placementGroup] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"VPCZoneIdentifier: %@,", vPCZoneIdentifier] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EnabledMetrics: %@,", enabledMetrics] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Status: %@,", status] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Tags: %@,", tags] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"TerminationPolicies: %@,", terminationPolicies] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupName: %@,", autoScalingGroupName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AutoScalingGroupARN: %@,", autoScalingGroupARN]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LaunchConfigurationName: %@,", launchConfigurationName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MinSize: %@,", minSize]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxSize: %@,", maxSize]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DesiredCapacity: %@,", desiredCapacity]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DefaultCooldown: %@,", defaultCooldown]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AvailabilityZones: %@,", availabilityZones]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"LoadBalancerNames: %@,", loadBalancerNames]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthCheckType: %@,", healthCheckType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HealthCheckGracePeriod: %@,", healthCheckGracePeriod]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Instances: %@,", instances]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CreatedTime: %@,", createdTime]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"SuspendedProcesses: %@,", suspendedProcesses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PlacementGroup: %@,", placementGroup]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"VPCZoneIdentifier: %@,", vPCZoneIdentifier]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EnabledMetrics: %@,", enabledMetrics]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Status: %@,", status]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Tags: %@,", tags]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"TerminationPolicies: %@,", terminationPolicies]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [autoScalingGroupName release];
-    [autoScalingGroupARN release];
-    [launchConfigurationName release];
-    [minSize release];
-    [maxSize release];
-    [desiredCapacity release];
-    [defaultCooldown release];
-    [availabilityZones release];
-    [loadBalancerNames release];
-    [healthCheckType release];
-    [healthCheckGracePeriod release];
-    [instances release];
-    [createdTime release];
-    [suspendedProcesses release];
-    [placementGroup release];
-    [vPCZoneIdentifier release];
-    [enabledMetrics release];
-    [status release];
-    [tags release];
-    [terminationPolicies release];
-
-    [super dealloc];
-}
 
 
 @end

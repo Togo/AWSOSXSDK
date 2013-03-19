@@ -42,7 +42,7 @@
 /**
  * An optional list of the instances to describe.
  */
-@property (nonatomic, retain) NSMutableArray *instanceIds;
+@property (nonatomic, strong) NSMutableArray *instanceIds;
 
 /**
  * A list of filters used to match properties for Instances. For a
@@ -51,7 +51,7 @@
  * Reference/index.html?ApiReference-query-DescribeInstances.html">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to instanceIds.

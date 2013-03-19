@@ -37,13 +37,13 @@
  * HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life
  * of the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *protocol;
+@property (nonatomic, strong) NSString *protocol;
 
 /**
  * Specifies the external LoadBalancer port number. This property cannot
  * be modified for the life of the LoadBalancer.
  */
-@property (nonatomic, retain) NSNumber *loadBalancerPort;
+@property (nonatomic, strong) NSNumber *loadBalancerPort;
 
 /**
  * Specifies the protocol to use for routing traffic to back-end
@@ -60,7 +60,7 @@
  * whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's
  * <code>InstanceProtocol</code> must be either HTTP or TCP. </note>
  */
-@property (nonatomic, retain) NSString *instanceProtocol;
+@property (nonatomic, strong) NSString *instanceProtocol;
 
 /**
  * Specifies the TCP port on which the instance server is listening. This
@@ -69,7 +69,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 65535<br/>
  */
-@property (nonatomic, retain) NSNumber *instancePort;
+@property (nonatomic, strong) NSNumber *instancePort;
 
 /**
  * The ARN string of the server certificate. To get the ARN of the server
@@ -77,7 +77,7 @@
  * e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
  * </a> API.
  */
-@property (nonatomic, retain) NSString *sSLCertificateId;
+@property (nonatomic, strong) NSString *sSLCertificateId;
 
 
 /**

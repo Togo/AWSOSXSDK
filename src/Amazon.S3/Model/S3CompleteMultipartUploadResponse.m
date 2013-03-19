@@ -27,14 +27,9 @@
     [parser setDelegate:unmarshaller];
     [parser parse];
 
-    if (completeMultipartUploadResult != nil) {
-        [completeMultipartUploadResult release];
-    }
 
-    completeMultipartUploadResult = [unmarshaller.completeMultipartUploadResult retain];
+    completeMultipartUploadResult = unmarshaller.completeMultipartUploadResult;
 
-    [unmarshaller release];
-    [parser release];
 }
 
 -(S3CompleteMultipartUploadResult *)completeMultipartUploadResult
@@ -45,11 +40,5 @@
     return completeMultipartUploadResult;
 }
 
--(void)dealloc
-{
-    [completeMultipartUploadResult release];
-
-    [super dealloc];
-}
 
 @end

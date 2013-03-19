@@ -61,9 +61,4 @@ qualifiedName:(NSString *)qName
     return multipartUpload;
 }
 
--(void)dealloc
-{
-    [multipartUpload release];
-    [super dealloc];
-}
 @end

@@ -37,7 +37,7 @@
 /**
  * The URL of the SQS queue to take action on.
  */
-@property (nonatomic, retain) NSString *queueUrl;
+@property (nonatomic, strong) NSString *queueUrl;
 
 /**
  * A list of attributes that need to be returned along with each message.
@@ -45,28 +45,28 @@
  * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
  * SentTimestamp].
  */
-@property (nonatomic, retain) NSMutableArray *attributeNames;
+@property (nonatomic, strong) NSMutableArray *attributeNames;
 
 /**
  * The maximum number of messages to return. Amazon SQS never returns
  * more messages than this value but may return fewer. <p>All of the
  * messages are not necessarily returned.
  */
-@property (nonatomic, retain) NSNumber *maxNumberOfMessages;
+@property (nonatomic, strong) NSNumber *maxNumberOfMessages;
 
 /**
  * The duration (in seconds) that the received messages are hidden from
  * subsequent retrieve requests after being retrieved by a
  * <code>ReceiveMessage</code> request.
  */
-@property (nonatomic, retain) NSNumber *visibilityTimeout;
+@property (nonatomic, strong) NSNumber *visibilityTimeout;
 
 /**
  * The duration (in seconds) for which the call will wait for a message
  * to arrive in the queue before returning. If a message is available,
  * the call will return sooner than WaitTimeSeconds.
  */
-@property (nonatomic, retain) NSNumber *waitTimeSeconds;
+@property (nonatomic, strong) NSNumber *waitTimeSeconds;
 
 
 /**

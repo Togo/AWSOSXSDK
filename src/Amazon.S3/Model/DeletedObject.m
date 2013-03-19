@@ -19,13 +19,5 @@
 
 @synthesize key, versionId, deleteMarker, deleteMarkerVersionId;
 
--(void)dealloc
-{
-    [key release];
-    [versionId release];
-    [deleteMarkerVersionId release];
-
-    [super dealloc];
-}
 
 @end

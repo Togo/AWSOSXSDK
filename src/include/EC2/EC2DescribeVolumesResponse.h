@@ -43,7 +43,7 @@
 /**
  * The list of described EBS volumes.
  */
-@property (nonatomic, retain) NSMutableArray *volumes;
+@property (nonatomic, strong) NSMutableArray *volumes;
 
 
 

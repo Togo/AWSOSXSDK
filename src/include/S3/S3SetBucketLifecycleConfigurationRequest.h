@@ -32,6 +32,6 @@
 +(id)requestWithBucketName:(NSString *)theBucketName;
 
 /** The new lifecycle configuration for the specified bucket. */
-@property (nonatomic, retain) S3BucketLifecycleConfiguration *configuration;
+@property (nonatomic, strong) S3BucketLifecycleConfiguration *configuration;
 
 @end

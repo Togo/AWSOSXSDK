@@ -42,7 +42,7 @@
  * returns the description of all the policy types defined by Elastic
  * Load Balancing service.
  */
-@property (nonatomic, retain) NSMutableArray *policyTypeNames;
+@property (nonatomic, strong) NSMutableArray *policyTypeNames;
 
 /**
  * Adds a single object to policyTypeNames.

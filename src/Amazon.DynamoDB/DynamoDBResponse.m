@@ -58,7 +58,7 @@
     
     isFinishedLoading = YES;
 
-    NSString *jsonString = [[[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding] autorelease];
+    NSString *jsonString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
     AMZLogDebug(@"Response Body:\n%@", jsonString);
 
     if (self.httpStatusCode == 413) {
@@ -111,7 +111,7 @@
         }
         else if(response.error) {
             
-            NSError *errorFound = [[response.error copy] autorelease];
+            NSError *errorFound = [response.error copy];
             
             if ([(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithError:)]) {
                 [request.delegate request:request didFailWithError:errorFound];
@@ -122,7 +122,7 @@
             ((AmazonServiceException *)response.exception).requestId = self.requestId;
             
             BOOL throwsExceptions = [AmazonErrorHandler throwsExceptions];
-            NSException *exceptionFound = [[response.exception copy] autorelease];
+            NSException *exceptionFound = [response.exception copy];
             
             if (throwsExceptions == YES
                 && [(NSObject *)request.delegate respondsToSelector:@selector(request:didFailWithServiceException:)]) {
@@ -154,9 +154,5 @@
     }
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
 
 @end

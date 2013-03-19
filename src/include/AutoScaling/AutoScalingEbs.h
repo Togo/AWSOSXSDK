@@ -43,7 +43,7 @@
  * <b>Length: </b>1 - 255<br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The volume size, in gigabytes.
@@ -51,7 +51,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 1024<br/>
  */
-@property (nonatomic, retain) NSNumber *volumeSize;
+@property (nonatomic, strong) NSNumber *volumeSize;
 
 /**
  * Returns a string representation of this object; useful for testing and

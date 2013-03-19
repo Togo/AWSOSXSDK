@@ -24,7 +24,7 @@
 
 +(DynamoDBDeleteRequest *)unmarshall:(NSDictionary *)jsonObject
 {
-    DynamoDBDeleteRequest *deleteRequest = [[[DynamoDBDeleteRequest alloc] init] autorelease];
+    DynamoDBDeleteRequest *deleteRequest = [[DynamoDBDeleteRequest alloc] init];
 
 
 

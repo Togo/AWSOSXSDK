@@ -43,7 +43,7 @@
 /**
  * The session credentials for API authentication.
  */
-@property (nonatomic, retain) SecurityTokenServiceCredentials *credentials;
+@property (nonatomic, strong) SecurityTokenServiceCredentials *credentials;
 
 /**
  * Returns a string representation of this object; useful for testing and

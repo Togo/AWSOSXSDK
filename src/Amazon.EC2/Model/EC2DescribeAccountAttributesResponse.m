@@ -37,12 +37,10 @@
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -59,21 +57,15 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AccountAttributes: %@,", accountAttributes] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AccountAttributes: %@,", accountAttributes]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [accountAttributes release];
-
-    [super dealloc];
-}
 
 
 @end

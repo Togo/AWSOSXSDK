@@ -35,27 +35,27 @@
 /**
  *
  */
-@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, strong) NSString *messageId;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *receiptHandle;
+@property (nonatomic, strong) NSString *receiptHandle;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *mD5OfBody;
+@property (nonatomic, strong) NSString *mD5OfBody;
 
 /**
  *
  */
-@property (nonatomic, retain) NSString *body;
+@property (nonatomic, strong) NSString *body;
 
 /**
  *
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 
 /**

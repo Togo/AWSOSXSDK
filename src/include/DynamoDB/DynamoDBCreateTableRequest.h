@@ -43,7 +43,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  * The KeySchema identifies the primary key as a one attribute primary
@@ -53,7 +53,7 @@
  * contains two attribute values: a <code>HashKeyElement</code> and a
  * <code>RangeKeyElement</code>.
  */
-@property (nonatomic, retain) DynamoDBKeySchema *keySchema;
+@property (nonatomic, strong) DynamoDBKeySchema *keySchema;
 
 /**
  * Provisioned throughput reserves the required read and write resources
@@ -66,7 +66,7 @@
  * Eventually-consistent reads consume half the resources of strictly
  * consistent reads.
  */
-@property (nonatomic, retain) DynamoDBProvisionedThroughput *provisionedThroughput;
+@property (nonatomic, strong) DynamoDBProvisionedThroughput *provisionedThroughput;
 
 
 /**

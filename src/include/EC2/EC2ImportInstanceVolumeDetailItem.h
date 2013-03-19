@@ -46,37 +46,37 @@
 /**
  * The value of the BytesConverted property for this object.
  */
-@property (nonatomic, retain) NSNumber *bytesConverted;
+@property (nonatomic, strong) NSNumber *bytesConverted;
 
 /**
  * The value of the AvailabilityZone property for this object.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The value of the Image property for this object.
  */
-@property (nonatomic, retain) EC2DiskImageDescription *image;
+@property (nonatomic, strong) EC2DiskImageDescription *image;
 
 /**
  * The value of the Volume property for this object.
  */
-@property (nonatomic, retain) EC2DiskImageVolumeDescription *volume;
+@property (nonatomic, strong) EC2DiskImageVolumeDescription *volume;
 
 /**
  * The value of the Status property for this object.
  */
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, strong) NSString *status;
 
 /**
  * The value of the StatusMessage property for this object.
  */
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *statusMessage;
 
 /**
  * The value of the Description property for this object.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 /**
  * Returns a string representation of this object; useful for testing and

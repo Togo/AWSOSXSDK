@@ -33,7 +33,7 @@
 /**
  * The availability zone in which an Amazon EC2 instance runs.
  */
-@property (nonatomic, retain) NSString *availabilityZone;
+@property (nonatomic, strong) NSString *availabilityZone;
 
 /**
  * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
@@ -41,7 +41,7 @@
  * Performance Computing instances in the same group to ensure fast
  * connection speeds.
  */
-@property (nonatomic, retain) NSString *groupName;
+@property (nonatomic, strong) NSString *groupName;
 
 /**
  * The allowed tenancy of instances launched into the VPC. A value of
@@ -50,7 +50,7 @@
  * as dedicated tenancy regardless of the tenancy assigned to the
  * instance at launch.
  */
-@property (nonatomic, retain) NSString *tenancy;
+@property (nonatomic, strong) NSString *tenancy;
 
 
 /**

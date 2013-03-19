@@ -42,7 +42,7 @@
 /**
  * The optional list of key pair names to describe.
  */
-@property (nonatomic, retain) NSMutableArray *keyNames;
+@property (nonatomic, strong) NSMutableArray *keyNames;
 
 /**
  * A list of filters used to match properties for KeyPairs. For a
@@ -51,7 +51,7 @@
  * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
  * EC2 API reference</a>.
  */
-@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic, strong) NSMutableArray *filters;
 
 /**
  * Adds a single object to keyNames.

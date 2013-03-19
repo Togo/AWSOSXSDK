@@ -25,13 +25,13 @@
 
 
     if ([elementName isEqualToString:@"Credentials"]) {
-        SecurityTokenServiceCredentialsUnmarshaller *unmarshaller = [[[SecurityTokenServiceCredentialsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setCredentials:)] autorelease];
+        SecurityTokenServiceCredentialsUnmarshaller *unmarshaller = [[SecurityTokenServiceCredentialsUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setCredentials:)];
         unmarshaller.endElementTagName = @"Credentials";
         [parser setDelegate:unmarshaller];
     }
 
     if ([elementName isEqualToString:@"FederatedUser"]) {
-        SecurityTokenServiceFederatedUserUnmarshaller *unmarshaller = [[[SecurityTokenServiceFederatedUserUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFederatedUser:)] autorelease];
+        SecurityTokenServiceFederatedUserUnmarshaller *unmarshaller = [[SecurityTokenServiceFederatedUserUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setFederatedUser:)];
         unmarshaller.endElementTagName = @"FederatedUser";
         [parser setDelegate:unmarshaller];
     }
@@ -39,7 +39,7 @@
 
 
     if ([elementName isEqualToString:@"Error"]) {
-        [parser setDelegate:[[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)] autorelease]];
+        [parser setDelegate:[[AmazonServiceExceptionUnmarshaller alloc] initWithCaller:self withParentObject:self.response withSetter:@selector(setException:)]];
     }
 }
 
@@ -75,10 +75,5 @@
 }
 
 
--(void)dealloc
-{
-    [response release];
-    [super dealloc];
-}
 
 @end

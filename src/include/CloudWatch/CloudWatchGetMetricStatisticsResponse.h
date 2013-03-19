@@ -48,12 +48,12 @@
 /**
  * A label describing the specified metric.
  */
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, strong) NSString *label;
 
 /**
  * The datapoints for the specified metric.
  */
-@property (nonatomic, retain) NSMutableArray *datapoints;
+@property (nonatomic, strong) NSMutableArray *datapoints;
 
 
 

@@ -34,24 +34,24 @@
 /**
  * Provides an EC2 instance ID.
  */
-@property (nonatomic, retain) NSString *instanceId;
+@property (nonatomic, strong) NSString *instanceId;
 
 /**
  * Specifies the current status of the instance.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Provides information about the cause of <i>OutOfService</i> instances.
  * Specifically, it indicates whether the cause is Elastic Load Balancing
  * or the instance behind the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *reasonCode;
+@property (nonatomic, strong) NSString *reasonCode;
 
 /**
  * Provides a description of the instance.
  */
-@property (nonatomic, retain) NSString *descriptionValue;
+@property (nonatomic, strong) NSString *descriptionValue;
 
 
 /**

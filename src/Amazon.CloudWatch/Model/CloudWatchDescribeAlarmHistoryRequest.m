@@ -47,31 +47,20 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"HistoryItemType: %@,", historyItemType] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"StartDate: %@,", startDate] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"EndDate: %@,", endDate] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MaxRecords: %@,", maxRecords] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"AlarmName: %@,", alarmName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"HistoryItemType: %@,", historyItemType]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"StartDate: %@,", startDate]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"EndDate: %@,", endDate]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MaxRecords: %@,", maxRecords]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"NextToken: %@,", nextToken]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [alarmName release];
-    [historyItemType release];
-    [startDate release];
-    [endDate release];
-    [maxRecords release];
-    [nextToken release];
-
-    [super dealloc];
-}
 
 
 @end

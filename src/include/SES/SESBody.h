@@ -43,14 +43,14 @@
  * email clients, or clients on high-latency networks (such as mobile
  * devices).
  */
-@property (nonatomic, retain) SESContent *text;
+@property (nonatomic, strong) SESContent *text;
 
 /**
  * The content of the message, in HTML format. Use this for email clients
  * that can process HTML. You can include clickable links, formatted
  * text, and much more in an HTML message.
  */
-@property (nonatomic, retain) SESContent *html;
+@property (nonatomic, strong) SESContent *html;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -30,6 +30,6 @@
  *
  * Required to permanently delete a versioned object if versioning is configured with MFA Delete enabled.
  */
-@property (nonatomic, retain) NSString *mfaAuth;
+@property (nonatomic, strong) NSString *mfaAuth;
 
 @end

@@ -30,7 +30,6 @@ attributes:(NSDictionary *)attributeDict
 {
     // reset the current text
     if (currentText != nil) {
-        [currentText release];
         currentText = nil;
     }
 
@@ -97,11 +96,5 @@ qualifiedName:(NSString *)qName
     return self;
 }
 
--(void)dealloc
-{
-    [currentTag release];
-    [currentText release];
-    [super dealloc];
-}
 
 @end

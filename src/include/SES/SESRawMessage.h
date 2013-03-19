@@ -44,7 +44,7 @@
  * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
  * SES Developer Guide</a>.
  */
-@property (nonatomic, retain) NSData *data;
+@property (nonatomic, strong) NSData *data;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -25,7 +25,7 @@
 }
 
 /** The list of rules */
-@property (nonatomic, retain) NSArray *rules;
+@property (nonatomic, strong) NSArray *rules;
 
 -(NSString *)toXml;
 

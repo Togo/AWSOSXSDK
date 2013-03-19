@@ -38,28 +38,23 @@
     AmazonServiceException *newException = nil;
 
     if ([[theException errorCode] isEqualToString:@"ProvisionedThroughputExceededException"]) {
-        [newException release];
         newException = [[DynamoDBProvisionedThroughputExceededException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"InternalServerError"]) {
-        [newException release];
         newException = [[DynamoDBInternalServerErrorException alloc] initWithMessage:@""];
     }
 
     if ([[theException errorCode] isEqualToString:@"ResourceNotFoundException"]) {
-        [newException release];
         newException = [[DynamoDBResourceNotFoundException alloc] initWithMessage:@""];
     }
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -80,23 +75,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Responses: %@,", responses] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"UnprocessedItems: %@,", unprocessedItems] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Responses: %@,", responses]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"UnprocessedItems: %@,", unprocessedItems]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [responses release];
-    [unprocessedItems release];
-
-    [super dealloc];
-}
 
 
 @end

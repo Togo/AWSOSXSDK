@@ -42,7 +42,7 @@
 /**
  * A list of Auto Scaling group names.
  */
-@property (nonatomic, retain) NSMutableArray *autoScalingGroupNames;
+@property (nonatomic, strong) NSMutableArray *autoScalingGroupNames;
 
 /**
  * A string that marks the start of the next batch of returned results.
@@ -50,7 +50,7 @@
  * <b>Constraints:</b><br/>
  * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
  */
-@property (nonatomic, retain) NSString *nextToken;
+@property (nonatomic, strong) NSString *nextToken;
 
 /**
  * The maximum number of records to return.
@@ -58,7 +58,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 50<br/>
  */
-@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, strong) NSNumber *maxRecords;
 
 /**
  * Adds a single object to autoScalingGroupNames.

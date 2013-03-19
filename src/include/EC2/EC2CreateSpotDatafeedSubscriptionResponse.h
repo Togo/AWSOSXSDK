@@ -43,7 +43,7 @@
 /**
  * The SpotDatafeedSubscriptionType data type.
  */
-@property (nonatomic, retain) EC2SpotDatafeedSubscription *spotDatafeedSubscription;
+@property (nonatomic, strong) EC2SpotDatafeedSubscription *spotDatafeedSubscription;
 
 /**
  * Returns a string representation of this object; useful for testing and

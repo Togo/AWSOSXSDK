@@ -41,12 +41,10 @@
 
     if (newException != nil) {
         [newException setPropertiesWithException:theException];
-        [exception release];
         exception = newException;
     }
     else {
-        [exception release];
-        exception = [theException retain];
+        exception = theException;
     }
 }
 
@@ -57,25 +55,17 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Id: %@,", idValue] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"MD5OfMessageBody: %@,", mD5OfMessageBody] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Id: %@,", idValue]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MessageId: %@,", messageId]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"MD5OfMessageBody: %@,", mD5OfMessageBody]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [idValue release];
-    [messageId release];
-    [mD5OfMessageBody release];
-
-    [super dealloc];
-}
 
 
 @end

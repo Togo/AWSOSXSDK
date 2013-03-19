@@ -86,14 +86,6 @@
     return clientException;
 }
 
--(void)dealloc
-{
-    [region release];
-    [cannedACL release];
-    [fullACL release];
-
-    [super dealloc];
-}
 
 
 @end

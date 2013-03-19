@@ -57,7 +57,7 @@
  * the effective delivery policy which takes into the topic delivery
  * policy and account system defaults</li> </ul>
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
  * Returns a value from the attributes dictionary for the specified key.

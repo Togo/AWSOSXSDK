@@ -26,7 +26,7 @@
 
     [canonicalUser setID:theID];
     [canonicalUser setDisplayName:theDisplayName];
-    return [canonicalUser autorelease];
+    return canonicalUser;
 }
 
 +(id)granteeWithURI:(NSString *)theURI
@@ -34,7 +34,7 @@
     S3Grantee *group = [[S3Grantee alloc] init];
 
     [group setURI:theURI];
-    return [group autorelease];
+    return group;
 }
 
 +(id)granteeWithEmailAddress:(NSString *)theEmailAddress
@@ -42,7 +42,7 @@
     S3Grantee *user = [[S3Grantee alloc] init];
 
     [user setEmailAddress:theEmailAddress];
-    return [user autorelease];
+    return user;
 }
 
 +(id)allUsers
@@ -52,7 +52,7 @@
     if (allUsers == nil) {
         @synchronized([self class]) {
             if (allUsers == nil) {
-                allUsers = [[S3Grantee granteeWithURI:kS3GroupURIAllUsers] retain];
+                allUsers = [S3Grantee granteeWithURI:kS3GroupURIAllUsers];
             }
         }
     }
@@ -66,7 +66,7 @@
     if (authUsers == nil) {
         @synchronized([self class]) {
             if (authUsers == nil) {
-                authUsers = [[S3Grantee granteeWithURI:kS3GroupURIAuthUsers] retain];
+                authUsers = [S3Grantee granteeWithURI:kS3GroupURIAuthUsers];
             }
         }
     }
@@ -121,12 +121,5 @@
     return [self.ID hash] ^ [self.displayName hash];
 }
 
--(void)dealloc
-{
-    [emailAddress release];
-    [URI release];
-
-    [super dealloc];
-}
 
 @end

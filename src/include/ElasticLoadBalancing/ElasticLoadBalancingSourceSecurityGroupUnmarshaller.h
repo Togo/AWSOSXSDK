@@ -28,7 +28,7 @@
 }
 
 
-@property (nonatomic, readonly) ElasticLoadBalancingSourceSecurityGroup *response;
+@property (weak, nonatomic, readonly) ElasticLoadBalancingSourceSecurityGroup *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

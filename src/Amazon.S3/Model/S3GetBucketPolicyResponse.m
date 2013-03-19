@@ -26,16 +26,11 @@
     NSString *policyText = nil;
 
     if (self.body != nil) {
-        policyText = [[[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding] autorelease];
+        policyText = [[NSString alloc] initWithData:self.body encoding:NSUTF8StringEncoding];
     }
 
     policy = [[S3BucketPolicy alloc] initWithPolicy:policyText];
 }
 
--(void) dealloc
-{
-    [policy release];
-    [super dealloc];
-}
 
 @end

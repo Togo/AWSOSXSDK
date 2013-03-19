@@ -21,7 +21,7 @@
     CloudWatchPutMetricAlarmResponse *response;
 }
 
-@property (nonatomic, readonly) CloudWatchPutMetricAlarmResponse *response;
+@property (weak, nonatomic, readonly) CloudWatchPutMetricAlarmResponse *response;
 
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

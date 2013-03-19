@@ -30,7 +30,7 @@ attributes:(NSDictionary *)attributeDict
     [super parser:parser didStartElement:elementName namespaceURI:namespaceURI qualifiedName:qualifiedName attributes:attributeDict];
 
     if ([elementName isEqualToString:@"Owner"]) {
-        [parser setDelegate:[[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.summary withSetter:@selector(setOwner:)] autorelease]];
+        [parser setDelegate:[[S3OwnerUnmarshaller alloc] initWithCaller:self withParentObject:self.summary withSetter:@selector(setOwner:)]];
     }
 }
 
@@ -106,11 +106,6 @@ qualifiedName:(NSString *)qName
     return summary;
 }
 
--(void)dealloc
-{
-    [summary release];
-    [super dealloc];
-}
 
 @end
 

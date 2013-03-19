@@ -39,23 +39,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DeviceName: %@,", deviceName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Ebs: %@,", ebs] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DeviceName: %@,", deviceName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"Ebs: %@,", ebs]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [deviceName release];
-    [ebs release];
-
-    [super dealloc];
-}
 
 
 @end

@@ -67,9 +67,9 @@
  * The document to serve when a directory is specified (ex: index.html).
  * This path is relative to the requested resource.
  */
-@property (nonatomic, retain) NSString *indexDocumentSuffix;
+@property (nonatomic, strong) NSString *indexDocumentSuffix;
 
 /** The complete path to the document to serve for 4xx errors. */
-@property (nonatomic, retain) NSString *errorDocument;
+@property (nonatomic, strong) NSString *errorDocument;
 
 @end

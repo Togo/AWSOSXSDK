@@ -31,24 +31,24 @@
 }
 
 /** Object key for which the multipart upload was initiated. */
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 /** Name of the bucket to which the multipart upload was initiated. */
-@property (nonatomic, retain) NSString *bucket;
+@property (nonatomic, strong) NSString *bucket;
 
 /** ID for the initiated multipart upload. */
-@property (nonatomic, retain) NSString *uploadId;
+@property (nonatomic, strong) NSString *uploadId;
 
 /** The class of storage (STANDARD or REDUCED_REDUDANCY) that will be used to store the object when the multipart upload is complete. */
-@property (nonatomic, retain) NSString *storageClass;
+@property (nonatomic, strong) NSString *storageClass;
 
 /** Who initiated the multipart upload. */
-@property (nonatomic, retain) S3Owner *initiator;
+@property (nonatomic, strong) S3Owner *initiator;
 
 /** Container element that identifies the object owner, after the object is created. */
-@property (nonatomic, retain) S3Owner *owner;
+@property (nonatomic, strong) S3Owner *owner;
 
 /** Date and time at which the multipart upload was initiated. */
-@property (nonatomic, retain) NSDate *initiated;
+@property (nonatomic, strong) NSDate *initiated;
 
 @end

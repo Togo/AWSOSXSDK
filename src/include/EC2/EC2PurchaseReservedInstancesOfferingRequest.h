@@ -36,17 +36,17 @@
 /**
  * The unique ID of the Reserved Instances offering being purchased.
  */
-@property (nonatomic, retain) NSString *reservedInstancesOfferingId;
+@property (nonatomic, strong) NSString *reservedInstancesOfferingId;
 
 /**
  * The number of Reserved Instances to purchase.
  */
-@property (nonatomic, retain) NSNumber *instanceCount;
+@property (nonatomic, strong) NSNumber *instanceCount;
 
 /**
  * The value of the LimitPrice property for this object.
  */
-@property (nonatomic, retain) EC2ReservedInstanceLimitPrice *limitPrice;
+@property (nonatomic, strong) EC2ReservedInstanceLimitPrice *limitPrice;
 
 
 /**

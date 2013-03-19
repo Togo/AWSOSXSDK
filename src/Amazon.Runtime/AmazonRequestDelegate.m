@@ -47,8 +47,7 @@
 -(void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)aResponse
 {
     AMZLogDebug(@"didCompleteWithResponse");
-    [response release];
-    response         = [aResponse retain];
+    response         = aResponse;
     response.request = request;
 }
 
@@ -65,25 +64,15 @@
 -(void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)theError
 {
     AMZLogDebug(@"didFailWithError: %@", theError);
-    [error release];
-    error = [theError retain];
+    error = theError;
 }
 
 -(void)request:(AmazonServiceRequest *)request didFailWithServiceException:(NSException *)theException
 {
     AMZLogDebug(@"didFailWithServiceException");
-    [exception release];
-    exception = [theException retain];
+    exception = theException;
 }
 
--(void)dealloc
-{
-    [error release];
-    [exception release];
-    [response release];
-
-    [super dealloc];
-}
 
 @end
 

@@ -28,13 +28,6 @@
     return buckets;
 }
 
--(void)dealloc
-{
-    [owner release];
-    [buckets release];
-
-    [super dealloc];
-}
 
 
 @end

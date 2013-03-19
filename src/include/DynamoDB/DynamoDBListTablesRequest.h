@@ -48,7 +48,7 @@
  * <b>Length: </b>3 - 255<br/>
  * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
  */
-@property (nonatomic, retain) NSString *exclusiveStartTableName;
+@property (nonatomic, strong) NSString *exclusiveStartTableName;
 
 /**
  * A number of maximum table names to return.
@@ -56,7 +56,7 @@
  * <b>Constraints:</b><br/>
  * <b>Range: </b>1 - 100<br/>
  */
-@property (nonatomic, retain) NSNumber *limit;
+@property (nonatomic, strong) NSNumber *limit;
 
 /**
  * Returns a string representation of this object; useful for testing and

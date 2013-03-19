@@ -27,7 +27,7 @@
 }
 
 /** The storage class for this transition. Currently only 'GLACIER' is supported. **/
-@property (nonatomic, retain) NSString *storageClass;
+@property (nonatomic, strong) NSString *storageClass;
 
 /** The time for this transition in days **/
 @property (nonatomic, assign) NSInteger transitionDays;
@@ -37,7 +37,7 @@
  * If transitionDays is non-zero, this property will be
  * ignored.
  **/
-@property (nonatomic, retain) NSDate *transitionDate;
+@property (nonatomic, strong) NSDate *transitionDate;
 
 -(NSString *)toXml;
 

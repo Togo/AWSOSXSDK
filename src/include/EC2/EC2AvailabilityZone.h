@@ -42,22 +42,22 @@
 /**
  * Name of the Availability Zone.
  */
-@property (nonatomic, retain) NSString *zoneName;
+@property (nonatomic, strong) NSString *zoneName;
 
 /**
  * State of the Availability Zone.
  */
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, strong) NSString *state;
 
 /**
  * Name of the region in which this zone resides.
  */
-@property (nonatomic, retain) NSString *regionName;
+@property (nonatomic, strong) NSString *regionName;
 
 /**
  * A list of messages about the Availability Zone.
  */
-@property (nonatomic, retain) NSMutableArray *messages;
+@property (nonatomic, strong) NSMutableArray *messages;
 
 /**
  * Adds a single object to messages.

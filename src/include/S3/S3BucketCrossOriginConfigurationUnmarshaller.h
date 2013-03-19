@@ -24,6 +24,6 @@
 }
 
 /** The S3BucketCrossOriginConfiguration represented by the XML */
-@property (nonatomic, readonly) S3BucketCrossOriginConfiguration *configuration;
+@property (weak, nonatomic, readonly) S3BucketCrossOriginConfiguration *configuration;
 
 @end

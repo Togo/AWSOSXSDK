@@ -49,7 +49,7 @@
 /**
  * The DNS name for the LoadBalancer.
  */
-@property (nonatomic, retain) NSString *dNSName;
+@property (nonatomic, strong) NSString *dNSName;
 
 /**
  * Returns a string representation of this object; useful for testing and

@@ -54,7 +54,7 @@
  * <b>Constraints:</b><br/>
  * <b>Allowed Values: </b>Pending, Success, Failed, TemporaryFailure
  */
-@property (nonatomic, retain) NSString *dkimVerificationStatus;
+@property (nonatomic, strong) NSString *dkimVerificationStatus;
 
 /**
  * A set of DNS records (tokens) that must be published in the domain
@@ -64,7 +64,7 @@
  * by Amazon SES. (This only applies to domain entities, not email
  * address identities.)
  */
-@property (nonatomic, retain) NSMutableArray *dkimTokens;
+@property (nonatomic, strong) NSMutableArray *dkimTokens;
 
 /**
  * Adds a single object to dkimTokens.

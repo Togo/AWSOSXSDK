@@ -43,27 +43,18 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"DiskImageFormat: %@,", diskImageFormat] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"ContainerFormat: %@,", containerFormat] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"S3Bucket: %@,", s3Bucket] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"S3Key: %@,", s3Key] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"DiskImageFormat: %@,", diskImageFormat]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"ContainerFormat: %@,", containerFormat]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"S3Bucket: %@,", s3Bucket]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"S3Key: %@,", s3Key]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [diskImageFormat release];
-    [containerFormat release];
-    [s3Bucket release];
-    [s3Key release];
-
-    [super dealloc];
-}
 
 
 @end

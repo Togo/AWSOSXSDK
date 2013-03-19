@@ -61,7 +61,7 @@
  * -- the JSON serialization of the effective delivery policy that takes
  * into account system defaults</li> </ul>
  */
-@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
  * Returns a value from the attributes dictionary for the specified key.

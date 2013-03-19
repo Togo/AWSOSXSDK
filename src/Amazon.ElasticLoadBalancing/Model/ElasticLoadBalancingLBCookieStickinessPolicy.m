@@ -49,23 +49,16 @@
     NSMutableString *buffer = [[NSMutableString alloc] initWithCapacity:256];
 
     [buffer appendString:@"{"];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"PolicyName: %@,", policyName] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"CookieExpirationPeriod: %@,", cookieExpirationPeriod] autorelease]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"PolicyName: %@,", policyName]];
+    [buffer appendString:[[NSString alloc] initWithFormat:@"CookieExpirationPeriod: %@,", cookieExpirationPeriod]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];
 
-    return [buffer autorelease];
+    return buffer;
 }
 
 
 
--(void)dealloc
-{
-    [policyName release];
-    [cookieExpirationPeriod release];
-
-    [super dealloc];
-}
 
 
 @end

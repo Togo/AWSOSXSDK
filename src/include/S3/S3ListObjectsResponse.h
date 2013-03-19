@@ -26,6 +26,6 @@
 }
 
 /** The result object which contains the response elements from the request */
-@property (nonatomic, retain) S3ListObjectsResult *listObjectsResult;
+@property (nonatomic, strong) S3ListObjectsResult *listObjectsResult;
 
 @end

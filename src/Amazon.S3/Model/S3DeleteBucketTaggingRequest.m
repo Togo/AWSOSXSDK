@@ -30,7 +30,7 @@
 
 +(id)requestWithBucketName:(NSString *)theBucketName
 {
-    return [[[S3DeleteBucketTaggingRequest alloc] initWithBucketName:theBucketName] autorelease];
+    return [[S3DeleteBucketTaggingRequest alloc] initWithBucketName:theBucketName];
 }
 
 -(NSMutableURLRequest *)configureURLRequest

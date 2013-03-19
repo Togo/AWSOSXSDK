@@ -53,15 +53,8 @@
 
 -(DynamoDBResponse*)constructResponse
 {
-    return [[DynamoDBResponse new] autorelease];
+    return [DynamoDBResponse new];
 }
 
--(void)dealloc
-{
-    [headers release];
-    [content release];
-
-    [super dealloc];
-}
 
 @end

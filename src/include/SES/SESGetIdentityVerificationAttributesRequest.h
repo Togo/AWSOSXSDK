@@ -40,7 +40,7 @@
 /**
  * A list of identities.
  */
-@property (nonatomic, retain) NSMutableArray *identities;
+@property (nonatomic, strong) NSMutableArray *identities;
 
 /**
  * Adds a single object to identities.

@@ -35,7 +35,7 @@
  * characters and can contain the following characters: a-z, A-Z, 0-9,
  * '_', '-', and '.'.
  */
-@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, strong) NSString *domainName;
 
 
 /**

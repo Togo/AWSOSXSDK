@@ -46,19 +46,19 @@
 /**
  * The ID of the snapshot whose attribute is being described.
  */
-@property (nonatomic, retain) NSString *snapshotId;
+@property (nonatomic, strong) NSString *snapshotId;
 
 /**
  * The list of permissions describing who can create a volume from the
  * associated EBS snapshot. <p> Only available if the
  * createVolumePermission attribute is requested.
  */
-@property (nonatomic, retain) NSMutableArray *createVolumePermissions;
+@property (nonatomic, strong) NSMutableArray *createVolumePermissions;
 
 /**
  * The value of the ProductCodes property for this object.
  */
-@property (nonatomic, retain) NSMutableArray *productCodes;
+@property (nonatomic, strong) NSMutableArray *productCodes;
 
 
 
