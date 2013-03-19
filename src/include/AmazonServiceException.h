@@ -53,7 +53,7 @@
  *
  * @param theStatusCode The HTTP status code.
  */
-+(id)exceptionWithStatusCode:(int)theStatusCode;
++(id)exceptionWithStatusCode:(NSInteger)theStatusCode;
 
 /** Return an exception with the given message, error code, status, and request ID.
  *

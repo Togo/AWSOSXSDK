@@ -29,7 +29,7 @@
     [xml appendString:@"<Transition>"];
     [xml appendFormat:@"<StorageClass>%@</StorageClass>", self.storageClass];
     if (self.transitionDays > 0) {
-        [xml appendFormat:@"<Days>%d</Days>", self.transitionDays];
+        [xml appendFormat:@"<Days>%ld</Days>", (long)self.transitionDays];
     }
     else if (self.transitionDate != nil) {
         [xml appendFormat:@"<Date>%@</Date>", [self.transitionDate stringWithISO8061Format]];

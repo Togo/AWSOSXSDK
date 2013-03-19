@@ -14,7 +14,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "AmazonClientException.h"
 #import "AmazonServiceException.h"
 

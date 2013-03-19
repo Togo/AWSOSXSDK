@@ -5654,7 +5654,7 @@
 		38FFA9AB16DEC58200CB3B82 /* S3AbortMultiplartUploadsOperation_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3AbortMultiplartUploadsOperation_Internal.h; sourceTree = "<group>"; };
 		38FFA9AC16DEC58200CB3B82 /* S3MultipartUploadOperation_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3MultipartUploadOperation_Internal.h; sourceTree = "<group>"; };
 		38FFA9AD16DEC58200CB3B82 /* S3PutObjectOperation_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3PutObjectOperation_Internal.h; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* AWSiOSSDK_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSiOSSDK_Prefix.pch; sourceTree = "<group>"; };
+		68215DA516F8BE3900898BA1 /* AWSOSXSDK_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWSOSXSDK_Prefix.pch; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C416BD0E16BCA24A00B0290C /* EC2CopySnapshotRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EC2CopySnapshotRequest.m; sourceTree = "<group>"; };
 		C416BD0F16BCA24A00B0290C /* EC2CopySnapshotRequestMarshaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EC2CopySnapshotRequestMarshaller.m; sourceTree = "<group>"; };
@@ -6215,7 +6215,7 @@
 		D054D568128C8AFE009B5334 /* SimpleDBUpdateCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDBUpdateCondition.h; sourceTree = "<group>"; };
 		D063F1E316E53B93006AD673 /* AmazonAbstractJsonWebServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonAbstractJsonWebServiceClient.m; sourceTree = "<group>"; };
 		D063F1E616E53B9E006AD673 /* AmazonAbstractJsonWebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonAbstractJsonWebServiceClient.h; sourceTree = "<group>"; };
-		D069663F1234D53400BFBB1E /* libAWSiOSSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAWSiOSSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D069663F1234D53400BFBB1E /* libAWSOSXSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAWSOSXSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07CEC4A129B330B008FF534 /* SimpleDBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDBRequest.m; sourceTree = "<group>"; };
 		D07CEC7D129B3737008FF534 /* SimpleDBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDBRequest.h; sourceTree = "<group>"; };
 		D07E9DA014BB9C160007304E /* AmazonJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonJSON.m; sourceTree = "<group>"; };
@@ -6387,7 +6387,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D069663F1234D53400BFBB1E /* libAWSiOSSDK.a */,
+				D069663F1234D53400BFBB1E /* libAWSOSXSDK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -6694,7 +6694,7 @@
 			isa = PBXGroup;
 			children = (
 				034768DFFF38A50411DB9C8B /* Products */,
-				AA747D9E0F9514B9006C5449 /* AWSiOSSDK_Prefix.pch */,
+				68215DA516F8BE3900898BA1 /* AWSOSXSDK_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -11536,9 +11536,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		D2AAC07D0554694100DB518D /* AWSiOSSDK */ = {
+		D2AAC07D0554694100DB518D /* AWSOSXSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AWSiOSSDK" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AWSOSXSDK" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -11548,9 +11548,9 @@
 			);
 			dependencies = (
 			);
-			name = AWSiOSSDK;
+			name = AWSOSXSDK;
 			productName = s3;
-			productReference = D069663F1234D53400BFBB1E /* libAWSiOSSDK.a */;
+			productReference = D069663F1234D53400BFBB1E /* libAWSOSXSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -11561,7 +11561,7 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 			};
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AWSiOSSDK" */;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AWSOSXSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -11576,7 +11576,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* AWSiOSSDK */,
+				D2AAC07D0554694100DB518D /* AWSOSXSDK */,
 				0AFD8DD7128465B4004B7863 /* Framework */,
 			);
 		};
@@ -13181,7 +13181,6 @@
 		0AFD8DD8128465B4004B7863 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -13193,7 +13192,6 @@
 		0AFD8DD9128465B4004B7863 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -13206,9 +13204,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
 				DSTROOT = /tmp/s3.dst;
@@ -13220,17 +13215,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AWSiOSSDK_Prefix.pch;
+				GCC_PREFIX_HEADER = AWSOSXSDK_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = AWSiOSSDK;
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = AWSOSXSDK;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -13239,9 +13231,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DSTROOT = /tmp/s3.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13249,21 +13238,18 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AWSiOSSDK_Prefix.pch;
+				GCC_PREFIX_HEADER = AWSOSXSDK_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = (
 					"include/**",
 					"ThirdParty/**",
 				);
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = AWSiOSSDK;
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = AWSOSXSDK;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -13271,7 +13257,7 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -13280,17 +13266,15 @@
 					ThirdParty,
 					"include/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -13298,10 +13282,8 @@
 					ThirdParty,
 					"include/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -13317,7 +13299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AWSiOSSDK" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AWSOSXSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
@@ -13326,7 +13308,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AWSiOSSDK" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AWSOSXSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,

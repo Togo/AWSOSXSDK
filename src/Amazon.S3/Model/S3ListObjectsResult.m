@@ -65,7 +65,7 @@
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Prefix: %@,", prefix] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Marker: %@,", marker] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %d,", maxKeys] autorelease]];
+    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated] autorelease]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];

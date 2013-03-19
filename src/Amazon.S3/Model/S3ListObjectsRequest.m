@@ -49,7 +49,7 @@
         if ( [queryString length] > 0) {
             [queryString appendFormat:@"&"];
         }
-        [queryString appendFormat:@"%@=%d", kS3QueryParamMaxKeys, self.maxKeys];
+        [queryString appendFormat:@"%@=%ld", kS3QueryParamMaxKeys, (long)self.maxKeys];
     }
 
     if ([queryString length] > 0) {

@@ -21,9 +21,7 @@
  *
  */
 @interface S3ListPartsRequest:S3Request {
-    NSString  *uploadId;
-    NSInteger maxParts;
-    NSInteger partNumberMarker;
+
 }
 
 /** The uploadId of the multipart upload to list */

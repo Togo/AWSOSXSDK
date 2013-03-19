@@ -106,7 +106,7 @@
     }
 
     if (expiresSet) {
-        [self.urlRequest setValue:[NSString stringWithFormat:@"%d", self.expires]
+        [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long)self.expires]
                forHTTPHeaderField:kHttpHdrExpires];
     }
 
@@ -116,7 +116,7 @@
     else {
         [self.urlRequest setHTTPBody:data];
         if (self.contentLength < 1) {
-            [self.urlRequest setValue:[NSString stringWithFormat:@"%d", [data length]]
+            [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]]
                    forHTTPHeaderField:kHttpHdrContentLength];
         }
     }

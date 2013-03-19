@@ -517,9 +517,9 @@
             [timeoutTimer invalidate];      //  invalidate also releases the object.
         }
 
-        AMZLogDebug(@"Response Status Code : %d", response.httpStatusCode);
+        AMZLogDebug(@"Response Status Code : %ld", (long)response.httpStatusCode);
         if ( [self shouldRetry:response]) {
-            AMZLogDebug(@"Retrying Request: %d", retries);
+            AMZLogDebug(@"Retrying Request: %ld", (long)retries);
 
             [self pauseExponentially:retries];
             retries++;
@@ -528,7 +528,7 @@
             if (response.exception) {
                 AMZLogDebug(@"Request threw exception: %@", [response.exception description]);
                 if ([response.exception isMemberOfClass:[AmazonServiceException class]]) {
-                    AMZLogDebug(@"HTTP: %d, S3 Error Code: %@", ((AmazonServiceException *)response.exception).statusCode, ((AmazonServiceException *)response.exception).errorCode);
+                    AMZLogDebug(@"HTTP: %ld, S3 Error Code: %@", (long)((AmazonServiceException *)response.exception).statusCode, ((AmazonServiceException *)response.exception).errorCode);
                 }
                 AMZLogDebug(@"Reason: %@", [response.exception reason]);
 
@@ -543,7 +543,7 @@
     if (response.exception) {
         AMZLogDebug(@"Request threw exception: %@", [response.exception description]);
         if ([response.exception isMemberOfClass:[AmazonServiceException class]]) {
-            AMZLogDebug(@"HTTP: %d, S3 Error Code: %@", ((AmazonServiceException *)response.exception).statusCode, ((AmazonServiceException *)response.exception).errorCode);
+            AMZLogDebug(@"HTTP: %ld, S3 Error Code: %@", (long)((AmazonServiceException *)response.exception).statusCode, ((AmazonServiceException *)response.exception).errorCode);
         }
         AMZLogDebug(@"Reason: %@", [response.exception reason]);
 
@@ -551,7 +551,7 @@
         return response;
     }
 
-    AMZLogDebug(@"Received response from server. RequestId: %@. HTTP: %d. Id2: %@.", response.requestId, response.httpStatusCode, response.id2);
+    AMZLogDebug(@"Received response from server. RequestId: %@. HTTP: %ld. Id2: %@.", response.requestId, (long)response.httpStatusCode, response.id2);
     AMZLogDebug(@"Response [%@]", response);
 
     return response;

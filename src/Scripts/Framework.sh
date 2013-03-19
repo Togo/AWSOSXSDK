@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Define these to suit your nefarious purposes  
-				 FRAMEWORK_NAME=AWSiOSSDK  
+				 FRAMEWORK_NAME=AWSOSXSDK  
 			  FRAMEWORK_VERSION=A  
 	  FRAMEWORK_CURRENT_VERSION=1  
 FRAMEWORK_COMPATIBILITY_VERSION=1  
@@ -29,8 +29,8 @@ then
 	echo "Cleaning Completed"
 	exit 0
 else
-	xcodebuild -configuration Release -project "AWSiOSSDK.xcodeproj" -target "AWSiOSSDK" -sdk iphoneos
-	xcodebuild -configuration Release -project "AWSiOSSDK.xcodeproj" -target "AWSiOSSDK" -sdk iphonesimulator
+	xcodebuild -configuration Release -project "AWSOSXSDK.xcodeproj" -target "AWSOSXSDK" -sdk macosx
+	#xcodebuild -configuration Release -project "AWSOSXSDK.xcodeproj" -target "AWSOSXSDK" -sdk iphonesimulator
 
 
 	# This is the full name of the framework we'll  
@@ -56,8 +56,8 @@ else
 
 	# Check that this is what your static libraries  
 	# are called  
-	FRAMEWORK_INPUT_ARM_FILES="build/$BUILD_TYPE-iphoneos/libAWSiOSSDK.a"  
-	FRAMEWORK_INPUT_I386_FILES="build/$BUILD_TYPE-iphonesimulator/libAWSiOSSDK.a"
+	FRAMEWORK_INPUT_ARM_FILES="build/$BUILD_TYPE-iphoneos/libAWSOSXSDK.a"  
+	FRAMEWORK_INPUT_I386_FILES="build/$BUILD_TYPE-iphonesimulator/libAWSOSXSDK.a"
 
 
 	# The trick for creating a fully usable library is  

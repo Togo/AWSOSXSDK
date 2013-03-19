@@ -39,7 +39,7 @@
 
 -(NSMutableURLRequest *)configureURLRequest
 {
-    self.subResource = [NSString stringWithFormat:@"%@=%d&%@=%@", kS3QueryParamPartNumber, self.partNumber, kS3QueryParamUploadId, self.uploadId];
+    self.subResource = [NSString stringWithFormat:@"%@=%ld&%@=%@", kS3QueryParamPartNumber, (long)self.partNumber, kS3QueryParamUploadId, self.uploadId];
 
     if (self.contentLength < 1) {
         self.contentLength = [data length];

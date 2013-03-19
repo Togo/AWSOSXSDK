@@ -71,7 +71,7 @@
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Version Id Marker: %@,", versionIdMarker] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Next Version Id Marker: %@,", nextVersionIdMarker] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Delimiter: %@,", delimiter] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %d,", maxKeys] autorelease]];
+    [buffer appendString:[[[NSString alloc] initWithFormat:@"Max Keys: %ld,", (long)maxKeys] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Is Truncated: %d,", isTruncated] autorelease]];
     [buffer appendString:[super description]];
     [buffer appendString:@"}"];

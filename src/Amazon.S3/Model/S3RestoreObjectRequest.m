@@ -35,7 +35,7 @@
     NSMutableString *xml = [[NSMutableString alloc] init];
     
     [xml appendString:@"<RestoreRequest xmlns=\"http://s3.amazonaws.com/doc/2006-03-01\">"];
-    [xml appendFormat:@"<Days>%d</Days>", self.days];
+    [xml appendFormat:@"<Days>%ld</Days>", (long)self.days];
     [xml appendString:@"</RestoreRequest>"];
     
     NSString *retval = [NSString stringWithString:xml];
@@ -55,7 +55,7 @@
     
     NSData *data = [[self toXml] dataUsingEncoding:NSUTF8StringEncoding];
     
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:kHttpHdrContentLength];
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[data length]] forHTTPHeaderField:kHttpHdrContentLength];
     [self.urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
     [self.urlRequest setHTTPBody:data];
     

@@ -29,7 +29,7 @@
     NSMutableString *endQueryString = [NSMutableString stringWithCapacity:512];
 
     if (self.maxKeys > 0) {
-        [endQueryString appendFormat:@"&%@=%d", kS3QueryParamMaxKeys, self.maxKeys];
+        [endQueryString appendFormat:@"&%@=%ld", kS3QueryParamMaxKeys, (long)self.maxKeys];
     }
 
     if (nil != self.prefix) {

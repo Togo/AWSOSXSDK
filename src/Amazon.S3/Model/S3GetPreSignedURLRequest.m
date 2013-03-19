@@ -53,7 +53,7 @@
     [self.urlRequest setHTTPMethod:self.httpVerb];
 
     NSInteger epoch = (int)[self.expires timeIntervalSince1970];
-    [self.urlRequest setValue:[NSString stringWithFormat:@"%d", epoch] forHTTPHeaderField:@"Date"];
+    [self.urlRequest setValue:[NSString stringWithFormat:@"%ld", (long)epoch] forHTTPHeaderField:@"Date"];
 
     return self.urlRequest;
 }
@@ -76,7 +76,7 @@
     }
 
     NSInteger epoch = (int)[self.expires timeIntervalSince1970];
-    [queryString appendFormat:@"&%@=%d", kS3QueryParamExpires, epoch];
+    [queryString appendFormat:@"&%@=%ld", kS3QueryParamExpires, (long)epoch];
 
 
     if (self.responseHeaderOverrides != nil) {

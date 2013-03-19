@@ -15,12 +15,12 @@
 
 
 // Constants used to represent your AWS Credentials.
-#define ACCESS_KEY_ID          @"CHANGE ME"
-#define SECRET_KEY             @"CHANGE ME"
+#define ACCESS_KEY_ID          @"AKIAJLEY7VHYOPBMZXRQ"
+#define SECRET_KEY             @"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"
 
 
 // Constants for the Bucket and Object name.
-#define PICTURE_BUCKET         @"picture-bucket"
+#define PICTURE_BUCKET         @"picbucket"
 #define PICTURE_NAME           @"NameOfThePicture"
 
 

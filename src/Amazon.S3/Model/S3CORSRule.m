@@ -44,7 +44,7 @@
     }
     
     if (self.maxAgeSeconds > 0) {
-        [xml appendFormat:@"<MaxAgeSeconds>%d<MaxAgeSeconds>", self.maxAgeSeconds];
+        [xml appendFormat:@"<MaxAgeSeconds>%ld<MaxAgeSeconds>", (long)self.maxAgeSeconds];
     }
     
     for (NSString *header in self.exposeHeaders) {

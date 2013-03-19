@@ -31,7 +31,7 @@
     [buffer appendString:@"{"];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Key: %@,", key] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"ETag: %@,", etag] autorelease]];
-    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %d,", size] autorelease]];
+    [buffer appendString:[[[NSString alloc] initWithFormat:@"Size: %ld,", (long)size] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Last Modified: %@,", lastModified] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Storage Class: %@,", storageClass] autorelease]];
     [buffer appendString:[[[NSString alloc] initWithFormat:@"Owner: %@,", owner] autorelease]];

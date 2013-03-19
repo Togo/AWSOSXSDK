@@ -93,7 +93,7 @@
  */
 -(AmazonServiceResponse *)invoke:(AmazonServiceRequest *)generatedRequest rawRequest:(AmazonServiceRequestConfig *)originalRequest unmarshallerDelegate:(Class)unmarshallerDelegate;
 
--(void)pauseExponentially:(int)tryCount;
+-(void)pauseExponentially:(NSInteger)tryCount;
 -(BOOL)shouldRetry:(AmazonServiceResponse *)response;
 -(BOOL)shouldRetry:(AmazonServiceResponse *)response exception:(NSException *)theException;
 

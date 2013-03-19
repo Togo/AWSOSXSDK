@@ -33,7 +33,7 @@
     [xml appendFormat:@"<Prefix>%@</Prefix>", self.prefix];
     [xml appendFormat:@"<Status>%@</Status>", self.status];
     if (self.expirationInDays > 0) {
-        [xml appendFormat:@"<Expiration><Days>%d</Days></Expiration>", self.expirationInDays];
+        [xml appendFormat:@"<Expiration><Days>%ld</Days></Expiration>", (long)self.expirationInDays];
     }
     else if (self.expirationDate != nil) {
         [xml appendFormat:@"<Expiration><Date>%@</Date></Expiration>", [self.expirationDate stringWithISO8061Format]];

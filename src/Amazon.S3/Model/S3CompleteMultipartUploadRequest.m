@@ -41,7 +41,7 @@
     [urlRequest setHTTPMethod:kHttpMethodPost];
 
     [urlRequest setHTTPBody:[self requestBody]];
-    [urlRequest setValue:[NSString stringWithFormat:@"%d", [[urlRequest HTTPBody] length]] forHTTPHeaderField:kHttpHdrContentLength];
+    [urlRequest setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[[urlRequest HTTPBody] length]] forHTTPHeaderField:kHttpHdrContentLength];
     [urlRequest setValue:@"text/xml" forHTTPHeaderField:kHttpHdrContentType];
 
     return urlRequest;
@@ -67,7 +67,7 @@
     NSArray *keys = [[parts allKeys] sortedArrayUsingComparator:comparePartNumbers];
     for (NSNumber *partNumber in keys)
     {
-        [xml appendFormat:@"<Part><PartNumber>%d</PartNumber><ETag>%@</ETag></Part>", [partNumber integerValue], [parts objectForKey:partNumber]];
+        [xml appendFormat:@"<Part><PartNumber>%ld</PartNumber><ETag>%@</ETag></Part>", (long)[partNumber integerValue], [parts objectForKey:partNumber]];
     }
 
     [xml appendString:@"</CompleteMultipartUpload>"];

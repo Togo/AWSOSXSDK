@@ -20,21 +20,7 @@
  *
  */
 @interface S3ListPartsResult:NSObject {
-    NSString       *bucket;
-    NSString       *key;
-    NSString       *uploadId;
-    NSString       *storageClass;
-
-    S3Owner        *owner;
-    S3Owner        *initiator;
-
-    NSInteger      partNumberMarker;
-    NSInteger      nextPartNumberMarker;
-    NSInteger      maxParts;
-
-    bool           isTruncated;
-
-    NSMutableArray *parts;
+    NSMutableArray *_parts;
 }
 
 /** The name of the bucket to which the multipart upload was initiated. */
