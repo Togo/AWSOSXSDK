@@ -56,8 +56,9 @@ else
 
 	# Check that this is what your static libraries  
 	# are called  
-	FRAMEWORK_INPUT_ARM_FILES="build/$BUILD_TYPE-iphoneos/libAWSOSXSDK.a"  
-	FRAMEWORK_INPUT_I386_FILES="build/$BUILD_TYPE-iphonesimulator/libAWSOSXSDK.a"
+	#FRAMEWORK_INPUT_ARM_FILES="build/$BUILD_TYPE-iphoneos/libAWSOSXSDK.a"  
+	#FRAMEWORK_INPUT_I386_FILES="build/$BUILD_TYPE-iphonesimulator/libAWSOSXSDK.a"
+	FRAMEWORK_INPUT_I386_FILES="build/$BUILD_TYPE/libAWSOSXSDK.a"
 
 
 	# The trick for creating a fully usable library is  
@@ -69,7 +70,8 @@ else
 	# The library file is given the same name as the  
 	# framework with no .a extension.  
 	echo "Framework: Creating library..."  
-	lipo -create "$FRAMEWORK_INPUT_ARM_FILES" "$FRAMEWORK_INPUT_I386_FILES" -o "$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME"  
+	#lipo -create "$FRAMEWORK_INPUT_ARM_FILES" "$FRAMEWORK_INPUT_I386_FILES" -o "$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME"  
+	lipo -create "$FRAMEWORK_INPUT_I386_FILES" -o "$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME"  
 
 
 	# Now copy the final assets over: your library  
