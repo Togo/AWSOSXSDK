@@ -62,7 +62,7 @@
 
 
 - (CloudWatchDatapoint *)datapointsObjectAtIndex:(int)index {
-    return (CloudWatchDatapoint *) [datapoints objectAtIndex:index];
+    return (CloudWatchDatapoint *) datapoints[index];
 }
 
 

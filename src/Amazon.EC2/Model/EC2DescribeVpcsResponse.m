@@ -44,7 +44,7 @@
 
 
 - (EC2Vpc *)vpcsObjectAtIndex:(int)index {
-    return (EC2Vpc *) [vpcs objectAtIndex:index];
+    return (EC2Vpc *) vpcs[index];
 }
 
 

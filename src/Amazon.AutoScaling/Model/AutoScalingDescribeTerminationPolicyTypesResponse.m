@@ -44,7 +44,7 @@
 
 
 - (NSString *)terminationPolicyTypesObjectAtIndex:(int)index {
-    return (NSString *) [terminationPolicyTypes objectAtIndex:index];
+    return (NSString *) terminationPolicyTypes[index];
 }
 
 

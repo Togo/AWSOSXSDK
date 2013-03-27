@@ -44,7 +44,7 @@
 
 
 - (EC2PlacementGroup *)placementGroupsObjectAtIndex:(int)index {
-    return (EC2PlacementGroup *) [placementGroups objectAtIndex:index];
+    return (EC2PlacementGroup *) placementGroups[index];
 }
 
 

@@ -44,7 +44,7 @@
 
 
 - (EC2Image *)imagesObjectAtIndex:(int)index {
-    return (EC2Image *) [images objectAtIndex:index];
+    return (EC2Image *) images[index];
 }
 
 

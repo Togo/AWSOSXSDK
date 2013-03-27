@@ -56,7 +56,7 @@
 
 
 - (SimpleDBAttribute *)attributesObjectAtIndex:(int)index {
-    return (SimpleDBAttribute *) [attributes objectAtIndex:index];
+    return (SimpleDBAttribute *) attributes[index];
 }
 
 

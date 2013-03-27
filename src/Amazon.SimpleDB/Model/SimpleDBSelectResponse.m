@@ -82,7 +82,7 @@
 
 
 - (SimpleDBItem *)itemsObjectAtIndex:(int)index {
-    return (SimpleDBItem *) [items objectAtIndex:index];
+    return (SimpleDBItem *) items[index];
 }
 
 

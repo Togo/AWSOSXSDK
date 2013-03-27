@@ -35,7 +35,7 @@
         [self.urlRequest setValue:self.serverSideEncryption forHTTPHeaderField:kHttpHdrAmzServerSideEncryption];
     }
     for (id k in [self metadata]) {
-        [self.urlRequest setValue:[[self metadata] objectForKey:k] forHTTPHeaderField:[NSString stringWithFormat:kHttpHdrAmzMetaFormat, [k description]]];
+        [self.urlRequest setValue:[self metadata][k] forHTTPHeaderField:[NSString stringWithFormat:kHttpHdrAmzMetaFormat, [k description]]];
     }
     if (nil != self.fullACL) {
         NSDictionary *aclHeaders = [self.fullACL toHeaders];

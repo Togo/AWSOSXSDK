@@ -50,7 +50,7 @@
 
 
 - (AutoScalingAutoScalingInstanceDetails *)autoScalingInstancesObjectAtIndex:(int)index {
-    return (AutoScalingAutoScalingInstanceDetails *) [autoScalingInstances objectAtIndex:index];
+    return (AutoScalingAutoScalingInstanceDetails *) autoScalingInstances[index];
 }
 
 

@@ -44,7 +44,7 @@
 
 
 - (EC2Subnet *)subnetsObjectAtIndex:(int)index {
-    return (EC2Subnet *) [subnets objectAtIndex:index];
+    return (EC2Subnet *) subnets[index];
 }
 
 

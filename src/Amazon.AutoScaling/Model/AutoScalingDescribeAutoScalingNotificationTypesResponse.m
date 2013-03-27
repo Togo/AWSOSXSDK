@@ -44,7 +44,7 @@
 
 
 - (NSString *)autoScalingNotificationTypesObjectAtIndex:(int)index {
-    return (NSString *) [autoScalingNotificationTypes objectAtIndex:index];
+    return (NSString *) autoScalingNotificationTypes[index];
 }
 
 

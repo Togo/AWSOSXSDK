@@ -44,7 +44,7 @@
 
 
 - (EC2AvailabilityZone *)availabilityZonesObjectAtIndex:(int)index {
-    return (EC2AvailabilityZone *) [availabilityZones objectAtIndex:index];
+    return (EC2AvailabilityZone *) availabilityZones[index];
 }
 
 

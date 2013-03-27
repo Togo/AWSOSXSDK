@@ -44,7 +44,7 @@
 
 
 - (EC2Volume *)volumesObjectAtIndex:(int)index {
-    return (EC2Volume *) [volumes objectAtIndex:index];
+    return (EC2Volume *) volumes[index];
 }
 
 

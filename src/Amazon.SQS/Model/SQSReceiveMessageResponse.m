@@ -48,7 +48,7 @@
 
 
 - (SQSMessage *)messagesObjectAtIndex:(int)index {
-    return (SQSMessage *) [messages objectAtIndex:index];
+    return (SQSMessage *) messages[index];
 }
 
 

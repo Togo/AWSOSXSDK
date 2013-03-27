@@ -54,7 +54,7 @@
 
 
 - (NSString *)domainNamesObjectAtIndex:(int)index {
-    return (NSString *) [domainNames objectAtIndex:index];
+    return (NSString *) domainNames[index];
 }
 
 

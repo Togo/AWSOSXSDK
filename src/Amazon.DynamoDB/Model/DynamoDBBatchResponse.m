@@ -46,7 +46,7 @@
 
 
 - (NSDictionary *)itemsObjectAtIndex:(int)index {
-    return (NSDictionary *) [items objectAtIndex:index];
+    return (NSDictionary *) items[index];
 }
 
 

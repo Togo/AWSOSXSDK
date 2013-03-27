@@ -46,7 +46,7 @@
 
 
 - (EC2SpotPrice *)spotPriceHistoryObjectAtIndex:(int)index {
-    return (EC2SpotPrice *) [spotPriceHistory objectAtIndex:index];
+    return (EC2SpotPrice *) spotPriceHistory[index];
 }
 
 

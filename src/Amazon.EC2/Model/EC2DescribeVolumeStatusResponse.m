@@ -46,7 +46,7 @@
 
 
 - (EC2VolumeStatusItem *)volumeStatusesObjectAtIndex:(int)index {
-    return (EC2VolumeStatusItem *) [volumeStatuses objectAtIndex:index];
+    return (EC2VolumeStatusItem *) volumeStatuses[index];
 }
 
 

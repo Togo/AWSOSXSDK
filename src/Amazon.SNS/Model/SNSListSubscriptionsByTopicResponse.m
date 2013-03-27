@@ -62,7 +62,7 @@
 
 
 - (SNSSubscription *)subscriptionsObjectAtIndex:(int)index {
-    return (SNSSubscription *) [subscriptions objectAtIndex:index];
+    return (SNSSubscription *) subscriptions[index];
 }
 
 

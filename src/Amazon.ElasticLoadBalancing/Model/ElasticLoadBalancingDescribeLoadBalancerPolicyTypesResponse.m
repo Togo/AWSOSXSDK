@@ -48,7 +48,7 @@
 
 
 - (ElasticLoadBalancingPolicyTypeDescription *)policyTypeDescriptionsObjectAtIndex:(int)index {
-    return (ElasticLoadBalancingPolicyTypeDescription *) [policyTypeDescriptions objectAtIndex:index];
+    return (ElasticLoadBalancingPolicyTypeDescription *) policyTypeDescriptions[index];
 }
 
 

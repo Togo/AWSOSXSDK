@@ -44,7 +44,7 @@
 
 
 - (EC2Region *)regionsObjectAtIndex:(int)index {
-    return (EC2Region *) [regions objectAtIndex:index];
+    return (EC2Region *) regions[index];
 }
 
 

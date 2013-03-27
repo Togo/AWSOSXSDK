@@ -44,7 +44,7 @@
 
 
 - (EC2ExportTask *)exportTasksObjectAtIndex:(int)index {
-    return (EC2ExportTask *) [exportTasks objectAtIndex:index];
+    return (EC2ExportTask *) exportTasks[index];
 }
 
 

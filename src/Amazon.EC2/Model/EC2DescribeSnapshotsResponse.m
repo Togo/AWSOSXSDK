@@ -44,7 +44,7 @@
 
 
 - (EC2Snapshot *)snapshotsObjectAtIndex:(int)index {
-    return (EC2Snapshot *) [snapshots objectAtIndex:index];
+    return (EC2Snapshot *) snapshots[index];
 }
 
 

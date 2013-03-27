@@ -50,7 +50,7 @@
 
 
 - (AutoScalingNotificationConfiguration *)notificationConfigurationsObjectAtIndex:(int)index {
-    return (AutoScalingNotificationConfiguration *) [notificationConfigurations objectAtIndex:index];
+    return (AutoScalingNotificationConfiguration *) notificationConfigurations[index];
 }
 
 

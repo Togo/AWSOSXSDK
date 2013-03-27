@@ -49,7 +49,7 @@
         parts = [[NSMutableDictionary alloc] init];
     }
 
-    [parts setObject:etag forKey:[NSNumber numberWithInt:partNumber]];
+    parts[@(partNumber)] = etag;
 }
 
 - (NSData *)requestBody {
@@ -61,7 +61,7 @@
 
     NSArray *keys = [[parts allKeys] sortedArrayUsingComparator:comparePartNumbers];
     for (NSNumber *partNumber in keys) {
-        [xml appendFormat:@"<Part><PartNumber>%ld</PartNumber><ETag>%@</ETag></Part>", (long) [partNumber integerValue], [parts objectForKey:partNumber]];
+        [xml appendFormat:@"<Part><PartNumber>%ld</PartNumber><ETag>%@</ETag></Part>", (long) [partNumber integerValue], parts[partNumber]];
     }
 
     [xml appendString:@"</CompleteMultipartUpload>"];

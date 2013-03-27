@@ -46,12 +46,12 @@
 
 
 - (AutoScalingMetricCollectionType *)metricsObjectAtIndex:(int)index {
-    return (AutoScalingMetricCollectionType *) [metrics objectAtIndex:index];
+    return (AutoScalingMetricCollectionType *) metrics[index];
 }
 
 
 - (AutoScalingMetricGranularityType *)granularitiesObjectAtIndex:(int)index {
-    return (AutoScalingMetricGranularityType *) [granularities objectAtIndex:index];
+    return (AutoScalingMetricGranularityType *) granularities[index];
 }
 
 

@@ -46,7 +46,7 @@
 
 
 - (EC2InstanceStatus *)instanceStatusesObjectAtIndex:(int)index {
-    return (EC2InstanceStatus *) [instanceStatuses objectAtIndex:index];
+    return (EC2InstanceStatus *) instanceStatuses[index];
 }
 
 

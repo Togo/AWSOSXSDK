@@ -44,7 +44,7 @@
 
 
 - (AutoScalingAdjustmentType *)adjustmentTypesObjectAtIndex:(int)index {
-    return (AutoScalingAdjustmentType *) [adjustmentTypes objectAtIndex:index];
+    return (AutoScalingAdjustmentType *) adjustmentTypes[index];
 }
 
 

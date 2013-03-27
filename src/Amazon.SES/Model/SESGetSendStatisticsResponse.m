@@ -44,7 +44,7 @@
 
 
 - (SESSendDataPoint *)sendDataPointsObjectAtIndex:(int)index {
-    return (SESSendDataPoint *) [sendDataPoints objectAtIndex:index];
+    return (SESSendDataPoint *) sendDataPoints[index];
 }
 
 

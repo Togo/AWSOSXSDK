@@ -50,7 +50,7 @@
 
 
 - (EC2ProductCode *)productCodesObjectAtIndex:(int)index {
-    return (EC2ProductCode *) [productCodes objectAtIndex:index];
+    return (EC2ProductCode *) productCodes[index];
 }
 
 

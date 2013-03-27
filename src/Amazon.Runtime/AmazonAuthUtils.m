@@ -36,7 +36,7 @@
     NSString *dateTime = [date dateTime];
 
     // add date header (done here for consistency in timestamp)
-    [headers setObject:dateTime forKey:@"X-Amz-Date"];
+    headers[@"X-Amz-Date"] = dateTime;
     [serviceRequest.urlRequest setValue:dateTime forHTTPHeaderField:@"X-Amz-Date"];
 
     NSString *path = serviceRequest.urlRequest.URL.path;

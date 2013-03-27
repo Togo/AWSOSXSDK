@@ -52,9 +52,9 @@
     NSString *tmp = [[header lowercaseString] stringByReplacingOccurrencesOfString:@"x-amz-" withString:@""];
     NSArray *parts = [tmp componentsSeparatedByString:@"-"];
 
-    NSString *keyName = [(NSString *) [parts objectAtIndex:0] lowercaseString];
+    NSString *keyName = [(NSString *) parts[0] lowercaseString];
     for (NSInteger i = 1; i < [parts count]; i++) {
-        keyName = [keyName stringByAppendingString:[[(NSString *) [parts objectAtIndex:i] lowercaseString] capitalizedString]];
+        keyName = [keyName stringByAppendingString:[[(NSString *) parts[i] lowercaseString] capitalizedString]];
     }
 
     //AMZLog( @"Setting response value [%@] from header [%@] with value [%@]", keyName, header, value );
@@ -69,11 +69,11 @@
     }
     else if ([typeName isEqualToString:@"Ti"]) {
         NSInteger v = [(NSString *) value integerValue];
-        [self setValue:[NSNumber numberWithInteger:v] forKey:keyName];
+        [self setValue:@(v) forKey:keyName];
     }
     else if ([typeName isEqualToString:@"Tq"]) {
         int64_t foo = [value longLongValue];
-        [self setValue:[NSNumber numberWithLongLong:foo] forKey:keyName];
+        [self setValue:@(foo) forKey:keyName];
     }
 }
 
@@ -94,9 +94,9 @@
         return nil;
     }
 
-    NSString *attrString = [NSString stringWithUTF8String:propertyAttributes];
+    NSString *attrString = @(propertyAttributes);
 
-    return [[attrString componentsSeparatedByString:@","] objectAtIndex:0];
+    return [attrString componentsSeparatedByString:@","][0];
 }
 
 - (NSData *)body {

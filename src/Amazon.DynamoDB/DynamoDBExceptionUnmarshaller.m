@@ -23,7 +23,7 @@
 
     NSString *exceptionString = [jsonObject valueForKey:@"__type"];
 
-    exception.errorCode = [[exceptionString componentsSeparatedByString:@"#"] objectAtIndex:1];
+    exception.errorCode = [exceptionString componentsSeparatedByString:@"#"][1];
     exception.message = [jsonObject valueForKey:@"message"];
 
     return exception;

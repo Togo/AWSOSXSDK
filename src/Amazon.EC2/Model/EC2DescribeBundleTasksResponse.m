@@ -44,7 +44,7 @@
 
 
 - (EC2BundleTask *)bundleTasksObjectAtIndex:(int)index {
-    return (EC2BundleTask *) [bundleTasks objectAtIndex:index];
+    return (EC2BundleTask *) bundleTasks[index];
 }
 
 

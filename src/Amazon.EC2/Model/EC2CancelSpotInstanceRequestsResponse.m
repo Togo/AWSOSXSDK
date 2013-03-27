@@ -44,7 +44,7 @@
 
 
 - (EC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestsObjectAtIndex:(int)index {
-    return (EC2CancelledSpotInstanceRequest *) [cancelledSpotInstanceRequests objectAtIndex:index];
+    return (EC2CancelledSpotInstanceRequest *) cancelledSpotInstanceRequests[index];
 }
 
 

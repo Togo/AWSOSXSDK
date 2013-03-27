@@ -48,12 +48,12 @@
 
 
 - (EC2CreateVolumePermission *)createVolumePermissionsObjectAtIndex:(int)index {
-    return (EC2CreateVolumePermission *) [createVolumePermissions objectAtIndex:index];
+    return (EC2CreateVolumePermission *) createVolumePermissions[index];
 }
 
 
 - (EC2ProductCode *)productCodesObjectAtIndex:(int)index {
-    return (EC2ProductCode *) [productCodes objectAtIndex:index];
+    return (EC2ProductCode *) productCodes[index];
 }
 
 

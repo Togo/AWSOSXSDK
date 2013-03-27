@@ -79,9 +79,8 @@ static BOOL throwsExceptions = YES;
             error = clientException.error;
         }
         else {
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                    clientException.message, @"message",
-                    clientException, @"exception", nil];
+            NSDictionary *userInfo = @{@"message": clientException.message,
+                    @"exception": clientException};
 
             error = [NSError errorWithDomain:clientErrorDomain code:-1 userInfo:userInfo];
         }

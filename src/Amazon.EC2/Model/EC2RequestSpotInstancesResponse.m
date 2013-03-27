@@ -44,7 +44,7 @@
 
 
 - (EC2SpotInstanceRequest *)spotInstanceRequestsObjectAtIndex:(int)index {
-    return (EC2SpotInstanceRequest *) [spotInstanceRequests objectAtIndex:index];
+    return (EC2SpotInstanceRequest *) spotInstanceRequests[index];
 }
 
 

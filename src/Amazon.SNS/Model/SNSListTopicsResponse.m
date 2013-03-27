@@ -58,7 +58,7 @@
 
 
 - (SNSTopic *)topicsObjectAtIndex:(int)index {
-    return (SNSTopic *) [topics objectAtIndex:index];
+    return (SNSTopic *) topics[index];
 }
 
 

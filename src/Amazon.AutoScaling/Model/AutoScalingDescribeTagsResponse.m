@@ -50,7 +50,7 @@
 
 
 - (AutoScalingTagDescription *)tagsObjectAtIndex:(int)index {
-    return (AutoScalingTagDescription *) [tags objectAtIndex:index];
+    return (AutoScalingTagDescription *) tags[index];
 }
 
 

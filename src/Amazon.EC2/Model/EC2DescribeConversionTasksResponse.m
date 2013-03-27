@@ -44,7 +44,7 @@
 
 
 - (EC2ConversionTask *)conversionTasksObjectAtIndex:(int)index {
-    return (EC2ConversionTask *) [conversionTasks objectAtIndex:index];
+    return (EC2ConversionTask *) conversionTasks[index];
 }
 
 

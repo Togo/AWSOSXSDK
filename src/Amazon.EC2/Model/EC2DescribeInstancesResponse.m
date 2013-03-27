@@ -44,7 +44,7 @@
 
 
 - (EC2Reservation *)reservationsObjectAtIndex:(int)index {
-    return (EC2Reservation *) [reservations objectAtIndex:index];
+    return (EC2Reservation *) reservations[index];
 }
 
 

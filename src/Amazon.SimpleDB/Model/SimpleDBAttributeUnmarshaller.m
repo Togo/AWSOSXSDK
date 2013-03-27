@@ -24,11 +24,11 @@
 
 
     if ([elementName isEqualToString:@"Name"]) {
-        self.response.alternateNameEncoding = [attributeDict objectForKey:@"encoding"];
+        self.response.alternateNameEncoding = attributeDict[@"encoding"];
     }
 
     if ([elementName isEqualToString:@"Value"]) {
-        self.response.alternateValueEncoding = [attributeDict objectForKey:@"encoding"];
+        self.response.alternateValueEncoding = attributeDict[@"encoding"];
     }
 
 

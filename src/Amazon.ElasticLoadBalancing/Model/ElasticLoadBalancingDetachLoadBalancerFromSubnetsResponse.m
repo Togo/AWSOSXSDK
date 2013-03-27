@@ -52,7 +52,7 @@
 
 
 - (NSString *)subnetsObjectAtIndex:(int)index {
-    return (NSString *) [subnets objectAtIndex:index];
+    return (NSString *) subnets[index];
 }
 
 

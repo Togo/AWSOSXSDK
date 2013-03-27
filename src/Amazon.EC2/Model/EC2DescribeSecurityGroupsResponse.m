@@ -44,7 +44,7 @@
 
 
 - (EC2SecurityGroup *)securityGroupsObjectAtIndex:(int)index {
-    return (EC2SecurityGroup *) [securityGroups objectAtIndex:index];
+    return (EC2SecurityGroup *) securityGroups[index];
 }
 
 

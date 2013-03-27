@@ -44,7 +44,7 @@
 
 
 - (AutoScalingProcessType *)processesObjectAtIndex:(int)index {
-    return (AutoScalingProcessType *) [processes objectAtIndex:index];
+    return (AutoScalingProcessType *) processes[index];
 }
 
 

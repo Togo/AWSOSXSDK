@@ -50,7 +50,7 @@
 
 
 - (AutoScalingActivity *)activitiesObjectAtIndex:(int)index {
-    return (AutoScalingActivity *) [activities objectAtIndex:index];
+    return (AutoScalingActivity *) activities[index];
 }
 
 

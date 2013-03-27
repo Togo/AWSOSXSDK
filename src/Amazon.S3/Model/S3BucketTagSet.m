@@ -28,7 +28,7 @@
     for (NSString *key in [tags allKeys]) {
         [xml appendString:@"<Tag>"];
         [xml appendFormat:@"<Key>%@</Key>", key];
-        [xml appendFormat:@"<Value>%@</Value>", [tags objectForKey:key]];
+        [xml appendFormat:@"<Value>%@</Value>", tags[key]];
         [xml appendString:@"</Tag>"];
     }
 

@@ -50,7 +50,7 @@
 
 
 - (CloudWatchAlarmHistoryItem *)alarmHistoryItemsObjectAtIndex:(int)index {
-    return (CloudWatchAlarmHistoryItem *) [alarmHistoryItems objectAtIndex:index];
+    return (CloudWatchAlarmHistoryItem *) alarmHistoryItems[index];
 }
 
 

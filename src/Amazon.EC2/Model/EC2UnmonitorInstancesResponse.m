@@ -44,7 +44,7 @@
 
 
 - (EC2InstanceMonitoring *)instanceMonitoringsObjectAtIndex:(int)index {
-    return (EC2InstanceMonitoring *) [instanceMonitorings objectAtIndex:index];
+    return (EC2InstanceMonitoring *) instanceMonitorings[index];
 }
 
 

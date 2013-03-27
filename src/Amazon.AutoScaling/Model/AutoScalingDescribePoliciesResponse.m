@@ -50,7 +50,7 @@
 
 
 - (AutoScalingScalingPolicy *)scalingPoliciesObjectAtIndex:(int)index {
-    return (AutoScalingScalingPolicy *) [scalingPolicies objectAtIndex:index];
+    return (AutoScalingScalingPolicy *) scalingPolicies[index];
 }
 
 

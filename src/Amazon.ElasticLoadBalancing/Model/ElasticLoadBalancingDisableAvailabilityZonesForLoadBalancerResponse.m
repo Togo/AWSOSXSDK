@@ -52,7 +52,7 @@
 
 
 - (NSString *)availabilityZonesObjectAtIndex:(int)index {
-    return (NSString *) [availabilityZones objectAtIndex:index];
+    return (NSString *) availabilityZones[index];
 }
 
 

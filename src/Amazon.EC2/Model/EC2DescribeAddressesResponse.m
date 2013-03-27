@@ -44,7 +44,7 @@
 
 
 - (EC2Address *)addressesObjectAtIndex:(int)index {
-    return (EC2Address *) [addresses objectAtIndex:index];
+    return (EC2Address *) addresses[index];
 }
 
 

@@ -44,7 +44,7 @@
 
 
 - (EC2InstanceStateChange *)stoppingInstancesObjectAtIndex:(int)index {
-    return (EC2InstanceStateChange *) [stoppingInstances objectAtIndex:index];
+    return (EC2InstanceStateChange *) stoppingInstances[index];
 }
 
 

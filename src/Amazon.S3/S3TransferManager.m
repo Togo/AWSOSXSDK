@@ -74,7 +74,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         multipartUploadOperation.partSize = self.minimumUploadPartSize;
         multipartUploadOperation.delegate = self.delegate;
 
-        [self.operationQueue addOperations:[NSArray arrayWithObject:multipartUploadOperation] waitUntilFinished:YES];
+        [self.operationQueue addOperations:@[multipartUploadOperation] waitUntilFinished:YES];
         //[multipartUploadOperation autorelease];
 
         if (multipartUploadOperation.response) {
@@ -98,7 +98,7 @@ NSInteger const S3DefaultMaxConcurrentOperationCount = 3;
         putObjectOperation.request = putObjectRequest;
         putObjectOperation.delegate = self.delegate;
 
-        [self.operationQueue addOperations:[NSArray arrayWithObject:putObjectOperation] waitUntilFinished:YES];
+        [self.operationQueue addOperations:@[putObjectOperation] waitUntilFinished:YES];
         //[putObjectOperation autorelease];
 
         if (putObjectOperation.response) {

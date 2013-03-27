@@ -44,7 +44,7 @@
 
 
 - (NSString *)dkimTokensObjectAtIndex:(int)index {
-    return (NSString *) [dkimTokens objectAtIndex:index];
+    return (NSString *) dkimTokens[index];
 }
 
 

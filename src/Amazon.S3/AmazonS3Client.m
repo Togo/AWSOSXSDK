@@ -275,7 +275,7 @@
     amazonURLRequest.endpointHost = [preSignedURLRequest hostName];
     NSURLRequest *urlRequest = [self signS3Request:preSignedURLRequest];
     NSString *auth = [urlRequest valueForHTTPHeaderField:kHttpHdrAuthorization];
-    NSString *signature = (NSString *) [[auth componentsSeparatedByString:@":"] objectAtIndex:1];
+    NSString *signature = (NSString *) [auth componentsSeparatedByString:@":"][1];
     NSString *queryString = [[preSignedURLRequest queryString] stringByAppendingFormat:@"&%@=%@", kS3QueryParamSignature, [AmazonSDKUtil urlEncode:signature]];
 
     [preSignedURLRequest setSubResource:queryString];

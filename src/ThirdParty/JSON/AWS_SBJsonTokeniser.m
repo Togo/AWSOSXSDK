@@ -357,7 +357,7 @@
 
     } else if (!isFloat && !hasExponent) {
         if (!isNegative)
-            *token = [NSNumber numberWithUnsignedLongLong:mantissa];
+            *token = @(mantissa);
         else
             *token = [NSNumber numberWithLongLong:-mantissa];
     } else {

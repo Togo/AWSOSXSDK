@@ -50,7 +50,7 @@
 
 
 - (AutoScalingAutoScalingGroup *)autoScalingGroupsObjectAtIndex:(int)index {
-    return (AutoScalingAutoScalingGroup *) [autoScalingGroups objectAtIndex:index];
+    return (AutoScalingAutoScalingGroup *) autoScalingGroups[index];
 }
 
 

@@ -50,7 +50,7 @@
 
 
 - (NSString *)tableNamesObjectAtIndex:(int)index {
-    return (NSString *) [tableNames objectAtIndex:index];
+    return (NSString *) tableNames[index];
 }
 
 

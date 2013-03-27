@@ -44,7 +44,7 @@
 
 
 - (CloudWatchMetricAlarm *)metricAlarmsObjectAtIndex:(int)index {
-    return (CloudWatchMetricAlarm *) [metricAlarms objectAtIndex:index];
+    return (CloudWatchMetricAlarm *) metricAlarms[index];
 }
 
 

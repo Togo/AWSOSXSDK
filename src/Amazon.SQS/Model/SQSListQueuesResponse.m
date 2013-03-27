@@ -44,7 +44,7 @@
 
 
 - (NSString *)queueUrlsObjectAtIndex:(int)index {
-    return (NSString *) [queueUrls objectAtIndex:index];
+    return (NSString *) queueUrls[index];
 }
 
 

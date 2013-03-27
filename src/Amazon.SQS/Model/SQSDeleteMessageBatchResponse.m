@@ -62,12 +62,12 @@
 
 
 - (SQSDeleteMessageBatchResponseEntry *)successfulObjectAtIndex:(int)index {
-    return (SQSDeleteMessageBatchResponseEntry *) [successful objectAtIndex:index];
+    return (SQSDeleteMessageBatchResponseEntry *) successful[index];
 }
 
 
 - (SQSBatchResponseErrorEntry *)failedObjectAtIndex:(int)index {
-    return (SQSBatchResponseErrorEntry *) [failed objectAtIndex:index];
+    return (SQSBatchResponseErrorEntry *) failed[index];
 }
 
 

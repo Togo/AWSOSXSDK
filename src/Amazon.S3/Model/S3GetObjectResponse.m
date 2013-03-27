@@ -61,7 +61,7 @@
         return nil;
     }
 
-    return [[metadata objectForKey:aKey] description];
+    return [metadata[aKey] description];
 }
 
 - (void)setOutputStream:(NSOutputStream *)stream {

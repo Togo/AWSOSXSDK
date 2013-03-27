@@ -44,7 +44,7 @@
 
 
 - (EC2AccountAttribute *)accountAttributesObjectAtIndex:(int)index {
-    return (EC2AccountAttribute *) [accountAttributes objectAtIndex:index];
+    return (EC2AccountAttribute *) accountAttributes[index];
 }
 
 

@@ -46,7 +46,7 @@
 
 
 - (NSString *)identitiesObjectAtIndex:(int)index {
-    return (NSString *) [identities objectAtIndex:index];
+    return (NSString *) identities[index];
 }
 
 

@@ -56,7 +56,7 @@
 
 
 - (NSString *)securityGroupsObjectAtIndex:(int)index {
-    return (NSString *) [securityGroups objectAtIndex:index];
+    return (NSString *) securityGroups[index];
 }
 
 

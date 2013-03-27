@@ -39,8 +39,8 @@
 
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
-    if ([[httpResponse allHeaderFields] objectForKey:kHttpHdrAmzCrc32]) {
-        self.crc32 = [[NSNumber numberWithLongLong:[[[httpResponse allHeaderFields] objectForKey:kHttpHdrAmzCrc32] longLongValue]] unsignedIntValue];
+    if ([httpResponse allHeaderFields][kHttpHdrAmzCrc32]) {
+        self.crc32 = [@([[httpResponse allHeaderFields][kHttpHdrAmzCrc32] longLongValue]) unsignedIntValue];
     }
 
     self.requestId = [[httpResponse allHeaderFields] valueForKey:REQUEST_ID_HEADER];

@@ -52,7 +52,7 @@
 
 
 - (ElasticLoadBalancingInstanceState *)instanceStatesObjectAtIndex:(int)index {
-    return (ElasticLoadBalancingInstanceState *) [instanceStates objectAtIndex:index];
+    return (ElasticLoadBalancingInstanceState *) instanceStates[index];
 }
 
 

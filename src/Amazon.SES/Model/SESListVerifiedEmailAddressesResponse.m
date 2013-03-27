@@ -44,7 +44,7 @@
 
 
 - (NSString *)verifiedEmailAddressesObjectAtIndex:(int)index {
-    return (NSString *) [verifiedEmailAddresses objectAtIndex:index];
+    return (NSString *) verifiedEmailAddresses[index];
 }
 
 

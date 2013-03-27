@@ -89,7 +89,7 @@
     NSArray *keys = [[self parameters] allKeys];
     NSArray *sortedKeys = [keys sortedArrayUsingSelector:@selector(compare:)];
     for (NSInteger index = 0; index < [sortedKeys count]; index++) {
-        NSString *key = [sortedKeys objectAtIndex:index];
+        NSString *key = sortedKeys[index];
         NSString *value = (NSString *) [[self parameters] valueForKey:key];
 
         [buffer appendString:[AmazonSDKUtil urlEncode:key]];

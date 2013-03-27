@@ -44,7 +44,7 @@
 
 
 - (EC2InstanceStateChange *)terminatingInstancesObjectAtIndex:(int)index {
-    return (EC2InstanceStateChange *) [terminatingInstances objectAtIndex:index];
+    return (EC2InstanceStateChange *) terminatingInstances[index];
 }
 
 

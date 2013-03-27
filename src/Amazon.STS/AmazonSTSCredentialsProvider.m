@@ -46,7 +46,7 @@
 
         @try {
             SecurityTokenServiceGetSessionTokenRequest *request = [[SecurityTokenServiceGetSessionTokenRequest alloc] init];
-            request.durationSeconds = [NSNumber numberWithInteger:self.sessionLength];
+            request.durationSeconds = @(self.sessionLength);
             SecurityTokenServiceGetSessionTokenResponse *response = [self.sts getSessionToken:request];
 
 

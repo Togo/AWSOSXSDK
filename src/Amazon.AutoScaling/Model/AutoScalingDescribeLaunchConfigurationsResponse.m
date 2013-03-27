@@ -50,7 +50,7 @@
 
 
 - (AutoScalingLaunchConfiguration *)launchConfigurationsObjectAtIndex:(int)index {
-    return (AutoScalingLaunchConfiguration *) [launchConfigurations objectAtIndex:index];
+    return (AutoScalingLaunchConfiguration *) launchConfigurations[index];
 }
 
 

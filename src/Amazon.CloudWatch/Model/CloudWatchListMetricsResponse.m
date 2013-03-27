@@ -54,7 +54,7 @@
 
 
 - (CloudWatchMetric *)metricsObjectAtIndex:(int)index {
-    return (CloudWatchMetric *) [metrics objectAtIndex:index];
+    return (CloudWatchMetric *) metrics[index];
 }
 
 

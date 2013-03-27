@@ -44,7 +44,7 @@
 
 
 - (EC2TagDescription *)tagsObjectAtIndex:(int)index {
-    return (EC2TagDescription *) [tags objectAtIndex:index];
+    return (EC2TagDescription *) tags[index];
 }
 
 

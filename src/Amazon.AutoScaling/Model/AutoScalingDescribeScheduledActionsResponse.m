@@ -50,7 +50,7 @@
 
 
 - (AutoScalingScheduledUpdateGroupAction *)scheduledUpdateGroupActionsObjectAtIndex:(int)index {
-    return (AutoScalingScheduledUpdateGroupAction *) [scheduledUpdateGroupActions objectAtIndex:index];
+    return (AutoScalingScheduledUpdateGroupAction *) scheduledUpdateGroupActions[index];
 }
 
 

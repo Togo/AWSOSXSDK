@@ -50,7 +50,7 @@
 
 
 - (ElasticLoadBalancingLoadBalancerDescription *)loadBalancerDescriptionsObjectAtIndex:(int)index {
-    return (ElasticLoadBalancingLoadBalancerDescription *) [loadBalancerDescriptions objectAtIndex:index];
+    return (ElasticLoadBalancingLoadBalancerDescription *) loadBalancerDescriptions[index];
 }
 
 

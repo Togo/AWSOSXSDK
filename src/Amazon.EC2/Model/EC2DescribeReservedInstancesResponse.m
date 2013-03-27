@@ -44,7 +44,7 @@
 
 
 - (EC2ReservedInstances *)reservedInstancesObjectAtIndex:(int)index {
-    return (EC2ReservedInstances *) [reservedInstances objectAtIndex:index];
+    return (EC2ReservedInstances *) reservedInstances[index];
 }
 
 

@@ -44,7 +44,7 @@
 
 
 - (EC2KeyPairInfo *)keyPairsObjectAtIndex:(int)index {
-    return (EC2KeyPairInfo *) [keyPairs objectAtIndex:index];
+    return (EC2KeyPairInfo *) keyPairs[index];
 }
 
 

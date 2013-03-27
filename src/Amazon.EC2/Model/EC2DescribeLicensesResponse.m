@@ -44,7 +44,7 @@
 
 
 - (EC2License *)licensesObjectAtIndex:(int)index {
-    return (EC2License *) [licenses objectAtIndex:index];
+    return (EC2License *) licenses[index];
 }
 
 
