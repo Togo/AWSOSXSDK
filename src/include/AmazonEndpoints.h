@@ -181,6 +181,8 @@ typedef enum {
 //#define AMAZON_SES_AP_NORTHEAST_1_ENDPOINT_SECURE	 @"https://"
 //#define AMAZON_SES_SA_EAST_1_ENDPOINT_SECURE       @"https://"
 
+#define AMAZON_OPS_US_EAST_1_ENDPOINT_SECURE        @"https://opsworks.us-east-1.amazonaws.com"
+
 #define AMAZON_DDB_US_EAST_1_ENDPOINT_SECURE         @"https://dynamodb.us-east-1.amazonaws.com"
 #define AMAZON_DDB_US_WEST_1_ENDPOINT_SECURE         @"https://dynamodb.us-west-1.amazonaws.com"
 #define AMAZON_DDB_US_WEST_2_ENDPOINT_SECURE         @"https://dynamodb.us-west-2.amazonaws.com"
