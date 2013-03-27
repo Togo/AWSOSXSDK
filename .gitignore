@@ -21,3 +21,5 @@ xcuserdata
 ######################
 build
 *.framework
+
+.idea/
